@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            CLASS = EventHeap; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {myController = MyController; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {postEventsButton = id; }; 
+            CLASS = MyController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {eventHeap = EventHeap; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,20 @@
+program MacallyPointRight;
+
+int MOUSE_AMPLIFY = 15;
+
+event iStuffEvent type iStuffEvent {
+    string Name = "MacALLY USB Joystick ";
+}
+
+event PointerEvent type PR2Input {
+    int X = in.X_Axis.Axis.Value * MOUSE_AMPLIFY;
+    int Y = in.Y_Axis.Axis.Value * MOUSE_AMPLIFY;
+    string Type = "Relative";
+    string InputSource = "iw-room2";
+}
+
+initial state Idle {
+    on iStuffEvent {
+        send PointerEvent;
+   }
+}

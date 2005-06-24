@@ -1,0 +1,16 @@
+Building a C application that uses the Event Heap with XCode
+- Add ./lib/libceheap2.a and ./lib/libidk.a to your 
+  projects "External Frameworks and Libraries" 
+(make sure to select "Relative to Project" for "Reference Type" when adding)
+- Add include/*.h to the project
+(make sure to select "Relative to Project" for "Reference Type" when adding)
+- Modify the "Other C Flags" property of your Target 
+  (Select "Info" then navigate to the "Build" tab)
+  include "-Dunix -D_REENTRANT" in "Other C Flags"
+
+Sample applications are provided in ./samples
+- You can use the Event Logger to see the events
+
+Currently only gcc 3.3 is supported
+- You can check your version of gcc using "gcc_select"
+- To change the version run "sudo gcc_select 3.3"

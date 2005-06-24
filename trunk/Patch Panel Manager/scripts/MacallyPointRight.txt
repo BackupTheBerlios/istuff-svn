@@ -1,0 +1,55 @@
+program MacallyPointRight;
+
+int MOUSE_AMPLIFY = 15;
+int LAST_MOUSE_X = 0;
+int LAST_MOUSE_Y = 0;
+
+event iStuffEvent type iStuffEvent {
+    string Name = "MacALLY USB Joystick ";
+}
+
+event PointerEvent type PR2Input {
+    int X = in.X_Axis.Axis.Value * MOUSE_AMPLIFY;
+    int Y = in.Y_Axis.Axis.Value * MOUSE_AMPLIFY;
+    string Type = "Relative";
+    string InputSource = "iw-room2";
+}
+
+event LastPointerEvent type PR2Input {
+    int X = LAST_MOUSE_X;
+    int Y = LAST_MOUSE_Y;
+    string Type = "Relative";
+    string InputSource = "iw-room2";	
+}
+
+state Active {
+    on enter {
+	set timer 20;
+    }
+
+    on iStuffEvent {
+	LAST_MOUSE_X = in.X_Axis.Axis.Value * MOUSE_AMPLIFY;
+        LAST_MOUSE_Y = in.Y_Axis.Axis.Value * MOUSE_AMPLIFY;
+        send PointerEvent;
+	goto Active;
+    }
+
+    on timer {
+	if( LAST_MOUSE_X != 0 || LAST_MOUSE_Y != 0 ){
+		send LastPointerEvent;
+		goto Active;
+	}
+	else{
+		goto Idle;
+	}
+    }
+}
+
+initial state Idle {
+    on iStuffEvent {
+	LAST_MOUSE_X = in.X_Axis.Axis.Value * MOUSE_AMPLIFY;
+        LAST_MOUSE_Y = in.Y_Axis.Axis.Value * MOUSE_AMPLIFY;
+        send PointerEvent;
+	goto Active;
+    }
+}

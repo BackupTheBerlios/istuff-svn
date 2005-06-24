@@ -1,0 +1,5 @@
+#Event Logger Properties
+#Thu Jun 23 12:58:04 CEST 2005
+HostName=localhost
+BufferSize=500
+HostPort=4535

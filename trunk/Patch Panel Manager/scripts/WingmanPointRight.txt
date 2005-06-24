@@ -1,0 +1,53 @@
+program WingmanPointRight;
+
+double WINGMAN_MOUSE_AMPLIFY = 15;
+double DEAD_ZONE = 0.2;
+int WINGMAN_LAST_MOUSE_X = 0;
+int WINGMAN_LAST_MOUSE_Y = 0;
+
+event iStuffEvent type iStuffEvent {
+    string Name = "Wingman";
+}
+
+event PointerEvent type PR2Input {
+    int X = WINGMAN_LAST_MOUSE_X;
+    int Y = WINGMAN_LAST_MOUSE_Y;
+    string Type = "Relative";
+    string InputSource = "iw-room2";	
+}
+
+state Active {
+    on enter {
+	set timer 100;
+    }
+
+    on iStuffEvent {
+	WINGMAN_LAST_MOUSE_X = in.X_axis.Axis.Value * WINGMAN_MOUSE_AMPLIFY;
+        WINGMAN_LAST_MOUSE_Y = in.Y_axis.Axis.Value * WINGMAN_MOUSE_AMPLIFY;
+        send PointerEvent;
+	set timer 100;
+    }
+
+    on timer {
+	if( WINGMAN_LAST_MOUSE_X >= WINGMAN_MOUSE_AMPLIFY*DEAD_ZONE || 
+ 	    WINGMAN_LAST_MOUSE_Y >= WINGMAN_MOUSE_AMPLIFY*DEAD_ZONE ||
+            WINGMAN_LAST_MOUSE_X <= -WINGMAN_MOUSE_AMPLIFY*DEAD_ZONE || 
+ 	    WINGMAN_LAST_MOUSE_Y <= -WINGMAN_MOUSE_AMPLIFY*DEAD_ZONE) {
+		send PointerEvent;
+		set timer 100;
+	}
+	else{
+		goto Idle;
+	}
+    }
+
+}
+
+initial state Idle {
+    on iStuffEvent {
+	WINGMAN_LAST_MOUSE_X = in.X_axis.Axis.Value * WINGMAN_MOUSE_AMPLIFY;
+        WINGMAN_LAST_MOUSE_Y = in.Y_axis.Axis.Value * WINGMAN_MOUSE_AMPLIFY;
+        send PointerEvent;
+	goto Active;
+    }
+}

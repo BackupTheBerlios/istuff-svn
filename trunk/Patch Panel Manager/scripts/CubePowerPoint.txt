@@ -1,0 +1,97 @@
+program CubePowerPoint;
+
+event Side1 type CubeEvent {
+	int Side = 1;
+}
+
+event Side2 type CubeEvent {
+	int Side = 2;
+}
+
+event Side3 type CubeEvent {
+	int Side = 3;
+}
+
+event Side4 type CubeEvent {
+	int Side = 4;
+}
+
+event PreviousSlide type AppleScript {
+	string Target = "coltrane";
+	string script = 
+"tell application \"System Events\"
+	tell process \"Microsoft PowerPoint\"
+		keystroke \"p\"
+	end tell
+end tell";
+}
+
+event NextSlide type AppleScript {
+	string Target = "coltrane";
+	string script = 
+"tell application \"System Events\"
+	tell process \"Microsoft PowerPoint\"
+		keystroke \"n\"
+	end tell
+end tell";
+}
+
+
+initial state Initial {
+	on Side1 {
+		goto onSide1;
+	}
+	on Side2 {
+		goto onSide2;
+	}
+	on Side3 {
+		goto onSide3;
+	}
+	on Side4 {
+		goto onSide4;
+	}
+}
+
+state onSide1 {
+	on Side2 {
+		send NextSlide;
+		goto onSide2;
+	}
+	on Side4 {
+		send PreviousSlide;
+		goto onSide4;
+	}
+}
+
+state onSide2 {
+	on Side3 {
+		send NextSlide;
+		goto onSide3;
+	}
+	on Side1 {
+		send PreviousSlide;
+		goto onSide1;
+	}
+}
+
+state onSide3 {
+	on Side4 {
+		send NextSlide;
+		goto onSide4;
+	}
+	on Side2 {
+		send PreviousSlide;
+		goto onSide2;
+	}
+}
+
+state onSide4 {
+	on Side1 {
+		send NextSlide;
+		goto onSide1;
+	}
+	on Side3 {
+		send PreviousSlide;
+		goto onSide3;
+	}
+}

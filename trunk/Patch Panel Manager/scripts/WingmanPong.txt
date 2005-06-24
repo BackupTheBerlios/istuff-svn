@@ -1,0 +1,20 @@
+program WingmanPong;
+
+double PADDLE_AMPLIFY = 0.7;
+string PADDLE_SIDE = "Left";
+
+event PointerEvent type iStuffEvent {
+    string Name = "Wingman";
+}
+
+event iPongEvent type iPongEvent {
+    string iPongEventType = "SetPaddleVelocity";
+    double Velocity = in.Y_axis.Axis.Value * PADDLE_AMPLIFY;
+    string Side = PADDLE_SIDE;
+}
+
+initial state Initial {
+    on PointerEvent {
+        send iPongEvent;
+    }
+}

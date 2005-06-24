@@ -1,0 +1,56 @@
+program DemoCube;
+
+string serviceName = "DummyService";
+string soundName = "DummySound";
+
+event StartService type ControllerCommand{
+	string command = "start";
+  	string group = "direct";
+	string id = "1";
+	string service = serviceName;
+}
+
+event StopService type ControllerCommand{
+	string command = "stop";
+  	string group = "direct";
+	string id = "1";
+	string service = serviceName;
+}
+
+event CubeEvent type CubeEvent {
+
+}
+
+event PlaySound type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = soundName;
+}
+
+initial state Initial {
+	on CubeEvent {
+		send StopService;
+		switch int (in.Side) {
+			case 0 { 
+				soundName = "DummySound"
+				serviceName = "iPong"; 
+			} case 1 { 
+				soundName = "pig.wav"
+				serviceName = "DummyService";
+			} case 2 { 
+				soundName = "cat.wav"
+				serviceName = "DummyService";
+			} case 3 { 
+				soundName = "chirp.mp3"
+				serviceName = "DummyService";
+			} case 4 { 
+				soundName = "hen.mp3"
+				serviceName = "DummyService";
+			} case 5 { 
+				soundName = "lion.mp3"
+				serviceName = "DummyService";
+			}
+		}
+		send PlaySound;
+		send StartService; 
+	}
+}

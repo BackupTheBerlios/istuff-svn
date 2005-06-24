@@ -1,0 +1,2436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				C63127EC0693107D0068A9E2,
+				C63127EB0693107D0068A9E2,
+				C63127C106930F540068A9E2,
+				C63127C206930F540068A9E2,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165CFE840E0CC02AAC07 = {
+			children = (
+				089C165DFE840E0CC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165DFE840E0CC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A0FEA54F0111CA2CBB = {
+			children = (
+				1058C7A1FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A2FEA54F0111CA2CBB = {
+			children = (
+				29B97325FDCFA39411CA2CEA,
+				29B97324FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				8D1107320486CEB800E47090,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				080E96DDFE201D6D7F000001,
+				C642E7C0071564C500966FDB,
+				29B97315FDCFA39411CA2CEA,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = SpeechClient;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA = {
+			children = (
+				32CA4F630368D1EE00C91783,
+				29B97316FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97316FDCFA39411CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = main.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				8D1107310486CEB800E47090,
+				089C165CFE840E0CC02AAC07,
+				29B97318FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA = {
+			children = (
+				29B97319FDCFA39411CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = MainMenu.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97319FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/MainMenu.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				C642E7C10715651700966FDB,
+				1058C7A0FEA54F0111CA2CBB,
+				1058C7A2FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97324FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		29B97325FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//290
+//291
+//292
+//293
+//294
+//320
+//321
+//322
+//323
+//324
+		32CA4F630368D1EE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SpeechClient_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				LIBRARY_STYLE = DYNAMIC;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1107260486CEB800E47090 = {
+			buildPhases = (
+				8D1107270486CEB800E47090,
+				8D1107290486CEB800E47090,
+				8D11072C0486CEB800E47090,
+				8D11072E0486CEB800E47090,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SpeechClient_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "-D_REENTRANT";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = SpeechClient;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = SpeechClient;
+			productInstallPath = "$(HOME)/Applications";
+			productName = SpeechClient;
+			productReference = 8D1107320486CEB800E47090;
+			productType = "com.apple.product-type.application";
+		};
+		8D1107270486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1107280486CEB800E47090,
+				C63127C306930F540068A9E2,
+				C63127EE0693107D0068A9E2,
+				C65E7A08071A873A00A6A6A6,
+				C65E7A09071A873A00A6A6A6,
+				C65E7A0A071A873A00A6A6A6,
+				C65E7A0B071A873A00A6A6A6,
+				C65E7A0C071A873A00A6A6A6,
+				C65E7A0D071A873A00A6A6A6,
+				C65E7A0E071A873A00A6A6A6,
+				C65E7A0F071A873A00A6A6A6,
+				C65E7A10071A873A00A6A6A6,
+				C65E7A11071A873A00A6A6A6,
+				C65E7A12071A873A00A6A6A6,
+				C65E7A13071A873A00A6A6A6,
+				C65E7A14071A873A00A6A6A6,
+				C65E7A15071A873A00A6A6A6,
+				C65E7A16071A873A00A6A6A6,
+				C65E7A17071A873A00A6A6A6,
+				C65E7A18071A873A00A6A6A6,
+				C65E7A19071A873A00A6A6A6,
+				C65E7A1A071A873A00A6A6A6,
+				C65E7A1B071A873A00A6A6A6,
+				C65E7A1C071A873A00A6A6A6,
+				C65E7A1D071A873A00A6A6A6,
+				C65E7A1E071A873A00A6A6A6,
+				C65E7A1F071A873A00A6A6A6,
+				C65E7A20071A873A00A6A6A6,
+				C65E7A21071A873A00A6A6A6,
+				C65E7A22071A873A00A6A6A6,
+				C65E7A23071A873A00A6A6A6,
+				C65E7A24071A873A00A6A6A6,
+				C65E7A25071A873A00A6A6A6,
+				C65E7A26071A873A00A6A6A6,
+				C65E7A27071A873A00A6A6A6,
+				C65E7A28071A873A00A6A6A6,
+				C65E7A29071A873A00A6A6A6,
+				C65E7A2A071A873A00A6A6A6,
+				C65E7A2B071A873A00A6A6A6,
+				C65E7A2C071A873A00A6A6A6,
+				C65E7A2D071A873A00A6A6A6,
+				C65E7A2E071A873A00A6A6A6,
+				C65E7A2F071A873A00A6A6A6,
+				C65E7A30071A873A00A6A6A6,
+				C65E7A31071A873A00A6A6A6,
+				C65E7A32071A873A00A6A6A6,
+				C65E7A33071A873A00A6A6A6,
+				C65E7A34071A873A00A6A6A6,
+				C65E7A35071A873A00A6A6A6,
+				C65E7A36071A873A00A6A6A6,
+				C65E7A37071A873A00A6A6A6,
+				C65E7A38071A873A00A6A6A6,
+				C65E7A39071A873A00A6A6A6,
+				C65E7A3A071A873A00A6A6A6,
+				C65E7A3B071A873A00A6A6A6,
+				C65E7A3C071A873A00A6A6A6,
+				C65E7A3D071A873A00A6A6A6,
+				C65E7A3E071A873A00A6A6A6,
+				C65E7A3F071A873A00A6A6A6,
+				C65E7A40071A873A00A6A6A6,
+				C65E7A41071A873A00A6A6A6,
+				C65E7A42071A873A00A6A6A6,
+				C65E7A43071A873A00A6A6A6,
+				C65E7A44071A873A00A6A6A6,
+				C65E7A45071A873A00A6A6A6,
+				C65E7A46071A873A00A6A6A6,
+				C65E7A47071A873A00A6A6A6,
+				C65E7A48071A873A00A6A6A6,
+				C65E7A49071A873A00A6A6A6,
+				C65E7A4A071A873A00A6A6A6,
+				C65E7A4B071A873A00A6A6A6,
+				C65E7A4C071A873A00A6A6A6,
+				C65E7A4D071A873A00A6A6A6,
+				C65E7A4E071A873A00A6A6A6,
+				C65E7A4F071A873A00A6A6A6,
+				C65E7A50071A873A00A6A6A6,
+				C65E7A51071A873A00A6A6A6,
+				C65E7A52071A873A00A6A6A6,
+				C65E7A53071A873A00A6A6A6,
+				C65E7A54071A873A00A6A6A6,
+				C65E7A55071A873A00A6A6A6,
+				C65E7A56071A873A00A6A6A6,
+				C65E7A57071A873A00A6A6A6,
+				C65E7A58071A873A00A6A6A6,
+				C65E7A59071A873A00A6A6A6,
+				C65E7A5A071A873A00A6A6A6,
+				C65E7A5B071A873A00A6A6A6,
+				C65E7A5C071A873A00A6A6A6,
+				C65E7A5D071A873A00A6A6A6,
+				C65E7A5E071A873A00A6A6A6,
+				C65E7A5F071A873A00A6A6A6,
+				C65E7A7B071A875900A6A6A6,
+				C65E7A7C071A875900A6A6A6,
+				C65E7A7D071A875900A6A6A6,
+				C65E7A7E071A875900A6A6A6,
+				C65E7A7F071A875900A6A6A6,
+				C65E7A80071A875900A6A6A6,
+				C65E7A81071A875900A6A6A6,
+				C65E7A82071A875900A6A6A6,
+				C65E7A83071A875900A6A6A6,
+				C65E7A84071A875900A6A6A6,
+				C65E7A85071A875900A6A6A6,
+				C65E7A86071A875900A6A6A6,
+				C65E7A87071A875900A6A6A6,
+				C65E7A88071A875900A6A6A6,
+				C65E7A89071A875900A6A6A6,
+				C65E7A8A071A875900A6A6A6,
+				C65E7A8B071A875900A6A6A6,
+				C65E7A8C071A875900A6A6A6,
+				C65E7A8D071A875900A6A6A6,
+				C65E7A8E071A875900A6A6A6,
+				C65E7A8F071A875900A6A6A6,
+				C65E7A90071A875900A6A6A6,
+				C65E7A91071A875900A6A6A6,
+				C65E7A92071A875900A6A6A6,
+				C65E7A93071A875900A6A6A6,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1107280486CEB800E47090 = {
+			fileRef = 32CA4F630368D1EE00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107290486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090,
+				8D11072B0486CEB800E47090,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072A0486CEB800E47090 = {
+			fileRef = 29B97318FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072B0486CEB800E47090 = {
+			fileRef = 089C165CFE840E0CC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072C0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090,
+				C63127C406930F540068A9E2,
+				C63127ED0693107D0068A9E2,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072D0486CEB800E47090 = {
+			fileRef = 29B97316FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D11072E0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090,
+				C63127BA06930E940068A9E2,
+				C63127BC06930EAB0068A9E2,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072F0486CEB800E47090 = {
+			fileRef = 1058C7A1FEA54F0111CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107310486CEB800E47090 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1107320486CEB800E47090 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SpeechClient.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//C60
+//C61
+//C62
+//C63
+//C64
+		C63127B906930E940068A9E2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libceheap2.dylib;
+			path = /usr/local/lib/libceheap2.0.dylib;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C63127BA06930E940068A9E2 = {
+			fileRef = C63127B906930E940068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C63127BB06930EAB0068A9E2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libidk.dylib;
+			path = /usr/local/lib/libidk.0.dylib;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C63127BC06930EAB0068A9E2 = {
+			fileRef = C63127BB06930EAB0068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C63127C106930F540068A9E2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = EventHeap.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C63127C206930F540068A9E2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = EventHeap.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C63127C306930F540068A9E2 = {
+			fileRef = C63127C106930F540068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C63127C406930F540068A9E2 = {
+			fileRef = C63127C206930F540068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C63127EB0693107D0068A9E2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = MyController.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C63127EC0693107D0068A9E2 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = MyController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C63127ED0693107D0068A9E2 = {
+			fileRef = C63127EB0693107D0068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C63127EE0693107D0068A9E2 = {
+			fileRef = C63127EC0693107D0068A9E2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C642E7C0071564C500966FDB = {
+			children = (
+				C65E7A62071A875900A6A6A6,
+				C65E7A63071A875900A6A6A6,
+				C65E7A64071A875900A6A6A6,
+				C65E7A65071A875900A6A6A6,
+				C65E7A66071A875900A6A6A6,
+				C65E7A67071A875900A6A6A6,
+				C65E7A68071A875900A6A6A6,
+				C65E7A69071A875900A6A6A6,
+				C65E7A6A071A875900A6A6A6,
+				C65E7A6B071A875900A6A6A6,
+				C65E7A6C071A875900A6A6A6,
+				C65E7A6D071A875900A6A6A6,
+				C65E7A6E071A875900A6A6A6,
+				C65E7A6F071A875900A6A6A6,
+				C65E7A70071A875900A6A6A6,
+				C65E7A71071A875900A6A6A6,
+				C65E7A72071A875900A6A6A6,
+				C65E7A73071A875900A6A6A6,
+				C65E7A74071A875900A6A6A6,
+				C65E7A75071A875900A6A6A6,
+				C65E7A76071A875900A6A6A6,
+				C65E7A77071A875900A6A6A6,
+				C65E7A78071A875900A6A6A6,
+				C65E7A79071A875900A6A6A6,
+				C65E7A7A071A875900A6A6A6,
+				C65E79B0071A873A00A6A6A6,
+				C65E79B1071A873A00A6A6A6,
+				C65E79B2071A873A00A6A6A6,
+				C65E79B3071A873A00A6A6A6,
+				C65E79B4071A873A00A6A6A6,
+				C65E79B5071A873A00A6A6A6,
+				C65E79B6071A873A00A6A6A6,
+				C65E79B7071A873A00A6A6A6,
+				C65E79B8071A873A00A6A6A6,
+				C65E79B9071A873A00A6A6A6,
+				C65E79BA071A873A00A6A6A6,
+				C65E79BB071A873A00A6A6A6,
+				C65E79BC071A873A00A6A6A6,
+				C65E79BD071A873A00A6A6A6,
+				C65E79BE071A873A00A6A6A6,
+				C65E79BF071A873A00A6A6A6,
+				C65E79C0071A873A00A6A6A6,
+				C65E79C1071A873A00A6A6A6,
+				C65E79C2071A873A00A6A6A6,
+				C65E79C3071A873A00A6A6A6,
+				C65E79C4071A873A00A6A6A6,
+				C65E79C5071A873A00A6A6A6,
+				C65E79C6071A873A00A6A6A6,
+				C65E79C7071A873A00A6A6A6,
+				C65E79C8071A873A00A6A6A6,
+				C65E79C9071A873A00A6A6A6,
+				C65E79CA071A873A00A6A6A6,
+				C65E79CB071A873A00A6A6A6,
+				C65E79CC071A873A00A6A6A6,
+				C65E79CD071A873A00A6A6A6,
+				C65E79CE071A873A00A6A6A6,
+				C65E79CF071A873A00A6A6A6,
+				C65E79D0071A873A00A6A6A6,
+				C65E79D1071A873A00A6A6A6,
+				C65E79D2071A873A00A6A6A6,
+				C65E79D3071A873A00A6A6A6,
+				C65E79D4071A873A00A6A6A6,
+				C65E79D5071A873A00A6A6A6,
+				C65E79D6071A873A00A6A6A6,
+				C65E79D7071A873A00A6A6A6,
+				C65E79D8071A873A00A6A6A6,
+				C65E79D9071A873A00A6A6A6,
+				C65E79DA071A873A00A6A6A6,
+				C65E79DB071A873A00A6A6A6,
+				C65E79DC071A873A00A6A6A6,
+				C65E79DD071A873A00A6A6A6,
+				C65E79DE071A873A00A6A6A6,
+				C65E79DF071A873A00A6A6A6,
+				C65E79E0071A873A00A6A6A6,
+				C65E79E1071A873A00A6A6A6,
+				C65E79E2071A873A00A6A6A6,
+				C65E79E3071A873A00A6A6A6,
+				C65E79E4071A873A00A6A6A6,
+				C65E79E5071A873A00A6A6A6,
+				C65E79E6071A873A00A6A6A6,
+				C65E79E7071A873A00A6A6A6,
+				C65E79E8071A873A00A6A6A6,
+				C65E79E9071A873A00A6A6A6,
+				C65E79EA071A873A00A6A6A6,
+				C65E79EB071A873A00A6A6A6,
+				C65E79EC071A873A00A6A6A6,
+				C65E79ED071A873A00A6A6A6,
+				C65E79EE071A873A00A6A6A6,
+				C65E79EF071A873A00A6A6A6,
+				C65E79F0071A873A00A6A6A6,
+				C65E79F1071A873A00A6A6A6,
+				C65E79F2071A873A00A6A6A6,
+				C65E79F3071A873A00A6A6A6,
+				C65E79F4071A873A00A6A6A6,
+				C65E79F5071A873A00A6A6A6,
+				C65E79F6071A873A00A6A6A6,
+				C65E79F7071A873A00A6A6A6,
+				C65E79F8071A873A00A6A6A6,
+				C65E79F9071A873A00A6A6A6,
+				C65E79FA071A873A00A6A6A6,
+				C65E79FB071A873A00A6A6A6,
+				C65E79FC071A873A00A6A6A6,
+				C65E79FD071A873A00A6A6A6,
+				C65E79FE071A873A00A6A6A6,
+				C65E79FF071A873A00A6A6A6,
+				C65E7A00071A873A00A6A6A6,
+				C65E7A01071A873A00A6A6A6,
+				C65E7A02071A873A00A6A6A6,
+				C65E7A03071A873A00A6A6A6,
+				C65E7A04071A873A00A6A6A6,
+				C65E7A05071A873A00A6A6A6,
+				C65E7A06071A873A00A6A6A6,
+				C65E7A07071A873A00A6A6A6,
+			);
+			isa = PBXGroup;
+			name = Headers;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C642E7C10715651700966FDB = {
+			children = (
+				C63127BB06930EAB0068A9E2,
+				C63127B906930E940068A9E2,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C65E79B0071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ByteArrayInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B1071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ByteArrayOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B2071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ByteBufferInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B3071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ByteBufferOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B4071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteLoggingInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ByteLoggingInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B5071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_EOFException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_EOFException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B6071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_FileInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B7071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileNotFoundException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_FileNotFoundException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B8071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_FileOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79B9071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_FileUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BA071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_IByteInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BB071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_IByteOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BC071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_InterruptedIOException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_InterruptedIOException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BD071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IOException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_IOException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BE071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ITInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79BF071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStreamImpl.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ITInStreamImpl.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C0071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ITOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C1071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStreamImpl.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_ITOutStreamImpl.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C2071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_LineReader.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_LineReader.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C3071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_RealByteInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C4071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_RealByteOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C5071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TimedoutIOException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_TimedoutIOException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C6071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealInStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_TRealInStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C7071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealOutStream.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_TRealOutStream.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C8071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79C9071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_io.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CA071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_InetAddress.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_InetAddress.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CB071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NetSystemException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_NetSystemException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CC071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NoConnectionException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_NoConnectionException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CD071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_ServerSocket.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_ServerSocket.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CE071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Socket.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_Socket.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79CF071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_SocketAddress.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_SocketAddress.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D0071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D1071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_UnknownHostException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_UnknownHostException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D2071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_URLStreamUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne_URLStreamUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D3071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ne.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D4071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_readme.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_readme.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D5071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ILockable.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_ILockable.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D6071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_InterruptedException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_InterruptedException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D7071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_IRunnable.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_IRunnable.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D8071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Lockable.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Lockable.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79D9071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Locker.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Locker.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DA071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Monitor.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Monitor.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DB071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_MonitorTimedoutException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_MonitorTimedoutException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DC071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_SinglePooledThread.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_SinglePooledThread.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DD071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Thread.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Thread.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DE071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ThreadUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_ThreadUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79DF071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_TMTQueue.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_TMTQueue.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E0071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E1071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Unlocker.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th_Unlocker.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E2071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_th.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E3071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_AssertionFailedException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_AssertionFailedException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E4071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BadParameterException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_BadParameterException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E5071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Base.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_Base.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E6071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BridgeObject.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_BridgeObject.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E7071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ByteArray.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_ByteArray.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E8071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_DateStruct.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_DateStruct.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79E9071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Exception.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_Exception.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79EA071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ExceptionUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_ExceptionUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79EB071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ILogger.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_ILogger.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79EC071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_IntHashFuncs.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_IntHashFuncs.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79ED071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ITIterator.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_ITIterator.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79EE071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_LogUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_LogUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79EF071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_NullableString.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_NullableString.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F0071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Object.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_Object.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F1071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ObjectHashFuncs.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_ObjectHashFuncs.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F2071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_OutOfResourceException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_OutOfResourceException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F3071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_PermissionDeniedException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_PermissionDeniedException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F4071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RealObject.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_RealObject.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F5071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RuntimeException.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_RuntimeException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F6071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StringHashFuncs.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_StringHashFuncs.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F7071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StrUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_StrUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F8071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_SystemUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_SystemUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79F9071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TCollection.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TCollection.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FA071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TFakeHashTable.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TFakeHashTable.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FB071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TProxyObject.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TProxyObject.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FC071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TQueue.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TQueue.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FD071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Tracer.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_Tracer.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FE071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TRealIterator.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TRealIterator.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E79FF071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TSharedPtr.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TSharedPtr.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A00071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TUnsharedPtr.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TUnsharedPtr.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A01071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TVectorUtil.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_TVectorUtil.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A02071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A03071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_ut.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A04071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_xm_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A05071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_XmlWriter.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_xm_XmlWriter.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A06071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk_xm.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A07071A873A00A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk.h;
+			path = /Users/danspe/Applications/iros/cpp/idk/include/public/idk.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A08071A873A00A6A6A6 = {
+			fileRef = C65E79B0071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A09071A873A00A6A6A6 = {
+			fileRef = C65E79B1071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0A071A873A00A6A6A6 = {
+			fileRef = C65E79B2071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0B071A873A00A6A6A6 = {
+			fileRef = C65E79B3071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0C071A873A00A6A6A6 = {
+			fileRef = C65E79B4071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0D071A873A00A6A6A6 = {
+			fileRef = C65E79B5071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0E071A873A00A6A6A6 = {
+			fileRef = C65E79B6071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A0F071A873A00A6A6A6 = {
+			fileRef = C65E79B7071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A10071A873A00A6A6A6 = {
+			fileRef = C65E79B8071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A11071A873A00A6A6A6 = {
+			fileRef = C65E79B9071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A12071A873A00A6A6A6 = {
+			fileRef = C65E79BA071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A13071A873A00A6A6A6 = {
+			fileRef = C65E79BB071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A14071A873A00A6A6A6 = {
+			fileRef = C65E79BC071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A15071A873A00A6A6A6 = {
+			fileRef = C65E79BD071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A16071A873A00A6A6A6 = {
+			fileRef = C65E79BE071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A17071A873A00A6A6A6 = {
+			fileRef = C65E79BF071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A18071A873A00A6A6A6 = {
+			fileRef = C65E79C0071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A19071A873A00A6A6A6 = {
+			fileRef = C65E79C1071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1A071A873A00A6A6A6 = {
+			fileRef = C65E79C2071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1B071A873A00A6A6A6 = {
+			fileRef = C65E79C3071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1C071A873A00A6A6A6 = {
+			fileRef = C65E79C4071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1D071A873A00A6A6A6 = {
+			fileRef = C65E79C5071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1E071A873A00A6A6A6 = {
+			fileRef = C65E79C6071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A1F071A873A00A6A6A6 = {
+			fileRef = C65E79C7071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A20071A873A00A6A6A6 = {
+			fileRef = C65E79C8071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A21071A873A00A6A6A6 = {
+			fileRef = C65E79C9071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A22071A873A00A6A6A6 = {
+			fileRef = C65E79CA071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A23071A873A00A6A6A6 = {
+			fileRef = C65E79CB071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A24071A873A00A6A6A6 = {
+			fileRef = C65E79CC071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A25071A873A00A6A6A6 = {
+			fileRef = C65E79CD071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A26071A873A00A6A6A6 = {
+			fileRef = C65E79CE071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A27071A873A00A6A6A6 = {
+			fileRef = C65E79CF071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A28071A873A00A6A6A6 = {
+			fileRef = C65E79D0071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A29071A873A00A6A6A6 = {
+			fileRef = C65E79D1071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2A071A873A00A6A6A6 = {
+			fileRef = C65E79D2071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2B071A873A00A6A6A6 = {
+			fileRef = C65E79D3071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2C071A873A00A6A6A6 = {
+			fileRef = C65E79D4071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2D071A873A00A6A6A6 = {
+			fileRef = C65E79D5071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2E071A873A00A6A6A6 = {
+			fileRef = C65E79D6071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A2F071A873A00A6A6A6 = {
+			fileRef = C65E79D7071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A30071A873A00A6A6A6 = {
+			fileRef = C65E79D8071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A31071A873A00A6A6A6 = {
+			fileRef = C65E79D9071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A32071A873A00A6A6A6 = {
+			fileRef = C65E79DA071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A33071A873A00A6A6A6 = {
+			fileRef = C65E79DB071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A34071A873A00A6A6A6 = {
+			fileRef = C65E79DC071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A35071A873A00A6A6A6 = {
+			fileRef = C65E79DD071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A36071A873A00A6A6A6 = {
+			fileRef = C65E79DE071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A37071A873A00A6A6A6 = {
+			fileRef = C65E79DF071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A38071A873A00A6A6A6 = {
+			fileRef = C65E79E0071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A39071A873A00A6A6A6 = {
+			fileRef = C65E79E1071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3A071A873A00A6A6A6 = {
+			fileRef = C65E79E2071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3B071A873A00A6A6A6 = {
+			fileRef = C65E79E3071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3C071A873A00A6A6A6 = {
+			fileRef = C65E79E4071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3D071A873A00A6A6A6 = {
+			fileRef = C65E79E5071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3E071A873A00A6A6A6 = {
+			fileRef = C65E79E6071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A3F071A873A00A6A6A6 = {
+			fileRef = C65E79E7071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A40071A873A00A6A6A6 = {
+			fileRef = C65E79E8071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A41071A873A00A6A6A6 = {
+			fileRef = C65E79E9071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A42071A873A00A6A6A6 = {
+			fileRef = C65E79EA071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A43071A873A00A6A6A6 = {
+			fileRef = C65E79EB071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A44071A873A00A6A6A6 = {
+			fileRef = C65E79EC071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A45071A873A00A6A6A6 = {
+			fileRef = C65E79ED071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A46071A873A00A6A6A6 = {
+			fileRef = C65E79EE071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A47071A873A00A6A6A6 = {
+			fileRef = C65E79EF071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A48071A873A00A6A6A6 = {
+			fileRef = C65E79F0071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A49071A873A00A6A6A6 = {
+			fileRef = C65E79F1071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4A071A873A00A6A6A6 = {
+			fileRef = C65E79F2071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4B071A873A00A6A6A6 = {
+			fileRef = C65E79F3071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4C071A873A00A6A6A6 = {
+			fileRef = C65E79F4071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4D071A873A00A6A6A6 = {
+			fileRef = C65E79F5071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4E071A873A00A6A6A6 = {
+			fileRef = C65E79F6071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A4F071A873A00A6A6A6 = {
+			fileRef = C65E79F7071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A50071A873A00A6A6A6 = {
+			fileRef = C65E79F8071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A51071A873A00A6A6A6 = {
+			fileRef = C65E79F9071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A52071A873A00A6A6A6 = {
+			fileRef = C65E79FA071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A53071A873A00A6A6A6 = {
+			fileRef = C65E79FB071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A54071A873A00A6A6A6 = {
+			fileRef = C65E79FC071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A55071A873A00A6A6A6 = {
+			fileRef = C65E79FD071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A56071A873A00A6A6A6 = {
+			fileRef = C65E79FE071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A57071A873A00A6A6A6 = {
+			fileRef = C65E79FF071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A58071A873A00A6A6A6 = {
+			fileRef = C65E7A00071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A59071A873A00A6A6A6 = {
+			fileRef = C65E7A01071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5A071A873A00A6A6A6 = {
+			fileRef = C65E7A02071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5B071A873A00A6A6A6 = {
+			fileRef = C65E7A03071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5C071A873A00A6A6A6 = {
+			fileRef = C65E7A04071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5D071A873A00A6A6A6 = {
+			fileRef = C65E7A05071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5E071A873A00A6A6A6 = {
+			fileRef = C65E7A06071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A5F071A873A00A6A6A6 = {
+			fileRef = C65E7A07071A873A00A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A62071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Base.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Base.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A63071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ConnectErrorHandler.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_ConnectErrorHandler.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A64071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Connection.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Connection.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A65071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Consts.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Consts.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A66071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ErrorContext.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_ErrorContext.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A67071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Event.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Event.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A68071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventCollection.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventCollection.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A69071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventConsts.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventConsts.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6A071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeap.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventHeap.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6B071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapException.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventHeapException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6C071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapFactory.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventHeapFactory.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6D071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapProtocolException.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventHeapProtocolException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6E071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventRegistration.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventRegistration.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A6F071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventToXML.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_EventToXML.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A70071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Field.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Field.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A71071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldOperationException.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_FieldOperationException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A72071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldType.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_FieldType.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A73071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldValue.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_FieldValue.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A74071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_IFieldIterator.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_IFieldIterator.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A75071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_readme.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_readme.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A76071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_SerializationException.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_SerializationException.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A77071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Tracer.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Tracer.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A78071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_TracerConsts.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_TracerConsts.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A79071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Types.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2_Types.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A7A071A875900A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2.h;
+			path = /Users/danspe/Applications/iros/cpp/ceheap2/include/public/eh2.h;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C65E7A7B071A875900A6A6A6 = {
+			fileRef = C65E7A62071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A7C071A875900A6A6A6 = {
+			fileRef = C65E7A63071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A7D071A875900A6A6A6 = {
+			fileRef = C65E7A64071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A7E071A875900A6A6A6 = {
+			fileRef = C65E7A65071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A7F071A875900A6A6A6 = {
+			fileRef = C65E7A66071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A80071A875900A6A6A6 = {
+			fileRef = C65E7A67071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A81071A875900A6A6A6 = {
+			fileRef = C65E7A68071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A82071A875900A6A6A6 = {
+			fileRef = C65E7A69071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A83071A875900A6A6A6 = {
+			fileRef = C65E7A6A071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A84071A875900A6A6A6 = {
+			fileRef = C65E7A6B071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A85071A875900A6A6A6 = {
+			fileRef = C65E7A6C071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A86071A875900A6A6A6 = {
+			fileRef = C65E7A6D071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A87071A875900A6A6A6 = {
+			fileRef = C65E7A6E071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A88071A875900A6A6A6 = {
+			fileRef = C65E7A6F071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A89071A875900A6A6A6 = {
+			fileRef = C65E7A70071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8A071A875900A6A6A6 = {
+			fileRef = C65E7A71071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8B071A875900A6A6A6 = {
+			fileRef = C65E7A72071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8C071A875900A6A6A6 = {
+			fileRef = C65E7A73071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8D071A875900A6A6A6 = {
+			fileRef = C65E7A74071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8E071A875900A6A6A6 = {
+			fileRef = C65E7A75071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A8F071A875900A6A6A6 = {
+			fileRef = C65E7A76071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A90071A875900A6A6A6 = {
+			fileRef = C65E7A77071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A91071A875900A6A6A6 = {
+			fileRef = C65E7A78071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A92071A875900A6A6A6 = {
+			fileRef = C65E7A79071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7A93071A875900A6A6A6 = {
+			fileRef = C65E7A7A071A875900A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}

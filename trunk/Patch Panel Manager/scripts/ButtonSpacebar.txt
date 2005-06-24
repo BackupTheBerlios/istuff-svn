@@ -1,0 +1,26 @@
+program ButtonSpacebar;
+
+event Button type iStuffInputEvent {
+    string Device = "Button";
+    string ID = "8-ming";
+}
+
+event SpacebarDown type PR2Input {
+    int Key = 32; 		// ASCII for spacebar
+    string Type = "KeyDown";
+    string InputSource = "iw-room2";
+}
+
+event SpacebarUp type PR2Input {
+    int Key = 32; 		// ASCII for spacebar
+    string Type = "KeyUp";
+    string InputSource = "iw-room2";
+}
+
+
+initial state Initial {
+    on Button {
+	send SpacebarDown;
+	send SpacebarUp;
+    }
+}

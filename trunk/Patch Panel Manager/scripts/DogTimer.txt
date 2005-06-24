@@ -1,0 +1,48 @@
+program DogTimer;
+
+event iDog type iStuffInputEvent {
+     string ID = "7-ming";
+     string Device = "Button";
+}
+
+event Grrr type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "grrr.wav";
+}
+
+event Woof type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "woof.mp3";
+}
+
+initial state Initial {
+	on iDog {
+		goto Shaken;
+	}
+}
+
+state Shaken {
+	on iDog {
+		send Grrr;
+		goto Pause;
+	}
+	on timer {
+		send Woof;
+		goto Initial;
+	}
+	on enter {
+		set timer 500;
+	}
+}
+
+// The Pause state allows time for the grrr sound to play,
+// because it is longer than the woof sound
+
+state Pause {
+	on enter {
+		set timer 1000;
+	}
+	on timer {
+		goto Initial;
+	}
+}

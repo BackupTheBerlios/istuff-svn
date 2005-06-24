@@ -1,0 +1,1 @@
+Unfortunately, we are unable to release the source of iPhone.SIS because we have licensed parts of the source commercially.  At least part of the source is available in open source through http://www.visualcodes.net/

@@ -1,0 +1,47 @@
+program DancePadPointer;
+
+double AMPLIFY = 0.5;
+
+event DancePadEvent type iStuffEvent {
+	string Name = "DancePad";
+}
+
+event PointerEvent type PointerEvent {
+	string PointerID = in.Name;
+	string UserID = in.Name;
+	string Button1State = "=(int)Trigger.ButtonState.Value || Thumb_Trigger.ButtonState.Value || Booster.ButtonState.Value || Eject.ButtonState.Value";
+	string Button2State = "=(int)BUTTON9.ButtonState.Value";
+	string Button3State = "=(int)BUTTON8.ButtonState.Value";
+	string Button4State = "=(int)BUTTON9.ButtonState.Value";
+	string Button5State = "=(int)BUTTON9.ButtonState.Value";
+	string Button6State = "=(int)BUTTON9.ButtonState.Value";
+	string IsButton1Changed = "=(int)Trigger.ButtonState.IsChanged || Thumb_Trigger.ButtonState.IsChanged || Booster.ButtonState.IsChanged || Eject.ButtonState.IsChanged";
+	string IsButton2Changed = "=(int)BUTTON9.ButtonState.IsChanged";
+	string IsButton3Changed = "=(int)BUTTON8.ButtonState.IsChanged";
+	string IsButton4Changed = "=(int)BUTTON9.ButtonState.IsChanged";
+	string IsButton5Changed = "=(int)BUTTON9.ButtonState.IsChanged";
+	string IsButton6Changed = "=(int)BUTTON9.ButtonState.IsChanged";
+	string LocationChanged = "=(int)X_Axis_West_East.Axis.IsChanged || Y_Axis_North_South.Axis.IsChanged";
+	string Timestamp = "=(long)EHC_Timestamp";
+	string X.IsChanged = "=(int)X_Axis_West_East.Axis.IsChanged";
+	string X.IsRelative = "=(int)X_Axis_West_East.Axis.IsRelative";
+	string X.Max = "=(double)X_Axis_West_East.Axis.Max";
+	string X.Min = "=(double)X_Axis_West_East.Axis.Min";
+	string X.MovementType = "Velocity";
+	string X.Resolution = "=(double)X_Axis_West_East.Axis.Resolution";
+	string X.Value = "=(double)global.DancePadPointer.AMPLIFY * X_Axis_West_East.Axis.Value";
+	
+	string Y.IsChanged = "=(int)Y_Axis_North_South.Axis.IsChanged";
+	string Y.IsRelative = "=(int)Y_Axis_North_South.Axis.IsRelative";
+	string Y.Max = "=(double)Y_Axis_North_South.Axis.Max";
+	string Y.Min = "=(double)Y_Axis_North_South.Axis.Min";
+	string Y.MovementType = "Velocity";
+	string Y.Resolution = "=(double)Y_Axis_North_South.Axis.Resolution";
+	string Y.Value = "=(double) global.DancePadPointer.AMPLIFY * Y_Axis_North_South.Axis.Value";
+}
+
+initial state Initial {
+    on DancePadEvent {
+        send PointerEvent;
+    }
+}

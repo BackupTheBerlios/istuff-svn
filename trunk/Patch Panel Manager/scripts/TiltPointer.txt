@@ -1,0 +1,45 @@
+program TiltPointer;
+
+double AMPLIFY = 1.0;
+
+event Tilt type iStuffEvent {
+	string Name = "Tilt";
+}
+
+event PointerEvent type PointerEvent {
+	int Button1State = 0;
+	int Button2State = 0;
+	int Button3State = 0;
+	int Button4State = 0;
+	int IsButton1Changed = 0;
+	int IsButton2Changed = 0;
+	int IsButton3Changed = 0;
+	int IsButton4Changed = 0;
+	
+	string LocationChanged = "=(int)X.Axis.IsChanged || Y.Axis.IsChanged";
+	string PointerID = "Tilt";
+	string UserID = "Tilt";
+	string Timestamp = "=(long)EHC_Timestamp";
+
+	string X.IsChanged = "=(int)X.Axis.IsChanged";
+	int X.IsRelative = 1;
+	string X.Max = "=(double)X.Axis.Max";
+	string X.Min = "=(double)X.Axis.Min";
+	string X.MovementType = "Velocity";
+	double X.Resolution = 0;
+	string X.Value = "=(double)global.TiltPointer.AMPLIFY * X.Axis.Value";
+
+	string Y.IsChanged = "=(int)Y.Axis.IsChanged";
+	int Y.IsRelative = 1;
+	string Y.Max = "=(double)Y.Axis.Max";
+	string Y.Min = "=(double)Y.Axis.Min";
+	string Y.MovementType = "Velocity";
+	double Y.Resolution = 0;
+	string Y.Value = "=(double)-global.TiltPointer.AMPLIFY * Y.Axis.Value";	
+}	
+
+initial state Initial {
+	on PointerEvent {
+		send Tilt;
+	}
+}	

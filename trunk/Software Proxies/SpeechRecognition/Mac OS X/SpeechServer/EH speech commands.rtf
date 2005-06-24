@@ -1,0 +1,62 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;\f1\fswiss\fcharset77 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19180\viewh14340\viewkind0
+\pard\tx565\tx1133\tx1700\tx2266\tx2833\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
+
+\f0\fs24 \cf0 define speech to recognize via Event Heap\
+\
+possible commands:\
+newLanguage\
+newPath\
+setActiveLanguageModel\
+countItems\
+addAlternativePhraseToLanguage\
+removeAlternativePhraseFromLanguage\
+\
+\
+\
+\
+\
+// this would create a new language model "<person>" and add N alternative phrases to it\
+command, newLanguage					// create a new language model\
+languageName, <person>\
+entries, N								// N is the number of (alternative) phrases contained in the event, each as a separate key / value field\
+phrase1, daniel\
+...\
+phraseN, daniela\
+\
+// this would add "daniel" as an alternative phrase to the language model "<person>" if it does not yet exist\
+command, addAlternativePhraseToLanguage\
+languageName, <person>\
+phrase, daniel\
+\
+// this would remove the alternative phrase "daniel" from the language model "<person>"\
+command, removeAlternativePhraseFromLanguage\
+languageName, <person>\
+phrase, daniel\
+\
+\
+// this would create a new path\
+command, newPath\
+pathName, call person...\
+entries, N\
+entry1, <call>\
+entry2, <person>\
+\
+\pard\tx565\tx1133\tx1700\tx2266\tx2832\tx3401\tx3967\tx4535\tx5102\tx5669\tx6235\tx6802\ql\qnatural
+\cf0 command, newPath\
+pathName, what date is it...\
+entries, N\
+entry1, what\
+entry2, <date>\
+entry3, is it\
+\
+\
+-----------------------------------------------------------\
+Cocoa dev central:\
+Getting started -> Foundation classes: 
+\f1\b stringByAppendingFormat
+\f0\b0  as substitute for 
+\f1\b sprintf\
+}

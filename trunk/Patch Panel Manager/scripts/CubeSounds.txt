@@ -1,0 +1,60 @@
+program CubeSounds;
+
+event CubeEvent type CubeEvent {
+
+}
+
+event PigEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "pig.wav";
+}
+
+event CatEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "cat.wav";
+}
+
+event ChirpEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "chirp.mp3";
+}
+
+event HenEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "hen.mp3";
+}
+
+event LionEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "lion.mp3";
+}
+
+event DogEvent type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = "woof.mp3";
+}
+
+initial state Initial {
+	on CubeEvent {
+		switch int (in.Side) {
+			case 0 {
+				send CatEvent;
+			}
+			case 1 {
+				send PigEvent;
+			}
+			case 2 {
+				send ChirpEvent;
+			}
+			case 3 {
+				send HenEvent;
+			}
+			case 4 {
+				send LionEvent;
+			}
+			case 5 {
+				send DogEvent;
+			}
+		}
+	}
+}

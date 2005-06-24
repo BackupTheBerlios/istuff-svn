@@ -1,0 +1,38 @@
+
+event "Dance on Pad" type iStuffEvent {
+	string Name = "DancePad";
+}
+
+event "Push Green Button" type iStuffInputEvent {
+	string ID = "8-ming";
+	string Device = "Button";
+	string {$ImageURL} = "lib/images/button-green.png";
+}
+
+event "Push Purple Button" type iStuffInputEvent {
+	string ID = "10-ming";
+	string Device = "Button";
+	string {$ImageURL} = "lib/images/button-purple.png";
+}
+
+event "Handle iDog" type iStuffInputEvent {
+	string ID = "7-ming";
+	string Device = "Button";
+	string {$ImageURL} = "lib/images/idog.png";
+}
+
+event "Turn Cube" type CubeEvent {
+	string {$ImageURL} = "lib/images/cube.png";
+}
+
+event "Slide Cork" type iStuffInputEvent {
+	string ID = "bluetooth-/dev/tty.iSlider";
+	string Device = "Slider";
+	string {$ImageURL} = "lib/images/islider.png";
+}
+
+event "Slide GUI" type iStuffInputEvent {
+	string ID = "sliderGUI";
+	string Device = "Slider";
+	string {$ImageURL} = "lib/images/SliderGUI.png";
+}

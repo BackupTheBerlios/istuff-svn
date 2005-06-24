@@ -1,0 +1,37 @@
+program iStarterToggle;
+
+string serviceName = "iPong";
+
+event ServiceTrigger type iStuffInputEvent{
+     string ID = "10-ming";
+     string Device = "Button";
+}
+
+event StartService type ControllerCommand{
+	string command = "start";
+  	string group = "direct";
+	string id = "1";
+	string service = serviceName;
+}
+
+event StopService type ControllerCommand{
+	string command = "stop";
+  	string group = "direct";
+	string id = "1";
+	string service = serviceName;
+}
+
+
+initial state ServiceOff{
+    on ServiceTrigger{
+	send StartService;
+	goto ServiceOn;
+    }
+}
+
+state ServiceOn{
+    on ServiceTrigger{
+	send StopService;
+	goto ServiceOff;
+    }
+}

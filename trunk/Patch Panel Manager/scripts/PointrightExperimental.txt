@@ -1,0 +1,75 @@
+program PointRight;
+
+int SCREEN1_MIN_X = 1;
+int SCREEN1_MAX_X = 640;
+int SCREEN2_MIN_X = 1;
+int SCREEN2_MAX_X = 640;
+int SCREEN2_MIN_Y = 1;
+int SCREEN3_MIN_X = 1;
+int SCREEN4_MAX_Y = 480;
+
+string currentScreen = "Screen1";
+
+event ClientMinimizeX type ClientMinimizeX {
+    // something
+}
+event ClientMinimizeY type ClientMinimizeY {
+    // something
+}
+event ClientMaximizeX type ClientMaximizeX { 
+    // something
+}
+
+event ClientMaximizeY type ClientMaximizeY { 
+    // something
+}
+
+event MyPointerEvent type PointerEvent {
+	string DeviceName = "TicoPointer";
+}
+
+event MyPointRightEvent type PointRight {
+	int X = in.X;
+	int Y = in.Y;
+        string Screen = currentScreen;
+}
+
+state Screen1 {
+	on enter {
+		currentScreen = "Screen1";
+	}
+	on MyPointerEvent {
+		if (in.X > SCREEN1_MAX_X) {
+			send ClientMinimizeX;
+			goto Screen2;
+		}
+	}
+}
+
+initial state Screen2 {
+	on enter {
+		currentScreen = "Screen2";
+	}
+	on MyPointerEvent {
+		if (in.X > SCREEN2_MAX_X) {
+			send ClientMinimizeX;
+			goto Screen3;
+		} else if (in.X < SCREEN2_MIN_X) {
+			send ClientMaximizeX;
+			goto Screen1;
+		}
+	}
+}
+
+state Screen3 {
+	on enter {
+		currentScreen = "TableScreen";
+	}
+
+	on MyPointerEvent{
+		if( in.X < SCREEN3_MIN_X ){
+			send ClientMaximizeX;
+			goto Screen2;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+program MacallyPointer;
+
+double AMPLIFY = 1.0;
+
+event Input type iStuffEvent {
+	string Name = "Macally";
+}
+
+event PointerEvent type PointerEvent {
+	double X.Value = "=(double)global.MacallyPointer.AMPLIFY * in.X_Axis.Axis.Value";
+;
+	//double X.Delta = in.X_Axis.Axis.Delta;
+	double X.Min = in.X_Axis.Axis.Min;
+	double X.Max = in.X_Axis.Axis.Max;
+	string X.MovementType = "Velocity";
+	int X.IsRelative = 0;
+	
+	string Y.Value = "=(double)global.MacallyPointer.AMPLIFY * in.Y_Axis.Axis.Value";
+	//double Y.Delta = in.Y_Axis.Axis.Delta;
+	double Y.Min = in.Y_Axis.Axis.Min;
+	double Y.Max = in.Y_Axis.Axis.Max;
+	string Y.MovementType = "Velocity";
+	int Y.IsRelative = 0;
+
+	string PointerID = in.Name;
+	int Button1State = in.Button_1.ButtonState.Value;
+	int Button2State = in.Button_2.ButtonState.Value;
+	int Button3State = in.Button_3.ButtonState.Value;
+
+	int IsButton1Changed = 0;
+	int IsButton2Changed = 0;
+	int IsButton3Changed = 0;
+
+	long Timestamp = in.EHC_Timestamp;
+}
+
+initial state Initial {
+	on Input {
+        	send PointerEvent;
+    	}
+}

@@ -1,0 +1,1 @@
+java -cp c:\iwork\lib\iRos.jar;..\commapi\comm.jar;..\BlueSentry;. cube iw-room2.stanford.edu COM4 

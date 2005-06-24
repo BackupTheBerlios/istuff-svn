@@ -1,0 +1,69 @@
+event "Launch App" type AppleScript {
+	string Target = ${Computer Hostname};
+	string App = ${Application Name};
+	string script = =(String)"tell app \"" + out.App + "\" to activate";
+	string {$ImageURL} = "lib/images/scriptformat.jpg";
+}
+
+//event "Focus On" type AppleScript {
+//	string Target = ${Target Hostname};
+//	string App = ${App Name};
+//	string script = =(String)"tell app \"System Events\" to set visible of (every process whose visible is true and name is not \" + out.App + ") to false";
+//}
+
+event "Quit App" type AppleScript {
+	string Target = ${Computer Hostname};
+	string App = ${Application Name};
+	string script = =(String)"tell app \"" + out.App + "\" to quit";
+	string {$ImageURL} = "lib/images/scriptformat.jpg";
+}
+
+event "Play iTunes" type AppleScript {
+	string Target = ${Computer Hostname};
+	string script = tell app "iTunes" to play;
+	string {$ImageURL} = "lib/images/play.png";
+}
+
+event "Pause iTunes" type AppleScript {
+	string Target = ${Computer Hostname};
+	string script = tell app "iTunes" to stop;
+	string {$ImageURL} = "lib/images/pause.png";
+}	
+
+//event "iTunes Random Track"
+
+event "Volume" type AppleScript {
+	string Target = ${Target Hostname};
+	string App = ${Target App};
+	string Volume = ${Volume %};
+	string script = =(String) 
+"tell app \"" + out.App + "\"
+	set the sound volume to " + out.Volume + " 
+end tell";
+}
+	
+event "Launch iPong" type ControllerCommand {
+	string command = "start";
+  	string group = "direct";
+	string id = "1";
+	string service = "iPong";
+	string {$ImageURL} = "lib/images/ipong.png";
+}
+
+event "Quit iPong" type ControllerCommand {
+	string command = "stop";
+  	string group = "direct";
+	string id = "1";
+	string service = "iPong";
+	string {$ImageURL} = "lib/images/ipong.png";
+}
+
+event "Play Sound" type AudioEvent {
+	string AudioCommand = "Play";
+	string Name = ${Sound Name};
+	string {$ImageURL} = "lib/images/audio.png";
+}
+
+event "Toggle Light" type LightToggleEvent {
+	string {$ImageURL} = "lib/images/light.png";
+}

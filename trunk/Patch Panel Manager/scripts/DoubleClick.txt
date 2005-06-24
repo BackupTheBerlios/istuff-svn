@@ -1,0 +1,35 @@
+program DoubleClick;
+
+int doubleClicksDone = 0;
+
+event Input type ClickInput {
+	int ButtonState = 1;
+}
+
+
+event DoubleClick type DoubleClickEvent {
+	int DoubleClicksDone = doubleClicksDone;
+	string Message = "Hello world!";
+}
+
+
+initial state Initial {
+	on Input {
+		goto OneClickDone;
+	}
+}
+
+state OneClickDone {
+	on enter {
+		set timer 500;
+	}
+	on Input {
+		doubleClicksDone = doubleClicksDone + 1;
+		send DoubleClick;
+		goto Initial;
+	}
+	on timer {	
+		// Timed out
+		goto Initial;
+	}
+}

@@ -1,0 +1,44 @@
+program WingmanPointer;
+
+double ANALOG_AMPLIFY = 0.7;
+double HAT_SWITCH_AMPLIFY = 0.7;
+
+event Wingman type iStuffEvent {
+    string Name = "Wingman";
+}
+
+event PointerEvent type PointerEvent {
+	string Button1State = "=(int)Trigger.ButtonState.Value || Button_2.ButtonState.Value || Button_3.ButtonState.Value";
+	string Button2State = "=(int)Button_4.ButtonState.Value || Button_5.ButtonState.Value || Button_6.ButtonState.Value";
+	string Button3State = "=(int)Button_7.ButtonState.Value || Button_8.ButtonState.Value";
+	string Button4State = "=(int)Button_9.ButtonState.Value || Button_10.ButtonState.Value";
+	string IsButton1Changed = "=(int)Trigger.ButtonState.IsChanged || Button_2.ButtonState.IsChanged || Button_3.ButtonState.IsChanged";
+	string IsButton2Changed = "=(int)Button_4.ButtonState.IsChanged || Button_5.ButtonState.IsChanged || Button_6.ButtonState.IsChanged";
+	string IsButton3Changed = "=(int)Button_7.ButtonState.IsChanged|| Button_8.ButtonState.IsChanged";
+	string IsButton4Changed = "=(int)Button_9.ButtonState.IsChanged || Button_10.ButtonState.IsChanged";
+	string LocationChanged = "=(int)out.X.IsChanged || out.Y.IsChanged";
+	string PointerID = in.Name;
+	string UserID = in.Name;
+	long Timestamp = in.EHC_Timestamp;
+	string X.IsChanged = "=(int)X_axis.Axis.IsChanged || Hat_Switch.IsChanged";
+	string X.IsRelative = "=(int)X_axis.Axis.IsRelative";
+	string X.Max = "=(double)X_axis.Axis.Max";
+	string X.Min = "=(double)X_axis.Axis.Min";
+	string X.MovementType = "=(string)X_axis.Axis.MovementType";
+	string X.Resolution = "=(double)X_axis.Axis.Resolution";
+	string X.Value = "=(double)(global.WingmanPointer.ANALOG_AMPLIFY * X_axis.Axis.Value) - (global.WingmanPointer.HAT_SWITCH_AMPLIFY * Hat_Switch.X.Value)";
+	string Y.IsChanged = "=(int)Y_axis.Axis.IsChanged || Hat_Switch.IsChanged";
+	string Y.IsRelative = "=(int)Y_axis.Axis.IsRelative";
+	string Y.Max = "=(double)Y_axis.Axis.Max";
+	string Y.Min = "=(double)Y_axis.Axis.Min";
+	string Y.MovementType = "=(string)Y_axis.Axis.MovementType";
+	string Y.Resolution = "=(double)Y_axis.Axis.Resolution";
+	string Y.Value = "=(double)=-(global.WingmanPointer.ANALOG_AMPLIFY - Y_axis.Axis.Value) - (global.WingmanPointer.HAT_SWITCH_AMPLIFY * Hat_Switch.X.Value)";
+
+}
+
+initial state Initial {
+    on PointerEvent {
+        send PointerEvent;
+    }
+}

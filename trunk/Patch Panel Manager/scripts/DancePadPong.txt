@@ -1,0 +1,20 @@
+program DancePadPong;
+
+double PADDLE_AMPLIFY = 0.7;
+string PADDLE_SIDE = "Right";
+
+event DancePadEvent type iStuffEvent {
+    string Name = "DancePad";
+}
+
+event iPongEvent type iPongEvent {
+    string iPongEventType = "SetPaddleVelocity";
+    double Velocity = in.Y_Axis_North_South.Axis.Value * PADDLE_AMPLIFY;
+    string Side = PADDLE_SIDE;
+}
+
+initial state Initial {
+    on DancePadEvent {
+        send iPongEvent;
+    }
+}

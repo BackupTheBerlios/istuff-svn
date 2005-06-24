@@ -1,0 +1,29 @@
+program MacallyPong;
+
+double AMPLIFY = 2.0;
+int rightPaddlePos = 300;
+int INCREMENT = 40;
+
+event Input type iStuffEvent {
+    string Name = "Macally";
+}
+
+event RightPaddle type iPongEvent {
+    string iPongEventType = "MovePaddle";
+    int YLoc = rightPaddlePos;
+    string Side = "Right";
+}
+
+event LeftPaddle type iPongEvent {
+    string iPongEventType = "SetPaddleVelocity";
+    double Velocity = in.Y_Axis.Axis.Value * AMPLIFY ;
+    string Side = "Left";
+}
+
+initial state Initial {
+	on Input {
+        rightPaddlePos = rightPaddlePos - (in.Hat_Switch.Y.Value * INCREMENT );
+        send RightPaddle;
+        send LeftPaddle;
+    }
+}

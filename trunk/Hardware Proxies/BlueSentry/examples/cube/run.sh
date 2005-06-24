@@ -1,0 +1,1 @@
+java -cp ../BlueSentry:../../../java/dist/iROS.jar:. cube localhost /dev/tty.iCube

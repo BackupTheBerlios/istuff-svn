@@ -1,0 +1,20 @@
+program DancePadPongAbsolute;
+
+int PADDLE_INCREMENT = 20;
+string PADDLE_SIDE = "Right";
+
+event DancePadEvent type iStuffEvent {
+    string Name = "DancePad";
+}
+
+event iPongEvent type iPongEvent {
+    string iPongEventType = "MovePaddleRelative";
+    int Delta = in.Y_Axis_North_South.Axis.Value * PADDLE_INCREMENT;
+    string Side = PADDLE_SIDE;
+}
+
+initial state Initial {
+    on DancePadEvent {
+        send iPongEvent;
+    }
+}
