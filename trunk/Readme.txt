@@ -27,3 +27,4 @@ Version 1.3
 Version 1.4
 - Fixed bug in x10 code
 - fixed gnu make files to statically link the idk / ceheap2 libraries to prevent the need for installation of dynamic libraries. 
+- fixed serious bug with Patch Panel scripts using empty strings ("")
