@@ -15,7 +15,7 @@ public class BlueSentry implements Runnable, SerialPortEventListener, CommPortOw
     boolean DEBUG = false;
 
     private final int BUF_SIZE = 1024;
-    private final int MAX_CHANNELS = 8;
+    public final static int MAX_CHANNELS = 8;
     private final int RECONNECT_TIMEOUT = 5000;
 	
     // Constants for BlueSentry Commands
