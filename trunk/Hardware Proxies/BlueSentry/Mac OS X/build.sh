@@ -1,1 +1,1 @@
-javac BlueSentry.java
+javac ../BlueSentry.java -d ../

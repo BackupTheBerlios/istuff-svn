@@ -1,1 +1,1 @@
-javac -classpath ..\commapi\comm.jar *.java
+javac -classpath ..\commapi\comm.jar ..\*.java -d ..\
