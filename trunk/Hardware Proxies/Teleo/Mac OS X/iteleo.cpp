@@ -35,6 +35,7 @@ static TMioPwm  *pPwmoutArray[MAX_TELEO_PWMOUT];
 static TMioDout *pDoutArray[MAX_TELEO_DOUT];
 static eh2_EventHeap *pEventHeap;
 static char clientName[BUFFER_SIZE];
+static staticVal;
 
 // local function declarations
 bool InitEventHeap(const char *serverName);
@@ -73,6 +74,7 @@ int main(int argc, char *argv[])
    char serverName[BUFFER_SIZE] = "localhost";
    char usbDevice[BUFFER_SIZE] = "";
    bool isAinActive[MAX_TELEO_AIN];
+   staticVal=1;
    
    //initialize clientName to hostname
    gethostname(clientName, BUFFER_SIZE);
@@ -218,18 +220,19 @@ bool InitTeleo(const char *usbDevice, const bool *isAinActive, const bool *isDin
 
    // Digital input devices
    for (int i = 0; i < MAX_TELEO_DIN; i++)
-   {
+   { 
       if (isDinActive[i])
-      {
+      {  
          TMioDin_Create(pDeviceManager, NULL, 0, NULL, &pDinArray[i]);
+		 cout << "TMioDin is created"<<endl;
          if (!pDinArray[i])
          {
-		    cerr << "Failed TMioDin_Create" << endl;
+		    cerr << "Failed TMioDin_Create \n";
 			return false;
          }
-         TMioDin_sampleRateSet(pDinArray[i], 1);
-         TMioDin_invertCallbackSet(pDinArray[i], DinValueUpdate);
-      }
+         TMioDin_sampleRateSet(pDinArray[i], 50);
+		 TMioDin_valueCallbackSet(pDinArray[i], DinValueUpdate);
+           			 }
    }
    
    // Pulse width modulated output devices
@@ -385,9 +388,10 @@ TeleoError AinValueUpdate(TMioAin* pAin, float value)
 }
 
 TeleoError DinValueUpdate(TMioDin* pDin, bool value)
-{
-   int i;
-   for (i = 0; i < MAX_TELEO_AIN; i++)
+{   
+  if(value != staticVal){
+     int i;
+   for (i = 0; i < MAX_TELEO_DIN; i++)
    {
       if (pDinArray[i] == pDin)
       {
@@ -395,15 +399,17 @@ TeleoError DinValueUpdate(TMioDin* pDin, bool value)
       }
    }
    assert(i < MAX_TELEO_DIN);
+   //if the value has not been changed don"t send anything
+ 
    cout << "Sending digital input [" << i << "]: " << (value ? 1 : 0) << endl << flush;
-   
+   staticVal=value;
    // create and place event on event heap
    eh2_EventPtr pEvent = eh2_Event::cs_create(EHEAP_DEVICE_DIN_STR);
    pEvent->setPostValueInt(EHEAP_DEVICE_ID_STR, i);
    pEvent->setPostValueInt(EHEAP_DEVICE_VALUE_STR, (value ? 1 : 0));
    pEvent->setPostValueString(EHEAP_CLIENT_NAME_STR,clientName);
    pEventHeap->putEvent(pEvent);
-
+}
    return TELEO_OK;
 }
 
