@@ -35,7 +35,8 @@ static TMioPwm  *pPwmoutArray[MAX_TELEO_PWMOUT];
 static TMioDout *pDoutArray[MAX_TELEO_DOUT];
 static eh2_EventHeap *pEventHeap;
 static char clientName[BUFFER_SIZE];
-static staticVal;
+static float staticValA;
+static bool staticValD;
 
 // local function declarations
 bool InitEventHeap(const char *serverName);
@@ -74,7 +75,8 @@ int main(int argc, char *argv[])
    char serverName[BUFFER_SIZE] = "localhost";
    char usbDevice[BUFFER_SIZE] = "";
    bool isAinActive[MAX_TELEO_AIN];
-   staticVal=1;
+   staticValD=1;
+   staticValA=0;
    
    //initialize clientName to hostname
    gethostname(clientName, BUFFER_SIZE);
@@ -195,7 +197,7 @@ bool InitTeleo(const char *usbDevice, const bool *isAinActive, const bool *isDin
    if (TeleoEasy_Init(usbDevice, TI_USB, &pDeviceManager ) != TELEO_OK)
    {
 	  TeleoError errCode = TeleoEasy_Init(usbDevice, TI_USB, &pDeviceManager );
-      cerr << "Failed TeleoEasy_Init " << usbDevice << endl;
+       cerr << "Failed TeleoEasy_Init " << usbDevice << " with errorcode " << errCode << endl;
       return false;
    }
    
@@ -366,6 +368,7 @@ bool ParseArgs(char *argv[], int argc, char *serverName, char *clientName, char 
 
 TeleoError AinValueUpdate(TMioAin* pAin, float value)
 {
+    if(value != staticValA){
    int i;
    for (i = 0; i < MAX_TELEO_AIN; i++)
    {
@@ -376,20 +379,20 @@ TeleoError AinValueUpdate(TMioAin* pAin, float value)
    }
    assert(i < MAX_TELEO_AIN);
    cout << "Sending analog input [" << i << "]: " << value << endl << flush;
-
+    staticValA=value;
    // create and place event on event heap
    eh2_EventPtr pEvent = eh2_Event::cs_create(EHEAP_DEVICE_AIN_STR);
    pEvent->setPostValueInt(EHEAP_DEVICE_ID_STR, i);
    pEvent->setPostValueFloat(EHEAP_DEVICE_VALUE_STR, value / 1023.0);
    pEvent->setPostValueString(EHEAP_CLIENT_NAME_STR,clientName);
    pEventHeap->putEvent(pEvent);
-
+}
    return TELEO_OK;
 }
 
 TeleoError DinValueUpdate(TMioDin* pDin, bool value)
 {   
-  if(value != staticVal){
+  if(value != staticValD){
      int i;
    for (i = 0; i < MAX_TELEO_DIN; i++)
    {
@@ -402,7 +405,7 @@ TeleoError DinValueUpdate(TMioDin* pDin, bool value)
    //if the value has not been changed don"t send anything
  
    cout << "Sending digital input [" << i << "]: " << (value ? 1 : 0) << endl << flush;
-   staticVal=value;
+   staticValD=value;
    // create and place event on event heap
    eh2_EventPtr pEvent = eh2_Event::cs_create(EHEAP_DEVICE_DIN_STR);
    pEvent->setPostValueInt(EHEAP_DEVICE_ID_STR, i);
@@ -423,7 +426,7 @@ TeleoError PwmoutValueUpdate(TMioPwm* pPwmout, float duty)
          break;
       }
    }
-   assert(i < MAX_TELEO_AIN);
+   assert(i < MAX_TELEO_PWMOUT);
    cout << "Received pwm output [" << i << "]: " << duty << endl << flush;
 
    return TELEO_OK;
@@ -439,7 +442,7 @@ TeleoError DoutValueUpdate(TMioDout* pDout, bool value)
          break;
       }
    }
-   assert(i < MAX_TELEO_AIN);
+   assert(i < MAX_TELEO_DOUT);
    cout << "Received digital output [" << i << "]: " << (value ? 1 : 0) << endl << flush;
    
    return TELEO_OK;
@@ -485,7 +488,6 @@ void EventListener::run()
 				if(strcmp(eventPtr->getEventType(), EHEAP_DEVICE_PWMOUT_STR) == 0){
 					int port = eventPtr->getPostValueInt(EHEAP_DEVICE_ID_STR);
 					float value = eventPtr->getPostValueFloat(EHEAP_DEVICE_VALUE_STR);
-					//*** TODO: check bounds of value using TMioPwm_dutyMaxGet
 					TMioPwm_dutySet(pPwmoutArray[port], value);						
 				}
 				else if(strcmp(eventPtr->getEventType(), EHEAP_DEVICE_DOUT_STR) == 0){
