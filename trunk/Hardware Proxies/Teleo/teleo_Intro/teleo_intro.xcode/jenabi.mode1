@@ -242,13 +242,17 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>08FB7794FE84155DC02AAC07</string>
+								<string>BD2C413E089FC75B006BD78D</string>
+								<string>0249A662FF388D9811CA2CEA</string>
+								<string>1AB674ADFE9D54B511CA2CBB</string>
+								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>14</integer>
+									<integer>13</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -267,7 +271,7 @@
 							<real>254</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>127 87 1482 913 0 0 1920 1178 </string>
+						<string>181 165 1482 913 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -302,7 +306,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1205, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>127 87 1482 913 0 0 1920 1178 </string>
+								<string>181 165 1482 913 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -322,7 +326,7 @@
 								<key>Frame</key>
 								<string>{{0, 7}, {1205, 864}}</string>
 								<key>RubberWindowFrame</key>
-								<string>127 87 1482 913 0 0 1920 1178 </string>
+								<string>181 165 1482 913 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -346,9 +350,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BD739C1108A3B950000891DF</string>
+				<string>BD4383BD08BC7B4B0013B80B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>BD739C1208A3B950000891DF</string>
+				<string>BD4383BE08BC7B4B0013B80B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -376,10 +380,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/jenabi/sandbox/istuff/trunk/Hardware Proxies/Teleo/teleo_Intro/Teleo_Intro.xcode</string>
+		<string>BD17DCF2089FB41C00D0405A</string>
+		<string>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/jenabi/sandbox/istuff/trunk/Hardware Proxies/Teleo/teleo_Intro/teleo_intro.xcode</string>
 	</array>
 	<key>WindowString</key>
-	<string>127 87 1482 913 0 0 1920 1178 </string>
+	<string>181 165 1482 913 0 0 1920 1178 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -468,7 +473,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BD17DCF2089FB41C00D0405A</string>
-				<string>BD739B5A08A3B3C1000891DF</string>
+				<string>BD43841508BC7BBB0013B80B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -771,8 +776,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {365, 167}}</string>
-											<string>{{0, 176}, {365, 267}}</string>
+											<string>{{0, 0}, {491, 167}}</string>
+											<string>{{0, 176}, {491, 267}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -821,9 +826,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>BD739C1308A3B950000891DF</string>
+				<string>BD4383BF08BC7B4B0013B80B</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>BD739C1408A3B950000891DF</string>
+				<string>BD4383C008BC7B4B0013B80B</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
