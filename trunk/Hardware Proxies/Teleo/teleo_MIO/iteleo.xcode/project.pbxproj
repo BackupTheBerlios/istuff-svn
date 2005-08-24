@@ -13,8 +13,8 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = "../../../cpp/idk/include/public ../../../cpp/ceheap2/include/public ./teleo/include";
-				LIBRARY_SEARCH_PATHS = "./teleo/lib/ /usr/local/lib/";
+				HEADER_SEARCH_PATHS = "../../../cpp/idk/include/public ../../../cpp/ceheap2/include/public ../teleo/include";
+				LIBRARY_SEARCH_PATHS = ../teleo/lib/;
 				OPTIMIZATION_CFLAGS = "-O0";
 				ZERO_LINK = NO;
 			};
@@ -42,8 +42,8 @@
 //024
 		0249A662FF388D9811CA2CEA = {
 			children = (
+				BDA7578D08BC751000A2CFE5,
 				0249A663FF388D9811CA2CEA,
-				34BCF2F00823F8B900BF3456,
 				34BCF2EC0823F81A00BF3456,
 				34BCF2ED0823F81A00BF3456,
 			);
@@ -72,491 +72,52 @@
 //074
 		077B3DFB0619E56A006A00F6 = {
 			children = (
-				077B3E000619E592006A00F6,
-				077B3E010619E592006A00F6,
-				077B3E020619E592006A00F6,
-				077B3E030619E592006A00F6,
-				077B3E040619E592006A00F6,
-				077B3E050619E592006A00F6,
-				077B3E060619E592006A00F6,
-				077B3E070619E592006A00F6,
-				077B3E080619E592006A00F6,
-				077B3E090619E592006A00F6,
-				077B3E0A0619E592006A00F6,
-				077B3E0B0619E592006A00F6,
-				077B3E0C0619E592006A00F6,
-				077B3E0D0619E592006A00F6,
-				077B3E0E0619E592006A00F6,
-				077B3E0F0619E592006A00F6,
-				077B3E100619E592006A00F6,
-				077B3E110619E592006A00F6,
-				077B3E120619E592006A00F6,
-				077B3E130619E592006A00F6,
-				077B3E140619E592006A00F6,
-				077B3E150619E592006A00F6,
-				077B3E160619E592006A00F6,
-				077B3E170619E592006A00F6,
-				077B3E180619E592006A00F6,
-				077B3E190619E592006A00F6,
-				077B3E1A0619E592006A00F6,
-				077B3E1B0619E592006A00F6,
-				077B3E1C0619E592006A00F6,
-				077B3E1D0619E592006A00F6,
+				BDA7578F08BC756800A2CFE5,
+				BDA7579008BC756800A2CFE5,
+				BDA7579108BC756800A2CFE5,
+				BDA7579208BC756800A2CFE5,
+				BDA7579308BC756800A2CFE5,
+				BDA7579408BC756800A2CFE5,
+				BDA7579508BC756800A2CFE5,
+				BDA7579608BC756800A2CFE5,
+				BDA7579708BC756800A2CFE5,
+				BDA7579808BC756800A2CFE5,
+				BDA7579908BC756800A2CFE5,
+				BDA7579A08BC756800A2CFE5,
+				BDA7579B08BC756800A2CFE5,
+				BDA7579C08BC756800A2CFE5,
+				BDA7579D08BC756800A2CFE5,
+				BDA7579E08BC756800A2CFE5,
+				BDA7579F08BC756800A2CFE5,
+				BDA757A008BC756800A2CFE5,
+				BDA757A108BC756800A2CFE5,
+				BDA757A208BC756800A2CFE5,
+				BDA757A308BC756800A2CFE5,
+				BDA757A408BC756800A2CFE5,
+				BDA757A508BC756800A2CFE5,
+				BDA757A608BC756800A2CFE5,
+				BDA757A708BC756800A2CFE5,
+				BDA757A808BC756800A2CFE5,
+				BDA757A908BC756800A2CFE5,
+				BDA757AA08BC756800A2CFE5,
+				BDA757AB08BC756800A2CFE5,
+				BDA757AC08BC756800A2CFE5,
+				BDA757AD08BC756800A2CFE5,
+				BDA757AE08BC756800A2CFE5,
+				BDA757AF08BC756800A2CFE5,
+				BDA757B008BC756800A2CFE5,
+				BDA757B108BC756800A2CFE5,
+				BDA757B208BC756800A2CFE5,
+				BDA757B308BC756800A2CFE5,
+				BDA757B408BC756800A2CFE5,
+				BDA757B508BC756800A2CFE5,
+				BDA757B608BC756800A2CFE5,
+				BDA757B708BC756800A2CFE5,
 			);
 			isa = PBXGroup;
 			name = teleo;
 			refType = 4;
 			sourceTree = "<group>";
-		};
-		077B3E000619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoChannel.h;
-			path = teleo/include/TeleoChannel.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E010619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoData.h;
-			path = teleo/include/TeleoData.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E020619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoDevice.h;
-			path = teleo/include/TeleoDevice.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E030619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoDeviceManager.h;
-			path = teleo/include/TeleoDeviceManager.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E040619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoDout.h;
-			path = teleo/include/TeleoDout.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E050619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoDoutDefines.h;
-			path = teleo/include/TeleoDoutDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E060619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoEasy.h;
-			path = teleo/include/TeleoEasy.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E070619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoError.h;
-			path = teleo/include/TeleoError.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E080619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoInterface.h;
-			path = teleo/include/TeleoInterface.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E090619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioAin.h;
-			path = teleo/include/TeleoMioAin.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0A0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioAinDefines.h;
-			path = teleo/include/TeleoMioAinDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0B0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioDin.h;
-			path = teleo/include/TeleoMioDin.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0C0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioDinDefines.h;
-			path = teleo/include/TeleoMioDinDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0D0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioDout.h;
-			path = teleo/include/TeleoMioDout.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0E0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioDoutDefines.h;
-			path = teleo/include/TeleoMioDoutDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E0F0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioPwm.h;
-			path = teleo/include/TeleoMioPwm.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E100619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMioPwmDefines.h;
-			path = teleo/include/TeleoMioPwmDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E110619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoModule.h;
-			path = teleo/include/TeleoModule.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E120619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoModuleDefines.h;
-			path = teleo/include/TeleoModuleDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E130619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoModuleManager.h;
-			path = teleo/include/TeleoModuleManager.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E140619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMotor.h;
-			path = teleo/include/TeleoMotor.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E150619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoMotorDefines.h;
-			path = teleo/include/TeleoMotorDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E160619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoServo.h;
-			path = teleo/include/TeleoServo.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E170619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoServoDefines.h;
-			path = teleo/include/TeleoServoDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E180619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoStepper.h;
-			path = teleo/include/TeleoStepper.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E190619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoStepperDefines.h;
-			path = teleo/include/TeleoStepperDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E1A0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoTypes.h;
-			path = teleo/include/TeleoTypes.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E1B0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoUtil.h;
-			path = teleo/include/TeleoUtil.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E1C0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoVideoMove.h;
-			path = teleo/include/TeleoVideoMove.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E1D0619E592006A00F6 = {
-			fileEncoding = 30;
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.c.h;
-			name = TeleoVideoMoveDefines.h;
-			path = teleo/include/TeleoVideoMoveDefines.h;
-			refType = 2;
-			sourceTree = SOURCE_ROOT;
-		};
-		077B3E1E0619E592006A00F6 = {
-			fileRef = 077B3E000619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E1F0619E592006A00F6 = {
-			fileRef = 077B3E010619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E200619E592006A00F6 = {
-			fileRef = 077B3E020619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E210619E592006A00F6 = {
-			fileRef = 077B3E030619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E220619E592006A00F6 = {
-			fileRef = 077B3E040619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E230619E592006A00F6 = {
-			fileRef = 077B3E050619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E240619E592006A00F6 = {
-			fileRef = 077B3E060619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E250619E592006A00F6 = {
-			fileRef = 077B3E070619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E260619E592006A00F6 = {
-			fileRef = 077B3E080619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E270619E592006A00F6 = {
-			fileRef = 077B3E090619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E280619E592006A00F6 = {
-			fileRef = 077B3E0A0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E290619E592006A00F6 = {
-			fileRef = 077B3E0B0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2A0619E592006A00F6 = {
-			fileRef = 077B3E0C0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2B0619E592006A00F6 = {
-			fileRef = 077B3E0D0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2C0619E592006A00F6 = {
-			fileRef = 077B3E0E0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2D0619E592006A00F6 = {
-			fileRef = 077B3E0F0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2E0619E592006A00F6 = {
-			fileRef = 077B3E100619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E2F0619E592006A00F6 = {
-			fileRef = 077B3E110619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E300619E592006A00F6 = {
-			fileRef = 077B3E120619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E310619E592006A00F6 = {
-			fileRef = 077B3E130619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E320619E592006A00F6 = {
-			fileRef = 077B3E140619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E330619E592006A00F6 = {
-			fileRef = 077B3E150619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E340619E592006A00F6 = {
-			fileRef = 077B3E160619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E350619E592006A00F6 = {
-			fileRef = 077B3E170619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E360619E592006A00F6 = {
-			fileRef = 077B3E180619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E370619E592006A00F6 = {
-			fileRef = 077B3E190619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E380619E592006A00F6 = {
-			fileRef = 077B3E1A0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E390619E592006A00F6 = {
-			fileRef = 077B3E1B0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E3A0619E592006A00F6 = {
-			fileRef = 077B3E1C0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		077B3E3B0619E592006A00F6 = {
-			fileRef = 077B3E1D0619E592006A00F6;
-			isa = PBXBuildFile;
-			settings = {
-			};
 		};
 		07C7A222061991A1003C9B08 = {
 			fileEncoding = 30;
@@ -807,20 +368,6 @@
 			settings = {
 			};
 		};
-		34BCF2F00823F8B900BF3456 = {
-			isa = PBXFileReference;
-			lastKnownFileType = archive.ar;
-			name = libteleolib_macos_x.a;
-			path = teleo/lib/libteleolib_macos_x.a;
-			refType = 4;
-			sourceTree = "<group>";
-		};
-		34BCF2F10823F8B900BF3456 = {
-			fileRef = 34BCF2F00823F8B900BF3456;
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
 //340
 //341
 //342
@@ -851,7 +398,7 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = "$(HOME)/bin";
-				LIBRARY_SEARCH_PATHS = "../../../Event Heap/ceheap2/Mac OS X/lib \"/Users/ballagas/Documents/sandbox/iStuff/iStuff Framework v1.2beta/Hardware Proxies/Teleo/Mac OS X/teleo/lib\"";
+				LIBRARY_SEARCH_PATHS = "../../../Event Heap/ceheap2/Mac OS X/lib ../teleo/lib";
 				OTHER_CFLAGS = "-D_REENTRANT -Dunix";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = iteleo;
@@ -869,36 +416,6 @@
 		8DD76F630486A84900D96B5E = {
 			buildActionMask = 2147483647;
 			files = (
-				077B3E1E0619E592006A00F6,
-				077B3E1F0619E592006A00F6,
-				077B3E200619E592006A00F6,
-				077B3E210619E592006A00F6,
-				077B3E220619E592006A00F6,
-				077B3E230619E592006A00F6,
-				077B3E240619E592006A00F6,
-				077B3E250619E592006A00F6,
-				077B3E260619E592006A00F6,
-				077B3E270619E592006A00F6,
-				077B3E280619E592006A00F6,
-				077B3E290619E592006A00F6,
-				077B3E2A0619E592006A00F6,
-				077B3E2B0619E592006A00F6,
-				077B3E2C0619E592006A00F6,
-				077B3E2D0619E592006A00F6,
-				077B3E2E0619E592006A00F6,
-				077B3E2F0619E592006A00F6,
-				077B3E300619E592006A00F6,
-				077B3E310619E592006A00F6,
-				077B3E320619E592006A00F6,
-				077B3E330619E592006A00F6,
-				077B3E340619E592006A00F6,
-				077B3E350619E592006A00F6,
-				077B3E360619E592006A00F6,
-				077B3E370619E592006A00F6,
-				077B3E380619E592006A00F6,
-				077B3E390619E592006A00F6,
-				077B3E3A0619E592006A00F6,
-				077B3E3B0619E592006A00F6,
 				BDB9D9D208705EE100E3D504,
 				BDB9D9D308705EE100E3D504,
 				BDB9D9D408705EE100E3D504,
@@ -1012,6 +529,47 @@
 				BDB9DA4008705EE100E3D504,
 				BDB9DA4108705EE100E3D504,
 				BDB9DA4208705EE100E3D504,
+				BDA757B808BC756800A2CFE5,
+				BDA757B908BC756800A2CFE5,
+				BDA757BA08BC756800A2CFE5,
+				BDA757BB08BC756800A2CFE5,
+				BDA757BC08BC756800A2CFE5,
+				BDA757BD08BC756800A2CFE5,
+				BDA757BE08BC756800A2CFE5,
+				BDA757BF08BC756800A2CFE5,
+				BDA757C008BC756800A2CFE5,
+				BDA757C108BC756800A2CFE5,
+				BDA757C208BC756800A2CFE5,
+				BDA757C308BC756800A2CFE5,
+				BDA757C408BC756800A2CFE5,
+				BDA757C508BC756800A2CFE5,
+				BDA757C608BC756800A2CFE5,
+				BDA757C708BC756800A2CFE5,
+				BDA757C808BC756800A2CFE5,
+				BDA757C908BC756800A2CFE5,
+				BDA757CA08BC756800A2CFE5,
+				BDA757CB08BC756800A2CFE5,
+				BDA757CC08BC756800A2CFE5,
+				BDA757CD08BC756800A2CFE5,
+				BDA757CE08BC756800A2CFE5,
+				BDA757CF08BC756800A2CFE5,
+				BDA757D008BC756800A2CFE5,
+				BDA757D108BC756800A2CFE5,
+				BDA757D208BC756800A2CFE5,
+				BDA757D308BC756800A2CFE5,
+				BDA757D408BC756800A2CFE5,
+				BDA757D508BC756800A2CFE5,
+				BDA757D608BC756800A2CFE5,
+				BDA757D708BC756800A2CFE5,
+				BDA757D808BC756800A2CFE5,
+				BDA757D908BC756800A2CFE5,
+				BDA757DA08BC756800A2CFE5,
+				BDA757DB08BC756800A2CFE5,
+				BDA757DC08BC756800A2CFE5,
+				BDA757DD08BC756800A2CFE5,
+				BDA757DE08BC756800A2CFE5,
+				BDA757DF08BC756800A2CFE5,
+				BDA757E008BC756800A2CFE5,
 			);
 			isa = PBXHeadersBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1030,7 +588,7 @@
 				8DD76F670486A84900D96B5E,
 				34BCF2EE0823F81A00BF3456,
 				34BCF2EF0823F81A00BF3456,
-				34BCF2F10823F8B900BF3456,
+				BDA7578E08BC751000A2CFE5,
 			);
 			isa = PBXFrameworksBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1082,6 +640,635 @@
 //BD2
 //BD3
 //BD4
+		BDA7578D08BC751000A2CFE5 = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.ar;
+			name = libteleolib_macos_x.a;
+			path = ../teleo/lib/libteleolib_macos_x.a;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7578E08BC751000A2CFE5 = {
+			fileRef = BDA7578D08BC751000A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA7578F08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoAin.h;
+			path = ../teleo/include/TeleoAin.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579008BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoAinDefines.h;
+			path = ../teleo/include/TeleoAinDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579108BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoChannel.h;
+			path = ../teleo/include/TeleoChannel.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579208BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoData.h;
+			path = ../teleo/include/TeleoData.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579308BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoDevice.h;
+			path = ../teleo/include/TeleoDevice.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579408BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoDeviceManager.h;
+			path = ../teleo/include/TeleoDeviceManager.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579508BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoDout.h;
+			path = ../teleo/include/TeleoDout.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579608BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoDoutDefines.h;
+			path = ../teleo/include/TeleoDoutDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579708BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoEasy.h;
+			path = ../teleo/include/TeleoEasy.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579808BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoError.h;
+			path = ../teleo/include/TeleoError.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579908BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoInterface.h;
+			path = ../teleo/include/TeleoInterface.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579A08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroAin.h;
+			path = ../teleo/include/TeleoIntroAin.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579B08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroAinDefines.h;
+			path = ../teleo/include/TeleoIntroAinDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579C08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroDin.h;
+			path = ../teleo/include/TeleoIntroDin.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579D08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroDinDefines.h;
+			path = ../teleo/include/TeleoIntroDinDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579E08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroDout.h;
+			path = ../teleo/include/TeleoIntroDout.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA7579F08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroDoutDefines.h;
+			path = ../teleo/include/TeleoIntroDoutDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A008BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroPwm.h;
+			path = ../teleo/include/TeleoIntroPwm.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A108BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoIntroPwmDefines.h;
+			path = ../teleo/include/TeleoIntroPwmDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A208BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioAin.h;
+			path = ../teleo/include/TeleoMioAin.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A308BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioAinDefines.h;
+			path = ../teleo/include/TeleoMioAinDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A408BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioDin.h;
+			path = ../teleo/include/TeleoMioDin.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A508BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioDinDefines.h;
+			path = ../teleo/include/TeleoMioDinDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A608BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioDout.h;
+			path = ../teleo/include/TeleoMioDout.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A708BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioDoutDefines.h;
+			path = ../teleo/include/TeleoMioDoutDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A808BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioPwm.h;
+			path = ../teleo/include/TeleoMioPwm.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757A908BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMioPwmDefines.h;
+			path = ../teleo/include/TeleoMioPwmDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AA08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoModule.h;
+			path = ../teleo/include/TeleoModule.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AB08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoModuleDefines.h;
+			path = ../teleo/include/TeleoModuleDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AC08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoModuleManager.h;
+			path = ../teleo/include/TeleoModuleManager.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AD08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMotor.h;
+			path = ../teleo/include/TeleoMotor.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AE08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoMotorDefines.h;
+			path = ../teleo/include/TeleoMotorDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757AF08BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoServo.h;
+			path = ../teleo/include/TeleoServo.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B008BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoServoDefines.h;
+			path = ../teleo/include/TeleoServoDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B108BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoStepper.h;
+			path = ../teleo/include/TeleoStepper.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B208BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoStepperDefines.h;
+			path = ../teleo/include/TeleoStepperDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B308BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoStepperLow.h;
+			path = ../teleo/include/TeleoStepperLow.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B408BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoTypes.h;
+			path = ../teleo/include/TeleoTypes.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B508BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoUtil.h;
+			path = ../teleo/include/TeleoUtil.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B608BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoVideoMove.h;
+			path = ../teleo/include/TeleoVideoMove.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B708BC756800A2CFE5 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TeleoVideoMoveDefines.h;
+			path = ../teleo/include/TeleoVideoMoveDefines.h;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		BDA757B808BC756800A2CFE5 = {
+			fileRef = BDA7578F08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757B908BC756800A2CFE5 = {
+			fileRef = BDA7579008BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BA08BC756800A2CFE5 = {
+			fileRef = BDA7579108BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BB08BC756800A2CFE5 = {
+			fileRef = BDA7579208BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BC08BC756800A2CFE5 = {
+			fileRef = BDA7579308BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BD08BC756800A2CFE5 = {
+			fileRef = BDA7579408BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BE08BC756800A2CFE5 = {
+			fileRef = BDA7579508BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757BF08BC756800A2CFE5 = {
+			fileRef = BDA7579608BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C008BC756800A2CFE5 = {
+			fileRef = BDA7579708BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C108BC756800A2CFE5 = {
+			fileRef = BDA7579808BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C208BC756800A2CFE5 = {
+			fileRef = BDA7579908BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C308BC756800A2CFE5 = {
+			fileRef = BDA7579A08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C408BC756800A2CFE5 = {
+			fileRef = BDA7579B08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C508BC756800A2CFE5 = {
+			fileRef = BDA7579C08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C608BC756800A2CFE5 = {
+			fileRef = BDA7579D08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C708BC756800A2CFE5 = {
+			fileRef = BDA7579E08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C808BC756800A2CFE5 = {
+			fileRef = BDA7579F08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757C908BC756800A2CFE5 = {
+			fileRef = BDA757A008BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CA08BC756800A2CFE5 = {
+			fileRef = BDA757A108BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CB08BC756800A2CFE5 = {
+			fileRef = BDA757A208BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CC08BC756800A2CFE5 = {
+			fileRef = BDA757A308BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CD08BC756800A2CFE5 = {
+			fileRef = BDA757A408BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CE08BC756800A2CFE5 = {
+			fileRef = BDA757A508BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757CF08BC756800A2CFE5 = {
+			fileRef = BDA757A608BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D008BC756800A2CFE5 = {
+			fileRef = BDA757A708BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D108BC756800A2CFE5 = {
+			fileRef = BDA757A808BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D208BC756800A2CFE5 = {
+			fileRef = BDA757A908BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D308BC756800A2CFE5 = {
+			fileRef = BDA757AA08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D408BC756800A2CFE5 = {
+			fileRef = BDA757AB08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D508BC756800A2CFE5 = {
+			fileRef = BDA757AC08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D608BC756800A2CFE5 = {
+			fileRef = BDA757AD08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D708BC756800A2CFE5 = {
+			fileRef = BDA757AE08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D808BC756800A2CFE5 = {
+			fileRef = BDA757AF08BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757D908BC756800A2CFE5 = {
+			fileRef = BDA757B008BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DA08BC756800A2CFE5 = {
+			fileRef = BDA757B108BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DB08BC756800A2CFE5 = {
+			fileRef = BDA757B208BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DC08BC756800A2CFE5 = {
+			fileRef = BDA757B308BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DD08BC756800A2CFE5 = {
+			fileRef = BDA757B408BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DE08BC756800A2CFE5 = {
+			fileRef = BDA757B508BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757DF08BC756800A2CFE5 = {
+			fileRef = BDA757B608BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		BDA757E008BC756800A2CFE5 = {
+			fileRef = BDA757B708BC756800A2CFE5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		BDB9D96108705EE000E3D504 = {
 			fileEncoding = 30;
 			isa = PBXFileReference;
