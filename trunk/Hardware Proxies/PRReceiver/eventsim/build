@@ -1,0 +1,4 @@
+javac -d class src/EventSim.java
+javah -d src -classpath class EventSim
+cc -I/System/Library/Frameworks/JavaVM.framework/Headers -o obj/EventSim.o -c src/EventSim.c
+cc -bundle -framework ApplicationServices -o lib/libEventSim.jnilib obj/EventSim.o
