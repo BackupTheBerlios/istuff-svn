@@ -1,0 +1,8 @@
+Note this only works for Apple powerbooks equipped with a motion sensor
+
+Step 1:
+Download the AMStracker.dmg from http://www.kernelthread.com/software/ams/
+Place the amstracker command-line utility here in this directory.
+
+Step 2:
+from the command line type "sh run.sh"
