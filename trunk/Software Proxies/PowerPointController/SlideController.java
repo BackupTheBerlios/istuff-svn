@@ -29,10 +29,14 @@ public class SlideController{
 						Runtime rt = Runtime.getRuntime();
 						if( System.getProperty("os.name").equals("Mac OS X") )
 						{
+							// if http, first wget
+							// then file is local
 							rt.exec("open " + url);
 						} 
 						else if (System.getProperty("os.name").equals("Windows XP"))
 						{
+							// if http, print an error message that says wget must be installed, see readme
+							// try wget
 							rt.exec("explorer " + url);
 						}
 						/*synchronized(this)
@@ -60,6 +64,10 @@ public class SlideController{
 	public void prevSlide(){
 		robot.keyPress(KeyEvent.VK_P);
 		robot.keyRelease(KeyEvent.VK_P);
+	}
+	
+	public void gotoSlide(int num){
+		//robot.keyPress(
 	}
 	
 	public static void main(String argv[]){
