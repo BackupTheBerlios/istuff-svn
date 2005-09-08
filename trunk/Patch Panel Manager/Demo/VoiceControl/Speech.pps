@@ -1,0 +1,87 @@
+group MyGroup;
+
+int slideNum = 0;
+
+//Use the name of the machines running EHtoAS here
+string currentHostname = "holiday";
+string currentScript = "";
+//For the switch statement
+string word="";
+int slideNum = 0;
+int slideMax = 100;
+int tenBasedSlides = 0;
+int oneBasedSlides = 0;
+
+event SpeechEvent type SpeechServer{
+}
+
+event SSLanguage type SpeechClient{
+	string newLanguage = "Powerpointlang";
+	int entries = 3;
+	string phrase1 ="forward";
+	string phrase2 ="back";
+	string phrase3 ="start";
+}
+
+event ActivateLanguage type SpeechClient{
+	string activateLanguage = "Powerpointlang";
+}
+
+event ASEvent type AppleScript{
+	string Target = global.currentHostname, FORMAL;
+	string script = global.currentScript, FORMAL;
+}
+
+
+//waiting for 1st device selection
+initial state start{
+
+	on enter {
+		send SSLanguage;
+		send ActivateLanguage;
+	}
+		
+	on SpeechEvent {
+		word = in.Powerpointlang;
+	
+		switch string (word){
+			case "start"{
+				currentScript = "tell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke \"s\" using <openbrace>control down, shift down<closebrace>\nend tell\nsay \"open\"";
+				//currentScript = "tell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke \"n\" using command down\nend tell\nsay \"start presentation\"";
+			}
+			case "forward"{
+				//if (slideNum +1 <= slideMax){
+				//	slideNum = slideNum  +1;
+				//}
+				//tenBasedSlides = slideNum / 10;
+				//oneBasedSlides = slideNum % 10;
+
+				//currentScript= currentScript + "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
+				//if ( tenbasedSlides > 0){
+				//	currentScript = "\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlides +"\"";
+				//}
+				//currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke \"" +  oneBasedSlides +"\"";
+				//currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke return";				
+				//currentScript = currentScript +  "\nend tell";
+				currentScript = "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke space\nend tell";
+			}
+			case "back"{
+				//if (sliedNum -1 > 0) {
+				//	slideNum = slideNum -1;
+				//}
+				//tenBasedSlides = slideNum / 10;
+				//oneBasedSlides = slideNum % 10;
+
+				//currentScript= currentScript + "say \"backward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
+				//if ( tenbasedSlides > 0){
+				//	currentScript = "\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlides +"\"";
+				//}
+				//currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke \"" +  oneBasedSlides +"\"";
+				//currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke return";				
+				//currentScript = currentScript +  "\nend tell";
+				currentScript = "say \"backward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke (ASCII character 8) \nend tell";
+			}
+		}
+		send ASEvent;
+	}
+}
