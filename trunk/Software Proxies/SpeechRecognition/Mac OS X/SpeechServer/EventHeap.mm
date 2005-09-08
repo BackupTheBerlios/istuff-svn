@@ -57,7 +57,11 @@
 	//eh2_Tracer::cs_setTracer (tracePtr);
 	
 	// create the Event Heap instance for the client
-	[self createEventHeap:NULL atServer:@"localhost" atPort:4535];
+	NSString *serverName = @"127.0.0.1";
+	if ([[[NSProcessInfo processInfo] arguments] count] >= 2){
+		serverName = [[[NSProcessInfo processInfo] arguments] objectAtIndex:1];
+	}
+	[self createEventHeap:NULL atServer:serverName atPort:4535];
 	
 	// activate the thread that receives EH events
 	[self startReceivingEvents];
