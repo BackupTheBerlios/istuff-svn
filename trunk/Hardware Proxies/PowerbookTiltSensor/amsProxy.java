@@ -18,7 +18,7 @@ public class amsProxy{
 		while( true ){
 			int numBytes = in.read(buffer, 0, DATA_LENGTH);
 			if(numBytes > 0){
-				Event e = new Event("Powerbook Tilt");
+				Event e = new Event("Powerbook_Tilt");
 				String data = new String(buffer);
 				System.out.println(data);
 				System.out.flush();
