@@ -5,12 +5,20 @@ int slideNum = 0;
 //Use the name of the machines running EHtoAS here
 string currentHostname = "holiday";
 string currentScript = "";
+string anotherHostname = "fitzgerald";
+string anotherScript = "";
+
+
 //For the switch statement
 string word="";
 int slideNum=1;
 int slideMax=200;
 int tenBasedSlides = 0;
 int oneBasedSlides = 0;
+int tenBasedSlidesP1 = 0;
+int oneBasedSlidesP1 = 0;
+
+
 
 event SpeechEvent type SpeechServer{
 }
@@ -32,6 +40,12 @@ event ASEvent type AppleScript{
 	string script = global.currentScript, FORMAL;
 }
 
+event AnotherASEvent type AppleScript{
+	string Target = global.anotherHostname, FORMAL;
+	string script = global.anotherScript, FORMAL;
+}
+
+
 
 //waiting for 1st device selection
 initial state start{
@@ -49,6 +63,7 @@ initial state start{
 			case "start"{
 				currentScript = "tell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke \"s\" using <openbrace>control down, shift down<closebrace>\nend tell\nsay \"open\"";
 				//currentScript = "tell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke \"n\" using command down\nend tell\nsay \"start presentation\"";
+				anotherScript = currentScript;
 			}
 			case "forward"{
 				if (slideNum+1 <= slideMax){
@@ -56,15 +71,28 @@ initial state start{
 				}
 				tenBasedSlides = slideNum / 10;
 				oneBasedSlides = slideNum % 10;
+				tenBasedSlidesP1 = (slideNum + 1)/ 10;
+				oneBasedSlidesP1 = (slideNum + 1) % 10;
+
 
 				currentScript= "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
 				if ( tenBasedSlides > 0){
-					currentScript = "\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlides +"\"";
+					currentScript = currentScript + "\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlides +"\"";
 				}
 				currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke \"" +  oneBasedSlides +"\"";
 				currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke return";				
 				currentScript = currentScript +  "\nend tell";
+				
+				//Forward using space	
 				//currentScript = "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke space\nend tell";
+
+				anotherScript= "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
+				if ( tenBasedSlidesP1 > 0){
+					anotherScript = anotherScript +"\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlidesP1 +"\"";
+				}
+				anotherScript = anotherScript +  "\n\ttell application \"System Events\" to keystroke \"" +  oneBasedSlidesP1 +"\"";
+				anotherScript = anotherScript +  "\n\ttell application \"System Events\" to keystroke return";				
+				anotherScript = anotherScript +  "\nend tell";
 			}
 			case "back"{
 				if (slideNum-1 > 0) {
@@ -72,6 +100,9 @@ initial state start{
 				}
 				tenBasedSlides = slideNum / 10;
 				oneBasedSlides = slideNum % 10;
+				tenBasedSlidesP1 = (slideNum + 1)/ 10;
+				oneBasedSlidesP1 = (slideNum + 1) % 10;
+
 
 				currentScript=  "say \"backward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
 				if ( tenBasedSlides > 0){
@@ -81,8 +112,17 @@ initial state start{
 				currentScript = currentScript +  "\n\ttell application \"System Events\" to keystroke return";				
 				currentScript = currentScript +  "\nend tell";
 				//currentScript = "say \"backward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate\n\ttell application \"System Events\" to keystroke (ASCII character 8) \nend tell";
+
+				anotherScript= "say \"forward\"\ntell application \"Microsoft PowerPoint\"\n\tactivate";	
+				if ( tenBasedSlidesP1 > 0){
+					anotherScript = anotherScript +"\n\ttell application \"System Events\" to keystroke \"" +  tenBasedSlidesP1 +"\"";
+				}
+				anotherScript = anotherScript +  "\n\ttell application \"System Events\" to keystroke \"" +  oneBasedSlidesP1 +"\"";
+				anotherScript = anotherScript +  "\n\ttell application \"System Events\" to keystroke return";				
+				anotherScript = anotherScript +  "\nend tell";
 			}
 		}
 		send ASEvent;
+		send AnotherASEvent;
 	}
 }
