@@ -51,7 +51,6 @@ event AnotherASEvent type AppleScript{
 initial state start{
 
 	on enter {
-		oneBasedSlides = 5;
 		send SSLanguage;
 		send ActivateLanguage;
 	}
