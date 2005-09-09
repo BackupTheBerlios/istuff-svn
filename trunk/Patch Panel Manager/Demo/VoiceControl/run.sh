@@ -12,9 +12,10 @@ EHEAPNAME=$1
 MACHINENAME=$2
 
 LIBPATH=../../../Lib
-if [ -e GlobalVariables.jph ]
-then  rm *.jph
-fi
+#if [ -e GlobalVariables.jph ]
+#then  rm *.jph
+#fi
+rm *.jph
 
 echo
 echo Start Apple Script Server
@@ -25,7 +26,7 @@ echo Start pacth panel
 java -server -Djava.library.path=./lib -classpath $LIBPATH/iROS.jar:$LIBPATH/jph.jar iwork.patchpanel.Intermediary $EHEAPNAME &
 echo
 echo Start speechserver
-../../Software\ Proxies/SpeechRecognition/Mac\ OS\ X/SpeechServer/build/SpeechServer.app/Contents/MacOS/SpeechServer $EHEAPNAME &
+../../../Software\ Proxies/SpeechRecognition/Mac\ OS\ X/SpeechServer/build/SpeechServer.app/Contents/MacOS/SpeechServer $EHEAPNAME &
 echo
 echo Load patch script
 java -cp $LIBPATH/iROS.jar:$LIBPATH/jph.jar iwork.patchpanel.manager.PPManager -s Speech.pps $EHEAPNAME &
