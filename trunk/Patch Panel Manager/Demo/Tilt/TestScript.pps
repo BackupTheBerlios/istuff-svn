@@ -1,0 +1,23 @@
+group TestGroup;
+
+int mx = 0;
+int my = 0;
+int mz = 0;
+
+event TiltEvent type Powerbook_Tilt{
+	int X = global.mx, FORMAL;
+	int Y = global.my, FORMAL;
+	int Z = global.mz, FORMAL;
+}
+
+
+initial state start{
+
+	on enter {
+		mx = -45;
+		send TiltEvent;
+	}
+
+}
+
+
