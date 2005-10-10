@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <!--JBuilder Library Definition File-->
+  <fullname>iStuffToolkit</fullname>
+  <class>
+    <path>[../../../Lib/iROS.jar]</path>
+  </class>
+  <lastmodsaved>1128936789312</lastmodsaved>
+</library>
