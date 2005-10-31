@@ -34,6 +34,7 @@ public class amsProxy{
 				e.addField("X", new Integer(x.trim()));
 				e.addField("Y", new Integer(y.trim()));
 				e.addField("Z", new Integer(z.trim()));
+				e.setTimeToLive(500); // 500 ms
 				eh.putEvent(e);
 				// skip the backspaces
 				numBytes = in.read(buffer, 0, 14);
