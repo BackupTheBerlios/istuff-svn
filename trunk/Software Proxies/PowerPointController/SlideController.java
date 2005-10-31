@@ -21,6 +21,11 @@ public class SlideController{
 					nextSlide();
 				} else if( command.equals("prev") ){
 					prevSlide();
+				} else if( command.equals("fullScreen") ){
+					fullScreen();
+				} else if( command.equals("gotoSlide") ){
+					Integer slideNum = (Integer)received.getPostValue("slideNum");
+					gotoSlide(slideNum.intValue());
 				} else if( command.equals("open") ){
 					String url = received.getPostValueString("url");
 					// opening the same slides twice can be problematic
@@ -39,11 +44,10 @@ public class SlideController{
 							// try wget
 							rt.exec("explorer " + url);
 						}
-						/*synchronized(this)
-						{
-							// provide time for the presentation to launch up
-							wait(4000);
-						}*/
+
+						// Provide time for the presentation to start up
+						Thread.sleep(10000);
+					
 						openSlides = url;
 					}
 				}
@@ -54,11 +58,28 @@ public class SlideController{
 	}
 
 	
+	public void fullScreen(){
+		// Keynote ALT+COMMAND+P
+		robot.keyPress(KeyEvent.VK_ALT);
+		robot.keyPress(KeyEvent.VK_META);
+		robot.keyPress(KeyEvent.VK_P);
+		robot.keyRelease(KeyEvent.VK_P);
+		robot.keyRelease(KeyEvent.VK_META);
+		robot.keyRelease(KeyEvent.VK_ALT);
+		
+		
+		// PowerPoint CTRL+SHIFT+S
+		robot.keyPress(KeyEvent.VK_SHIFT);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_S);
+		robot.keyRelease(KeyEvent.VK_S);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_SHIFT);
+	}
+	
 	public void nextSlide(){
 		robot.keyPress(KeyEvent.VK_N);
 		robot.keyRelease(KeyEvent.VK_N);
-		//robot.mousePress(InputEvent.BUTTON1_MASK);
-		//robot.mouseRelease(InputEvent.BUTTON1_MASK);
 	}
 
 	public void prevSlide(){
@@ -67,7 +88,21 @@ public class SlideController{
 	}
 	
 	public void gotoSlide(int num){
-		//robot.keyPress(
+		try{
+			String numString = Integer.toString(num);
+			char[] digits = numString.toCharArray();
+			for(int i=0; i < digits.length; i++){
+				int keyCode = KeyEvent.VK_0 + Integer.parseInt(digits[i]+"");
+				robot.keyPress(keyCode);
+				robot.keyRelease(keyCode);			
+			}
+			// sleep required for Keynote to respond correctly
+			Thread.sleep(3000);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch( Exception ex ){
+			ex.printStackTrace();
+		}
 	}
 	
 	public static void main(String argv[]){

@@ -1,1 +1,1 @@
-javac -classpath ../../Lib/iROS.jar SlideController.java
+javac -classpath ../../Lib/iROS.jar *.java
