@@ -1,5 +1,6 @@
-tell application "System Events"
-	tell process "Microsoft PowerPoint"
-		keystroke "p"
-	end tell
+say "forward"
+tell application "Microsoft PowerPoint"
+	activate
+	tell application "System Events" to keystroke "2"
+	tell application "System Events" to keystroke return
 end tell
