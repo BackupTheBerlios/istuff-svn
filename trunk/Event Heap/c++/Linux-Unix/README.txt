@@ -2,7 +2,7 @@ You can build a version of the Event Heap libraries directly
 - Download the ceheap files from iros.sourceforge.net
   Under /iros/cpp/ceheap2 and /iros/cpp/idk using the following commands:
 cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/iros login 
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/iros co -P iros/cpp/cheap2 
+cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/iros co -P iros/cpp/ceheap2 
 cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/iros co -P iros/cpp/idk 
 
 - the file /iros/cpp/ceheap2/readme.unix provides further instructions
