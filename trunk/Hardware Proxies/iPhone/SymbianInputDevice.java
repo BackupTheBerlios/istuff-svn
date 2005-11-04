@@ -24,12 +24,13 @@ interface SymbianInputListener {
 };
 
 public class SymbianInputDevice{
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 
 	private final static int OPCODE_DISCONNECT = 1;
 	private final static int OPCODE_MOTION_ACTIVE = 2;
 	private final static int OPCODE_MOTION_STOP = 3;
-	private final static int OPCODE_SEND_CODES = 4;
+	private final static int OPCODE_SELECT = 4;
+	private final static int OPCODE_SEND_CODES = 5;
 
 	private String comPort;
 	private int currentMenuId = 0;
@@ -41,6 +42,7 @@ public class SymbianInputDevice{
 		try {
 			initSerial();
 		} catch (Exception ex) {
+			System.out.println(comPort);
 			System.out.println("RFCOMM error: " + ex.toString());
 			System.exit(1);
 		}
@@ -85,6 +87,12 @@ public class SymbianInputDevice{
 						System.out.println("OPCODE_DISCONNECT");
 					break;
 
+				case OPCODE_SELECT:
+					if(DEBUG)
+						System.out.println("OPCODE_SELECT");
+					listener.clickCallback();
+					break;
+				
 				case OPCODE_MOTION_ACTIVE:
 					if(DEBUG)
 						System.out.println("OPCODE_MOTION_ACTIVE");
@@ -131,8 +139,7 @@ public class SymbianInputDevice{
 					if (n <= 0 || n > 10) {
 						currentMenuId = 0;
 						Arrays.fill(buffer, (byte)0);
-						/* no codes in picture, just send a click */
-						listener.clickCallback();
+						/* no codes in picture */
 						break;
 					}
 					read(in, buffer, 0, n*(31) + 1);
