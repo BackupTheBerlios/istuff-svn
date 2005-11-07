@@ -28,3 +28,9 @@ Version 1.4
 - Fixed bug in x10 code
 - fixed gnu make files to statically link the idk / ceheap2 libraries to prevent the need for installation of dynamic libraries. 
 - fixed serious bug with Patch Panel scripts using empty strings ("")
+- fixed Event Heap/c++/Linux/Readme file for a syntax error in the commands to download source.
+- Added support for Powerbook Tilt sensor
+- Added support for Keynote in PowerPointController and renamed it to "PresentationController"
+- Added limited initial support for Phidgets Hardware
+- Added support for Teleo Hardware
+
