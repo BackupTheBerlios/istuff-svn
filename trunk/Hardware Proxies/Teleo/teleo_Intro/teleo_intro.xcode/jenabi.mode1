@@ -243,6 +243,7 @@
 							<array>
 								<string>08FB7794FE84155DC02AAC07</string>
 								<string>BD2C413E089FC75B006BD78D</string>
+								<string>08FB7795FE84155DC02AAC07</string>
 								<string>0249A662FF388D9811CA2CEA</string>
 								<string>1AB674ADFE9D54B511CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -251,8 +252,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>13</integer>
+									<integer>5</integer>
+									<integer>4</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -350,9 +352,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BD4383BD08BC7B4B0013B80B</string>
+				<string>BD83E0D908BCA9AC006F8D39</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>BD4383BE08BC7B4B0013B80B</string>
+				<string>BD83E0DA08BCA9AC006F8D39</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -380,7 +382,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BD17DCF2089FB41C00D0405A</string>
 		<string>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/jenabi/sandbox/istuff/trunk/Hardware Proxies/Teleo/teleo_Intro/teleo_intro.xcode</string>
 	</array>
 	<key>WindowString</key>
@@ -826,9 +827,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>BD4383BF08BC7B4B0013B80B</string>
+				<string>BD83E0DB08BCA9AC006F8D39</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>BD4383C008BC7B4B0013B80B</string>
+				<string>BD83E0DC08BCA9AC006F8D39</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
