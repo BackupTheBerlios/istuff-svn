@@ -208,7 +208,7 @@
 
 /* Begin PBXFileReference section */
 		0249A663FF388D9811CA2CEA /* libstdc++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libstdc++.a"; path = "/usr/lib/libstdc++.a"; sourceTree = "<absolute>"; };
-		077B3E000619E592006A00F6 /* TeleoChannel.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TeleoChannel.h; path = teleo/include/TeleoChannel.h; sourceTree = SOURCE_ROOT; };
+		077B3E000619E592006A00F6 /* TeleoChannel.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TeleoChannel.h; path = ../teleo/include/TeleoChannel.h; sourceTree = SOURCE_ROOT; };
 		077B3E010619E592006A00F6 /* TeleoData.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TeleoData.h; path = teleo/include/TeleoData.h; sourceTree = SOURCE_ROOT; };
 		077B3E020619E592006A00F6 /* TeleoDevice.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TeleoDevice.h; path = teleo/include/TeleoDevice.h; sourceTree = SOURCE_ROOT; };
 		077B3E030619E592006A00F6 /* TeleoDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TeleoDeviceManager.h; path = teleo/include/TeleoDeviceManager.h; sourceTree = SOURCE_ROOT; };
@@ -388,17 +388,16 @@
 		077B3DFB0619E56A006A00F6 /* teleo */ = {
 			isa = PBXGroup;
 			children = (
-				077B3E000619E592006A00F6 /* TeleoChannel.h */,
-				077B3E010619E592006A00F6 /* TeleoData.h */,
 				077B3E020619E592006A00F6 /* TeleoDevice.h */,
-				077B3E030619E592006A00F6 /* TeleoDeviceManager.h */,
+				077B3E010619E592006A00F6 /* TeleoData.h */,
 				077B3E040619E592006A00F6 /* TeleoDout.h */,
+				077B3E000619E592006A00F6 /* TeleoChannel.h */,
 				077B3E050619E592006A00F6 /* TeleoDoutDefines.h */,
 				077B3E060619E592006A00F6 /* TeleoEasy.h */,
 				077B3E070619E592006A00F6 /* TeleoError.h */,
 				077B3E080619E592006A00F6 /* TeleoInterface.h */,
 				077B3E090619E592006A00F6 /* TeleoMioAin.h */,
-				077B3E0A0619E592006A00F6 /* TeleoMioAinDefines.h */,
+				077B3E030619E592006A00F6 /* TeleoDeviceManager.h */,
 				077B3E0B0619E592006A00F6 /* TeleoMioDin.h */,
 				077B3E0C0619E592006A00F6 /* TeleoMioDinDefines.h */,
 				077B3E0D0619E592006A00F6 /* TeleoMioDout.h */,
@@ -406,6 +405,7 @@
 				077B3E0F0619E592006A00F6 /* TeleoMioPwm.h */,
 				077B3E100619E592006A00F6 /* TeleoMioPwmDefines.h */,
 				077B3E110619E592006A00F6 /* TeleoModule.h */,
+				077B3E0A0619E592006A00F6 /* TeleoMioAinDefines.h */,
 				077B3E120619E592006A00F6 /* TeleoModuleDefines.h */,
 				077B3E130619E592006A00F6 /* TeleoModuleManager.h */,
 				077B3E140619E592006A00F6 /* TeleoMotor.h */,
