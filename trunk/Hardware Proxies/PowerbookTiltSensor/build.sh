@@ -1,1 +1,1 @@
-javac -classpath "../../Lib/iROS.jar" amsProxy.java
+javac -classpath "../../Lib/iROS.jar" motionProxy.java

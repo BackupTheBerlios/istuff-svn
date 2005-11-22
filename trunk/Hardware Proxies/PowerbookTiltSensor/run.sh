@@ -4,5 +4,4 @@ then
     EHEAPSERVER=$1
 fi
 echo $EHEAPSERVER
-./amstracker -u 0.2 | java -cp "../../Lib/iROS.jar":. amsProxy $EHEAPSERVER
-# -u = update rate, update every 0.2 seconds
+./motion/motion powerbook | java -cp "../../Lib/iROS.jar":. motionProxy $EHEAPSERVER
