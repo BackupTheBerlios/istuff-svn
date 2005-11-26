@@ -1,3 +1,5 @@
+For information on running and using the iStuff toolkit see "./Getting Started.pdf" in the versioned distribution.
+
 This project redistributes some code and binaries from the iROS (iros.sourceforge.net) under the OSI Artistic License.
 
 --------------------------
