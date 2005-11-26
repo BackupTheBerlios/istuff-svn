@@ -13,5 +13,6 @@
 + (void)registerNodesWithManager:(GFNodeManager*)manager
 {
 	[manager registerNodeWithClass: [PowerbookTiltSensorPatch class]];
+	[manager registerNodeWithClass: [Presentation class]];
 }
 @end

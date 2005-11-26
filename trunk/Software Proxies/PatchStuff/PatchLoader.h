@@ -9,7 +9,7 @@
 #import "GFPlugInRegistrationProtocol.h"
 	
 // List your patch class and any QC patches you use here.
-@class GFNodeManager, PowerbookTiltSensorPatch;
+@class GFNodeManager, PowerbookTiltSensorPatch, Presentation;
 	
 @interface PatchLoader : NSObject <GFPlugInRegistration>
 	
