@@ -9,8 +9,9 @@
 #import "GFPlugInRegistrationProtocol.h"
 	
 // List your patch class and any QC patches you use here.
-@class GFNodeManager, PowerbookTiltSensorPatch, Presentation;
-	
+@class GFNodeManager, PowerbookTiltSensorPatch, RFIDReaderPatch,InterfaceKitPatch,AccelerometerPatch,Presentation,
+	   ServoControllerPatch;
+
 @interface PatchLoader : NSObject <GFPlugInRegistration>
 	
 + (void)registerNodesWithManager:(GFNodeManager*)manager;

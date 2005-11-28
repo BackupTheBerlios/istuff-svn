@@ -14,5 +14,10 @@
 {
 	[manager registerNodeWithClass: [PowerbookTiltSensorPatch class]];
 	[manager registerNodeWithClass: [Presentation class]];
+	[manager registerNodeWithClass: [RFIDReaderPatch class]];
+	[manager registerNodeWithClass: [InterfaceKitPatch class]];
+	[manager registerNodeWithClass: [AccelerometerPatch class]];
+	[manager registerNodeWithClass: [Presentation class]];
+	[manager registerNodeWithClass: [ServoControllerPatch class]];
 }
 @end
