@@ -20,15 +20,15 @@
 		345C283E092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345C283D092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm */; };
 		345C2917092E4D7F001C3A3E /* PowerbookTiltSensorPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = 345C2916092E4D7F001C3A3E /* PowerbookTiltSensorPatchUI.nib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		A73D52C3093CC3A300056224 /* ServoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A73D52C2093CC3A300056224 /* ServoController.mm */; };
 		A7664F98093C90E900551EBD /* AccelerometerPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7664F96093C90E900551EBD /* AccelerometerPatchUI.nib */; };
+		A77898F1093CC25D00984411 /* ServoControllerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A77898EF093CC25D00984411 /* ServoControllerUI.m */; };
 		A789DE5E093BA99F004E467F /* AccelerometerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */; };
 		A789DE5F093BA99F004E467F /* AccelerometerPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5D093BA99F004E467F /* AccelerometerPatchUI.m */; };
 		A789DE65093BA9B4004E467F /* InterfaceKitPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE62093BA9B4004E467F /* InterfaceKitPatch.mm */; };
 		A789DE66093BA9B4004E467F /* InterfaceKitPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A789DE64093BA9B4004E467F /* InterfaceKitPatchUI.m */; };
 		A789DE6C093BAA1F004E467F /* RFIDReaderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE69093BAA1F004E467F /* RFIDReaderPatch.mm */; };
 		A789DE6D093BAA1F004E467F /* RFIDReaderPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A789DE6B093BAA1F004E467F /* RFIDReaderPatchUI.m */; };
-		A789DE73093BAAA6004E467F /* ServoControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE70093BAAA6004E467F /* ServoControllerPatch.mm */; };
-		A789DE74093BAAA6004E467F /* ServoControllerPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A789DE72093BAAA6004E467F /* ServoControllerPatchUI.m */; };
 		A789DE7B093BAABF004E467F /* AccelerometerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A789DE78093BAABF004E467F /* AccelerometerPatch.xml */; };
 		A789DE81093BAACB004E467F /* InterfaceKitPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A789DE7D093BAACB004E467F /* InterfaceKitPatch.xml */; };
 		A789DE82093BAACB004E467F /* InterfaceKitUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A789DE7F093BAACB004E467F /* InterfaceKitUI.nib */; };
@@ -205,7 +205,11 @@
 		345C2914092E4D78001C3A3E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PowerbookTiltSensorPatchUI.nib; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* qcistuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qcistuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73D52C2093CC3A300056224 /* ServoController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ServoController.mm; sourceTree = SOURCE_ROOT; };
 		A7664F97093C90E900551EBD /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/AccelerometerPatchUI.nib; sourceTree = "<group>"; };
+		A77898EC093CC25D00984411 /* ServoController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoController.h; sourceTree = SOURCE_ROOT; };
+		A77898EE093CC25D00984411 /* ServoControllerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoControllerUI.h; sourceTree = SOURCE_ROOT; };
+		A77898EF093CC25D00984411 /* ServoControllerUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ServoControllerUI.m; sourceTree = SOURCE_ROOT; };
 		A789DE5A093BA99F004E467F /* AccelerometerPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AccelerometerPatch.h; sourceTree = "<group>"; };
 		A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = AccelerometerPatch.mm; sourceTree = "<group>"; };
 		A789DE5C093BA99F004E467F /* AccelerometerPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AccelerometerPatchUI.h; sourceTree = "<group>"; };
@@ -218,10 +222,6 @@
 		A789DE69093BAA1F004E467F /* RFIDReaderPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = RFIDReaderPatch.mm; sourceTree = "<group>"; };
 		A789DE6A093BAA1F004E467F /* RFIDReaderPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = RFIDReaderPatchUI.h; sourceTree = "<group>"; };
 		A789DE6B093BAA1F004E467F /* RFIDReaderPatchUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = RFIDReaderPatchUI.m; sourceTree = "<group>"; };
-		A789DE6F093BAAA6004E467F /* ServoControllerPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoControllerPatch.h; sourceTree = "<group>"; };
-		A789DE70093BAAA6004E467F /* ServoControllerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ServoControllerPatch.mm; sourceTree = "<group>"; };
-		A789DE71093BAAA6004E467F /* ServoControllerPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoControllerPatchUI.h; sourceTree = "<group>"; };
-		A789DE72093BAAA6004E467F /* ServoControllerPatchUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ServoControllerPatchUI.m; sourceTree = "<group>"; };
 		A789DE79093BAABF004E467F /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/AccelerometerPatch.xml; sourceTree = "<group>"; };
 		A789DE7E093BAACB004E467F /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/InterfaceKitPatch.xml; sourceTree = "<group>"; };
 		A789DE80093BAACB004E467F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/InterfaceKitUI.nib; sourceTree = "<group>"; };
@@ -539,10 +539,10 @@
 		A789DE75093BAAA9004E467F /* ServoController */ = {
 			isa = PBXGroup;
 			children = (
-				A789DE6F093BAAA6004E467F /* ServoControllerPatch.h */,
-				A789DE70093BAAA6004E467F /* ServoControllerPatch.mm */,
-				A789DE71093BAAA6004E467F /* ServoControllerPatchUI.h */,
-				A789DE72093BAAA6004E467F /* ServoControllerPatchUI.m */,
+				A73D52C2093CC3A300056224 /* ServoController.mm */,
+				A77898EC093CC25D00984411 /* ServoController.h */,
+				A77898EE093CC25D00984411 /* ServoControllerUI.h */,
+				A77898EF093CC25D00984411 /* ServoControllerUI.m */,
 			);
 			name = ServoController;
 			sourceTree = "<group>";
@@ -698,8 +698,8 @@
 				A789DE66093BA9B4004E467F /* InterfaceKitPatchUI.m in Sources */,
 				A789DE6C093BAA1F004E467F /* RFIDReaderPatch.mm in Sources */,
 				A789DE6D093BAA1F004E467F /* RFIDReaderPatchUI.m in Sources */,
-				A789DE73093BAAA6004E467F /* ServoControllerPatch.mm in Sources */,
-				A789DE74093BAAA6004E467F /* ServoControllerPatchUI.m in Sources */,
+				A77898F1093CC25D00984411 /* ServoControllerUI.m in Sources */,
+				A73D52C3093CC3A300056224 /* ServoController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

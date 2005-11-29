@@ -6,17 +6,17 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "ServoControllerPatch.h"
+#import "ServoController.h"
 
-@interface ServoControllerPatch (QCInspector)
+@interface ServoController (QCInspector)
 + (Class)inspectorClassWithIdentifier:(id)fp8;
 @end
 
-@implementation ServoControllerPatch
+@implementation ServoController
 
 + (Class)inspectorClassWithIdentifier:(id)fp8
 {
-	return [ServoControllerPatchUI class];
+	return [ServoControllerUI class];
 }
 
 + (int)executionMode

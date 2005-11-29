@@ -11,7 +11,7 @@
 #import <eh2.h>
 #import <idk_io.h>
 #import "QCPatch.h"
-#import "ServoControllerPatchUI.h";
+#import "ServoControllerUI.h";
 	
 
 // possible input/output types. 
@@ -19,9 +19,9 @@
         QCBooleanPort, QCVirtualPort, QCColorPort,
         QCImagePort;
 		
-@class ServoControllerPatchUI;
+@class ServoControllerUI;
 
-@interface ServoControllerPatch : QCPatch {
+@interface ServoController : QCPatch {
 	QCBooleanPort *inputNextSlide;
     QCBooleanPort *inputPrevSlide;
 	BOOL lastInputNextSlide;
