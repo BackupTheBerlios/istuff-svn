@@ -24,6 +24,9 @@ public class AccelerometerProxy extends _IPhidgetAccelerometerEventsAdapter
 		try { System.out.println("Acceleration changed: " + Double.toString(ke.get_Acceleration()));
 		Event e = new Event("PhidgetAccelerometer");
 		e.addField("Acceleration", Double.toString(ke.get_Acceleration()));
+	// change by R. Reiners
+	// the Event Heap should not be flooded with events --> short time to live
+		e.setTimeToLive(50);
 		eheap.putEvent(e);
 		} catch( Exception ex ){ ex.printStackTrace(); }
 	
