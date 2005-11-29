@@ -206,7 +206,7 @@
 		// invoke the waitForEvent operation, keep the returned event in a smart pointer
 		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
 		
-		char* taggie = (char*) resultEventPtr->getPostValueString("Tag");
+		char* taggie = (char*) resultEventPtr->getPostValueString("TagNumber");
 		[outputTag setStringValue:[NSString stringWithCString:taggie]];
 		NSLog([NSString stringWithCString:taggie]);
 		NSLog(@"RFID received");
