@@ -33,7 +33,8 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 			    e.addField("Min", new Integer(phid.GetSensorNormalizeMinimum(sens_e.get_Index())));
 				e.addField("Max", new Integer(phid.GetSensorNormalizeMaximum(sens_e.get_Index())));
 				e.addField("Value", new Integer(sens_e.get_SensorValue()));
-			
+			// set the time to life shorter --> better performance
+			e.setTimeToLive(50);
 			eheap.putEvent(e);
 		} catch( Exception ex ){ ex.printStackTrace(); }
 	}

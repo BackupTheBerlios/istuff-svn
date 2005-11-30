@@ -23,7 +23,7 @@
 
 @interface RFIDReaderPatch : QCPatch {
 	QCStringPort *outputTag;
-
+	
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
 	

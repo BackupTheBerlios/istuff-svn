@@ -11,7 +11,7 @@
 #import <eh2.h>
 #import <idk_io.h>
 #import "QCPatch.h"
-#import "PresentationUI.h";
+#import "ThresholdUI.h";
 	
 
 // possible input/output types. 
@@ -19,27 +19,19 @@
         QCBooleanPort, QCVirtualPort, QCColorPort,
         QCImagePort;
 		
-@class PresentationUI;
+@class ThresholdUI;
 
-@interface Presentation : QCPatch {
-	QCBooleanPort *inputNextSlide;
-    QCBooleanPort *inputPrevSlide;
-	//QCBooleanPort *inputNextPresentation;
-	//QCBooleanPort *inputPrevPresentation;
-	QCBooleanPort *inputStartPresentation1;
-	QCBooleanPort *inputStartPresentation2;
-	QCStringPort *inputURL1;
-	QCStringPort *inputURL2;
+@interface Threshold : QCPatch {
+	QCNumberPort *inputInputValue;
+	QCNumberPort *inputThreshold;
+	QCNumberPort *inputChangeBy;
 	
-	BOOL lastInputNextSlide;
-	BOOL lastInputPrevSlide;
-	//BOOL lastInputNextPresentation;
-	//BOOL lastInputPrevPresentation;
- 
-	BOOL lastInputStartPresentation1;
-	BOOL lastInputStartPresentation2;
-	//BOOL url1Activated;
-	//BOOL url2Activated;
+	QCNumberPort *outputPassthrough;
+	double lastInputVal;
+	//QCBooleanPort *inputNextSlide;
+    //QCBooleanPort *inputPrevSlide;
+	//BOOL lastInputNextSlide;
+	//BOOL lastInputPrevSlide;
 
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;

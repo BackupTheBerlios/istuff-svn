@@ -33,7 +33,7 @@
 	QCNumberPort *outputAnalogReading4;
 	QCNumberPort *outputAnalogReading5;
 	QCNumberPort *outputAnalogReading6;
-		
+	QCNumberPort *outputAnalogReading7;
 		
 	//The interface kit also has 7 digital ports that can be activated or deactivated (0 or 1).
 	//To these ports other phidgets can be connected an be enabled or disabled (e.g. diods)
@@ -45,7 +45,7 @@
 	QCBooleanPort *inputDigitalIn4;
 	QCBooleanPort *inputDigitalIn5;
 	QCBooleanPort *inputDigitalIn6;
-
+	QCBooleanPort *inputDigitalIn7;
 //And there are 7 ports that read digital inputs from other phidgets
 
 	QCBooleanPort *outputDigitalReading1;
@@ -54,7 +54,7 @@
 	QCBooleanPort *outputDigitalReading4;
 	QCBooleanPort *outputDigitalReading5;
 	QCBooleanPort *outputDigitalReading6;
-
+	QCBooleanPort *outputDigitalReading7;
 	
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;

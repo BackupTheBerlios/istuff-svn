@@ -10,7 +10,7 @@
 	
 // List your patch class and any QC patches you use here.
 @class GFNodeManager, PowerbookTiltSensorPatch, RFIDReaderPatch,InterfaceKitPatch,AccelerometerPatch,Presentation,
-	   ServoController;
+	   ServoController, Threshold;
 
 @interface PatchLoader : NSObject <GFPlugInRegistration>
 	

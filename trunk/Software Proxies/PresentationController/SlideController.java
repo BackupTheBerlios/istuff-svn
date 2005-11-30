@@ -50,6 +50,13 @@ public class SlideController{
 					
 						openSlides = url;
 					}
+				} else if (command.equals("startPresentation1")) {
+					String presentationURL = received.getPostValueString("URL");
+					Runtime rt = Runtime.getRuntime();
+					//closeCurrentPresentation();
+					//Thread.sleep(2000);
+					rt.exec ("open " + presentationURL);
+					Thread.sleep(10000);
 				}
 			}
 		} catch( Exception ex ){
@@ -57,6 +64,14 @@ public class SlideController{
 		}
 	}
 
+
+	public void closeCurrentPresentation(){
+		//Keynote COMMAND+W
+		robot.keyPress(KeyEvent.VK_META);
+		robot.keyPress(KeyEvent.VK_W);
+		robot.keyRelease(KeyEvent.VK_W);
+		robot.keyRelease(KeyEvent.VK_META);
+	}
 	
 	public void fullScreen(){
 		// Keynote ALT+COMMAND+P
@@ -106,11 +121,13 @@ public class SlideController{
 	}
 	
 	public static void main(String argv[]){
-		if(argv.length == 1){
+	/*	if(argv.length == 1){
 			SlideController sc = new SlideController(argv[0]);
 		} else {
 			System.out.println("Usage: SlideController <Event Heap Name>");
-		}
+		} */
+		new SlideController("localhost");
 	}
+		
 
 }

@@ -235,6 +235,10 @@
 		case	 6:
 			 [outputAnalogReading6 setDoubleValue:portValue];
 			break;
+		case	 7:
+			 [outputAnalogReading6 setDoubleValue:portValue];
+			break;
+
 		default:NSLog(@"Index Value not valid: probably out of bounds");
 			break;
 		}

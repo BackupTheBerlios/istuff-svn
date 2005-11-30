@@ -22,13 +22,31 @@
 @class ServoControllerUI;
 
 @interface ServoController : QCPatch {
-	QCBooleanPort *inputNextSlide;
-    QCBooleanPort *inputPrevSlide;
-	BOOL lastInputNextSlide;
-	BOOL lastInputPrevSlide;
-
+	
+	QCNumberPort *inputPosMot1;
+	QCNumberPort *inputPosMot2;
+	QCNumberPort *inputPosMot3;
+	QCNumberPort *inputPosMot4;
+	
+	//These variables hold the values from one execution before
+	double oldMotor1Position;
+	double oldMotor2Position;
+	double oldMotor3Position;
+	double oldMotor4Position;
+	
+	/*the following could be used for a motor control
+	QCNumberPort *inputSpeedMot1;
+	QCNumberPort *inputSpeedMot2;
+	QCNumberPort *inputSpeedMot3;
+	QCNumberPort *inputSpeedMot4;	
+    QCNumberPort *inputAccMot1;
+    QCNumberPort *inputAccMot2;
+    QCNumberPort *inputAccMot3;
+    QCNumberPort *inputAccMot4;
+	*/
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
+
 }
 
 + (int)executionMode;

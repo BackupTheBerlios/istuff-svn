@@ -11,17 +11,7 @@
 		<key>description</key>
 		<string>A patch that reads RF Tags</string>
 		<key>name</key>
-		<string>Phidgets RF Tag Reader</string>
-	</dict>
-	<key>outputAttributes</key>
-	<dict>
-		<key>outputTag</key>
-		<dict>
-			<key>description</key>
-			<string>The Tag currently read</string>
-			<key>name</key>
-			<string>Tag</string>
-		</dict>
+		<string>Phidgets Servo Motor Controller</string>
 	</dict>
 </dict>
 </plist>

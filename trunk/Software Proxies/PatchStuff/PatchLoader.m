@@ -18,5 +18,6 @@
 	[manager registerNodeWithClass: [InterfaceKitPatch class]];
 	[manager registerNodeWithClass: [AccelerometerPatch class]];
 	[manager registerNodeWithClass: [ServoController class]];
+	[manager registerNodeWithClass: [Threshold class]];
 }
 @end

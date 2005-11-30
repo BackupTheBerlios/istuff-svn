@@ -207,9 +207,11 @@
 		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
 		
 		char* taggie = (char*) resultEventPtr->getPostValueString("TagNumber");
+
 		[outputTag setStringValue:[NSString stringWithCString:taggie]];
 		NSLog([NSString stringWithCString:taggie]);
 		NSLog(@"RFID received");
+
 		// print debug info
 		//const char* field1, *field2;
 		//field1 = resultEventPtr->getPostValueString ("SequenceNum");

@@ -1,22 +1,22 @@
 //
-//  Presentation.mm
+//  Threshold.mm
 //  QCiStuff
 //
 //  Created by Rafael Ballagas on 11/7/05.
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "Presentation.h"
+#import "Threshold.h"
 
-@interface Presentation (QCInspector)
+@interface Threshold (QCInspector)
 + (Class)inspectorClassWithIdentifier:(id)fp8;
 @end
 
-@implementation Presentation
+@implementation Threshold
 
 + (Class)inspectorClassWithIdentifier:(id)fp8
 {
-	return [PresentationUI class];
+	return [ThresholdUI class];
 }
 
 + (int)executionMode
@@ -25,7 +25,7 @@
         //  1 - Renderer, Environment - pink title bar
         //  2 - Source, Tool, Controller - blue title bar
         //  3 - Numeric, Modifier, Generator - green title bar
-        return 1;
+        return 2;
 }
 	
 + (BOOL)allowsSubpatches
@@ -38,12 +38,12 @@
 - (id)initWithIdentifier:(id)fp8
 {
 
-	NSLog (@"Initializing Presentation");
+	NSLog (@"Initializing Threshold");
 	// Do your initialization of variables here 
 	// initialize the Event Heap client library
 	// you can specify appName and deviceName, but you don't have to
 	//eh2_init ("iStuffQuartzPlugin", NULL);
-	eh2_init ("iStuffQuartzPlugin", "coltrane");
+	//eh2_init ("iStuffQuartzPlugin", "coltrane");
 
 	// THE TRACER DOES NOT WORK OUTSIDE OF XCODE!
 	// EXECUTABLE WILL START FROM TERMINAL BUT NOT IF DOUBLE-CLICKED IN FINDER!
@@ -57,12 +57,15 @@
 	//eh2_Tracer::cs_setTracer (tracePtr);
 	
 	// create the Event Heap instance for the client
-	NSLog(@"About to create EH");
-	NSString *serverName = @"localhost";
-	[self createEventHeap:NULL atServer:serverName atPort:4535];
+	//NSLog(@"About to create EH");
+	//NSString *serverName = @"localhost";
+	//[self createEventHeap:NULL atServer:serverName atPort:4535];
 	
-	NSLog (@"created EH");
-
+	//NSLog (@"created EH");
+	
+	//In the beginning, the last Value is initialialized with 0
+	lastInputVal = 0;
+	
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -91,56 +94,22 @@
 		
 		// Look for a transition from FALSE to TRUE
 		// only send event on the "positive edge"
+	
+		// Remember the last input value to compare with the new one
+		double currentInput = [inputInputValue doubleValue];
+		double thresholdValue = [inputThreshold doubleValue];
+		double changeByValue = [inputChangeBy doubleValue];
 		
-		// This is the part where one presentation can be closed and another one is opened and started
+		if (( currentInput >= thresholdValue) &&
+			(abs ((int)(currentInput - lastInputVal)) >= changeByValue)) 
+			{
+				[outputPassthrough setDoubleValue:currentInput];
+				NSLog(@"New output set");
+			}
+		lastInputVal = [inputInputValue doubleValue];
 		
-			// Look for a transition from FALSE to TRUE
-		// only send event on the "positive edge"
-		
-			if ( [inputStartPresentation1 booleanValue] == TRUE && [inputStartPresentation1 booleanValue] != lastInputStartPresentation1){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString ("command", "startPresentation1");
-			(*eventPtr)->setPostValueString ("URL", [[inputURL1 stringValue] UTF8String]); //From NSString to const char* conversion
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-		}
-		
-		if ( [inputStartPresentation2 booleanValue] == true && [inputStartPresentation2 booleanValue] != lastInputStartPresentation2){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString ("command", "startPresentation2");
-			(*eventPtr)->setPostValueString ("URL", [[inputURL2 stringValue] UTF8String]); //From NSString to const char* conversion
-			(*eh)->putEvent (*eventPtr);			
-			delete eventPtr;
-		}
-		
-		
-		if( [inputNextSlide booleanValue] == TRUE && [inputNextSlide booleanValue] != lastInputNextSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString ("command", "next");
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-		}
-
-
-		if( [inputPrevSlide booleanValue] == TRUE && [inputPrevSlide booleanValue] != lastInputPrevSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString ("command", "prev");
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-		}
-		
-		lastInputNextSlide = [inputNextSlide booleanValue];
-		lastInputPrevSlide = [inputPrevSlide booleanValue];
-		lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
-		lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
+	
+		// Yes, the method ran successfully
         return TRUE;
 }
 

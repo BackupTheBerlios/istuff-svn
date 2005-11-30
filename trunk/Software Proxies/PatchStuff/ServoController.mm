@@ -1,8 +1,8 @@
 //
-//  Presentation.mm
+//  ServoController.mm
 //  QCiStuff
 //
-//  Created by Rafael Ballagas on 11/7/05.
+//  Created by RenŽ Reiners on 11/29/05.
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
@@ -38,7 +38,7 @@
 - (id)initWithIdentifier:(id)fp8
 {
 
-	NSLog (@"Initializing Presentation");
+	NSLog (@"Initializing ServoController");
 	// Do your initialization of variables here 
 	// initialize the Event Heap client library
 	// you can specify appName and deviceName, but you don't have to
@@ -88,34 +88,84 @@
         // it before you start drawing.  
 	
         // Read/Write any ports in here too.
-		
-		// Look for a transition from FALSE to TRUE
-		// only send event on the "positive edge"
-		if( [inputNextSlide booleanValue] == TRUE && [inputNextSlide booleanValue] != lastInputNextSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("ServoController");
-			(*eventPtr)->setPostValueString ("command", "activate");
-			(*eventPtr)->setPostValueInt("motor",1);
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-		}
+		// only if one of the input ports changed, a new event has to be posted
+		// and the other operations have to be performed
+				int motor1Position = (int) [inputPosMot1 doubleValue];
+				int motor2Position = (int) [inputPosMot2 doubleValue];
+				int motor3Position = (int) [inputPosMot3 doubleValue];
+				int motor4Position = (int) [inputPosMot4 doubleValue];
 
-		// Look for a transition from FALSE to TRUE
-		// only send event on the "positive edge"
-		if( [inputPrevSlide booleanValue] == TRUE && [inputPrevSlide booleanValue] != lastInputPrevSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString ("command", "prev");
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-		}
-		
-		lastInputNextSlide = [inputNextSlide booleanValue];
-		lastInputPrevSlide = [inputPrevSlide booleanValue];
-	
-        return TRUE;
+			if ((oldMotor1Position != [inputPosMot1 doubleValue]) ||
+			    (oldMotor2Position != [inputPosMot2 doubleValue]) ||
+				(oldMotor3Position != [inputPosMot3 doubleValue]) ||
+				(oldMotor4Position != [inputPosMot4 doubleValue]))
+				{
+			
+				NSLog(@"At least one input has changed --> post new event");
+				
+				//create a new event object
+				eh2_EventPtr *eventPtr = new eh2_EventPtr;
+				(*eventPtr) = eh2_Event::cs_create ("ServoController");
+		//	*eventPtr->setTimeToLive (50);
+	// The TimeToLive should also be reduced in order to prevent Event Heap flooding...
+			
+			// The controller is able to control 4 different motors
+			// The acceleration and speed of each motor can be controlled
+			// Therefore everytime an event is posted, two fields for each motor are posted 
+			// inside the event. This results in 8  fields.
+			
+			// Conversion for the input values:
+			// In order to protect the servos, position values
+			//may only range from 30 to 215
+			
+							
+				if ( motor1Position < 30) {motor1Position = 30;};
+				if ( motor2Position < 30) {motor2Position = 30;};
+				if ( motor3Position < 30) {motor3Position = 30;};
+				if ( motor4Position < 30) {motor4Position = 30;};
+				if ( motor1Position > 215) {motor1Position = 215;};
+				if ( motor2Position > 215) {motor2Position = 215;};
+				if ( motor3Position > 215) {motor3Position = 215;};
+				if ( motor4Position > 215) {motor4Position = 215;};
+				
+				(*eventPtr)->setPostValueInt("PosMot1", motor1Position);
+				(*eventPtr)->setPostValueInt("PosMot2", motor2Position);
+				(*eventPtr)->setPostValueInt("PosMot3", motor3Position);
+				(*eventPtr)->setPostValueInt("PosMot4", motor4Position);
+
+
+						
+			/*
+			(*eventPtr)->setPostValueInt("PosMot1", (int) [inputPosMot1 doubleValue]);
+			(*eventPtr)->setPostValueInt("PosMot2", (int) [inputPosMot2 doubleValue]);
+			(*eventPtr)->setPostValueInt("PosMot3", (int) [inputPosMot3 doubleValue]);
+			(*eventPtr)->setPostValueInt("PosMot4", (int) [inputPosMot4 doubleValue]);
+			
+			*/
+			/* The following would be helpful with a Motor Controller
+			(*eventPtr)->setPostValueInt("Motor1Speed", (int) [inputSpeedMot1 doubleValue]);
+			(*eventPtr)->setPostValueInt ("Motor1Acceleration", (int) [inputAccMot1 doubleValue]);
+			(*eventPtr)->setPostValueInt("Motor2Speed", (int) [inputSpeedMot2 doubleValue]);
+			(*eventPtr)->setPostValueInt ("Motor2Acceleration", (int) [inputAccMot2 doubleValue]);
+			(*eventPtr)->setPostValueInt("Motor3Speed", (int) [inputSpeedMot3 doubleValue]);
+			(*eventPtr)->setPostValueInt ("Motor3Acceleration", (int) [inputAccMot3 doubleValue]);
+			(*eventPtr)->setPostValueInt("Motor4Speed", (int) [inputSpeedMot4 doubleValue]);
+			(*eventPtr)->setPostValueInt ("Motor4Acceleration", (int) [inputAccMot4 doubleValue]);
+			*/
+			
+			// the "event package" is ready -> post it to the Event Heap
+				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eh)->putEvent (*eventPtr);
+				delete eventPtr;
+
+			// keep the old values and only post a new event if an input really changes! :)
+			oldMotor1Position = [inputPosMot1 doubleValue];
+			oldMotor2Position = [inputPosMot2 doubleValue];
+			oldMotor3Position = [inputPosMot3 doubleValue];
+			oldMotor4Position = [inputPosMot4 doubleValue];
+			}
+			// the demanded RETURN-value
+			return TRUE;
 }
 
 
