@@ -25,7 +25,7 @@
         //  1 - Renderer, Environment - pink title bar
         //  2 - Source, Tool, Controller - blue title bar
         //  3 - Numeric, Modifier, Generator - green title bar
-        return 2;
+        return 3;
 }
 	
 + (BOOL)allowsSubpatches
@@ -101,12 +101,13 @@
 		double changeByValue = [inputChangeBy doubleValue];
 		
 		if (( currentInput >= thresholdValue) &&
-			(abs ((int)(currentInput - lastInputVal)) >= changeByValue)) 
+			(abs ((int)(currentInput - lastInputVal)) >= changeByValue) ||
+			(currentInput == 0))
 			{
 				[outputPassthrough setDoubleValue:currentInput];
 				NSLog(@"New output set");
+				lastInputVal = currentInput;
 			}
-		lastInputVal = [inputInputValue doubleValue];
 		
 	
 		// Yes, the method ran successfully
