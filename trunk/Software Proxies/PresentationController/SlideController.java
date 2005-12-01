@@ -121,12 +121,11 @@ public class SlideController{
 	}
 	
 	public static void main(String argv[]){
-	/*	if(argv.length == 1){
+		if(argv.length == 1){
 			SlideController sc = new SlideController(argv[0]);
 		} else {
 			System.out.println("Usage: SlideController <Event Heap Name>");
-		} */
-		new SlideController("localhost");
+		} 
 	}
 		
 
