@@ -5,4 +5,4 @@ then
 fi
 echo $EHEAPSERVER
 
-java -classpath ../../../Lib/iROS.jar:..:. ServoController
+java -classpath ../../../Lib/iROS.jar:..:. ServoController $EHEAPSERVER

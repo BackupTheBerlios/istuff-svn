@@ -67,7 +67,7 @@ public class ServoController{
 	
 	
 	public static void main(String argv[]){
-				if(argv.length == 1){
+		if(argv.length == 1){
 			new ServoController(argv[0]);
 		} else {
 			System.out.println("Usage: ServoController <Event Heap Name>");
