@@ -43,11 +43,15 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 	}
 
 	public static void main(String[] args) {
-		new InterfaceKitproxy();
+		if(args.length == 1){
+			new InterfaceKitproxy(args[0]);
+		} else {
+			System.out.println("Usage: InterfaceKitproxy <Event Heap Server Name>");
+		}
 	}
-	public InterfaceKitproxy(){
+	public InterfaceKitproxy(String eventHeapServerName){
 
-        eheap = new EventHeap( "localhost" );
+        eheap = new EventHeap( eventHeapServerName );
 		// By adding the EventListener, we tell the PhidgeInterfaceKit where it can throw the events
 		// to.
 		phid.add_IPhidgetInterfaceKitEventsListener(this);
