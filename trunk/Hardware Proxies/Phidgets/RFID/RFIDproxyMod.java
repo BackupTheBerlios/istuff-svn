@@ -83,7 +83,7 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
 				e.setTimeToLive(50);
 				e.addField("TagNumber", "");
 				eheap.putEvent(e);
-				System.out.println("posted empty string");
+				//System.out.println("posted empty string");
 				}		
 			catch( Exception ex ){ ex.printStackTrace(); }
 			}

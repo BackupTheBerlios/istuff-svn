@@ -19,5 +19,6 @@
 	[manager registerNodeWithClass: [AccelerometerPatch class]];
 	[manager registerNodeWithClass: [ServoController class]];
 	[manager registerNodeWithClass: [Threshold class]];
+	[manager registerNodeWithClass: [StringComparer class]];
 }
 @end

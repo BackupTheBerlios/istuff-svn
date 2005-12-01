@@ -40,6 +40,10 @@
 		A789DE82093BAACB004E467F /* InterfaceKitUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A789DE7F093BAACB004E467F /* InterfaceKitUI.nib */; };
 		A789DE88093BAAFB004E467F /* RFIDReaderPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A789DE84093BAAFB004E467F /* RFIDReaderPatch.xml */; };
 		A789DE89093BAAFB004E467F /* RFIDReaderPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A789DE86093BAAFB004E467F /* RFIDReaderPatchUI.nib */; };
+		A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F6093F29E600171F24 /* StringComparer.mm */; };
+		A7F942FA093F29E600171F24 /* StringComparerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F8093F29E600171F24 /* StringComparerUI.m */; };
+		A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7F942FF093F2A1F00171F24 /* StringComparer.xml */; };
+		A7F94304093F2A1F00171F24 /* StringComparerUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7F94301093F2A1F00171F24 /* StringComparerUI.nib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -239,6 +243,12 @@
 		A789DE80093BAACB004E467F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/InterfaceKitUI.nib; sourceTree = "<group>"; };
 		A789DE85093BAAFB004E467F /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/RFIDReaderPatch.xml; sourceTree = "<group>"; };
 		A789DE87093BAAFB004E467F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RFIDReaderPatchUI.nib; sourceTree = "<group>"; };
+		A7F942F5093F29E500171F24 /* StringComparer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparer.h; sourceTree = "<group>"; };
+		A7F942F6093F29E600171F24 /* StringComparer.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = StringComparer.mm; sourceTree = "<group>"; };
+		A7F942F7093F29E600171F24 /* StringComparerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparerUI.h; sourceTree = "<group>"; };
+		A7F942F8093F29E600171F24 /* StringComparerUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StringComparerUI.m; sourceTree = "<group>"; };
+		A7F94300093F2A1F00171F24 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/StringComparer.xml; sourceTree = "<group>"; };
+		A7F94302093F2A1F00171F24 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/StringComparerUI.nib; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +291,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A7F94305093F2A2300171F24 /* StringComparer */,
 				A723708E093DC84C00886F01 /* Threshold */,
 				A789DE92093BAB27004E467F /* Phidgets */,
 				340067D90938B04A0030991B /* Presentation */,
@@ -343,6 +354,7 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A7F942FC093F29EF00171F24 /* StringComparer */,
 				A7237087093DC83600886F01 /* Threshold */,
 				A789DE93093BAB32004E467F /* Phidgets */,
 				340B414F091F8C620074DBFA /* PatchLoader.m */,
@@ -637,6 +649,26 @@
 			name = Phidgets;
 			sourceTree = "<group>";
 		};
+		A7F942FC093F29EF00171F24 /* StringComparer */ = {
+			isa = PBXGroup;
+			children = (
+				A7F942F5093F29E500171F24 /* StringComparer.h */,
+				A7F942F6093F29E600171F24 /* StringComparer.mm */,
+				A7F942F7093F29E600171F24 /* StringComparerUI.h */,
+				A7F942F8093F29E600171F24 /* StringComparerUI.m */,
+			);
+			name = StringComparer;
+			sourceTree = "<group>";
+		};
+		A7F94305093F2A2300171F24 /* StringComparer */ = {
+			isa = PBXGroup;
+			children = (
+				A7F942FF093F2A1F00171F24 /* StringComparer.xml */,
+				A7F94301093F2A1F00171F24 /* StringComparerUI.nib */,
+			);
+			name = StringComparer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -711,6 +743,8 @@
 				A73D52D0093CC63900056224 /* ServoControllerUI.nib in Resources */,
 				A723708C093DC84A00886F01 /* Threshold.xml in Resources */,
 				A723708D093DC84A00886F01 /* ThresholdUI.nib in Resources */,
+				A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */,
+				A7F94304093F2A1F00171F24 /* StringComparerUI.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +770,8 @@
 				A73D52C3093CC3A300056224 /* ServoController.mm in Sources */,
 				A7237084093DC83300886F01 /* Threshold.mm in Sources */,
 				A7237085093DC83300886F01 /* ThresholdUI.m in Sources */,
+				A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */,
+				A7F942FA093F29E600171F24 /* StringComparerUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +888,22 @@
 				A789DE87093BAAFB004E467F /* English */,
 			);
 			name = RFIDReaderPatchUI.nib;
+			sourceTree = "<group>";
+		};
+		A7F942FF093F2A1F00171F24 /* StringComparer.xml */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7F94300093F2A1F00171F24 /* English */,
+			);
+			name = StringComparer.xml;
+			sourceTree = "<group>";
+		};
+		A7F94301093F2A1F00171F24 /* StringComparerUI.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7F94302093F2A1F00171F24 /* English */,
+			);
+			name = StringComparerUI.nib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

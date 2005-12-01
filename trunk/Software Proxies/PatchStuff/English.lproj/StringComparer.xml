@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>input CompareThisString</key>
+		<dict>
+			<key>description</key>
+			<string>first string to compare</string>
+			<key>name</key>
+			<string>Compare This String</string>
+		</dict>
+		<key>inputWithString</key>
+		<dict>
+			<key>description</key>
+			<string>Second string to compare</string>
+			<key>name</key>
+			<string>With This String</string>
+		</dict>
+	</dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>Compares two strings. Comparison only takes place if the output is also connected and at least one of the two input values changes</string>
+		<key>name</key>
+		<string>String Comparer</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputResult</key>
+		<dict>
+			<key>description</key>
+			<string>If the two strings are equal, the result is 1, otherwise it's 0</string>
+			<key>name</key>
+			<string>Result</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
