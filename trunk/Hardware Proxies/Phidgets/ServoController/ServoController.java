@@ -67,12 +67,11 @@ public class ServoController{
 	
 	
 	public static void main(String argv[]){
-		//new ServoController("localhost");
-		if(argv.length == 1){
+				if(argv.length == 1){
 			new ServoController(argv[0]);
 		} else {
-			//System.out.println("Usage: SlideController <Event Heap Name>");
-			new ServoController("localhost");
+			System.out.println("Usage: ServoController <Event Heap Name>");
+			//new ServoController("localhost");
 		}
 	}
 
