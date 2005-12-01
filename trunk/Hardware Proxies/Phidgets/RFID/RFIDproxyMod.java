@@ -42,12 +42,16 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
 		System.out.println("FINISHED!");
         }
 
-		public static void main(String[] args) {
-		new RFIDproxyMod();
+	public static void main(String[] args) {
+		if(args.length == 1){
+			new RFIDproxyMod(args[0]);
+		} else{
+			System.out.println("Usage: RFIDproxyMod <Event Heap Name>");
+		}
 	}
 		
-	public RFIDproxyMod(){
-        eheap = new EventHeap( "localhost" );
+	public RFIDproxyMod(String eventHeapName){
+        eheap = new EventHeap( eventHeapName );
 		PhidgetRFID phid = new PhidgetRFID();
 		// By adding the EventListener, we tell the PhidgetRFID where it can throw the events
 		// to.
