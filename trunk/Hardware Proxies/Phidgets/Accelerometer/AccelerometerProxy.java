@@ -34,11 +34,16 @@ public class AccelerometerProxy extends _IPhidgetAccelerometerEventsAdapter
 		
 
 	public static void main(String[] args) {
-		new AccelerometerProxy();
+		if(args.length == 1){
+			new AccelerometerProxy(args[0]);
+		} else {
+			System.out.println("usage:  AccelerometerProxy <Event Heap Name>");
+		}
 	}
-	public AccelerometerProxy(){
+	
+	public AccelerometerProxy(String eventHeapName){
 
-        eheap = new EventHeap( "localhost" );
+        eheap = new EventHeap( eventHeapName );
 		PhidgetAccelerometer phid = new PhidgetAccelerometer();
 		// By adding the EventListener, we tell the PhidgetAccelerometer where it can throw the events
 		// to.
