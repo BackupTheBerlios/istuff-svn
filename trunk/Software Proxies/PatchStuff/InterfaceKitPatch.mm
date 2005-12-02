@@ -26,7 +26,7 @@
         //  1 - Renderer, Environment - pink title bar
         //  2 - Source, Tool, Controller - blue title bar
         //  3 - Numeric, Modifier, Generator - green title bar
-        return 3;
+        return 2;
 }
 	
 + (BOOL)allowsSubpatches
@@ -214,7 +214,7 @@
 		switch (analogPort) {
 		case 0:
 			 [outputAnalogReading0 setDoubleValue:portValue];
-			 NSLog(@"Index 1");
+			 NSLog(@"Index 0");
 			 break;
 		case 1:
 			 [outputAnalogReading1 setDoubleValue:portValue];

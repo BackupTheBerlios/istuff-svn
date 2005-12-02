@@ -37,7 +37,7 @@
 		
 	//The interface kit also has 7 digital ports that can be activated or deactivated (0 or 1).
 	//To these ports other phidgets can be connected an be enabled or disabled (e.g. diods)
-
+/*
 	QCBooleanPort *inputDigitalIn0;	
 	QCBooleanPort *inputDigitalIn1;
 	QCBooleanPort *inputDigitalIn2;
@@ -46,6 +46,7 @@
 	QCBooleanPort *inputDigitalIn5;
 	QCBooleanPort *inputDigitalIn6;
 	QCBooleanPort *inputDigitalIn7;
+*/	
 //And there are 7 ports that read digital inputs from other phidgets
 
 	QCBooleanPort *outputDigitalReading1;

@@ -97,6 +97,7 @@
 			// Look for a transition from FALSE to TRUE
 		// only send event on the "positive edge"
 		
+		/*
 			if ( [inputStartPresentation1 booleanValue] == TRUE && [inputStartPresentation1 booleanValue] != lastInputStartPresentation1){
 			//create a new event object
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
@@ -116,7 +117,7 @@
 			(*eh)->putEvent (*eventPtr);			
 			delete eventPtr;
 		}
-		
+		*/
 		
 		if( [inputNextSlide booleanValue] == TRUE && [inputNextSlide booleanValue] != lastInputNextSlide){
 			//create a new event object
@@ -139,8 +140,8 @@
 		
 		lastInputNextSlide = [inputNextSlide booleanValue];
 		lastInputPrevSlide = [inputPrevSlide booleanValue];
-		lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
-		lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
+		//lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
+		//lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
         return TRUE;
 }
 

@@ -26,10 +26,10 @@
     QCBooleanPort *inputPrevSlide;
 	//QCBooleanPort *inputNextPresentation;
 	//QCBooleanPort *inputPrevPresentation;
-	QCBooleanPort *inputStartPresentation1;
-	QCBooleanPort *inputStartPresentation2;
-	QCStringPort *inputURL1;
-	QCStringPort *inputURL2;
+	//QCBooleanPort *inputStartPresentation1;
+	//QCBooleanPort *inputStartPresentation2;
+	//QCStringPort *inputURL1;
+	//QCStringPort *inputURL2;
 	
 	BOOL lastInputNextSlide;
 	BOOL lastInputPrevSlide;
