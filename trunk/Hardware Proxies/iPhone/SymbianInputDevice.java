@@ -32,6 +32,7 @@ public class SymbianInputDevice{
 	private final static int OPCODE_SELECT = 4;
 	private final static int OPCODE_SEND_CODES = 5;
 
+	private boolean isRotationEnabled = true;
 	private String comPort;
 	private int currentMenuId = 0;
 	private SymbianInputListener listener;
@@ -117,7 +118,7 @@ public class SymbianInputDevice{
 					double rotY = 0.5 * x * Math.PI / 180;
 					double rotZ = -0.4 * angle * Math.PI / 180;
 
-					if (minDiffRotation < minDiff) {
+					if (minDiffRotation < minDiff && isRotationEnabled) {
 						/* send rotation */
 						listener.rotationCallback(angle);
 					} else {
@@ -182,6 +183,11 @@ public class SymbianInputDevice{
 			try { Thread.sleep(1000); } catch (InterruptedException ex2) {}
 		}
 	}
+	
+	public void setRotationEnabled(boolean isEnabled){
+		isRotationEnabled = isEnabled;
+	}
+
 
 	public void read(InputStream in, byte[] buffer, int off, int len) throws IOException {
 		int i;
