@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>This patch posts the value from a sensor attached to a mobile phone</string>
+		<key>name</key>
+		<string>Mobile Phone Sensor</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputXValue</key>
+		<dict>
+			<key>description</key>
+			<string>Sensor X Value</string>
+			<key>name</key>
+			<string>X Value</string>
+		</dict>
+		<key>outputYValue</key>
+		<dict>
+			<key>description</key>
+			<string>Sensor Y Value</string>
+			<key>name</key>
+			<string>Input Value</string>
+		</dict>
+		<key>outputZValue</key>
+		<dict>
+			<key>description</key>
+			<string>Sensor  Z Value</string>
+			<key>name</key>
+			<string>Change by at least</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
