@@ -2,6 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputPosMot1</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the value of Servo #1</string>
+			<key>name</key>
+			<string>Position Servo #1</string>
+		</dict>
+		<key>inputPosMot2</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the value of Servo #2</string>
+			<key>name</key>
+			<string>Position Servo #2</string>
+		</dict>
+		<key>inputPosMot3</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the value of Servo #3</string>
+			<key>name</key>
+			<string>Position Servo #3</string>
+		</dict>
+		<key>inputPosMot4</key>
+		<dict>
+			<key>description</key>
+			<string>Sets the value of Servo #4</string>
+			<key>name</key>
+			<string>Position Servo #4</string>
+		</dict>
+	</dict>
 	<key>nodeAttributes</key>
 	<dict>
 		<key>category</key>
@@ -9,7 +40,7 @@
 		<key>copyright</key>
 		<string>RWTH Aachen Univerisity</string>
 		<key>description</key>
-		<string>A patch that reads RF Tags</string>
+		<string>With this patch, servo motors connected to a Phidgets Servo Controller Kit can be controlled. The patch adjusts the input values such that the input is always in the specified range between 30 and 215 degrees.</string>
 		<key>name</key>
 		<string>Phidgets Servo Motor Controller</string>
 	</dict>

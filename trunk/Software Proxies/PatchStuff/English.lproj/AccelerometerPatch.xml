@@ -9,7 +9,7 @@
 		<key>copyright</key>
 		<string>RWTH Aachen Univerisity</string>
 		<key>description</key>
-		<string>A patch that reads Interface Kit values from the Even Heap</string>
+		<string>A patch that reads values from a Phidgets Accelerometer posted on the Even Heap</string>
 		<key>name</key>
 		<string>Phidgets Accelerometer</string>
 	</dict>

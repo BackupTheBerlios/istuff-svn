@@ -71,7 +71,6 @@ public class ServoController{
 			new ServoController(argv[0]);
 		} else {
 			System.out.println("Usage: ServoController <Event Heap Name>");
-			//new ServoController("localhost");
 		}
 	}
 

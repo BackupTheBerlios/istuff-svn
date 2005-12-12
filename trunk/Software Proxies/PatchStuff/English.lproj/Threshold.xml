@@ -4,13 +4,6 @@
 <dict>
 	<key>inputAttributes</key>
 	<dict>
-		<key>input Threshold</key>
-		<dict>
-			<key>description</key>
-			<string>The value of the threshold</string>
-			<key>name</key>
-			<string>Threshold</string>
-		</dict>
 		<key>inputChangeBy</key>
 		<dict>
 			<key>description</key>
@@ -25,6 +18,13 @@
 			<key>name</key>
 			<string>Input Value</string>
 		</dict>
+		<key>inputThreshold</key>
+		<dict>
+			<key>description</key>
+			<string>The value of the threshold</string>
+			<key>name</key>
+			<string>Threshold</string>
+		</dict>
 	</dict>
 	<key>nodeAttributes</key>
 	<dict>
@@ -33,9 +33,19 @@
 		<key>copyright</key>
 		<string>RWTH Aachen Univerisity</string>
 		<key>description</key>
-		<string>Allows control of a PowerPoint or Keynote Presentation</string>
+		<string>This patch only passes through values if they are greater than a specified threshold and the new value compared to the preceiding one is larger than the absolute difference of the new and the old value. This has a filter effect to smoothen small differences in input values.</string>
 		<key>name</key>
 		<string>Threshold</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputPassthrough</key>
+		<dict>
+			<key>description</key>
+			<string>The value to be passed through the threshold. It only changes if the described conditions are fulfilled, otherwise the old value remains as output.</string>
+			<key>name</key>
+			<string>Value</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
