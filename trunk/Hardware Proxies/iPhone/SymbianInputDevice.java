@@ -19,18 +19,19 @@ import javax.comm.*;
 interface SymbianInputListener {
     void translationCallback(int dX, int dY);
 	void rotationCallback(int angle);
-	void clickCallback();
+	void clickCallback(boolean isPressed);
 	void codeCallback(String code, int targetX, int targetY);
 };
 
 public class SymbianInputDevice{
-	private final static boolean DEBUG = true;
+	private final static boolean DEBUG = false;
 
 	private final static int OPCODE_DISCONNECT = 1;
 	private final static int OPCODE_MOTION_ACTIVE = 2;
 	private final static int OPCODE_MOTION_STOP = 3;
 	private final static int OPCODE_SELECT = 4;
 	private final static int OPCODE_SEND_CODES = 5;
+	private final static int OPCODE_DESELECT = 6;
 
 	private boolean isRotationEnabled = true;
 	private String comPort;
@@ -76,6 +77,7 @@ public class SymbianInputDevice{
 	public void pollAndProcessInput() {
 
 		int x = 0, y = 0, angle = 0, minDiff = 0, minDiffRotation = 0;
+		boolean isPressed;
 
 		try {
 
@@ -91,7 +93,15 @@ public class SymbianInputDevice{
 				case OPCODE_SELECT:
 					if(DEBUG)
 						System.out.println("OPCODE_SELECT");
-					listener.clickCallback();
+					isPressed = true;
+					listener.clickCallback(isPressed);
+					break;
+				
+				case OPCODE_DESELECT:
+					if(DEBUG)
+						System.out.println("OPCODE_DESELECT");
+					isPressed = false;
+					listener.clickCallback(isPressed);
 					break;
 				
 				case OPCODE_MOTION_ACTIVE:

@@ -9,7 +9,7 @@
 import iwork.eheap2.*;
 
 public class iPhone implements SymbianInputListener, Runnable{
-	private final static boolean DEBUG = false;
+	private final static boolean DEBUG = true;
 	
 	private SymbianInputDevice sid;
 	private EventHeap eh;
@@ -59,14 +59,18 @@ public class iPhone implements SymbianInputListener, Runnable{
 		}
 	}
 	
-	public void clickCallback(){
+	public void clickCallback(boolean isPressed){
 		if(DEBUG)
-			System.out.println("iPhone clickCallback");
+			System.out.println("iPhone clickCallback " + isPressed);
 		
 		/* post an event to the EventHeap */
 		try{
 			Event e = new Event("iPhone");
 			e.addField("type","click");
+			if(isPressed)
+				e.addField("state","pressed");
+			else
+				e.addField("state","unpressed");
 			eh.putEvent(e);
 		}catch(Exception ex){
 			ex.printStackTrace();
