@@ -10,10 +10,10 @@
 	};
 	07C7A222061991A1003C9B08 /* iteleo.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1112, 7000}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1112, 7126}}";
 			sepNavSelRange = "{1107, 0}";
-			sepNavVisRect = "{{0, 322}, {711, 428}}";
-			sepNavWindowFrame = "{{-217, 75}, {750, 502}}";
+			sepNavVisRect = "{{0, 264}, {711, 429}}";
+			sepNavWindowFrame = "{{127, 189}, {750, 502}}";
 		};
 	};
 	08FB7793FE84155DC02AAC07 /* Project object */ = {
@@ -87,7 +87,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					210,
-					50,
+					51,
 					20,
 					50,
 					43,
@@ -103,7 +103,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 141212448;
+			PBXPerProjectTemplateStateSaveDate = 155146887;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -280,7 +280,11 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 141212448;
+			PBXWorkspaceStateSaveDate = 155146887;
+		};
+		perUserProjectItems = {
+			34708FB1093F5A97005A3FA3 /* PBXBookmark */ = 34708FB1093F5A97005A3FA3 /* PBXBookmark */;
+			34708FDF093F60C4005A3FA3 /* PBXTextBookmark */ = 34708FDF093F60C4005A3FA3 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3421F812080BB1BC00930544 /* Source Control */;
 		userBuildSettings = {
@@ -293,10 +297,9 @@
 		);
 		argumentStrings = (
 		);
+		autoAttachOnCrash = 1;
 		configStateDict = {
 		};
-		cppStopOnCatchEnabled = 0;
-		cppStopOnThrowEnabled = 0;
 		customDataFormattersEnabled = 1;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
@@ -322,6 +325,20 @@
 	3421F813080BB1BC00930544 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	34708FB1093F5A97005A3FA3 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 07C7A222061991A1003C9B08 /* iteleo.cpp */;
+	};
+	34708FDF093F60C4005A3FA3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 07C7A222061991A1003C9B08 /* iteleo.cpp */;
+		name = "iteleo.cpp: pEventHeap";
+		rLen = 0;
+		rLoc = 1107;
+		rType = 0;
+		vrLen = 1563;
+		vrLoc = 302;
 	};
 	34BEC173086ABB7700D4A09F /* idk_ut_Base.h */ = {
 		uiCtxt = {

@@ -355,7 +355,7 @@
 		34BEC195086ABB7700D4A09F /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../../../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
 		34BEC207086ABB9400D4A09F /* libceheap2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libceheap2.a; path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.a"; sourceTree = SOURCE_ROOT; };
 		34BEC208086ABB9400D4A09F /* libidk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidk.a; path = "../../../Event Heap/c++/Mac OS X/lib/libidk.a"; sourceTree = SOURCE_ROOT; };
-		8DD76F6C0486A84900D96B5E /* iteleo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iteleo; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD76F6C0486A84900D96B5E /* iteleo */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = iteleo; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* iteleo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = iteleo.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
