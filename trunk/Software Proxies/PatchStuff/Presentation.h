@@ -1,5 +1,5 @@
 //
-//  PowerbookTiltSensorPatch.h
+//  Presentation.h
 //  QCiStuff
 //
 //  Created by Rafael Ballagas on 11/7/05.
