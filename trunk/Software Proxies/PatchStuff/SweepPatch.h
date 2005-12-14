@@ -23,10 +23,13 @@
         QCBooleanPort, QCVirtualPort, QCColorPort,
         QCImagePort;
 
+@class SweepPatchUI;
+
 @interface SweepPatch : QCPatch {
-	QCNumberPort *outputX;
-    QCNumberPort *outputY;
-    QCNumberPort *outputrZ;
+	QCNumberPort *outputdX;
+    QCNumberPort *outputdY;
+    QCNumberPort *outputdrZ;
+	QCBooleanPort *outputClick;
 	
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
@@ -49,6 +52,4 @@
 - (void) startReceivingEvents;
 - (void) stopReceivingEvents;
 
-// create / post an event
-- (eh2_EventPtr *) createEvent;
 @end

@@ -27,7 +27,7 @@
 	
 	QCNumberPort *inputMilliseconds;
 	QCBooleanPort *outputSignal;
-//	double lastInputVal;
+	double lastInputVal;
 
     //QCBooleanPort *inputPrevSlide;
 	//BOOL lastInputNextSlide;

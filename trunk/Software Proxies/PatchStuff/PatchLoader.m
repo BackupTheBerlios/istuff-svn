@@ -20,6 +20,8 @@
 	[manager registerNodeWithClass: [ServoController class]];
 	[manager registerNodeWithClass: [Threshold class]];
 	[manager registerNodeWithClass: [StringComparer class]];
+	[manager registerNodeWithClass: [SweepPatch class]];
+	//[manager registerNodeWithClass: [TeleoPWMOut class]];
 	[manager registerNodeWithClass: [ClockSignal class]];
 }
 @end

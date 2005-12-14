@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>A patch that recieves motion of a mobile phone</string>
+		<key>name</key>
+		<string>Sweep</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputClick</key>
+		<dict>
+			<key>description</key>
+			<string>A selection has been made</string>
+			<key>name</key>
+			<string>Select</string>
+		</dict>
+		<key>outputdX</key>
+		<dict>
+			<key>description</key>
+			<string>Relative movement in the X dimension</string>
+			<key>name</key>
+			<string>dX</string>
+		</dict>
+		<key>outputdY</key>
+		<dict>
+			<key>description</key>
+			<string>Relative movement in the Y dimension</string>
+			<key>name</key>
+			<string>dY</string>
+		</dict>
+		<key>outputdrZ</key>
+		<dict>
+			<key>description</key>
+			<string>Relative movement in the rotational Z dimension</string>
+			<key>name</key>
+			<string>drZ</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
