@@ -1,0 +1,1 @@
+The MPToolkit needs "nokia series 60 SDK Second Edition" and "Visual studio 6.0 or higher" to compile
