@@ -248,7 +248,7 @@
 		345C283C092E0B77001C3A3E /* PowerbookTiltSensorPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PowerbookTiltSensorPatch.h; sourceTree = SOURCE_ROOT; };
 		345C283D092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = PowerbookTiltSensorPatch.mm; sourceTree = SOURCE_ROOT; };
 		345C2914092E4D78001C3A3E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PowerbookTiltSensorPatchUI.nib; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* QCiStuff.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCiStuff.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* qcistuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qcistuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		A71391A5094C3CFB00A173A0 /* MobilePhone.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MobilePhone.h; sourceTree = "<group>"; };
 		A71391A6094C3CFB00A173A0 /* MobilePhone.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MobilePhone.mm; sourceTree = "<group>"; };
@@ -395,7 +395,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* QCiStuff.bundle */,
+				8D5B49B6048680CD000E48DA /* qcistuff.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -891,7 +891,7 @@
 			name = QCiStuffplugin;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = QCiStuff;
-			productReference = 8D5B49B6048680CD000E48DA /* QCiStuff.bundle */;
+			productReference = 8D5B49B6048680CD000E48DA /* qcistuff.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
