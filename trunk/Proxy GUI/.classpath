@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Dokumente und Einstellungen/Reiny/Eigene Dateien/RWTH/Diplomarbeit/JAVA Frameworks/jdom-1.0/build/jdom.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
