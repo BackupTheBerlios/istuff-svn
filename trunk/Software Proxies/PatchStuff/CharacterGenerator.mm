@@ -1,28 +1,30 @@
 //
-//  RFIDReader.m
+//  CharacterGenerator.mm
 //  QCiStuff
 //
-//  Created in by Ren√© Reiners on 11/25/05.
+//  Created in by Ren� Reiners on 01/07/05.
 //	Template work done by Raphael Ballagas
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
+// This patch waits for "Text Event" from the event heap and directs them
+// to the output ports as integers with the ACII code number. As only events are processed, no input ports are needed.
 
-#import "RFIDReaderPatch.h"
+#import "CharacterGenerator.h"
 
-@interface RFIDReaderPatch (QCInspector)
+@interface CharacterGenerator (QCInspector)
 + (Class)inspectorClassWithIdentifier:(id)fp8;
 @end
 
-@implementation RFIDReaderPatch
+@implementation CharacterGenerator
 
 + (Class)inspectorClassWithIdentifier:(id)fp8
 {
-	return [RFIDReaderPatchUI class];
+	return [CharacterGeneratorUI class];
 }
 
 + (int)executionMode
 {
-        // As the RFIDReader only post values of read tags, it is a Source
+        // As the Character Generator only post values of pressed keys, it is a Source
         //  1 - Renderer, Environment - pink title bar
         //  2 - Source, Tool, Controller - blue title bar
         //  3 - Numeric, Modifier, Generator - green title bar
@@ -31,38 +33,22 @@
 	
 + (BOOL)allowsSubpatches
 {
-        // If your patch is a parent patch, like 3D Transformation,
-        // you will allow subpatches, otherwise FALSE.
 	return FALSE; //no subpatches for a source
 }
 	
 - (id)initWithIdentifier:(id)fp8
 {
-
-	NSLog (@"Initializing RFIDReader");
 	// Do your initialization of variables here 
 	// initialize the Event Heap client library
-	// you can specify appName and deviceName, but you don't have to
-	//eh2_init ("iStuffQuartzPlugin", NULL);
-	eh2_init ("iStuffQuartzPlugin", "coltrane");
-
-	// THE TRACER DOES NOT WORK OUTSIDE OF XCODE!
-	// EXECUTABLE WILL START FROM TERMINAL BUT NOT IF DOUBLE-CLICKED IN FINDER!
-	// WHY?
-
-	// set up the tracer if you want to trace the activity of the library
-	// create a tracer, keep it in a smart pointer
-	//eh2_TracerPtr tracePtr = eh2_Tracer::cs_create (idk_io_FileOutStream::cs_createBufferedByFileName ("SpeechServer EH trace.txt"), eh2_Consts::TMM_ALL);
+	eh2_init ("iStuffQuartzPlugin", "localhost");
 	
-	// set the tracer
-	//eh2_Tracer::cs_setTracer (tracePtr);
+	setOutputPort = false;
+	[outputKeyStroke setDoubleValue:-1];
+	[outputPermanentASCIICode setDoubleValue:-1];
 	
 	// create the Event Heap instance for the client
-	NSLog(@"About to create EH for RFIDReader");
 	NSString *serverName = @"localhost";
 	[self createEventHeap:NULL atServer:serverName atPort:4535];
-	
-	NSLog (@"created EH for RFIDReader");
 
 	// activate the thread that receives EH events
 	[self startReceivingEvents];
@@ -95,13 +81,22 @@
         // it before you start drawing.  
 	
         // Read/Write any ports in here too.
-	
-        return TRUE;
+    	
+		// if a new Character Event was received, the code value has to be posted once
+		// After posting, the port is set back to the "illegal" value -1
+		if (!setOutputPort) {
+		[outputKeyStroke setDoubleValue:-1];
+	}
+	else {
+		[outputKeyStroke setDoubleValue:[outputKeyStroke doubleValue]];
+		setOutputPort = false;
+	}
+		return TRUE;
 }
 
 
 // create the Event Heap instance for the client
-//
+
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port
 {
 	// first, get the Event Heap factory
@@ -122,14 +117,11 @@
 
 
 // activate the thread that waits for Event Heap events
-//
+
 - (void) startReceivingEvents
 {
 	// set the flag to activate the thread
 	waitForEvents = TRUE;
-	
-	// define the type of events you want to receive
-	//[self defineEventsToReceive];
 	
 	// create the thread that waits for events
 	[NSThread detachNewThreadSelector:@selector(waitForEvents) toTarget:self withObject:nil];
@@ -148,41 +140,6 @@
 }
 
 
-
-// create the event templates you want to receive from the Event Heap
-//
-/* - (void) defineEventsToReceive
-{
-	// create a new event object to use as template
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	
-	templatePtr->setEventType ("CarbonSpeech");		// yet another way to set event type
-	//templatePtr->setTemplateValueInt ("AGE", 30);   // search for this
-	
-	// the following does exactly the same as above in the normalized way.
-	// first, create (or retrieve if exists) a field.
-	// then, set the value to the field.
-	//eh2_Field* field;
-	//field = templatePtr->allocateField("AGE", eh2_FieldType::cs_int());
-	//field->setTemplateValueInt(30);
-
-	// if you want to set the value to some special value like FORMAL,
-	// you should do as follows, using the normalized way mentioned above.
-	//field = templatePtr->allocateField("NAME", eh2_FieldType::cs_string());
-	//field->setTemplateValueType(FVT_FORMAL);
-
-	// as long as you are sure that the field is already exist, you can set
-	// special value like this also.  note that it raises an error if the
-	// field does not exist, unlike when setting actual values.
-	//templatePtr->setTemplateValueType("NAME", FVT_FORMAL);
-
-	// invoke the waitForEvent operation.
-	// again, you must keep the returned event in a smart pointer.
-	//eh2_EventPtr resultEventPtr = eh->waitForEvent(templatePtr);
-} */
-
-
-
 // thread waiting for EH events, so we won't block the recognition system
 // the function call (*eh)->waitForEvent is blocking !
 // the thread terminates after receiving an event AND if the instance variable waitForEvent is FALSE
@@ -198,7 +155,7 @@
 	
 	// define the type of events you want to receive
 	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("PhidgetRFID");
+	templatePtr->setEventType ("TextEvent");
 
 	// the thread exits if waitForEvents becomes FALSE
 	while (waitForEvents) {
@@ -206,20 +163,17 @@
 		// invoke the waitForEvent operation, keep the returned event in a smart pointer
 		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
 		
-		char* taggie = (char*) resultEventPtr->getPostValueString("TagNumber");
-
-		[outputTag setStringValue:[NSString stringWithCString:taggie]];
-		NSLog([NSString stringWithCString:taggie]);
-		NSLog(@"KeyPress received");
-
-		// print debug info
-		//const char* field1, *field2;
-		//field1 = resultEventPtr->getPostValueString ("SequenceNum");
-		//field2 = resultEventPtr->getPostValueString ("SessionID");
-		//NSLog (@"event received, seqNum %s, sessID %s", field1, field2);
-
-		// report the received event to MyController
-		//[myController processEvent:resultEventPtr];
+		// set the flag so that in the 'execute'-method the output port is set to the new value
+		// after setting it, the flag is set to false again.
+		// This allows posting one value per execution cycle
+		setOutputPort = true;
+		
+		//read the character ASCII value from the event field
+		int keyCode;
+		keyCode = resultEventPtr->getPostValueInt("Character");
+		[outputKeyStroke setDoubleValue:(double) keyCode];
+		[outputPermanentASCIICode setDoubleValue:keyCode];
+	
 	}
 
 	NSLog (@"thread waitForEvents deactivated");
@@ -227,19 +181,5 @@
 	[localPool release];
 }
 
-/* is this method really needed here?
 
-// create a new event
-//
-- (eh2_EventPtr *) createEvent
-{
-	//create a new event object
-	eh2_EventPtr *eventPtr = new eh2_EventPtr;
-	
-	(*eventPtr) = eh2_Event::cs_create ("SpeechServer");
-	NSLog(@"CREATE EVENT AUFGERUFENNN ACHTUNG!!!");
-	return eventPtr;
-}
-
-*/	
 @end

@@ -25,46 +25,28 @@
         //  1 - Renderer, Environment - pink title bar
         //  2 - Source, Tool, Controller - blue title bar
         //  3 - Numeric, Modifier, Generator - green title bar
-        return 3;
+        return 1;
 }
 	
 + (BOOL)allowsSubpatches
 {
-        // If your patch is a parent patch, like 3D Transformation,
-        // you will allow subpatches, otherwise FALSE.
 	return FALSE;
 }
 	
 - (id)initWithIdentifier:(id)fp8
 {
-
+	
 	NSLog (@"Initializing MobilePhone");
 	// Do your initialization of variables here 
 	// initialize the Event Heap client library
-	// you can specify appName and deviceName, but you don't have to
-	//eh2_init ("iStuffQuartzPlugin", NULL);
-	//eh2_init ("iStuffQuartzPlugin", "coltrane");
-
-	// THE TRACER DOES NOT WORK OUTSIDE OF XCODE!
-	// EXECUTABLE WILL START FROM TERMINAL BUT NOT IF DOUBLE-CLICKED IN FINDER!
-	// WHY?
-
-	// set up the tracer if you want to trace the activity of the library
-	// create a tracer, keep it in a smart pointer
-	//eh2_TracerPtr tracePtr = eh2_Tracer::cs_create (idk_io_FileOutStream::cs_createBufferedByFileName ("SpeechServer EH trace.txt"), eh2_Consts::TMM_ALL);
+	eh2_init ("iStuffQuartzPlugin", "localhost");
 	
-	// set the tracer
-	//eh2_Tracer::cs_setTracer (tracePtr);
+	processEvent = true;
+	lastPathVal = "";
 	
 	// create the Event Heap instance for the client
-	//NSLog(@"About to create EH");
-	//NSString *serverName = @"localhost";
-	//[self createEventHeap:NULL atServer:serverName atPort:4535];
-	
-	//NSLog (@"created EH");
-	
-	//In the beginning, the last Value is initialialized with 0
-	lastInputVal = 0;
+	NSString *serverName = @"localhost";
+	[self createEventHeap:NULL atServer:serverName atPort:4535];
 	
 	return [super initWithIdentifier:fp8];
 }
@@ -78,11 +60,12 @@
 - (id)setup:(id)fp8
 {
 	// setup vars here
-        return fp8;
+	return fp8;
 }
 	
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {
+
 	// This is where the execution of your patch happens.
         // Everything in this method gets executed once
         // per 'clock cycle', which is available in fp12 (time).
@@ -91,12 +74,109 @@
         // it before you start drawing.  
 	
         // Read/Write any ports in here too.
-		
-		// Look for a transition from FALSE to TRUE
-		// only send event on the "positive edge"
-	
-		// Remember the last input value to compare with the new one
+	eh2_EventPtr *eventPtr = new eh2_EventPtr;
+	(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
 
+	// In this early version, the according parameters are alos realized as editable input ports
+	// later on they should be specified in the corresponding GUI element of the patch
+	
+	// These Events do not have special parameters
+	// Only the corresponding command numbers have to be posted		
+	
+	if ( [inputDisconnect booleanValue] == TRUE && [inputDisconnect booleanValue] != lastInputDisconnect) 
+	{
+		NSLog(@"inputDisconnect");
+		(*eventPtr)->setPostValueInt("Command", 1);
+					// the "event package" is ready -> post it to the Event Heap
+				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eh)->putEvent (*eventPtr);
+				delete eventPtr;
+	}
+	if ([inputBacklightOn booleanValue]  == TRUE && [inputBacklightOn booleanValue] != lastInputBacklightOn) 
+	{
+		NSLog(@"Command: Backlight On");
+		(*eventPtr)->setPostValueInt("Command", 2);
+					// the "event package" is ready -> post it to the Event Heap
+				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eh)->putEvent (*eventPtr);
+				delete eventPtr;
+	}
+	if ([inputBacklightOff booleanValue]  == TRUE && [inputBacklightOff booleanValue] != lastInputBacklightOff) 
+	{
+		NSLog(@"BackLightOff");
+		(*eventPtr)->setPostValueInt("Command", 3);
+					// the "event package" is ready -> post it to the Event Heap
+				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eh)->putEvent (*eventPtr);
+				delete eventPtr;
+	}
+	if ([inputStopSound booleanValue]  == TRUE && [inputStopSound booleanValue] != lastInputStopSound) 
+	{
+		NSLog(@"Stop Sound");
+		(*eventPtr)->setPostValueInt("Command", 6);
+					// the "event package" is ready -> post it to the Event Heap
+				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eh)->putEvent (*eventPtr);
+				delete eventPtr;
+	}
+
+	
+	// These commands all need a "Path" parameter
+	if ([inputPlaySound booleanValue]  == TRUE && [inputPlaySound booleanValue] != lastInputPlaySound) 
+	 {
+		NSLog(@"PlaySound");
+		(*eventPtr)->setPostValueInt("Command", 5);
+		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
+		// the "event package" is ready -> post it to the Event Heap
+		(*eventPtr)->setPostValueInt("TimeToLive", 50);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}
+
+	if ([inputLaunchApp booleanValue] == TRUE && [inputLaunchApp booleanValue] != lastInputLaunchApp) 
+	{
+		NSLog(@"Launch Application");
+		(*eventPtr)->setPostValueInt("Command", 7);
+		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
+		// the "event package" is ready -> post it to the Event Heap
+		(*eventPtr)->setPostValueInt("TimeToLive", 50);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}
+	
+	
+	if ([inputCloseApp booleanValue]  == TRUE && [inputCloseApp booleanValue] != lastInputCloseApp) 
+	{
+		NSLog(@"Close Application");
+		(*eventPtr)->setPostValueInt("Command", 8);
+		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
+		// the "event package" is ready -> post it to the Event Heap
+		(*eventPtr)->setPostValueInt("TimeToLive", 50);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}
+	
+	// The keypress command needs to create an Event with three parameters
+	if ([inputKeyCode doubleValue] != -1)
+	{
+		
+		NSLog([NSString stringWithFormat:@"%d",(int)[inputKeyCode doubleValue]]);
+		(*eventPtr)->setPostValueInt("Command",4);
+		(*eventPtr)->setPostValueInt("Code", (int) [inputKeyCode doubleValue]);
+		(*eventPtr)->setPostValueInt("Repeat", (int) [inputRepeatPort doubleValue]);
+		(*eventPtr)->setPostValueInt("ScanCode", (int) [inputScanCodePort doubleValue]);
+		(*eventPtr)->setPostValueInt("TimeToLive", 50);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}
+	
+	lastInputDisconnect = [inputDisconnect booleanValue];
+	lastInputBacklightOn = [inputBacklightOn booleanValue];
+	lastInputBacklightOff = [inputBacklightOff booleanValue];
+	lastInputCloseApp = [inputCloseApp booleanValue];
+	lastInputLaunchApp = [inputLaunchApp booleanValue];
+	lastInputPlaySound = [inputPlaySound booleanValue];
+	lastInputStopSound = [inputStopSound booleanValue];
 	
 		// Yes, the method ran successfully
         return TRUE;

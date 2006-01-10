@@ -85,10 +85,11 @@ public class TextEventEngine extends JFrame{
 				
     		try
     		{
-	    		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
+	   		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
 	      	event.addField("Character",code);
+			event.setTimeToLive(50);
 	      	eventHeap.putEvent(event);
-      	}
+			}
       	catch(Exception ex)
       	{
       		ex.printStackTrace();

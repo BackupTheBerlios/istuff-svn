@@ -11,7 +11,7 @@
 #import <eh2.h>
 #import <idk_io.h>
 #import "QCPatch.h"
-#import "MobilePhoneSensorUI.h";
+#import "CharacterGeneratorUI.h";
 	
 
 // possible input/output types. 
@@ -19,24 +19,16 @@
         QCBooleanPort, QCVirtualPort, QCColorPort,
         QCImagePort;
 		
-@class MobilePhoneSensorUI;
+@class CharacterGeneratorUI;
 
-@interface MobilePhoneSensor : QCPatch {
-	QCNumberPort *outputXValue;
-	QCNumberPort *outputYValue;
-	QCNumberPort *outputZValue;
+@interface CharacterGenerator : QCPatch {
+
+	QCNumberPort *outputKeyStroke;
+	QCNumberPort *outputPermanentASCIICode;
 	
-	QCNumberPort *outputPassthrojhgfkjfgliuglukfgugh;
-	double lastInputVal;
-	//QCBooleanPort *inputNextSlide;
-    //QCBooleanPort *inputPrevSlide;
-	//BOOL lastInputNextSlide;
-	//BOOL lastInputPrevSlide;
-
-	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
-		// signal whether or not to exit the thread waitforEvent
 	BOOL waitForEvents;
+	BOOL setOutputPort;
 }
 
 + (int)executionMode;
@@ -46,8 +38,8 @@
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
 
 // create the event heap instance for the client
-//- (void) createEventHeap;
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port;
+
 // activate/deactivate the thread that waits for EventHeap events
 - (void) startReceivingEvents;
 - (void) stopReceivingEvents;

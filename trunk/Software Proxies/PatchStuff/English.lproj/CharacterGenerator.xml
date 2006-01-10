@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>input Threshold</key>
+		<dict>
+			<key>description</key>
+			<string>The value of the threshold</string>
+			<key>name</key>
+			<string>Threshold</string>
+		</dict>
+		<key>inputChangeBy</key>
+		<dict>
+			<key>description</key>
+			<string>The change must lie at least at this value - otherwise the Input is not passed through</string>
+			<key>name</key>
+			<string>Change by at least</string>
+		</dict>
+		<key>inputInputValue</key>
+		<dict>
+			<key>description</key>
+			<string>The currently read value which is compared to the threshold and the ChangeBy parameter</string>
+			<key>name</key>
+			<string>Input Value</string>
+		</dict>
+	</dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>Allows control of a PowerPoint or Keynote Presentation</string>
+		<key>name</key>
+		<string>Character Generator</string>
+	</dict>
+</dict>
+</plist>
