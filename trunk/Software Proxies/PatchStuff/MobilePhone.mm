@@ -44,6 +44,9 @@
 	processEvent = true;
 	lastPathVal = "";
 	
+	[inputRepeatPort setDoubleValue:0];
+	[inputScanCodePort setDoubleValue:0];
+	
 	// create the Event Heap instance for the client
 	NSString *serverName = @"localhost";
 	[self createEventHeap:NULL atServer:serverName atPort:4535];

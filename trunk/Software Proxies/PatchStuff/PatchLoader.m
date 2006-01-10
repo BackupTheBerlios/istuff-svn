@@ -23,7 +23,7 @@
 	[manager registerNodeWithClass: [SweepPatch class]];
 	//[manager registerNodeWithClass: [TeleoPWMOut class]];
 	[manager registerNodeWithClass: [ClockSignal class]];
-	//[manager registerNodeWithClass: [MobilePhoneSensor class]];
+	[manager registerNodeWithClass: [SmartItsSensor class]];
 	[manager registerNodeWithClass: [MobilePhone class]];
 	[manager registerNodeWithClass: [CharacterGenerator class]];
 }
