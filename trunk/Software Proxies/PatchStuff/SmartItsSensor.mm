@@ -161,27 +161,27 @@
 		// That depends on the attached sensors. The proxy cares about that. This is a general patch
 		// that only post the values if they exist
 		
-		[outputSourceID setStringValue:[NSString stringWithCString:resultEventPtr->getPostValueString("SrcId")]];
+		[outputSourceID setStringValue:[NSString stringWithCString:resultEventPtr->getPostValueString("ParticleSrcId")]];
 		
-		if ( resultEventPtr->fieldExists("SGX") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SGX")]; }
-		if ( resultEventPtr->fieldExists("SGY") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SGY")]; }
-		if ( resultEventPtr->fieldExists("SGZ") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SGZ")]; }
-		if ( resultEventPtr->fieldExists("SLI") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SLI")]; }
-		if ( resultEventPtr->fieldExists("STE") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("STE")]; }
-		if ( resultEventPtr->fieldExists("SFC") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SFC")]; }
-		if ( resultEventPtr->fieldExists("SAU") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SAU")]; }
-		if ( resultEventPtr->fieldExists("SSW") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SSW")]; }
-		if ( resultEventPtr->fieldExists("SVC") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("SVC")]; }
-	
+		if ( resultEventPtr->fieldExists("sgx") )
+		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("sgx")]; }
+		if ( resultEventPtr->fieldExists("sgy") )
+		{ [outputSGY setDoubleValue:(double) resultEventPtr->getPostValueInt("sgy")]; }
+		if ( resultEventPtr->fieldExists("sgz") )
+		{ [outputSGZ setDoubleValue:(double) resultEventPtr->getPostValueInt("sgz")]; }
+		if ( resultEventPtr->fieldExists("sli") )
+		{ [outputSLI setDoubleValue:(double) resultEventPtr->getPostValueInt("sli")]; }
+		if ( resultEventPtr->fieldExists("ste") )
+		{ [outputSTE setDoubleValue:(double) resultEventPtr->getPostValueInt("ste")]; }
+		if ( resultEventPtr->fieldExists("sfc") )
+		{ [outputSFC setDoubleValue:(double) resultEventPtr->getPostValueInt("sfc")]; }
+		if ( resultEventPtr->fieldExists("sau") )
+		{ [outputSAU setDoubleValue:(double) resultEventPtr->getPostValueInt("sau")]; }
+		if ( resultEventPtr->fieldExists("ssw") )
+		{ [outputSSW setDoubleValue:(double) resultEventPtr->getPostValueInt("ssw")]; }
+		if ( resultEventPtr->fieldExists("svc") )
+		{ [outputSVC setDoubleValue:(double) resultEventPtr->getPostValueInt("svc")]; }
+	NSLog(@"Event processed!");
 	}
 
 	NSLog (@"thread waitForEvents deactivated");

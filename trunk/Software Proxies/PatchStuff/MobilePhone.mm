@@ -43,9 +43,18 @@
 	
 	processEvent = true;
 	lastPathVal = "";
-	
 	[inputRepeatPort setDoubleValue:0];
 	[inputScanCodePort setDoubleValue:0];
+	
+	
+	lastInputDisconnect = false;
+	lastInputBacklightOff = false;
+	lastInputBacklightOn = false;
+	lastInputCloseApp = false;
+	lastInputLaunchApp = false;
+	lastInputPlaySound = false;
+	lastInputStopSound = false;
+
 	
 	// create the Event Heap instance for the client
 	NSString *serverName = @"localhost";
@@ -95,12 +104,12 @@
 				(*eh)->putEvent (*eventPtr);
 				delete eventPtr;
 	}
-	if ([inputBacklightOn booleanValue]  == TRUE && [inputBacklightOn booleanValue] != lastInputBacklightOn) 
+	if ([inputBacklightOn booleanValue] == TRUE && [inputBacklightOn booleanValue] != lastInputBacklightOn) 
 	{
 		NSLog(@"Command: Backlight On");
 		(*eventPtr)->setPostValueInt("Command", 2);
 					// the "event package" is ready -> post it to the Event Heap
-				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				//(*eventPtr)->setPostValueInt("TimeToLive", 1000);
 				(*eh)->putEvent (*eventPtr);
 				delete eventPtr;
 	}
@@ -160,10 +169,10 @@
 	}
 	
 	// The keypress command needs to create an Event with three parameters
-	if ([inputKeyCode doubleValue] != -1)
+	if ([inputKeyCode doubleValue] >= 0)
 	{
 		
-		NSLog([NSString stringWithFormat:@"%d",(int)[inputKeyCode doubleValue]]);
+		//NSLog([NSString stringWithFormat:@"%d",(int)[inputKeyCode doubleValue]]);
 		(*eventPtr)->setPostValueInt("Command",4);
 		(*eventPtr)->setPostValueInt("Code", (int) [inputKeyCode doubleValue]);
 		(*eventPtr)->setPostValueInt("Repeat", (int) [inputRepeatPort doubleValue]);
@@ -172,6 +181,11 @@
 		(*eh)->putEvent (*eventPtr);
 		delete eventPtr;
 	}
+	
+	//NOTE the lastInputVariablesw are not needed.
+	// Only one event is fired if the state changes.
+	// So every second execution run, the input could be set to FALSE again.
+	// But when connecting a button to the port, it wouldn't be the best  thing.
 	
 	lastInputDisconnect = [inputDisconnect booleanValue];
 	lastInputBacklightOn = [inputBacklightOn booleanValue];

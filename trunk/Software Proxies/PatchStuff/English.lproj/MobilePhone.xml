@@ -4,27 +4,46 @@
 <dict>
 	<key>inputAttributes</key>
 	<dict>
-		<key>input Threshold</key>
+		<key>inputBackLightOn</key>
 		<dict>
 			<key>description</key>
-			<string>The value of the threshold</string>
+			<string>Boolean that turns on the backlight of the mobile phone. It has to be turned false before it will resend the command.</string>
+			<key>name</key>
+			<string>Turn Backlight On</string>
+		</dict>
+		<key>inputBacklightOff</key>
+		<dict>
+			<key>description</key>
+			<string>Boolean that turns off the backlight of the mobile phone. It has to be turned false before it will resend the command.</string>
+			<key>name</key>
+			<string>Turn Backlight Off</string>
+		</dict>
+		<key>inputCloseApp</key>
+		<dict>
+			<key>description</key>
+			<string>With this boolean, an application is closed on the mobile phone. The Path-port has to be set.</string>
+			<key>name</key>
+			<string>Close Application</string>
+		</dict>
+		<key>inputDisconnect</key>
+		<dict>
+			<key>description</key>
+			<string>Di</string>
 			<key>name</key>
 			<string>Threshold</string>
 		</dict>
-		<key>inputChangeBy</key>
-		<dict>
-			<key>description</key>
-			<string>The change must lie at least at this value - otherwise the Input is not passed through</string>
-			<key>name</key>
-			<string>Change by at least</string>
-		</dict>
-		<key>inputInputValue</key>
-		<dict>
-			<key>description</key>
-			<string>The currently read value which is compared to the threshold and the ChangeBy parameter</string>
-			<key>name</key>
-			<string>Input Value</string>
-		</dict>
+		<key>inputKeyCode</key>
+		<dict/>
+		<key>inputLaunchApp</key>
+		<dict/>
+		<key>inputPlaySound</key>
+		<dict/>
+		<key>inputRepeatPort</key>
+		<dict/>
+		<key>inputScanCodePort</key>
+		<dict/>
+		<key>inputStopSound</key>
+		<dict/>
 	</dict>
 	<key>nodeAttributes</key>
 	<dict>
