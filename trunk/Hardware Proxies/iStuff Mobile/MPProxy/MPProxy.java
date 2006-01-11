@@ -18,7 +18,7 @@ public class MPProxy
 		
 		private String comPort;
 		private SerialPort serPort = null;
-		private OutputStream out = null;
+		private OutputStream outStream = null;
     
 		
 		public MPProxy(String cmprt)
@@ -46,7 +46,7 @@ public class MPProxy
 				throw new NullPointerException("no com port identifier");
 			}
       serPort = (SerialPort)portId.open("MPToolkit", 5000);
-      out = serPort.getOutputStream();
+      outStream = serPort.getOutputStream();
 		}
 		
 		public void run()
@@ -67,17 +67,18 @@ public class MPProxy
 							 case OPCODE_BACKLIGHT_OFF:
 							 case OPCODE_STOPSOUND:
 							 	redirectEvent(command);
+							 	break;
 							 
 							 case OPCODE_PLAYSOUND:
 							 case OPCODE_LAUNCHAPP:
 							 case OPCODE_CLOSEAPP:
 							 	getPathAndRedirect(recEvent);
+							 	break;
 							 
 							 case OPCODE_KEYPRESS:
 							 	sendKey(recEvent);
+							 	break;
 						}
-						
-						Thread.sleep(100);
 					}
 					catch(Exception ex)
 					{
@@ -92,7 +93,7 @@ public class MPProxy
 			{
 				byte buffer[] = new byte[1];
 				buffer[0] = new Integer(command).byteValue();
-				out.write(buffer);
+				outStream.write(buffer);
 			}
 			catch(Exception ex)
 			{
@@ -114,9 +115,9 @@ public class MPProxy
 					path += "\0";
 					
 					byte buffer1[] = path.getBytes();
-					out.write(buffer);
-					out.write((byte)buffer1.length);
-					out.write(buffer1);
+					outStream.write(buffer);
+					outStream.write((byte)buffer1.length);
+					outStream.write(buffer1);
 				}
 				else
 					return;
@@ -159,8 +160,8 @@ public class MPProxy
 					buffer1[5] = 0;
 					buffer1[5] |= (0x00FF & code);
 					
-					out.write(buffer);
-					out.write(buffer1);
+					outStream.write(buffer);
+					outStream.write(buffer1);
 				}
 				else
 					return;
