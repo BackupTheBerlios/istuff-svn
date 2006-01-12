@@ -11,6 +11,7 @@ import java.util.Vector;
 
 public class Framework extends JFrame{
 
+    String eventHeapIp;
     Scanner scan;
     EventLauncher eventLauncher;
 
@@ -32,9 +33,10 @@ public class Framework extends JFrame{
     JButton btnAdd = new JButton();
     Vector configuredParticles = new Vector();
 
-    public Framework() {
+    public Framework(String ip) {
         try {
             jbInit();
+            this.eventHeapIp = ip;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -120,7 +122,12 @@ public class Framework extends JFrame{
 
     public static void main(String args[])
     {
-        Framework pf = new Framework();
+        Framework pf;
+
+        if(args.length == 1)
+            pf = new Framework(args[0]);
+        else
+            System.out.println("Usage: Framework <Event Heap IP Address>");
     }
 
     public void btnExit_actionPerformed(ActionEvent e)
@@ -167,7 +174,7 @@ public class Framework extends JFrame{
 
     public void btnStart_actionPerformed(ActionEvent e) {
 
-       eventLauncher = new EventLauncher(configuredParticles);
+       eventLauncher = new EventLauncher(configuredParticles,eventHeapIp);
        Thread t = new Thread(eventLauncher);
        listmodelEvents.addElement("Starting Framework...");
        btnScan.setEnabled(false);

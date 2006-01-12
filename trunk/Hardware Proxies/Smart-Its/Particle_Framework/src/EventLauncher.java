@@ -12,12 +12,13 @@ public class EventLauncher implements Runnable{
     protected ParticleFilter filter;
     protected Hashtable lastPacketList;
     protected EventHeap eventHeap;
+    protected String eventHeapIp;
 
-    public EventLauncher(Vector configuredParticles)
+    public EventLauncher(Vector configuredParticles, String eventHeapIp)
     {
         particles = configuredParticles;
         running = false;
-
+        this.eventHeapIp = eventHeapIp;
     }
 
     public void run()
@@ -43,7 +44,7 @@ public class EventLauncher implements Runnable{
 
        recSocket = new ParticleSocket(5555);
        lastPacketList = new Hashtable();
-       eventHeap = new EventHeap("localhost");
+       eventHeap = new EventHeap(eventHeapIp);
        ParticlePacket currPacket;
        ParticleSrcId currId;
        boolean same;
@@ -90,6 +91,7 @@ public class EventLauncher implements Runnable{
                    {
                        Event event = new Event("Particle_Packet");
                        event.addField("ParticleSrcId",currPacket.getSrcId().toString());
+                       event.setTimeToLive(1000);
 
                        ParticleTuple currTuple = currPacket.firstAcl();
                        currTuple = currPacket.nextAcl(currTuple);
