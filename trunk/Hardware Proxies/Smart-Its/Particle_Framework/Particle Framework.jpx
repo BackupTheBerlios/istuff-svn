@@ -27,10 +27,11 @@
   <property category="runtime.0" name="ConfigurationName" value="Untitled Runtime Configuration"/>
   <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
   <property category="runtime.0" name="application.class" value="Framework"/>
+  <property category="runtime.0" name="application.parameters" value="137.226.56.20"/>
   <property category="runtime.0" name="application.vmparameters" value="-Djava.library.path=&quot;lib&quot;"/>
   <property category="serverservices" name="single.server.name" value=""/>
   <property category="sys" name="AuthorLabel" value="@author"/>
-  <property category="sys" name="BackupPath" value="./bak"/>
+  <property category="sys" name="BackupPath" value="bak"/>
   <property category="sys" name="CheckStable" value="1"/>
   <property category="sys" name="Company" value=""/>
   <property category="sys" name="CompanyLabel" value="Company:"/>
@@ -46,9 +47,9 @@
   <property category="sys" name="JDK" value="java version 1.4.2_04-b05"/>
   <property category="sys" name="JvmVersion" value="1.2"/>
   <property category="sys" name="LastTag" value="0"/>
-  <property category="sys" name="Libraries" value="libParticleJava;iStuffToolkit"/>
+  <property category="sys" name="Libraries" value="iStuffToolkit;libParticleJava"/>
   <property category="sys" name="MakeStable" value="0"/>
-  <property category="sys" name="OutPath" value="./classes"/>
+  <property category="sys" name="OutPath" value="classes"/>
   <property category="sys" name="SourcePath" value="src;test"/>
   <property category="sys" name="TestPath" value="test"/>
   <property category="sys" name="Title" value=""/>
