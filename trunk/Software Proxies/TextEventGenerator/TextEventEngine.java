@@ -16,10 +16,10 @@ public class TextEventEngine extends JFrame{
     JScrollPane spnText;
     ImagePanel imgI10;
     EventHeap eventHeap;
-    
+
     public TextEventEngine(String ip) {
         try {
-        		eventHeap = new EventHeap(ip);
+            eventHeap = new EventHeap(ip);
             init();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -44,10 +44,10 @@ public class TextEventEngine extends JFrame{
 
         lblText.setText("Enter the text:");
         lblText.setBounds(new Rectangle(12, 100, 113, 21));
-        
+
         txtText.setLineWrap(true);
         txtText.addKeyListener(new TextEventEngine_txtText_documentAdapter(this));
-        
+
         spnText = new JScrollPane(txtText);
         spnText.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         spnText.setBounds(new Rectangle(12, 130, 300, 250));
@@ -70,8 +70,10 @@ public class TextEventEngine extends JFrame{
 
     public static void main(String args[])
     {
+        TextEventEngine tee;
+
         if (args.length == 1)
-        	TextEventEngine tee = new TextEventEngine(args[0]);
+        	tee = new TextEventEngine(args[0]);
         else
         	System.out.println("Usage: java TextEventEngine <Event Heap IP>\n");
     }
@@ -80,16 +82,15 @@ public class TextEventEngine extends JFrame{
     {
         System.exit(0);
     }
-    
+
     public void txtText_keyTyped(KeyEvent e)
     {
-				Integer code = new Integer(e.getKeyChar());
-			
-				System.out.println(code);
-				
-    		try
-    		{
-	    		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
+	Integer code = new Integer(e.getKeyChar());
+	System.out.println("Sent Code = " + code);
+
+    	try
+    	{
+		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
 	      	event.addField("Character",code);
 	      	eventHeap.putEvent(event);
       	}
