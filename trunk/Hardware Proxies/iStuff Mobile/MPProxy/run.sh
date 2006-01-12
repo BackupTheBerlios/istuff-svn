@@ -1,1 +1,1 @@
-java -classpath ../../../Lib/iROS.jar:. MPProxy /dev/tty.Nokia6600
+java -classpath ../../../Lib/iROS.jar:. MPProxy $1 $2

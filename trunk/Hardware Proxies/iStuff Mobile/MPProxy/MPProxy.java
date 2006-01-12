@@ -21,11 +21,11 @@ public class MPProxy
 		private OutputStream outStream = null;
     
 		
-		public MPProxy(String cmprt)
+		public MPProxy(String cmprt, String ip)
 		{
 			try 
 			{
-				eventHeap = new EventHeap("localhost");
+				eventHeap = new EventHeap(ip);
 				template = new Event("iStuffMobile");
 				template.addField("Command", Integer.class, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
 				this.comPort = cmprt;
@@ -176,14 +176,14 @@ public class MPProxy
 		{
 			MPProxy mobileProxy;
 			
-			if(argv.length == 1)
+			if(argv.length == 2)
 			{
-				mobileProxy = new MPProxy(argv[0]);
+				mobileProxy = new MPProxy(argv[0],argv[1]);
 				mobileProxy.run();
 			}
 			else
 			{
-			System.out.println("Usage: java MPProxy <Comm Port>\n" +
+			System.out.println("Usage: java MPProxy <Comm Port> <Event Heap IP>\n" +
 								"\t<Comm Port> = the serial port address for the phone examples: /dev/tty.Nokia6600, COM3\n");
 			}
 		}
