@@ -85,7 +85,7 @@
 		// if a new Character Event was received, the code value has to be posted once
 		// After posting, the port is set back to the "illegal" value -1
 		if (!setOutputPort) {
-		[outputKeyStroke setDoubleValue:-1];
+		[outputKeyStroke setDoubleValue:0];
 	}
 	else {
 		[outputKeyStroke setDoubleValue:[outputKeyStroke doubleValue]];

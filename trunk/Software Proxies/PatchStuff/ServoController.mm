@@ -133,25 +133,6 @@
 				(*eventPtr)->setPostValueInt("PosMot3", motor3Position);
 				(*eventPtr)->setPostValueInt("PosMot4", motor4Position);
 
-
-						
-			/*
-			(*eventPtr)->setPostValueInt("PosMot1", (int) [inputPosMot1 doubleValue]);
-			(*eventPtr)->setPostValueInt("PosMot2", (int) [inputPosMot2 doubleValue]);
-			(*eventPtr)->setPostValueInt("PosMot3", (int) [inputPosMot3 doubleValue]);
-			(*eventPtr)->setPostValueInt("PosMot4", (int) [inputPosMot4 doubleValue]);
-			
-			*/
-			/* The following would be helpful with a Motor Controller
-			(*eventPtr)->setPostValueInt("Motor1Speed", (int) [inputSpeedMot1 doubleValue]);
-			(*eventPtr)->setPostValueInt ("Motor1Acceleration", (int) [inputAccMot1 doubleValue]);
-			(*eventPtr)->setPostValueInt("Motor2Speed", (int) [inputSpeedMot2 doubleValue]);
-			(*eventPtr)->setPostValueInt ("Motor2Acceleration", (int) [inputAccMot2 doubleValue]);
-			(*eventPtr)->setPostValueInt("Motor3Speed", (int) [inputSpeedMot3 doubleValue]);
-			(*eventPtr)->setPostValueInt ("Motor3Acceleration", (int) [inputAccMot3 doubleValue]);
-			(*eventPtr)->setPostValueInt("Motor4Speed", (int) [inputSpeedMot4 doubleValue]);
-			(*eventPtr)->setPostValueInt ("Motor4Acceleration", (int) [inputAccMot4 doubleValue]);
-			*/
 			
 			// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 50);

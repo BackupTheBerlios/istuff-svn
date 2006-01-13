@@ -22,27 +22,26 @@
 @class MobilePhoneUI;
 
 @interface MobilePhone : QCPatch {
-		// These Commands are only passed through --> no changes are performed
-		// put command and the corresponding command number onto the Event Heap
+	// if a port is TRUE, the corresponding event with the command  number
+	//  is put on the Event Heap
 		QCBooleanPort *inputDisconnect;
 		QCBooleanPort *inputBacklightOn;
 		QCBooleanPort *inputBacklightOff;
-		QCBooleanPort *inputStopSound;
-		
 		QCBooleanPort *inputPlaySound;
-		QCNumberPort *inputRepeatPort;
+		QCBooleanPort *inputStopSound;
 		QCBooleanPort *inputLaunchApp;
+		QCStringPort *inputPath;		
 		QCBooleanPort *inputCloseApp;
 		QCNumberPort *inputKeyCode;
+		QCNumberPort *inputRepeatPort;
 		QCNumberPort *inputScanCodePort;
-		
-		QCStringPort *inputPath;
-	
-		// This paramater is needed so that only a new command is posted
-		// otherwise the same command is posted several times
-		char* lastPathVal;
-		// This variable is used to specifify that a command Event should really be posted
-		// or if it is just a repetition
+		QCNumberPort *inputProfileNumber;
+// NOTE: Shouldn't the values for Repat and ScanCode also be handled 
+// inside the corresponding MPProxy? The proxy shoud=ld care about these values.
+// Also the commands should be Strings. So a more generic patch could be created.
+				
+	// These variables prevent that an event is sent all the time
+	// but only when there was a change in between
 		bool lastInputDisconnect;
 		bool lastInputBacklightOff;
 		bool lastInputBacklightOn;
@@ -51,7 +50,9 @@
 		bool lastInputLaunchApp;
 		bool lastInputCloseApp;
 		
+		int lastInputProfileNumber;
 		BOOL processEvent;
+		char* lastPathVal;
 
 		// pointer to the Event Heap client
 		eh2_EventHeapPtr *eh;

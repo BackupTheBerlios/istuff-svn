@@ -27,11 +27,11 @@
 	QCNumberPort *outputSGX;
 	QCNumberPort *outputSGY;
 	QCNumberPort *outputSGZ;
+	QCNumberPort *outputSLI;	
+	QCNumberPort *outputSFC;
 	QCNumberPort *outputSTE;
-	QCNumberPort *outputSLI;
 	QCNumberPort *outputSSW;
 	QCNumberPort *outputSAU;
-	QCNumberPort *outputSFC;
 	QCNumberPort *outputSVC;
 	
 	eh2_EventHeapPtr *eh;

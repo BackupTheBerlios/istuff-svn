@@ -181,7 +181,6 @@
 		{ [outputSSW setDoubleValue:(double) resultEventPtr->getPostValueInt("ssw")]; }
 		if ( resultEventPtr->fieldExists("svc") )
 		{ [outputSVC setDoubleValue:(double) resultEventPtr->getPostValueInt("svc")]; }
-	NSLog(@"Event processed!");
 	}
 
 	NSLog (@"thread waitForEvents deactivated");
