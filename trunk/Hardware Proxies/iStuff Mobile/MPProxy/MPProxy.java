@@ -2,6 +2,7 @@ import java.io.*;
 import javax.comm.*;
 import iwork.eheap2.*;
 
+
 public class MPProxy
 {
 		private final static int OPCODE_DISCONNECT		= 1;
@@ -36,6 +37,23 @@ public class MPProxy
 				System.out.println(ex.toString());
 				System.exit(1);
 			}
+		}
+		
+		public void Destroy()
+		{
+    	try
+    	{
+      	System.out.println("Cleaning up");
+      	byte buffer[] = new byte[1];
+				buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
+				outStream.write(buffer);
+				outStream.close();
+				serPort.close();
+    	} 
+    	catch(Exception ex)
+    	{
+        System.out.println(ex.toString());
+    	}
 		}
 		
 		private void initSerial()throws Exception
@@ -138,7 +156,6 @@ public class MPProxy
 				
 				if(recEvent.fieldExists("Code") && recEvent.fieldExists("Repeat") && recEvent.fieldExists("ScanCode"))
 				{
-					System.out.println("About to send over bluetooth");
 					int code = ((Integer)recEvent.getPostValue("Code")).intValue();
 					int repeat = ((Integer)recEvent.getPostValue("Repeat")).intValue();
 					int scancode = ((Integer)recEvent.getPostValue("ScanCode")).intValue();
@@ -175,10 +192,15 @@ public class MPProxy
 		public static void main(String argv[])
 		{
 			MPProxy mobileProxy;
+			Shutdown killer;
 			
 			if(argv.length == 2)
 			{
 				mobileProxy = new MPProxy(argv[0],argv[1]);
+				
+				killer = new Shutdown(mobileProxy);
+				Runtime.getRuntime().addShutdownHook(killer);
+				
 				mobileProxy.run();
 			}
 			else
@@ -187,4 +209,18 @@ public class MPProxy
 								"\t<Comm Port> = the serial port address for the phone examples: /dev/tty.Nokia6600, COM3\n");
 			}
 		}
+}
+
+class Shutdown extends Thread {
+	
+		private MPProxy mobileProxy;
+		
+		public Shutdown(MPProxy mobile)
+		{
+			mobileProxy = mobile;
+		}
+    public void run() {
+        System.out.println("Shutdown hook called");
+        mobileProxy.Destroy();
+    }
 }
