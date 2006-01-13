@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : bld.inf
+*  Part of  : MPToolkit
+*  Created  : 01.11.2005 by Faraz Ahmed Memon
+*  Description:
+*	 This file provides the information required for building the
+*    whole of a MPToolkit.
+*  Version  :
+*  Copyright: i10 RWTH Aachen
+* ============================================================================
+*/
+
+
+PRJ_MMPFILES
+
+MPToolkit.mmp
+

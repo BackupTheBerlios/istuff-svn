@@ -1,0 +1,80 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MPTOOLKIT - Win32 Uni Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP29.tmp" with contents
+[
+/nologo /Zp4 /MDd /W4 /Zi /Od /X /I "\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP" /I "\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\INC" /I "\dev\Symbian\7.0s\Series60_v20\EPOC32\INCLUDE" /D "__SYMBIAN32__" /D "__VC32__" /D "__WINS__" /D "__DLL__" /D "_DEBUG" /D "_UNICODE" /FR"\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB/" /Fo"\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB/" /Fd"\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\MPTOOLKIT\MPTOOLKIT.PDB" /GF /c 
+"C:\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Codelistener.cpp"
+"C:\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Mptoolkitappui.cpp"
+"C:\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Mptoolkitdocument.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP29.tmp" 
+Creating temporary file "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP2A.bat" with contents
+[
+@echo off
+echo Doing first-stage link by name
+nmake -nologo -f "\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT.SUP.MAKE" PRELINKUDEB
+if errorlevel 1 nmake -nologo -f "\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT.SUP.MAKE" STOPLINKUDEB
+]
+Creating command line "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP2A.bat"
+Compiling...
+Codelistener.cpp
+Mptoolkitappui.cpp
+Mptoolkitdocument.cpp
+Generating Code...
+Creating temporary file "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP2B.tmp" with contents
+[
+"\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\EDLL.LIB" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\euser.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\apparc.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\cone.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\eikcore.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\apgrfx.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\esock.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\btextnotifiers.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\bafl.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\eikcoctl.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\avkon.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\ws32.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\bluetooth.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\flogger.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\mediaclientaudio.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\vibractrl.lib" "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp" /nologo /entry:"_E32Dll" /subsystem:windows /dll /incremental:yes /pdb:"\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\MPTOOLKIT\MPTOOLKIT.pdb" /debug /machine:IX86 /nodefaultlib /include:"?_E32Dll@@YGHPAXI0@Z" /out:"\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\MPTOOLKIT\MPTOOLKIT.APP" /implib:"\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB/MPTOOLKIT.lib" /WARN:3 
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Mptoolkit.uid.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Codelistener.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Mptoolkitapp.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Mptoolkitappui.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Mptoolkitcontainer.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Mptoolkitdocument.obj
+\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\Soundplayer.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP2B.tmp"
+
+Doing first-stage link by name
+ link.exe @C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\nma02512.
+   Creating library \dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib and object \dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp
+LINK : warning LNK4005: no objects used from library \dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\VIBRACTRL.LIB
+EDLL.LIB(UP_DLL.obj) : warning LNK4099: PDB "edll.pdb" was not found with "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\EDLL.LIB" or at "C:\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\edll.pdb"; linking object as if no debug info
+ del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.APP"
+ del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp"
+ dumpbin /exports /out:"\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.inf" "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib"
+Microsoft (R) COFF Binary File Dumper Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+ del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib"
+ perl -S makedef.pl -Inffile "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.inf" -1 ?NewApplication@@YAPAVCApaApplication@@XZ "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\MPTOOLKIT.def"
+ del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.inf"
+ lib.exe  /nologo /machine:i386 /nodefaultlib /name:"MPTOOLKIT.APP" /def:"\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\MPTOOLKIT.def" /out:"\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib"
+   Creating library \dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib and object \dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp
+ del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.lib"
+First-stage link successful
+<h3>Output Window</h3>
+Linking...
+LINK : warning LNK4005: no objects used from library \dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\vibractrl.lib
+EDLL.LIB(UP_DLL.obj) : warning LNK4099: PDB "edll.pdb" was not found with "\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\EDLL.LIB" or at "C:\dev\Symbian\7.0s\Series60_v20\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\MPTOOLKIT\edll.pdb"; linking object as if no debug info
+Creating temporary file "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP30.bat" with contents
+[
+@echo off
+nmake -nologo -f "\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT.SUP.MAKE" POSTBUILDUDEB
+]
+Creating command line "C:\DOCUME~1\FARAZA~1\LOCALS~1\Temp\RSP30.bat"
+
+ if exist "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp" del "\dev\Symbian\7.0s\Series60_v20\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\GROUP\MPTOOLKIT\WINS\UDEB\MPTOOLKIT.exp"
+
+
+
+<h3>Results</h3>
+MPTOOLKIT.APP - 0 error(s), 4 warning(s)
+</pre>
+</body>
+</html>
