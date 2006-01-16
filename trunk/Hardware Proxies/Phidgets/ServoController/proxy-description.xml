@@ -3,8 +3,8 @@
 <proxy>
   <kind>Hardware Proxy</kind>
   <proxyClass>Phidgets</proxyClass>
-  <name>Interface Kit</name> 
-  <ClassName>InterfaceKitproxy</ClassName>
+  <name>Servo Controller</name> 
+  <ClassName>ServoController</ClassName>
   <comment>user comment</comment>
   <CustomLibs>
     <relativePath>..</relativePath>
