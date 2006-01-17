@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxy</kind>
+  <proxyClass>Phidgets</proxyClass>
+  <name>Interface Kit</name> 
+  <ClassName>InterfaceKitproxy</ClassName>
+  <comment>blablabla</comment>
+</proxy>

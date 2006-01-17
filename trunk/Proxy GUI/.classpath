@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/rene/DiplomaThesis/Programming/trunk/Lib/jdom.jar"/>
+	<classpathentry kind="lib" path="/Users/rene/DiplomaThesis/Programming/trunk/Lib/jmdns.jar"/>
+	<classpathentry kind="lib" path="/Users/rene/DiplomaThesis/Programming/trunk/Lib/iROS.jar"/>
+	<classpathentry kind="src" path="GUISource"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
