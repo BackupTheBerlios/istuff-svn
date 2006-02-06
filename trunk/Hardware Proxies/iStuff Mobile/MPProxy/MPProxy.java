@@ -5,14 +5,15 @@ import iwork.eheap2.*;
 
 public class MPProxy
 {
-		private final static int OPCODE_DISCONNECT		= 1;
-		private final static int OPCODE_BACKLIGHT_ON	=	2;
-		private final static int OPCODE_BACKLIGHT_OFF	=	3;
-		private final static int OPCODE_KEYPRESS = 4;
-		private final static int OPCODE_PLAYSOUND = 5;
-		private final static int OPCODE_STOPSOUND = 6;
-		private final static int OPCODE_LAUNCHAPP = 7;
-		private final static int OPCODE_CLOSEAPP = 8;
+		private final int OPCODE_DISCONNECT		= 1;
+		private final int OPCODE_BACKLIGHT_ON	=	2;
+		private final int OPCODE_BACKLIGHT_OFF	=	3;
+		private final int OPCODE_KEY_RECEIVED = 4;
+		private final int OPCODE_PLAYSOUND = 5;
+		private final int OPCODE_STOPSOUND = 6;
+		private final int OPCODE_LAUNCHAPP = 7;
+		private final int OPCODE_CLOSEAPP = 8;
+		private final int OPCODE_KEY_PRESSED = 9;
 		
 		private EventHeap eventHeap;
 		private Event template;
@@ -93,7 +94,7 @@ public class MPProxy
 							 	getPathAndRedirect(recEvent);
 							 	break;
 							 
-							 case OPCODE_KEYPRESS:
+							 case OPCODE_KEY_RECEIVED:
 							 	sendKey(recEvent);
 							 	break;
 						}
