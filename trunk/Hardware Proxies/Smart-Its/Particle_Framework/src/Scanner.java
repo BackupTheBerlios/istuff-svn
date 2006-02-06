@@ -38,26 +38,33 @@ public class Scanner implements Runnable{
 
     private void getData() throws java.lang.InterruptedException
     {
-       ParticleSocket socket = new ParticleSocket(5555);
-       socket.setAutoAck(0);
-       ParticlePacket pck = null;
+        ParticleSocket socket = new ParticleSocket(5555);
+        try{
+            socket.setAutoAck(0);
+            ParticlePacket pck = null;
 
-       for(int i=0; i<15; i++)
-       {
-           socket.setBlocking(0);
-           pck = socket.receive(socket);
-           if (pck != null) {
-               ParticleSrcId src = pck.getSrcId();
-               if(!main.listmodelParticles.contains(src.toString()))
-               {
-                   main.listmodelParticles.addElement(src.toString());
-               }
-               pck = socket.receive(socket);
-           }
-           Thread.sleep(100);
-       }
+            for (int i = 0; i < 15; i++) {
+                socket.setBlocking(0);
+                pck = socket.receive(socket);
+                if (pck != null) {
+                    ParticleSrcId src = pck.getSrcId();
+                    if (!main.listmodelParticles.contains(src.toString())) {
+                        main.listmodelParticles.addElement(src.toString());
+                    }
+                    pck = socket.receive(socket);
+                }
+                Thread.sleep(100);
+            }
+        } catch(UnknownError e){
+            if( !(e.getMessage().equals("c errno: 11")||e.getMessage().equals("c errno: 35")) ) {
+                        System.out.println( e.getMessage() );
+                        e.printStackTrace();
+            }
+            // this error was caused because no more packets are
+            // avaiable.
+        }
+        socket.close();
+        main.listmodelEvents.addElement("Scanning Finished");
 
-       socket.close();
-       main.listmodelEvents.addElement("Scanning Finished");
     }
 }
