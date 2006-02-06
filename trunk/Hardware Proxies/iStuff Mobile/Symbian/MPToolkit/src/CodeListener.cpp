@@ -4,7 +4,7 @@
 CCodeListener::CCodeListener(CMPToolkitAppUi* app) : CActive(0)
 {
 	iApplicationUi = app;
-
+	isConnected = EFalse;
 //iLog.Connect();
 //iLog.CreateLog(_L("MPToolkit"),_L("MyLogFile1"),EFileLoggingModeOverwrite);
 //iLog.Write(_L("created"));
@@ -60,8 +60,8 @@ void CCodeListener::DecodeOpcode()
 			User::ResetInactivityTime();
 			break;
 		
-		case OPCODE_KEYPRESS:
-			SendKeyPress();
+		case OPCODE_KEY_RECEIVED:
+			SendKeyToPhone();
 			break;
 
 		case OPCODE_PLAYSOUND:
@@ -164,7 +164,7 @@ void CCodeListener::CloseApp()
     }
 }
 
-void CCodeListener::SendKeyPress()
+void CCodeListener::SendKeyToPhone()
 {
 	TRequestStatus iLocalStatus;
 	TBuf8<6> localData;
@@ -197,6 +197,17 @@ void CCodeListener::SendKeyPress()
 	
 	User::ResetInactivityTime();
 	task.SendKey(event);
+}
+
+void CCodeListener::SendKeyToProxy(TUint code)
+{
+	TRequestStatus iLocalStatus;
+	TBuf8<2> localData;
+	localData[0] = OPCODE_KEY_PRESSED;
+	localData[1] = code;
+
+	iSocket.Write(localData,iLocalStatus);
+	User::WaitForRequest(iLocalStatus);
 }
 
 void CCodeListener::PlaySoundFile()
@@ -259,7 +270,7 @@ void CCodeListener::ConnectToServer()
 		iDeviceSelector.CancelNotifier(KDeviceSelectionNotifierUid);
 		iDeviceSelector.Close();
 
-		isConnected = true;
+		isConnected = ETrue;
 		iApplicationUi->SetConnected(ETrue);
 		StartReceiving();
 	}
@@ -280,9 +291,14 @@ void CCodeListener::DisconnectFromServer()
 		iSocket.Close();
 		iSocketServ.Close();
 		
-		isConnected = false;
+		isConnected = EFalse;
 		iApplicationUi->SetConnected(EFalse);
 	}
 	else
 		User::InfoPrint(_L("Device not connected"));
+}
+
+TBool CCodeListener::GetConnected()
+{
+	return isConnected;
 }

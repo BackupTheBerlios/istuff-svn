@@ -25,6 +25,8 @@ class CCodeListener : public CActive
 		void ConstructL(CEikonEnv* aEikEnv);
 		void ConnectToServer();
 		void DisconnectFromServer();
+		void SendKeyToProxy(TUint code);
+		TBool GetConnected();
 
 	//	RFileLogger iLog;
 	
@@ -35,7 +37,7 @@ class CCodeListener : public CActive
 		virtual void DoCancel(); // how to cancel me
 		virtual void RunL();
 
-		void SendKeyPress();
+		void SendKeyToPhone();
 		void PlaySoundFile();
 		void StopSoundFile();
 		void LaunchApp();
@@ -50,7 +52,7 @@ class CCodeListener : public CActive
 
 		RNotifier iDeviceSelector;
 		TBTDeviceResponseParamsPckg iResponse;
-		bool isConnected;
+		TBool isConnected;
 
 		CSoundPlayer* iSoundPlayer;
 		CDesCArrayFlat*	iAppList;

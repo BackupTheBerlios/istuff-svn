@@ -40,6 +40,7 @@ class CMPToolkitAppUi : public CAknAppUi
 
 		CMPToolkitContainer* iAppContainer;
 		CCodeListener* iProxyServer;
+		TBool connected;
 };
 
 #endif

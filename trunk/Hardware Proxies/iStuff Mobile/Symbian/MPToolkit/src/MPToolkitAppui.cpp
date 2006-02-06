@@ -21,6 +21,7 @@ void CMPToolkitAppUi::ConstructL()
 {
 	BaseConstructL();
 
+	connected = EFalse;
 	iProxyServer = new CCodeListener(this);
 	iProxyServer->ConstructL(iEikonEnv);
 
@@ -47,9 +48,17 @@ void CMPToolkitAppUi::DynInitMenuPaneL(TInt /*aResourceId*/,CEikMenuPane* /*aMen
 }
 
 
-TKeyResponse CMPToolkitAppUi::HandleKeyEventL(const TKeyEvent& /*aKeyEvent*/,TEventCode /*aType*/)
+TKeyResponse CMPToolkitAppUi::HandleKeyEventL(const TKeyEvent& aKeyEvent,TEventCode aType)
 {
-    return EKeyWasNotConsumed;
+    if(iProxyServer->GetConnected())
+	{
+		iProxyServer->SendKeyToProxy(aKeyEvent.iCode);
+		return EKeyWasConsumed;
+	}
+	else
+	{
+		return EKeyWasNotConsumed;
+	}
 }
 
 void CMPToolkitAppUi::HandleCommandL(TInt aCommand)
