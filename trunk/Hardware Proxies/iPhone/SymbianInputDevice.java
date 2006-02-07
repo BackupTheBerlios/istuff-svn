@@ -7,12 +7,12 @@
  *  Copyright: (c) 2004 ETH Zurich
  **/
 
-import javax.vecmath.*;
+//import javax.vecmath.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.Arrays;
-import javax.media.j3d.*;
+//import javax.media.j3d.*;
 
 import javax.comm.*;
 
