@@ -68,30 +68,45 @@ public class SensorConfig {
             data[i] = ((Short) sensorData.get(i)).shortValue();
 
         packet.aclAdd( "crs", data, 0 );
-        try
-        {
-            ParticleSrcId src = new ParticleSrcId(particleId.toString());
-            ParticleSocket sndSocket = new ParticleSocket(5556);
-            ParticleSocket recSocket = new ParticleSocket(5555);
-            recSocket.setBlocking(0);
-            sndSocket.sendAcked(recSocket, packet, src);
 
-            Thread.sleep(200);
+        for (int i = 0; i < 15; i++) {
+            try
+            {
 
-            ParticlePacket p = recSocket.receive(recSocket);
-            if (p != null)
-                successful = true;
+                ParticleSrcId src = new ParticleSrcId(particleId.toString());
+                ParticleSocket sndSocket = new ParticleSocket(5556);
+                ParticleSocket recSocket = new ParticleSocket(5555);
+                recSocket.setBlocking(0);
+                sndSocket.sendAcked(recSocket, packet, src);
 
-            sndSocket.close();
-            recSocket.close();
-        }
-        catch(Exception e)
-        {
-            successful = false;
-        }
-        catch(Error err)
-        {
-            successful = false;
+                //Thread.sleep(200);
+
+                ParticlePacket p = recSocket.receive(recSocket);
+                if (p != null){
+                    successful = true;
+                    break;
+                }
+                sndSocket.close();
+                recSocket.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                successful = false;
+            } catch (Error err) {
+                if (!(err.getMessage().equals("c errno: 11") ||
+                      err.getMessage().equals("c errno: 35"))) {
+                    System.out.println(err.getMessage());
+                    err.printStackTrace();
+                }
+                // this error was caused because no more packets are
+                // avaiable.
+
+                successful = false;
+            }
+            try{
+                Thread.sleep(1000);
+            }catch(Exception e){
+
+            }
         }
     }
 
