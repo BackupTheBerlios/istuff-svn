@@ -3,7 +3,7 @@ import javax.comm.*;
 import iwork.eheap2.*;
 
 
-public class MPProxy
+public class MPProxy implements EventCallback
 {
 		private final int OPCODE_DISCONNECT		= 1;
 		private final int OPCODE_BACKLIGHT_ON	=	2;
@@ -15,12 +15,16 @@ public class MPProxy
 		private final int OPCODE_CLOSEAPP = 8;
 		private final int OPCODE_KEY_PRESSED = 9;
 		
+		private final boolean DEBUG = false;
 		private EventHeap eventHeap;
 		private Event template;
 		
 		private String comPort;
 		private SerialPort serPort = null;
 		private OutputStream outStream = null;
+		private InputStream inStream = null;
+		
+		private byte[] buffer = new byte[512];
     
 		
 		public MPProxy(String cmprt, String ip)
@@ -42,21 +46,59 @@ public class MPProxy
 		
 		public void Destroy()
 		{
-    	try
-    	{
-      	System.out.println("Cleaning up");
-      	byte buffer[] = new byte[1];
-				buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
-				outStream.write(buffer);
-				outStream.close();
-				serPort.close();
-    	} 
-    	catch(Exception ex)
-    	{
-        System.out.println(ex.toString());
-    	}
+			try
+			{
+					System.out.println("Cleaning up");
+					byte buffer[] = new byte[1];
+					buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
+					outStream.write(buffer);
+					outStream.close();
+					serPort.close();
+			} 
+			catch(Exception ex)
+			{
+					System.out.println(ex.toString());
+			}
 		}
 		
+		// Callback from register for events
+		public boolean returnEvent(Event[] retEvents){
+			try
+			{
+				for(int i=0; i<retEvents.length; i++){
+					System.out.println("Waiting for event");
+					int command = ((Integer)retEvents[i].getPostValue("Command")).intValue();
+					System.out.println("Received command = " + command);
+					
+					switch (command)
+					{
+						 case OPCODE_DISCONNECT:
+						 case OPCODE_BACKLIGHT_ON:
+						 case OPCODE_BACKLIGHT_OFF:
+						 case OPCODE_STOPSOUND:
+							redirectEvent(command);
+							break;
+						 
+						 case OPCODE_PLAYSOUND:
+						 case OPCODE_LAUNCHAPP:
+						 case OPCODE_CLOSEAPP:
+							getPathAndRedirect(retEvents[i]);
+							break;
+						 
+						 case OPCODE_KEY_RECEIVED:
+							sendKey(retEvents[i]);
+							break;
+					}
+				}
+			}
+			catch(Exception ex)
+			{
+					System.out.println(ex.toString());
+			}
+
+			return true;
+		}
+
 		private void initSerial()throws Exception
 		{
 			CommPortIdentifier portId = CommPortIdentifier.getPortIdentifier(comPort);
@@ -64,44 +106,40 @@ public class MPProxy
 			{
 				throw new NullPointerException("no com port identifier");
 			}
-      serPort = (SerialPort)portId.open("MPToolkit", 5000);
-      outStream = serPort.getOutputStream();
+		  serPort = (SerialPort)portId.open("MPToolkit", 5000);
+		  outStream = serPort.getOutputStream();
+		  inStream = serPort.getInputStream();
+		}
+		
+		public void read(InputStream in, byte[] buffer, int off, int len) throws IOException {
+			int i;
+			while (len > 0 && (i = in.read(buffer, off, len)) != -1) {
+				off += i;
+				len -= i;
+			}
+			if (len > 0) throw new IOException("read error");
 		}
 		
 		public void run()
 		{
 				while(true)
 				{
-					try
-					{
-						System.out.println("Waiting for event");
-						Event recEvent = eventHeap.waitForEvent(template);
-						int command = ((Integer)recEvent.getPostValue("Command")).intValue();
-						System.out.println("Received command = " + command);
-						
-						switch (command)
-						{
-							 case OPCODE_DISCONNECT:
-							 case OPCODE_BACKLIGHT_ON:
-							 case OPCODE_BACKLIGHT_OFF:
-							 case OPCODE_STOPSOUND:
-							 	redirectEvent(command);
-							 	break;
-							 
-							 case OPCODE_PLAYSOUND:
-							 case OPCODE_LAUNCHAPP:
-							 case OPCODE_CLOSEAPP:
-							 	getPathAndRedirect(recEvent);
-							 	break;
-							 
-							 case OPCODE_KEY_RECEIVED:
-							 	sendKey(recEvent);
-							 	break;
+					try{
+						read(inStream, buffer, 0, 1);
+			
+						switch (buffer[0]) {
+							case OPCODE_KEY_RECEIVED:
+								if (DEBUG) System.out.println("OPCODE_KEY_RECIEVED");
+								read(inStream, buffer, 0, 1);
+								Event keyEvent = new Event("iStuffMobile");
+								keyEvent.setPostValue("Activity", "KeyPress");
+								keyEvent.setPostValue("KeyCode", new Integer(buffer[0]));
+								break;
+							default:
+								System.out.println("unrecognized opcode");
 						}
-					}
-					catch(Exception ex)
-					{
-							System.out.println(ex.toString());
+					} catch( Exception ex ){
+						ex.printStackTrace();
 					}
 				}
 		}
