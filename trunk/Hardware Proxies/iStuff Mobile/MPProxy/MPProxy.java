@@ -15,7 +15,7 @@ public class MPProxy implements EventCallback
 		private final int OPCODE_CLOSEAPP = 8;
 		private final int OPCODE_KEY_PRESSED = 9;
 		
-		private final boolean DEBUG = false;
+		private final boolean DEBUG = true;
 		private EventHeap eventHeap;
 		private Event template;
 		
@@ -53,6 +53,7 @@ public class MPProxy implements EventCallback
 					buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
 					outStream.write(buffer);
 					outStream.close();
+					inStream.close();
 					serPort.close();
 			} 
 			catch(Exception ex)
@@ -128,15 +129,42 @@ public class MPProxy implements EventCallback
 						read(inStream, buffer, 0, 1);
 			
 						switch (buffer[0]) {
-							case OPCODE_KEY_RECEIVED:
+							case OPCODE_KEY_PRESSED:
 								if (DEBUG) System.out.println("OPCODE_KEY_RECIEVED");
-								read(inStream, buffer, 0, 1);
+								read(inStream, buffer, 0, 4);
 								Event keyEvent = new Event("iStuffMobile");
-								keyEvent.setPostValue("Activity", "KeyPress");
-								keyEvent.setPostValue("KeyCode", new Integer(buffer[0]));
+								
+								char keyCode = 0;
+								keyCode |= buffer[0];
+								keyCode <<= 8;
+								keyCode |= buffer[1];
+								
+								char type = 0;
+								type |= buffer[2];
+								type <<= 8;
+								type |= buffer[3];
+								
+								switch(type)
+								{
+									case 1:
+										keyEvent.setPostValue("Activity", "KeyPress");
+										keyEvent.setPostValue("KeyCode", new Integer(keyCode));
+									break;
+									case 2:
+										keyEvent.setPostValue("Activity", "KeyUp");
+									break;
+									case 3:
+										keyEvent.setPostValue("Activity", "KeyDown");
+									break;
+									
+									default:
+										System.out.println("Unrecognized Key Type");
+								}
+								
+								eventHeap.putEvent(keyEvent);
 								break;
 							default:
-								System.out.println("unrecognized opcode");
+								System.out.println("unrecognized opcode " + new Integer(buffer[0]));
 						}
 					} catch( Exception ex ){
 						ex.printStackTrace();
