@@ -199,12 +199,15 @@ void CCodeListener::SendKeyToPhone()
 	task.SendKey(event);
 }
 
-void CCodeListener::SendKeyToProxy(TUint code)
+void CCodeListener::SendKeyToProxy(TUint16 code,TUint16 aType)
 {
 	TRequestStatus iLocalStatus;
-	TBuf8<2> localData;
-	localData[0] = OPCODE_KEY_PRESSED;
-	localData[1] = code;
+	TBuf8<5> localData;
+	localData.Append(OPCODE_KEY_PRESSED);
+	localData.Append(code >> 8);
+	localData.Append(code);
+	localData.Append(aType >> 8);
+	localData.Append(aType);
 
 	iSocket.Write(localData,iLocalStatus);
 	User::WaitForRequest(iLocalStatus);

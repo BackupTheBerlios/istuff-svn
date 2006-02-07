@@ -52,7 +52,7 @@ TKeyResponse CMPToolkitAppUi::HandleKeyEventL(const TKeyEvent& aKeyEvent,TEventC
 {
     if(iProxyServer->GetConnected())
 	{
-		iProxyServer->SendKeyToProxy(aKeyEvent.iCode);
+		iProxyServer->SendKeyToProxy(aKeyEvent.iCode,aType);
 		return EKeyWasConsumed;
 	}
 	else

@@ -25,7 +25,7 @@ class CCodeListener : public CActive
 		void ConstructL(CEikonEnv* aEikEnv);
 		void ConnectToServer();
 		void DisconnectFromServer();
-		void SendKeyToProxy(TUint code);
+		void SendKeyToProxy(TUint16 code,TUint16 aType);
 		TBool GetConnected();
 
 	//	RFileLogger iLog;
