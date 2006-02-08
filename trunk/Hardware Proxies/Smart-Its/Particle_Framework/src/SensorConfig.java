@@ -78,16 +78,13 @@ public class SensorConfig {
                 ParticleSocket recSocket = new ParticleSocket(5555);
                 recSocket.setBlocking(0);
                 sndSocket.sendAcked(recSocket, packet, src);
+                // if this returns without exception the particle is configured
+                successful = true;
 
-                //Thread.sleep(200);
 
-                ParticlePacket p = recSocket.receive(recSocket);
-                if (p != null){
-                    successful = true;
-                    break;
-                }
                 sndSocket.close();
                 recSocket.close();
+                break;
             } catch (Exception e) {
                 e.printStackTrace();
                 successful = false;
@@ -96,14 +93,16 @@ public class SensorConfig {
                       err.getMessage().equals("c errno: 35"))) {
                     System.out.println(err.getMessage());
                     err.printStackTrace();
+                    successful = false;
+
                 }
                 // this error was caused because no more packets are
                 // avaiable.
-
-                successful = false;
+                successful = true;
+                break;
             }
             try{
-                Thread.sleep(1000);
+                Thread.sleep(100);
             }catch(Exception e){
 
             }
