@@ -6,17 +6,22 @@ public class SlideController{
 
 	private Robot robot = null;
 
-	public SlideController(String eventHeapName) {
+	public SlideController(String eventHeapName, String machineName) {
+	
 		try{
 			EventHeap eheap = new EventHeap(eventHeapName);
 			robot = new Robot();
 			String openSlides = "";
-			
+			System.out.println("MACHINE NAME IS: " + machineName);
 			Event template = new Event("SlideController");
 			Event received;
 			while( true ){
 				received = eheap.waitForEvent(template);
+				//System.out.println("Value of MachineName is: " + received.getPostValueString("MachineName"));
+				if (received.getPostValueString("MachineName").equals(machineName))
+				{
 				String command = received.getPostValueString("command");
+				System.out.println("An Event for this machine was received: " + command);
 				if( command.equals("next") ){
 					nextSlide();
 				} else if( command.equals("prev") ){
@@ -58,7 +63,8 @@ public class SlideController{
 					rt.exec ("open " + presentationURL);
 					Thread.sleep(10000);
 				}
-			}
+			} // end if
+		} // end while	
 		} catch( Exception ex ){
 			ex.printStackTrace();
 		}
@@ -104,27 +110,29 @@ public class SlideController{
 	
 	public void gotoSlide(int num){
 		try{
-			String numString = Integer.toString(num);
-			char[] digits = numString.toCharArray();
-			for(int i=0; i < digits.length; i++){
-				int keyCode = KeyEvent.VK_0 + Integer.parseInt(digits[i]+"");
-				robot.keyPress(keyCode);
-				robot.keyRelease(keyCode);			
+			if(num <= 0) {num = 1;}
+				String numString = Integer.toString(num);
+				char[] digits = numString.toCharArray();
+				for(int i=0; i < digits.length; i++){
+					int keyCode = KeyEvent.VK_0 + Integer.parseInt(digits[i]+"");
+					robot.keyPress(keyCode);
+					robot.keyRelease(keyCode);			
+				
+				// sleep required for Keynote to respond correctly
+				//Thread.sleep(3000);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
 			}
-			// sleep required for Keynote to respond correctly
-			Thread.sleep(3000);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
 		} catch( Exception ex ){
 			ex.printStackTrace();
 		}
 	}
 	
 	public static void main(String argv[]){
-		if(argv.length == 1){
-			SlideController sc = new SlideController(argv[0]);
+		if(argv.length == 2){
+			SlideController sc = new SlideController(argv[0], argv[1]);
 		} else {
-			System.out.println("Usage: SlideController <Event Heap Name>");
+			System.out.println("Usage: SlideController <Event Heap Name> or <Machine Name> not provided");
 		} 
 	}
 		

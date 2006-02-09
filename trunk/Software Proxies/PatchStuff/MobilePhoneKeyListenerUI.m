@@ -6,32 +6,32 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "PowerbookTiltSensorPatchUI.h"
+#import "MobilePhoneKeyListenerUI.h"
 
 
-@implementation PowerbookTiltSensorPatchUI
+@implementation MobilePhoneKeyListenerUI
 // this method is called when a patch is inserted and 
 // the inspector is  shown for the first time
 + (id)viewNibName
 {
-	NSLog(@"in PowerbookTiltSensorPatchUI: viewNibName");
-	return @"PowerbookTiltSensorPatchUI.nib";
+	NSLog(@"in MobilePhoneKeyListenerUI: viewNibName");
+	return @"MobilePhoneKeyListenerUI.nib";
 }
 
 - (void)_updateSources{
-	NSLog(@"in PowerbookTiltSensorPatchUI: updateSources");
+	NSLog(@"in TestSensorPatchUI: updateSources");
 
 
 }
 
 - (void)deviceMenu:(id)fp8{
-	NSLog(@"in PowerbookTiltSensorPatchUI: deviceMenu");
+	NSLog(@"in MobilePhoneKeyListenerUI: deviceMenu");
 
 }
 
 - (void)sourceMenu:(id)fp8
 {
-	NSLog(@"in PowerbookTiltSensorPatchUI: sourceMenu");
+	NSLog(@"in MobilePhoneKeyListenerUI: sourceMenu");
 
 }
 
@@ -40,8 +40,11 @@
 - (void)setupViewForPatch:(id)fp8
 {
 	NSLog(@"in PowerbookTiltSensorPatchUI: setupViewForPatch");
-		NSLog (@"The address of the view variable is: %@", view);
 	_patch = fp8;
+}
+
+- (IBAction)doSomething:(id)sender
+{
 }
 
 @end

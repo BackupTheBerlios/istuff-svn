@@ -1,5 +1,5 @@
 //
-//  Presentation.h
+//  PowerbookTiltSensorPatch.h
 //  QCiStuff
 //
 //  Created by Rafael Ballagas on 11/7/05.
@@ -11,36 +11,33 @@
 #import <eh2.h>
 #import <idk_io.h>
 #import "QCPatch.h"
-#import "PresentationUI.h";
+#import "MobilePhoneKeyListenerUI.h";
 	
+// MobilePhoneKeyListenerUI should somehow register with the Notification Center
+// Here the notifications should be caught. MobilePhoneKeyListenerUI is also imported.
+// Therefore a variable can be declared.
 
 // possible input/output types. 
 @class QCIndexPort, QCNumberPort, QCStringPort,
         QCBooleanPort, QCVirtualPort, QCColorPort,
         QCImagePort;
 		
-@class PresentationUI;
+@class MobilePhoneKeyListenerUI;
 
-@interface Presentation : QCPatch {
-	QCBooleanPort *inputNextSlide;
-    QCBooleanPort *inputPrevSlide;
-	QCNumberPort *inputGotoSlideNumber;
-	QCStringPort *inputMachineName;
-
-	BOOL lastInputNextSlide;
-	BOOL lastInputPrevSlide;
-	//BOOL lastInputNextPresentation;
-	//BOOL lastInputPrevPresentation;
- 
-	BOOL lastInputStartPresentation1;
-	BOOL lastInputStartPresentation2;
-	//BOOL url1Activated;
-	//BOOL url2Activated;
+@interface MobilePhoneKeyListener : QCPatch {
+	//QCBooleanPort *outputKeyPressed;
+    QCNumberPort *outputKeyStroke;
+	QCBooleanPort *outputKeyPressed;
 	
-	int lastInputGotoSlide;
-
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
+
+	//signal wether the output port should provide a new value for the outputPort
+	int keyCode;
+	BOOL setOutputPort;
+
+	// signal whether or not to exit the thread waitforEvent
+	BOOL waitForEvents;
 }
 
 + (int)executionMode;
@@ -53,4 +50,10 @@
 //- (void) createEventHeap;
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port;
 
+// activate/deactivate the thread that waits for EventHeap events
+- (void) startReceivingEvents;
+- (void) stopReceivingEvents;
+
+// create / post an event
+- (eh2_EventPtr *) createEvent;
 @end

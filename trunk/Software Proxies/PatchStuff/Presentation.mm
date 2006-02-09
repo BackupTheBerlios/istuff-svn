@@ -118,12 +118,27 @@
 			delete eventPtr;
 		}
 		*/
+		const char* name = [[inputMachineName stringValue] cString];
 		
+		if ((int)[inputGotoSlideNumber doubleValue] != lastInputGotoSlide) {
+			eh2_EventPtr *eventPtr = new eh2_EventPtr;
+			(*eventPtr) = eh2_Event::cs_create ("SlideController");
+			(*eventPtr)->setPostValueString ("command", "gotoSlide");
+			(*eventPtr)->setPostValueInt("slideNum", (int) [inputGotoSlideNumber doubleValue]);
+			(*eventPtr)->setPostValueString ("MachineName", name);
+		    (*eventPtr)->setPostValueInt("TimeToLive", 50);
+			(*eh)->putEvent (*eventPtr);
+			delete eventPtr;
+
+		}
+				
 		if( [inputNextSlide booleanValue] == TRUE && [inputNextSlide booleanValue] != lastInputNextSlide){
 			//create a new event object
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
 			(*eventPtr)->setPostValueString ("command", "next");
+			(*eventPtr)->setPostValueString ("MachineName", name);
+			(*eventPtr)->setPostValueInt("TimeToLive", 50);
 			(*eh)->putEvent (*eventPtr);
 			delete eventPtr;
 		}
@@ -134,12 +149,15 @@
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
 			(*eventPtr)->setPostValueString ("command", "prev");
+			(*eventPtr)->setPostValueString ("MachineName", name);
+			(*eventPtr)->setPostValueInt("TimeToLive", 50);
 			(*eh)->putEvent (*eventPtr);
 			delete eventPtr;
 		}
 		
 		lastInputNextSlide = [inputNextSlide booleanValue];
 		lastInputPrevSlide = [inputPrevSlide booleanValue];
+		lastInputGotoSlide = (int) [inputGotoSlideNumber doubleValue];
 		//lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
 		//lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
         return TRUE;

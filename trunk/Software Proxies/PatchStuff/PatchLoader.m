@@ -26,5 +26,7 @@
 	[manager registerNodeWithClass: [SmartItsSensor class]];
 	[manager registerNodeWithClass: [MobilePhone class]];
 	[manager registerNodeWithClass: [CharacterGenerator class]];
+	[manager registerNodeWithClass: [TestPatch class]];
+	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
 }
 @end

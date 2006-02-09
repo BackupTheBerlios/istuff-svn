@@ -30,6 +30,10 @@
 		345C283E092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345C283D092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm */; };
 		345C2917092E4D7F001C3A3E /* PowerbookTiltSensorPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = 345C2916092E4D7F001C3A3E /* PowerbookTiltSensorPatchUI.nib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		A706B025099935E6004BBDF8 /* MobilePhoneKeyListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = A706B022099935E6004BBDF8 /* MobilePhoneKeyListener.mm */; };
+		A706B026099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A706B024099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m */; };
+		A706B02E0999361F004BBDF8 /* MobilePhoneKeyListener.xml in Resources */ = {isa = PBXBuildFile; fileRef = A706B02A0999361F004BBDF8 /* MobilePhoneKeyListener.xml */; };
+		A706B02F0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A706B02C0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib */; };
 		A70A985B0970158000F95ACB /* MobilePhoneUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A70A98590970158000F95ACB /* MobilePhoneUI.nib */; };
 		A71391A9094C3CFB00A173A0 /* MobilePhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = A71391A6094C3CFB00A173A0 /* MobilePhone.mm */; };
 		A71391AA094C3CFB00A173A0 /* MobilePhoneUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A71391A8094C3CFB00A173A0 /* MobilePhoneUI.m */; };
@@ -46,6 +50,10 @@
 		A73D52C3093CC3A300056224 /* ServoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A73D52C2093CC3A300056224 /* ServoController.mm */; };
 		A73D52CF093CC63900056224 /* ServoController.xml in Resources */ = {isa = PBXBuildFile; fileRef = A73D52CB093CC63900056224 /* ServoController.xml */; };
 		A73D52D0093CC63900056224 /* ServoControllerUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A73D52CD093CC63900056224 /* ServoControllerUI.nib */; };
+		A7525FD60985524B00E270F1 /* TestPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7525FD20985524B00E270F1 /* TestPatch.xml */; };
+		A7525FD70985524B00E270F1 /* TestPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7525FD40985524B00E270F1 /* TestPatchUI.nib */; };
+		A759B0E30985292900F31E38 /* TestPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E00985292900F31E38 /* TestPatch.mm */; };
+		A759B0E40985292900F31E38 /* TestPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E20985292900F31E38 /* TestPatchUI.mm */; };
 		A7664F98093C90E900551EBD /* AccelerometerPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7664F96093C90E900551EBD /* AccelerometerPatchUI.nib */; };
 		A77898F1093CC25D00984411 /* ServoControllerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A77898EF093CC25D00984411 /* ServoControllerUI.m */; };
 		A789DE5E093BA99F004E467F /* AccelerometerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */; };
@@ -255,6 +263,12 @@
 		345C2914092E4D78001C3A3E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PowerbookTiltSensorPatchUI.nib; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* qcistuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qcistuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		A706B021099935E6004BBDF8 /* MobilePhoneKeyListener.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MobilePhoneKeyListener.h; sourceTree = "<group>"; };
+		A706B022099935E6004BBDF8 /* MobilePhoneKeyListener.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MobilePhoneKeyListener.mm; sourceTree = "<group>"; };
+		A706B023099935E6004BBDF8 /* MobilePhoneKeyListenerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MobilePhoneKeyListenerUI.h; sourceTree = "<group>"; };
+		A706B024099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneKeyListenerUI.m; sourceTree = "<group>"; };
+		A706B02B0999361F004BBDF8 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/MobilePhoneKeyListener.xml; sourceTree = "<group>"; };
+		A706B02D0999361F004BBDF8 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MobilePhoneKeyListenerUI.nib; sourceTree = "<group>"; };
 		A70A985A0970158000F95ACB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MobilePhoneUI.nib; sourceTree = "<group>"; };
 		A71391A5094C3CFB00A173A0 /* MobilePhone.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MobilePhone.h; sourceTree = "<group>"; };
 		A71391A6094C3CFB00A173A0 /* MobilePhone.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MobilePhone.mm; sourceTree = "<group>"; };
@@ -277,6 +291,12 @@
 		A73D52C2093CC3A300056224 /* ServoController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ServoController.mm; sourceTree = SOURCE_ROOT; };
 		A73D52CC093CC63900056224 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ServoController.xml; sourceTree = "<group>"; };
 		A73D52CE093CC63900056224 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ServoControllerUI.nib; sourceTree = "<group>"; };
+		A7525FD30985524B00E270F1 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/TestPatch.xml; sourceTree = "<group>"; };
+		A7525FD50985524B00E270F1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/TestPatchUI.nib; sourceTree = "<group>"; };
+		A759B0DF0985292900F31E38 /* TestPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TestPatch.h; sourceTree = SOURCE_ROOT; };
+		A759B0E00985292900F31E38 /* TestPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPatch.mm; sourceTree = SOURCE_ROOT; };
+		A759B0E10985292900F31E38 /* TestPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TestPatchUI.h; sourceTree = SOURCE_ROOT; };
+		A759B0E20985292900F31E38 /* TestPatchUI.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPatchUI.mm; sourceTree = "<group>"; };
 		A7664F97093C90E900551EBD /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/AccelerometerPatchUI.nib; sourceTree = "<group>"; };
 		A77898EC093CC25D00984411 /* ServoController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoController.h; sourceTree = SOURCE_ROOT; };
 		A77898EE093CC25D00984411 /* ServoControllerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoControllerUI.h; sourceTree = SOURCE_ROOT; };
@@ -298,6 +318,7 @@
 		A789DE87093BAAFB004E467F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RFIDReaderPatchUI.nib; sourceTree = "<group>"; };
 		A7A2B9140973ECD000A25B89 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/SmartItsSensor.xml; sourceTree = "<group>"; };
 		A7A2B9160973ECD000A25B89 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SmartItsSensorUI.nib; sourceTree = "<group>"; };
+		A7AF333109893DF90080771F /* QCClearUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QCClearUI.h; sourceTree = SOURCE_ROOT; };
 		A7BE9C9909703464006432A0 /* CharacterGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = CharacterGenerator.mm; sourceTree = "<group>"; };
 		A7BE9C9A09703464006432A0 /* CharacterGeneratorUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CharacterGeneratorUI.h; sourceTree = "<group>"; };
 		A7BE9C9B09703464006432A0 /* CharacterGeneratorUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CharacterGeneratorUI.m; sourceTree = "<group>"; };
@@ -357,6 +378,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A706B03009993623004BBDF8 /* MobilePhoneKeyListener */,
+				A797D24B0980F78400AEF5CE /* TestPatch */,
 				A7A2B91A0973ECD300A25B89 /* SmartItsSensor */,
 				A7BE9CA6097034DE006432A0 /* CharacterGenerator */,
 				34094FBD095091A3009C40AB /* Teleo */,
@@ -426,6 +449,8 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A706B028099935E9004BBDF8 /* MobilePhoneKeyListener */,
+				A797D20F0980F65B00AEF5CE /* TestPatch */,
 				A7A2B9210973ECF700A25B89 /* SmartItsSensor */,
 				A7BE9C9F0970346A006432A0 /* CharacterGenerator */,
 				A7CB9B39093F4FED0066A1E5 /* ClockSignal */,
@@ -663,6 +688,7 @@
 		3427193509331F9200A87EEF /* QC */ = {
 			isa = PBXGroup;
 			children = (
+				A7AF333109893DF90080771F /* QCClearUI.h */,
 				34249F800930D091009E00CD /* QCInspector.h */,
 				340B41B8091FA9D20074DBFA /* GFNodeManager.h */,
 				340B410E091F8AC00074DBFA /* GFGraph.h */,
@@ -671,6 +697,26 @@
 				340B4111091F8AC00074DBFA /* QCPatch.h */,
 			);
 			name = QC;
+			sourceTree = "<group>";
+		};
+		A706B028099935E9004BBDF8 /* MobilePhoneKeyListener */ = {
+			isa = PBXGroup;
+			children = (
+				A706B021099935E6004BBDF8 /* MobilePhoneKeyListener.h */,
+				A706B022099935E6004BBDF8 /* MobilePhoneKeyListener.mm */,
+				A706B023099935E6004BBDF8 /* MobilePhoneKeyListenerUI.h */,
+				A706B024099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m */,
+			);
+			name = MobilePhoneKeyListener;
+			sourceTree = "<group>";
+		};
+		A706B03009993623004BBDF8 /* MobilePhoneKeyListener */ = {
+			isa = PBXGroup;
+			children = (
+				A706B02A0999361F004BBDF8 /* MobilePhoneKeyListener.xml */,
+				A706B02C0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib */,
+			);
+			name = MobilePhoneKeyListener;
 			sourceTree = "<group>";
 		};
 		A71391AB094C3D0300A173A0 /* MobilePhone */ = {
@@ -813,6 +859,26 @@
 				A789DE60093BA9A3004E467F /* Accelerometer */,
 			);
 			name = Phidgets;
+			sourceTree = "<group>";
+		};
+		A797D20F0980F65B00AEF5CE /* TestPatch */ = {
+			isa = PBXGroup;
+			children = (
+				A759B0DF0985292900F31E38 /* TestPatch.h */,
+				A759B0E00985292900F31E38 /* TestPatch.mm */,
+				A759B0E10985292900F31E38 /* TestPatchUI.h */,
+				A759B0E20985292900F31E38 /* TestPatchUI.mm */,
+			);
+			name = TestPatch;
+			sourceTree = "<group>";
+		};
+		A797D24B0980F78400AEF5CE /* TestPatch */ = {
+			isa = PBXGroup;
+			children = (
+				A7525FD20985524B00E270F1 /* TestPatch.xml */,
+				A7525FD40985524B00E270F1 /* TestPatchUI.nib */,
+			);
+			name = TestPatch;
 			sourceTree = "<group>";
 		};
 		A7A2B91A0973ECD300A25B89 /* SmartItsSensor */ = {
@@ -983,6 +1049,10 @@
 				A7BE9CA5097034D6006432A0 /* CharacterGeneratorUI.nib in Resources */,
 				A7A2B9170973ECD000A25B89 /* SmartItsSensor.xml in Resources */,
 				A7A2B9180973ECD000A25B89 /* SmartItsSensorUI.nib in Resources */,
+				A7525FD60985524B00E270F1 /* TestPatch.xml in Resources */,
+				A7525FD70985524B00E270F1 /* TestPatchUI.nib in Resources */,
+				A706B02E0999361F004BBDF8 /* MobilePhoneKeyListener.xml in Resources */,
+				A706B02F0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1024,6 +1094,10 @@
 				A7BE9C9D09703464006432A0 /* CharacterGeneratorUI.m in Sources */,
 				A718BF0A0973FF7400F7528F /* SmartItsSensor.mm in Sources */,
 				A718BF0B0973FF7400F7528F /* SmartItsSensorUI.m in Sources */,
+				A759B0E30985292900F31E38 /* TestPatch.mm in Sources */,
+				A759B0E40985292900F31E38 /* TestPatchUI.mm in Sources */,
+				A706B025099935E6004BBDF8 /* MobilePhoneKeyListener.mm in Sources */,
+				A706B026099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,6 +1166,22 @@
 				345C2914092E4D78001C3A3E /* English */,
 			);
 			name = PowerbookTiltSensorPatchUI.nib;
+			sourceTree = "<group>";
+		};
+		A706B02A0999361F004BBDF8 /* MobilePhoneKeyListener.xml */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A706B02B0999361F004BBDF8 /* English */,
+			);
+			name = MobilePhoneKeyListener.xml;
+			sourceTree = "<group>";
+		};
+		A706B02C0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A706B02D0999361F004BBDF8 /* English */,
+			);
+			name = MobilePhoneKeyListenerUI.nib;
 			sourceTree = "<group>";
 		};
 		A70A98590970158000F95ACB /* MobilePhoneUI.nib */ = {
@@ -1164,6 +1254,22 @@
 				A73D52CE093CC63900056224 /* English */,
 			);
 			name = ServoControllerUI.nib;
+			sourceTree = SOURCE_ROOT;
+		};
+		A7525FD20985524B00E270F1 /* TestPatch.xml */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7525FD30985524B00E270F1 /* English */,
+			);
+			name = TestPatch.xml;
+			sourceTree = SOURCE_ROOT;
+		};
+		A7525FD40985524B00E270F1 /* TestPatchUI.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7525FD50985524B00E270F1 /* English */,
+			);
+			name = TestPatchUI.nib;
 			sourceTree = SOURCE_ROOT;
 		};
 		A7664F96093C90E900551EBD /* AccelerometerPatchUI.nib */ = {

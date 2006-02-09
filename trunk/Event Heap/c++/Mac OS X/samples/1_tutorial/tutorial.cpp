@@ -160,7 +160,7 @@ public:
 		field = templatePtr->allocateField("AGE", eh2_FieldType::cs_int());
 		field->setTemplateValueInt(30);
 
-		// if you want to set the value to some special value like FORMAL,
+		// if you want to set the value to some special value like,
 		// you should do as follows, using the normalized way mentioned above.
 		field = templatePtr->allocateField("NAME", eh2_FieldType::cs_string());
 		field->setTemplateValueType(FVT_FORMAL);

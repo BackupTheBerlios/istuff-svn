@@ -4,6 +4,20 @@
 <dict>
 	<key>inputAttributes</key>
 	<dict>
+		<key>inputGotoSlideNumber</key>
+		<dict>
+			<key>description</key>
+			<string>Takes a number to what slide the presentation should go. Values greater than the actual number of slides will always let the presentation to the last slide.</string>
+			<key>name</key>
+			<string>GotoSlide #</string>
+		</dict>
+		<key>inputMachineName</key>
+		<dict>
+			<key>description</key>
+			<string>The machine name on which the proxy is running must be entered here. It has to match with the paramter for the machine name of the Presentation Proxy</string>
+			<key>name</key>
+			<string>Machine Name</string>
+		</dict>
 		<key>inputNextSlide</key>
 		<dict>
 			<key>description</key>
