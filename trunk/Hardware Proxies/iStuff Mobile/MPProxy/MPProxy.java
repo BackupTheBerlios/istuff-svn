@@ -58,7 +58,7 @@ public class MPProxy implements EventCallback
 			} 
 			catch(Exception ex)
 			{
-					System.out.println(ex.toString());
+					System.exit(1);
 			}
 		}
 		
