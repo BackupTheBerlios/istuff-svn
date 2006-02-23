@@ -41,7 +41,7 @@ public class MPProxy implements EventCallback
 			}
 			catch (Exception ex)
 			{
-				System.out.println(ex.toString());
+				System.out.println(ex.printStackTrace());
 				System.exit(1);
 			}
 		}
@@ -313,10 +313,10 @@ class Shutdown extends Thread {
       while (true) {
         try {
           String command = in.readLine();
-          if (command.beginsWith("10")) {
+          if (command.startsWith("10")) {
             mobileProxy.redirectEvent(10);
           }
-          else if (command.beginsWith("11")) {
+          else if (command.startsWith("11")) {
             mobileProxy.redirectEvent(11);
           }
         }
