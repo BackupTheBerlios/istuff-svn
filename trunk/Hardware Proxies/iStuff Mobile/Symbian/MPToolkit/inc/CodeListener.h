@@ -13,6 +13,7 @@
 #include "Global.h"
 #include "MPToolkitAppUi.h"
 #include "SoundPlayer.h"
+#include "KeyListener.h"
 
 class CMPToolkitAppUi;
 
@@ -42,6 +43,8 @@ class CCodeListener : public CActive
 		void StopSoundFile();
 		void LaunchApp();
 		void CloseApp();
+		void StartKeyCapture();
+		void StopKeyCapture();
 
 		CMPToolkitAppUi* iApplicationUi;
 		CEikonEnv* iEikEnv;
@@ -55,6 +58,7 @@ class CCodeListener : public CActive
 		TBool isConnected;
 
 		CSoundPlayer* iSoundPlayer;
+		CKeyListener* iKeyListener;
 		CDesCArrayFlat*	iAppList;
 };
 
