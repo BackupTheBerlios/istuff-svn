@@ -80,9 +80,30 @@ void CCodeListener::DecodeOpcode()
 			CloseApp();
 			break;
 
+		case OPCODE_START_KEYCAPTURE:
+			StartKeyCapture();
+			break;
+
+		case OPCODE_STOP_KEYCAPTURE:
+			StopKeyCapture();
+			break;
+
+		default:
+			break;
 	}
 }
 
+void CCodeListener::StartKeyCapture()
+{
+	iKeyListener = CKeyListener::NewLC();
+	iKeyListener->StartL();
+}
+
+void CCodeListener::StopKeyCapture()
+{
+	if(iKeyListener != NULL)
+		iKeyListener->StopL();
+}
 
 void CCodeListener::LaunchApp()
 {
