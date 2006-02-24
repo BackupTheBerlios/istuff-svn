@@ -24,6 +24,7 @@ SOURCE  MPToolkitDocument.cpp
 SOURCE  MPToolkitContainer.cpp
 SOURCE  CodeListener.cpp
 SOURCE  SoundPlayer.cpp
+SOURCE  KeyListener.cpp
 
 SOURCEPATH ..\data
 RESOURCE MPToolkit.rss
