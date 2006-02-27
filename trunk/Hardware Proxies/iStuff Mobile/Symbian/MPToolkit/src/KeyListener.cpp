@@ -53,8 +53,12 @@ void CKeyListener::StartL()
 	wg.Construct((TUint32)&wg, EFalse);
 	CleanupClosePushL(wg);
 
+	iLog.Write(_L("test1"));
+
 	// capture a key
 	User::LeaveIfError(wg.CaptureKey(EKeyLeftArrow, 0, 0));
+
+	iLog.Write(_L("test2"));
 
 	// hide this window group from the app switcher
 	wg.SetOrdinalPosition(-1);
@@ -62,19 +66,28 @@ void CKeyListener::StartL()
 	CApaWindowGroupName* wn=CApaWindowGroupName::NewLC(ws);
 	wn->SetHidden(ETrue);
 	wn->SetWindowGroupName(wg);
+
+	iLog.Write(_L("test3"));
+
 	StartListening();
 }
 
 void CKeyListener::StartListening()
 {
+	iLog.Write(_L("test4"));
+	
 	// listen for the key presses
 	ws.EventReady(&iStatus);
 	SetActive();
+
+	iLog.Write(_L("test5"));
 }
 
 void CKeyListener::RunL()
 {
-	User::WaitForAnyRequest();
+	//User::WaitForAnyRequest();
+
+	iLog.Write(_L("test6"));
 	if (iStatus.Int()==KErrNone)
 	{
 			TWsEvent e;
