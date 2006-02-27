@@ -181,6 +181,10 @@ SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Codelistener.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Keylistener.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\SRC\Mptoolkitapp.cpp
 # End Source File
 # Begin Source File
@@ -219,6 +223,10 @@ SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\INC\Codelistener.h
 # Begin Source File
 
 SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\INC\Mptoolkitapp.h
+# End Source File
+# Begin Source File
+
+SOURCE=\DEV\SYMBIAN\PROJECTS\MPTOOLKIT\INC\Keylistener.h
 # End Source File
 # Begin Source File
 

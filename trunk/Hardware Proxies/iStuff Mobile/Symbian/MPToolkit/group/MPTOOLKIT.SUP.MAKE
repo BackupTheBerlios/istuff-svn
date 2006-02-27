@@ -1,5 +1,5 @@
 
-PATH=C:\dev\Symbian\7.0s\Series60_v20\epoc32\tools\;C:\dev\Symbian\7.0s\Series60_v20\epoc32\gcc\bin\;C:\texmf\miktex\bin;C:\Program Files\Common Files\Symbian\Tools;C:\Program Files\Java\jdk1.5.0_05\bin;C:\Perl\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Common Files\Adobe\AGL;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\IDM Computer Solutions\UltraEdit-32;C:\Program Files\SSH Communications Security\SSH Secure Shell;C:\Program Files\Java\jdk1.5.0_05\bin
+PATH=C:\dev\Symbian\7.0s\Series60_v20\epoc32\tools\;C:\dev\Symbian\7.0s\Series60_v20\epoc32\gcc\bin\;C:\Program Files\Common Files\Symbian\Tools;C:\Perl\bin\;C:\texmf\miktex\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Common Files\Adobe\AGL;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\Java\jdk1.5.0_06\bin;C:\Program Files\IDM Computer Solutions\UltraEdit-32
 
 # EPOC DEFINITIONS
 
@@ -55,6 +55,7 @@ LIBS= \
 
 LINK_OBJS= \
 	"$(EPOCBLDUDEB)\CODELISTENER.obj" \
+	"$(EPOCBLDUDEB)\KEYLISTENER.obj" \
 	"$(EPOCBLDUDEB)\MPTOOLKIT.UID.obj" \
 	"$(EPOCBLDUDEB)\MPTOOLKITAPP.obj" \
 	"$(EPOCBLDUDEB)\MPTOOLKITAPPUI.obj" \
@@ -115,6 +116,7 @@ LIBS= \
 
 LINK_OBJS= \
 	"$(EPOCBLDUREL)\CODELISTENER.obj" \
+	"$(EPOCBLDUREL)\KEYLISTENER.obj" \
 	"$(EPOCBLDUREL)\MPTOOLKIT.UID.obj" \
 	"$(EPOCBLDUREL)\MPTOOLKITAPP.obj" \
 	"$(EPOCBLDUREL)\MPTOOLKITAPPUI.obj" \
