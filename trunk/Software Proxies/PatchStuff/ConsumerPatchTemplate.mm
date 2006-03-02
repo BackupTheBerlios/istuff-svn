@@ -40,6 +40,13 @@ Otherwise a standard iStuffUI class will be taken.
 
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {
+	// Before blind creation of an Event Pointer, the patch has to be connected.
+	
+	// To ensure this, the code should be surrounded with 
+	
+	if ([self connected]){
+	
+	}
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
 

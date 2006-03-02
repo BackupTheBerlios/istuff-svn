@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 	
-	
 @interface MobilePhoneKeyListenerPatch : iStuffProviderPatch {
 	// Define member variables and output ports here
 

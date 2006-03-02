@@ -20,17 +20,8 @@
 }
 	
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
-{
-	// This is where the execution of your patch happens.
-        // Everything in this method gets executed once
-        // per 'clock cycle', which is available in fp12 (time).
-	
-        // fp8 is the QCOpenGLContext*.  Don't forget to set
-        // it before you start drawing.  
-	
-        // Read/Write any ports in here too.
-			
-	
+{			
+	if ([self connected]) {
 		if( [inputPWMOut0 doubleValue] != lastInputPWMOut0 ){
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("TELEO_PWMOUT");
@@ -52,7 +43,7 @@
 			delete eventPtr;
 			lastInputPWMOut1 = (int) [inputPWMOut1 doubleValue];
 		}
-
+	}
         return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
