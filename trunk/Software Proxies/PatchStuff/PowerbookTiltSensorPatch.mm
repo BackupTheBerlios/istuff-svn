@@ -187,6 +187,8 @@
 // the thread terminates after receiving an event AND if the instance variable waitForEvent is FALSE
 // thus, you will still receive an event after calling stopReceivingEvents because (*eh)->waitForEvent blocks until it receives one
 //
+
+
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread

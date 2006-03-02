@@ -46,6 +46,7 @@
 // activate/deactivate the thread that waits for EventHeap events
 - (void) startReceivingEvents;
 - (void) stopReceivingEvents;
+- (void)nodeWillRemoveFromGraph;
 
 //is this needed here?
 // create / post an event

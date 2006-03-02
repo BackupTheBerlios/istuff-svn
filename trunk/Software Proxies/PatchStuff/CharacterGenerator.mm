@@ -47,8 +47,8 @@
 	[outputPermanentASCIICode setDoubleValue:-1];
 	
 	// create the Event Heap instance for the client
-	NSString *serverName = @"localhost";
-	[self createEventHeap:NULL atServer:serverName atPort:4535];
+//	NSString *serverName = @"localhost";
+//	[self createEventHeap:NULL atServer:serverName atPort:4535];
 
 	// activate the thread that receives EH events
 	[self startReceivingEvents];
@@ -60,11 +60,11 @@
 {
 	// stop thread that receives EH events
 	[self stopReceivingEvents];
-	
+	NSLog(@"IN DEALLOC CHARACTERGEN");
 	eh2_finalize ();
 	[super dealloc];
 }
-	
+
 - (id)setup:(id)fp8
 {
 	// setup vars here
@@ -150,6 +150,10 @@
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
+	
+	NSString *serverName = @"localhost";
+	[self createEventHeap:NULL atServer:serverName atPort:4535];
+
 	
 	NSLog (@"waiting for EH events...");
 	

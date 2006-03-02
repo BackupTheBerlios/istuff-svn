@@ -58,10 +58,16 @@
 	
 	// create the Event Heap instance for the client
 	NSLog(@"About to create EH");
-	NSString *serverName = @"localhost";
+	//NSString *newname = @"localhost";
+	//[self createEventHeap:NULL atServer:newname atPort:4535];
+	//[self createEventHeap:NULL atServer:newname atPort:4535];
+	//delete eh;
+
+	NSString *serverName = @"137.226.56.76";
 	[self createEventHeap:NULL atServer:serverName atPort:4535];
 	
 	NSLog (@"created EH");
+	
 
 	return [super initWithIdentifier:fp8];
 }

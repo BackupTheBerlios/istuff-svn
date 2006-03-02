@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Software Proxy</kind>
+  <proxyClass>Controller</proxyClass>
+  <name>Presentation Controller</name> 
+  <ClassName>SlideController</ClassName>
+  <comment>blablabla</comment>
+  <CustomLibs>
+    <relativePath>..</relativePath>
+    <relativePath>../..</relativePath>
+  </CustomLibs>
+</proxy>

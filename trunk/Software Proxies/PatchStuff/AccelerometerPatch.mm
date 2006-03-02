@@ -62,7 +62,7 @@
 	NSString *serverName = @"localhost";
 	[self createEventHeap:NULL atServer:serverName atPort:4535];
 	
-	NSLog (@"created EH for Accelerometer");
+	NSLog (@"created EH for Accelerometer value of Servername: %@", serverName);
 
 	// activate the thread that receives EH events
 	[self startReceivingEvents];
@@ -72,8 +72,10 @@
 	
 - (void)dealloc
 {
+	NSLog(@"In dealloc method Accelerometert Patch");
+
 	// stop thread that receives EH events
-	[self stopReceivingEvents];
+//	[self stopReceivingEvents];
 	
 	eh2_finalize ();
 	[super dealloc];
@@ -121,6 +123,7 @@
 
 
 
+
 // activate the thread that waits for Event Heap events
 //
 - (void) startReceivingEvents
@@ -144,6 +147,7 @@
 - (void) stopReceivingEvents
 {
 	// set the flag to deactivate the thread
+	NSLog(@"In Stop Receiving Events");
 	waitForEvents = FALSE;
 }
 
@@ -224,6 +228,11 @@
 	[localPool release];
 }
 
+- (void)nodeWillRemoveFromGraph{
+	NSLog(@"Stopping ReceiveEventsThread");
+	[self stopReceivingEvents];
+	[super nodeWillRemoveFromGraph];
+}
 /* is this method really needed here?
 
 // create a new event

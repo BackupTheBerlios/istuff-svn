@@ -37,10 +37,11 @@
 		A70A985B0970158000F95ACB /* MobilePhoneUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A70A98590970158000F95ACB /* MobilePhoneUI.nib */; };
 		A71391A9094C3CFB00A173A0 /* MobilePhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = A71391A6094C3CFB00A173A0 /* MobilePhone.mm */; };
 		A71391AA094C3CFB00A173A0 /* MobilePhoneUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A71391A8094C3CFB00A173A0 /* MobilePhoneUI.m */; };
+		A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */; };
+		A716A66C09B62825006BCADB /* iStuffProcessorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A716A66B09B62825006BCADB /* iStuffProcessorPatch.mm */; };
 		A718BF0A0973FF7400F7528F /* SmartItsSensor.mm in Sources */ = {isa = PBXBuildFile; fileRef = A718BF070973FF7400F7528F /* SmartItsSensor.mm */; };
 		A718BF0B0973FF7400F7528F /* SmartItsSensorUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A718BF090973FF7400F7528F /* SmartItsSensorUI.m */; };
 		A71DA56D0950963800323FF4 /* AccelerometerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DA56B0950963800323FF4 /* AccelerometerPatch.xml */; };
-		A71DA570095096BD00323FF4 /* ClockSignal.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DA56E095096BD00323FF4 /* ClockSignal.xml */; };
 		A71DA5730950971300323FF4 /* InterfaceKit.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DA5710950971300323FF4 /* InterfaceKit.xml */; };
 		A71DA58709509A5B00323FF4 /* MobilePhone.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DA58509509A5B00323FF4 /* MobilePhone.xml */; };
 		A7237084093DC83300886F01 /* Threshold.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7237081093DC83300886F01 /* Threshold.mm */; };
@@ -50,10 +51,7 @@
 		A73D52C3093CC3A300056224 /* ServoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A73D52C2093CC3A300056224 /* ServoController.mm */; };
 		A73D52CF093CC63900056224 /* ServoController.xml in Resources */ = {isa = PBXBuildFile; fileRef = A73D52CB093CC63900056224 /* ServoController.xml */; };
 		A73D52D0093CC63900056224 /* ServoControllerUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A73D52CD093CC63900056224 /* ServoControllerUI.nib */; };
-		A7525FD60985524B00E270F1 /* TestPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7525FD20985524B00E270F1 /* TestPatch.xml */; };
-		A7525FD70985524B00E270F1 /* TestPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7525FD40985524B00E270F1 /* TestPatchUI.nib */; };
-		A759B0E30985292900F31E38 /* TestPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E00985292900F31E38 /* TestPatch.mm */; };
-		A759B0E40985292900F31E38 /* TestPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E20985292900F31E38 /* TestPatchUI.mm */; };
+		A759B0E40985292900F31E38 /* iStuffPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E20985292900F31E38 /* iStuffPatchUI.mm */; };
 		A7664F98093C90E900551EBD /* AccelerometerPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7664F96093C90E900551EBD /* AccelerometerPatchUI.nib */; };
 		A77898F1093CC25D00984411 /* ServoControllerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A77898EF093CC25D00984411 /* ServoControllerUI.m */; };
 		A789DE5E093BA99F004E467F /* AccelerometerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */; };
@@ -67,13 +65,15 @@
 		A789DE89093BAAFB004E467F /* RFIDReaderPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A789DE86093BAAFB004E467F /* RFIDReaderPatchUI.nib */; };
 		A7A2B9170973ECD000A25B89 /* SmartItsSensor.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A2B9130973ECD000A25B89 /* SmartItsSensor.xml */; };
 		A7A2B9180973ECD000A25B89 /* SmartItsSensorUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7A2B9150973ECD000A25B89 /* SmartItsSensorUI.nib */; };
+		A7BA981109B6197000CF9B33 /* ReinyPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7BA980F09B6197000CF9B33 /* ReinyPatch.xml */; };
 		A7BE9C9C09703464006432A0 /* CharacterGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9C9909703464006432A0 /* CharacterGenerator.mm */; };
 		A7BE9C9D09703464006432A0 /* CharacterGeneratorUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9C9B09703464006432A0 /* CharacterGeneratorUI.m */; };
 		A7BE9CA4097034D6006432A0 /* CharacterGenerator.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7BE9CA0097034D6006432A0 /* CharacterGenerator.xml */; };
 		A7BE9CA5097034D6006432A0 /* CharacterGeneratorUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7BE9CA2097034D6006432A0 /* CharacterGeneratorUI.nib */; };
-		A7CB9B29093F4FCA0066A1E5 /* ClockSignalUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7CB9B26093F4FCA0066A1E5 /* ClockSignalUI.nib */; };
-		A7CB9B37093F4FE80066A1E5 /* ClockSignal.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B34093F4FE80066A1E5 /* ClockSignal.mm */; };
-		A7CB9B38093F4FE80066A1E5 /* ClockSignalUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB9B36093F4FE80066A1E5 /* ClockSignalUI.m */; };
+		A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */; };
+		A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */; };
+		A7E2393309AB4EC1001D78AA /* iStuffPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2393209AB4EC1001D78AA /* iStuffPatch.mm */; };
+		A7E239BE09AB5D22001D78AA /* ReinyPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */; };
 		A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F6093F29E600171F24 /* StringComparer.mm */; };
 		A7F942FA093F29E600171F24 /* StringComparerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F8093F29E600171F24 /* StringComparerUI.m */; };
 		A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7F942FF093F2A1F00171F24 /* StringComparer.xml */; };
@@ -274,12 +274,14 @@
 		A71391A6094C3CFB00A173A0 /* MobilePhone.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MobilePhone.mm; sourceTree = "<group>"; };
 		A71391A7094C3CFB00A173A0 /* MobilePhoneUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MobilePhoneUI.h; sourceTree = "<group>"; };
 		A71391A8094C3CFB00A173A0 /* MobilePhoneUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MobilePhoneUI.m; sourceTree = "<group>"; };
+		A716A5DC09B61C97006BCADB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/iStuffPatchUI.nib; sourceTree = "<group>"; };
+		A716A66B09B62825006BCADB /* iStuffProcessorPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffProcessorPatch.mm; sourceTree = "<group>"; };
+		A716A66F09B628D8006BCADB /* iStuffProcessorPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStuffProcessorPatch.h; sourceTree = "<group>"; };
 		A718BF060973FF7400F7528F /* SmartItsSensor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SmartItsSensor.h; sourceTree = SOURCE_ROOT; };
 		A718BF070973FF7400F7528F /* SmartItsSensor.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = SmartItsSensor.mm; sourceTree = SOURCE_ROOT; };
 		A718BF080973FF7400F7528F /* SmartItsSensorUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SmartItsSensorUI.h; sourceTree = SOURCE_ROOT; };
 		A718BF090973FF7400F7528F /* SmartItsSensorUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SmartItsSensorUI.m; sourceTree = SOURCE_ROOT; };
 		A71DA56C0950963800323FF4 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/AccelerometerPatch.xml; sourceTree = "<group>"; };
-		A71DA56F095096BD00323FF4 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ClockSignal.xml; sourceTree = "<group>"; };
 		A71DA5720950971300323FF4 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/InterfaceKit.xml; sourceTree = "<group>"; };
 		A71DA58609509A5B00323FF4 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/MobilePhone.xml; sourceTree = "<group>"; };
 		A7237080093DC83300886F01 /* Threshold.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Threshold.h; sourceTree = "<group>"; };
@@ -291,12 +293,8 @@
 		A73D52C2093CC3A300056224 /* ServoController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ServoController.mm; sourceTree = SOURCE_ROOT; };
 		A73D52CC093CC63900056224 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ServoController.xml; sourceTree = "<group>"; };
 		A73D52CE093CC63900056224 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ServoControllerUI.nib; sourceTree = "<group>"; };
-		A7525FD30985524B00E270F1 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/TestPatch.xml; sourceTree = "<group>"; };
-		A7525FD50985524B00E270F1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/TestPatchUI.nib; sourceTree = "<group>"; };
-		A759B0DF0985292900F31E38 /* TestPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TestPatch.h; sourceTree = SOURCE_ROOT; };
-		A759B0E00985292900F31E38 /* TestPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPatch.mm; sourceTree = SOURCE_ROOT; };
-		A759B0E10985292900F31E38 /* TestPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TestPatchUI.h; sourceTree = SOURCE_ROOT; };
-		A759B0E20985292900F31E38 /* TestPatchUI.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = TestPatchUI.mm; sourceTree = "<group>"; };
+		A759B0E10985292900F31E38 /* iStuffPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStuffPatchUI.h; sourceTree = "<group>"; };
+		A759B0E20985292900F31E38 /* iStuffPatchUI.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffPatchUI.mm; sourceTree = "<group>"; };
 		A7664F97093C90E900551EBD /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/AccelerometerPatchUI.nib; sourceTree = "<group>"; };
 		A77898EC093CC25D00984411 /* ServoController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoController.h; sourceTree = SOURCE_ROOT; };
 		A77898EE093CC25D00984411 /* ServoControllerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ServoControllerUI.h; sourceTree = SOURCE_ROOT; };
@@ -319,17 +317,21 @@
 		A7A2B9140973ECD000A25B89 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/SmartItsSensor.xml; sourceTree = "<group>"; };
 		A7A2B9160973ECD000A25B89 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SmartItsSensorUI.nib; sourceTree = "<group>"; };
 		A7AF333109893DF90080771F /* QCClearUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QCClearUI.h; sourceTree = SOURCE_ROOT; };
+		A7BA981009B6197000CF9B33 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ReinyPatch.xml; sourceTree = "<group>"; };
 		A7BE9C9909703464006432A0 /* CharacterGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = CharacterGenerator.mm; sourceTree = "<group>"; };
 		A7BE9C9A09703464006432A0 /* CharacterGeneratorUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CharacterGeneratorUI.h; sourceTree = "<group>"; };
 		A7BE9C9B09703464006432A0 /* CharacterGeneratorUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CharacterGeneratorUI.m; sourceTree = "<group>"; };
 		A7BE9CA1097034D6006432A0 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/CharacterGenerator.xml; sourceTree = "<group>"; };
 		A7BE9CA3097034D6006432A0 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CharacterGeneratorUI.nib; sourceTree = "<group>"; };
 		A7BE9CB7097035B6006432A0 /* CharacterGenerator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CharacterGenerator.h; sourceTree = SOURCE_ROOT; };
-		A7CB9B27093F4FCA0066A1E5 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ClockSignalUI.nib; sourceTree = "<group>"; };
-		A7CB9B33093F4FE80066A1E5 /* ClockSignal.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ClockSignal.h; sourceTree = "<group>"; };
-		A7CB9B34093F4FE80066A1E5 /* ClockSignal.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ClockSignal.mm; sourceTree = "<group>"; };
-		A7CB9B35093F4FE80066A1E5 /* ClockSignalUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ClockSignalUI.h; sourceTree = "<group>"; };
-		A7CB9B36093F4FE80066A1E5 /* ClockSignalUI.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ClockSignalUI.m; sourceTree = "<group>"; };
+		A7E2393109AB4EC1001D78AA /* iStuffPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffPatch.h; sourceTree = "<group>"; };
+		A7E2393209AB4EC1001D78AA /* iStuffPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffPatch.mm; sourceTree = "<group>"; };
+		A7E2393A09AB5310001D78AA /* iStuffProviderPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffProviderPatch.h; sourceTree = "<group>"; };
+		A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffProviderPatch.mm; sourceTree = "<group>"; };
+		A7E2393F09AB5322001D78AA /* iStuffConsumerPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffConsumerPatch.h; sourceTree = "<group>"; };
+		A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffConsumerPatch.mm; sourceTree = "<group>"; };
+		A7E239BC09AB5D22001D78AA /* ReinyPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReinyPatch.h; sourceTree = "<group>"; };
+		A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReinyPatch.mm; sourceTree = "<group>"; };
 		A7F942F5093F29E500171F24 /* StringComparer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparer.h; sourceTree = "<group>"; };
 		A7F942F6093F29E600171F24 /* StringComparer.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = StringComparer.mm; sourceTree = "<group>"; };
 		A7F942F7093F29E600171F24 /* StringComparerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparerUI.h; sourceTree = "<group>"; };
@@ -378,14 +380,14 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */,
+				A7BA980F09B6197000CF9B33 /* ReinyPatch.xml */,
 				A706B03009993623004BBDF8 /* MobilePhoneKeyListener */,
-				A797D24B0980F78400AEF5CE /* TestPatch */,
 				A7A2B91A0973ECD300A25B89 /* SmartItsSensor */,
 				A7BE9CA6097034DE006432A0 /* CharacterGenerator */,
 				34094FBD095091A3009C40AB /* Teleo */,
 				34094FB109509195009C40AB /* iPhone */,
 				A71391B2094C3D2600A173A0 /* MobilePhone */,
-				A7CB9B2A093F4FD10066A1E5 /* ClockSignal */,
 				A7F94305093F2A2300171F24 /* StringComparer */,
 				A723708E093DC84C00886F01 /* Threshold */,
 				A789DE92093BAB27004E467F /* Phidgets */,
@@ -449,11 +451,10 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A7BA978D09B6084E00CF9B33 /* iStuffPatch */,
 				A706B028099935E9004BBDF8 /* MobilePhoneKeyListener */,
-				A797D20F0980F65B00AEF5CE /* TestPatch */,
 				A7A2B9210973ECF700A25B89 /* SmartItsSensor */,
 				A7BE9C9F0970346A006432A0 /* CharacterGenerator */,
-				A7CB9B39093F4FED0066A1E5 /* ClockSignal */,
 				34094F9709509170009C40AB /* iPhone */,
 				A71391AB094C3D0300A173A0 /* MobilePhone */,
 				A789DE93093BAB32004E467F /* Phidgets */,
@@ -861,26 +862,6 @@
 			name = Phidgets;
 			sourceTree = "<group>";
 		};
-		A797D20F0980F65B00AEF5CE /* TestPatch */ = {
-			isa = PBXGroup;
-			children = (
-				A759B0DF0985292900F31E38 /* TestPatch.h */,
-				A759B0E00985292900F31E38 /* TestPatch.mm */,
-				A759B0E10985292900F31E38 /* TestPatchUI.h */,
-				A759B0E20985292900F31E38 /* TestPatchUI.mm */,
-			);
-			name = TestPatch;
-			sourceTree = "<group>";
-		};
-		A797D24B0980F78400AEF5CE /* TestPatch */ = {
-			isa = PBXGroup;
-			children = (
-				A7525FD20985524B00E270F1 /* TestPatch.xml */,
-				A7525FD40985524B00E270F1 /* TestPatchUI.nib */,
-			);
-			name = TestPatch;
-			sourceTree = "<group>";
-		};
 		A7A2B91A0973ECD300A25B89 /* SmartItsSensor */ = {
 			isa = PBXGroup;
 			children = (
@@ -901,6 +882,25 @@
 			name = SmartItsSensor;
 			sourceTree = "<group>";
 		};
+		A7BA978D09B6084E00CF9B33 /* iStuffPatch */ = {
+			isa = PBXGroup;
+			children = (
+				A716A66B09B62825006BCADB /* iStuffProcessorPatch.mm */,
+				A716A66F09B628D8006BCADB /* iStuffProcessorPatch.h */,
+				A7E2393109AB4EC1001D78AA /* iStuffPatch.h */,
+				A7E2393209AB4EC1001D78AA /* iStuffPatch.mm */,
+				A759B0E10985292900F31E38 /* iStuffPatchUI.h */,
+				A759B0E20985292900F31E38 /* iStuffPatchUI.mm */,
+				A7E239BC09AB5D22001D78AA /* ReinyPatch.h */,
+				A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */,
+				A7E2393F09AB5322001D78AA /* iStuffConsumerPatch.h */,
+				A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */,
+				A7E2393A09AB5310001D78AA /* iStuffProviderPatch.h */,
+				A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */,
+			);
+			name = iStuffPatch;
+			sourceTree = "<group>";
+		};
 		A7BE9C9F0970346A006432A0 /* CharacterGenerator */ = {
 			isa = PBXGroup;
 			children = (
@@ -919,26 +919,6 @@
 				A7BE9CA2097034D6006432A0 /* CharacterGeneratorUI.nib */,
 			);
 			name = CharacterGenerator;
-			sourceTree = "<group>";
-		};
-		A7CB9B2A093F4FD10066A1E5 /* ClockSignal */ = {
-			isa = PBXGroup;
-			children = (
-				A71DA56E095096BD00323FF4 /* ClockSignal.xml */,
-				A7CB9B26093F4FCA0066A1E5 /* ClockSignalUI.nib */,
-			);
-			name = ClockSignal;
-			sourceTree = "<group>";
-		};
-		A7CB9B39093F4FED0066A1E5 /* ClockSignal */ = {
-			isa = PBXGroup;
-			children = (
-				A7CB9B33093F4FE80066A1E5 /* ClockSignal.h */,
-				A7CB9B34093F4FE80066A1E5 /* ClockSignal.mm */,
-				A7CB9B35093F4FE80066A1E5 /* ClockSignalUI.h */,
-				A7CB9B36093F4FE80066A1E5 /* ClockSignalUI.m */,
-			);
-			name = ClockSignal;
 			sourceTree = "<group>";
 		};
 		A7F942FC093F29EF00171F24 /* StringComparer */ = {
@@ -1035,13 +1015,11 @@
 				A723708D093DC84A00886F01 /* ThresholdUI.nib in Resources */,
 				A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */,
 				A7F94304093F2A1F00171F24 /* StringComparerUI.nib in Resources */,
-				A7CB9B29093F4FCA0066A1E5 /* ClockSignalUI.nib in Resources */,
 				34094FAF09509192009C40AB /* SweepPatch.xml in Resources */,
 				34094FB009509192009C40AB /* SweepPatchUI.nib in Resources */,
 				34094FBB095091A0009C40AB /* TeleoPWMOut.xml in Resources */,
 				34094FBC095091A0009C40AB /* TeleoPWMOutUI.nib in Resources */,
 				A71DA56D0950963800323FF4 /* AccelerometerPatch.xml in Resources */,
-				A71DA570095096BD00323FF4 /* ClockSignal.xml in Resources */,
 				A71DA5730950971300323FF4 /* InterfaceKit.xml in Resources */,
 				A71DA58709509A5B00323FF4 /* MobilePhone.xml in Resources */,
 				A70A985B0970158000F95ACB /* MobilePhoneUI.nib in Resources */,
@@ -1049,10 +1027,10 @@
 				A7BE9CA5097034D6006432A0 /* CharacterGeneratorUI.nib in Resources */,
 				A7A2B9170973ECD000A25B89 /* SmartItsSensor.xml in Resources */,
 				A7A2B9180973ECD000A25B89 /* SmartItsSensorUI.nib in Resources */,
-				A7525FD60985524B00E270F1 /* TestPatch.xml in Resources */,
-				A7525FD70985524B00E270F1 /* TestPatchUI.nib in Resources */,
 				A706B02E0999361F004BBDF8 /* MobilePhoneKeyListener.xml in Resources */,
 				A706B02F0999361F004BBDF8 /* MobilePhoneKeyListenerUI.nib in Resources */,
+				A7BA981109B6197000CF9B33 /* ReinyPatch.xml in Resources */,
+				A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,8 +1058,6 @@
 				A7237085093DC83300886F01 /* ThresholdUI.m in Sources */,
 				A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */,
 				A7F942FA093F29E600171F24 /* StringComparerUI.m in Sources */,
-				A7CB9B37093F4FE80066A1E5 /* ClockSignal.mm in Sources */,
-				A7CB9B38093F4FE80066A1E5 /* ClockSignalUI.m in Sources */,
 				A71391A9094C3CFB00A173A0 /* MobilePhone.mm in Sources */,
 				A71391AA094C3CFB00A173A0 /* MobilePhoneUI.m in Sources */,
 				34094F9409509169009C40AB /* SweepPatch.mm in Sources */,
@@ -1094,10 +1070,14 @@
 				A7BE9C9D09703464006432A0 /* CharacterGeneratorUI.m in Sources */,
 				A718BF0A0973FF7400F7528F /* SmartItsSensor.mm in Sources */,
 				A718BF0B0973FF7400F7528F /* SmartItsSensorUI.m in Sources */,
-				A759B0E30985292900F31E38 /* TestPatch.mm in Sources */,
-				A759B0E40985292900F31E38 /* TestPatchUI.mm in Sources */,
+				A759B0E40985292900F31E38 /* iStuffPatchUI.mm in Sources */,
 				A706B025099935E6004BBDF8 /* MobilePhoneKeyListener.mm in Sources */,
 				A706B026099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m in Sources */,
+				A7E2393309AB4EC1001D78AA /* iStuffPatch.mm in Sources */,
+				A7E239BE09AB5D22001D78AA /* ReinyPatch.mm in Sources */,
+				A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */,
+				A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */,
+				A716A66C09B62825006BCADB /* iStuffProcessorPatch.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,20 +1172,20 @@
 			name = MobilePhoneUI.nib;
 			sourceTree = SOURCE_ROOT;
 		};
+		A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A716A5DC09B61C97006BCADB /* English */,
+			);
+			name = iStuffPatchUI.nib;
+			sourceTree = SOURCE_ROOT;
+		};
 		A71DA56B0950963800323FF4 /* AccelerometerPatch.xml */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A71DA56C0950963800323FF4 /* English */,
 			);
 			name = AccelerometerPatch.xml;
-			sourceTree = SOURCE_ROOT;
-		};
-		A71DA56E095096BD00323FF4 /* ClockSignal.xml */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A71DA56F095096BD00323FF4 /* English */,
-			);
-			name = ClockSignal.xml;
 			sourceTree = SOURCE_ROOT;
 		};
 		A71DA5710950971300323FF4 /* InterfaceKit.xml */ = {
@@ -1256,22 +1236,6 @@
 			name = ServoControllerUI.nib;
 			sourceTree = SOURCE_ROOT;
 		};
-		A7525FD20985524B00E270F1 /* TestPatch.xml */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7525FD30985524B00E270F1 /* English */,
-			);
-			name = TestPatch.xml;
-			sourceTree = SOURCE_ROOT;
-		};
-		A7525FD40985524B00E270F1 /* TestPatchUI.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7525FD50985524B00E270F1 /* English */,
-			);
-			name = TestPatchUI.nib;
-			sourceTree = SOURCE_ROOT;
-		};
 		A7664F96093C90E900551EBD /* AccelerometerPatchUI.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1320,6 +1284,14 @@
 			name = SmartItsSensorUI.nib;
 			sourceTree = "<group>";
 		};
+		A7BA980F09B6197000CF9B33 /* ReinyPatch.xml */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7BA981009B6197000CF9B33 /* English */,
+			);
+			name = ReinyPatch.xml;
+			sourceTree = SOURCE_ROOT;
+		};
 		A7BE9CA0097034D6006432A0 /* CharacterGenerator.xml */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1334,14 +1306,6 @@
 				A7BE9CA3097034D6006432A0 /* English */,
 			);
 			name = CharacterGeneratorUI.nib;
-			sourceTree = "<group>";
-		};
-		A7CB9B26093F4FCA0066A1E5 /* ClockSignalUI.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7CB9B27093F4FCA0066A1E5 /* English */,
-			);
-			name = ClockSignalUI.nib;
 			sourceTree = "<group>";
 		};
 		A7F942FF093F2A1F00171F24 /* StringComparer.xml */ = {

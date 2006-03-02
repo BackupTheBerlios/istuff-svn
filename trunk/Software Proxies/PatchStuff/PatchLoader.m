@@ -21,12 +21,11 @@
 	[manager registerNodeWithClass: [Threshold class]];
 	[manager registerNodeWithClass: [StringComparer class]];
 	[manager registerNodeWithClass: [SweepPatch class]];
-	//[manager registerNodeWithClass: [TeleoPWMOut class]];
-	[manager registerNodeWithClass: [ClockSignal class]];
+	[manager registerNodeWithClass: [TeleoPWMOut class]];
 	[manager registerNodeWithClass: [SmartItsSensor class]];
 	[manager registerNodeWithClass: [MobilePhone class]];
 	[manager registerNodeWithClass: [CharacterGenerator class]];
-	[manager registerNodeWithClass: [TestPatch class]];
 	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
+	[manager registerNodeWithClass: [ReinyPatch class]];
 }
 @end

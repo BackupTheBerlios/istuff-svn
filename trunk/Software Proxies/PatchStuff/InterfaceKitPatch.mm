@@ -72,6 +72,7 @@
 	
 - (void)dealloc
 {
+	NSLog(@"In dealloc method InterfaceKit Patch");
 	// stop thread that receives EH events
 	[self stopReceivingEvents];
 	
