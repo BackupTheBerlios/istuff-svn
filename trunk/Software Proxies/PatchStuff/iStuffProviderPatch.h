@@ -21,6 +21,6 @@
 - (void) startReceivingEvents;
 - (void) stopReceivingEvents;
 - (void) waitForEvents;  // In this method, a Template Event Pointer is defined. The outputs of a patch are set in this thread.
-
+- (void) dealloc;
 
 @end

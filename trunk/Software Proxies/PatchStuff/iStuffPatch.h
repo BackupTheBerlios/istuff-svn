@@ -73,7 +73,6 @@
 
 - (BOOL) connected;
 - (void) dealloc;
-- (void) finalize;
 - (void) nodeWillRemoveFromGraph;
 
 // Methods to change internal settings

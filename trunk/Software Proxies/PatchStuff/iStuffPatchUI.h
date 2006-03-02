@@ -23,6 +23,7 @@
 
 }
 // ********* QCInspector standard methods that are extended *********
++ (id)viewNibName;
 - (id)init;
 - (void)setupViewForPatch:(id)fp8; // load data from the model (QCPatch)
 - (void) resetView; // store data in the model (QCPatch)

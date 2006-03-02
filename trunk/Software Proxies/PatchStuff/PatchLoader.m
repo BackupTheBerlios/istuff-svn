@@ -13,18 +13,18 @@
 + (void)registerNodesWithManager:(GFNodeManager*)manager
 {
 	[manager registerNodeWithClass: [PowerbookTiltSensorPatch class]];
-	[manager registerNodeWithClass: [Presentation class]];
+	[manager registerNodeWithClass: [PresentationControllerPatch class]];
 	[manager registerNodeWithClass: [RFIDReaderPatch class]];
 	[manager registerNodeWithClass: [InterfaceKitPatch class]];
 	[manager registerNodeWithClass: [AccelerometerPatch class]];
-	[manager registerNodeWithClass: [ServoController class]];
+	[manager registerNodeWithClass: [ServoControllerPatch class]];
 	[manager registerNodeWithClass: [Threshold class]];
 	[manager registerNodeWithClass: [StringComparer class]];
 	[manager registerNodeWithClass: [SweepPatch class]];
-	[manager registerNodeWithClass: [TeleoPWMOut class]];
-	[manager registerNodeWithClass: [SmartItsSensor class]];
-	[manager registerNodeWithClass: [MobilePhone class]];
-	[manager registerNodeWithClass: [CharacterGenerator class]];
-	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
+	[manager registerNodeWithClass: [TeleoPWMOutPatch class]];
+	[manager registerNodeWithClass: [SmartItsSensorPatch class]];
+	[manager registerNodeWithClass: [MobilePhoneControlPatch class]];
+	[manager registerNodeWithClass: [CharacterGeneratorPatch class]];
+	[manager registerNodeWithClass: [MobilePhoneKeyListenerPatch class]];
 }
 @end

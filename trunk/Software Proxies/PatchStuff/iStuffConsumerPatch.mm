@@ -12,10 +12,9 @@
 
 + (int)executionMode
 {
-        // I have found the following execution modes:
-        //  1 - Renderer, Environment - pink title bar
-        //  2 - Source, Tool, Controller - blue title bar
-        //  3 - Numeric, Modifier, Generator - green title bar
+        //  1 - Consumer Patch (Renderer, Environment) - pink title bar
+        //  2 - Provider Patch (Source, Tool, Controller) - blue title bar
+        //  3 - Processor Patch (Numeric, Modifier, Generator) - green title bar
         return 1;
 }
 

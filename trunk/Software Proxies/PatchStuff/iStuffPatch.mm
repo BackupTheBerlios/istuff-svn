@@ -27,10 +27,9 @@
 
 + (int)executionMode
 {
-        // I have found the following execution modes:
-        //  1 - Renderer, Environment - pink title bar
-        //  2 - Source, Tool, Controller - blue title bar
-        //  3 - Numeric, Modifier, Generator - green title bar
+        //  1 - Consumer Patch (Renderer, Environment) - pink title bar
+        //  2 - Provider Patch (Source, Tool, Controller) - blue title bar
+        //  3 - Processor Patch (Numeric, Modifier, Generator) - green title bar
         return nil; // Standard is 2 - nil should point out that this class is an abstraction which does not provide all the functionality
 }
 	
@@ -239,10 +238,6 @@
         return TRUE;
 }
 
-- (void) finalize{
-NSLog (@"IN FINALIZE");
-}
-
 - (BOOL) connected
 {
 	if (connectedToEventHeap)
@@ -281,7 +276,6 @@ NSLog (@"IN FINALIZE");
 
 	[super nodeWillRemoveFromGraph];
 }
-
 
 -(void) setEventHeapName:(NSString *)newEventHeapName{
 	[eventHeapName release];

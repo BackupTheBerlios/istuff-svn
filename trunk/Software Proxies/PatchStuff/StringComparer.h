@@ -7,12 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Foundation/Foundation.h>
-#import <eh2.h>
-#import <idk_io.h>
-#import "QCPatch.h"
-#import "StringComparerUI.h";
-	
+#import "CustomPatch.h"
 
 // possible input/output types. 
 @class QCIndexPort, QCNumberPort, QCStringPort,
@@ -21,23 +16,14 @@
 		
 @class StringComparerUI;
 
-@interface StringComparer : QCPatch {
+@interface StringComparer : CustomPatch {
 	QCStringPort *inputCompareThisString;
 	QCStringPort *inputWithString;
 	QCBooleanPort *outputResult;
-	
-	// pointer to the Event Heap client
-	eh2_EventHeapPtr *eh;
 }
 
-+ (int)executionMode;
-+ (BOOL)allowsSubpatches;
++ (int) executionMode;
 - (id)initWithIdentifier:(id)fp8;
-- (id)setup:(id)fp8;
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
-
-// create the event heap instance for the client
-//- (void) createEventHeap;
-- (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port;
 
 @end
