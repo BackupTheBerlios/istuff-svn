@@ -26,6 +26,5 @@
 	[manager registerNodeWithClass: [MobilePhone class]];
 	[manager registerNodeWithClass: [CharacterGenerator class]];
 	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
-	[manager registerNodeWithClass: [ReinyPatch class]];
 }
 @end

@@ -65,6 +65,9 @@
 		A789DE89093BAAFB004E467F /* RFIDReaderPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A789DE86093BAAFB004E467F /* RFIDReaderPatchUI.nib */; };
 		A7A2B9170973ECD000A25B89 /* SmartItsSensor.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A2B9130973ECD000A25B89 /* SmartItsSensor.xml */; };
 		A7A2B9180973ECD000A25B89 /* SmartItsSensorUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7A2B9150973ECD000A25B89 /* SmartItsSensorUI.nib */; };
+		A7A7A9FE09B708E4007A9245 /* ProviderPatchTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7A9FD09B708E4007A9245 /* ProviderPatchTemplate.mm */; };
+		A7A7AADF09B70CE0007A9245 /* ConsumerPatchTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AADE09B70CE0007A9245 /* ConsumerPatchTemplate.mm */; };
+		A7A7AAFB09B70DF5007A9245 /* ProcessorPatchTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AAFA09B70DF5007A9245 /* ProcessorPatchTemplate.mm */; };
 		A7BA981109B6197000CF9B33 /* ReinyPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7BA980F09B6197000CF9B33 /* ReinyPatch.xml */; };
 		A7BE9C9C09703464006432A0 /* CharacterGenerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9C9909703464006432A0 /* CharacterGenerator.mm */; };
 		A7BE9C9D09703464006432A0 /* CharacterGeneratorUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9C9B09703464006432A0 /* CharacterGeneratorUI.m */; };
@@ -73,7 +76,6 @@
 		A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */; };
 		A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */; };
 		A7E2393309AB4EC1001D78AA /* iStuffPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2393209AB4EC1001D78AA /* iStuffPatch.mm */; };
-		A7E239BE09AB5D22001D78AA /* ReinyPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */; };
 		A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F6093F29E600171F24 /* StringComparer.mm */; };
 		A7F942FA093F29E600171F24 /* StringComparerUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F8093F29E600171F24 /* StringComparerUI.m */; };
 		A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7F942FF093F2A1F00171F24 /* StringComparer.xml */; };
@@ -316,6 +318,12 @@
 		A789DE87093BAAFB004E467F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/RFIDReaderPatchUI.nib; sourceTree = "<group>"; };
 		A7A2B9140973ECD000A25B89 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/SmartItsSensor.xml; sourceTree = "<group>"; };
 		A7A2B9160973ECD000A25B89 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/SmartItsSensorUI.nib; sourceTree = "<group>"; };
+		A7A7A9FC09B708E4007A9245 /* ProviderPatchTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderPatchTemplate.h; sourceTree = "<group>"; };
+		A7A7A9FD09B708E4007A9245 /* ProviderPatchTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProviderPatchTemplate.mm; sourceTree = "<group>"; };
+		A7A7AADD09B70CE0007A9245 /* ConsumerPatchTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumerPatchTemplate.h; sourceTree = "<group>"; };
+		A7A7AADE09B70CE0007A9245 /* ConsumerPatchTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConsumerPatchTemplate.mm; sourceTree = "<group>"; };
+		A7A7AAF909B70DF5007A9245 /* ProcessorPatchTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessorPatchTemplate.h; sourceTree = "<group>"; };
+		A7A7AAFA09B70DF5007A9245 /* ProcessorPatchTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProcessorPatchTemplate.mm; sourceTree = "<group>"; };
 		A7AF333109893DF90080771F /* QCClearUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QCClearUI.h; sourceTree = SOURCE_ROOT; };
 		A7BA981009B6197000CF9B33 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ReinyPatch.xml; sourceTree = "<group>"; };
 		A7BE9C9909703464006432A0 /* CharacterGenerator.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = CharacterGenerator.mm; sourceTree = "<group>"; };
@@ -330,8 +338,6 @@
 		A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffProviderPatch.mm; sourceTree = "<group>"; };
 		A7E2393F09AB5322001D78AA /* iStuffConsumerPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffConsumerPatch.h; sourceTree = "<group>"; };
 		A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffConsumerPatch.mm; sourceTree = "<group>"; };
-		A7E239BC09AB5D22001D78AA /* ReinyPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReinyPatch.h; sourceTree = "<group>"; };
-		A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReinyPatch.mm; sourceTree = "<group>"; };
 		A7F942F5093F29E500171F24 /* StringComparer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparer.h; sourceTree = "<group>"; };
 		A7F942F6093F29E600171F24 /* StringComparer.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = StringComparer.mm; sourceTree = "<group>"; };
 		A7F942F7093F29E600171F24 /* StringComparerUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StringComparerUI.h; sourceTree = "<group>"; };
@@ -359,6 +365,7 @@
 		089C166AFE841209C02AAC07 /* QCiStuff */ = {
 			isa = PBXGroup;
 			children = (
+				A7A7AB2609B70F19007A9245 /* Templates */,
 				340067C40938AFC90030991B /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -451,7 +458,7 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A7BA978D09B6084E00CF9B33 /* iStuffPatch */,
+				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
 				A706B028099935E9004BBDF8 /* MobilePhoneKeyListener */,
 				A7A2B9210973ECF700A25B89 /* SmartItsSensor */,
 				A7BE9C9F0970346A006432A0 /* CharacterGenerator */,
@@ -882,7 +889,20 @@
 			name = SmartItsSensor;
 			sourceTree = "<group>";
 		};
-		A7BA978D09B6084E00CF9B33 /* iStuffPatch */ = {
+		A7A7AB2609B70F19007A9245 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				A7A7A9FC09B708E4007A9245 /* ProviderPatchTemplate.h */,
+				A7A7A9FD09B708E4007A9245 /* ProviderPatchTemplate.mm */,
+				A7A7AADD09B70CE0007A9245 /* ConsumerPatchTemplate.h */,
+				A7A7AADE09B70CE0007A9245 /* ConsumerPatchTemplate.mm */,
+				A7A7AAF909B70DF5007A9245 /* ProcessorPatchTemplate.h */,
+				A7A7AAFA09B70DF5007A9245 /* ProcessorPatchTemplate.mm */,
+			);
+			name = Templates;
+			sourceTree = "<group>";
+		};
+		A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */ = {
 			isa = PBXGroup;
 			children = (
 				A716A66B09B62825006BCADB /* iStuffProcessorPatch.mm */,
@@ -891,14 +911,12 @@
 				A7E2393209AB4EC1001D78AA /* iStuffPatch.mm */,
 				A759B0E10985292900F31E38 /* iStuffPatchUI.h */,
 				A759B0E20985292900F31E38 /* iStuffPatchUI.mm */,
-				A7E239BC09AB5D22001D78AA /* ReinyPatch.h */,
-				A7E239BD09AB5D22001D78AA /* ReinyPatch.mm */,
 				A7E2393F09AB5322001D78AA /* iStuffConsumerPatch.h */,
 				A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */,
 				A7E2393A09AB5310001D78AA /* iStuffProviderPatch.h */,
 				A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */,
 			);
-			name = iStuffPatch;
+			name = iStuffPatchHierarchy;
 			sourceTree = "<group>";
 		};
 		A7BE9C9F0970346A006432A0 /* CharacterGenerator */ = {
@@ -1074,10 +1092,12 @@
 				A706B025099935E6004BBDF8 /* MobilePhoneKeyListener.mm in Sources */,
 				A706B026099935E6004BBDF8 /* MobilePhoneKeyListenerUI.m in Sources */,
 				A7E2393309AB4EC1001D78AA /* iStuffPatch.mm in Sources */,
-				A7E239BE09AB5D22001D78AA /* ReinyPatch.mm in Sources */,
 				A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */,
 				A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */,
 				A716A66C09B62825006BCADB /* iStuffProcessorPatch.mm in Sources */,
+				A7A7A9FE09B708E4007A9245 /* ProviderPatchTemplate.mm in Sources */,
+				A7A7AADF09B70CE0007A9245 /* ConsumerPatchTemplate.mm in Sources */,
+				A7A7AAFB09B70DF5007A9245 /* ProcessorPatchTemplate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

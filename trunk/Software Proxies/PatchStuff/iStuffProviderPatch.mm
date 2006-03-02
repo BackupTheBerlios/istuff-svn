@@ -3,7 +3,7 @@
 //  QCiStuff
 //
 //  Created by Rene Reiners on 2/21/06.
-//  Copyright 2006 __MyCompanyName__. All rights reserved.
+//  Copyright 2006 Media Computing Group RWTH Aachen. All rights reserved.
 //
 
 #import "iStuffProviderPatch.h"
@@ -48,26 +48,7 @@
 // thus, you will still receive an event after calling stopReceivingEvents because (*eh)->waitForEvent blocks until it receives one
 - (void) waitForEvents
 {
-	/* NSAutoreleasePool *localPool;
-	localPool = [[NSAutoreleasePool alloc] init];	
-	NSLog (@"waiting for EH events...");
-
-	// specify your event template here:
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	*eventTypePointer = templatePtr;
-	templatePtr->setEventType ("EventTemplate that should be received");
-
-	// the thread exits if waitForEvents becomes FALSE
-	while (waitForEvents) {		
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
-	}
-
-	[localPool release];
-	*/
-	// ******** This all should be packed into a Provider Patch tempklate
-	// Actually, it is the only method that has to be implemented.
-	// Inside the loop, the output ports are to be set.
+// This method has to be implemented in a subclass.
 }
 
 
