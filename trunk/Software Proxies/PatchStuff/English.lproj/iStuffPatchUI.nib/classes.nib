@@ -21,14 +21,8 @@
             SUPERCLASS = QCPatch; 
         }, 
         {
-            ACTIONS = {
-                connectToEventHeap = id; 
-                disconnectFromAllEventHeaps = id; 
-                disconnectFromEventHeap = id; 
-                oneOrAllSelection = id; 
-                showAdvancedOptions = id; 
-            }; 
-            CLASS = TestPatchUI; 
+            ACTIONS = {connectToEventHeap = id; showAdvancedOptions = id; }; 
+            CLASS = iStuffPatchUI; 
             LANGUAGE = ObjC; 
             OUTLETS = {
                 advancedConnectionOptions = NSView; 
@@ -36,9 +30,7 @@
                 allOrOneRadioGroup = NSMatrix; 
                 animationConnected = NSProgressIndicator; 
                 displayEventHeap = NSTextField; 
-                eventHeapStatusBox = NSBox; 
                 listOfEventHeaps = NSTableView; 
-                showSomething = NSTextField; 
             }; 
             SUPERCLASS = QCInspector; 
         }
