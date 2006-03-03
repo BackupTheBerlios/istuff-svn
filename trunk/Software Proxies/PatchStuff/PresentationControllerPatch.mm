@@ -18,6 +18,7 @@
 	
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {		
+	if ([self connected]) {
 		// Look for a transition from FALSE to TRUE
 		// only send event on the "positive edge"
 		
@@ -89,6 +90,7 @@
 		lastInputGotoSlide = (int) [inputGotoSlideNumber doubleValue];
 		//lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
 		//lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
+	}
         return [super execute:fp8 time:fp12 arguments:fp20];
 }
 

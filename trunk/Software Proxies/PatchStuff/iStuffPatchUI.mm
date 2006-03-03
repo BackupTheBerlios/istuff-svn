@@ -71,10 +71,39 @@
 
 }
 
+-(void) refreshView:(NSNotification *) notification
+{
+	if (![advancedConnectionOptions isHidden]){
+		[listOfEventHeaps reloadData];		
+	}
+		
+	NSLog(@"JUST RELOADED THE DATA");
+	iStuffPatch *currentPatch = [self patch];
+	if ([notification userInfo] != nil) {
+		NSDictionary *ehStatusInfo = [notification userInfo];
+		NSString *status = [ehStatusInfo valueForKey:@"connectionStatus"];
+		if ([status isEqualToString:@"connected"]){
+			int index = [[currentPatch foundEventHeaps] indexOfObject:[currentPatch eventHeapName]];
+			[listOfEventHeaps selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
+			[animationConnected startAnimation:self];
+			[displayEventHeap setStringValue:[currentPatch eventHeapName]];
+			[displayEventHeap setTextColor:[NSColor greenColor]]; 
+			NSLog (@"Notification New Connection reeceived");
+		}
+		else {
+			[listOfEventHeaps deselectAll:self];//selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
+			[animationConnected stopAnimation:self];
+			[displayEventHeap setStringValue:@"Standby until reconnect or new EH is chosen"];
+			[displayEventHeap setTextColor:[NSColor orangeColor]];
+			NSLog(@"Notification standby received");
+		}
+	}
+}
 
 - (id)init{
 
 // Detach a thread that automatically refreshed the view every x seconds
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"EHStatusChanged" object:nil];
 	return [super init];
 }
 
@@ -98,49 +127,55 @@ NSLog(@"In resetView");
 
 
 - (IBAction)connectToEventHeap:(id)sender{
-	// depending on the status of the radio buttons, all or only one patch has to reconnect
-	iStuffPatch *currentPatch = [self patch];
-	//global change for all patches
-	if ([allOrOneRadioGroup selectedRow] == 0){
-	// Create a one key dictionary that contains the new Event Heap name
-	// get the selected entry from the EH list;
-		int rowIndex = [listOfEventHeaps selectedRow];
-		if (rowIndex != -1){
-			NSString *selectedEventHeap = [[currentPatch foundEventHeaps] objectAtIndex:rowIndex];
-			NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:selectedEventHeap forKey:@"newEHName"];
-			NSLog(@"In all patches branch -- selected: %i", [allOrOneRadioGroup selectedRow]);
-			[[NSNotificationCenter defaultCenter] postNotificationName: @"ConnectToEH" object: nil userInfo:ehInfo];
+	if ([listOfEventHeaps selectedRow] != -1) {
+		// depending on the status of the radio buttons, all or only one patch has to reconnect
+		iStuffPatch *currentPatch = [self patch];
+		//global change for all patches
+		if ([allOrOneRadioGroup selectedRow] == 0){
+		// Create a one key dictionary that contains the new Event Heap name
+		// get the selected entry from the EH list;
+			int rowIndex = [listOfEventHeaps selectedRow];
+			if (rowIndex != -1){
+				NSString *selectedEventHeap = [[currentPatch foundEventHeaps] objectAtIndex:rowIndex];
+				NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:selectedEventHeap forKey:@"newEHName"];
+				NSLog(@"In all patches branch -- selected: %i", [allOrOneRadioGroup selectedRow]);
+				[[NSNotificationCenter defaultCenter] postNotificationName: @"ConnectToEH" object: nil userInfo:ehInfo];
+			}
 		}
-	}
-	else {
-		// local change for one patch
-		NSLog(@"In one patch branch");
-		NSString *newEventHeap;
-		newEventHeap = [arrayOfEventHeaps objectAtIndex:[listOfEventHeaps selectedRow]];
-		NSLog(@"The new EH name is: %@", newEventHeap);
-		[currentPatch setEventHeapName:newEventHeap];
-		[currentPatch establishEHConnection:nil];
+		else {
+			// local change for one patch
+			NSLog(@"In one patch branch");
+			NSString *newEventHeap;
+			newEventHeap = [arrayOfEventHeaps objectAtIndex:[listOfEventHeaps selectedRow]];
+			NSLog(@"The new EH name is: %@", newEventHeap);
+			[currentPatch setEventHeapName:newEventHeap];
+			[currentPatch establishEHConnection:nil];
+		}
 	}
 }	
 
 - (IBAction)showAdvancedOptions:(id)sender{
+	[listOfEventHeaps reloadData];
 	if ([advancedConnectionOptions isHidden]){
-		[advancedConnectionOptions setHidden:false];}
+		[advancedConnectionOptions setHidden:false];
+	}
 	
-	else 
-		{[advancedConnectionOptions setHidden:true];}
+	else {
+		[advancedConnectionOptions setHidden:true];
+	}
 }
 
 
 -(int)numberOfRowsInTableView: (NSTableView *) Table{
-	return [arrayOfEventHeaps count];
+	iStuffPatch *currentPatch = [self patch];
+	return [[currentPatch foundEventHeaps] count];
 }
 
 -(id)tableView:(NSTableView *) Table
 	objectValueForTableColumn:(NSTableColumn *) Column
 	row: (int) Row{
-	return [[arrayOfEventHeaps objectAtIndex:Row] description];
-
+	iStuffPatch *currentPatch = [self patch];
+	return [[[currentPatch foundEventHeaps] objectAtIndex:Row] description];
 }
 
 @end

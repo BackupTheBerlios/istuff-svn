@@ -385,8 +385,8 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A7A7ACE809B73A07007A9245 /* CustomPatchClasses */,
 				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
+				A7A7ACE809B73A07007A9245 /* CustomPatchClasses */,
 				A706B028099935E9004BBDF8 /* MobilePhoneKeyListenerPatch */,
 				A7A2B9210973ECF700A25B89 /* SmartItsSensor */,
 				A7BE9C9F0970346A006432A0 /* CharacterGenerator */,

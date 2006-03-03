@@ -25,7 +25,6 @@
 
 - (void) waitForEvents
 {
-
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];

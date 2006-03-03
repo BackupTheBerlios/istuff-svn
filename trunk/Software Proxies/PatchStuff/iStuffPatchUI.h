@@ -18,7 +18,7 @@
 	IBOutlet NSView *advancedConnectionOptions;
 	IBOutlet NSTableView *listOfEventHeaps;
 	IBOutlet NSMatrix *allOrOneRadioGroup;
-
+	IBOutlet NSButton *performConnection;
 	NSMutableArray *arrayOfEventHeaps; // serves as the data source for the NSTableView.
 
 }

@@ -17,6 +17,7 @@
 	
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {
+	if ([self connected]) {
 		// Only if one of the input ports changed, a new event has to be posted
 		// and the other operations have to be performed
 				int motor1Position = (int) [inputPosMot1 doubleValue];
@@ -68,7 +69,7 @@
 			oldMotor3Position = [inputPosMot3 doubleValue];
 			oldMotor4Position = [inputPosMot4 doubleValue];
 			}
-
+		}
 			return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
