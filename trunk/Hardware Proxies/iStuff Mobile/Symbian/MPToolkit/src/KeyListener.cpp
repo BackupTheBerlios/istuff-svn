@@ -71,8 +71,20 @@ void CKeyListener::StartL()
 	wn->SetWindowGroupName(wg);
 
 	iLog.Write(_L("test3"));
+	
+	User::WaitForAnyRequest();
+	iLog.Write(_L("test4"));
+	if (status.Int()==KErrNone) {
+		TWsEvent e;
+		ws.GetEvent(e);
 
-	SetActive();
+		TInt c;
+		TKeyEvent* aKeyEvent=e.Key();
+		c=aKeyEvent->iCode;
+
+		iLog.WriteFormat(_L("KeyCode Received = %d"),c);
+	}
+	//SetActive();
 }
 
 void CKeyListener::StartListening()
@@ -91,7 +103,7 @@ void CKeyListener::RunL()
 			TKeyEvent* aKeyEvent=e.Key();
 			c=aKeyEvent->iCode;
 
-			//iLog.WriteFormat(_L("KeyCode Received = %d"),c);
+			iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
 	ws.EventReady(&iStatus);
 	SetActive();
