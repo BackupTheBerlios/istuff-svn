@@ -74,7 +74,7 @@ void CKeyListener::StartL()
 	
 	User::WaitForAnyRequest();
 	iLog.Write(_L("test4"));
-	if (status.Int()==KErrNone) {
+	if (iStatus.Int()==KErrNone) {
 		TWsEvent e;
 		ws.GetEvent(e);
 
