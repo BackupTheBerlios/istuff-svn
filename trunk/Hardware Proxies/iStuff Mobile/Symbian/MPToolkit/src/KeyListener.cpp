@@ -85,13 +85,6 @@ void CKeyListener::StartListening()
 
 void CKeyListener::RunL()
 {
-<<<<<<< .mine
-	//User::WaitForAnyRequest();
-=======
-	//User::WaitForAnyRequest();
-
-	iLog.Write(_L("test6"));
->>>>>>> .r193
 	if (iStatus.Int()==KErrNone)
 	{
 			TWsEvent e;
