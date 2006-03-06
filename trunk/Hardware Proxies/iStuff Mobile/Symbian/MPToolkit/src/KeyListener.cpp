@@ -1,6 +1,6 @@
 #include "KeyListener.h"
 
-EXPORT_C CKeyListener* CKeyListener::NewLC()
+CKeyListener* CKeyListener::NewLC()
 {
    CKeyListener* self = new (ELeave) CKeyListener();
    CleanupStack::PushL(self);
@@ -8,7 +8,7 @@ EXPORT_C CKeyListener* CKeyListener::NewLC()
    return self;
 }
 
-EXPORT_C CKeyListener* CKeyListener::NewL()
+CKeyListener* CKeyListener::NewL()
 {
    CKeyListener* self = NewLC();
    CleanupStack::Pop(self);
@@ -85,9 +85,13 @@ void CKeyListener::StartListening()
 
 void CKeyListener::RunL()
 {
+<<<<<<< .mine
+	//User::WaitForAnyRequest();
+=======
 	//User::WaitForAnyRequest();
 
 	iLog.Write(_L("test6"));
+>>>>>>> .r193
 	if (iStatus.Int()==KErrNone)
 	{
 			TWsEvent e;
@@ -97,7 +101,7 @@ void CKeyListener::RunL()
 			TKeyEvent* aKeyEvent=e.Key();
 			c=aKeyEvent->iCode;
 
-			iLog.WriteFormat(_L("KeyCode Received = %d"),c);
+			//iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
 	StartListening();
 }
