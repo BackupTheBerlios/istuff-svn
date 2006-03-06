@@ -60,6 +60,9 @@ void CKeyListener::StartL()
 
 	iLog.Write(_L("test2"));
 
+	// listen for the key presses
+	ws.EventReady(&iStatus);
+	
 	// hide this window group from the app switcher
 	wg.SetOrdinalPosition(-1);
 	wg.EnableReceiptOfFocus(EFalse);
@@ -69,22 +72,16 @@ void CKeyListener::StartL()
 
 	iLog.Write(_L("test3"));
 
-	StartListening();
+	SetActive();
 }
 
 void CKeyListener::StartListening()
 {
-	iLog.Write(_L("test4"));
-	
-	// listen for the key presses
-	ws.EventReady(&iStatus);
-	SetActive();
-
-	iLog.Write(_L("test5"));
 }
 
 void CKeyListener::RunL()
 {
+	iLog.Write(_L("test4"));
 	if (iStatus.Int()==KErrNone)
 	{
 			TWsEvent e;
@@ -96,7 +93,8 @@ void CKeyListener::RunL()
 
 			//iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
-	StartListening();
+	ws.EventReady(&iStatus);
+	SetActive();
 }
 
 void CKeyListener::StopL()
