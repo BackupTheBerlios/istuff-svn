@@ -61,5 +61,4 @@ class CCodeListener : public CActive
 		CKeyListener* iKeyListener;
 		CDesCArrayFlat*	iAppList;
 };
-
 #endif
