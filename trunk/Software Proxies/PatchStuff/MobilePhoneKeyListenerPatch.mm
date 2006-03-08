@@ -35,7 +35,7 @@
 {
 	 NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];	
-	
+
 	// specify your event template here:
 	eh2_EventPtr templatePtr = eh2_Event::cs_create();
 	templatePtr->setEventType ("iStuffMobile");

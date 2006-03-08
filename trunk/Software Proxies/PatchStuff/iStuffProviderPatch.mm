@@ -2,7 +2,7 @@
 //  iStuffProviderPatch.mm
 //  QCiStuff
 //
-//  Created by Rene Reiners on 2/21/06.
+//  Created by René Reiners on 2/21/06.
 //  Copyright 2006 Media Computing Group RWTH Aachen. All rights reserved.
 //
 
@@ -19,12 +19,11 @@
 }
 
 - (id)initWithIdentifier:(id)fp8
-{	
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startReceivingEvents) name:@"EventHeapListChanged" object:nil];
 	return [super initWithIdentifier:fp8];
-	[self startReceivingEvents];
-
+	
 }
-
 // This method is needed for Provider patches
 - (void) startReceivingEvents
 {
@@ -32,6 +31,11 @@
 	waitForEvents = TRUE;
 	// create the thread that waits for events
 	[NSThread detachNewThreadSelector:@selector(waitForEvents) toTarget:self withObject:nil];
+	// We need threads that can manuall be killed. That might be the soultion to the waitForEvent problem.
+	//pthread_t test;
+	//int res;
+	//res = pthread_create(&test,NULL, (void*)(waitForEvents), NULL);
+	//pthread_kill(test,0);
 	NSLog (@"thread waitForEvents activated");
 }
 
@@ -51,9 +55,10 @@
 // This method has to be implemented in a subclass.
 }
 
-- (void) dealloc{
+- (void) nodeWillRemoveFromGraph{
 	[self stopReceivingEvents];
-	[super dealloc];
+	sleep(1); // This is needed for the thread to exit. Otherwise dealloc won't be called.
+	[super nodeWillRemoveFromGraph];
 }
 
 @end

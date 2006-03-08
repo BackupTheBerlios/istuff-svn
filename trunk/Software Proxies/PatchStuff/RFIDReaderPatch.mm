@@ -16,6 +16,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {
+	[outputTag setStringValue:nil];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -29,22 +30,23 @@
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
-		
+	
 	// define the type of events you want to receive
+
 	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
 	templatePtr->setEventType ("PhidgetRFID");
-
 	while (waitForEvents) {
 	// specify your event template here:
 		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
-
+		NSLog(@"Event Received");
 		char* taggie = (char*) resultEventPtr->getPostValueString("TagNumber");
 
 		[outputTag setStringValue:[NSString stringWithCString:taggie]];
 		NSLog([NSString stringWithCString:taggie]);
 	}
-
+	
 	[localPool release];
+	NSLog(@"The thread actually ended");
 }
 
 @end

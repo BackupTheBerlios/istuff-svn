@@ -44,8 +44,8 @@
 {
 	advancedOptionsHidden = true;
 	standby = false;
-	tryToConnect = true;
-	connectToEventHeaps = true;
+	connectedToEventHeap = false;
+	
 	netServices = [[NSMutableArray alloc] initWithCapacity:5];
 	[netServices retain];
     netServiceBrowser = [[NSNetServiceBrowser alloc] init];
@@ -55,32 +55,42 @@
 			// DHCP is recommended! Then the EH service returns reasonable service and host names.
 	hostName = [NSString stringWithString:[[NSHost currentHost] name]];
 	[hostName retain]; 
+	NSString *hostAddress;
+	hostAddress = [NSString stringWithString:[[NSHost currentHost] address]];
+	[hostAddress retain];
 	NSLog(@"Hostname %@", hostName);
-
+	NSLog(@"HOst Adress : %@", hostAddress);
 	NSArray *ipaddresses = [[NSHost currentHost] addresses];
 	if([ipaddresses count] == 0)
 	NSLog (@"Your machine network settings are not properly configured. Please enable DHCP");
 	
 	NSLog(@"THE number of addreses: %i", [ipaddresses count]);
 	// Normally, the current IP address ist stored in the first element of the NSArray returned by the  addresses method.
-	NSLog(@"THE ADDRESS IS: %@", [ipaddresses objectAtIndex:0]);
-	
-	[hostName retain]; 
-	// default connection
+	NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:0]);
+		NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:1]);
+			NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:2]);
+
 	eventHeapName = [NSString stringWithString:hostName];
-	[eventHeapName retain];
+	eventHeapAddress = [NSString stringWithString:hostAddress];
+	[eventHeapName retain]; 
+	[eventHeapAddress retain];
+
 	eh2_init ("iStuffQuartzPlugin", [hostName UTF8String]);	// Names that are provided with each event posted to the heap.
-	NSLog(@"Hostname %@", eventHeapName);
-	connectedToEventHeap = false;
-	[connectedToEventHeap retain];
 	
 	// Register object with Notification Center
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(establishEHConnection:) name:@"ConnectToEH" object:nil];
-	[self establishEHConnection:nil];
-	// create the thread that connects to the Event Heap
-	[NSThread detachNewThreadSelector:@selector(connectToEventHeap) toTarget:self withObject:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(manageConnection:) name:@"ReconnectAll" object:nil];
 
 	return [super initWithIdentifier:fp8];
+}
+		
+- (void) manageConnection:(NSNotification *) notification {
+		// Only if the current patch is not connected, start the connection thread.
+		if (notification != nil) {
+			connectedToEventHeap = false;
+			NSDictionary *dict = [notification userInfo];
+			NSString *ehServerName = [NSString stringWithString:[dict valueForKey:@"newEHName"]];
+			[self connectToEventHeap:ehServerName];
+		}
 }
 		
 - (id)setup:(id)fp8
@@ -93,122 +103,83 @@
 // create the Event Heap instance for the client
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *) serverName atPort:(int)port
 {
+
 	// first, get the Event Heap factory
 	// you are not responsible of releasing the reference to it
 	eh2_EventHeapFactory *factory = eh2_EventHeapFactory::cs_getInstance ();
-
 	// then, ask the factory for creating the Event Heap client instance
 	// you have the ownership of the returned object, so you have to keep it in a smart pointer
 	// specify source name, event heap host (e.g., "localhost"), and default port
 	// allocate memory for Event Heap client
+
 	eh = new (eh2_EventHeapPtr);
 
 	//(*eh) = factory->createEventHeap (NULL, "localhost", 4535);
-	//make a copy of the serverName. Otherwise eventHeapName will be destroyed.
+		NSLog(@"Before connect Name: %@",serverName);
+
 	(*eh) = factory->createEventHeap ([sourceName cString],[serverName cString], port);
+		//(*eh) = factory->createEventHeap ([sourceName cString],"localhost", port);
+		NSLog(@"After connect Name: %@",serverName);
+
 }
 
-- (void) establishEHConnection:(NSNotification *) notification
-{	
-	if (notification != nil) {
-	NSDictionary *tempDic = [notification userInfo];
-	[self setEventHeapName:[tempDic valueForKey:@"newEHName"]];
-	NSLog(@"Dictionary value: %@", [tempDic valueForKey:@"newEHName"]);
-	// set the flags to activate the thread
-	}
-	delete eh;
-	connectToEventHeaps = true;
-	tryToConnect = true;
-}
-
-- (void) disconnectFromEH
+- (void) connectToEventHeap:(NSString *) server
 {
-	tryToConnect = false;
-	connectToEventHeaps = false;
-	connectedToEventHeap = false;
-}
-
-- (void) connectToEventHeap
-{
+	// if there is no parameter, try to connect to the local host.
+	// if it is not available, take the first from the list.
 	// This thread should only be ended when the patch is deleted or QC is quit
 	// All active services are discovered (I think). It does not seem to be a problem.
 	// The flag connectToEventHeaps is set until a patch is deleted
-	
-	// create an autorelease pool for the thread
-	NSAutoreleasePool *localPool;
-	localPool = [[NSAutoreleasePool alloc] init];	
-	
-	NSString *serverName;
+
+	//[self stopReceivingEvents];
+	sleep(1); // Needed, otherwise reconnecting is not possible --The thread has to end first!
 	NSString *currentNetServiceName;
-	
-	// Standard connection: localhost
-	// tryToConnect has to be set inside other methods. Then
-	// the inner loop that searches for a matching Event Heap is run again
-  sleep(1); // Need time to discover every service
-  NSLog(@"Searching for Event Heaps...");
-  while (connectToEventHeaps){
-   // NSLog(@"ConnectToEventHeaps is true...");
+	NSString *currentNetServiceAddress;
+						//NSLog(@"SEARCHING:  %@", [[netServices objectAtIndex:0] address]);
 
-	while (tryToConnect) {
-	 // NSLog(@"In try to connect loop...");
+	if  (server == nil) {
+		if ([netServices count] != 0){
+			NSEnumerator *enumerator = [netServices objectEnumerator];
+			[self setEventHeapName: [netServices objectAtIndex:0]];
+			while (currentNetServiceName = [enumerator nextObject]) {
+				if ([currentNetServiceName isEqual:hostName]) [self setEventHeapName: currentNetServiceName];
 
-	if ([netServices count] != 0){
-		NSEnumerator *enumerator = [netServices objectEnumerator];
-		serverName = [netServices objectAtIndex:0];
-		NSLog(@"%i Services were found. Trying to connect", [netServices count]);
-		while (currentNetServiceName = [enumerator nextObject]) {
-			NSLog (@"In inner loop %@", eventHeapName);
-			if ([currentNetServiceName isEqual:eventHeapName]) {
-			serverName = currentNetServiceName;
-			NSLog (@"ServerName is %@", eventHeapName);
 			}
 		}
-		[eventHeapName release];  // a different Event Heap.
-		eventHeapName = [NSString stringWithString:serverName];
-		[eventHeapName retain];
-		if ([eventHeapName isEqual:hostName]){
-			[self createEventHeap:NULL atServer:@"localhost" atPort:4535];
-				NSLog(@"CREATED EH WITH constant");
-		}
-		else {
-			[self createEventHeap:NULL atServer:eventHeapName atPort:4535];
-			NSLog(@"CREATED EH WITH eventHeapName parameter");
-		}	
-		connectedToEventHeap = true;
-		NSLog(@"connectedFlag is true");
-		standby = false;
-		// post a notification that signifies that the view has to be uodated
-		NSString *ehStatus = @"connected";
-		NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:ehStatus forKey:@"connectionStatus"];
-		[[NSNotificationCenter defaultCenter] postNotificationName: @"EHStatusChanged" object: nil userInfo:ehInfo];
-		NSLog(@"Notifcation CONNECTED posted");
-		//[ehInfo release];
-		//[ehStatus release];
-		
-        tryToConnect = false; // Now the loop is skipped until another method turns the flag to true again in order to connect to 
-		NSLog (@"LOCAL HOST RUNNING - created EH %@", eventHeapName);
-		}
-	} // otherwise the outerloop does not finish
-	
-	sleep(2);
+	}	
+	else { // There was a parameter and the patch should connect to that Event Heap
+		[self setEventHeapName:[server copy]];
+	}
+	NSMutableString *newName = [NSMutableString stringWithString:@".local"];
 
-  } // Here the loop ends if connectToEventHeaps is false --> the patch is removed or QC quit.	
+	[newName insertString:eventHeapName atIndex:0];
+	[self createEventHeap:NULL atServer:newName atPort:4535];
+		NSLog(@"Bis hier connect2");
+
+	connectedToEventHeap = true;
+	standby = false;
+	NSString *ehStatus = @"connected";
+	NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:ehStatus forKey:@"connectionStatus"];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:nil userInfo:ehInfo];
+	[eventHeapName retain];
+	sleep(1); // Also prevents crash if proxy is still running but only the event heap crashed
+	[self startReceivingEvents];
 	NSLog(@"Thread that connects to Event Heaps ended");
-	//[eventHeapName retain];
-	[localPool release]; // exit the thread.
-
 }
 
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
 	[netServices addObject:[aNetService name]];
-    [aNetService setDelegate:self];
-    [aNetService resolveWithTimeout:10];
-	[[NSNotificationCenter defaultCenter] postNotificationName: @"EHStatusChanged" object: nil userInfo:nil];
-	NSLog(@"In didFindService %@ %i", [aNetService name], [[aNetService addresses] count]);
+	NSLog(@"Posting in didfindservice: Name: %@", [aNetService name]);
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:nil];
+
 	if (standby && [[aNetService name] isEqual: eventHeapName]) {
-		[self establishEHConnection:nil];
+		[self connectToEventHeap:eventHeapName];
 	}
+	else if ((![self connected]) && !standby) [self connectToEventHeap:nil];
+	
+	NSLog(@"In didFindService %@ %i", [aNetService name], [[aNetService addresses] count]);
+
     if (!moreComing) [self sendEHSListUpdate];
 }
 
@@ -223,20 +194,17 @@
             break;
         }
     }
-	
 	if ([[aNetService name] isEqual:eventHeapName]){
 		connectedToEventHeap = false;
 		standby = true;
 		// post a notification that signifies that the view has to be uodated
 		NSString *ehStatus = @"standby";
 		NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:ehStatus forKey:@"connectionStatus"];
-		[[NSNotificationCenter defaultCenter] postNotificationName: @"EHStatusChanged" object: nil userInfo:ehInfo];
-		NSLog(@"Notifcation disconnected and standby posted");
-		NSLog(@"The connection to the Event Heao %@ was interrupted", currentNetServiceName);
+		[[NSNotificationCenter defaultCenter] postNotificationName: @"EHListChange" object: nil userInfo:ehInfo];
+		[self stopReceivingEvents];
 	}
 	else {
-		[[NSNotificationCenter defaultCenter] postNotificationName: @"EHStatusChanged" object: nil userInfo:nil];
-		NSLog(@"Reload data notification posted");
+		[[NSNotificationCenter defaultCenter] postNotificationName: @"EHListChange" object: nil userInfo:nil];
 	}
 		NSLog(@"In didRemoveService: %@", [aNetService name]);
     if (!moreComing) [self sendEHSListUpdate];
@@ -267,40 +235,27 @@
 
 - (BOOL) connected
 {
-	if (connectedToEventHeap)
-	NSLog(@"CONNECTED!!");
-	else
-	NSLog (@"NOT CONNECTED");
 	return connectedToEventHeap;
 }
 
 - (void)dealloc
 {
+	NSLog (@"In dealloc");
 	[netServiceBrowser release];
 	[netServices release];
 	[hostName release];
+	[hostAddress release];
 	[eventHeapName release];
-	
-	// stop thread that receives EH events
-//	[self disconnectFromEH:eventHeapName];
-//	[self stopReceivingEvents];
+	[eventHeapAddress release];
+
 	// Now disconnect from the Event Heap
 	eh2_finalize ();
-	[super dealloc];
 	NSLog(@"All operations in dealloc were finished");
+	[super dealloc];
 }
 
 - (NSMutableArray *) foundEventHeaps{
 	return netServices;
-}
-
-- (void)nodeWillRemoveFromGraph{
-	[self disconnectFromEH];
-	NSLog(@"node removed - call dealloc manually or check wether it is called");
-	sleep(2); // Needed such that the connection management thread is quit first.
-			  // Otherwise, dealloc won't be called.
-
-	[super nodeWillRemoveFromGraph];
 }
 
 -(void) setEventHeapName:(NSString *)newEventHeapName{
@@ -309,8 +264,9 @@
 	[eventHeapName retain];
 }
 
--(NSString *) eventHeapName {
-	return [[eventHeapName copy] autorelease];
+-(NSString *) ehName {
+	NSLog(@"In Getter for the Event Heap Name: %@", eventHeapName);
+	return [NSString stringWithString:eventHeapName];
 }
 
 -(BOOL) advancedOptionsHidden
@@ -335,5 +291,23 @@
 	return radioButtonIndex;
 }
 
+// This method is needed for Provider patches
+- (void) startReceivingEvents
+{
 
+}
+
+- (void) stopReceivingEvents
+{
+
+}
+
+// thread waiting for EH events, so we won't block the recognition system
+// the function call (*eh)->waitForEvent is blocking !
+// the thread terminates after receiving an event AND if the instance variable waitForEvent is FALSE
+// thus, you will still receive an event after calling stopReceivingEvents because (*eh)->waitForEvent blocks until it receives one
+- (void) waitForEvents
+{
+// This method has to be implemented in a subclass.
+}
 @end

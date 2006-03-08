@@ -25,7 +25,9 @@
 {
 // Event Heap Connection Management - Components of each iStuff patch
 	NSString *eventHeapName;
+	NSString *eventHeapAddress;
 	NSString *hostName;
+	NSString *hostAddress;
 	
 	BOOL connectToEventHeaps;
 	BOOL tryToConnect;
@@ -53,7 +55,7 @@
 
 // Methods that give internal information
 - (NSMutableArray *) foundEventHeaps;
-- (NSString *) eventHeapName;
+- (NSString *) ehName;
 - (BOOL) connected;
 - (BOOL) advancedOptionsHidden;
 - (BOOL) suspended;
@@ -64,16 +66,15 @@
 - (void) netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) sendEHSListUpdate;
-
-- (void) establishEHConnection:(NSNotification *) notification;
-- (void) disconnectFromEH;
+- (void) connectToEventHeap:(NSString *) server;
+- (void) startReceivingEvents;
+- (void) stopReceivingEvents;
 
 // create the event heap instance for the client
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port;
 
 - (BOOL) connected;
 - (void) dealloc;
-- (void) nodeWillRemoveFromGraph;
 
 // Methods to change internal settings
 - (void) setEventHeapName:(NSString *)newEventHeapName;

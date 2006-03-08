@@ -48,6 +48,10 @@ Otherwise a standard iStuffUI class will be taken.
 	 NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];	
 
+	while (! [self connected]) {
+		// wait until you are connected
+		// otherwise the pointer creation below will crash
+	}
 	// definition of the type of event to receive.
 	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
 	templatePtr->setEventType ("EventTemplate that should be received");

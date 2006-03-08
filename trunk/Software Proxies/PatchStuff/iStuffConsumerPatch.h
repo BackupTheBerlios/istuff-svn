@@ -14,5 +14,4 @@
 
 }
 + (int)executionMode;
-
 @end

@@ -40,7 +40,7 @@
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
-		
+	
 	// define the type of events you want to receive
 	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
 	templatePtr->setEventType ("TextEvent");

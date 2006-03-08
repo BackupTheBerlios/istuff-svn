@@ -25,19 +25,19 @@
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
-	
+
 	// define the type of events you want to receive
 	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
 	templatePtr->setEventType ("PhidgetAccelerometer");
 
 	while (waitForEvents) {
 		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
-		
 		char* acceleration = (char*) resultEventPtr->getPostValueString("Acceleration");;
 		[outputAcceleration setStringValue:[NSString stringWithCString:acceleration]];
 	}
 
 	[localPool release];
+	NSLog(@"WAITFOREVENTS REALLY QUIT");
 }
 
 @end
