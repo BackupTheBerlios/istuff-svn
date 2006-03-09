@@ -29,7 +29,7 @@ class CCodeListener : public CActive
 		void SendKeyToProxy(TUint16 code,TUint16 aType);
 		TBool GetConnected();
 
-	//	RFileLogger iLog;
+		RFileLogger iLog;
 	
 	private:
 		void StartReceiving();

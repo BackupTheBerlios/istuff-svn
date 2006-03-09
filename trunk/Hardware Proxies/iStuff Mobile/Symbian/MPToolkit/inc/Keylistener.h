@@ -6,7 +6,7 @@
 #include <w32std.h>
 #include <apgwgnam.h>
 
-class CKeyListener : public CActive
+class CKeyListener
 {
 	public:
 		static CKeyListener* NewLC();

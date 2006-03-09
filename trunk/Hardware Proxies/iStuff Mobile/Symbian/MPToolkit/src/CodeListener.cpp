@@ -5,17 +5,17 @@ CCodeListener::CCodeListener(CMPToolkitAppUi* app) : CActive(0)
 {
 	iApplicationUi = app;
 	isConnected = EFalse;
-//iLog.Connect();
-//iLog.CreateLog(_L("MPToolkit"),_L("MyLogFile1"),EFileLoggingModeOverwrite);
-//iLog.Write(_L("created"));
+iLog.Connect();
+iLog.CreateLog(_L("MPToolkit"),_L("MyLogFile1"),EFileLoggingModeOverwrite);
+iLog.Write(_L("created"));
 }
 
 CCodeListener::~CCodeListener()
 {
 	Cancel();
 
-//	iLog.CloseLog();
-//	iLog.Close();
+	iLog.CloseLog();
+	iLog.Close();
 }
 
 void CCodeListener::ConstructL(CEikonEnv* aEikEnv)
@@ -26,8 +26,11 @@ void CCodeListener::ConstructL(CEikonEnv* aEikEnv)
 
 void CCodeListener::StartReceiving()
 {
+iLog.Write(_L("calling start receiving"));
 	iSocket.Read(data,iStatus);
 	SetActive();
+iLog.Write(_L("just called set active"));
+
 }
 
 void CCodeListener::RunL()
@@ -49,6 +52,8 @@ void CCodeListener::DoCancel()
 void CCodeListener::DecodeOpcode()
 {
 	TUint8 value = data[0];
+
+iLog.WriteFormat(_L("code =%d"),value);
 
 	switch(value)
 	{

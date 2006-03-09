@@ -15,12 +15,12 @@ CKeyListener* CKeyListener::NewL()
    return self;
 }
 
-CKeyListener::CKeyListener() : CActive(0)
+CKeyListener::CKeyListener() //: CActive(0)
 {}
 
 CKeyListener::~CKeyListener()
 {
-	Cancel();
+	//Cancel();
 
 	iLog.CloseLog();
 	iLog.Close();
@@ -32,7 +32,7 @@ void CKeyListener::ConstructL()
 	iLog.CreateLog(_L("MPToolkit"),_L("KeyListener"),EFileLoggingModeOverwrite);
 	iLog.Write(_L("created"));
 	
-	CActiveScheduler::Add(this);
+	//CActiveScheduler::Add(this);
 }
 
 void CKeyListener::DoCancel()
@@ -44,6 +44,8 @@ void CKeyListener::DoCancel()
 
 void CKeyListener::StartL()
 {
+	TRequestStatus status;
+
 	// connect to window server
 	User::LeaveIfError(ws.Connect());
 	CleanupClosePushL(ws);
@@ -61,7 +63,7 @@ void CKeyListener::StartL()
 	iLog.Write(_L("test2"));
 
 	// listen for the key presses
-	ws.EventReady(&iStatus);
+	ws.EventReady(&status);
 	
 	// hide this window group from the app switcher
 	wg.SetOrdinalPosition(-1);
@@ -72,18 +74,22 @@ void CKeyListener::StartL()
 
 	iLog.Write(_L("test3"));
 	
-	User::WaitForAnyRequest();
+	User::WaitForRequest(status);
 	iLog.Write(_L("test4"));
-	if (iStatus.Int()==KErrNone) {
+	if (status.Int()==KErrNone) {
 		TWsEvent e;
+		iLog.Write(_L("test5"));
 		ws.GetEvent(e);
-
+iLog.Write(_L("test6"));
 		TInt c;
 		TKeyEvent* aKeyEvent=e.Key();
+iLog.Write(_L("test7"));
 		c=aKeyEvent->iCode;
 
 		iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
+		iLog.WriteFormat(_L("ErrCode Received = %d"),status.Int());
+
 	//SetActive();
 }
 
@@ -93,7 +99,7 @@ void CKeyListener::StartListening()
 
 void CKeyListener::RunL()
 {
-	iLog.Write(_L("test4"));
+	/*iLog.Write(_L("test4"));
 	if (iStatus.Int()==KErrNone)
 	{
 			TWsEvent e;
@@ -106,7 +112,7 @@ void CKeyListener::RunL()
 			iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
 	ws.EventReady(&iStatus);
-	SetActive();
+	SetActive();*/
 }
 
 void CKeyListener::StopL()
