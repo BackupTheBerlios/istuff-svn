@@ -1,0 +1,103 @@
+/*
+ * Copyright (c) 2006
+ * Media informatics Department
+ * RWTH Aachen Germany
+ * http://media.informatik.rwth-aachen.de
+ *
+ * Redistribution and use of the source code and binary, with or without
+ * modification, are permitted under OPI Artistic License 
+ * (http://www.opensource.org/licenses/artistic-license.php) provided that 
+ * the source code retains the above copyright notice and the following 
+ * disclaimer.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Authors:	  Faraz Ahmed Memon
+ *			  Tico Ballagas
+ *
+ * Version:	  1.0
+ */
+ 
+//  RESOURCE IDENTIFIER
+NAME    AWIZ // 4 letter ID
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include "iStuffMobile.hrh"
+#include "iStuffMobile.loc"
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+
+
+
+//  RESOURCE DEFINITIONS 
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf = "iStuffMobile"; }
+
+RESOURCE EIK_APP_INFO
+    {
+    hotkeys = r_istuffmobile_hotkeys;
+    menubar = r_istuffmobile_menubar;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;     
+    }
+
+//----------------------------------------------------
+//   
+//    r_istuffmobile_hotkeys
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS r_istuffmobile_hotkeys
+    {
+    control =
+        {
+        HOTKEY { command = EAknCmdExit; key='e'; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_istuffmobile_menubar
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_istuffmobile_menubar
+    {
+    titles =
+        {
+        MENU_TITLE { menu_pane = r_istuffmobile_menu; txt = "File"; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_istuffmobile_menu
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_istuffmobile_menu
+    {
+    items =
+        {
+        MENU_ITEM { command = EiStuffMobileCmdAppConnect; txt = qtn_appl_connect; },
+		MENU_ITEM { command = EiStuffMobileCmdAppDisconnect; txt = qtn_appl_disconnect; },
+        MENU_ITEM { command = EAknCmdExit; txt = qtn_appl_exit; }
+        };
+    }
+
+
+// End of File

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="ISTUFFMOBILE"
+	SccProjectName=""
+	SccLocalPath="">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug WINS|Win32"
+			OutputDirectory="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB"
+			IntermediateDirectory="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UDEB"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/QIfist"
+				Optimization="0"
+				AdditionalIncludeDirectories="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP,\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC,\dev\Symbian\7.0s\Series60_v21\EPOC32\INCLUDE"
+			PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__; _DEBUG; _UNICODE"
+			IgnoreStandardIncludePath="TRUE"
+			StringPooling="TRUE"
+			ExceptionHandling="FALSE"
+			RuntimeLibrary="3"
+			StructMemberAlignment="3"
+			BufferSecurityCheck="FALSE"
+			PrecompiledHeaderFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UDEB/ISTUFFMOBILE.pch"
+			AssemblerListingLocation="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UDEB/"
+			ObjectFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UDEB/"
+			ProgramDataBaseFileName="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.pdb"
+			BrowseInformation="1"
+			WarningLevel="4"
+			SuppressStartupBanner="TRUE"
+			DebugInformationFormat="3"
+			CompileAs="0"/>
+		<Tool
+			Name="VCCustomBuildTool"/>
+		<Tool
+			Name="VCLinkerTool"
+			AdditionalDependencies= "&quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\EDLL.LIB&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\euser.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\apparc.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\cone.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\eikcore.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\apgrfx.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\esock.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\btextnotifiers.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\bafl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\eikcoctl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\avkon.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\ws32.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\bluetooth.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\flogger.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\mediaclientaudio.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\vibractrl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UDEB\ISTUFFMOBILE.exp&quot;"
+			OutputFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.APP"
+			LinkIncremental="1"
+			SuppressStartupBanner="TRUE"
+			IgnoreAllDefaultLibraries="TRUE"
+			ForceSymbolReferences="?_E32Dll@@YGHPAXI0@Z"
+		GenerateDebugInformation="TRUE"
+			ProgramDatabaseFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.pdb"
+			SubSystem="2"
+			EntryPointSymbol="_E32Dll"
+			ImportLibrary="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB/ISTUFFMOBILE.lib"/>
+		<Tool
+			Name="VCMIDLTool"
+			PreprocessorDefinitions="_DEBUG"
+			MkTypLibCompatible="TRUE"
+			SuppressStartupBanner="TRUE"
+			TargetEnvironment="1"
+			TypeLibraryName="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB/ISTUFFMOBILE.tlb"
+			HeaderFileName=""/>
+		<Tool
+			Name="VCPostBuildEventTool"
+			CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; POSTBUILDUDEB"/>
+		<Tool
+			Name="VCPreBuildEventTool"/>
+		<Tool
+			Name="VCPreLinkEventTool"
+			CommandLine="echo Doing first-stage link by name
+	nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; PRELINKUDEB
+	if errorlevel 1 nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; STOPLINKUDEB
+"/>
+		<Tool
+			Name="VCResourceCompilerTool"
+			PreprocessorDefinitions="_DEBUG"
+			Culture="2057"/>
+		<Tool
+			Name="VCWebServiceProxyGeneratorTool"/>
+		<Tool
+			Name="VCXMLDataGeneratorTool"/>
+		<Tool
+			Name="VCWebDeploymentTool"/>
+		<Tool
+			Name="VCManagedWrapperGeneratorTool"/>
+		<Tool
+			Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+	</Configuration>
+
+		<Configuration
+			Name="Release Armi|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cmd /c bldmake bldfiles
+									   cmd /c abld build armi urel"
+				ReBuildCommandLine="abld build armi urel"
+				CleanCommandLine="abld reallyclean armi urel"
+				Output="ISTUFFMOBILE"/>
+		</Configuration>		<Configuration
+			Name="Release Thumb|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cmd /c bldmake bldfiles
+									   cmd /c abld build thumb urel"
+				ReBuildCommandLine="abld build thumb urel"
+				CleanCommandLine="abld reallyclean thumb urel"
+				Output="ISTUFFMOBILE"/>
+		</Configuration>		<Configuration
+			Name="Release WINS|Win32"
+			OutputDirectory="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL"
+			IntermediateDirectory="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/QIfist"
+				Optimization="1"
+				InlineFunctionExpansion="1"
+				ImproveFloatingPointConsistency="TRUE"
+				AdditionalIncludeDirectories="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP,\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC,\dev\Symbian\7.0s\Series60_v21\EPOC32\INCLUDE"
+			PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__; NDEBUG; _UNICODE"
+			IgnoreStandardIncludePath="TRUE"
+			StringPooling="TRUE"
+			ExceptionHandling="FALSE"
+			RuntimeLibrary="2"
+			StructMemberAlignment="3"
+			BufferSecurityCheck="FALSE"
+			EnableFunctionLevelLinking="TRUE"
+			PrecompiledHeaderFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL/ISTUFFMOBILE.pch"
+			AssemblerListingLocation="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL/"
+			ObjectFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL/"
+			ProgramDataBaseFileName="\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL/"
+			WarningLevel="4"
+			SuppressStartupBanner="TRUE"
+			CompileAs="0"/>
+		<Tool
+			Name="VCCustomBuildTool"/>
+		<Tool
+			Name="VCLinkerTool"
+			AdditionalDependencies= "&quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\EDLL.LIB&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\euser.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\apparc.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\cone.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\eikcore.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\apgrfx.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\esock.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\btextnotifiers.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\bafl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\eikcoctl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\avkon.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\ws32.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\bluetooth.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\flogger.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\mediaclientaudio.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\vibractrl.lib&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\BUILD\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE\WINS\UREL\ISTUFFMOBILE.exp&quot;"
+			OutputFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.APP"
+			LinkIncremental="1"
+			SuppressStartupBanner="TRUE"
+			IgnoreAllDefaultLibraries="TRUE"
+			ForceSymbolReferences="?_E32Dll@@YGHPAXI0@Z"
+			ProgramDatabaseFile="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL/ISTUFFMOBILE.pdb"
+			SubSystem="2"
+			EntryPointSymbol="_E32Dll"
+			ImportLibrary="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL/ISTUFFMOBILE.lib"/>
+		<Tool
+			Name="VCMIDLTool"
+			MkTypLibCompatible="TRUE"
+			SuppressStartupBanner="TRUE"
+			TargetEnvironment="1"
+			TypeLibraryName="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL/ISTUFFMOBILE.tlb"
+			HeaderFileName=""/>
+		<Tool
+			Name="VCPostBuildEventTool"
+			CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; POSTBUILDUREL"/>
+		<Tool
+			Name="VCPreBuildEventTool"/>
+		<Tool
+			Name="VCPreLinkEventTool"
+			CommandLine="echo Doing first-stage link by name
+	nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; PRELINKUREL
+	if errorlevel 1 nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; STOPLINKUREL
+"/>
+		<Tool
+			Name="VCResourceCompilerTool"
+			PreprocessorDefinitions="NDEBUG"
+			Culture="2057"/>
+		<Tool
+			Name="VCWebServiceProxyGeneratorTool"/>
+		<Tool
+			Name="VCXMLDataGeneratorTool"/>
+		<Tool
+			Name="VCWebDeploymentTool"/>
+		<Tool
+			Name="VCManagedWrapperGeneratorTool"/>
+		<Tool
+			Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+	</Configuration>
+
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90">
+		<File 
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\DATA\Istuffmobile.rss">
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Building resources from Istuffmobile.rss"
+					CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.r&quot;"
+					AdditionalDependencies="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.HRH;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.LOC;"
+			Outputs="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.rSC.dummy"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Building resources from Istuffmobile.rss"
+					CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.r&quot;"
+					AdditionalDependencies="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.HRH;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.LOC;"
+			Outputs="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE.rSC.dummy"/>
+			</FileConfiguration>
+		</File>
+		<File 
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\DATA\Istuffmobile_caption.rss">
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Building resources from Istuffmobile_caption.rss"
+					CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE_CAPTION.r&quot;"
+					AdditionalDependencies="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.LOC;"
+			Outputs="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UDEB\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE_CAPTION.rSC.dummy"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCustomBuildTool"
+					Description="Building resources from Istuffmobile_caption.rss"
+					CommandLine="nmake -nologo -f &quot;\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\ISTUFFMOBILE.SUP.MAKE&quot; &quot;\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE_CAPTION.r&quot;"
+					AdditionalDependencies="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\ISTUFFMOBILE.LOC;"
+			Outputs="\dev\Symbian\7.0s\Series60_v21\EPOC32\RELEASE\WINS\UREL\Z\SYSTEM\APPS\ISTUFFMOBILE\ISTUFFMOBILE_CAPTION.rSC.dummy"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\Istuffmobile.uid.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Codelistener.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Istuffmobileapp.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Istuffmobileappui.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Istuffmobilecontainer.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Istuffmobiledocument.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Keylistener.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\SRC\Soundplayer.cpp">
+			<FileConfiguration
+				Name="Release WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="1"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;NDEBUG;_UNICODE;$(NoInherit)"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					AdditionalIncludeDirectories=""
+					PreprocessorDefinitions=" __SYMBIAN32__; __VC32__; __WINS__; __DLL__;_DEBUG;_UNICODE;$(NoInherit)"
+					BrowseInformation="1"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\GROUP\Istuffmobile.mmp">
+			<FileConfiguration
+				Name="Release WINS|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Debug WINS|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter
+		Name="Resource Files"
+		Filter="ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe">
+	</Filter>
+	<Filter
+		Name="Header Files"
+		Filter="h;hpp;hxx;hm;inl;fi;fd">
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Istuffmobilecontainer.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Istuffmobiledocument.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Istuffmobile.hrh">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Istuffmobileapp.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Global.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Codelistener.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Keylistener.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Soundplayer.h">
+		</File>
+		<File
+			RelativePath="\DEV\SYMBIAN\PROJECTS\ISTUFFMOBILE\INC\Istuffmobileappui.h">
+		</File>
+	</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

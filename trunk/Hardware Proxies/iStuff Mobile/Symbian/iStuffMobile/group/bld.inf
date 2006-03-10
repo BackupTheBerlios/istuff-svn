@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : bld.inf
+*  Part of  : iStuffMobile
+*  Created  : 10.03.2006 by Faraz Ahmed Memon, Tico Ballagas
+*  Description:
+*	 This file provides the information required for building the
+*    whole of a iStuffMobile.
+*  Version  :
+*  Copyright: 
+* ============================================================================
+*/
+
+
+PRJ_MMPFILES
+
+iStuffMobile.mmp
+

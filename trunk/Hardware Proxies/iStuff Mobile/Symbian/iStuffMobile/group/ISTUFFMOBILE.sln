@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}")="ISTUFFMOBILE","ISTUFFMOBILE.vcproj", "{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug WINS = Debug WINS
+		Release WINS = Release WINS
+		Release Armi = Release Armi
+		Release Thumb = Release Thumb
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Debug WINS.ActiveCfg = Debug WINS|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Debug WINS.Build.0 = Debug WINS|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release WINS.ActiveCfg = Release WINS|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release WINS.Build.0 = Release WINS|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release Armi.ActiveCfg = Release Armi|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release Armi.Build.0 = Release Armi|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release Thumb.ActiveCfg = Release Thumb|Win32
+		{C2C5885D-96B3-47EF-9571-1C6C56BDE5EF}.Release Thumb.Build.0 = Release Thumb|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
