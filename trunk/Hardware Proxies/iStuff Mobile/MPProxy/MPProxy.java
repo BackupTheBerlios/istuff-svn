@@ -262,7 +262,7 @@ public class MPProxy implements EventCallback
 		{
 			MPProxy mobileProxy;
 			Shutdown killer;
-            //Stdio keys;
+                        Stdio keys;
 
 			if(argv.length == 2)
 			{
@@ -271,8 +271,8 @@ public class MPProxy implements EventCallback
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
 
-              //                  keys = new Stdio(mobileProxy);
-               //                 keys.start();
+                                keys = new Stdio(mobileProxy);
+                                keys.start();
 
 				mobileProxy.run();
 			}
