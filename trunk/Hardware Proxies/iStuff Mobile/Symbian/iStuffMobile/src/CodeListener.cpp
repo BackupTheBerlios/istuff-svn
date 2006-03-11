@@ -34,22 +34,16 @@ CCodeListener::CCodeListener(CiStuffMobileAppUi* app) : CActive(0)
 {
 	iApplicationUi = app;
 	isConnected = EFalse;
-iLog.Connect();
-iLog.CreateLog(_L("iStuffMobile"),_L("CodeListener"),EFileLoggingModeOverwrite);
-iLog.Write(_L("created"));
 }
 
 CCodeListener::~CCodeListener()
 {
 	Cancel();
-
-	iLog.CloseLog();
-	iLog.Close();
 }
 
-void CCodeListener::ConstructL(CEikonEnv* aEikEnv)
+void CCodeListener::ConstructL(RFileLogger* aLog)
 {
-       iEikEnv = aEikEnv; // remember our environment
+       iLog = aLog;
        CActiveScheduler::Add(this); // add to scheduler
 }
 
@@ -63,7 +57,8 @@ void CCodeListener::RunL()
 {
 	if (iStatus.Int() != KErrNone)
 	{
-			DisconnectFromServer();
+		iLog->WriteFormat(_L("Error %d while reading OPCODE"),iStatus.Int());
+		DisconnectFromServer();
 	}
 
 	DecodeOpcode();
@@ -79,8 +74,6 @@ void CCodeListener::DecodeOpcode()
 {
 	TUint8 value = data[0];
 
-iLog.WriteFormat(_L("code =%d"),value);
-
 	switch(value)
 	{
 		case OPCODE_DISCONNECT:
@@ -92,7 +85,7 @@ iLog.WriteFormat(_L("code =%d"),value);
 			break;
 		
 		case OPCODE_KEY_RECEIVED:
-			SendKeyToPhone();
+			DecodeReceivedKey();
 			break;
 
 		case OPCODE_PLAYSOUND:
@@ -104,11 +97,11 @@ iLog.WriteFormat(_L("code =%d"),value);
 			break;
 
 		case OPCODE_LAUNCHAPP:
-			LaunchApp();
+			LaunchApp(GetPath());
 			break;
 
 		case OPCODE_CLOSEAPP:
-			CloseApp();
+			CloseApp(GetPath());
 			break;
 
 		case OPCODE_START_KEYCAPTURE:
@@ -119,15 +112,28 @@ iLog.WriteFormat(_L("code =%d"),value);
 			StopKeyCapture();
 			break;
 
+		case OPCODE_CHANGEPROFILE:
+			ChangeProfile();
+			break;
+
 		default:
+			iLog->WriteFormat(_L("Unrecognized Code %d"),value);
 			break;
 	}
 }
 
 void CCodeListener::StartKeyCapture()
 {
-	iKeyListener = CKeyListener::NewL();
-	iKeyListener->StartL();
+	if(iKeyListener == NULL)
+	{
+		iKeyListener = CKeyListener::NewL();
+		iKeyListener->ConstructL(this);
+		iKeyListener->StartL();
+	}
+	else
+	{
+		iLog->Write(_L("Key capture is already running"));
+	}
 }
 
 void CCodeListener::StopKeyCapture()
@@ -135,27 +141,18 @@ void CCodeListener::StopKeyCapture()
 	if(iKeyListener != NULL)
 	{
 		iKeyListener->StopL();
+		delete iKeyListener;
+
+		iKeyListener = NULL;
+	}
+	else
+	{
+		iLog->Write(_L("Key capture is not running"));
 	}
 }
 
-void CCodeListener::LaunchApp()
+void CCodeListener::LaunchApp(TUint16* path)
 {
-	TRequestStatus iLocalStatus;
-	TBuf8<1> localData;
-
-	iSocket.Read(localData,iLocalStatus);
-	User::WaitForRequest(iLocalStatus);
-
-	TUint8 pathSize = localData[0];
-	TUint16 *path = new TUint16[pathSize];
-
-	for(TInt i=0;i<pathSize;i++)
-	{
-		iSocket.Read(localData,iLocalStatus);
-		User::WaitForRequest(iLocalStatus);
-		path[i] = localData[0];
-	}
-
 	TPtrC Ptr(path);
 
 	CApaCommandLine * cmd=CApaCommandLine::NewL();
@@ -163,31 +160,16 @@ void CCodeListener::LaunchApp()
     cmd->SetCommandL(EApaCommandRun);
     EikDll::StartAppL(*cmd);
 
-	cmd=CApaCommandLine::NewL();
+	/*cmd=CApaCommandLine::NewL();
     cmd->SetLibraryNameL(Ptr);
     cmd->SetCommandL(EApaCommandRun);
-    EikDll::StartAppL(*cmd);
+    EikDll::StartAppL(*cmd);*/
 }
 
-void CCodeListener::CloseApp()
+void CCodeListener::CloseApp(TUint16* path)
 {
-	TRequestStatus iLocalStatus;
-	TBuf8<1> localData;
-
-	iSocket.Read(localData,iLocalStatus);
-	User::WaitForRequest(iLocalStatus);
-
-	TUint8 pathSize = localData[0];
-	TUint16 *path = new TUint16[pathSize];
-
-	for(TInt i=0;i<pathSize;i++)
-	{
-		iSocket.Read(localData,iLocalStatus);
-		User::WaitForRequest(iLocalStatus);
-		path[i] = localData[0];
-	}
-
 	TPtrC Ptr(path);
+	TBool killed = EFalse;
 	
 	RApaLsSession RSession;
     TInt AAppCount = 0;//get the number of applications
@@ -212,13 +194,17 @@ void CCodeListener::CloseApp()
 				if(AppInfo.iCaption.Find(Ptr) != KErrNotFound)
 				{
 					ATask3.KillTask();
+					killed = ETrue;
 				}
             }
         }
     }
+
+	if(!killed)
+		iLog->WriteFormat(_L("Application \"%s\" was not found"),Ptr);
 }
 
-void CCodeListener::SendKeyToPhone()
+void CCodeListener::DecodeReceivedKey()
 {
 	TRequestStatus iLocalStatus;
 	TBuf8<6> localData;
@@ -241,13 +227,18 @@ void CCodeListener::SendKeyToPhone()
 	code <<= 8;
 	code |= localData[5];
 
+	SendKeyToPhone(repeat,scancode,code);
+}
+
+void CCodeListener::SendKeyToPhone(TUint16 repeat, TUint16 scancode, TUint16 code)
+{
 	TKeyEvent event;
 	event.iRepeats = repeat;
 	event.iScanCode = scancode;
 	event.iCode = code;
 
-	TApaTask task( CCoeEnv::Static()->WsSession() );
-	task.SetWgId( CCoeEnv::Static()->WsSession().GetFocusWindowGroup() );
+	TApaTask task(CCoeEnv::Static()->WsSession());
+	task.SetWgId(CCoeEnv::Static()->WsSession().GetFocusWindowGroup());
 	
 	User::ResetInactivityTime();
 	task.SendKey(event);
@@ -269,7 +260,59 @@ void CCodeListener::SendKeyToProxy(TUint16 code,TUint16 aType)
 
 void CCodeListener::PlaySoundFile()
 {
+	if(iSoundPlayer == NULL)
+	{
+		TPtrC Ptr(GetPath());
+		iSoundPlayer = CSoundPlayer::NewL(Ptr);
+	}
+	else
+	{
+		iLog->Write(_L("Sound Player is already running"));
+	}
+}
 
+void CCodeListener::StopSoundFile()
+{
+	if(iSoundPlayer != NULL)
+	{
+		iSoundPlayer->Stop();
+		delete iSoundPlayer;
+		
+		iSoundPlayer = NULL;
+	}
+	else
+	{
+		iLog->Write(_L("Sound Player is not running"));
+	}
+}
+
+void CCodeListener::ChangeProfile()
+{
+	TRequestStatus iLocalStatus;
+	TBuf8<1> localData;
+
+	iSocket.Read(localData,iLocalStatus);
+	User::WaitForRequest(iLocalStatus);
+
+	TUint8 profileNo = localData[0];
+
+	TBufC16<41> launchApp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
+
+	LaunchApp((TUint16 *)launchApp.Ptr());
+
+	for(TInt i=0; i<profileNo-1; i++)
+		SendKeyToPhone(0,0,EKeyDownArrow);
+	
+	for(TInt i=0; i<2; i++)
+		SendKeyToPhone(0,0,EKeyEnter);
+
+	TBufC16<9> closeApp = _L("Profiles");
+
+	CloseApp((TUint16 *)closeApp.Ptr());
+}
+
+TUint16* CCodeListener::GetPath()
+{
 	TRequestStatus iLocalStatus;
 	TBuf8<1> localData;
 
@@ -286,14 +329,7 @@ void CCodeListener::PlaySoundFile()
 		path[i] = localData[0];
 	}
 
-	TPtrC Ptr(path);
-	iSoundPlayer = CSoundPlayer::NewL(Ptr);
-}
-
-void CCodeListener::StopSoundFile()
-{
-	if(iSoundPlayer != NULL)
-		iSoundPlayer->Stop();
+	return path;
 }
 
 void CCodeListener::ConnectToServer()
@@ -332,7 +368,9 @@ void CCodeListener::ConnectToServer()
 		StartReceiving();
 	}
 	else
-		User::InfoPrint(_L("Device already connected"));
+	{
+		iLog->Write(_L("The device is already connected"));
+	}
 }
 
 void CCodeListener::DisconnectFromServer()
@@ -352,7 +390,9 @@ void CCodeListener::DisconnectFromServer()
 		iApplicationUi->SetConnected(EFalse);
 	}
 	else
-		User::InfoPrint(_L("Device not connected"));
+	{
+		iLog->Write(_L("The device is not connected"));
+	}
 }
 
 TBool CCodeListener::GetConnected()

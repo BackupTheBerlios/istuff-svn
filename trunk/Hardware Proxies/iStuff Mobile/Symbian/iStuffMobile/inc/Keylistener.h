@@ -35,6 +35,9 @@
 #include <flogger.h>
 #include <w32std.h>
 #include <apgwgnam.h>
+//#include "CodeListener.h"
+
+class CCodeListener;
 
 class CKeyListener : public CActive
 {
@@ -44,17 +47,16 @@ class CKeyListener : public CActive
 		CKeyListener();
 		~CKeyListener();
 
+		void ConstructL(CCodeListener* aCodeListener);
 		void StartL();
 		void StopL();
 
-		RFileLogger iLog;
-
 	private:
 
-		void ConstructL();
 		void RunL();
 		void DoCancel();
 
+		CCodeListener* iCodeListener;
 		RWsSession ws;
 		RWindowGroup* wg;
 };

@@ -40,9 +40,16 @@ void CiStuffMobileAppUi::ConstructL()
 {
 	BaseConstructL();
 
+	MakeDir(_L("c:\\Logs\\"));
+	MakeDir(_L("c:\\Logs\\iStuffMobile\\"));
+	
+	iLog.Connect();
+	iLog.CreateLog(_L("iStuffMobile"),_L("ErrorLog"),EFileLoggingModeOverwrite);
+	iLog.Write(_L("Log Created"));
+
 	connected = EFalse;
 	iProxyServer = new CCodeListener(this);
-	iProxyServer->ConstructL(iEikonEnv);
+	iProxyServer->ConstructL(&iLog);
 
     iAppContainer = new (ELeave) CiStuffMobileContainer;
     iAppContainer->SetMopParent( this );
@@ -59,6 +66,9 @@ CiStuffMobileAppUi::~CiStuffMobileAppUi()
     }
 	
 	delete iProxyServer;
+
+	iLog.CloseLog();
+	iLog.Close();
 }
 
 void CiStuffMobileAppUi::DynInitMenuPaneL(TInt /*aResourceId*/,CEikMenuPane* /*aMenuPane*/)
@@ -115,4 +125,18 @@ void CiStuffMobileAppUi::SetConnected(TBool iConnect)
 		iAppContainer->iLabel->SetTextL( _L("Status :\nConnected") );
 	else
 		iAppContainer->iLabel->SetTextL( _L("Status :\nNot Connected") );
+}
+
+TInt CiStuffMobileAppUi::MakeDir(const TDesC& aPath)
+{
+	RFs fsSession;
+	User::LeaveIfError(fsSession.Connect());
+	CleanupClosePushL(fsSession);
+
+	TInt ret = fsSession.MkDir(aPath);
+
+	fsSession.Close();
+	CleanupStack::PopAndDestroy(); // fsSession
+
+	return ret;
 }

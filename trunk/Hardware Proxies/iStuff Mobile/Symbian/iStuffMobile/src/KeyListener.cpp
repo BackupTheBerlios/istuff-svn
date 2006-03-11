@@ -34,7 +34,6 @@ CKeyListener* CKeyListener::NewLC()
 {
    CKeyListener* self = new (ELeave) CKeyListener();
    CleanupStack::PushL(self);
-   self->ConstructL();
    return self;
 }
 
@@ -51,17 +50,11 @@ CKeyListener::CKeyListener() : CActive(0)
 CKeyListener::~CKeyListener()
 {
 	Cancel();
-
-	iLog.CloseLog();
-	iLog.Close();
 }
 
-void CKeyListener::ConstructL()
+void CKeyListener::ConstructL(CCodeListener* aCodeListener)
 {
-	iLog.Connect();
-	iLog.CreateLog(_L("iStuffMobile"),_L("KeyListener"),EFileLoggingModeOverwrite);
-	iLog.Write(_L("created"));
-	
+	iCodeListener = aCodeListener;
 	CActiveScheduler::Add(this);
 }
 
@@ -69,7 +62,9 @@ void CKeyListener::DoCancel()
 {
 	// clean up
 	//wg->CancelCaptureKey(EKeyLeftArrow);
+	//wg->Destroy();
 	ws.EventReadyCancel();
+	//ws.Close();
 }
 
 void CKeyListener::StartL()
@@ -101,11 +96,12 @@ void CKeyListener::RunL()
 			TWsEvent e;
 			ws.GetEvent(e);
 
-			TInt c;
+			TUint16 c;
 			TKeyEvent* aKeyEvent=e.Key();
-			c=aKeyEvent->iCode;
+			c = aKeyEvent->iCode;
 
-			iLog.WriteFormat(_L("KeyCode Received = %d"),c);
+			//iCodeListener->SendKeyToProxy(aKeyEvent->iCode, 1);
+			//iLog.WriteFormat(_L("KeyCode Received = %d"),c);
 	}
 	ws.EventReady(&iStatus);
 	SetActive();

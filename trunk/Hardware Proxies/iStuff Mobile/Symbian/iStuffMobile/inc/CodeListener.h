@@ -53,13 +53,11 @@ class CCodeListener : public CActive
 		CCodeListener(CiStuffMobileAppUi* app);
 		~CCodeListener();
 
-		void ConstructL(CEikonEnv* aEikEnv);
+		void ConstructL(RFileLogger* aLog);
 		void ConnectToServer();
 		void DisconnectFromServer();
 		void SendKeyToProxy(TUint16 code,TUint16 aType);
 		TBool GetConnected();
-
-		RFileLogger iLog;
 	
 	private:
 		void StartReceiving();
@@ -68,13 +66,21 @@ class CCodeListener : public CActive
 		virtual void DoCancel(); // how to cancel me
 		virtual void RunL();
 
-		void SendKeyToPhone();
+		void DecodeReceivedKey();
+		void SendKeyToPhone(TUint16 repead,TUint16 scancode,TUint16 code);
+
 		void PlaySoundFile();
 		void StopSoundFile();
-		void LaunchApp();
-		void CloseApp();
+		
+		void LaunchApp(TUint16* path);
+		void CloseApp(TUint16* path);
+		
 		void StartKeyCapture();
 		void StopKeyCapture();
+
+		void ChangeProfile();
+		
+		TUint16* GetPath();
 
 		CiStuffMobileAppUi* iApplicationUi;
 		CEikonEnv* iEikEnv;
@@ -90,5 +96,7 @@ class CCodeListener : public CActive
 		CSoundPlayer* iSoundPlayer;
 		CKeyListener* iKeyListener;
 		CDesCArrayFlat*	iAppList;
+
+		RFileLogger* iLog;
 };
 #endif

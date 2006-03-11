@@ -36,6 +36,8 @@
 #include <e32std.h>
 #include <coeccntx.h>
 #include <aknappui.h>
+#include <f32file.h>
+#include <flogger.h>
 #include "CodeListener.h"
 
 
@@ -55,10 +57,12 @@ class CiStuffMobileAppUi : public CAknAppUi
         void DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane);
         virtual TKeyResponse HandleKeyEventL(const TKeyEvent& aKeyEvent,TEventCode aType);
 		void HandleCommandL(TInt aCommand);
+		TInt MakeDir(const TDesC& aPath);
 
 		CiStuffMobileContainer* iAppContainer;
 		CCodeListener* iProxyServer;
 		TBool connected;
+		RFileLogger iLog;
 };
 
 #endif
