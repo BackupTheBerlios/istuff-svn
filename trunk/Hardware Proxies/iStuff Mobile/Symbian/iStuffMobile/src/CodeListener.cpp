@@ -153,17 +153,18 @@ void CCodeListener::StopKeyCapture()
 
 void CCodeListener::LaunchApp(TUint16* path)
 {
+	TInt error = 0;
 	TPtrC Ptr(path);
 
 	CApaCommandLine * cmd=CApaCommandLine::NewL();
     cmd->SetLibraryNameL(Ptr);
     cmd->SetCommandL(EApaCommandRun);
-    EikDll::StartAppL(*cmd);
+    TRAP(error, EikDll::StartAppL(*cmd));
 
-	/*cmd=CApaCommandLine::NewL();
-    cmd->SetLibraryNameL(Ptr);
-    cmd->SetCommandL(EApaCommandRun);
-    EikDll::StartAppL(*cmd);*/
+	if(error != KErrNone) 
+	{
+		iLog->WriteFormat(_L("Application \"%s\" could not be launched"),path);
+	}
 }
 
 void CCodeListener::CloseApp(TUint16* path)
@@ -195,13 +196,14 @@ void CCodeListener::CloseApp(TUint16* path)
 				{
 					ATask3.KillTask();
 					killed = ETrue;
+					break;
 				}
             }
         }
     }
 
 	if(!killed)
-		iLog->WriteFormat(_L("Application \"%s\" was not found"),Ptr);
+		iLog->WriteFormat(_L("Application \"%s\" was not found"),path);
 }
 
 void CCodeListener::DecodeReceivedKey()
@@ -296,17 +298,20 @@ void CCodeListener::ChangeProfile()
 
 	TUint8 profileNo = localData[0];
 
-	TBufC16<41> launchApp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
+	TBufC16<40> launchApp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
+
+	iLog->WriteFormat(_L("ProfileNo = %d"),profileNo);
+	iLog->WriteFormat(_L("Application = %s"),launchApp.Ptr());
 
 	LaunchApp((TUint16 *)launchApp.Ptr());
 
 	for(TInt i=0; i<profileNo-1; i++)
-		SendKeyToPhone(0,0,EKeyDownArrow);
+		SendKeyToPhone(0,0,63498);
 	
 	for(TInt i=0; i<2; i++)
-		SendKeyToPhone(0,0,EKeyEnter);
+		SendKeyToPhone(0,0,63557);
 
-	TBufC16<9> closeApp = _L("Profiles");
+	TBufC16<8> closeApp = _L("Profiles");
 
 	CloseApp((TUint16 *)closeApp.Ptr());
 }

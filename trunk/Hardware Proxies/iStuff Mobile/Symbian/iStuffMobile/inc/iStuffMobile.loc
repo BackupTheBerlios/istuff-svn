@@ -42,7 +42,7 @@
 
 
 // example caption strings for app
-#define qtn_app_caption_string "  iStuffMobile"
+#define qtn_app_caption_string "  iStuff Mobile"
 
 #define qtn_app_short_caption_string "iStuffMobile"
 
