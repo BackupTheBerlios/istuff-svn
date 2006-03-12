@@ -80,6 +80,8 @@ public class iStuffMobileProxy implements EventCallback
 						 case OPCODE_BACKLIGHT_ON:
 						 case OPCODE_BACKLIGHT_OFF:
 						 case OPCODE_STOPSOUND:
+						 case OPCODE_START_KEYCAPTURE:
+						 case OPCODE_STOP_KEYCAPTURE:
 							redirectEvent(command);
 							break;
 
