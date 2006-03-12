@@ -1,1 +1,3 @@
-java -classpath ..\..\Lib\iROS.jar; TextEventEngine %1
+cd .\classes
+java -classpath ..\..\..\Lib\iROS.jar;. TextEventEngine %1
+cd ..

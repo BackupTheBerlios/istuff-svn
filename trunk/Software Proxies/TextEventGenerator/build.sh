@@ -1,1 +1,1 @@
-javac -classpath ../../Lib/iROS.jar *.java
+javac -classpath ../../Lib/iROS.jar -d ./classes ./src/*.java

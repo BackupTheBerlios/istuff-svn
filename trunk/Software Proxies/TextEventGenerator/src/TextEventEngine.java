@@ -57,7 +57,8 @@ public class TextEventEngine extends JFrame{
         lblTitle.setText("Text Event Engine");
         lblTitle.setBounds(new Rectangle(126, 8, 234, 28));
 
-        imgI10 = new ImagePanel("img/logo_i10.gif");
+		System.out.println(System.getProperty("user.dir"));
+        imgI10 = new ImagePanel("./img/logo_i10.gif");
         imgI10.setBounds(350,0,180,80);
 
         this.getContentPane().add(imgI10);

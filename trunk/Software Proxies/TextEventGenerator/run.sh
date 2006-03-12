@@ -1,7 +1,1 @@
-EHEAPSERVER=localhost
-if [ $# -ge 1 ]
-then 
-    EHEAPSERVER=$1
-fi
-echo $EHEAPSERVER
-java -classpath ../../Lib/iROS.jar:. TextEventEngine $EHEAPSERVER
+java -classpath ../../Lib/iROS.jar:./classes TextEventEngine $1
