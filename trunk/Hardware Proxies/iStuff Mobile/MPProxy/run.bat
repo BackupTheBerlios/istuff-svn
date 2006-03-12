@@ -1,1 +1,0 @@
-java -classpath ..\..\..\Lib\iROS.jar;"%CLASSPATH%";. MPProxy %1 %2
