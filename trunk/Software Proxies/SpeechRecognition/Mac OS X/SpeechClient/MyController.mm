@@ -102,6 +102,7 @@
 	// activate the language model
 	event = [eventHeap createEvent];
 	[eventHeap putStrKey:"activateLanguage" andStrValue:"<make a call>" toEvent:event];
+
 	[eventHeap postEvent:event];
 
 	/*

@@ -43,7 +43,7 @@
 {
 	// initialize the Event Heap client library
 	// you can specify appName and deviceName, but you don't have to
-	eh2_init ("SpeechClient", NULL);
+	eh2_init ("SpeechClient", "NULL");
 	
 	// THE TRACER DOES NOT WORK OUTSIDE OF XCODE!
 	// EXECUTABLE WILL START FROM TERMINAL BUT NOT IF DOUBLE-CLICKED IN FINDER!
