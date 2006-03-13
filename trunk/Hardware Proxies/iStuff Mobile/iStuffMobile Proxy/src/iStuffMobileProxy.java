@@ -268,14 +268,38 @@ public class iStuffMobileProxy implements EventCallback
 		{
 			try
 			{
-				Integer command = (Integer)recEvent.getPostValue("Command");
-				Integer profile = (Integer)recEvent.getPostValue("ProfileNo");
-				byte buffer[] = new byte[2];
+				int profileNo = ((Integer)recEvent.getPostValue("ProfileNo")).intValue();
+				Event profile = new Event();
+				profile.setField("Command",new Integer(OPCODE_LAUNCHAPP),FieldValueTypes.FORMAL);
+				profile.setField("Path",new String("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app"),FieldValueTypes.FORMAL);
+				getPathAndRedirect(profile);
+				Thread.sleep(1000);
+				
+				for(int i=0;i<profileNo-1;i++)
+				{
+					profile = new Event();
+					profile.setField("Command",new Integer(OPCODE_KEY_RECEIVED),FieldValueTypes.FORMAL);
+					profile.setField("Repeat",new Integer(0),FieldValueTypes.FORMAL);
+					profile.setField("ScanCode",new Integer(0),FieldValueTypes.FORMAL);
+					profile.setField("Code",new Integer(63498),FieldValueTypes.FORMAL);
+					sendKey(profile);
+				}
 
-				buffer[0] = command.byteValue();
-				buffer[1] = profile.byteValue();
+				for(int i=0;i<2;i++)
+				{
+					profile = new Event();
+					profile.setField("Command",new Integer(OPCODE_KEY_RECEIVED),FieldValueTypes.FORMAL);
+					profile.setField("Repeat",new Integer(0),FieldValueTypes.FORMAL);
+					profile.setField("ScanCode",new Integer(0),FieldValueTypes.FORMAL);
+					profile.setField("Code",new Integer(63557),FieldValueTypes.FORMAL);
+					sendKey(profile);
+				}
 
-				outStream.write(buffer);
+				profile = new Event();
+				profile.setField("Command",new Integer(OPCODE_CLOSEAPP),FieldValueTypes.FORMAL);
+				profile.setField("Path",new String("Profiles"),FieldValueTypes.FORMAL);
+				getPathAndRedirect(profile);
+
 			}
 			catch(Exception ex)
 			{
