@@ -112,10 +112,6 @@ void CCodeListener::DecodeOpcode()
 			StopKeyCapture();
 			break;
 
-		case OPCODE_CHANGEPROFILE:
-			ChangeProfile();
-			break;
-
 		default:
 			iLog->WriteFormat(_L("Unrecognized Code %d"),value);
 			break;
@@ -286,34 +282,6 @@ void CCodeListener::StopSoundFile()
 	{
 		iLog->Write(_L("Sound Player is not running"));
 	}
-}
-
-void CCodeListener::ChangeProfile()
-{
-	TRequestStatus iLocalStatus;
-	TBuf8<1> localData;
-
-	iSocket.Read(localData,iLocalStatus);
-	User::WaitForRequest(iLocalStatus);
-
-	TUint8 profileNo = localData[0];
-
-	TBufC16<40> launchApp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
-
-	iLog->WriteFormat(_L("ProfileNo = %d"),profileNo);
-	iLog->WriteFormat(_L("Application = %s"),launchApp.Ptr());
-
-	LaunchApp((TUint16 *)launchApp.Ptr());
-
-	for(TInt i=0; i<profileNo-1; i++)
-		SendKeyToPhone(0,0,63498);
-	
-	for(TInt i=0; i<2; i++)
-		SendKeyToPhone(0,0,63557);
-
-	TBufC16<8> closeApp = _L("Profiles");
-
-	CloseApp((TUint16 *)closeApp.Ptr());
 }
 
 TUint16* CCodeListener::GetPath()
