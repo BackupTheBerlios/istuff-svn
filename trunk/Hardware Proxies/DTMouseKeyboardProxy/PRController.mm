@@ -27,8 +27,10 @@
     PropertyHash &settings = PRWorld::ReadSettings([layoutFile cString]);
     //settings["eheap"] = [[self getStringPref:@"EventHeapServerName"] cString];
 	settings["eheap"] = "127.0.0.1";
-	if ([[[NSProcessInfo processInfo] arguments] count] > 1){
+	settings["srcMachineName"] = "unset";
+	if ([[[NSProcessInfo processInfo] arguments] count] > 2){
 		settings["eheap"] = [[[[NSProcessInfo processInfo] arguments] objectAtIndex:1] cString];
+		settings["srcMachineName"] = [[[[NSProcessInfo processInfo] arguments] objectAtIndex:2] cString];
 	}
     world = new PRWorld(settings);
 

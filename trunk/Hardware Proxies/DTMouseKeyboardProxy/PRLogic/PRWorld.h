@@ -41,6 +41,8 @@ public:
 protected:
 
     EventHeap *m_EventHeap;
+	
+	string srcMachineName;
 
     map<string,PRScreen> m_Screens;
     PRScreen *m_CurrentScreen;

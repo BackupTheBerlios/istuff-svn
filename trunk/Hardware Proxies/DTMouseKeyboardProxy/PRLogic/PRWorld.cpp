@@ -44,6 +44,11 @@ PRWorld::PRWorld(PropertyHash &settings)
     m_Sending = false;
 	thread_listening = true;
     m_EventHeap = new EventHeap(settings["eheap"].str());
+
+
+	srcMachineName = settings["srcMachineName"].str();
+	//strcpy(&srcMachineName, settings["srcMachineName"].str());
+	cout << "Machinename: " << srcMachineName;
     
     PropertyList::iterator i;
 
@@ -195,6 +200,8 @@ void PRWorld::sendMouseEvent()
     event["LeftButton"].setPostValue(m_Pointer.getButton(0)?1:0);
     event["RightButton"].setPostValue(m_Pointer.getButton(1)?1:0);
     event["MiddleButton"].setPostValue(m_Pointer.getButton(2)?1:0);
+	event["srcMachineName"].setPostValue(srcMachineName);
+	event["level"].setPostValue(0);
     m_EventHeap->putEvent(event);
 }
 
@@ -208,6 +215,8 @@ void PRWorld::sendScrollEvent(int value)
     event["PointRightEventType"].setPostValue("ScrollEvent");
     event["Screen"].setPostValue(m_CurrentScreen->getName());
     event["Value"].setPostValue(value);
+	event["srcMachineName"].setPostValue(srcMachineName);
+	event["level"].setPostValue(0);
     m_EventHeap->putEvent(event);
 }
 
@@ -217,14 +226,19 @@ void PRWorld::sendKeyEvent(int charCode, int keyCode, bool isDown)
     //cout << "sending to " << m_CurrentScreen->getName() << ": ";
     //cout << "char = " << charCode << ", key = " << keyCode << ", state = " << isDown;
     //cout << endl;
+	//This one has the target set to "default", PatchPanel is to rewrite this field
     Event event("PointRightEvent", 500);
     event["PointRightEventType"].setPostValue("KeyEvent");
     event["Screen"].setPostValue(m_CurrentScreen->getName());
     event["CharCode"].setPostValue(charCode);
     event["KeyCode"].setPostValue(keyCode);
     event["State"].setPostValue(isDown?1:0);
+	event["srcMachineName"].setPostValue(srcMachineName);
+	event["level"].setPostValue(0);
     m_EventHeap->putEvent(event);
 	
+	
+	//This one has no target
 	Event eventK("KEYBOARD", 500);
 	//printf("%d `%s %c \n",charCode, charCode, charCode);
     eventK["code"].setPostValue(keyCode);
@@ -232,7 +246,11 @@ void PRWorld::sendKeyEvent(int charCode, int keyCode, bool isDown)
 	key[0] = charCode;
 	key[1] = '\0';
     eventK["key"].setPostValue(key);
-   if (isDown) m_EventHeap->putEvent(eventK);
+	eventK["isDown"].setPostValue(isDown?1:0);
+	eventK["level"].setPostValue(0);
+	eventK["srcMachineName"].setPostValue(srcMachineName);
+	eventK["level"].setPostValue(0);
+	m_EventHeap->putEvent(eventK);
 }
 
 void PRWorld::sendLeaveEvent()
@@ -242,7 +260,21 @@ void PRWorld::sendLeaveEvent()
     Event event("PointRightEvent", 500);
     event["PointRightEventType"].setPostValue("LeaveEvent");
     event["Screen"].setPostValue(m_CurrentScreen->getName());
+	event["srcMachineName"].setPostValue(srcMachineName);
+	event["level"].setPostValue(0);
     m_EventHeap->putEvent(event);
+		
+	Event eventMouseLeave("PointRightEvent", 500);
+    eventMouseLeave["PointRightEventType"].setPostValue("MouseEvent");
+    eventMouseLeave["Screen"].setPostValue(m_CurrentScreen->getName());
+    eventMouseLeave["X"].setPostValue(0);
+    eventMouseLeave["Y"].setPostValue(0);
+    eventMouseLeave["LeftButton"].setPostValue(0);
+    eventMouseLeave["RightButton"].setPostValue(0);
+    eventMouseLeave["MiddleButton"].setPostValue(0);
+	eventMouseLeave["srcMachineName"].setPostValue(srcMachineName);
+	eventMouseLeave["level"].setPostValue(0);
+    m_EventHeap->putEvent(eventMouseLeave);
 }
 
 } // namespace prlogic
