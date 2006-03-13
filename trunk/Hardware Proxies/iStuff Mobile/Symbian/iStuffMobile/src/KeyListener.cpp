@@ -29,6 +29,7 @@
  */
 
 #include "KeyListener.h"
+#include "CodeListener.h"
 
 CKeyListener* CKeyListener::NewLC()
 {
@@ -52,19 +53,18 @@ CKeyListener::~CKeyListener()
 	Cancel();
 }
 
-void CKeyListener::ConstructL(CCodeListener* aCodeListener)
+void CKeyListener::ConstructL(CCodeListener* aCodeListener,RFileLogger* aLog)
 {
 	iCodeListener = aCodeListener;
+	iLog = aLog;
 	CActiveScheduler::Add(this);
 }
 
 void CKeyListener::DoCancel()
 {
 	// clean up
-	//wg->CancelCaptureKey(EKeyLeftArrow);
-	//wg->Destroy();
 	ws.EventReadyCancel();
-	//ws.Close();
+	wg->Close();
 }
 
 void CKeyListener::StartL()
@@ -75,9 +75,8 @@ void CKeyListener::StartL()
 	// create a window group for the thread
 	wg = new (ELeave) RWindowGroup(ws);
 	wg->Construct((TUint32)&wg, EFalse);
-
-	// capture a key
-	User::LeaveIfError(wg->CaptureKey(EKeyLeftArrow, 0, 0));
+	
+	InterceptKeys();
 
 	// hide this window group from the app switcher
 	wg->SetOrdinalPosition(-1);
@@ -96,13 +95,23 @@ void CKeyListener::RunL()
 			TWsEvent e;
 			ws.GetEvent(e);
 
-			TUint16 c;
-			TKeyEvent* aKeyEvent=e.Key();
-			c = aKeyEvent->iCode;
+			if(e.Type() == 1)
+			{
+				TUint16 c;
+				TKeyEvent* aKeyEvent=e.Key();
+				c = aKeyEvent->iCode;
 
-			//iCodeListener->SendKeyToProxy(aKeyEvent->iCode, 1);
-			//iLog.WriteFormat(_L("KeyCode Received = %d"),c);
+				iCodeListener->SendKeyToProxy((TUint16)aKeyEvent->iCode,(TUint16) e.Type());
+			}
+			else
+			{
+				iCodeListener->SendKeyToProxy((TUint16)0,(TUint16) e.Type());
+			}
+			
 	}
+	else
+			iLog->WriteFormat(_L("Error %d while capturing key presses"),iStatus.Int());
+
 	ws.EventReady(&iStatus);
 	SetActive();
 }
@@ -110,4 +119,59 @@ void CKeyListener::RunL()
 void CKeyListener::StopL()
 {
 	DoCancel();
+}
+
+void CKeyListener::InterceptKeys()
+{
+	// capture a key
+
+	for(TInt i=48;i<=57;i++)					//looping over keypad keys from 0-9
+	{
+		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(wg->CaptureKeyUpAndDowns(i, 0, 0));
+	}
+	
+	for(TInt i=63495,j=0; i<=63498; i++,j++)	//looping over joypad keys left,right,up and down
+	{
+		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyLeftArrow + j, 0, 0));
+	}
+
+	for(TInt i=63586,j=0 ;i<=63587; i++,j++)	//Yes and No keys i.e. green and red
+	{
+		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyYes+j, 0, 0));
+	}
+
+	User::LeaveIfError(wg->CaptureKey(EKeyBackspace, 0, 0));			//the backspace key i.e. c
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyBackspace, 0, 0));
+	
+	/*iLog->WriteFormat(_L("EKeyApplication0 = %d"),EKeyApplication0);
+	iLog->WriteFormat(_L("EKeyTab = %d"),EKeyTab);
+	iLog->WriteFormat(_L("EKeyLineFeed = %d"),EKeyLineFeed);
+	iLog->WriteFormat(_L("EKeyVerticalTab = %d"),EKeyVerticalTab);
+	iLog->WriteFormat(_L("EKeySpace = %d"),EKeySpace);
+	iLog->WriteFormat(_L("EKeyHome = %d"),EKeyHome);
+	iLog->WriteFormat(_L("EKeyEnd = %d"),EKeyEnd);
+	iLog->WriteFormat(_L("EKeyInsert = %d"),EKeyInsert);
+	iLog->WriteFormat(_L("EKeyLeftShift = %d"),EKeyLeftShift);
+	iLog->WriteFormat(_L("EKeyRightShift = %d"),EKeyRightShift);
+	iLog->WriteFormat(_L("EKeySliderDown = %d"),EKeySliderDown);
+	iLog->WriteFormat(_L("EKeySliderUp = %d"),EKeySliderUp);
+	iLog->WriteFormat(_L("EKeyMenu = %d"),EKeyMenu);*/
+
+	User::LeaveIfError(wg->CaptureKey(35, 0, 0));						//hase key
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyHash, 0, 0));
+
+	User::LeaveIfError(wg->CaptureKey(EKeyDevice3, 0, 0));				//joystick enter key
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyDevice3, 0, 0));
+
+	User::LeaveIfError(wg->CaptureKey(EKeyLeftShift, 0, 0));			//the pencil key
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyLeftShift, 0, 0));
+
+	User::LeaveIfError(wg->CaptureKey(EKeyMenu, 0, 0));					//left soft key
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyMenu, 0, 0));
+
+	User::LeaveIfError(wg->CaptureKey(EKeyApplication0, 0, 0));					//left soft key
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyApplication0, 0, 0));
 }

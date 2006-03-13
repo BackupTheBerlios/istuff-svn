@@ -47,18 +47,20 @@ class CKeyListener : public CActive
 		CKeyListener();
 		~CKeyListener();
 
-		void ConstructL(CCodeListener* aCodeListener);
+		void ConstructL(CCodeListener* aCodeListener,RFileLogger* aLog);
 		void StartL();
 		void StopL();
 
 	private:
 
+		void InterceptKeys();
 		void RunL();
 		void DoCancel();
 
-		CCodeListener* iCodeListener;
-		RWsSession ws;
-		RWindowGroup* wg;
+		CCodeListener*	iCodeListener;
+		RWsSession		ws;
+		RWindowGroup*	wg;
+		RFileLogger*	iLog;
 };
 
 #endif

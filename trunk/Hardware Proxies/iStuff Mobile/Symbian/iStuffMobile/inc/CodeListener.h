@@ -77,6 +77,8 @@ class CCodeListener : public CActive
 		
 		void StartKeyCapture();
 		void StopKeyCapture();
+
+		void ChangeProfile();
 		
 		TUint16* GetPath();
 
