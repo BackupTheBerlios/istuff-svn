@@ -96,7 +96,8 @@ public class iStuffMobileProxy implements EventCallback
 							break;
 
 						 case OPCODE_CHANGEPROFILE:
-							sendChangeProfile(retEvents[i]);
+							//sendChangeProfile(retEvents[i]);
+							break;
 					}
 				}
 			}
@@ -264,7 +265,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 		}
 
-		public void sendChangeProfile(Event recEvent)
+		/*public void sendChangeProfile(Event recEvent)
 		{
 			try
 			{
@@ -305,12 +306,13 @@ public class iStuffMobileProxy implements EventCallback
 			{
 				System.out.println("RFCOM : "+ ex.toString());
 			}
-		}
+		}*/
 		
 		public static void main(String argv[])
 		{
 			iStuffMobileProxy mobileProxy;
 			Shutdown killer;
+			Stdio std;
 
 			if(argv.length == 2)
 			{
@@ -318,6 +320,9 @@ public class iStuffMobileProxy implements EventCallback
 
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
+
+				std = new Stdio(mobileProxy);
+				std.start();
 
 				mobileProxy.run();
 			}
@@ -337,8 +342,46 @@ class Shutdown extends Thread {
 		{
 			mobileProxy = mobile;
 		}
-    public void run() {
+		
+		public void run() {
         System.out.println("Shutdown hook called");
         mobileProxy.Destroy();
     }
+}
+
+class Stdio extends Thread 
+{
+
+	private iStuffMobileProxy mobileProxy;
+
+	public Stdio(iStuffMobileProxy mobile)
+	{
+		mobileProxy = mobile;
+	}
+
+	public void run()
+	{
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		while (true) 
+		{
+			try 
+			{
+				String command = in.readLine();
+				if (command.startsWith("10")) 
+				{
+					System.out.println("sending event 10");
+					mobileProxy.redirectEvent(10);
+				}
+				else if (command.startsWith("11")) 
+				{
+					System.out.println("sending event 11");
+					mobileProxy.redirectEvent(11);
+				}
+			}
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
 }
