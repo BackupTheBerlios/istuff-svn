@@ -1,7 +1,0 @@
-This keyrobot has a more complete key mapping,  allowing copy and paste, new document to open, and applications to quit. 
---This line, and those below, will be ignored--
-
-M    proxy-description.xml
-M    build.bat
-M    run.bat
-M    run.sh
