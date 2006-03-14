@@ -125,18 +125,7 @@ void CKeyListener::InterceptKeys()
 {
 	// capture a key
 
-	for(TInt i=1;i<=0xc7;i++)					//looping over keypad keys from 0-9
-	{
-		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
-		//User::LeaveIfError(wg->CaptureKeyUpAndDowns(i, 0, 0));
-	}
-
-	for(TInt i=0xf700;i<=0xf900;i++)					//looping over keypad keys from 0-9
-	{
-		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
-		//User::LeaveIfError(wg->CaptureKeyUpAndDowns(i, 0, 0));
-	}
-	/*for(TInt i=48;i<=57;i++)					//looping over keypad keys from 0-9
+	for(TInt i=48;i<=57;i++)					//looping over keypad keys from 0-9
 	{
 		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
 		User::LeaveIfError(wg->CaptureKeyUpAndDowns(i, 0, 0));
@@ -166,9 +155,6 @@ void CKeyListener::InterceptKeys()
 	User::LeaveIfError(wg->CaptureKey(EKeyLeftShift, 0, 0));			//the pencil key
 	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyLeftShift, 0, 0));
 
-	//User::LeaveIfError(wg->CaptureKey(EKeyMenu, 0, 0));					//left soft key?
-	//User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyMenu, 0, 0));
-
 	User::LeaveIfError(wg->CaptureKey(EKeyApplication0, 0, 0));			//menu key
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyApplication0, 0, 0));*/
+	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyApplication0, 0, 0));
 }
