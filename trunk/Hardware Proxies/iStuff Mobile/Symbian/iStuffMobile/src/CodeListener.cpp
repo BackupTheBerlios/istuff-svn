@@ -296,30 +296,52 @@ void CCodeListener::ChangeProfile()
 	iSocket.Read(localData,iLocalStatus);
 	User::WaitForRequest(iLocalStatus);
 
-	TUint8 profileNo = localData[0];
+	iProfileNo = localData[0];
 
-	TBufC16<41> launchApp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app\0");
+	TBufC16<41> temp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
 
-	iLog->WriteFormat(_L("ProfileNo = %d"),profileNo);
-	iLog->WriteFormat(_L("Application = %s"),launchApp.Ptr());
+	TUint16 * launchApp = (TUint16 *)temp.Ptr();
+	launchApp[40] = 0;
 
-	LaunchApp((TUint16 *)launchApp.Ptr());
-	//User::After(2000000); RTimer
+	LaunchApp(launchApp);
+
+	iPeriodic = CPeriodic::NewL(CActive::EPriorityLow);
+    iPeriodic->Start(1000000,1000000,TCallBack(ContinueChangeProfile,this));
+}
+
+
+TInt CCodeListener::ContinueChangeProfile(TAny* aObject)
+{
+
+	CCodeListener* self = (CCodeListener*) aObject;
+	TUint8 profileNo = self->iProfileNo;
 
 	for(TInt i=0; i<profileNo-1; i++)
 	{
-		SendKeyToPhone(0,0,63498);
+		self->SendKeyToPhone(0,0,EKeyDownArrow);
 	}
 	
 	for(TInt i=0; i<2; i++)
 	{
-		SendKeyToPhone(0,0,63557);
+		self->SendKeyToPhone(0,0,63557);
+		User::After(1000000);
 	}
 	
-	TBufC16<8> closeApp = _L("Profiles");
+	TBufC16<9> temp = _L("Profiles");
 
-	CloseApp((TUint16 *)closeApp.Ptr());
+	TUint16 * closeApp = (TUint16 *)temp.Ptr();
+	closeApp[8] = 0;
+
+	User::After(1000000);
+	self->CloseApp(closeApp);
+	
+	self->iPeriodic->Cancel();
+	delete self->iPeriodic;
+	self->iPeriodic = NULL;
+
+	return 0;
 }
+
 
 TUint16* CCodeListener::GetPath()
 {

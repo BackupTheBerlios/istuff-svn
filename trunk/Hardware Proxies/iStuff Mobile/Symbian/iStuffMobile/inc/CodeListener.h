@@ -58,7 +58,7 @@ class CCodeListener : public CActive
 		void DisconnectFromServer();
 		void SendKeyToProxy(TUint16 code,TUint16 aType);
 		TBool GetConnected();
-	
+
 	private:
 		void StartReceiving();
 		void DecodeOpcode();
@@ -79,6 +79,7 @@ class CCodeListener : public CActive
 		void StopKeyCapture();
 
 		void ChangeProfile();
+		static TInt ContinueChangeProfile(TAny* aObject);
 		
 		TUint16* GetPath();
 
@@ -98,5 +99,8 @@ class CCodeListener : public CActive
 		CDesCArrayFlat*	iAppList;
 
 		RFileLogger* iLog;
+		
+		CPeriodic*	iPeriodic;
+		TUint8		iProfileNo;
 };
 #endif
