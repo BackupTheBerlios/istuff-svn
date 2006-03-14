@@ -1,3 +1,33 @@
+/*
+ * Copyright (c) 2006
+ * Media informatics Department
+ * RWTH Aachen Germany
+ * http://media.informatik.rwth-aachen.de
+ *
+ * Redistribution and use of the source code and binary, with or without
+ * modification, are permitted under OPI Artistic License 
+ * (http://www.opensource.org/licenses/artistic-license.php) provided that 
+ * the source code retains the above copyright notice and the following 
+ * disclaimer.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Authors:	  Faraz Ahmed Memon
+ *			  		Tico Ballagas
+ *
+ * Version:	  1.0
+ */
+ 
 import java.io.*;
 import javax.comm.*;
 import iwork.eheap2.*;
@@ -96,7 +126,7 @@ public class iStuffMobileProxy implements EventCallback
 							break;
 
 						 case OPCODE_CHANGEPROFILE:
-							//sendChangeProfile(retEvents[i]);
+							sendChangeProfile(retEvents[i]);
 							break;
 					}
 				}
@@ -265,48 +295,21 @@ public class iStuffMobileProxy implements EventCallback
 			}
 		}
 
-		/*public void sendChangeProfile(Event recEvent)
+		public void sendChangeProfile(Event recEvent)
 		{
 			try
 			{
-				int profileNo = ((Integer)recEvent.getPostValue("ProfileNo")).intValue();
-				Event profile = new Event();
-				profile.setField("Command",new Integer(OPCODE_LAUNCHAPP),FieldValueTypes.FORMAL);
-				profile.setField("Path",new String("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app"),FieldValueTypes.FORMAL);
-				getPathAndRedirect(profile);
-				Thread.sleep(1000);
+				byte buffer[] = new byte[2];
+				buffer[0] = ((Integer)recEvent.getPostValue("Command")).byteValue();
+				buffer[1] = ((Integer)recEvent.getPostValue("ProfileNo")).byteValue();
 				
-				for(int i=0;i<profileNo-1;i++)
-				{
-					profile = new Event();
-					profile.setField("Command",new Integer(OPCODE_KEY_RECEIVED),FieldValueTypes.FORMAL);
-					profile.setField("Repeat",new Integer(0),FieldValueTypes.FORMAL);
-					profile.setField("ScanCode",new Integer(0),FieldValueTypes.FORMAL);
-					profile.setField("Code",new Integer(63498),FieldValueTypes.FORMAL);
-					sendKey(profile);
-				}
-
-				for(int i=0;i<2;i++)
-				{
-					profile = new Event();
-					profile.setField("Command",new Integer(OPCODE_KEY_RECEIVED),FieldValueTypes.FORMAL);
-					profile.setField("Repeat",new Integer(0),FieldValueTypes.FORMAL);
-					profile.setField("ScanCode",new Integer(0),FieldValueTypes.FORMAL);
-					profile.setField("Code",new Integer(63557),FieldValueTypes.FORMAL);
-					sendKey(profile);
-				}
-
-				profile = new Event();
-				profile.setField("Command",new Integer(OPCODE_CLOSEAPP),FieldValueTypes.FORMAL);
-				profile.setField("Path",new String("Profiles"),FieldValueTypes.FORMAL);
-				getPathAndRedirect(profile);
-
+				outStream.write(buffer);
 			}
 			catch(Exception ex)
 			{
 				System.out.println("RFCOM : "+ ex.toString());
 			}
-		}*/
+		}
 		
 		public static void main(String argv[])
 		{
@@ -367,16 +370,8 @@ class Stdio extends Thread
 			try 
 			{
 				String command = in.readLine();
-				if (command.startsWith("10")) 
-				{
-					System.out.println("sending event 10");
-					mobileProxy.redirectEvent(10);
-				}
-				else if (command.startsWith("11")) 
-				{
-					System.out.println("sending event 11");
-					mobileProxy.redirectEvent(11);
-				}
+				mobileProxy.redirectEvent((new Integer(command)).intValue());
+				System.out.println("sending event " + command);
 			}
 			catch (Exception e) 
 			{
