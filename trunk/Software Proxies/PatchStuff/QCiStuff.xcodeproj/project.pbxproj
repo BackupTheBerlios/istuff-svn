@@ -42,7 +42,7 @@
 		A7A7ACEF09B73B4F007A9245 /* CharacterGeneratorPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACED09B73B4F007A9245 /* CharacterGeneratorPatch.xml */; };
 		A7A7ACF209B73B63007A9245 /* InterfaceKitPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF009B73B63007A9245 /* InterfaceKitPatch.xml */; };
 		A7A7ACF509B73B6B007A9245 /* ServoControllerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF309B73B6B007A9245 /* ServoControllerPatch.xml */; };
-		A7A7ACF809B73BCB007A9245 /* MobilePhoneControllerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF609B73BCB007A9245 /* MobilePhoneControllerPatch.xml */; };
+		A7A7ACF809B73BCB007A9245 /* MobilePhoneControlPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF609B73BCB007A9245 /* MobilePhoneControlPatch.xml */; };
 		A7A7ACFB09B73BE4007A9245 /* PresentationControllerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF909B73BE4007A9245 /* PresentationControllerPatch.xml */; };
 		A7A7ACFE09B73BF2007A9245 /* SmartItsSensorPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACFC09B73BF2007A9245 /* SmartItsSensorPatch.xml */; };
 		A7A7AD0109B73C00007A9245 /* TeleoDInPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACFF09B73C00007A9245 /* TeleoDInPatch.xml */; };
@@ -258,7 +258,7 @@
 		A7A7ACEE09B73B4F007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/CharacterGeneratorPatch.xml; sourceTree = "<group>"; };
 		A7A7ACF109B73B63007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/InterfaceKitPatch.xml; sourceTree = "<group>"; };
 		A7A7ACF409B73B6B007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ServoControllerPatch.xml; sourceTree = "<group>"; };
-		A7A7ACF709B73BCB007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/MobilePhoneControllerPatch.xml; sourceTree = "<group>"; };
+		A7A7ACF709B73BCB007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/MobilePhoneControlPatch.xml; sourceTree = "<group>"; };
 		A7A7ACFA09B73BE4007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/PresentationControllerPatch.xml; sourceTree = "<group>"; };
 		A7A7ACFD09B73BF2007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/SmartItsSensorPatch.xml; sourceTree = "<group>"; };
 		A7A7AD0009B73C00007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/TeleoDInPatch.xml; sourceTree = "<group>"; };
@@ -637,7 +637,7 @@
 		A71391B2094C3D2600A173A0 /* MobilePhone */ = {
 			isa = PBXGroup;
 			children = (
-				A7A7ACF609B73BCB007A9245 /* MobilePhoneControllerPatch.xml */,
+				A7A7ACF609B73BCB007A9245 /* MobilePhoneControlPatch.xml */,
 			);
 			name = MobilePhone;
 			sourceTree = "<group>";
@@ -909,7 +909,7 @@
 				A7A7ACEF09B73B4F007A9245 /* CharacterGeneratorPatch.xml in Resources */,
 				A7A7ACF209B73B63007A9245 /* InterfaceKitPatch.xml in Resources */,
 				A7A7ACF509B73B6B007A9245 /* ServoControllerPatch.xml in Resources */,
-				A7A7ACF809B73BCB007A9245 /* MobilePhoneControllerPatch.xml in Resources */,
+				A7A7ACF809B73BCB007A9245 /* MobilePhoneControlPatch.xml in Resources */,
 				A7A7ACFB09B73BE4007A9245 /* PresentationControllerPatch.xml in Resources */,
 				A7A7ACFE09B73BF2007A9245 /* SmartItsSensorPatch.xml in Resources */,
 				A7A7AD0109B73C00007A9245 /* TeleoDInPatch.xml in Resources */,
@@ -1042,12 +1042,12 @@
 			name = ServoControllerPatch.xml;
 			sourceTree = SOURCE_ROOT;
 		};
-		A7A7ACF609B73BCB007A9245 /* MobilePhoneControllerPatch.xml */ = {
+		A7A7ACF609B73BCB007A9245 /* MobilePhoneControlPatch.xml */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A7A7ACF709B73BCB007A9245 /* English */,
 			);
-			name = MobilePhoneControllerPatch.xml;
+			name = MobilePhoneControlPatch.xml;
 			sourceTree = SOURCE_ROOT;
 		};
 		A7A7ACF909B73BE4007A9245 /* PresentationControllerPatch.xml */ = {
