@@ -1,1 +1,1 @@
-java -classpath .:../../Lib/iROS.jar SoundClip localhost
+java -classpath .:../../../Lib/iROS.jar ../SoundClip localhost

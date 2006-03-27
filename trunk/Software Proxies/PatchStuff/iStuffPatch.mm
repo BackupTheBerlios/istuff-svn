@@ -45,6 +45,13 @@
 	advancedOptionsHidden = true;
 	standby = false;
 	connectedToEventHeap = false;
+
+	char domainname[1024];
+	getdomainname( &domainname[0], sizeof(domainname) );
+	//printf( "Domainname=%s\n", &domainname[0] );
+	domainName = [NSString stringWithUTF8String:domainname];
+	[domainName retain];
+	NSLog(@"DomainName variable: %@", domainName); 
 	
 	netServices = [[NSMutableArray alloc] initWithCapacity:5];
 	[netServices retain];
@@ -53,27 +60,13 @@
     [netServiceBrowser searchForServicesOfType:@"_eheap._tcp." inDomain:nil];
 	[netServiceBrowser retain];
 			// DHCP is recommended! Then the EH service returns reasonable service and host names.
+			// Make sure that IPv4 is used. And ipv6 is turned off
+			// A NameServer must run if different OS are to be intermingled.
 	hostName = [NSString stringWithString:[[NSHost currentHost] name]];
-	[hostName retain]; 
-	NSString *hostAddress;
-	hostAddress = [NSString stringWithString:[[NSHost currentHost] address]];
-	[hostAddress retain];
-	NSLog(@"Hostname %@", hostName);
-	NSLog(@"HOst Adress : %@", hostAddress);
-	NSArray *ipaddresses = [[NSHost currentHost] addresses];
-	if([ipaddresses count] == 0)
-	NSLog (@"Your machine network settings are not properly configured. Please enable DHCP");
+	[hostName retain];
 	
-	NSLog(@"THE number of addreses: %i", [ipaddresses count]);
-	// Normally, the current IP address ist stored in the first element of the NSArray returned by the  addresses method.
-	NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:0]);
-		NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:1]);
-			NSLog(@"THE ADDRESS IS 0: %@", [ipaddresses objectAtIndex:2]);
-
 	eventHeapName = [NSString stringWithString:hostName];
-	eventHeapAddress = [NSString stringWithString:hostAddress];
 	[eventHeapName retain]; 
-	[eventHeapAddress retain];
 
 	eh2_init ("iStuffQuartzPlugin", [hostName UTF8String]);	// Names that are provided with each event posted to the heap.
 	
@@ -115,27 +108,17 @@
 	eh = new (eh2_EventHeapPtr);
 
 	//(*eh) = factory->createEventHeap (NULL, "localhost", 4535);
-		NSLog(@"Before connect Name: %@",serverName);
 
 	(*eh) = factory->createEventHeap ([sourceName cString],[serverName cString], port);
 		//(*eh) = factory->createEventHeap ([sourceName cString],"localhost", port);
-		NSLog(@"After connect Name: %@",serverName);
-
 }
 
 - (void) connectToEventHeap:(NSString *) server
 {
-	// if there is no parameter, try to connect to the local host.
-	// if it is not available, take the first from the list.
-	// This thread should only be ended when the patch is deleted or QC is quit
-	// All active services are discovered (I think). It does not seem to be a problem.
-	// The flag connectToEventHeaps is set until a patch is deleted
+	// if there is no parameter, connect to the first Event Heap in the list.
 
-	//[self stopReceivingEvents];
-	sleep(1); // Needed, otherwise reconnecting is not possible --The thread has to end first!
+	//sleep(1); // Needed, otherwise reconnecting is not possible --The thread has to end first!
 	NSString *currentNetServiceName;
-	NSString *currentNetServiceAddress;
-						//NSLog(@"SEARCHING:  %@", [[netServices objectAtIndex:0] address]);
 
 	if  (server == nil) {
 		if ([netServices count] != 0){
@@ -143,26 +126,30 @@
 			[self setEventHeapName: [netServices objectAtIndex:0]];
 			while (currentNetServiceName = [enumerator nextObject]) {
 				if ([currentNetServiceName isEqual:hostName]) [self setEventHeapName: currentNetServiceName];
-
 			}
 		}
 	}	
 	else { // There was a parameter and the patch should connect to that Event Heap
 		[self setEventHeapName:[server copy]];
 	}
-	NSMutableString *newName = [NSMutableString stringWithString:@".local"];
-
-	[newName insertString:eventHeapName atIndex:0];
-	[self createEventHeap:NULL atServer:newName atPort:4535];
-		NSLog(@"Bis hier connect2");
-
+	if ( ! [eventHeapName isEqualToString:@"localhost"])
+	{
+		NSMutableString *newName = [NSMutableString stringWithString:domainName];
+		[newName insertString:@"." atIndex:0];
+		[newName insertString:eventHeapName atIndex:0];
+		[self createEventHeap:NULL atServer:newName atPort:4535];
+	}
+	else
+		[self createEventHeap:NULL atServer:eventHeapName atPort:4535];
 	connectedToEventHeap = true;
 	standby = false;
+	
 	NSString *ehStatus = @"connected";
 	NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:ehStatus forKey:@"connectionStatus"];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:nil userInfo:ehInfo];
 	[eventHeapName retain];
-	sleep(1); // Also prevents crash if proxy is still running but only the event heap crashed
+	//sleep(1); // Also prevents crash if proxy is still running but only the event heap crashed
+	[self stopReceivingEvents]; // needed here, such that running threads are ended.
 	[self startReceivingEvents];
 	NSLog(@"Thread that connects to Event Heaps ended");
 }
@@ -176,8 +163,9 @@
 	if (standby && [[aNetService name] isEqual: eventHeapName]) {
 		[self connectToEventHeap:eventHeapName];
 	}
-	else if ((![self connected]) && !standby) [self connectToEventHeap:nil];
-	
+	else if ((![self connected]) && !standby){
+	 [self connectToEventHeap:nil];
+	}
 	NSLog(@"In didFindService %@ %i", [aNetService name], [[aNetService addresses] count]);
 
     if (!moreComing) [self sendEHSListUpdate];
@@ -212,7 +200,6 @@
 
 - (void)sendEHSListUpdate
 {
-    NSLog(@"EHSListUpdate");
     NSDictionary *message = [NSDictionary dictionaryWithObject:netServices
                                                        forKey:@"EventHeapServiceList"];
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"ESEventHeapServiceListUpdate" object:nil userInfo:message];
@@ -239,15 +226,10 @@
 }
 
 - (void)dealloc
-{
-	NSLog (@"In dealloc");
-	[netServiceBrowser release];
+{	[netServiceBrowser release];
 	[netServices release];
 	[hostName release];
-	[hostAddress release];
 	[eventHeapName release];
-	[eventHeapAddress release];
-
 	// Now disconnect from the Event Heap
 	eh2_finalize ();
 	NSLog(@"All operations in dealloc were finished");
@@ -265,7 +247,6 @@
 }
 
 -(NSString *) ehName {
-	NSLog(@"In Getter for the Event Heap Name: %@", eventHeapName);
 	return [NSString stringWithString:eventHeapName];
 }
 
@@ -277,7 +258,6 @@
 -(void) setAdvancedOptionsHidden:(BOOL) flag
 {
 	advancedOptionsHidden = flag;
-	NSLog(@"STATUS of hidden: %b", advancedOptionsHidden);
 }
 -(BOOL) suspended {
 	return standby;

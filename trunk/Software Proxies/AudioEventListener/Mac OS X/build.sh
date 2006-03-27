@@ -1,1 +1,1 @@
-javac -classpath .:../../Lib/iROS.jar SoundClip.java
+javac -classpath .:../../../Lib/iROS.jar ../SoundClip.java

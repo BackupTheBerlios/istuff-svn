@@ -26,52 +26,63 @@
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
 
-	// definition of the type of event to receive.
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("PhidgetInterfaceKit");
+	// define the type of events you want to receive
+	const char* eventType = "PhidgetInterfaceKit";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
+	int analogPort;
+	int portValue;
 
 	while (waitForEvents) {
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
-		int analogPort;
-		analogPort = resultEventPtr->getPostValueInt("Index");
-		int portValue;
-		portValue = resultEventPtr->getPostValueInt("Value");
-		// Here depending on Index, the corresponding AnalogPortValue must be set.
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
+			analogPort = resultEventPtr->getPostValueInt("Index");
+			portValue = resultEventPtr->getPostValueInt("Value");
+			// Here depending on Index, the corresponding AnalogPortValue must be set.
 		
-		switch (analogPort) {
-		case 0:
-			 [outputAnalogReading0 setDoubleValue:portValue];
-			 NSLog(@"Index 0");
-			 break;
-		case 1:
-			 [outputAnalogReading1 setDoubleValue:portValue];
-			 NSLog(@"Index 1");
-			 break;
-		case 2:
-			 [outputAnalogReading2 setDoubleValue:portValue];
-			 break;
-		case	 3:
+			switch (analogPort) {
+			case 0:
+				[outputAnalogReading0 setDoubleValue:portValue];
+				break;
+			case 1:
+				[outputAnalogReading1 setDoubleValue:portValue];
+				break;
+			case 2:
+				[outputAnalogReading2 setDoubleValue:portValue];
+				break;
+			case 3:
 			 [outputAnalogReading3 setDoubleValue:portValue];
 			 break;
-		case	 4:
+			case 4:
 			 [outputAnalogReading4 setDoubleValue:portValue];
 			 break;
-		case	 5:
+			case 5:
 			 [outputAnalogReading5 setDoubleValue:portValue];
 			 break;
-		case	 6:
+			case 6:
 			 [outputAnalogReading6 setDoubleValue:portValue];
 			break;
-		case	 7:
+			case 7:
 			 [outputAnalogReading6 setDoubleValue:portValue];
 			break;
 
-		default:NSLog(@"Index Value not valid: probably out of bounds");
-			break;
+			default:
+				NSLog(@"Index Value not valid: probably out of bounds");
+				break;
+			}
 		}
 	}
 
 	[localPool release];
+	
 }
 
 @end

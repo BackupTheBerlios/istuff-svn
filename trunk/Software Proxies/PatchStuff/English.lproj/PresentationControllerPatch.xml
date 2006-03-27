@@ -11,13 +11,6 @@
 			<key>name</key>
 			<string>GotoSlide #</string>
 		</dict>
-		<key>inputMachineName</key>
-		<dict>
-			<key>description</key>
-			<string>The machine name on which the proxy is running must be entered here. It has to match with the paramter for the machine name of the Presentation Proxy</string>
-			<key>name</key>
-			<string>Machine Name</string>
-		</dict>
 		<key>inputNextSlide</key>
 		<dict>
 			<key>description</key>
@@ -31,6 +24,13 @@
 			<string>Positive edge trigger to transition to the previous slide</string>
 			<key>name</key>
 			<string>Previous Slide</string>
+		</dict>
+		<key>inputProxyID</key>
+		<dict>
+			<key>description</key>
+			<string>The machine name on which the proxy is running must be entered here. It has to match with the paramter for the machine name of the Presentation Proxy</string>
+			<key>name</key>
+			<string>ProxyID</string>
 		</dict>
 	</dict>
 	<key>nodeAttributes</key>

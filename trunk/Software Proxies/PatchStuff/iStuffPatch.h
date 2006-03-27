@@ -14,6 +14,8 @@
 #import <idk_io.h>
 #import "QCPatch.h"
 #import "iStuffPatchUI.h"	
+#include <unistd.h>
+
 
 // possible input/output types. 
 @class QCIndexPort, QCNumberPort, QCStringPort,
@@ -27,8 +29,8 @@
 	NSString *eventHeapName;
 	NSString *eventHeapAddress;
 	NSString *hostName;
+	NSString *domainName;
 	NSString *hostAddress;
-	
 	BOOL connectToEventHeaps;
 	BOOL tryToConnect;
 	BOOL connectedToEventHeap;
@@ -41,7 +43,6 @@
 	NSMutableArray *services;
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
-
 	//	Specification of the input and output ports of the patch
 
 }

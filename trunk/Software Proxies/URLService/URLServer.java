@@ -24,10 +24,12 @@ import iwork.eheap2.EventHeapException;
 public class URLServer implements EventConstant{
 	private static final boolean DEBUG = false;
 	private EventHeap eHeap;
+	private String _proxyID;
 	private boolean isRunning = false;
 	
-	public URLServer(String heapServerName){
+	public URLServer(String heapServerName, String proxyID){
 		eHeap = new EventHeap(heapServerName);
+		_proxyID = proxyID;
 	}
 	
 	
@@ -85,22 +87,24 @@ public class URLServer implements EventConstant{
 				template.addField(FIELD_TYPE, TYPE_REQUEST);
 				while (isRunning){
 					Event incoming = eHeap.waitForEvent(template);
-					
-					String urlAsString = incoming.getPostValueString(FIELD_URL);
-					
-					Event outgoing = new Event(EVENT_TYPE);
-					if (!DEBUG) outgoing.addField("TimeToLive", new Integer(1000));
-					try{
-						String res = getContent(urlAsString);
-						outgoing.addField(FIELD_TYPE, TYPE_RESPONSE);
-						outgoing.addField(FIELD_CONTENT, res);
+					if ( (incoming.getPostValueString("ProxyID").equals(_proxyID)) 
+							|| (incoming.getPostValueString("ProxyID").equals("")) ) {
+						String urlAsString = incoming.getPostValueString(FIELD_URL);
+						
+						Event outgoing = new Event(EVENT_TYPE);
+						if (!DEBUG) outgoing.addField("TimeToLive", new Integer(1000));
+						try{
+							String res = getContent(urlAsString);
+							outgoing.addField(FIELD_TYPE, TYPE_RESPONSE);
+							outgoing.addField(FIELD_CONTENT, res);
+						}
+						catch (Exception exp){
+							outgoing.addField(FIELD_TYPE, TYPE_ERROR);
+							outgoing.addField(FIELD_CONTENT, exp.getMessage());
+						}
+						
+						eHeap.putEvent(outgoing);
 					}
-					catch (Exception exp){
-						outgoing.addField(FIELD_TYPE, TYPE_ERROR);
-						outgoing.addField(FIELD_CONTENT, exp.getMessage());
-					}
-					
-					eHeap.putEvent(outgoing);
 				}
 			}
 			catch (EventHeapException eexp){
@@ -115,17 +119,25 @@ public class URLServer implements EventConstant{
 	//=======================================
 	public static void main(String[] args) {
 		URLServer us;
-		
+
 		if( args.length == 1 ){
 			try{
-				us = new URLServer( args[0] );
+				us = new URLServer( args[0], "" );
 				us.startService();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
-		}  
+		} 
+		else if (args.length == 2) {
+			try{
+				us = new URLServer( args[0], args[1] );
+				us.startService();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		else{
-			printUsage();
+			System.out.println("usage:  URLServerProxy <Event Heap Name> [ProxyID]");
 			System.exit(-1);
 		}
 	}

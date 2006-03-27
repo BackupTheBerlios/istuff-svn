@@ -29,45 +29,53 @@
 	localPool = [[NSAutoreleasePool alloc] init];
 
 	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("Particle_Packet");
+	const char* eventType = "Particle_Packet";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
 
 	while (waitForEvents) {
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
 
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{		
+			// set the flag so that in the 'execute'-method the output port is set to the new value
+			// after setting it, the flag is set to false again.
+			// This allows posting one value per execution cycle
+			
+			// Read the values from the different fields of the events
+			// The checks are necessary because not every field is created inside an event,
+			// depending on the attached sensors.
+			// This patch only posts the values if they exist.
+			
+			[outputSourceID setStringValue:[NSString stringWithCString:resultEventPtr->getPostValueString("ParticleSrcId")]];
 		
-		// set the flag so that in the 'execute'-method the output port is set to the new value
-		// after setting it, the flag is set to false again.
-		// This allows posting one value per execution cycle
-		
-		// Read the values from the different fields of the events
-		// The checks are necessary because not every field is created inside an event,
-		// depending on the attached sensors.
-		// This patch only posts the values if they exist.
-		
-		[outputSourceID setStringValue:[NSString stringWithCString:resultEventPtr->getPostValueString("ParticleSrcId")]];
-		
-		if ( resultEventPtr->fieldExists("sgx") )
-		{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("sgx")]; }
-		if ( resultEventPtr->fieldExists("sgy") )
-		{ [outputSGY setDoubleValue:(double) resultEventPtr->getPostValueInt("sgy")]; }
-		if ( resultEventPtr->fieldExists("sgz") )
-		{ [outputSGZ setDoubleValue:(double) resultEventPtr->getPostValueInt("sgz")]; }
-		if ( resultEventPtr->fieldExists("sli") )
-		{ [outputSLI setDoubleValue:(double) resultEventPtr->getPostValueInt("sli")]; }
-		if ( resultEventPtr->fieldExists("ste") )
-		{ [outputSTE setDoubleValue:(double) resultEventPtr->getPostValueInt("ste")]; }
-		if ( resultEventPtr->fieldExists("sfc") )
-		{ [outputSFC setDoubleValue:(double) resultEventPtr->getPostValueInt("sfc")]; }
-		if ( resultEventPtr->fieldExists("sau") )
-		{ [outputSAU setDoubleValue:(double) resultEventPtr->getPostValueInt("sau")]; }
-		if ( resultEventPtr->fieldExists("ssw") )
-		{ [outputSSW setDoubleValue:(double) resultEventPtr->getPostValueInt("ssw")]; }
-		if ( resultEventPtr->fieldExists("svc") )
-		{ [outputSVC setDoubleValue:(double) resultEventPtr->getPostValueInt("svc")]; }
+			if ( resultEventPtr->fieldExists("sgx") )
+			{ [outputSGX setDoubleValue:(double) resultEventPtr->getPostValueInt("sgx")]; }
+			if ( resultEventPtr->fieldExists("sgy") )
+			{ [outputSGY setDoubleValue:(double) resultEventPtr->getPostValueInt("sgy")]; }
+			if ( resultEventPtr->fieldExists("sgz") )
+			{ [outputSGZ setDoubleValue:(double) resultEventPtr->getPostValueInt("sgz")]; }
+			if ( resultEventPtr->fieldExists("sli") )
+			{ [outputSLI setDoubleValue:(double) resultEventPtr->getPostValueInt("sli")]; }
+			if ( resultEventPtr->fieldExists("ste") )
+			{ [outputSTE setDoubleValue:(double) resultEventPtr->getPostValueInt("ste")]; }
+			if ( resultEventPtr->fieldExists("sfc") )
+			{ [outputSFC setDoubleValue:(double) resultEventPtr->getPostValueInt("sfc")]; }
+			if ( resultEventPtr->fieldExists("sau") )
+			{ [outputSAU setDoubleValue:(double) resultEventPtr->getPostValueInt("sau")]; }
+			if ( resultEventPtr->fieldExists("ssw") )
+			{ [outputSSW setDoubleValue:(double) resultEventPtr->getPostValueInt("ssw")]; }
+			if ( resultEventPtr->fieldExists("svc") )
+			{ [outputSVC setDoubleValue:(double) resultEventPtr->getPostValueInt("svc")]; }
+		}
 	}
-
+	
 	NSLog (@"thread waitForEvents deactivated");
 
 	[localPool release];

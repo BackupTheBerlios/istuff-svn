@@ -45,24 +45,28 @@ Otherwise a standard iStuffUI class will be taken.
 
 - (void) waitForEvents
 {
-	 NSAutoreleasePool *localPool;
-	localPool = [[NSAutoreleasePool alloc] init];	
+	NSAutoreleasePool *localPool;
+	localPool = [[NSAutoreleasePool alloc] init];
 
-	while (! [self connected]) {
-		// wait until you are connected
-		// otherwise the pointer creation below will crash
-	}
 	// definition of the type of event to receive.
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("EventTemplate that should be received");
+	const char* eventType = "Event to be received";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
 
-	while (waitForEvents) {		
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
+	while (waitForEvents) {
+	eh2_EventPtr resultEventPtr;
+	resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]]){
 		
 		// specify funtionality here, e.g. set output ports according to event information.
+		}
 	}
-
 	[localPool release];
 }
 

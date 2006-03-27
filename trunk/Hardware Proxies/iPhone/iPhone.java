@@ -10,15 +10,14 @@ import iwork.eheap2.*;
 
 public class iPhone implements SymbianInputListener, Runnable{
 	private final static boolean DEBUG = true;
+	private String _proxyID;
 	
 	private SymbianInputDevice sid;
 	private EventHeap eh;
 
-	public iPhone(String comPort, String EventHeapServer) {
-		this(comPort, EventHeapServer, true);
-	}
-	
-	public iPhone(String comPort, String EventHeapServer, boolean isRotationEnabled) {
+	public iPhone(String EventHeapServer, String comPort, String proxyID, boolean isRotationEnabled) {
+		_proxyID = proxyID;
+		
 		sid = new SymbianInputDevice(comPort, this);
 		sid.setRotationEnabled(isRotationEnabled);
 		eh = new EventHeap(EventHeapServer);
@@ -33,10 +32,12 @@ public class iPhone implements SymbianInputListener, Runnable{
 		/* post an event to the EventHeap */
 		try{
 			Event e = new Event("iPhone");
+			e.addField("ProxyID", _proxyID);
 			e.addField("type","translation");
 			e.addField("dX", new Integer(dX));
 			e.addField("dY", new Integer(dY));
-			eh.putEvent(e);
+			if (eh.isConnected()) 
+				eh.putEvent(e);
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
@@ -101,18 +102,24 @@ public class iPhone implements SymbianInputListener, Runnable{
 	}
 
 	public static void main(String argv[]){
+		// Arguments: <EventHeapServer> [ProxyID] <COMPort> [rotation parameter]
 		iPhone phone;
-		if(argv.length == 2){
-			phone = new iPhone(argv[0], argv[1]);
+		if(argv.length == 2){  // Minimum number of arguments: Only EventHeap and COMPort provided
+			phone = new iPhone(argv[0],"",argv[1], true);
 			phone.run();
-		}else if(argv.length == 3 && argv[2].compareTo("-r") == 0){
-			phone = new iPhone(argv[0], argv[1], false);
+		}else if(argv.length == 3 && argv[2].compareTo("-r") == 0){ // Then the parameter was supplied
+			phone = new iPhone(argv[0],"", argv[1], false);
 			phone.run();
-		}else{
-			System.out.println("Usage: java iPhone <Comm Port> <Event Heap Server> [-r]\n" +
-								"\t<Comm Port> = the serial port address for the phone, examples: \"/dev/tty.Nokia6600\", \"COM3\"\n"+
-								"\t<Event Heap Server> = network address of the Event Heap Server, examples: localhost, iroom.stanford.edu" +
-								"\t[-r] = deactivates rotation capabilities of the sweep interaction. For use with \"iPhone-no-rotation.sis\"");
+		}
+		else if	(argv.length == 3 && argv[2].compareTo("-r") != 0){ // otherwise only a ProxyID was given and no -r parameter
+				phone = new iPhone (argv[0], argv [1], argv [2], false);
+			}
+		else {
+			System.out.println("Usage: java iPhone <Event Heap Server> <Comm Port> [ProxyID] [-r]\n" +
+						"\t<Event Heap Server> = network address of the Event Heap Server, examples: localhost, iroom.stanford.edu" +
+						"\t <ProxyID =  An ID to be provided with each generated event in order to identify the sending device" +
+						"\t<Comm Port> = the serial port address for the phone, examples: \"/dev/tty.Nokia6600\", \"COM3\"\n"+
+						"\t[-r] = deactivates rotation capabilities of the sweep interaction. For use with \"iPhone-no-rotation.sis\"");
 		}
 	}
 

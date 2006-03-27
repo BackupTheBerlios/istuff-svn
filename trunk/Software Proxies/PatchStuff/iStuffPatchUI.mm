@@ -41,7 +41,6 @@
 	  [displayEventHeap setTextColor:[NSColor greenColor]]; 
 
 	  int index = [[currentPatch foundEventHeaps] indexOfObject:[currentPatch ehName]];
-		NSLog (@"INDEX: %i:", index);
 	  [listOfEventHeaps selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
 	}
 	else  {
@@ -57,7 +56,6 @@
 	}
 	
 	// Restore the Radio Buttons' status
-	NSLog (@"Restored Index value: %i", [currentPatch radioButtonIndex]);
 	[allOrOneRadioGroup setState:1 atRow:[currentPatch radioButtonIndex] column:0];
 	// check wether the advanced opitions are displayed
 	if ([currentPatch advancedOptionsHidden]){
@@ -68,6 +66,8 @@
 		[advancedConnectionOptions setHidden:false];
 		[advancedOptionsButton setState:1];
 	}
+	// Just for iinformative purposes
+	NSLog (@"The ID: %@", currentPatch);
 }
 
 -(void) refreshView:(NSNotification *) notification
@@ -76,29 +76,22 @@
 		[listOfEventHeaps reloadData];		
 	}
 		
-	NSLog(@"JUST RELOADED THE DATA");
 	iStuffPatch *currentPatch = [self patch];
-	NSLog(@"Current Patch: %@",currentPatch);
 	if (([notification userInfo] != nil) && (currentPatch !=nil)) {
 		NSDictionary *ehStatusInfo = [notification userInfo];
 		NSString *status = [ehStatusInfo valueForKey:@"connectionStatus"];
 		if ([status isEqualToString:@"connected"]){
-			NSLog(@"Status IN USERINFO NOT NIL Connected : %@", status);
 			//int index = [[currentPatch foundEventHeaps] indexOfObject:[currentPatch ehName]];
 			//[listOfEventHeaps selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
 			[animationConnected startAnimation:self];
 			[displayEventHeap setStringValue:[currentPatch ehName]];
-			[displayEventHeap setTextColor:[NSColor greenColor]]; 
-			NSLog (@"Notification New Connection reeceived");
+			[displayEventHeap setTextColor:[NSColor greenColor]];
 		}
 		else if ([status isEqualToString:@"standby"]){
-			NSLog(@"Status STANDBY : %@", status);
 			[listOfEventHeaps deselectAll:self];
-			//selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
 			[animationConnected stopAnimation:self];
 			[displayEventHeap setStringValue:@"Standby until reconnect or new EH is chosen"];
 			[displayEventHeap setTextColor:[NSColor orangeColor]];
-			NSLog(@"Notification standby received");
 		}
 	}
 }
@@ -113,14 +106,12 @@
 
 // The resetView method is called when the current patch is deselected
 - (void)resetView{
-NSLog(@"In resetView");
  // Here the currently specified data in the view has to be stored inside the model if that did not already happen inside IBActions.
  // --> Saving of what is not saved yet.
  
  iStuffPatch *currentPatch = [self patch];
  [currentPatch setAdvancedOptionsHidden:[advancedConnectionOptions isHidden]];
  [currentPatch setRadioButtonIndex:[allOrOneRadioGroup selectedRow]];
- NSLog(@"Seleceted row: %i", [allOrOneRadioGroup selectedRow]);
   [super resetView];
 
 }
@@ -139,18 +130,13 @@ NSLog(@"In resetView");
 		// get the selected entry from the EH list;
 			int rowIndex = [listOfEventHeaps selectedRow];
 				NSString *selectedEventHeap = [[currentPatch foundEventHeaps] objectAtIndex:rowIndex];
-				NSLog(@"Value of the list: %@", selectedEventHeap);
 				NSDictionary *ehInfo = [NSDictionary dictionaryWithObject:selectedEventHeap forKey:@"newEHName"];
-				//NSLog(@"In all patches branch -- selected: %i", [allOrOneRadioGroup selectedRow]);
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"ReconnectAll" object:nil userInfo:ehInfo];
-				NSLog(@"ConnectToEH notif sent");
 		}
 		else {
 			// local change for one patch
-			NSLog(@"In one patch branch");
 			NSString *newEventHeap;
 			newEventHeap = [arrayOfEventHeaps objectAtIndex:[listOfEventHeaps selectedRow]];
-			NSLog(@"The new EH name is: %@", newEventHeap);
 			[currentPatch connectToEventHeap:newEventHeap];
 		}
 	}

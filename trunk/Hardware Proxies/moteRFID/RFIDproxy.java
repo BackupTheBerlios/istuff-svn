@@ -15,13 +15,15 @@ public class RFIDproxy implements RFIDListener {
 	public static long TIMEOUT = 1000; // ms
 	long lastReadTime;
 	String OSname;
+	String proxyID;
 
-	RFIDproxy( String eheapName, String comPort ){
+	RFIDproxy( String eheapName, String comPort, String id ){
 		eheap = new EventHeap( eheapName );
 		rfid = new RFID( comPort );
 		//rfid = new fakeRFID( comPort );
 		rfid.register(this);
 		OSname = System.getProperty("os.name");
+		proxyID = id;
 	}
 	
 	
@@ -60,6 +62,7 @@ public class RFIDproxy implements RFIDListener {
 				System.out.println("RFID proxy:  Unknown tag: " + tagID);
 				return;
 			}
+			e.addField("proxyID", proxyID);
 			eheap.putEvent(e);
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -68,11 +71,15 @@ public class RFIDproxy implements RFIDListener {
 	
     public static void main(String[] args) {	
 		RFIDproxy bs;
+//		 Arguments format:
+        // eventHeap parameter proxyID
 		
-		if( args.length == 2 )
-			bs = new RFIDproxy( args[0], args[1] );
+		if( args.length == 2 ) // Case that now ID was provided
+			bs = new RFIDproxy( args[0], args[1],"" );
+		else if (args.length == 3) // Case that an ID is provided
+			bs = new RFIDproxy (args[0], args[1], args [2]);
 		else
-			System.out.println("Usage: RFIDproxy <event heap name> <comm port>");
+			System.out.println("Usage: RFIDproxy <event heap name> <comm port> [proxyID]");
 	}
 }
 

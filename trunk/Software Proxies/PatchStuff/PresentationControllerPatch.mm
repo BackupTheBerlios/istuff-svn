@@ -48,15 +48,15 @@
 			delete eventPtr;
 		}
 		*/
-		const char* name = [[inputMachineName stringValue] cString];
+		const char* name = [[inputProxyID stringValue] cString];
 		
 		if ((int)[inputGotoSlideNumber doubleValue] != lastInputGotoSlide) {
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
 			(*eventPtr)->setPostValueString ("command", "gotoSlide");
 			(*eventPtr)->setPostValueInt("slideNum", (int) [inputGotoSlideNumber doubleValue]);
-			(*eventPtr)->setPostValueString ("MachineName", name);
-		    (*eventPtr)->setPostValueInt("TimeToLive", 50);
+			(*eventPtr)->setPostValueString ("ProxyID", name);
+		    (*eventPtr)->setPostValueInt("TimeToLive", 1000);
 			(*eh)->putEvent (*eventPtr);
 			delete eventPtr;
 
@@ -67,8 +67,8 @@
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
 			(*eventPtr)->setPostValueString ("command", "next");
-			(*eventPtr)->setPostValueString ("MachineName", name);
-			(*eventPtr)->setPostValueInt("TimeToLive", 50);
+			(*eventPtr)->setPostValueString ("ProxyID", name);
+			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
 			(*eh)->putEvent (*eventPtr);
 			delete eventPtr;
 		}
@@ -79,8 +79,8 @@
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
 			(*eventPtr)->setPostValueString ("command", "prev");
-			(*eventPtr)->setPostValueString ("MachineName", name);
-			(*eventPtr)->setPostValueInt("TimeToLive", 50);
+			(*eventPtr)->setPostValueString ("ProxyID", name);
+			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
 			(*eh)->putEvent (*eventPtr);
 			delete eventPtr;
 		}

@@ -51,6 +51,7 @@ public class iStuffMobileProxy implements EventCallback
 		private final boolean DEBUG = true;
 		private EventHeap eventHeap;
 		private Event template;
+		private String _proxyID;
 
 		private String comPort;
 		private SerialPort serPort = null;
@@ -60,13 +61,14 @@ public class iStuffMobileProxy implements EventCallback
 		private byte[] buffer = new byte[512];
 
 
-		public iStuffMobileProxy(String cmprt, String ip)
+		public iStuffMobileProxy(String ip, String proxyID, String cmprt)
 		{
 			try
 			{
 				eventHeap = new EventHeap(ip);
 				template = new Event("iStuffMobile");
 				template.addField("Command", Integer.class, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
+				_proxyID = proxyID;
 				this.comPort = cmprt;
 				initSerial();
 			}
@@ -102,33 +104,37 @@ public class iStuffMobileProxy implements EventCallback
 				for(int i=0; i<retEvents.length; i++){
 					System.out.println("Waiting for event");
 					int command = ((Integer)retEvents[i].getPostValue("Command")).intValue();
-					System.out.println("Received command = " + command);
+					String proxyID = retEvents[i].getPostValueString("ProxyID");
+					if (proxyID.equals(_proxyID)) {
+						
+						System.out.println("Received command = " + command);
 
-					switch (command)
-					{
-						 case OPCODE_DISCONNECT:
-						 case OPCODE_BACKLIGHT_ON:
-						 case OPCODE_BACKLIGHT_OFF:
-						 case OPCODE_STOPSOUND:
-						 case OPCODE_START_KEYCAPTURE:
-						 case OPCODE_STOP_KEYCAPTURE:
-							redirectEvent(command);
-							break;
+						switch (command)
+						{
+							case OPCODE_DISCONNECT:
+							case OPCODE_BACKLIGHT_ON:
+							case OPCODE_BACKLIGHT_OFF:
+							case OPCODE_STOPSOUND:
+							case OPCODE_START_KEYCAPTURE:
+							case OPCODE_STOP_KEYCAPTURE:
+								redirectEvent(command);
+								break;
 
-						 case OPCODE_PLAYSOUND:
-						 case OPCODE_LAUNCHAPP:
-						 case OPCODE_CLOSEAPP:
-							getPathAndRedirect(retEvents[i]);
-							break;
+							case OPCODE_PLAYSOUND:
+							case OPCODE_LAUNCHAPP:
+							case OPCODE_CLOSEAPP:
+								getPathAndRedirect(retEvents[i]);
+								break;
 
-						 case OPCODE_KEY_RECEIVED:
-							sendKey(retEvents[i]);
-							break;
+							case OPCODE_KEY_RECEIVED:
+								sendKey(retEvents[i]);
+								break;
 
-						 case OPCODE_CHANGEPROFILE:
-							sendChangeProfile(retEvents[i]);
-							break;
-					}
+							case OPCODE_CHANGEPROFILE:
+								sendChangeProfile(retEvents[i]);
+								break;
+						}
+					}	
 				}
 			}
 			catch(Exception ex)
@@ -172,6 +178,7 @@ public class iStuffMobileProxy implements EventCallback
 								if (DEBUG) System.out.println("OPCODE_KEY_RECIEVED");
 								read(inStream, buffer, 0, 4);
 								Event keyEvent = new Event("iStuffMobile");
+								keyEvent.addField("ProxyID",_proxyID);
 
 								char keyCode = 0;
 								keyCode |= buffer[0];
@@ -199,8 +206,8 @@ public class iStuffMobileProxy implements EventCallback
 									default:
 										System.out.println("Unrecognized Key Type");
 								}
-
-								eventHeap.putEvent(keyEvent);
+								if (eventHeap.isConnected()) 
+									eventHeap.putEvent(keyEvent);
 								break;
 							default:
 								System.out.println("unrecognized opcode " + new Integer(buffer[0]));
@@ -313,14 +320,16 @@ public class iStuffMobileProxy implements EventCallback
 		
 		public static void main(String argv[])
 		{
-			iStuffMobileProxy mobileProxy;
+			iStuffMobileProxy mobileProxy=null;
 			Shutdown killer;
 			Stdio std;
-
-			if(argv.length == 2)
-			{
-				mobileProxy = new iStuffMobileProxy(argv[0],argv[1]);
-
+			
+			if (argv.length >=2) { // At least two arguments are needed in order to start the proxy
+				if(argv.length == 2)  // Only the neccessary parameters EventHeapName and COMPort were supplied. 
+					mobileProxy = new iStuffMobileProxy(argv[0],"",argv[1]);
+				else if (argv.length >= 3) // All parameters were supplied
+					mobileProxy = new iStuffMobileProxy(argv[0], argv[1], argv[2]);
+			
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
 
@@ -331,7 +340,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			else
 			{
-				System.out.println("Usage: java MPProxy <Comm Port> <Event Heap IP>\n" +
+				System.out.println("Usage: java MPProxy <Event Heap IP> <Comm Port> [ProxyID] \n" +
 				"\t<Comm Port> = the serial port address for the phone examples: /dev/tty.Nokia6600, COM3\n");
 			}
 		}

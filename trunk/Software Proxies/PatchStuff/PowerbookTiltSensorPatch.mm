@@ -27,23 +27,32 @@
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
 	
-	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("Powerbook_Tilt");
-	
 	int x, y, z;
-	while (waitForEvents) {
-		
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
+	// define the type of events you want to receive
+	const char* eventType = "Powerbook_Tilt";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
 
-		x = resultEventPtr->getPostValueInt("X");
-		y = resultEventPtr->getPostValueInt("Y");
-		z = resultEventPtr->getPostValueInt("Z");
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
+	while (waitForEvents) 
+	{
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
+			x = resultEventPtr->getPostValueInt("X");
+			y = resultEventPtr->getPostValueInt("Y");
+			z = resultEventPtr->getPostValueInt("Z");
 		
-		[outputX setDoubleValue:x];
-		[outputY setDoubleValue:y];
-		[outputZ setDoubleValue:z];
+			[outputX setDoubleValue:x];
+			[outputY setDoubleValue:y];
+			[outputZ setDoubleValue:z];
+		}
 	}
 	
 	[localPool release];

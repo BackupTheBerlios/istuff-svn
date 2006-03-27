@@ -6,7 +6,7 @@
 //  Copyright 2006 Media Computing Group RWTH Aachen. All rights reserved.
 //
 
-#import "iStuffProviderPatch.h"
+#include  "iStuffProviderPatch.h"
 
 @implementation iStuffProviderPatch
 
@@ -24,6 +24,7 @@
 	return [super initWithIdentifier:fp8];
 	
 }
+
 // This method is needed for Provider patches
 - (void) startReceivingEvents
 {
@@ -32,18 +33,22 @@
 	// create the thread that waits for events
 	[NSThread detachNewThreadSelector:@selector(waitForEvents) toTarget:self withObject:nil];
 	// We need threads that can manuall be killed. That might be the soultion to the waitForEvent problem.
-	//pthread_t test;
-	//int res;
-	//res = pthread_create(&test,NULL, (void*)(waitForEvents), NULL);
-	//pthread_kill(test,0);
-	NSLog (@"thread waitForEvents activated");
 }
+
+
 
 - (void) stopReceivingEvents
 {
 	// set the flag to deactivate the thread
-	waitForEvents = FALSE;	
-	NSLog (@"thread waitForEvents deactivated");
+	waitForEvents = FALSE;	 
+	if ((eh != nil)  && ([self connected])){
+		//create a new event object
+		eh2_EventPtr *eventPtr = new eh2_EventPtr;
+		(*eventPtr) = eh2_Event::cs_create ("DUMMY");
+		(*eventPtr)->setPostValueInt("TimeToLive", 150);
+		(*eh)->putEvent(*eventPtr);
+	}
+	sleep(1);
 }
 
 // thread waiting for EH events, so we won't block the recognition system
@@ -57,7 +62,7 @@
 
 - (void) nodeWillRemoveFromGraph{
 	[self stopReceivingEvents];
-	sleep(1); // This is needed for the thread to exit. Otherwise dealloc won't be called.
+	//sleep(1); // This is needed for the thread to exit. Otherwise dealloc won't be called.
 	[super nodeWillRemoveFromGraph];
 }
 

@@ -18,32 +18,38 @@ import iwork.eheap2.*;
 public class AccelerometerProxy extends _IPhidgetAccelerometerEventsAdapter
 {
 	public EventHeap eheap;
+	private String _proxyID;
 	 
 		// PhidgetAccelerometer has new data
         public void OnAccelerationChange(_IPhidgetAccelerometerEvents_OnAccelerationChangeEvent ke) {
 		try { System.out.println("Acceleration changed: " + Double.toString(ke.get_Acceleration()));
 		Event e = new Event("PhidgetAccelerometer");
 		e.addField("Acceleration", Double.toString(ke.get_Acceleration()));
+		e.addField("ProxyID", _proxyID);
 	// change by R. Reiners
 	// the Event Heap should not be flooded with events --> short time to live
 		e.setTimeToLive(50);
-		eheap.putEvent(e);
+		if (eheap.isConnected()) {
+			eheap.putEvent(e);
+		}
 		} catch( Exception ex ){ ex.printStackTrace(); }
 	
         }
 		
 
 	public static void main(String[] args) {
-		if(args.length == 1){
-			new AccelerometerProxy(args[0]);
-		} else {
-			System.out.println("usage:  AccelerometerProxy <Event Heap Name>");
-		}
+		if(args.length == 1)
+			new AccelerometerProxy(args[0],"");
+		else if (args.length > 1)
+			new AccelerometerProxy(args[0], args[1]);
+		 else 
+			System.out.println("usage:  AccelerometerProxy <Event Heap Name> [ProxyID]");
 	}
 	
-	public AccelerometerProxy(String eventHeapName){
+	public AccelerometerProxy(String eventHeapName, String proxyID){
 
-        eheap = new EventHeap( eventHeapName );
+        eheap = new EventHeap( eventHeapName);
+        _proxyID = proxyID;
 		PhidgetAccelerometer phid = new PhidgetAccelerometer();
 		// By adding the EventListener, we tell the PhidgetAccelerometer where it can throw the events
 		// to.

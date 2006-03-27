@@ -23,7 +23,7 @@
 	[manager registerNodeWithClass: [SweepPatch class]];
 	[manager registerNodeWithClass: [TeleoPWMOutPatch class]];
 	[manager registerNodeWithClass: [SmartItsSensorPatch class]];
-	[manager registerNodeWithClass: [MobilePhoneControlPatch class]];
+	[manager registerNodeWithClass: [MobilePhoneControllerPatch class]];
 	[manager registerNodeWithClass: [CharacterGeneratorPatch class]];
 	[manager registerNodeWithClass: [MobilePhoneKeyListenerPatch class]];
 }

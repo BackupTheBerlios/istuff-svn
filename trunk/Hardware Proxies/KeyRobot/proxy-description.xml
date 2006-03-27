@@ -3,11 +3,13 @@
 <proxy>
   <kind>Software Proxy</kind>
   <proxyClass>Controller</proxyClass>
-  <name>Key robot Controller</name> 
+  <name>KeyrobotController</name> 
   <ClassName>KeyRobot</ClassName>
   <comment>F13 key will bring out expose for application selection</comment>
   <CustomLibs>
-    <relativePath>..</relativePath>
-    <relativePath>../..</relativePath>
+    <relativePath></relativePath>
   </CustomLibs>
+  <AdditionalParameters>
+    <Parameter></Parameter>
+  </AdditionalParameters>
 </proxy>

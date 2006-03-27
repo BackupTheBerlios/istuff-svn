@@ -449,9 +449,8 @@ public:
 
 	 @see eh2_EventRegistration
 	 */
-	eh2_EventRegistrationPtr registerForEvents(
-		eh2_EventCollection* templateEvents
-		);
+	eh2_EventRegistrationPtr 
+	ForEvents(eh2_EventCollection* templateEvents);
 
 };
 

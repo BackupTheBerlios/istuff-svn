@@ -10,11 +10,13 @@ public class SoundClip implements Runnable{
     EventHeap m_EventHeap;
     String currentDir;
     HashMap AudioFiles = new HashMap();
+	private String _proxyID;
 
-    SoundClip( String server){
+    SoundClip( String server, String proxyID){
         super();
         System.out.println ("Trying to connect\n");
         m_EventHeap = new EventHeap(server);
+        _proxyID = proxyID;
         System.out.println ("Did we connect?");
         try {
             templateEvent = new Event("AudioEvent");
@@ -41,7 +43,8 @@ public class SoundClip implements Runnable{
         while(true) {
             try {
                 Event e = m_EventHeap.waitForEvent(templateEvent);
-                handleEventHeapEvent(e);
+                if ( (e.getPostValueString("ProxyID").equals(_proxyID)) || (_proxyID.equals("")) )
+                		handleEventHeapEvent(e);
             } catch(Exception ex) { ex.printStackTrace(); }
         }
     }
@@ -67,7 +70,20 @@ public class SoundClip implements Runnable{
     }
 
     public static void main(String [] argv) {
-        SoundClip sc = new SoundClip(argv[0]);
+    		
+    	SoundClip sc = null;
+    	
+		if(argv.length == 1)
+			sc = new SoundClip (argv[0], "");
+		else if (argv.length > 1)
+			sc = new SoundClip (argv[0], argv[1]);
+		 else 
+        	System.out.println("Usage: java TextEventEngine <Event Heap IP> [ProxyID]");
+		
+	   	if (sc != null ) {
+	   		Thread t = new Thread(sc);
+	   		t.start();
+	   	}
         Thread t = new Thread(sc);
         t.start();
     }

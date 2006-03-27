@@ -12,6 +12,7 @@
 
 @interface iStuffProviderPatch : iStuffPatch {
 
+	//pthread_t waitForEventsThread;
 	BOOL waitForEvents;
 }
  

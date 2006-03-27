@@ -14,4 +14,7 @@
 
 }
 + (int)executionMode;
+
+- (BOOL) execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
+
 @end

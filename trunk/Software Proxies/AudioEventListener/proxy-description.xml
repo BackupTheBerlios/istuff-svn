@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Software Proxies</kind>
+  <proxyClass>Audio</proxyClass>
+  <name>Sound Event Processor</name> 
+  <ClassName>SoundClip</ClassName>
+  <comment></comment>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

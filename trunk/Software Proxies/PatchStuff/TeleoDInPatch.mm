@@ -36,23 +36,33 @@
 	localPool = [[NSAutoreleasePool alloc] init];
 
 	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("Powerbook_Tilt");
 
-	// the thread exits if waitForEvents becomes FALSE
+	const char* eventType = "TeleoDIn";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
 	int x, y, z;
-	while (waitForEvents) {
-		
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
 
-		x = resultEventPtr->getPostValueInt("X");
-		y = resultEventPtr->getPostValueInt("Y");
-		z = resultEventPtr->getPostValueInt("Z");
+	while (waitForEvents) 
+	{
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
 		
-		[outputX setDoubleValue:x];
-		[outputY setDoubleValue:y];
-		[outputZ setDoubleValue:z];
+			x = resultEventPtr->getPostValueInt("X");
+			y = resultEventPtr->getPostValueInt("Y");
+			z = resultEventPtr->getPostValueInt("Z");
+			
+			[outputX setDoubleValue:x];
+			[outputY setDoubleValue:y];
+			[outputZ setDoubleValue:z];
 
 		// print debug info
 		//const char* field1, *field2;
@@ -62,6 +72,7 @@
 
 		// report the received event to MyController
 		//[myController processEvent:resultEventPtr];
+		}
 	}
 
 	[localPool release];

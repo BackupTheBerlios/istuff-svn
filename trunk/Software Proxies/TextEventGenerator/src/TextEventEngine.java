@@ -16,10 +16,12 @@ public class TextEventEngine extends JFrame{
     JScrollPane spnText;
     ImagePanel imgI10;
     EventHeap eventHeap;
+    private String _proxyID;
 
-    public TextEventEngine(String ip) {
+    public TextEventEngine(String ip, String proxyID) {
         try {
             eventHeap = new EventHeap(ip);
+            _proxyID = proxyID;
             init();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -57,8 +59,7 @@ public class TextEventEngine extends JFrame{
         lblTitle.setText("Text Event Engine");
         lblTitle.setBounds(new Rectangle(126, 8, 234, 28));
 
-		System.out.println(System.getProperty("user.dir"));
-        imgI10 = new ImagePanel("./img/logo_i10.gif");
+        imgI10 = new ImagePanel("img/logo_i10.gif");
         imgI10.setBounds(350,0,180,80);
 
         this.getContentPane().add(imgI10);
@@ -71,12 +72,12 @@ public class TextEventEngine extends JFrame{
 
     public static void main(String args[])
     {
-        TextEventEngine tee;
-
-        if (args.length == 1)
-        	tee = new TextEventEngine(args[0]);
-        else
-        	System.out.println("Usage: java TextEventEngine <Event Heap IP>\n");
+		if(args.length == 1)
+			new TextEventEngine (args[0],"");
+		else if (args.length > 1)
+			new TextEventEngine (args[0], args[1]);
+		 else 
+        	System.out.println("Usage: java TextEventEngine <Event Heap IP> [ProxyID]");
     }
 
     public void btnExit_actionPerformed(ActionEvent e)
@@ -93,7 +94,10 @@ public class TextEventEngine extends JFrame{
     	{
 		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
 	      	event.addField("Character",code);
-	      	eventHeap.putEvent(event);
+	      	event.addField("ProxyID", _proxyID);
+	      	if (eventHeap.isConnected()) {
+			eventHeap.putEvent(event);
+			}
       	}
       	catch(Exception ex)
       	{

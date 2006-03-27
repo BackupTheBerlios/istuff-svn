@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>PhoneControllers</proxyClass>
+  <name>SymbianController</name> 
+  <ClassName>iPhone</ClassName>
+  <comment>user comment</comment>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter>/dev/tty.Nokia6600</Parameter>
+  </AdditionalParameters>
+</proxy>

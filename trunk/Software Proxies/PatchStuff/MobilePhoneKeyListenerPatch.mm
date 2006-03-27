@@ -35,38 +35,42 @@
 {
 	 NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];	
+	const char* eventType = "iStuffMobile";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
 
-	// specify your event template here:
-	eh2_EventPtr templatePtr = eh2_Event::cs_create();
-	templatePtr->setEventType ("iStuffMobile");
-	
-	eh2_Field* field;
-	field = templatePtr->allocateField("Activity", eh2_FieldType::cs_string());
-	field->setTemplateValueType(eh2_EventConsts::FVT_FORMAL);
-	
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
 	while (waitForEvents) {
-	eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
 
-	// set the flag so that in the 'execute'-method the output port is set to the new value
-	// after setting it, the flag is set to false again.
-	// This allows posting one value per execution cycle
-		const char* activity = resultEventPtr->getPostValueString("Activity");
-		NSLog(@"The String was read and is checked now: %s", activity);
-		if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-			[outputKeyPressed setBooleanValue:true];
-		}
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
+			// set the flag so that in the 'execute'-method the output port is set to the new value
+			// after setting it, the flag is set to false again.
+			// This allows posting one value per execution cycle
+			const char* activity = resultEventPtr->getPostValueString("Activity");
+			NSLog(@"The String was read and is checked now: %s", activity);
+			if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+				[outputKeyPressed setBooleanValue:true];
+			}
 		
-		if ([@"KeyPress" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-			//read the character ASCII value from the event field
-			NSLog(@"In keyPress");
-			setOutputPort = true;
-			keyCode = resultEventPtr->getPostValueInt("KeyCode");
-			[outputKeyStroke setDoubleValue:(double) keyCode];
-		}
+			if ([@"KeyPress" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+				//read the character ASCII value from the event field
+				NSLog(@"In keyPress");
+				setOutputPort = true;
+				keyCode = resultEventPtr->getPostValueInt("KeyCode");
+				[outputKeyStroke setDoubleValue:(double) keyCode];
+			}
 		
-		if ([@"KeyUp" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-		 NSLog(@"In keyUp");
-			[outputKeyPressed setBooleanValue:false];
+			if ([@"KeyUp" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+				NSLog(@"In keyUp");
+				[outputKeyPressed setBooleanValue:false];
+			}
 		}
 	}
 	

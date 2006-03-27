@@ -13,12 +13,14 @@ public class EventLauncher implements Runnable{
     protected Hashtable lastPacketList;
     protected EventHeap eventHeap;
     protected String eventHeapIp;
+    protected String _proxyID;
 
-    public EventLauncher(Vector configuredParticles, String eventHeapIp)
+    public EventLauncher(Vector configuredParticles, String eventHeapIp, String proxyID)
     {
         particles = configuredParticles;
         running = false;
         this.eventHeapIp = eventHeapIp;
+        _proxyID = proxyID;
     }
 
     public void run()
@@ -90,6 +92,7 @@ public class EventLauncher implements Runnable{
                    try
                    {
                        Event event = new Event("Particle_Packet");
+                       event.addField("ProxyID", _proxyID);
                        event.addField("ParticleSrcId",currPacket.getSrcId().toString());
                        event.setTimeToLive(1000);
 

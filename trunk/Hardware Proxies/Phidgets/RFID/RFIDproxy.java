@@ -20,9 +20,10 @@ import Phidgets._IPhidgetRFIDEvents_OnTagEvent;
 
 // extending _IPhidgetRFIDEventsAdapter allows your class to pick and choose which Phidget
 // events you want to implement.
-public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
+public class RFIDproxy extends _IPhidgetRFIDEventsAdapter
 {
 	 EventHeap eheap;
+	 private String _proxyID;
 	 boolean freshTag;
 	public Timer timer;
 		// PhidgetInterfaceKit has new data
@@ -31,9 +32,12 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
 		// this is a generic callback to publish all data from the RFID sensor
 		System.out.println("Tag Found: " + ke.get_TagNumber());
 		Event e = new Event("PhidgetRFID");
+		e.addField("ProxyID", "HUHU");
 		e.setTimeToLive(50);
 		e.addField("TagNumber", ke.get_TagNumber());
-		eheap.putEvent(e);
+		if (eheap.isConnected()){
+			eheap.putEvent(e);
+		}
 		freshTag = true;		
 		} catch( Exception ex ){ ex.printStackTrace(); }
 	        }
@@ -43,15 +47,17 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
         }
 
 	public static void main(String[] args) {
-		if(args.length == 1){
-			new RFIDproxyMod(args[0]);
-		} else{
-			System.out.println("Usage: RFIDproxyMod <Event Heap Name>");
-		}
+		if(args.length == 1)
+			new RFIDproxy(args[0],"");
+		else if (args.length > 1)
+			new RFIDproxy(args[0], args[1]);
+		else
+			System.out.println("Usage: RFIDproxy <Event Heap Name> [ProxyID]");
 	}
 		
-	public RFIDproxyMod(String eventHeapName){
+	public RFIDproxy(String eventHeapName, String proxyID){
         eheap = new EventHeap( eventHeapName );
+        _proxyID = proxyID;
 		PhidgetRFID phid = new PhidgetRFID();
 		// By adding the EventListener, we tell the PhidgetRFID where it can throw the events
 		// to.
@@ -63,6 +69,7 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
 			System.out.println("Could not find a PhidgetRFID");
 			return;
 		}
+		System.out.println(_proxyID);
 		System.out.println(phid.GetDeviceType());
 		System.out.println("Serial Number " + phid.GetSerialNumber());
 		System.out.println("Device Version " + phid.GetDeviceVersion());
@@ -84,9 +91,12 @@ public class RFIDproxyMod extends _IPhidgetRFIDEventsAdapter
 			if (freshTag == false) {
 			try {			
 				Event e = new Event("PhidgetRFID");
+				e.addField("ProxyID", _proxyID);
 				e.setTimeToLive(50);
 				e.addField("TagNumber", "");
-				eheap.putEvent(e);
+				if (eheap.isConnected()) {
+					eheap.putEvent(e);
+				}
 				//System.out.println("posted empty string");
 				}		
 			catch( Exception ex ){ ex.printStackTrace(); }

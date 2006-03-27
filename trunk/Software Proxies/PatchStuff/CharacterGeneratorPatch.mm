@@ -42,27 +42,37 @@
 	localPool = [[NSAutoreleasePool alloc] init];
 	
 	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("TextEvent");
+	const char* eventType = "TextEvent";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
 
-	// the thread exits if waitForEvents becomes FALSE
-	while (waitForEvents) {
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
 
-		// invoke the waitForEvent operation, keep the returned event in a smart pointer
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
+	while (waitForEvents) 
+	{
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
+				// invoke the waitForEvent operation, keep the returned event in a smart pointer
 		
-		// set the flag so that in the 'execute'-method the output port is set to the new value
-		// after setting it, the flag is set to false again.
-		// This allows posting one value per execution cycle
-		setOutputPort = true;
+				// set the flag so that in the 'execute'-method the output port is set to the new value
+				// after setting it, the flag is set to false again.
+				// This allows posting one value per execution cycle
+				setOutputPort = true;
 		
-		//read the character ASCII value from the event field
-		int keyCode;
-		keyCode = resultEventPtr->getPostValueInt("Character");
-		[outputKeyStroke setDoubleValue:(double) keyCode];
-		[outputPermanentASCIICode setDoubleValue:keyCode];
-	}
-	
+				//read the character ASCII value from the event field
+				int keyCode;
+				keyCode = resultEventPtr->getPostValueInt("Character");
+				[outputKeyStroke setDoubleValue:(double) keyCode];
+				[outputPermanentASCIICode setDoubleValue:keyCode];
+			}
+		}
+			
 	[localPool release];
 }
 

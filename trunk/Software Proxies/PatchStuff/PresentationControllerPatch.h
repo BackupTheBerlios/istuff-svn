@@ -15,7 +15,7 @@
 	QCBooleanPort *inputNextSlide;
     QCBooleanPort *inputPrevSlide;
 	QCNumberPort *inputGotoSlideNumber;
-	QCStringPort *inputMachineName;
+	QCStringPort *inputProxyID;
 
 	BOOL lastInputNextSlide;
 	BOOL lastInputPrevSlide;

@@ -6,19 +6,19 @@ public class SlideController{
 
 	private Robot robot = null;
 
-	public SlideController(String eventHeapName, String machineName) {
+	public SlideController(String eventHeapName, String proxyID) {
 	
 		try{
 			EventHeap eheap = new EventHeap(eventHeapName);
 			robot = new Robot();
 			String openSlides = "";
-			System.out.println("MACHINE NAME IS: " + machineName);
 			Event template = new Event("SlideController");
 			Event received;
 			while( true ){
 				received = eheap.waitForEvent(template);
 				//System.out.println("Value of MachineName is: " + received.getPostValueString("MachineName"));
-				if (received.getPostValueString("MachineName").equals(machineName))
+				if ((received.getPostValueString("ProxyID").equals(proxyID)) 
+						|| (proxyID.equals("")))
 				{
 				String command = received.getPostValueString("command");
 				System.out.println("An Event for this machine was received: " + command);
@@ -128,12 +128,13 @@ public class SlideController{
 		}
 	}
 	
-	public static void main(String argv[]){
-		if(argv.length == 2){
-			SlideController sc = new SlideController(argv[0], argv[1]);
-		} else {
-			System.out.println("Usage: SlideController <Event Heap Name> or <Machine Name> not provided");
-		} 
+	public static void main(String args[]){
+		if(args.length == 1)
+			new SlideController(args[0], "");
+		else if (args.length > 1)
+			new SlideController(args[0], args[1]);
+		 else 
+			System.out.println("Usage: SlideController <Event Heap Name> [ProxyID]");
 	}
 		
 

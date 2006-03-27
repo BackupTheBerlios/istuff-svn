@@ -37,14 +37,14 @@
 */	
 //And there are 7 ports that read digital inputs from other phidgets
 
-	QCBooleanPort *outputDigitalReading1;
+/*	QCBooleanPort *outputDigitalReading1;
 	QCBooleanPort *outputDigitalReading2;
 	QCBooleanPort *outputDigitalReading3;
 	QCBooleanPort *outputDigitalReading4;
 	QCBooleanPort *outputDigitalReading5;
 	QCBooleanPort *outputDigitalReading6;
 	QCBooleanPort *outputDigitalReading7;
-
+*/
 }
 
 - (id) initWithIdentifier:(id)fp8;

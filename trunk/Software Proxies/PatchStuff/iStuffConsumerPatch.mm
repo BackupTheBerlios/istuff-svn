@@ -18,4 +18,13 @@
         return 1;
 }
 
+- (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
+{
+	// Specify the functionality of the patch.
+	// The code is executed in each cycle.
+	
+        // Read/Write any ports in here too.
+		
+        return TRUE;
+}
 @end

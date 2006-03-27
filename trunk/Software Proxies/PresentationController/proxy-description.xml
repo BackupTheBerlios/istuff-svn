@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <proxy>
-  <kind>Software Proxy</kind>
+  <kind>Software Proxies</kind>
   <proxyClass>Controller</proxyClass>
   <name>Presentation Controller</name> 
   <ClassName>SlideController</ClassName>
@@ -10,4 +10,7 @@
     <relativePath>..</relativePath>
     <relativePath>../..</relativePath>
   </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
 </proxy>

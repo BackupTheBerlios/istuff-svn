@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <proxy>
-  <kind>Hardware Proxy</kind>
+  <kind>Hardware Proxies</kind>
   <proxyClass>Phidgets</proxyClass>
   <name>Servo Controller</name> 
   <ClassName>ServoController</ClassName>
@@ -9,4 +9,7 @@
   <CustomLibs>
     <relativePath>..</relativePath>
   </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
 </proxy>

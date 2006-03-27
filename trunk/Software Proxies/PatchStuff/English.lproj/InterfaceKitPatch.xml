@@ -15,62 +15,6 @@
 	</dict>
 	<key>outputAttributes</key>
 	<dict>
-		<key>AnalogReading0</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 0</string>
-		</dict>
-		<key>AnalogReading1</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 1</string>
-		</dict>
-		<key>AnalogReading2</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 2</string>
-		</dict>
-		<key>AnalogReading3</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 3</string>
-		</dict>
-		<key>AnalogReading4</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 4</string>
-		</dict>
-		<key>AnalogReading5</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 5</string>
-		</dict>
-		<key>AnalogReading6</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 6</string>
-		</dict>
-		<key>AnalogReading7</key>
-		<dict>
-			<key>description</key>
-			<string></string>
-			<key>name</key>
-			<string>Analog Output 7</string>
-		</dict>
 		<key>DigitalIn0</key>
 		<dict>
 			<key>description</key>
@@ -182,6 +126,62 @@
 			<string></string>
 			<key>name</key>
 			<string>Digital Reading  7</string>
+		</dict>
+		<key>outputAnalogReading0</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 0</string>
+		</dict>
+		<key>outputAnalogReading1</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 1</string>
+		</dict>
+		<key>outputAnalogReading2</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 2</string>
+		</dict>
+		<key>outputAnalogReading3</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 3</string>
+		</dict>
+		<key>outputAnalogReading4</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 4</string>
+		</dict>
+		<key>outputAnalogReading5</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 5</string>
+		</dict>
+		<key>outputAnalogReading6</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 6</string>
+		</dict>
+		<key>outputAnalogReading7</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 7</string>
 		</dict>
 	</dict>
 </dict>

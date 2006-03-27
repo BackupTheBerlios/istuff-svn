@@ -17,6 +17,7 @@ import iwork.eheap2.*;
 public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 {
 	public EventHeap eheap;
+	private String _proxyID;
 	PhidgetInterfaceKit phid = new PhidgetInterfaceKit();
 	
         
@@ -27,6 +28,7 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 			// this is a generic callback to publish all data from PhidgetInterfaceKit sensors 
 			System.out.println("Sensor changed: " + sens_e.get_SensorValue());
 			Event e = new Event("PhidgetInterfaceKit");
+			e.addField("ProxyID", _proxyID);
 			
 				e.addField("InputType", "SensorData");
 				e.addField("Index", new Integer(sens_e.get_Index()));
@@ -35,7 +37,9 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 				e.addField("Value", new Integer(sens_e.get_SensorValue()));
 			// set the time to life shorter --> better performance
 			e.setTimeToLive(50);
-			eheap.putEvent(e);
+			if (eheap.isConnected()) {
+				eheap.putEvent(e);
+			}
 		} catch( Exception ex ){ ex.printStackTrace(); }
 	}
 				
@@ -43,15 +47,18 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 	}
 
 	public static void main(String[] args) {
-		if(args.length == 1){
-			new InterfaceKitproxy(args[0]);
-		} else {
-			System.out.println("Usage: InterfaceKitproxy <Event Heap Server Name>");
-		}
+		if(args.length == 1)
+			new InterfaceKitproxy(args[0],"");
+		else if (args.length > 1)
+			new InterfaceKitproxy(args[0], args[1]);
+		 else 
+			System.out.println("Usage: InterfaceKitproxy <Event Heap Server Name> [ProxyID]");
 	}
-	public InterfaceKitproxy(String eventHeapServerName){
+	
+	public InterfaceKitproxy(String eventHeapServerName, String proxyID){
 
         eheap = new EventHeap( eventHeapServerName );
+        _proxyID = proxyID;
 		// By adding the EventListener, we tell the PhidgeInterfaceKit where it can throw the events
 		// to.
 		phid.add_IPhidgetInterfaceKitEventsListener(this);

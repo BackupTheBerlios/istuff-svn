@@ -29,45 +29,58 @@
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
 	
-	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ();
-	templatePtr->setEventType ("iPhone");
-	
 	int dX, dY;
 	double drZ;
-	
-	while (waitForEvents) {
-		eh2_EventPtr resultEventPtr = (*eh)->waitForEvent (templatePtr);
 		
-		NSLog(@"Received Event");
-		char* type = (char*) resultEventPtr->getPostValueString("type");
+	// define the type of events you want to receive
+	const char* eventType = "iPhone";
+	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+
+	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+
+	eventsToWaitFor->add(templatePtr);
+	eventsToWaitFor->add(dummyPtr);
+
+	while (waitForEvents) {
+		eh2_EventPtr resultEventPtr;
+		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
+
+		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
+		{
+			NSLog(@"Received Event");
+			char* type = (char*) resultEventPtr->getPostValueString("type");
 	
-		if(type != NULL){
-			NSLog(@"type has data: %s", type);
-			if( strcmp(type, "translation") == 0){
-				dX = resultEventPtr->getPostValueInt("dX");
-				dY = resultEventPtr->getPostValueInt("dY");
-				[outputdX setDoubleValue:dX];
-				[outputdY setDoubleValue:dY];
-			} else if (strcmp(type, "rotation") == 0){
-				drZ = resultEventPtr->getPostValueDouble("angle");
-				[outputdrZ setDoubleValue:drZ];
-			} else if (strcmp(type, "click") == 0){
-				char* state = (char*) resultEventPtr->getPostValueString("state");
-				if( strcmp(state, "pressed") == 0){
-					[outputClick setBooleanValue:TRUE];
-				}else{
+			if(type != NULL){
+				NSLog(@"type has data: %s", type);
+				if( strcmp(type, "translation") == 0)
+				{
+					dX = resultEventPtr->getPostValueInt("dX");
+					dY = resultEventPtr->getPostValueInt("dY");
+					[outputdX setDoubleValue:dX];
+					[outputdY setDoubleValue:dY];
+				} 
+				else if (strcmp(type, "rotation") == 0)
+				{
+					drZ = resultEventPtr->getPostValueDouble("angle");
+					[outputdrZ setDoubleValue:drZ];
+				} 
+				else if (strcmp(type, "click") == 0)
+				{
+					char* state = (char*) resultEventPtr->getPostValueString("state");
+					if( strcmp(state, "pressed") == 0){
+						[outputClick setBooleanValue:TRUE];
+				}
+				else
 					[outputClick setBooleanValue:FALSE];				
 				}
-				
-			} 
+			}
 			/*else if (strcmp(type, "code")){
 				[code initWithCString:resultEventPtr->getPostValueString("code") encoding:NSASCIIStringEncoding];
 				targetX = resultEventPtr->getPostValueInt("targetX");
 				targetY = resultEventPtr->getPostValueInt("targetY");
 			}*/
 		}
-		
 	}
 
 	[localPool release];

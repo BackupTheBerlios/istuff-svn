@@ -13,7 +13,6 @@
 
 	QCNumberPort *outputKeyStroke;
 	QCNumberPort *outputPermanentASCIICode;
-	
 	BOOL setOutputPort;
 }
 
