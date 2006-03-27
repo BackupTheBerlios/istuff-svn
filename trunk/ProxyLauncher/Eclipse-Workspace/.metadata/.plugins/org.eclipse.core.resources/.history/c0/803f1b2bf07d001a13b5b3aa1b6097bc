@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+import javax.swing.JTabbedPane;
+
+public class proxyButtonTab extends JTabbedPane{
+
+	private ArrayList<ChangeColorButton> _buttonList;
+	
+	public void setButtonList (ArrayList<ChangeColorButton> buttonList)
+	{
+		_buttonList = buttonList;
+	}
+}

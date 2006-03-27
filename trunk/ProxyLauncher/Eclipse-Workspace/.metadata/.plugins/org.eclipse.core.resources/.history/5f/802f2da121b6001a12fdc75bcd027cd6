@@ -1,0 +1,13 @@
+import java.awt.Color;
+
+import javax.swing.DefaultListCellRenderer;
+
+public class TransparentListCellRenderer extends DefaultListCellRenderer {
+
+	public Color getBackground () {
+		return null;
+	}
+	
+	}
+
+}

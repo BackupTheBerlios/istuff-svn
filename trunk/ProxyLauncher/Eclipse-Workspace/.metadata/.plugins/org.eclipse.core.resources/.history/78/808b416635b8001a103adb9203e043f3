@@ -1,0 +1,16 @@
+import java.awt.Component;
+
+import javax.swing.JScrollPane;
+
+public class CustomScrollPane  extends JScrollPane{
+	
+	public CustomScrollPane (Component c) {
+		super (c);
+	}
+	
+	protected boolean getScrollableTracksViewportWidth () {
+		return true;
+	}
+
+	
+}

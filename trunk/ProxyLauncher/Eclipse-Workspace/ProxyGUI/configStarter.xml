@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Libraries>
+    <iROS>/Users/rene/DiplomaThesis/Programming/trunk/Lib/iROS.jar</iROS>
+    <JmDNS>/Users/rene/DiplomaThesis/Programming/trunk/Lib/jmdns.jar</JmDNS>
+  </Libraries>
+  <SearchDirectories>
+    <directory>/Users/rene/DiplomaThesis/Programming/trunk</directory>
+  </SearchDirectories>
+</Configuration>
+

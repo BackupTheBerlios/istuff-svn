@@ -1,0 +1,1215 @@
+/* Copyright  (c) 2001 The Board of Trustees of The Leland Stanford Junior
+ * University. All Rights Reserved.
+ *
+ * See the file LICENSE.txt for information on redistributing this software.
+ */
+
+package iwork.eheap2.server;
+
+import iwork.eheap2.EventHeap;
+import iwork.eheap2.EventHeapConfigValues;
+import iwork.eheap2.EventHeapException;
+import iwork.eheap2.SecureEvent;
+import iwork.eheap2.Tuple;
+import iwork.eheap2.net.Connection;
+import iwork.eheap2.net.NetConfigValues;
+import iwork.util.ExecutionTask;
+import iwork.util.Executor;
+import iwork.util.Queue;
+
+import java.io.*;
+import java.net.*;
+import java.security.KeyStore;
+import java.util.*;
+
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLServerSocketFactory;
+import javax.net.ssl.TrustManagerFactory;
+
+import javax.jmdns.*;
+
+/**
+ * This class instantiates an Event Heap server.  It is directly
+ * executable, and takes a single parameter which is the port on which
+ * it will accept connections from Event Heap clients.  It stores
+ * Events submitted by clients and sends them to clients that request
+ * them.  Full details of Event Heap semantics are documented
+ * elsewhere.  
+ */
+public class EventHeapServer 
+  implements Runnable, EventHeapConfigValues, NetConfigValues 
+{
+    
+    private boolean secureMode = false;
+    private boolean debug = false;
+    private boolean loggingOn = false;
+    SortedSet allUsers;
+    private static final String ALLUSERSFILE = ".AllUsersSeen";
+
+  // A server settings object which stores the current settings for this
+  // EventHeapServer
+  ServerSettings ourSettings;
+  
+  // Task Queue which keeps a list of client requests waiting to be 
+  // serviced
+  Queue taskQueue=new Queue();
+  
+  // The socket on which this server object listens
+  ServerSocket serverSock;
+
+    // constants for SSL use
+    private String EH_KEYSTORE_FILE = "eh.ks";
+    private char[] EH_KEYSTORE_PWD = "ehs123".toCharArray();
+
+    // log file
+    ObjectOutputStream log;
+
+    // secure version
+    SSLServerSocket secureServerSocket = null;
+    KeyStore serverKeyStore = null;
+    SSLServerSocketFactory serverSocketFactory = null;
+    SSLContext sslContext = null;
+    TrustManagerFactory trustManagerFactory = null;
+    KeyManagerFactory keyManagerFactory = null;
+
+  // A HashMap that stores all the ClientHandler objects
+  Map clientMap=Collections.synchronizedMap(new HashMap(5));
+
+  // The object that does the main work of storing and matching events
+    SecureEventHeapCore ourCore;
+  
+  // Lock on the new serial number variable, and the variable itself
+  Object nextSerialNumLock=new Object();
+  int nextSerialNum=1;
+
+  // An Executor object which is used to execute tasks at desired times
+  Executor executionQueue=new Executor("Server Task Execution Thread");
+    
+  // TEMPORARY timers for benchmarking
+  Object processLock=new Object();
+
+  long periodStart=System.currentTimeMillis();
+
+  int numProcessed=0;
+  long bytesIn=0;
+  long bytesOut=0;
+  
+  static long serverStart=0;
+  static long serverUp=0;
+  static long serverStartTime=0;
+
+  ServerStatusEvent statusEvent;
+  
+  // A loopback connection to this server to post status events
+  EventHeap loopbackHeap;
+  
+  /** Class to garbage-collect registration objects */
+  class DeRegTask implements ExecutionTask 
+  {
+
+      String clientAdd;
+      
+      DeRegTask ( String clientAdd ) {
+	  this.clientAdd = clientAdd;
+      }
+
+      public void executeTask() 
+      {
+	  System.out.println("garbage collecting broken registration");
+	  ourCore.deregisterClient(clientAdd);
+      } // end of executeTask
+    
+  } // end of class ExpireTask
+  
+
+  /** TEMPORARY class to periodically print server stats and garbage collect */
+  class StatsTask implements ExecutionTask 
+  {
+    
+    public void executeTask() 
+    {
+      
+      synchronized(processLock) {
+	
+	// Calculate elapsed time
+	long newStart=System.currentTimeMillis();
+	
+	double periodTime=(newStart-periodStart)/1000.0;
+	
+	// Calculate and store new stats
+	try {
+
+	  statusEvent.setPostValue(ServerStatusEvent.THROUGHPUT, 
+				   new Double(numProcessed/periodTime));
+	  statusEvent.setPostValue(ServerStatusEvent.IN_BW,		 
+				   new Double(bytesIn/periodTime));
+	  statusEvent.setPostValue(ServerStatusEvent.OUT_BW,
+				   new Double(bytesOut/periodTime));
+	  
+	  // Set non-calculated stats
+	  statusEvent.setPostValue(ServerStatusEvent.NUM_EVENTS, 
+				   new Integer(ourCore.numEvents())); 
+	  statusEvent.setPostValue(ServerStatusEvent.FREE_MEM, 
+				   new Long(Runtime.getRuntime().
+					    freeMemory()));
+	  statusEvent.setPostValue(ServerStatusEvent.NUM_CLIENTS, 
+				   new Integer(clientMap.size()));
+	}
+	catch(EventHeapException e) {
+	  // Do nothing-- no stats update
+	}
+	
+	// Reset stats
+	periodStart=newStart;
+	numProcessed=0;
+	bytesIn=0;
+	bytesOut=0;
+      
+      }
+      
+      // Now print the status message
+      System.out.println(statusEvent.toString());
+      System.out.flush();
+      
+      // If we are configured to post the status event, do so
+      if(ourSettings.postStatus) {
+
+	// Set up a loopback connection if not already set up	
+	if(loopbackHeap==null)
+	  loopbackHeap=new EventHeap("localhost", ourSettings.port);
+	
+	try{
+	    
+	  if(ourSettings.postStatus)
+	    loopbackHeap.putEvent(statusEvent);
+	  
+	}
+	catch(EventHeapException e) {
+	  // Just notify that we failed to post
+	  System.out.println("Failed to post status event!!");
+	  e.printStackTrace();
+	}
+	
+      }
+	
+      // Force garbage collection
+      //System.runFinalization();
+      //System.gc();
+
+      // Add ourselves back in to execute again in 10 seconds
+      addTask(this, 10000);
+      
+    } // end of executeTask
+    
+  } // end of class StatsTask
+  
+  /** Creates a new EventHeapServer object with the given settings.
+   *
+   * @param settings A ServerSettings object with all the settings to use
+   * for this EventHeapServer.
+   *  
+   * @throws EventHeapException An exception is thrown if the settings
+   * object was null, or if there was a problem creating a
+   * ServerSocket for this object */
+  public EventHeapServer(ServerSettings settings) 
+    throws EventHeapException
+  {
+    try{
+      
+      // Store the settings
+      if(settings!=null) 
+	ourSettings=settings;
+      else
+	throw new EventHeapException("Settings cannot be null");
+      
+      // Set up the EventHeapCore object that will do the work
+      try{
+	Class coreClass=Class.forName(ourSettings.eheapCore);
+	
+	Class []paramList=new Class[1];
+	paramList[0]=EventHeapServer.class;
+	
+	Object []argList=new Object[1];
+	argList[0]=this;
+	
+	ourCore=(SecureEventHeapCore)((coreClass.getConstructor(paramList)).
+			newInstance(argList));
+      }
+      catch(Exception e) {
+
+	if(ourSettings.eheapCore!=null)
+	  System.out.println("\nWARNING: Class '" + ourSettings.eheapCore +
+			     "' not found.\n\tUsing " +
+			     "'iwork.eheap2.server.SecureTestCore'\n");
+	
+	ourCore=new SecureTestCore(this);
+      }
+      ourSettings.eheapCore=ourCore.getClass().getName();
+            
+      // Turn on debugging if requested
+      if(ourSettings.enableDebugging)
+	ourCore.setDebugEnabled(true);
+     
+      // open log file
+      if (loggingOn)
+	  try {
+	      log = new ObjectOutputStream (
+	       	       new FileOutputStream("log"+(new Date()).getTime()+".txt"));
+	  } catch (Exception e) {
+	      log = null;
+	  }
+      
+      // Set up the thread to wait for connections
+      if(ourSettings.port==-1) ourSettings.port=EHEAP2_DEFAULT_PORT;
+      if(ourSettings.securePort==-1) ourSettings.securePort = EHEAP2_DEFAULT_SECURE_PORT;
+     
+      
+
+      serverSock = new ServerSocket(ourSettings.port);
+
+      for(int i=0;i<ourSettings.numProcessorThreads;i++) {
+	Thread newProcessor=new Thread(new RequestProcessor(this, i));
+	newProcessor.setDaemon(true);
+	newProcessor.start();
+      }
+ 
+      // Start up the stats task
+      statusEvent=new ServerStatusEvent();
+      addTask(new StatsTask(), 10000);
+      
+	  // determine the host name for Rendezvous
+	  String lochost;
+      try {
+        lochost = InetAddress.getByName(InetAddress.getLocalHost().getHostAddress()).getHostName();
+
+		// register the event heap as a Rendezvous service
+		JmDNS jmdns = new JmDNS();
+		jmdns.registerService(
+			new ServiceInfo("_eheap._tcp.local.", /* current host name */lochost, ourSettings.port, 0, 0, "")
+		);
+	  
+		System.out.println("Registered Event Heap server at " + lochost + ":" + ourSettings.port + " with Rendezvous");
+      }
+	  catch(Exception ex){
+			System.out.println("Unable to register Event Heap server with Rendevous");
+	  }
+
+      // Print startup message
+      System.out.println("EventHeapServer Running with " +
+			 ourSettings.toString());
+
+      // Print startup message
+      System.out.println("Starting secure mode...");
+
+      try {
+	  // here we need to create an SSLServerSocket
+	  sslContext = SSLContext.getInstance("TLS");
+	  serverKeyStore = KeyStore.getInstance("JKS");
+	  if (debug) System.out.println("opening keystore file now... ");
+	  serverKeyStore.load(new FileInputStream(EH_KEYSTORE_FILE), EH_KEYSTORE_PWD);
+	  if (debug) System.out.println("got the keystore file... ");
+	  keyManagerFactory = KeyManagerFactory.getInstance("SunX509");
+	  keyManagerFactory.init(serverKeyStore, EH_KEYSTORE_PWD);
+	  if (debug) System.out.println("initializd keymanagerfactory");
+	  trustManagerFactory = TrustManagerFactory.getInstance("SunX509");
+	  trustManagerFactory.init(serverKeyStore);
+	  sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
+	  serverSocketFactory = sslContext.getServerSocketFactory();
+	  if (debug) System.out.println("created secure socket on port " + ourSettings.securePort);
+	  secureServerSocket = (SSLServerSocket) serverSocketFactory.createServerSocket(ourSettings.securePort);
+	  secureServerSocket.setNeedClientAuth(true);
+	  secureMode = true;
+
+	  System.out.println("Server secure mode started successfully.");
+      } catch (Exception e) {
+	  throw new EventHeapException("CANNOT START SECURE MODE");
+
+      }
+
+    }
+    catch(Exception e) {
+	if ( e.toString().indexOf("CANNOT START SECURE MODE") != -1 ) {
+	    System.out.println("Server cannot be started in secure mode, there might be a problem with certificate repository 'eh.ks'");
+	} else {
+	    throw new EventHeapException(e);
+	}
+    }
+
+    /* iSec addition
+     * to implement getAllUsers call   */
+    try {
+	
+	ObjectInputStream is =
+	    new ObjectInputStream (
+	      new FileInputStream(ALLUSERSFILE));
+	Object o = is.readObject();
+	allUsers = (SortedSet)o;
+	System.out.println("\n^^^\nOpening existing AllUsersSeen file\n^^^");
+	
+    } catch (Exception e) {
+	
+	// assume cannot open existing file, create a new one
+	try {
+	    ObjectOutputStream os = 
+		new ObjectOutputStream (
+	          new FileOutputStream(ALLUSERSFILE));
+	    allUsers = new TreeSet();
+	    os.writeObject(allUsers);
+	    System.out.println("\n^^^\nCreating NEW AllUsersSeen file\n^^^");
+	    
+	} catch (Exception ee) {
+	    System.out.println("\n^^^\nCannot Create AllUsersSeen file\n^^^");
+	    e.printStackTrace();
+	}
+	
+    }
+
+
+
+  } // end of constructor EventHeapServer
+  
+  /** Closes the ServerSocket */
+  public void close()
+  {
+    try{
+      // this method should be idenpotent
+      if (serverSock != null) {
+        serverSock.close();
+        serverSock = null; // mark the socket has been completely closed
+      }
+    }
+    catch(IOException e) {
+    }
+  }
+  
+  protected void finalize() 
+  {
+    close();
+  } // end of finalize
+
+  /** This method loops forever waiting for connection requests and creating
+   * new ClientHandler objects to the machine making the request.  It never
+   * returns.
+   */
+  public void run() 
+  {
+    
+    // Set up the thread characteristics
+    Thread.currentThread().setName("EventHeapServer on Port: " +
+				   serverSock.getLocalPort());
+    
+    boolean firstTime=true;
+    
+    // Loop forever accepting connections and creating ClientHandlers
+    while(true) {
+      	
+      try{
+
+	// On the first time through, note the time it took the server
+	// to come up
+	if(firstTime) {
+	  if(serverStart!=0) {
+	  
+	    serverUp=System.currentTimeMillis();
+	    statusEvent.setPostValue(ServerStatusEvent.SERVER_UP, 
+				     new Long(serverUp));
+	    
+	    serverStartTime=serverUp-serverStart;
+	    statusEvent.setPostValue(ServerStatusEvent.SERVER_START, 
+				     new Long(serverStartTime));
+	    
+	  }
+
+	  // here's where we fork the secure thread
+	  // don't fork secure thread if secureMode = false
+	  if (secureMode) {
+	      SecureListener theSecureListener = new SecureListener(this, secureServerSocket);
+	      Thread sListenerThread = new Thread(theSecureListener);
+	      sListenerThread.setDaemon(true);
+	      sListenerThread.start();
+	  }
+
+	  firstTime=false;
+	}
+	
+	System.out.println("Awaiting new connections...");
+	// EventHeap.debugPrintln(1,"Awaiting new connections...");
+	
+	// wait for a connection
+	Socket connection = serverSock.accept();
+	
+	// Create the new ClientHandler object
+	ClientHandler newClient=new ClientHandler(connection, this);
+	System.out.println("Connection accepted from " + 
+			   newClient.getConnection().getRemoteAddress());
+	//EventHeap.debugPrintln(1, "Connection accepted from " + 
+	//newClient.getConnection().getRemoteAddress());
+	
+	// Add the ClientHandler to the map of client connections
+	// and start its thread
+	clientMap.put(newClient.getConnection().getRemoteAddress(), newClient);
+	
+	Thread clientThread=new Thread(newClient);
+	clientThread.setDaemon(true);
+	clientThread.start();
+
+      }
+      catch(Exception e) {
+	  e.printStackTrace();
+	  // System.out.println(e);
+	System.out.println("Connection failed! (Invalid protocol?)");
+      }
+    
+    }
+        
+  } // end of run
+
+  /** Takes a WireBundle from an Event Heap client and the Connection to that
+   * client and enqueues them as a task to be completed.
+   *
+   * @param newTask An appropriately set up server task ready to be processed
+   * by one of the request processor threads.
+   */
+  void enqueueTask(ServerTask newTask)
+  {
+    
+    taskQueue.enqueue(newTask);
+    
+    //System.out.print(".");
+    //System.out.flush();
+    
+  } // end of enqueueTask
+
+  /** Takes a ServerTask object and Process the next task in the task
+   * queue by dispatching it to the appropriate 'ourCore' method. 
+   */
+  void processNextTask() 
+  {
+    String destinationTag;
+    ServerTask aTask;
+
+    boolean putEvent=false;
+    
+    synchronized(taskQueue) {
+      aTask=(ServerTask)taskQueue.dequeue();
+      destinationTag=aTask.remoteRequest.destinationTag;   
+      if(EH_PUT_EVENT.equals(destinationTag)) {
+	aTask.remoteClient.getPutLock();
+	putEvent=true;
+      }
+      
+    }
+    
+    synchronized(processLock) {
+      
+      // TEMPORARY increment processed count
+      numProcessed++;
+      
+    }
+    	
+    if (debug) System.out.println("server received: " + destinationTag);
+
+    try{
+      // Some code to print out the command that was sent and what 
+      // tuples came with it.
+      if(ourSettings.printRequests) {
+	
+	System.out.println(destinationTag);
+	if(aTask.remoteRequest.outTuples!=null) {
+	  for(int i=0;i<aTask.remoteRequest.outTuples.length;i++)
+	    System.out.println(aTask.remoteRequest.outTuples[i].toString());
+	}
+	System.out.flush();
+      }
+      
+      if(putEvent) {
+
+	// DEBUG
+	ourCore.debugPrint("[pe]");
+		
+	// Assign a serial number
+	ServerEvent stampedEvent=
+	  new ServerEvent(aTask.remoteRequest.outTuples[0]);
+	
+	synchronized(nextSerialNumLock) {
+	  stampedEvent.setSerialNum(nextSerialNum++);
+	}
+	
+	// Add a timestamp if server time stamps are enabled
+	if(ourSettings.enableTimestamps)
+	  stampedEvent.setPostValue(EHS_TIMESTAMP, 
+				    new Long(System.currentTimeMillis()));
+
+	/* iSec addition
+	 * secure the SourcePerson and flag IF it's a secure Event
+	 * determine if an event if secure by SSL conn
+	*/
+	String remoteUser = ((Connection)aTask.remoteClient.clientCon).getRemoteUser(); 
+	
+	// check if event was sent thru SSL conn
+	if ( (remoteUser != null)) {
+	    
+	    // got an event sent thru an SSL conn
+	    // now check the two required flags  
+	    try {
+		stampedEvent.getPostValue(SecureEvent.PRIVATEFLAG);
+		stampedEvent.getPostValue(SecureEvent.DELETEFLAG);
+		String logflag = stampedEvent.getPostValueString(SecureEvent.LOGFLAG);
+		boolean logEvent = (logflag.equals(SecureEvent.FLAG_LOGGED) ?
+				    true : false);
+		
+		// no exception thrown, assume a proper SecureEvent sent
+		// thru SSL conn
+		stampedEvent.isSecureEvent = true;
+ 		stampedEvent.setPostValue(SecureEvent.SOURCEPERSON, remoteUser);
+
+		// incomplete logging mechanism
+		if (logEvent && loggingOn) {
+		    log.writeObject ( ((Tuple)stampedEvent).toString() );
+		    log.flush();
+		}
+
+		if (debug) System.out.println(" SECURE EVENT POSTED ");
+
+	    } catch (Exception e) {
+		// receive non-SecureEvent thru SSL conn
+		// simply treat as insecure event
+	    }
+
+	} else { 
+	    if (debug) System.out.println(" INSECURE EVENT POSTED ");
+	}
+
+	// Put the event
+	ourCore.putEvent(stampedEvent);
+	aTask.remoteClient.releasePutLock();
+	
+      } else if(EH_DELETE_EVENT.equals(destinationTag)) {
+	
+	// DEBUG
+	ourCore.debugPrint("[de]");
+		
+	ourCore.deleteEvent(new ServerEvent
+			    (aTask.remoteRequest.outTuples[0]),
+			    aTask);
+
+      } else if(EH_CLEAR.equals(destinationTag)) {
+	
+	// DEBUG
+	ourCore.debugPrint("[ce]");
+		
+	ourCore.clear(aTask);
+	
+      } else if(EH_WAIT_TO_REMOVE_EVENT.equals(destinationTag)) {
+	
+	// DEBUG
+	ourCore.debugPrint("[te]");
+		
+	ourCore.waitToRemoveEvent(ServerEvent.
+				  createEventArray(aTask.remoteRequest.
+							 outTuples), 
+				  aTask.remoteRequest.seqInfo, aTask);
+			  
+      } else if(EH_WAIT_FOR_EVENT.equals(destinationTag)) {
+		
+	// DEBUG
+	ourCore.debugPrint("[we]");
+	
+	ourCore.waitForEvent(ServerEvent.createEventArray(aTask.remoteRequest.
+						    outTuples), 
+			     aTask.remoteRequest.seqInfo, aTask);
+	
+      } else if(EH_SNOOP_EVENTS.equals(destinationTag)) {
+	
+	// DEBUG
+	ourCore.debugPrint("[se]");
+
+	aTask.returnEvents(ourCore.
+			   snoopEvents(ServerEvent.
+				       createEventArray(aTask.remoteRequest.
+							outTuples),
+				       aTask));
+		      
+      } else if(EH_GET_ALL.equals(destinationTag)) {
+		
+	// DEBUG
+	ourCore.debugPrint("[ae]");
+	
+	aTask.returnEvents(ourCore.getAll(aTask));
+	      
+      } else if(EH_GET_EVENT.equals(destinationTag)) {
+		
+	// DEBUG
+	ourCore.debugPrint("[ge]");
+	
+	aTask.returnEvent(ourCore.
+			  getEvent(ServerEvent.
+				   createEventArray(aTask.remoteRequest.
+						    outTuples), 
+					   aTask.remoteRequest.seqInfo,
+				   aTask));
+
+      } else if(EH_REMOVE_EVENT.equals(destinationTag)) {
+	
+	// DEBUG
+	ourCore.debugPrint("[re]");
+		
+	aTask.returnEvent(ourCore.
+			  removeEvent(ServerEvent.
+				      createEventArray(aTask.remoteRequest.
+						       outTuples), 
+					      aTask.remoteRequest.seqInfo,
+				      aTask));
+	
+      } else if(EH_REGISTER_FOR_EVENTS.equals(destinationTag)) {
+			
+	// DEBUG
+	ourCore.debugPrint("[fe]");
+	
+	ourCore.registerForEvents(aTask.remoteClient.clientCon.
+				  getRemoteAddress() + 
+				  aTask.remoteRequest.returnTag,
+				  ServerEvent.
+				  createEventArray(aTask.remoteRequest.
+						   outTuples), 
+				  aTask);
+		
+      } else if(EH_REGISTER_FOR_ALL.equals(destinationTag)) {
+
+	// DEBUG
+	ourCore.debugPrint("[le]");
+	
+	ourCore.registerForAll(aTask.remoteClient.clientCon.
+			       getRemoteAddress() + 
+			       aTask.remoteRequest.returnTag,
+			       aTask);
+		
+      } else if(EH_DEREGISTER.equals(destinationTag)) {
+
+	// DEBUG
+	ourCore.debugPrint("[ee]");
+	
+	ourCore.deregister(aTask.remoteClient.clientCon.
+			   getRemoteAddress() + 
+			   ((String)aTask.remoteRequest.outTuples[0].
+			    getPostValue(EHS_STREAMID)));
+
+	// iSec added hooks for new trust group calls
+      } else if(destinationTag.indexOf(EHS_TG_CREATE) != -1) {
+
+	  // parse the destinationTag and call core function	  
+	  int N = 3;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+	  	  
+	  int ret = 
+	      ourCore.
+	      createTrustGroup(args[0], 
+			       (args[1].equals("OPEN") ? true : false), 
+			       (args[2].equals("PUBLIC") ? true : false), 
+			       aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "OK" : "Group already exist" ),
+			    SecureEvent.FORMAL);
+
+ 	  aTask.returnEvent(retEvent);
+	  
+      } else if(destinationTag.indexOf(EHS_TG_DELETE) != -1) {
+	  
+	  // parse the destinationTag and call core function
+	  int N = 1;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+	  
+	  int ret = ourCore.deleteTrustGroup(args[0], aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "OK" : 
+			      ( (ret == 1) ? "Group '" + args[0] + "' doesn't exist" :
+				( (ret == 2) ? "Not owner, can't delete" :
+				  "Unknown error") ) ),
+			    SecureEvent.FORMAL);
+
+ 	  aTask.returnEvent(retEvent);
+	  
+      } else if(destinationTag.indexOf(EHS_TG_CHANGE_OWNER) != -1) {
+
+	  // parse the destinationTag and call core function
+	  int N = 2;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+	  
+	  int ret = ourCore.changeOwner(args[0], args[1], aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "OK" : 
+			      ( (ret == 1) ? "Group '" + args[0] + "' doesn't exist" :
+				( (ret == 2) ? "Not owner, can't change owner" :
+				  "Unknown error") ) ),
+			    SecureEvent.FORMAL);
+	  
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_TG_ADD_USER) != -1) {
+
+	  // parse the destinationTag and call core function
+	  int N = 3;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+ 	  
+	  int ret;
+	  
+	  if (args[2]=="0") ret = ourCore.addUser(args[0], args[1], null, aTask);
+	  else ret = ourCore.addUser(args[0], args[1], 
+				     new Date(Long.parseLong(args[2])), aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "OK" : 
+			      ( (ret == 1) ? "Group '" + args[0] + "' doesn't exist" :
+				( (ret == 2) ? "Closed group, non-owner can't addUser" :
+				  ( (ret == 3) ? "Open group, but non-member can't addUser" :
+				    "Unknown error") ) ) ),
+			    SecureEvent.FORMAL);
+	  
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_TG_REMOVE_USER) != -1) {
+
+	  // parse the destinationTag and call core function
+	  int N = 2;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+
+	  int ret = ourCore.removeUser(args[0], args[1], aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "OK" : 
+			      ( (ret == 1) ? "Group '" + args[0] + "' doesn't exist" :
+				( (ret == 2) ? 
+				  "Closed group, non-owner can't removeUser" :
+				  ( (ret == 3) ? 
+				    "Open group, but non-member can't removeUser" :
+				    ( (ret == 4) ? 
+				      "Cannot remove owner from group" :
+				    "Unknown error") ) ) ) ),
+			    SecureEvent.FORMAL);
+	  
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_TG_IS_MEMBER) != -1) {
+
+	  // parse the destinationTag and call core function
+	  int N = 2;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+
+	  int ret = 1;
+	  if (args[0].equals(ourSettings.ARA)) {// trap this call
+	      if (debug)
+		  System.out.println(" ------ ARA call trapped, isMember ");
+	      String [] onlineUsers = getOnlineUsers();
+	      for (int i = 0; i < onlineUsers.length; i++)
+		  if ( onlineUsers[i].equals(args[1])) {
+		      ret = 0;        i = onlineUsers.length;
+		  } else ret = 1;
+	  } else ret = ourCore.isMember(args[0], args[1], aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+
+	  retEvent.addField("RETURN", 
+			    ( (ret == 0) ? "YES" : 
+			      ( (ret == 1) ? "NO" :
+				( (ret == 2) ? "Group '" + args[0] + "' doesn't exist" :
+				  ( (ret == 3) ? "Private group, non-member can't query" :
+				    "Unknown error") ) ) ),
+			    SecureEvent.FORMAL);
+	  
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_TG_GET_GROUPS) != -1) {	  
+
+	  String[] ret = ourCore.getGroups(aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+
+	  if (ret==null) {
+	      retEvent.addField("RETURN", "", SecureEvent.FORMAL);
+	      aTask.returnEvent(retEvent);
+	  }
+	  
+	  String groups = Integer.toString(ret.length) + SecureEvent.SEPARATOR;
+	  for (int i = 0; i < ret.length; i++)
+	      groups = groups + ret[i] + SecureEvent.SEPARATOR;
+	  
+	  retEvent.addField("RETURN", groups, SecureEvent.FORMAL);
+ 	  aTask.returnEvent(retEvent);
+	  
+      } else if(destinationTag.indexOf(EHS_TG_GET_USERS) != -1) {	  
+
+	  // parse the destinationTag and call core function
+	  int N = 1;
+	  String [] args = new String[N];
+	  Tuple arg = aTask.remoteRequest.outTuples[0];
+	  for (int i = 0; i < N; i++)
+	      args[i] = (String)arg.getPostValue("PARAM" + Integer.toString(i));
+
+	  String[] ret;
+	  
+	  System.out.println("server got a getUsers grp " + args[0]);
+
+	  // trap this special call
+	  if (args[0].equals(ourSettings.ARA)) ret = getOnlineUsers();
+	  else ret = ourCore.getUsers(args[0], aTask);
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  if (ret==null) {
+	      retEvent.addField("RETURN", "", SecureEvent.FORMAL);
+	      aTask.returnEvent(retEvent);
+	  }
+	  
+	  String users = Integer.toString(ret.length) + SecureEvent.SEPARATOR;
+	  for (int i = 0; i < ret.length; i++)
+	      users = users + ret[i] + SecureEvent.SEPARATOR;	      
+
+	  retEvent.addField("RETURN", users, SecureEvent.FORMAL);	  
+	  aTask.returnEvent(retEvent);
+	  
+      } else if(destinationTag.indexOf(EHS_GET_ONLINE_USERS) != -1) {	  
+
+	  String[] ret = getOnlineUsers();
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  if (ret==null) {
+	      retEvent.addField("RETURN", "", SecureEvent.FORMAL);
+	      aTask.returnEvent(retEvent);
+	  }
+	  
+	  String con_users = Integer.toString(ret.length) + SecureEvent.SEPARATOR;
+	  for (int i = 0; i < ret.length; i++)
+	      con_users = con_users + ret[i] + SecureEvent.SEPARATOR;
+	  
+	  retEvent.addField("RETURN", con_users, SecureEvent.FORMAL);
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_GET_ALL_USERS) != -1) {	  
+
+	  String[] ret = getAllUsers();
+	  
+	  ServerEvent retEvent = 
+	      new ServerEvent(new SecureEvent());
+	  
+	  if (ret==null) {
+	      retEvent.addField("RETURN", "", SecureEvent.FORMAL);
+	      aTask.returnEvent(retEvent);
+	  }
+	  	  
+	  String con_users = Integer.toString(ret.length) + SecureEvent.SEPARATOR;
+	  for (int i = 0; i < ret.length; i++)
+	      con_users = con_users + ret[i] + SecureEvent.SEPARATOR;
+	  
+	  retEvent.addField("RETURN", con_users, SecureEvent.FORMAL);	  
+ 	  aTask.returnEvent(retEvent);
+
+      } else if(destinationTag.indexOf(EHS_CLEAR_USERS) != -1) { 
+	  
+	  clearUsers();
+
+      } else {
+
+	// Didn't match any known call!
+	ourCore.debugPrint("[U]");
+
+	// Trigger appropriate response to unknown event
+	aTask.returnUnknown();
+	
+      }
+
+    }
+    catch(Exception e) {
+
+      // If we failed in putEvent, make sure to release the putLock
+      if(putEvent)
+	aTask.remoteClient.releasePutLock();
+
+      // Make sure that if the request that caused the exception expects
+      // a response that we at least return null (otherise clients may hang
+      // waiting for a response that will never come!)
+      if(EH_SNOOP_EVENTS.equals(destinationTag) ||	      
+	 EH_GET_EVENT.equals(destinationTag) ||
+	 EH_REMOVE_EVENT.equals(destinationTag))
+	{
+	  aTask.returnEvent(null);
+	}
+      
+      // No matter what the exception, the server should stay running!
+      // If the exception is bad enough, an 'Error' should be thrown 
+      // by the underlying code instead.
+      System.out.println("Exception in '" + destinationTag + "':");
+      e.printStackTrace();
+      System.out.flush();
+            
+    }
+    
+  } // end of processTask
+
+    /**
+     * Get a list of users currently connected (online)
+     *
+     * @return a <code>String[]</code> value
+     */
+    private String[] getOnlineUsers() {
+
+	if (debug) System.out.println(" core doing getOnlineUsers ");
+	Iterator iter = clientMap.values().iterator();
+	SortedSet set = new TreeSet();
+	while (iter.hasNext()) {
+	    ClientHandler ch = (ClientHandler)iter.next();
+	    String onlineUser = ch.clientCon.getRemoteUser();
+	    if (onlineUser!=null)
+		set.add ( onlineUser );
+	    if (debug) 
+		System.out.println("\t" + onlineUser + " is online.");
+	}
+	
+	String[] ret = new String[set.size()];
+	iter = set.iterator(); int j = 0;
+	while (iter.hasNext()) {
+	    ret[j++] = (String)iter.next();
+	}
+	
+	return ret;
+
+    }
+              
+    /**
+     * Get a list of all users previously seen by server.
+     *
+     * @return a <code>String[]</code> value
+     */
+    private String[] getAllUsers() {
+
+	if (debug) System.out.println(" core doing getAllUsers ");	
+	String[] ret = null;
+	synchronized ( allUsers ) {
+	    SortedSet set = allUsers;
+	    ret = new String[set.size()];
+	    Iterator iter = set.iterator(); int j = 0;
+	    while (iter.hasNext()) {
+		ret[j++] = (String)iter.next();
+	    }	    
+	}
+	return ret;
+
+    }
+
+    /**
+     * Clear the list of all users previously seen by server.
+     * Reset it to onlineUsers at that instant in time.
+     *
+     * @return void
+     */
+    private void clearUsers () {
+	
+	String [] users = getOnlineUsers();
+	SortedSet set = new TreeSet();
+	for (int i = 0; i < users.length; i++)
+	    set.add ( users[i] );
+
+	synchronized ( allUsers ) {
+	    allUsers = new TreeSet(set);
+	    writeUpdate ( allUsers );
+	}
+	
+    }
+              
+  /** Removes the ClientHandler from the Map of current clients.  Should
+   * normally be called when the connection that ClientHandler is using
+   * goes down.
+   *
+   * @param handler The ClientHandler to remove
+   *
+   * @throws EventHeapException An exception is thrown if the handler 
+   * associated with this ClientHandlers remote IP:Port combination
+   * is not the same as this handler.  This indicates that the clientMap
+   * is corrupted.
+   */
+  void removeClientHandler(ClientHandler handler) 
+    throws EventHeapException
+  {
+    if (handler.getConnection().isClosed()) {
+      return; // This connection is closed = already removed
+    }
+    
+    ClientHandler removedHandler=(ClientHandler)
+      clientMap.remove(handler.getConnection().getRemoteAddress());
+    
+    if(!handler.equals(removedHandler))
+      throw new EventHeapException("Map of ClientHandlers corrupted");
+
+    // registration patch
+    DeRegTask dereg = new DeRegTask(handler.getConnection().getRemoteAddress());
+    addTask(dereg, 500);
+
+    System.out.println("Client " + handler.getConnection().getRemoteAddress()
+		       + " removed from client map.");
+
+    // Close the connection
+    handler.getConnection().close();        
+    
+  } // end of removeClientHandler
+  
+  /** Adds the given task to the main server execution queue, which will
+   * execute it after the given delay has transpired.
+   */
+  void addTask(ExecutionTask newTask, long delayTime) 
+  {
+    executionQueue.addTask(newTask, delayTime);
+  } // end of addTask
+
+
+    // we need to do some kind of synchronization here
+    public void addClientHandler(ClientHandler newClient) {
+	clientMap.put(newClient.getConnection().getRemoteAddress(), newClient);
+    }
+
+  /** main() method to invoke from JVM. */
+  public static void main(String args[])
+  {
+
+    serverStart=System.currentTimeMillis();
+    
+    ServerSettings newSettings=new ServerSettings();
+        
+    if (args.length < 1) {
+      System.out.println("No port specified, using default (" + 
+			 EHEAP2_DEFAULT_PORT + ")");
+      System.out.println("\tUSAGE: java EventHeapServer [-p port] " + 
+			 "[-t numThreads] [-c coreClass]\n\t\t[-d] [-pr]\n\n" +
+			 "\t\t-p port:\tSet the port the server will use\n" +
+			 "\t\t-t numThreads:\tThe number of threads that " +
+			 "will be started\n\t\t\t\tto handle incoming " +
+			 "requests.\n" +
+			 "\t\t-c coreClass:\tThe Java class name of some " +
+			 "class implementing\n\t\t\t\tEventHeapCore.  This " +
+			 "will be used as the\n\t\t\t\tunderlying storage " +
+			 "core for all Event Heap\n\t\t\t\toperations on " +
+			 "the server.\n" +
+			 "\t\t-s:\t\tEnables server timestamps for all " +
+			 "posted\n\t\t\t\tevents.\n" +
+			 "\t\t-u:\t\tServer will post an event to " + 
+			 "the Event\n\t\t\t\tHeap periodically with its " +
+			 "status.\n" +
+			 "\t\t-d:\t\tEnables printing of debugging " +
+			 "information\n" +
+			 "\t\t-pr:\t\tPrints out the request type and " +
+			 "events sent for\n\t\t\t\teach request from " +
+			 "a client\n" +
+			 "\t\t-st time_in_ms:\tThe time in ms since 1970 " +
+			 "when the server\n\t\t\t\twas started.  Must match " +
+			 "format of call to\n\t\t\t\t" + 
+			 "System.currentTimeMillis() in Java.  Used" + 
+			 "\n\t\t\t\tby server to calculate how long it " +
+			 "took to\n\t\t\t\tcome up.\n");
+                  
+    } else {
+      
+      for(int i=0;i<args.length;i++) {
+	
+	if(args[i].equals("-p"))
+	  newSettings.port = Integer.parseInt(args[++i]);
+	else if(args[i].equals("-t"))
+	  newSettings.numProcessorThreads=Integer.parseInt(args[++i]);
+	else if(args[i].equals("-c"))
+	  newSettings.eheapCore=args[++i];
+	else if(args[i].equals("-s"))
+	  newSettings.enableTimestamps=true;
+	else if(args[i].equals("-d"))
+	  newSettings.enableDebugging=true;
+	else if(args[i].equals("-pr"))
+	  newSettings.printRequests=true;
+	else if(args[i].equals("-u"))
+	  newSettings.postStatus=true;
+	else if(args[i].equals("-st"))
+	  serverStart=Long.parseLong(args[++i]);
+	
+      }
+    }
+    
+    try {
+      
+      EventHeapServer theServer=new EventHeapServer(newSettings);
+      
+      Thread mainThread=new Thread(theServer);
+      mainThread.start();
+
+      try{mainThread.join();}catch(InterruptedException e){}
+
+      System.exit(0);
+            
+    }
+    catch(EventHeapException e) {
+      e.printStackTrace();
+      System.exit(1);
+      
+    }
+    
+  } // end of main
+
+
+    // iSec helper function to update all users info on disk
+    void writeUpdate(Object o) {
+
+	try {
+	    ObjectOutputStream os = 
+		new ObjectOutputStream (
+	          new FileOutputStream(ALLUSERSFILE));
+	    os.writeObject(o);
+	    os.flush();
+ 	  if (debug) System.out.println("\n^^^\nUpdating All users file\n^^^");
+		
+	} catch (Exception e) {
+	    if (debug) 
+		System.out.println("\n^^^\nCannot Update All users file\n^^^");
+	    e.printStackTrace();
+	    
+	}
+	
+    }
+    
+} // end of class EventHeapServer

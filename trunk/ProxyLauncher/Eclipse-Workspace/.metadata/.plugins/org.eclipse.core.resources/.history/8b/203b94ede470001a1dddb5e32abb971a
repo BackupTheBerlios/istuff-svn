@@ -1,0 +1,46 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.AbstractButton;
+import javax.swing.JComponent;
+import javax.swing.plaf.basic.BasicToggleButtonUI;
+
+public class CustomButtonUI extends BasicToggleButtonUI{
+	
+	private Color _selectedColor; 
+
+	public CustomButtonUI (Color selectedColor){
+		_selectedColor = selectedColor;
+	}
+		
+	/*public void paintButtonPressed (Graphics g, AbstractButton b){
+		//ChangeColorButton temp = (ChangeColorButton) b;
+		
+		if (b.isSelected())
+			b.setBackground(Color.RED);
+		else
+			b.setBackground(Color.GREEN);
+		//System.out.println("CustomButtonUI:"+  b.isSelected());
+		/*if (b.getBackground() != getSelectedColor())
+			b.setBackground(getSelectedColor());
+			
+	}
+*/
+	
+	public void paint (Graphics g, JComponent b){
+		//ChangeColorButton temp = (ChangeColorButton) b;
+		
+		if (b.getBackground() == Color.RED)
+			b.setBackground(Color.GREEN);
+		else if (b.getBackground() == Color.GREEN)
+			b.setBackground(Color.RED);
+		//System.out.println("CustomButtonUI:"+  b.isSelected());
+		/*if (b.getBackground() != getSelectedColor())
+			b.setBackground(getSelectedColor());
+			*/
+	}
+	public Color getSelectedColor (){
+		return _selectedColor;
+	}
+}
+

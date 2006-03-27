@@ -1,0 +1,57 @@
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.ScrollPaneConstants;
+
+import com.apple.component.Component;
+
+public class ProxyTabPanel extends JScrollPane implements ActionListener{
+	private Vector _proxyEntryList;
+	private JPanel _componentPanel;
+	//TODO: The tab should not scroll horizonotally
+	public ProxyTabPanel (java.awt.Component c){
+		super(c);
+		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		//setAlignmentY(ScrollPaneConstants.UPPER_LEFT_CORNER);
+		//setAutoscrolls(true);
+		//setPreferredSize(new Dimension(50,50));
+		//setLayout(new BagLayout());
+		//this does not help 
+	}
+	//public ProxyTabPanel () {
+//		_proxyEntryList = new Vector<ProxyEntry>();
+//		setName("ProxyList");
+//	}
+	
+	public ProxyTabPanel (int index) {
+		_proxyEntryList = new Vector<ProxyEntry>();
+		setName("ProxyList " + index);
+	}
+	
+	public void addEntry (ProxyEntry proxyEntry) {
+		_proxyEntryList.add(proxyEntry);
+	}
+	
+	public void removeEntry (ProxyEntry proxyEntry) {
+		_proxyEntryList.remove(proxyEntry);
+		//TODO: Check wether the correct object is removed
+		// Important when dealing with multiple instances.
+	}
+	
+//	public Vector getProxyEntryList () {
+	//	return _proxyEntryList;
+//`	}
+
+	public Vector getProxyEntryList() {
+		// TODO Auto-generated method stub
+		return _proxyEntryList;
+	}
+
+	
+} // end of class

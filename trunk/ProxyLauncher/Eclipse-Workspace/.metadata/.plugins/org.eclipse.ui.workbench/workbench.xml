@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0" progressCount="14">
+<workbenchAdvisor/>
+<window x="0" y="22" width="1225" height="832">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="85" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="103" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="85" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="156" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page label="Workspace - Java" focus="true">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder expanded="2" appearance="1">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor title="ServoController.java" name="ServoController.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/ServoController.java" partName="ServoController.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/ServoController.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/ServoController.java"/>
+</editor>
+<editor title="SlideController.java" name="SlideController.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/SlideController.java" partName="SlideController.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/SlideController.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/SlideController.java"/>
+</editor>
+<editor title="RFIDproxy.java" name="RFIDproxy.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/RFIDproxy.java" partName="RFIDproxy.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/RFIDproxy.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/RFIDproxy.java"/>
+</editor>
+<editor title="InterfaceKitproxy.java" name="InterfaceKitproxy.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/InterfaceKitproxy.java" partName="InterfaceKitproxy.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/InterfaceKitproxy.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/InterfaceKitproxy.java"/>
+</editor>
+<editor title="AccelerometerProxy.java" name="AccelerometerProxy.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/AccelerometerProxy.java" partName="AccelerometerProxy.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/AccelerometerProxy.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/AccelerometerProxy.java"/>
+</editor>
+<editor title="TextEventEngine.java" name="TextEventEngine.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/TextEventEngine.java" partName="TextEventEngine.java" workbook="DefaultEditorWorkbook" path="/Users/rene/test/Eclipse-Workspace/Proxies/TextEventEngine.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/TextEventEngine.java"/>
+</editor>
+<editor title="SoundClip.java" name="SoundClip.java" id="org.eclipse.jdt.ui.CompilationUnitEditor" tooltip="Proxies/SoundClip.java" partName="SoundClip.java" workbook="DefaultEditorWorkbook" activePart="true" focus="true" path="/Users/rene/test/Eclipse-Workspace/Proxies/SoundClip.java">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/SoundClip.java"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState rootMode="1" layout="1" org.eclipse.jdt.ui.packages.linktoeditor="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_*$*.class" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+<lastRecentlyUsedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter"/>
+</lastRecentlyUsedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState columnWidth0="40" columnWidth1="405" columnWidth2="94" columnWidth3="150" columnWidth4="60" verticalPosition="0" horizontalPosition="0">
+<selection/>
+</viewState>
+</view>
+</views>
+<perspectives activePerspective="org.eclipse.jdt.ui.JavaPerspective" activePart="org.eclipse.jdt.ui.CompilationUnitEditor">
+<perspective version="0.016" editorAreaVisible="1" fixed="0">
+<descriptor id="org.eclipse.jdt.ui.JavaPerspective" label="Java" class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.openExternalFile"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.update.ui.softwareUpdates"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<layout>
+<mainWindow>
+<info part="left" folder="true">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" expanded="2" appearance="2">
+<page label="Package Explorer" content="org.eclipse.jdt.ui.PackageExplorer"/>
+<page label="Hierarchy" content="org.eclipse.jdt.ui.TypeHierarchy"/>
+<page label="LabelNotFound" content="org.eclipse.ui.views.ResourceNavigator"/>
+<page label="LabelNotFound" content="org.eclipse.jdt.junit.ResultView"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.internal.ViewStack@c01b2a" relative="left" relationship="2" ratioLeft="915" ratioRight="306" ratio="0.7493858" folder="true">
+<folder expanded="2" appearance="2">
+<page label="LabelNotFound" content="org.eclipse.help.ui.HelpView"/>
+<page label="LabelNotFound" content="org.eclipse.ui.internal.introview"/>
+<page label="LabelNotFound" content="org.eclipse.ui.cheatsheets.views.CheatSheetView"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" relative="left" relationship="2" ratioLeft="305" ratioRight="916" ratio="0.24979524"/>
+<info part="bottom" relative="org.eclipse.ui.editorss" relationship="4" ratioLeft="693" ratioRight="227" ratio="0.75326085" folder="true">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" expanded="2" appearance="2">
+<page label="Problems" content="org.eclipse.ui.views.ProblemView"/>
+<page label="Javadoc" content="org.eclipse.jdt.ui.JavadocView"/>
+<page label="Declaration" content="org.eclipse.jdt.ui.SourceView"/>
+<page label="LabelNotFound" content="org.eclipse.search.ui.views.SearchView"/>
+<page label="Console" content="org.eclipse.ui.console.ConsoleView"/>
+<page label="LabelNotFound" content="org.eclipse.ui.views.BookmarkView"/>
+<page label="LabelNotFound" content="org.eclipse.ui.views.ProgressView"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.internal.ViewStack@bf8d24" relative="org.eclipse.ui.editorss" relationship="2" ratioLeft="725" ratioRight="179" ratio="0.80199116" folder="true">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" expanded="2" appearance="2">
+<page label="Outline" content="org.eclipse.ui.views.ContentOutline"/>
+<page label="LabelNotFound" content="org.eclipse.ant.ui.views.AntView"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<navigationHistory>
+<editors>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/ServoController.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/InterfaceKitproxy.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/RFIDproxy.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/AccelerometerProxy.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/ServoController.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/SlideController.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/TextEventEngine.java"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Proxies/SoundClip.java"/>
+</editors>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="533" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="0">
+<position x="2754" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position/>
+</item>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="533" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1276" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="0">
+<position x="862" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1276" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1184" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1184" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="533" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position x="274" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="533" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1184" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="3163" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="3196" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="2975" y="137" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="3058" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="3" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="RFIDproxy.java" index="2">
+<position x="1507" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="3" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="InterfaceKitproxy.java" index="1">
+<position x="1742" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="4048" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position x="1310" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="4048" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="3802" y="4" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="632" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="634" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="636" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="3802" y="4" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="189" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SlideController.java" index="5">
+<position x="612" y="24" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="3058" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="ServoController.java" index="4">
+<position x="1921" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="TextEventEngine.java" index="6">
+<position/>
+</item>
+<item historyLabel="AccelerometerProxy.java" index="3">
+<position x="1222" y="143" info="not_deleted"/>
+</item>
+<item historyLabel="TextEventEngine.java" index="6">
+<position x="2429" y="4" info="not_deleted"/>
+</item>
+<item historyLabel="TextEventEngine.java" index="6">
+<position x="2563" y="32" info="not_deleted"/>
+</item>
+<item historyLabel="TextEventEngine.java" index="6">
+<position x="3192" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="TextEventEngine.java" index="6">
+<position x="2536" y="237" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="2616" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="1603" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="1621" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="1649" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="1644" y="0" info="not_deleted"/>
+</item>
+<item historyLabel="SoundClip.java" index="7">
+<position x="1649" y="0" info="not_deleted"/>
+</item>
+<item active="true" historyLabel="SoundClip.java" index="7">
+<position x="1627" y="8" info="not_deleted"/>
+</item>
+</navigationHistory>
+<stickyState/>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoundClip.java" tooltip="Proxies/SoundClip.java">
+<persistable path="/Proxies/SoundClip.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TextEventEngine.java" tooltip="Proxies/TextEventEngine.java">
+<persistable path="/Proxies/TextEventEngine.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AccelerometerProxy.java" tooltip="Proxies/AccelerometerProxy.java">
+<persistable path="/Proxies/AccelerometerProxy.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InterfaceKitproxy.java" tooltip="Proxies/InterfaceKitproxy.java">
+<persistable path="/Proxies/InterfaceKitproxy.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RFIDproxy.java" tooltip="Proxies/RFIDproxy.java">
+<persistable path="/Proxies/RFIDproxy.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SlideController.java" tooltip="Proxies/SlideController.java">
+<persistable path="/Proxies/SlideController.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ServoController.java" tooltip="Proxies/ServoController.java">
+<persistable path="/Proxies/ServoController.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ActionListener.class" tooltip="java.awt.event.ActionListener">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ProxyGUI/\/System\/Library\/Frameworks\/JavaVM.framework\/Versions\/1.5.0\/Classes\/classes.jar&lt;java.awt.event(ActionListener.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PreferencesDialog.java" tooltip="ProxyGUI/PreferencesDialog.java">
+<persistable path="/ProxyGUI/PreferencesDialog.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PLMainFrame.java" tooltip="ProxyGUI/PLMainFrame.java">
+<persistable path="/ProxyGUI/PLMainFrame.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProxyTree.java" tooltip="ProxyGUI/ProxyTree.java">
+<persistable path="/ProxyGUI/ProxyTree.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProxyLauncher.java" tooltip="ProxyGUI/ProxyLauncher.java">
+<persistable path="/ProxyGUI/ProxyLauncher.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProxyNode.java" tooltip="ProxyGUI/ProxyNode.java">
+<persistable path="/ProxyGUI/ProxyNode.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RFID.java" tooltip="Proxies/RFID.java">
+<persistable path="/Proxies/RFID.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BlueSentry.java" tooltip="Proxies/BlueSentry.java">
+<persistable path="/Proxies/BlueSentry.java"/>
+</file>
+</mruList>
+</workbench>

@@ -1,0 +1,95 @@
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class ProxyTree
+{
+
+	private ProxyNode treeRoot;
+	private ProxyNode currentNode;
+	
+	
+	public ProxyTree () {
+		treeRoot = new ProxyNode("RootProxy", "EH Proxies", "Virtual","");
+	}
+
+	public void insertNode (ProxyNode node){
+		ProxyNode predecessorNode;
+		
+        predecessorNode = searchPredecessorNode(treeRoot, node);
+		// Insert alphabetically
+        // Therefore go through the successors and insert the new node
+        // if the next elemtents name is larger than the name of the actual one.
+        ListIterator<ProxyNode> iter = predecessorNode.getSuccessors().listIterator();
+        System.out.println("VOR der While-Schleife");
+        while ((iter.hasNext()))// && (node.getName().compareTo(iter.next().getName()) < 0))
+        {
+			System.out.println("In der While-Schleife");
+        	iter.next();	
+		}
+        // The correct place for the new element was found
+        // Now add the element
+        iter.add(node);
+        //predecessorNode.getSuccessors().add(node);			
+	}
+
+	private ProxyNode searchPredecessorNode (ProxyNode startNode, ProxyNode searchNode) {
+		//TODO: Fix the problem with the iterators
+		// Seems ok, but now a iterator is needed that also inserts nodes
+		// or do that in the addSuccessor method of a node!
+		for ( Iterator<ProxyNode> i = startNode.getSuccessors().iterator() ; i.hasNext(); )
+		{
+			ProxyNode compareKindNode = (ProxyNode) i.next();
+			//check if kind is already there
+			if (compareKindNode.getKind().equals(searchNode.getKind()))
+			{
+				// If the kind already exists, check wether the proxy class is 
+				// already there
+				{
+					for ( Iterator<ProxyNode> it = compareKindNode.getSuccessors().iterator() ; it.hasNext(); )
+					{
+						ProxyNode compareProxyClassNode = (ProxyNode) it.next();
+						if (compareProxyClassNode.getproxyClass().equals(searchNode.getproxyClass()))
+							return compareProxyClassNode;					
+					}
+					// if the ProxyClass does not exist yet, create it
+					// and return the newly created node
+					ProxyNode newProxyClassNode = new ProxyNode (searchNode.getKind(),searchNode.getproxyClass(),searchNode.getproxyClass(),"");
+					compareKindNode.addSuccessor(newProxyClassNode);
+					return newProxyClassNode;
+				}
+			}
+		}
+		// In the case that the kind does not exist, 
+		//create new kind and proxyclass 
+		ProxyNode newKindNode = new ProxyNode (searchNode.getKind(),searchNode.getKind(), searchNode.getKind(), "");
+		startNode.addSuccessor(newKindNode);
+		// Now a new proxClass needs to be created as well
+		// This can directly be done because the new node has no successors
+		ProxyNode newProxyClassNode = new ProxyNode (searchNode.getKind(),searchNode.getproxyClass(),searchNode.getproxyClass(),"");
+		newKindNode.addSuccessor(newProxyClassNode);
+		return newProxyClassNode;		
+		}
+	
+	
+	//	else if (startAt.hasSuccessors())
+		//{
+			//if (searchNode(startAt.getSuccessors().getFirst(),toFind)) == null{
+			//ListIterator it = 
+			//while (it.hasNext()) {
+			//searchNode (startAt.getSuccessors().get(it.previousIndex()), "aha");
+			
+			//}
+		//	return null;
+	//	}
+	//	}
+	//	else
+		//return null;
+	
+	public ProxyNode getTreeRoot(){
+		return treeRoot;
+	}
+	
+	public ProxyNode getCurrentNode (){
+		return currentNode;
+	}
+}

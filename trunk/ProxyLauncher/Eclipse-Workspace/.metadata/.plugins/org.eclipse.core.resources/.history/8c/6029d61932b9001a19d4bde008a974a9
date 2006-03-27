@@ -1,0 +1,157 @@
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
+@SuppressWarnings("serial")
+public class ProxyButton extends JButton implements
+		ActionListener {
+
+	private showConsoleButton _correspondingConsoleButton;
+
+	private JComboBox _correspondingComboBox;
+
+	private ProxyNode _correspondingProxyNode;
+
+	private JTextField _correspondingTextField;
+
+	private String _executablePrefix;
+	
+	private JList _ehList;
+	
+	private DefaultListModel _listModel;
+
+	public ProxyButton (ProxyNode ProxyNode, showConsoleButton consoleButton, JList ehList, DefaultListModel listModel) {
+		super();
+		_correspondingProxyNode = ProxyNode;
+		_correspondingConsoleButton = consoleButton;
+		_ehList = ehList;
+		_listModel = listModel;
+		setText("Start");
+		addActionListener(this);
+		setPreferredSize(new Dimension (80,30));
+		setEnabled(false);
+
+		/*try {
+			JmDNS _jmdns = new JmDNS();
+		_jmdns.addServiceListener("_eheap._tcp.local.", null);
+			//ehList.addListSelectionListener();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+*/
+	}
+	
+	public ProxyButton (ProxyNode ProxyNode) {
+		super();
+		_correspondingProxyNode = ProxyNode;
+		setText("Start");
+		addActionListener(this);
+		setPreferredSize(new Dimension (80,30));
+		setEnabled(false);
+	}
+	
+	public ProxyButton () {
+		super();
+		setText ("Start");
+		addActionListener(this);
+		setPreferredSize(new Dimension (80,30));
+		setEnabled(false);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if (_correspondingProxyNode.isRunning()) {
+			_correspondingProxyNode.setIsRunning(false);
+			System.out.println("Is not running");
+			// set corresponding Label if (_correspondingButton != null)
+			//	_correspondingButton.setSelected(false);
+			//_correspondingConsoleButton.setEnabled(false);
+			//_correspondingConsoleButton.hideBuffer();
+			//_correspondingProxyNode.stopProxy();
+			setText("Start");
+		} else {
+
+			System.out.println("Is running now");
+			// set corrersponding label if (_correspondingConsoleButton != null)
+				//_correspondingConsoleButton.setEnabled(true);
+			// Now start the corresponding proxy
+			//try { // get the ientifier and the event heap to connect to
+				int index = _ehList.getSelectedIndex();
+				if (index != -1) {
+					_correspondingProxyNode.setIsRunning(true);
+					setText("Stop");
+					String ehParameter = _listModel.getElementAt(index).toString();
+					System.out.println (ehParameter);}
+					setEnabled(true);
+			
+				//_correspondingProxyNode.startProxy(_ehList.getse
+				//		.getSelectedItem().toString());
+				//_correspondingProxyNode.getCorrespondingThread().setTextArea(
+				//		_correspondingConsoleButton.getTextArea());
+			//} catch (IOException e1) {
+			//	e1.printStackTrace();
+		//	}
+
+		}
+
+	}
+
+	public JComboBox getCorrespondingComboBox() {
+		return _correspondingComboBox;
+	}
+
+	public JTextField getCorrespondingTextField() {
+		return _correspondingTextField;
+	}
+
+	public ProxyNode getCorresponingProxyNode() {
+		return _correspondingProxyNode;
+	}
+
+	public String getExecutablePrefix() {
+		return (_executablePrefix);
+	}
+
+	public boolean isCorrespondingProxyRunning() {
+		return _correspondingProxyNode.isRunning();
+	}
+
+	public void setCorrerspondingProxyNode(ProxyNode proxyNode) {
+		_correspondingProxyNode = proxyNode;
+	}
+
+	public void setCorrespondingConsoleButton(showConsoleButton cb) {
+		_correspondingConsoleButton = cb;
+	}
+
+	public void setCorrespondingComboBox(JComboBox comboBox) {
+		_correspondingComboBox = comboBox;
+	}
+
+	public void setCorrespondingTextField(JTextField textField) {
+		_correspondingTextField = textField;
+	}
+
+	public void setExecutablePrefix(String execPrefix) {
+		_executablePrefix = execPrefix;
+	}
+
+	public void startProxy(String eventHeap) throws IOException {
+		if (!_correspondingProxyNode.isRunning()) {
+			_correspondingProxyNode.startProxy(eventHeap);
+		}
+
+	}
+
+
+
+
+} // end of class
+
+

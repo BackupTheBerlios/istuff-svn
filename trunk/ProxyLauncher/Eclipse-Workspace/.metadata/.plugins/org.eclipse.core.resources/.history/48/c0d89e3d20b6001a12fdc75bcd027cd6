@@ -1,0 +1,15 @@
+import java.awt.Color;
+
+import javax.swing.tree.DefaultTreeCellRenderer;
+
+public class TransparantCellRenderer extends DefaultTreeCellRenderer{
+	
+	public Color getBackground () {
+		return null;
+	}
+	
+	public Color getBackgroundNonSelectionColor () {
+		return null;
+	}
+
+}

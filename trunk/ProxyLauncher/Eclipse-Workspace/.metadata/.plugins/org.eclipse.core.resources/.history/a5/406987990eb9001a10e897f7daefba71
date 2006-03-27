@@ -1,0 +1,27 @@
+import java.io.File;
+
+import javax.swing.filechooser.FileFilter;
+
+public class CustomFileFilter extends FileFilter {
+	
+	private String _fileName;
+	private String _description;
+	
+	public CustomFileFilter (String fileName) {
+		_fileName =	fileName;
+		_description = fileName;
+		System.out.println(fileName);
+	}
+	 
+	public boolean accept (File f) {
+		boolean result = false;
+		if (f.getName().equals(_fileName));
+			result = true;
+		return result;
+	 }
+	
+	 public String getDescription () {
+		 return (_description);
+	 }	
+	
+}

@@ -1,0 +1,108 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Vector;
+
+import java.io.*;
+
+public class ProxyNode{
+
+	private String _kind; // Hardware, Software, Category
+	private String _name; // Name of the Proxy / Category
+	private String _proxyClass; // Class that the Proxy belongs to
+	private String _executableName; // Prefix of the executable
+	private String _comment;
+	private File _pathToFile;
+	private LinkedList<ProxyNode> _successors;
+	private ListIterator<ProxyNode> _si;
+	
+	public ProxyNode () {
+		_successors = new LinkedList<ProxyNode>();
+		_si = _successors.listIterator();
+	}
+	
+	public ProxyNode (String kind, String name, String proxyClass, String executableName){
+		_successors = new LinkedList<ProxyNode>();
+		_si = _successors.listIterator();
+		
+		_kind = kind;
+		_name = name;
+		_proxyClass = proxyClass;
+		_executableName = executableName;
+	}
+	
+	public void setKind (String kind){
+		_kind = kind;
+	}
+	
+	public void setName (String name){
+		_name = name;
+	}
+	
+	public void setproxyClass (String proxyClass){
+		_proxyClass = proxyClass;
+	}
+	
+	public void setExecutableName (String executableName){
+		_executableName = executableName;
+	}
+	
+	public String getKind (){
+		return _kind;
+	}
+	
+	public String getName (){
+		return _name;
+	}
+	
+	public String getproxyClass (){
+		return _proxyClass;
+	}
+	
+	public String getExecutableName (){
+		return _executableName;
+	}
+	
+	public void setComment (String comment){
+		_comment = comment;
+	}
+	
+	public void setPathToFile (File pathToFile){
+		_pathToFile = pathToFile;
+	}
+		
+	public void addSuccessor(ProxyNode successor){
+		// TODO: Add elements in a sorted way:
+		// idea: go through the list an if a an element is larger
+		// than the one to be inserted, insert the new element in front 
+		// of the larger element.
+		// Otherwise insert the element at the end of the list
+		
+		_successors.add(successor);
+	}
+	
+	public String getComment(){
+		return _comment;
+	}
+	
+	public LinkedList<ProxyNode> getSuccessors (){
+		return _successors;
+	}
+	
+	public boolean hasSuccessors (){
+		if (_successors.isEmpty())
+		  return false;
+		else 
+		  return true;
+	}
+	
+	public ProxyNode getNext(){
+		if (_si.hasNext())
+			return _si.next();
+		return null;
+	}
+	
+	public ListIterator<ProxyNode> getIterator (){
+		return _si;
+	}
+}

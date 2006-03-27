@@ -1,0 +1,22 @@
+package JUnit.swingui;
+
+import com.apple.eawt.ApplicationAdapter;
+import com.apple.eawt.ApplicationEvent;
+import com.apple.eawt.Application;
+import javax.swing.JFrame;
+
+public class MacOSHandler extends Application {
+
+    public MacOSHandler() {
+        addApplicationListener(new ApplicationAdapter() {
+        	
+        });
+    }
+
+    class AboutBoxHandler extends ApplicationAdapter {
+        public void handleAbout(ApplicationEvent event) {
+           new JFrame().setVisible(true);
+        	System.out.println("Handler called! No idea why ;)");
+        }
+    }
+}

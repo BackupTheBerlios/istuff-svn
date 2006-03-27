@@ -1,0 +1,73 @@
+import java.awt.MenuBar;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+@SuppressWarnings("serial")
+public class PLMenuBar extends MenuBar {
+	
+	private void createMenuBar() {
+		// Implement the dialogs and ActionListeners
+		
+		// Create a dialog to add proxies from an additional location.
+		// After a directory was chosen the List proxyDirectories is updated.
+		// TODO: Load and Save Directories
+
+		ActionListener callChooseDialog = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser chooseProxyDir = new JFileChooser();
+				chooseProxyDir
+						.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				chooseProxyDir.setAcceptAllFileFilterUsed(false);
+				chooseProxyDir.setFileFilter(new CustomFileFilter());
+				int returnVal = chooseProxyDir.showDialog(null,
+						"Search Directory");
+				// Search the selected directory
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
+					File searchDirectory = chooseProxyDir.getSelectedFile();
+					_proxyTree.addProxyDirectory(searchDirectory, "proxy-description.xml");
+					_dynamicProxyTree = constructProxyTree();// does not work anymore
+					_dynamicProxyTree.updateUI();
+					// Maybe leave out this functionality.
+					
+					//_treeModel.reload(); // Maybe possible when the data model was changed.
+					updateWindow(); // better: Update Tree Model
+				}
+			}
+		};
+		
+		// Create a menu bar
+		// TODO: Distinguish between Mac- and Windows-style menu positions
+		JMenuBar applicationMenuBar = new JMenuBar();
+		JMenu fileMenu = new JMenu("File");
+		JMenuItem newComposition = new JMenuItem ("New Composition");
+		JMenuItem loadComposition = new JMenuItem ("Open Existing Composition");
+		JMenuItem closeComposition = new JMenuItem ("Close Composition");
+		JMenuItem saveComposition = new JMenuItem ("Save Current Composition");
+		JMenuItem saveCompositionAs = new JMenuItem ("Save Current Composition As...");
+		JMenuItem preferences = new JMenuItem ("Preferences");
+		JMenuItem chooseDir = new JMenuItem("choose proxy directory");
+		
+		fileMenu.add(newComposition);
+		fileMenu.add(loadComposition);
+		fileMenu.addSeparator();
+		fileMenu.add(closeComposition);
+		fileMenu.addSeparator();
+		fileMenu.add(saveComposition);
+		fileMenu.add((saveCompositionAs));
+		fileMenu.addSeparator();
+		fileMenu.add(chooseDir);
+		fileMenu.addSeparator();
+		fileMenu.add(preferences);
+		fileMenu.add(chooseDir);
+		chooseDir.addActionListener(callChooseDialog);
+		applicationMenuBar.add(fileMenu);
+		setJMenuBar(applicationMenuBar);
+	}
+
+}

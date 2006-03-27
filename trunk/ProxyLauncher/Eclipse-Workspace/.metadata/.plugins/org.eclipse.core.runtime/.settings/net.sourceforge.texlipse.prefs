@@ -1,0 +1,17 @@
+#Fri Oct 28 17:30:26 CEST 2005
+viewerNames.TEMP=acroread (D\:\\Programme\\Office\\Acrobat 6.0\\Acrobat\\Acrobat.exe),yap (D\:\\Programme\\Programming\\Latex\\MikTex\\texmf\\miktex\\bin\\yap.exe),none (),xdvi (),itexmac (),kdvi (),gv ()
+viewerCurrent=acroread
+spellEnc=Cp1252
+acroread.forward=true
+buildBeforeView=true
+builderNum=2
+TeXTemplates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+builderConsole=true
+outputFormat=pdf
+BiBTeXTemplates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>
+eclipse.preferences.version=1
+viewerNames=acroread,yap,none,xdvi,itexmac,kdvi,gv
+spellCmd=D\:\\Programme\\Programming\\Aspell\\bin\\aspell.exe
+autoParsingDelay=500
+texDelay=100
+acroread.command=D\:\\Programme\\Office\\Acrobat 6.0\\Acrobat\\Acrobat.exe

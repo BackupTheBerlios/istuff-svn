@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportResourcesAction">
+		<item key="WizardListSelectionPage.STORE_SELECTED_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
+	</section>
+	<section name="ShowViewDialog">
+		<item key="ShowViewDialog.STORE_SELECTED_VIEW_ID" value="org.eclipse.ui.views.TaskList"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ant.ui.views"/>
+			<item value="org.eclipse.ui"/>
+			<item value="org.eclipse.ui.cheatsheets.cheatsheetCategory"/>
+			<item value="org.eclipse.team.ccvs.ui"/>
+			<item value="org.eclipse.debug.ui"/>
+			<item value="org.eclipse.help.ui"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java.browsing"/>
+			<item value="org.eclipse.pde.ui"/>
+			<item value="org.eclipse.pde.runtime"/>
+			<item value="org.eclipse.team.ui"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="org.eclipse.ui.internal.dialogs.FilteredComboTree">
+		<list key="search">
+			<item value="work"/>
+			<item value="code ass"/>
+			<item value="spell"/>
+		</list>
+	</section>
+	<section name="ExportResourcesAction">
+		<item key="WizardListSelectionPage.STORE_SELECTED_WIZARD_ID" value="org.eclipse.ant.ui.export"/>
+	</section>
+</section>

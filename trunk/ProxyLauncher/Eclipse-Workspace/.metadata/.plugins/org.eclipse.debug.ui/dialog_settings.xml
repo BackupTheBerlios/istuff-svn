@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.debug.ui.ENVIRONMENT_TAB.NATIVE_ENVIROMENT_DIALOG">
+		<item key="org.eclipse.debug.ui.DIALOG_HEIGHT" value="442"/>
+		<item key="org.eclipse.debug.ui.DIALOG_WIDTH" value="347"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_Y" value="165"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_X" value="582"/>
+	</section>
+	<section name="org.eclipse.debug.ui.STRING_VARIABLE_SELECTION_DIALOG_SECTION">
+		<item key="org.eclipse.debug.ui.DIALOG_HEIGHT" value="563"/>
+		<item key="org.eclipse.debug.ui.DIALOG_WIDTH" value="382"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_Y" value="84"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_X" value="564"/>
+	</section>
+	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATIONS_DIALOG_SECTION">
+		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1" value="234"/>
+		<item key="org.eclipse.debug.ui.DIALOG_HEIGHT" value="672"/>
+		<item key="org.eclipse.debug.ui.DIALOG_WIDTH" value="853"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_Y" value="123"/>
+		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2" value="765"/>
+		<item key="org.eclipse.debug.ui.DIALOG_ORIGIN_X" value="330"/>
+	</section>
+</section>

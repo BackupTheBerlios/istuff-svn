@@ -1,0 +1,26 @@
+#Wed Mar 22 12:13:15 CET 2006
+org.eclipse.jdt.core.codeComplete.fieldSuffixes=
+org.eclipse.jdt.core.codeComplete.localSuffixes=
+org.eclipse.jdt.core.compiler.compliance=1.5
+org.eclipse.jdt.core.codeComplete.localPrefixes=
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=/Applications/eclipse/plugins/org.junit_3.8.1
+org.eclipse.jdt.core.codeComplete.staticFieldPrefixes=
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=/Applications/eclipse
+org.eclipse.jdt.core.codeComplete.fieldPrefixes=
+org.eclipse.jdt.core.codeComplete.argumentSuffixes=
+org.eclipse.jdt.core.compiler.taskTags=TODO,FIXME,XXX
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.launch
+org.eclipse.jdt.core.compiler.taskCaseSensitive=enabled
+org.eclipse.jdt.core.codeComplete.argumentPrefixes=
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=
+org.eclipse.jdt.core.codeComplete.staticFieldSuffixes=
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Classes/classes.jar
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.5
+org.eclipse.jdt.core.compiler.source=1.5
+org.eclipse.jdt.core.compiler.taskPriorities=NORMAL,HIGH,NORMAL

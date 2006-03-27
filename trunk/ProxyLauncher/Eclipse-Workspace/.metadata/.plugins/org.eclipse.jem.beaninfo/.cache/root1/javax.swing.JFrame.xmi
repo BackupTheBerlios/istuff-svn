@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<change:ChangeDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:change="http://www.eclipse.org/emf/2003/Change" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.jem.internal.beaninfo.beaninfo="http:///org/eclipse/jem/internal/beaninfo/beaninfo.ecore" xmlns:org.eclipse.jem.internal.java="java.xmi">
+  <objectChanges key="org.eclipse.jem.internal.java:JavaClass java:/javax.swing#JFrame">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.0"/>
+    </value>
+    <value featureName="eStructuralFeatures">
+      <listChanges referenceValues="#//@objectsToAttach.3 #//@objectsToAttach.4 #//@objectsToAttach.5 #//@objectsToAttach.6 #//@objectsToAttach.7 #//@objectsToAttach.8"/>
+    </value>
+  </objectChanges>
+  <objectChanges key="ecore:EReference java:/javax.swing#JFrame/contentPane">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.1"/>
+    </value>
+    <value featureName="name" dataValue="contentPane"/>
+    <value featureName="transient" dataValue="false"/>
+    <value featureName="volatile" dataValue="false"/>
+    <value featureName="changeable" dataValue="true"/>
+    <value featureName="eType" referenceValue="org.eclipse.jem.internal.java:JavaClass java:/java.awt#Container"/>
+    <value featureName="lowerBound" dataValue="0"/>
+    <value featureName="upperBound" dataValue="1"/>
+  </objectChanges>
+  <objectChanges key="ecore:EReference java:/javax.swing#JFrame/JMenuBar">
+    <value featureName="eAnnotations">
+      <listChanges referenceValues="#//@objectsToAttach.2"/>
+    </value>
+    <value featureName="name" dataValue="JMenuBar"/>
+    <value featureName="transient" dataValue="false"/>
+    <value featureName="volatile" dataValue="false"/>
+    <value featureName="changeable" dataValue="true"/>
+    <value featureName="eType" referenceValue="org.eclipse.jem.internal.java:JavaClass java:/javax.swing#JMenuBar"/>
+    <value featureName="lowerBound" dataValue="0"/>
+    <value featureName="upperBound" dataValue="1"/>
+  </objectChanges>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:BeanDecorator" shortDescription="Top-level Application Window" implicitlySetBits="6773413839565225998" implicitDecoratorFlag="IMPLICIT_DECORATOR" mergeSuperMethods="false">
+    <attributes key="ICON_COLOR_32x32" value="&quot;icons/frame32.gif&quot;"/>
+    <attributes key="ICON_COLOR_16x16" value="&quot;icons/frame16.gif&quot;"/>
+    <notInheritedPropertyNames>layout</notInheritedPropertyNames>
+    <notInheritedPropertyNames>menuBar</notInheritedPropertyNames>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Client area of the frame" hidden="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR" readMethod="java:/javax.swing#JFrame.getContentPane(" writeMethod="java:/javax.swing#JFrame.setContentPane(java.awt.Container"/>
+  <objectsToAttach xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Menu bar for the frame" expert="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR" readMethod="java:/javax.swing#JFrame.getJMenuBar(" writeMethod="java:/javax.swing#JFrame.setJMenuBar(javax.swing.JMenuBar"/>
+  <objectsToAttach xsi:type="ecore:EReference" name="defaultCloseOperation" eType="org.eclipse.jem.internal.java:JavaDataType java:/#int" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Do nothing, hide or dispose on close" preferred="true" implicitlySetBits="6773413839565226044" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing#JFrame.getDefaultCloseOperation(" writeMethod="java:/javax.swing#JFrame.setDefaultCloseOperation(int">
+      <attributes key="enumerationValues" value="[12]{&quot;DO_NOTHING&quot;,0,&quot;javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE&quot;,&quot;HIDE&quot;,1,&quot;javax.swing.WindowConstants.HIDE_ON_CLOSE&quot;,&quot;DISPOSE&quot;,2,&quot;javax.swing.WindowConstants.DISPOSE_ON_CLOSE&quot;,&quot;EXIT&quot;,3,&quot;javax.swing.JFrame.EXIT_ON_CLOSE&quot;}"/>
+    </eAnnotations>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="glassPane" eType="org.eclipse.jem.internal.java:JavaClass java:/java.awt#Component" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Transparent pane for menu rendering" hidden="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing#JFrame.getGlassPane(" writeMethod="java:/javax.swing#JFrame.setGlassPane(java.awt.Component"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="layeredPane" eType="org.eclipse.jem.internal.java:JavaClass java:/javax.swing#JLayeredPane" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="LayeredPane component for the frame" hidden="true" implicitlySetBits="6629298651489370172" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing#JFrame.getLayeredPane(" writeMethod="java:/javax.swing#JFrame.setLayeredPane(javax.swing.JLayeredPane"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="layout" eType="org.eclipse.jem.internal.java:JavaClass java:/java.awt#LayoutManager" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="Layout manager" implicitlySetBits="6629298651489370236" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" designTime="false" readMethod="java:/java.awt#Container.getLayout(" writeMethod="java:/javax.swing#JFrame.setLayout(java.awt.LayoutManager"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="menuBar" eType="org.eclipse.jem.internal.java:JavaClass java:/java.awt#MenuBar" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" hidden="true" implicitlySetBits="2017612633061982268" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/java.awt#Frame.getMenuBar(" writeMethod="java:/java.awt#Frame.setMenuBar(java.awt.MenuBar"/>
+  </objectsToAttach>
+  <objectsToAttach xsi:type="ecore:EReference" name="rootPane" eType="org.eclipse.jem.internal.java:JavaClass java:/javax.swing#JRootPane" changeable="false" unsettable="true">
+    <eAnnotations xsi:type="org.eclipse.jem.internal.beaninfo.beaninfo:PropertyDecorator" shortDescription="RootPane component for the frame" hidden="true" implicitlySetBits="6629298651489370164" implicitDecoratorFlag="IMPLICIT_DECORATOR_AND_FEATURE" readMethod="java:/javax.swing#JFrame.getRootPane("/>
+  </objectsToAttach>
+</change:ChangeDescription>

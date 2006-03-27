@@ -1,0 +1,61 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class ProxyThread extends Thread implements Runnable{
+
+	private String _className;
+	private File _env;
+	private Process _process;
+	private String _eventHeap;
+	private JTextArea _bufferText;
+	private File pathToIROS;
+	
+	public ProxyThread (String className, File env, String eventHeap){
+		_className = className;
+		_env = env;
+		_eventHeap = eventHeap;		
+		_bufferText = new JTextArea();
+		pathToIROS = new File ("D:/Diplomarbeit/Programming/Lib/iROS.jar");
+	}
+	
+	public void run() {
+		String line;
+		//JFrame bufferOutput = new JFrame(_className + " Output");
+		//JTextArea bufferText = new JTextArea();
+		//bufferOutput.setVisible(true);
+		//bufferOutput.add(_bufferText);
+		
+		//bufferOutput.setSize(100,100);
+	try {
+
+		//String cmd = "java -classpath ../../Lib/iROS.jar;. ".concat(_className).concat(_eventHeap);; 	
+		String cmd = "java -classpath "+ pathToIROS + ";." + _className + " " + _eventHeap;
+		System.out.println(cmd);	
+		_process = Runtime.getRuntime().exec(cmd, null, _env);
+			BufferedReader input = 
+			       new BufferedReader
+			         (new InputStreamReader(_process.getInputStream()));
+			     while ((line = input.readLine()) != null) {
+			    	 _bufferText.append(line + " \n");
+			       //_bufferOutput.pack();
+			    	 System.out.println(line);
+			       }
+		} catch (IOException e) {
+		}
+	}
+
+	public void kill() {
+		_process.destroy();
+	}
+	
+	public void setTextArea (JTextArea textArea){
+		_bufferText = textArea;
+		_bufferText.setText("");
+	}
+}
