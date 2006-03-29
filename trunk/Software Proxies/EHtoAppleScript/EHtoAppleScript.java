@@ -35,8 +35,14 @@ public class EHtoAppleScript
 			e.addField("script", FieldType.STRING, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
 			e.addField("Target", hostname);
 			
-			Event [] events = new Event[1];
+			Event [] events = new Event[3];
 			events[0] = e;
+			events[1] = new Event("AppleScript");
+			events[1].addField("script", FieldType.STRING, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
+			events[1].addField("Target", "all");
+			events[2] = new Event("AppleScript");
+			events[2].addField("script", FieldType.STRING, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
+			events[2].addField("Target", "*");
 			eheap.registerForEvents(events, new EHListener());
 			
 			while(true){
@@ -104,6 +110,7 @@ public class EHtoAppleScript
 			//System.out.println(this.getClass()+":"  + output.toString());
 			outEvent.addField("comment","return value of script execution");
 			outEvent.addField("content",output.toString());
+			outEvent.addField("TimeToLive",new Integer(2000));
 			eheap.putEvent(outEvent);
 			
 			/* +++++++++++++++++++++++++		

@@ -1,6 +1,1 @@
-say "forward"
-tell application "Microsoft PowerPoint"
-	activate
-	tell application "System Events" to keystroke "2"
-	tell application "System Events" to keystroke return
-end tell
+say"hello,how,are,you"
