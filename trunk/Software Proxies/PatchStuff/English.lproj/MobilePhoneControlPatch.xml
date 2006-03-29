@@ -63,7 +63,7 @@
 		<key>inputProfileNumber</key>
 		<dict>
 			<key>description</key>
-			<string>Pass the number of  a mobile phone's profile to this input.</string>
+			<string>Pass the number of a mobile phone's profile to this input.</string>
 			<key>name</key>
 			<string>Profile #</string>
 		</dict>
@@ -86,7 +86,14 @@
 			<key>description</key>
 			<string>If true an event with the command to stop to play a sound</string>
 			<key>name</key>
-			<string>Stop Playing  Sound</string>
+			<string>Stop Playing Sound</string>
+		</dict>
+		<key>inputCaptureKeys</key>
+		<dict>
+			<key>description</key>
+			<string>If true, all key presses from the user will be captured by iStuff mobile.  You need to route the key presses from the MobilePhoneKeyListener back to the Mobile Phone if you want the foreground mobile phone application to receive them</string>
+			<key>name</key>
+			<string>Capture Key Presses</string>
 		</dict>
 	</dict>
 	<key>nodeAttributes</key>
