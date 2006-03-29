@@ -25,6 +25,7 @@
 		QCNumberPort *inputRepeatPort;
 		QCNumberPort *inputScanCodePort;
 		QCNumberPort *inputProfileNumber;
+		QCBooleanPort *inputCaptureKeys;
 
 // NOTE: Shouldn't the values for Repat and ScanCode also be handled 
 // inside the corresponding MPProxy? The proxy should care about these values.
@@ -39,6 +40,7 @@
 		bool lastInputPlaySound;
 		bool lastInputLaunchApp;
 		bool lastInputCloseApp;
+		bool lastInputCaptureKeys;
 		
 		int lastInputProfileNumber;
 		BOOL processEvent;

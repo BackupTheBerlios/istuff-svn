@@ -1,5 +1,5 @@
 //
-//  MobilePhoneControllerPatch.mm
+//  MobilePhoneControlPatch.mm
 //  QCiStuff
 //
 //  Created by RenŽ Reiners in winter 2005/2006
@@ -24,6 +24,7 @@
 	lastInputLaunchApp = false;
 	lastInputPlaySound = false;
 	lastInputStopSound = false;
+	lastInputCaptureKeys = false;
 
 	return [super initWithIdentifier:fp8];
 }
@@ -186,6 +187,27 @@
 		delete eventPtr;
 	}
 	
+	if ([inputCaptureKeys booleanValue]  == TRUE && [inputCaptureKeys booleanValue] != lastInputCaptureKeys) 
+	{
+		NSLog(@"Start Key Capture");
+		eventPtr = new eh2_EventPtr;
+		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
+		(*eventPtr)->setPostValueInt("Command", 10);
+		// the "event package" is ready -> post it to the Event Heap
+		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}else if ([inputCaptureKeys booleanValue]  == FALSE && [inputCaptureKeys booleanValue] != lastInputCaptureKeys) 
+	{
+		NSLog(@"Stop Key Capture");
+		eventPtr = new eh2_EventPtr;
+		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
+		(*eventPtr)->setPostValueInt("Command", 11);
+		// the "event package" is ready -> post it to the Event Heap
+		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
+		(*eh)->putEvent (*eventPtr);
+		delete eventPtr;
+	}
 	
 			
 	lastInputDisconnect = [inputDisconnect booleanValue];
@@ -196,6 +218,7 @@
 	lastInputPlaySound = [inputPlaySound booleanValue];
 	lastInputStopSound = [inputStopSound booleanValue];
 	lastInputProfileNumber = (int) [inputProfileNumber doubleValue];
+	lastInputCaptureKeys = [inputCaptureKeys booleanValue];
 
 	
 	return [super execute:fp8 time:fp12 arguments:fp20];
