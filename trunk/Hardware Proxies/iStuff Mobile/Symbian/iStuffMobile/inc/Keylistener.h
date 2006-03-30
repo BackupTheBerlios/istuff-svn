@@ -61,6 +61,8 @@ class CKeyListener : public CActive
 		RWsSession		ws;
 		RWindowGroup*	wg;
 		RFileLogger*	iLog;
+		TInt32 keyHandles[21];
+		TInt32 keyUADHandles[21];
 };
 
 #endif

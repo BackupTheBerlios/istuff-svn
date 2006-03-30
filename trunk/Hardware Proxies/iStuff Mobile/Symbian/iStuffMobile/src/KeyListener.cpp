@@ -63,6 +63,13 @@ void CKeyListener::ConstructL(CCodeListener* aCodeListener,RFileLogger* aLog)
 void CKeyListener::DoCancel()
 {
 	// clean up
+
+	for(TInt8 i=0;i<21;i++)
+	{
+		wg->CancelCaptureKey(keyHandles[i]);
+		wg->CancelCaptureKeyUpAndDowns(keyUADHandles[i]);
+	}
+
 	ws.EventReadyCancel();
 	wg->Close();
 }
@@ -123,38 +130,39 @@ void CKeyListener::StopL()
 
 void CKeyListener::InterceptKeys()
 {
+	TInt8 index = 0;
 	// capture a key
 
-	for(TInt i=48;i<=57;i++)					//looping over keypad keys from 0-9
+	for(TInt i=48;i<=57;i++,index++)					//looping over keypad keys from 0-9
 	{
-		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
-		User::LeaveIfError(wg->CaptureKeyUpAndDowns(i, 0, 0));
+		User::LeaveIfError(keyHandles[index] = wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(keyUADHandles[index] = wg->CaptureKeyUpAndDowns(i, 0, 0));
 	}
 	
-	for(TInt i=63495,j=0; i<=63498; i++,j++)	//looping over joypad keys left,right,up and down
+	for(TInt i=63495,j=0; i<=63498; i++,j++,index++)	//looping over joypad keys left,right,up and down
 	{
-		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
-		User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyLeftArrow + j, 0, 0));
+		User::LeaveIfError(keyHandles[index] = wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(keyUADHandles[index] = wg->CaptureKeyUpAndDowns(EStdKeyLeftArrow + j, 0, 0));
 	}
 
-	for(TInt i=63586,j=0 ;i<=63587; i++,j++)	//Yes and No keys i.e. green and red
+	for(TInt i=63586,j=0 ;i<=63587; i++,j++,index++)	//Yes and No keys i.e. green and red
 	{
-		User::LeaveIfError(wg->CaptureKey(i, 0, 0));
-		User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyYes+j, 0, 0));
+		User::LeaveIfError(keyHandles[index] = wg->CaptureKey(i, 0, 0));
+		User::LeaveIfError(keyUADHandles[index] = wg->CaptureKeyUpAndDowns(EStdKeyYes+j, 0, 0));
 	}
 
-	User::LeaveIfError(wg->CaptureKey(EKeyBackspace, 0, 0));			//the backspace key i.e. c
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyBackspace, 0, 0));
+	User::LeaveIfError(keyHandles[index] = wg->CaptureKey(EKeyBackspace, 0, 0));			//the backspace key i.e. c
+	User::LeaveIfError(keyUADHandles[index++] = wg->CaptureKeyUpAndDowns(EStdKeyBackspace, 0, 0));
 	
-	User::LeaveIfError(wg->CaptureKey(35, 0, 0));						//hase key
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyHash, 0, 0));
+	User::LeaveIfError(keyHandles[index] = wg->CaptureKey(35, 0, 0));						//hase key
+	User::LeaveIfError(keyUADHandles[index++] = wg->CaptureKeyUpAndDowns(EStdKeyHash, 0, 0));
 
-	User::LeaveIfError(wg->CaptureKey(EKeyDevice3, 0, 0));				//joystick enter key
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyDevice3, 0, 0));
+	User::LeaveIfError(keyHandles[index] = wg->CaptureKey(EKeyDevice3, 0, 0));				//joystick enter key
+	User::LeaveIfError(keyUADHandles[index++] = wg->CaptureKeyUpAndDowns(EStdKeyDevice3, 0, 0));
 
-	User::LeaveIfError(wg->CaptureKey(EKeyLeftShift, 0, 0));			//the pencil key
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyLeftShift, 0, 0));
+	User::LeaveIfError(keyHandles[index] = wg->CaptureKey(EKeyLeftShift, 0, 0));			//the pencil key
+	User::LeaveIfError(keyUADHandles[index++] = wg->CaptureKeyUpAndDowns(EStdKeyLeftShift, 0, 0));
 
-	User::LeaveIfError(wg->CaptureKey(EKeyApplication0, 0, 0));			//menu key
-	User::LeaveIfError(wg->CaptureKeyUpAndDowns(EStdKeyApplication0, 0, 0));
+	User::LeaveIfError(keyHandles[index] = wg->CaptureKey(EKeyApplication0, 0, 0));			//menu key
+	User::LeaveIfError(keyUADHandles[index++] = wg->CaptureKeyUpAndDowns(EStdKeyApplication0, 0, 0));
 }

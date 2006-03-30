@@ -17,8 +17,8 @@
 ;
 ; Four files to install
 ;
-"C:\dev\Symbian\7.0s\Series60_v20\Epoc32\release\thumb\urel\iStuffMobile.app"		  -"!:\system\apps\iStuffMobile\iStuffMobile.app"
-"C:\dev\Symbian\7.0s\Series60_v20\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile.rsc"         -"!:\system\apps\iStuffMobile\iStuffMobile.rsc"
-"C:\dev\Symbian\7.0s\Series60_v20\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile_caption.rsc" -"!:\system\apps\iStuffMobile\iStuffMobile_caption.rsc"
-"C:\dev\Symbian\7.0s\Series60_v20\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile.aif"         -"!:\system\apps\iStuffMobile\iStuffMobile.aif"
-"C:\dev\Symbian\7.0s\Series60_v20\Epoc32\data\z\system\apps\iStuffMobile\nokia.mbm"         -"!:\system\apps\iStuffMobile\nokia.mbm"
+"C:\dev\Symbian\7.0s\Series60_v21\Epoc32\release\thumb\urel\iStuffMobile.app"		  -"!:\system\apps\iStuffMobile\iStuffMobile.app"
+"C:\dev\Symbian\7.0s\Series60_v21\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile.rsc"         -"!:\system\apps\iStuffMobile\iStuffMobile.rsc"
+"C:\dev\Symbian\7.0s\Series60_v21\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile_caption.rsc" -"!:\system\apps\iStuffMobile\iStuffMobile_caption.rsc"
+"C:\dev\Symbian\7.0s\Series60_v21\Epoc32\data\z\system\apps\iStuffMobile\iStuffMobile.aif"         -"!:\system\apps\iStuffMobile\iStuffMobile.aif"
+"C:\dev\Symbian\7.0s\Series60_v21\Epoc32\data\z\system\apps\iStuffMobile\nokia.mbm"         -"!:\system\apps\iStuffMobile\nokia.mbm"
