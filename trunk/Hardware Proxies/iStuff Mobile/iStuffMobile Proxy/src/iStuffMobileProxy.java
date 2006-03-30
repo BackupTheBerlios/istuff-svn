@@ -23,7 +23,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * Authors:	  Faraz Ahmed Memon
- *			  		Tico Ballagas
+ *			  Tico Ballagas
  *
  * Version:	  1.0
  */
@@ -50,7 +50,7 @@ public class iStuffMobileProxy implements EventCallback
 
 		private final boolean DEBUG = true;
 		private EventHeap eventHeap;
-		private Event template;
+		private Event[] template;
 		private String _proxyID;
 
 		private String comPort;
@@ -66,11 +66,13 @@ public class iStuffMobileProxy implements EventCallback
 			try
 			{
 				eventHeap = new EventHeap(ip);
-				template = new Event("iStuffMobile");
-				template.addField("Command", Integer.class, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
+				template = new Event[1];
+				template[0] = new Event("iStuffMobile");
+				template[0].addField("Command", Integer.class, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
 				_proxyID = proxyID;
 				this.comPort = cmprt;
 				initSerial();
+				eventHeap.registerForEvents(template,this);
 			}
 			catch (Exception ex)
 			{
@@ -105,7 +107,7 @@ public class iStuffMobileProxy implements EventCallback
 					System.out.println("Waiting for event");
 					int command = ((Integer)retEvents[i].getPostValue("Command")).intValue();
 					String proxyID = retEvents[i].getPostValueString("ProxyID");
-					if (proxyID.equals(_proxyID)) {
+					if ( (proxyID.equals(_proxyID)) || (_proxyID.equals("")) ) {
 						
 						System.out.println("Received command = " + command);
 
@@ -139,7 +141,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			catch(Exception ex)
 			{
-					System.out.println(ex.toString());
+					//System.out.println(ex.toString());
 			}
 
 			return true;
@@ -152,7 +154,7 @@ public class iStuffMobileProxy implements EventCallback
 			{
 				throw new NullPointerException("no com port identifier");
 			}
-		  serPort = (SerialPort)portId.open("MPToolkit", 5000);
+		  serPort = (SerialPort)portId.open("iStuffMobile", 5000);
 		  outStream = serPort.getOutputStream();
 		  inStream = serPort.getInputStream();
 		}
