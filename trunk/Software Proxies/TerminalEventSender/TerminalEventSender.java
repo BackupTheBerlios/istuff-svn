@@ -51,6 +51,7 @@ public class TerminalEventSender{
 			else{
 				parts = iStringToParse.split(":");
 			}
+					
 			String iFieldName = parts[0].trim();
 			if (iFieldName.startsWith("\"")){  //Strip off quotes
 				iFieldName = iFieldName.substring(1,iFieldName.length()); 
@@ -61,7 +62,6 @@ public class TerminalEventSender{
 				iValString= parts[1].trim();
 			}
 
-					
 			mFieldName = iFieldName;
 			try{
 				int intValue = Integer.parseInt(iValString.trim());
