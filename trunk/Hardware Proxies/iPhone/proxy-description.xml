@@ -3,7 +3,7 @@
 <proxy>
   <kind>Hardware Proxies</kind>
   <proxyClass>PhoneControllers</proxyClass>
-  <name>SymbianController</name> 
+  <name>SweepController</name> 
   <ClassName>iPhone</ClassName>
   <comment>user comment</comment>
   <CustomLibs>

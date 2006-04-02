@@ -3,7 +3,7 @@
 <proxy>
   <kind>Software Proxies</kind>
   <proxyClass>Controller</proxyClass>
-  <name>Presentation Controller</name> 
+  <name>PresentationController</name> 
   <ClassName>SlideController</ClassName>
   <comment>blablabla</comment>
   <CustomLibs>

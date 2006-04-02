@@ -16,6 +16,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {
+	proxyName = [NSMutableString stringWithString:@"RFID_Tag_Reader_"];
 	[outputTag setStringValue:nil];
 	return [super initWithIdentifier:fp8];
 }

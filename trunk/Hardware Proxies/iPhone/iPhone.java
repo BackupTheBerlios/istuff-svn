@@ -52,6 +52,7 @@ public class iPhone implements SymbianInputListener, Runnable{
 		/* post an event to the EventHeap */
 		try{
 			Event e = new Event("iPhone");
+			e.addField("ProxyID", _proxyID);
 			e.addField("type","rotation");
 			e.addField("angle", new Double(rotZ));	
 			eh.putEvent(e);
@@ -67,6 +68,7 @@ public class iPhone implements SymbianInputListener, Runnable{
 		/* post an event to the EventHeap */
 		try{
 			Event e = new Event("iPhone");
+			e.addField("ProxyID", _proxyID);
 			e.addField("type","click");
 			if(isPressed)
 				e.addField("state","pressed");
@@ -85,6 +87,7 @@ public class iPhone implements SymbianInputListener, Runnable{
 		/* post an event to the EventHeap */
 		try{
 			Event e = new Event("iPhone");
+			e.addField("ProxyID", _proxyID);
 			e.addField("type", "code");
 			e.addField("code", code);
 			e.addField("targetX", new Integer(targetX));

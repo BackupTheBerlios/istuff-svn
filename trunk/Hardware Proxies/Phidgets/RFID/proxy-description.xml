@@ -3,7 +3,7 @@
 <proxy>
   <kind>Hardware Proxies</kind>
   <proxyClass>Phidgets</proxyClass>
-  <name>RF Tag Reader</name> 
+  <name>RFID_Tag_Reader</name> 
   <ClassName>RFIDproxy</ClassName>
   <comment>user comment</comment>
   <CustomLibs>

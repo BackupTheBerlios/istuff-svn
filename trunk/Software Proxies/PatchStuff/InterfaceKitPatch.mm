@@ -12,6 +12,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
+	proxyName = [NSMutableString stringWithString:@"InterfaceKit_"];
 	return [super initWithIdentifier:fp8];
 }
 	

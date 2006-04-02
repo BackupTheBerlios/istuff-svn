@@ -25,6 +25,10 @@
 @class iStuffPatchUI;
 @interface iStuffPatch : QCPatch
 {
+// The standard port for the ProxyID
+	NSMutableString *proxyName;
+	QCStringPort *inputProxyID;
+
 // Event Heap Connection Management - Components of each iStuff patch
 	NSString *eventHeapName;
 	NSString *eventHeapAddress;
@@ -35,6 +39,7 @@
 	BOOL tryToConnect;
 	BOOL connectedToEventHeap;
 	BOOL advancedOptionsHidden;
+	BOOL listenToEverything;
 	BOOL standby;
 	int radioButtonIndex;
 	//list of Event Heaps
@@ -54,20 +59,24 @@
 - (id) setup:(id)fp8;
 - (BOOL) execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
 
-// Methods that give internal information
+// Methods that provide internal information
+- (void)nodeDidAddToGraph:(id)fpz8;
 - (NSMutableArray *) foundEventHeaps;
 - (NSString *) ehName;
 - (BOOL) connected;
+- (BOOL) standby;
 - (BOOL) advancedOptionsHidden;
 - (BOOL) suspended;
 - (int) radioButtonIndex;
+- (int) listenToEverything;
 
 
 // Methods for the Event Heap connection management
 - (void) netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) sendEHSListUpdate;
-- (void) connectToEventHeap:(NSString *) server;
+- (void) connectToEventHeap;
+- (void) disconnectFromCurrentEventHeap;
 - (void) startReceivingEvents;
 - (void) stopReceivingEvents;
 
@@ -81,6 +90,9 @@
 - (void) setEventHeapName:(NSString *)newEventHeapName;
 - (void) setAdvancedOptionsHidden:(BOOL) flag;
 - (void) setRadioButtonIndex:(int)index;
+- (void) setListenToEverything:(int)state;
+- (void) setProxyName:(NSString *)name;
+- (NSString* ) proxyName;
 
 
 @end

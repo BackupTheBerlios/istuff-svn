@@ -7,11 +7,14 @@
 //
 
 #import "MobilePhoneKeyListenerPatch.h"
+#include <eh2.h> // include eh2 package
+#include <idk_io.h> // include idk_io package
 
 @implementation MobilePhoneKeyListenerPatch
 
 - (id)initWithIdentifier:(id)fp8
 {	
+	proxyName = [NSMutableString stringWithString:@"MobilePhoneController_"];
 	setOutputPort = false;
 	[outputKeyStroke setDoubleValue:-1];
 	
@@ -37,6 +40,9 @@
 	localPool = [[NSAutoreleasePool alloc] init];	
 	const char* eventType = "iStuffMobile";
 	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
+	templatePtr->allocateField("Activity", eh2_FieldType::cs_string());
+	//FVT_FORMAL means wildcard value, as long as the Activity field exists, the template is matched
+	templatePtr->setTemplateValueType("Activity", eh2_Consts::FVT_FORMAL);
 	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
 
 	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
@@ -47,14 +53,14 @@
 	while (waitForEvents) {
 		eh2_EventPtr resultEventPtr;
 		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
-
+		
 		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
 		{
 			// set the flag so that in the 'execute'-method the output port is set to the new value
 			// after setting it, the flag is set to false again.
 			// This allows posting one value per execution cycle
+			// This line causes others to crash
 			const char* activity = resultEventPtr->getPostValueString("Activity");
-			NSLog(@"The String was read and is checked now: %s", activity);
 			if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
 				[outputKeyPressed setBooleanValue:true];
 			}
@@ -71,6 +77,7 @@
 				NSLog(@"In keyUp");
 				[outputKeyPressed setBooleanValue:false];
 			}
+	
 		}
 	}
 	

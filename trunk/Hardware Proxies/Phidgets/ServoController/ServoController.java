@@ -24,12 +24,13 @@ public class ServoController{
 		try{
 			EventHeap eheap = new EventHeap(eventHeapName);			
 			Event template = new Event("ServoController");
-			template.addField("ProxyID", proxyID);
 			Event received;
 			while( true ){
 				received = eheap.waitForEvent(template);
+					System.out.println("The proxyID is:"+proxyID+"TEST");
 				if  ( (received.getPostValue("ProxyID").equals(proxyID))
 						|| (proxyID.equals(""))) {
+					
 					// Please don't get afraid! :)
 					// As SetMotorPosition expects a double number and getPostValueString
 					// returns strings a conversion is needed.
@@ -72,7 +73,7 @@ public class ServoController{
 	public static void main(String args[]){
 		if(args.length == 1)
 			new ServoController(args[0],"");
-		else if (args.length > 2)
+		else if (args.length >= 2)
 			new ServoController(args[0], args[1]);
 		 else 
 			System.out.println("Usage: ServoController <Event Heap Name> [ProxyID]");

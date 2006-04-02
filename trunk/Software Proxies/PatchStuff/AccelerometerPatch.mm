@@ -12,23 +12,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {	
-
-/*ProcessSerialNumber PSN;
-pid_t PID;
-
-GetCurrentProcess( &PSN );
-GetProcessPID( &PSN, &PID );
-
-printf( "MAIN-process-id = %d\n", PID );
-*/
-/*	pid_t PID;
-	ProcessSerialNumber psn = 2;
-	GetProcessPID(&psn,&PID);
-	//GetProcessForPID(kCurrentProcess,&psn);
-*/
-//	printf( "Process-ID = %d\n", (int) PID );
-
-//	NSLog(@"PIT GEFUNDEN: ID ------------- %i",pid);
+	proxyName = [NSMutableString stringWithString:@"Accelerometer_"];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -43,14 +27,6 @@ printf( "MAIN-process-id = %d\n", PID );
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
 
-/*ProcessSerialNumber PSN;
-pid_t PID;
-
-GetCurrentProcess( &PSN );
-GetProcessPID( &PSN, &PID );
-
-printf( "Child-process-id = %d\n", PID );
-*/
 	// define the type of events you want to receive
 	const char* eventType = "PhidgetAccelerometer";
 	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);

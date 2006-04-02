@@ -7,16 +7,35 @@
 //
 
 #import "ServoControllerPatch.h"
+//#import "GFList.h"
+//#import "GFNode.h"
 
 @implementation ServoControllerPatch
-	
+
 - (id)initWithIdentifier:(id)fp8
 {
+	// Set the ProxyName the name of the patch
+	proxyName = [NSMutableString stringWithString:@"ServoController_"];
 	return [super initWithIdentifier:fp8];
 }
 	
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {
+	//	NSLog(@"VALUE: %@",[_inputPorts objectAtIndex:1]);
+	/*	//[_inputPorts removeObjectAtIndex:3];
+		NSLog (@"Maybe keys: %@", [_inputPorts objectForKey:@"inputProxyID"]);
+			NSLog (@"Maybe keys: %@", [_inputPorts objectForKey:@"inputProxyID"]);
+		// So the key parameter is an NSString
+		// The first parameter in the add method is a QCPort.
+		// The question is how to pass it...
+	// getting closer. Does not work properly yet
+	QCStringPort *testport;// = [QCStringPort init]; // it still has to be instantiated
+		[_inputPorts addObject:[testport init] forKey:[_inputPorts keyAtIndex:1]];
+*/
+
+	//QCPort *test;
+	//[test initWithNode:[self patch] arguments:nil];
+	//NSLog (@"The key is: %@",[inputProxyID key]);
 	if ([self connected]) {
 		// Only if one of the input ports changed, a new event has to be posted
 		// and the other operations have to be performed
@@ -60,6 +79,7 @@
 			
 			// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 50);
+				(*eventPtr)->setPostValueString("ProxyID",[[inputProxyID stringValue]cString]);
 				(*eh)->putEvent (*eventPtr);
 				delete eventPtr;
 

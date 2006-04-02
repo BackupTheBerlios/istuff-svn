@@ -14,6 +14,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {	
+	proxyName = [NSMutableString stringWithString:@"SmartItsSensorBoard_"];
 	return [super initWithIdentifier:fp8];
 }
 	

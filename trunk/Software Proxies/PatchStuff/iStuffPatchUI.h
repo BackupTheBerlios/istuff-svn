@@ -19,7 +19,11 @@
 	IBOutlet NSTableView *listOfEventHeaps;
 	IBOutlet NSMatrix *allOrOneRadioGroup;
 	IBOutlet NSButton *performConnection;
+	IBOutlet NSButton *listenToEverything;
+	IBOutlet NSTextField *proxyIDTextField;
+	
 	NSMutableArray *arrayOfEventHeaps; // serves as the data source for the NSTableView.
+	BOOL allowRowEdit;
 
 }
 // ********* QCInspector standard methods that are extended *********
@@ -37,6 +41,11 @@
 
 // ********* Interface Builder Actions **************
 - (IBAction)connectToEventHeap:(id)sender;
+- (IBAction)disconnectFromEventHeap:(id)sender;
 - (IBAction)showAdvancedOptions:(id)sender;
+- (IBAction)enableListenToEverything:(id)sender;
+- (IBAction)addEventHeap:(id)sender;
+- (IBAction)removeEventHeap:(id)sender;
+- (IBAction)changeProxyName:(id)sender;
 
 @end

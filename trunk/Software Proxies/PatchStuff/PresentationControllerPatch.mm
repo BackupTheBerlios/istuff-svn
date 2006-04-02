@@ -13,6 +13,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
+	proxyName = [NSMutableString stringWithString:@"PresentationController_"];
 	return [super initWithIdentifier:fp8];
 }
 	

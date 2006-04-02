@@ -14,10 +14,10 @@
 	
 - (id) initWithIdentifier:(id)fp8
 {
+	proxyName = [NSMutableString stringWithString:@"TextEventGenerator_"];
 	setOutputPort = false;
 	[outputKeyStroke setDoubleValue:-1];
 	[outputPermanentASCIICode setDoubleValue:-1];
-	
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -69,7 +69,7 @@
 				int keyCode;
 				keyCode = resultEventPtr->getPostValueInt("Character");
 				[outputKeyStroke setDoubleValue:(double) keyCode];
-				[outputPermanentASCIICode setDoubleValue:keyCode];
+				[outputPermanentASCIICode setDoubleValue:keyCode];				
 			}
 		}
 			

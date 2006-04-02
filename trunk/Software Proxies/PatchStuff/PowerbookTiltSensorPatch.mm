@@ -13,6 +13,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {
+	proxyName = [NSMutableString stringWithString:@"PowerbookTiltSensor"];
 	return [super initWithIdentifier:fp8];
 }
 	

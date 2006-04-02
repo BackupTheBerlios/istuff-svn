@@ -21,7 +21,15 @@
             SUPERCLASS = QCPatch; 
         }, 
         {
-            ACTIONS = {connectToEventHeap = id; showAdvancedOptions = id; }; 
+            ACTIONS = {
+                addEventHeap = id; 
+                changeProxyName = id; 
+                connectToEventHeap = id; 
+                disconnectFromEventHeap = id; 
+                enableListenToEverything = id; 
+                removeEventHeap = id; 
+                showAdvancedOptions = id; 
+            }; 
             CLASS = iStuffPatchUI; 
             LANGUAGE = ObjC; 
             OUTLETS = {
@@ -31,7 +39,9 @@
                 animationConnected = NSProgressIndicator; 
                 displayEventHeap = NSTextField; 
                 listOfEventHeaps = NSTableView; 
+                listenToEverything = NSButton; 
                 performConnection = NSButton; 
+                proxyIDTextField = NSTextField; 
             }; 
             SUPERCLASS = QCInspector; 
         }

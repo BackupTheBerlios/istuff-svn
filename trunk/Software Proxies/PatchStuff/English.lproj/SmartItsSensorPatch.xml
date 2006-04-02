@@ -13,6 +13,16 @@
 		<key>name</key>
 		<string>SmartItsSensor</string>
 	</dict>
+        <key>inputAttributes</key>
+	<dict>
+	  	<key>inputProxyID</key>
+		<dict>
+			<key>description</key>
+			<string>With the proxyID, the different entities can be distinguished. Change the settings via the Inspector</string>
+			<key>name</key>
+			<string>ProxyID</string>
+		</dict>
+	</dict>
 	<key>outputAttributes</key>
 	<dict>
 		<key>outputSAU</key>

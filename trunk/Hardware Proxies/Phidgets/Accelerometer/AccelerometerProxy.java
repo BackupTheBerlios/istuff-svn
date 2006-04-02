@@ -40,7 +40,7 @@ public class AccelerometerProxy extends _IPhidgetAccelerometerEventsAdapter
 	public static void main(String[] args) {
 		if(args.length == 1)
 			new AccelerometerProxy(args[0],"");
-		else if (args.length > 1)
+		else if (args.length >= 2)
 			new AccelerometerProxy(args[0], args[1]);
 		 else 
 			System.out.println("usage:  AccelerometerProxy <Event Heap Name> [ProxyID]");
