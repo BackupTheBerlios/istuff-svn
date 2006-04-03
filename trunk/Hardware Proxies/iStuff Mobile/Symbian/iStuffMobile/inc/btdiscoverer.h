@@ -1,161 +1,78 @@
-/* Copyright (c) 2002, Nokia. All rights reserved */
+/*
+ * Copyright (c) 2006
+ * Media informatics Department
+ * RWTH Aachen Germany
+ * http://media.informatik.rwth-aachen.de
+ *
+ * Redistribution and use of the source code and binary, with or without
+ * modification, are permitted under OPI Artistic License 
+ * (http://www.opensource.org/licenses/artistic-license.php) provided that 
+ * the source code retains the above copyright notice and the following 
+ * disclaimer.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Authors:	  Faraz Ahmed Memon
+ *			  Tico Ballagas
+ *
+ * Version:	  1.0
+ */
 
-#ifndef __CBTDISCOVERER_H__
-#define __CBTDISCOVERER_H__
+#ifndef BT_DISCOVERER_H
+#define BT_DISCOVERER_H
 
+#include <btsdp.h>
 #include <coecntrl.h>
 #include <btmanclient.h>
 #include <btextnotifiers.h>
 #include <aknlists.h>
-#include <btsdp.h>
-#include <aknglobalprogressdialog.h> 
+#include <aknglobalprogressdialog.h>
+#include <flogger.h>
 
-#include "Reporter.h"
-
-/*! 
-  @class CBTDiscoverer
-  
-  @discussion Finds a BT Device and displays its services.
-  */
 
 class CBTDiscoverer : public CBase, public MSdpAgentNotifier
     {
-public:
-/*!
-  @function NewL
+		public:
 
-  @discussion Create a CBTDiscoverer object
-  @param aReporter Reporter used for log
-  @result a pointer to the created instance of CBTDiscoverer
-  */
+			static CBTDiscoverer* NewL(RFileLogger* aLog);
+			static CBTDiscoverer* NewLC(RFileLogger* aLog);
+			~CBTDiscoverer();
 
-    static CBTDiscoverer* NewL(MReporter& aReporter);
-    
-/*!
-  @function NewLC
-
-  @discussion Create a CBTDiscoverer object
-  @param aReporter Reporter used for log
-  @result a pointer to the created instance of CBTDiscoverer
-  */
-    
-    static CBTDiscoverer* NewLC(MReporter& aReporter);
-
-/*!
-  @function ~CBTDiscoverer
-
-  @discussion Destroy the object and release all memory objects
-*/
-
-    ~CBTDiscoverer();
-
-private:
-/*!
-  @function CBTDiscoverer
-
-  @discussion Perform the first phase of two phase construction 
-  @param aReporter logs the output from this class
-  */
-
-    CBTDiscoverer(MReporter& aReporter);
-
-/*!
-  @function ConstructL
-
-  @discussion  Perform the second phase construction of a CBTDiscoverer object
-  */
-
-    void ConstructL();
-
-public: // From MSdpAgentNotifier
-/*!
-  @function NextRecordRequestComplete
-
-  @discussion Called when an service record request 
-              (CSdpAgent::NextRecordRequestComplete()) operation completes.
-  @param aError KErrNone, or an SDP error
-  @param aHandle Service record for which the query was made
-  @param aTotalRecordsCount Total number of matching records
-  */
-
-    void NextRecordRequestComplete(TInt aError, 
+			void NextRecordRequestComplete(TInt aError, 
                                    TSdpServRecordHandle aHandle, 
                                    TInt aTotalRecordsCount);
-/*!
-  @function AttributeRequestResult
-  
-  @discussion Called by the attribute request function 
-              (CSdpAgent::AttributeRequestL()) to pass the results of 
-              a successful attribute request.
-  @param aHandle Service record for which the query was made
-  @param aAttrID ID of the attribute obtained
-  @param aAttrValue Attribute value obtained
-  */
-
-    void AttributeRequestResult(TSdpServRecordHandle aHandle, 
+			void AttributeRequestResult(TSdpServRecordHandle aHandle, 
                                 TSdpAttributeID aAttrID, 
                                 CSdpAttrValue* aAttrValue);
+			void AttributeRequestComplete(TSdpServRecordHandle aHandle, TInt aError);
 
-/*!
-  @function AttributeRequestComplete
+			void ListServicesL(const TBTDevAddr& aAddress);
+//			TBool SelectDeviceL(TBTDeviceResponseParamsPckg& aResponse);
+		
+		private:
 
-  @discussion Called when an service record request 
-              (CSdpAgent::NextRecordRequestComplete()) 
-              operation completes.
-  @param aHandle Service record for which the query was made
-  @param aError KErrNone, or an SDP error
-  */
+			CBTDiscoverer(RFileLogger* aLog);
+			void ConstructL();
+			void PrintSDPError(TInt aError);
 
-    void AttributeRequestComplete(TSdpServRecordHandle aHandle, TInt aError);
+		    CSdpAgent* iAgent;
+			CSdpSearchPattern* iSdpSearchPattern;
+			CSdpAttrIdMatchList* iMatchList;
 
-public:
+			RFileLogger* iLog;
 
-/*! 
-  @function ListServicesL 
+			//TBool iHasPrintedRecordNumber;
+			//TBool iHasPrintedHandle;
+	};
 
-  @discussion lists the services advertised from a specified bluetooth
-                device
-  @param aAddress the bluetooth address to query for services
- */
-    void ListServicesL(const TBTDevAddr& aAddress);
-
-/*! 
-  @function SelectDeviceL
-    
-  @discussion offers the user the opportunity to select a bluetooth
-                device
-  @param aResponse the details of the selected device.
-  @result ETrue if a device is selected
- */
-    TBool SelectDeviceL(TBTDeviceResponseParamsPckg& aResponse);
-
-private:
-/*! 
-  @function PrintSDPError
-    
-  @discussion prints a description of the SDP error
-  @param aError the error code.
-  */
-    void PrintSDPError(TInt aError);
-
-private:
-    /*! @var iAgent used to search the SDP database */
-    CSdpAgent* iAgent;
-
-    /*! @var iSdpSearchPattern used to filter the SDP database search */
-    CSdpSearchPattern* iSdpSearchPattern;
-
-    /*! @var iMatchList used to filter the list of attributes */
-    CSdpAttrIdMatchList* iMatchList;
-
-    /*! @var iReporter used to log results */
-    MReporter& iReporter;
-
-    /*! @var iPrintRecordNumber print the number of records */
-    TBool iHasPrintedRecordNumber;
-
-    /*! @var iPrintHandle print the handle */
-    TBool iHasPrintedHandle;
-    };
-
-#endif //__CBTDISCOVERER_H__
+#endif

@@ -376,7 +376,7 @@ void CCodeListener::ConnectToServer()
 		User::LeaveIfError(iDeviceSelector.Connect());
 		TBTDeviceSelectionParamsPckg selectionFilter;
 		TUUID serviceClass(0x1101); // SerialPort, uuid16: 0x1101, 
-									// see Bluetooth_11_Assigned_Numbers.pdf, 
+									// see Bluetooth_11_Assigned_Numbers.pdf,
 									// 4.4 Service Classes
 		selectionFilter().SetUUID(serviceClass);
 		iDeviceSelector.StartNotifierAndGetResponse(iLocalStatus, KDeviceSelectionNotifierUid, selectionFilter, iResponse);

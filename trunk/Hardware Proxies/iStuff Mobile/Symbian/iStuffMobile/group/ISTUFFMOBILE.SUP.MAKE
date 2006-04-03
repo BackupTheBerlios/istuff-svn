@@ -1,5 +1,5 @@
 
-PATH=C:\dev\Symbian\7.0s\Series60_v21\\epoc32\tools\;C:\dev\Symbian\7.0s\Series60_v21\\epoc32\gcc\bin\;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE;c:\Program Files\Microsoft Visual Studio .NET 2003\VC7\BIN;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin\prerelease;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin;c:\Program Files\Microsoft Visual Studio .NET 2003\SDK\v1.1\bin;c:\WINDOWS\Microsoft.NET\Framework\v1.1.4322;C:\Program Files\Common Files\Symbian\Tools;C:\texmf\miktex\bin;C:\dev\Symbian\6.1\Shared\epoc32\gcc\bin;C:\dev\Symbian\6.1\Shared\epoc32\tools;C:\cygwin\bin;c:\Perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\ATI Technologies\ATI Control Panel;C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin;c:\Program Files\Java\jdk1.5.0_02\bin;C:\dev\Symbian\8.0a\S60_2nd_FP2\epoc32\gcc\bin;C:\dev\Symbian\8.0a\S60_2nd_FP2\epoc32\tools;C:\Program Files\Subversion\bin;C:\Documents and Settings\jenabi\My Documents\sandbox\trunk\Event Heap\c++\Windows\bin;C:\Program Files\QuickTime\QTSystem\;C:\dev\Symbian\6.0\Shared\epoc32\tools;C:\dev\Symbian\6.0\Shared\epoc32\gcc\bin;;
+PATH=C:\dev\Symbian\7.0s\Series60_v21\\epoc32\tools\;C:\dev\Symbian\7.0s\Series60_v21\\epoc32\gcc\bin\;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE;c:\Program Files\Microsoft Visual Studio .NET 2003\VC7\BIN;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin\prerelease;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin;c:\Program Files\Microsoft Visual Studio .NET 2003\SDK\v1.1\bin;c:\WINDOWS\Microsoft.NET\Framework\v1.1.4322;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE;c:\Program Files\Microsoft Visual Studio .NET 2003\VC7\BIN;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin\prerelease;c:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\bin;c:\Program Files\Microsoft Visual Studio .NET 2003\SDK\v1.1\bin;c:\WINDOWS\Microsoft.NET\Framework\v1.1.4322;C:\Program Files\Common Files\Symbian\Tools;C:\texmf\miktex\bin;C:\dev\Symbian\6.1\Shared\epoc32\gcc\bin;C:\dev\Symbian\6.1\Shared\epoc32\tools;C:\cygwin\bin;c:\Perl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\ATI Technologies\ATI Control Panel;C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\bin;c:\Program Files\Java\jdk1.5.0_02\bin;C:\dev\Symbian\8.0a\S60_2nd_FP2\epoc32\gcc\bin;C:\dev\Symbian\8.0a\S60_2nd_FP2\epoc32\tools;C:\Program Files\Subversion\bin;C:\Documents and Settings\jenabi\My Documents\sandbox\trunk\Event Heap\c++\Windows\bin;C:\Program Files\QuickTime\QTSystem\;C:\dev\Symbian\6.0\Shared\epoc32\tools;C:\dev\Symbian\6.0\Shared\epoc32\gcc\bin;;;
 
 # EPOC DEFINITIONS
 
@@ -47,14 +47,15 @@ LIBS= \
 	"$(EPOCLINKUDEB)\EIKCOCTL.LIB" \
 	"$(EPOCLINKUDEB)\AVKON.LIB" \
 	"$(EPOCLINKUDEB)\WS32.LIB" \
-	"$(EPOCLINKUDEB)\BLUETOOTH.LIB" \
 	"$(EPOCLINKUDEB)\FLOGGER.LIB" \
 	"$(EPOCLINKUDEB)\MEDIACLIENTAUDIO.LIB" \
 	"$(EPOCLINKUDEB)\EFSRV.LIB" \
 	"$(EPOCLINKUDEB)\VIBRACTRL.LIB" \
-	"$(EPOCLINKUDEB)\BAFL.LIB"
+	"$(EPOCLINKUDEB)\BAFL.LIB" \
+	"$(EPOCLINKUDEB)\BLUETOOTH.LIB"
 
 LINK_OBJS= \
+	"$(EPOCBLDUDEB)\BTDISCOVERER.obj" \
 	"$(EPOCBLDUDEB)\CODELISTENER.obj" \
 	"$(EPOCBLDUDEB)\ISTUFFMOBILE.UID.obj" \
 	"$(EPOCBLDUDEB)\ISTUFFMOBILEAPP.obj" \
@@ -109,14 +110,15 @@ LIBS= \
 	"$(EPOCLINKUREL)\EIKCOCTL.LIB" \
 	"$(EPOCLINKUREL)\AVKON.LIB" \
 	"$(EPOCLINKUREL)\WS32.LIB" \
-	"$(EPOCLINKUREL)\BLUETOOTH.LIB" \
 	"$(EPOCLINKUREL)\FLOGGER.LIB" \
 	"$(EPOCLINKUREL)\MEDIACLIENTAUDIO.LIB" \
 	"$(EPOCLINKUREL)\EFSRV.LIB" \
 	"$(EPOCLINKUREL)\VIBRACTRL.LIB" \
-	"$(EPOCLINKUREL)\BAFL.LIB"
+	"$(EPOCLINKUREL)\BAFL.LIB" \
+	"$(EPOCLINKUREL)\BLUETOOTH.LIB"
 
 LINK_OBJS= \
+	"$(EPOCBLDUREL)\BTDISCOVERER.obj" \
 	"$(EPOCBLDUREL)\CODELISTENER.obj" \
 	"$(EPOCBLDUREL)\ISTUFFMOBILE.UID.obj" \
 	"$(EPOCBLDUREL)\ISTUFFMOBILEAPP.obj" \
