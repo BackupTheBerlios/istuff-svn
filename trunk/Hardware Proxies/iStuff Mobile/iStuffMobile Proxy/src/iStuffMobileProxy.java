@@ -77,7 +77,7 @@ public class iStuffMobileProxy implements EventCallback
 			catch (Exception ex)
 			{
 				ex.printStackTrace();
-				System.exit(1);
+				System.exit(-1);
 			}
 		}
 
@@ -92,22 +92,27 @@ public class iStuffMobileProxy implements EventCallback
 					outStream.close();
 					inStream.close();
 					serPort.close();
+					System.exit(0);
 			}
 			catch(Exception ex)
 			{
-					System.exit(1);
+					System.exit(-1);
 			}
 		}
 
 		// Callback from register for events
-		public boolean returnEvent(Event[] retEvents){
+		public boolean returnEvent(Event[] retEvents)
+		{
 			try
 			{
-				for(int i=0; i<retEvents.length; i++){
-					System.out.println("Waiting for event");
-					int command = ((Integer)retEvents[i].getPostValue("Command")).intValue();
-					String proxyID = retEvents[i].getPostValueString("ProxyID");
-					if ( (proxyID.equals(_proxyID)) || (_proxyID.equals("")) ) {
+				
+				String proxyID;
+				int command = ((Integer)retEvents[0].getPostValue("Command")).intValue();
+				
+				if(retEvents[0].fieldExists("ProxyID"))
+					proxyID = retEvents[0].getPostValueString("ProxyID");
+					
+				//if ( (proxyID.equals(_proxyID)) || (_proxyID.equals("")) ) {
 						
 						System.out.println("Received command = " + command);
 
@@ -125,25 +130,25 @@ public class iStuffMobileProxy implements EventCallback
 							case OPCODE_PLAYSOUND:
 							case OPCODE_LAUNCHAPP:
 							case OPCODE_CLOSEAPP:
-								getPathAndRedirect(retEvents[i]);
+								getPathAndRedirect(retEvents[0]);
 								break;
 
 							case OPCODE_KEY_RECEIVED:
-								sendKey(retEvents[i]);
+								sendKey(retEvents[0]);
 								break;
 
 							case OPCODE_CHANGEPROFILE:
-								sendChangeProfile(retEvents[i]);
+								sendChangeProfile(retEvents[0]);
 								break;
 						}
-					}	
-				}
+				//}
 			}
 			catch(Exception ex)
 			{
-					//System.out.println(ex.toString());
+					ex.printStackTrace();
 			}
 
+			System.out.println("Waiting for event");
 			return true;
 		}
 
@@ -324,7 +329,7 @@ public class iStuffMobileProxy implements EventCallback
 		{
 			iStuffMobileProxy mobileProxy=null;
 			Shutdown killer;
-			Stdio std;
+//		Stdio std;
 			
 			if (argv.length >=2) { // At least two arguments are needed in order to start the proxy
 				if(argv.length == 2)  // Only the neccessary parameters EventHeapName and COMPort were supplied. 
@@ -335,8 +340,8 @@ public class iStuffMobileProxy implements EventCallback
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
 
-				std = new Stdio(mobileProxy);
-				std.start();
+				//std = new Stdio(mobileProxy);
+				//std.start();
 
 				mobileProxy.run();
 			}
@@ -363,7 +368,7 @@ class Shutdown extends Thread {
     }
 }
 
-class Stdio extends Thread 
+/*class Stdio extends Thread 
 {
 
 	private iStuffMobileProxy mobileProxy;
@@ -381,8 +386,15 @@ class Stdio extends Thread
 			try 
 			{
 				String command = in.readLine();
-				mobileProxy.redirectEvent((new Integer(command)).intValue());
-				System.out.println("sending event " + command);
+				if(command == null)
+				{
+						break;
+				}
+				else
+				{
+					mobileProxy.redirectEvent((new Integer(command)).intValue());
+					System.out.println("sending event " + command);
+				}
 			}
 			catch (Exception e) 
 			{
@@ -390,4 +402,4 @@ class Stdio extends Thread
 			}
 		}
 	}
-}
+}*/
