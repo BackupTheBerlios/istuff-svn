@@ -41,7 +41,7 @@ SOURCE  iStuffMobileContainer.cpp
 SOURCE  CodeListener.cpp
 SOURCE  SoundPlayer.cpp
 SOURCE  KeyListener.cpp
-SOURCE  BtDiscoverer.cpp
+SOURCE  Btdiscoverer.cpp
 
 SOURCEPATH ..\data
 RESOURCE iStuffMobile.rss
@@ -54,8 +54,9 @@ USERINCLUDE ..\inc
 SYSTEMINCLUDE   . \epoc32\include
 
 LIBRARY euser.lib apparc.lib cone.lib eikcore.lib apgrfx.lib esock.lib btextnotifiers.lib
-LIBRARY eikcoctl.lib avkon.lib ws32.lib flogger.lib MediaClientAudio.lib
-LIBRARY efsrv.lib  VibraCtrl.lib bafl.lib bluetooth.lib
+LIBRARY eikcoctl.lib avkon.lib ws32.lib flogger.lib MediaClientAudio.lib eikctl.lib
+LIBRARY efsrv.lib  VibraCtrl.lib bafl.lib bluetooth.lib sdpdatabase.lib sdpagent.lib
+
 
 START BITMAP	nokia.mbm
 HEADER

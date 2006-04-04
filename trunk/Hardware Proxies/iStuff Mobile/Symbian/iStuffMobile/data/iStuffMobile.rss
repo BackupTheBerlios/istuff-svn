@@ -48,6 +48,7 @@ RESOURCE RSS_SIGNATURE { }
 
 RESOURCE TBUF { buf = "iStuffMobile"; }
 
+
 RESOURCE EIK_APP_INFO
     {
     hotkeys = r_istuffmobile_hotkeys;
@@ -93,11 +94,16 @@ RESOURCE MENU_PANE r_istuffmobile_menu
     {
     items =
         {
-        MENU_ITEM { command = EiStuffMobileCmdAppConnect; txt = qtn_appl_connect; },
-		MENU_ITEM { command = EiStuffMobileCmdAppDisconnect; txt = qtn_appl_disconnect; },
-        MENU_ITEM { command = EAknCmdExit; txt = qtn_appl_exit; }
+        	MENU_ITEM { command = EiStuffMobileCmdAppConnect; txt = qtn_appl_connect; },
+					MENU_ITEM { command = EiStuffMobileCmdAppDisconnect; txt = qtn_appl_disconnect; },
+        	MENU_ITEM { command = EAknCmdExit; txt = qtn_appl_exit; }
         };
     }
 
+
+RESOURCE LISTBOX r_istuffmobile_service_list
+{
+	flags = EAknListBoxSelectionList;
+}
 
 // End of File

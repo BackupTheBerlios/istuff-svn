@@ -38,14 +38,16 @@
 #include <aknlists.h>
 #include <aknglobalprogressdialog.h>
 #include <flogger.h>
+#include <barsread.h>
+#include "iStuffMobileContainer.h"
 
 
 class CBTDiscoverer : public CBase, public MSdpAgentNotifier
     {
 		public:
 
-			static CBTDiscoverer* NewL(RFileLogger* aLog);
-			static CBTDiscoverer* NewLC(RFileLogger* aLog);
+			static CBTDiscoverer* NewL(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
+			static CBTDiscoverer* NewLC(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
 			~CBTDiscoverer();
 
 			void NextRecordRequestComplete(TInt aError, 
@@ -61,15 +63,18 @@ class CBTDiscoverer : public CBase, public MSdpAgentNotifier
 		
 		private:
 
-			CBTDiscoverer(RFileLogger* aLog);
+			CBTDiscoverer(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
 			void ConstructL();
 			void PrintSDPError(TInt aError);
+
+			CiStuffMobileContainer* iAppContainer;
 
 		    CSdpAgent* iAgent;
 			CSdpSearchPattern* iSdpSearchPattern;
 			CSdpAttrIdMatchList* iMatchList;
 
 			RFileLogger* iLog;
+			CAknColumnListBox* iPortList;
 
 			//TBool iHasPrintedRecordNumber;
 			//TBool iHasPrintedHandle;

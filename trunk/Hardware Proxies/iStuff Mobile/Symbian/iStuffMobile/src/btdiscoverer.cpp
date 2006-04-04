@@ -30,21 +30,22 @@
 
 #include <eiklabel.h>
 #include <bt_sock.h>
+#include <iStuffMobile.rsg>
 
 #include "Btdiscoverer.h"
 
 
 
-CBTDiscoverer* CBTDiscoverer::NewL(RFileLogger* aLog)
+CBTDiscoverer* CBTDiscoverer::NewL(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)
 {
-    CBTDiscoverer* self = CBTDiscoverer::NewLC(aLog);
+    CBTDiscoverer* self = CBTDiscoverer::NewLC(aLog,aAppContainer);
     CleanupStack::Pop(self);
     return self;
 }
 
-CBTDiscoverer* CBTDiscoverer::NewLC(RFileLogger* aLog)
+CBTDiscoverer* CBTDiscoverer::NewLC(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)
 {
-    CBTDiscoverer* self = new (ELeave) CBTDiscoverer(aLog);
+    CBTDiscoverer* self = new (ELeave) CBTDiscoverer(aLog,aAppContainer);
     self->ConstructL();
     CleanupStack::PushL(self);
     return self;
@@ -62,11 +63,13 @@ void CBTDiscoverer::ConstructL()
     iAgent = NULL;
 }
 
-CBTDiscoverer::CBTDiscoverer(RFileLogger* aLog)  
+CBTDiscoverer::CBTDiscoverer(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)  
 {
 	//iHasPrintedRecordNumber = EFalse;
     //iHasPrintedHandle = EFalse;
 	iLog = aLog;
+	iAppContainer = aAppContainer;
+
 }
 
 CBTDiscoverer::~CBTDiscoverer()
@@ -82,7 +85,7 @@ CBTDiscoverer::~CBTDiscoverer()
 }
 
 /*TBool CBTDiscoverer::SelectDeviceL(TBTDeviceResponseParamsPckg& aResponse)
-    {
+{
     iHasPrintedRecordNumber = EFalse;
     TBool success = EFalse;
     
@@ -121,11 +124,20 @@ CBTDiscoverer::~CBTDiscoverer()
     notifier.Close();
 
     return success;
-    }*/
+}*/
 
 void CBTDiscoverer::ListServicesL(const TBTDevAddr& aAddress)
 {
-    delete iAgent;
+    iPortList = new (ELeave) CAknSingleNumberStyleListBox();
+	iPortList->SetContainerWindowL(*iAppContainer);
+
+	TResourceReader reader;
+	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);
+	iPortList->ConstructFromResourceL(reader);
+
+	CleanupStack::PopAndDestroy();
+	
+	delete iAgent;
 
     iAgent = NULL;
     iAgent = CSdpAgent::NewL(*this, aAddress);

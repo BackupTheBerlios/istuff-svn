@@ -42,6 +42,7 @@
 
 #include "Global.h"
 #include "iStuffMobileAppUi.h"
+#include "iStuffMobileContainer.h"
 #include "SoundPlayer.h"
 #include "KeyListener.h"
 
@@ -50,7 +51,7 @@ class CiStuffMobileAppUi;
 class CCodeListener : public CActive
 {
 	public:
-		CCodeListener(CiStuffMobileAppUi* app);
+		CCodeListener(CiStuffMobileAppUi* app,CiStuffMobileContainer* aAppContainer);
 		~CCodeListener();
 
 		void ConstructL(RFileLogger* aLog);
@@ -84,7 +85,7 @@ class CCodeListener : public CActive
 		TUint16* GetPath();
 
 		CiStuffMobileAppUi* iApplicationUi;
-		CEikonEnv* iEikEnv;
+		CiStuffMobileContainer* iAppContainer;
 
 		TBuf8<1> data;
 		RSocketServ iSocketServ;

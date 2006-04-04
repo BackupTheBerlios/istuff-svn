@@ -47,14 +47,14 @@ void CiStuffMobileAppUi::ConstructL()
 	iLog.CreateLog(_L("iStuffMobile"),_L("ErrorLog"),EFileLoggingModeOverwrite);
 	iLog.Write(_L("Log Created"));
 
-	connected = EFalse;
-	iProxyServer = new CCodeListener(this);
-	iProxyServer->ConstructL(&iLog);
-
-    iAppContainer = new (ELeave) CiStuffMobileContainer;
+	iAppContainer = new (ELeave) CiStuffMobileContainer;
     iAppContainer->SetMopParent( this );
     iAppContainer->ConstructL( ClientRect() );
     AddToStackL( iAppContainer );
+	
+	connected = EFalse;
+	iProxyServer = new CCodeListener(this,iAppContainer);
+	iProxyServer->ConstructL(&iLog);
 }
 
 CiStuffMobileAppUi::~CiStuffMobileAppUi()

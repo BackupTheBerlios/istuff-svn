@@ -30,9 +30,10 @@
 
 #include "CodeListener.h"
 
-CCodeListener::CCodeListener(CiStuffMobileAppUi* app) : CActive(0)
+CCodeListener::CCodeListener(CiStuffMobileAppUi* app, CiStuffMobileContainer* aAppContainer) : CActive(0)
 {
 	iApplicationUi = app;
+	iAppContainer = aAppContainer;
 	isConnected = EFalse;
 }
 
