@@ -237,7 +237,7 @@ public:
 
 	/**
 	 Returns the post value of the specified field as int.
-	 The data type of the field must be the same type with the return value.
+	 The data type of the field must be the same type withf the return value.
 	 @throws eh2_FieldOperationException There is no specified field,
 	 the data type of the field does not match,
 	 or the field does not contain an actual value

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<!--Check this out-->
+<!---http://trac.growl.info/trac/browser/trunk/Bindings/applescript?rev=1495-->
+<dictionary title="">
+	<!--name has to be same as project name, else the name used in the script wil be inconsistent with the dictionary-->
+	<suite name="eheapscriptview" code="ehSc" description="Commands and classes for event heap">
+		<classes>
+			<class name="applicaion" code="capp" description="" inherits="NSCoeSuite.NSApplication">
+				<cocoa class="NSApplication"/>
+				<elements>
+					<element type="field">
+						<cocoa method="fields"/>
+						<accessor style="index"/>
+						<accessor style="name"/>
+					</element>
+				</elements>
+				<properties>
+						<property 
+							name="event heap name"  
+							code="ehNm"			
+							type="string"
+							description="The name of the event heap">
+							<cocoa method="eheapName"/>
+						</property>
+						<property
+							name="event type name"  
+							code="ehTp"			
+							type="string"
+							description="The type of the event to be sent">
+							<cocoa method="eTypeName"/>
+						</property>
+				</properties>
+				
+			</class>
+			<class name="field" code="ehfd" description="Field for each field">
+				<cocoa class="EHField"/> 
+			</class>
+		</classes>
+		<commands>
+			<command name="send" code="ehsd" description="Send an event">
+				<cocoa class=""/>
+			</command>
+		</commands>
+	</suite>
+</dictionary>

@@ -1,0 +1,43 @@
+Author: Eugen Yu
+Contact:  eugen.yu@rwth-aachen.de  or eugen_yu@web.de
+This is a prototype for defining a scripting language.
+
+Example script:
+tell application "eventheap"
+	set event heap name to "127.0.0.1"
+	set event type name to "my type name"
+end tell
+
+======================================================
+Notes on compilation:
+Beware that in order to change the language, 
+
+====================================================	
+Improvement:
+
+-language improvement:
+	tell application "eventheap"
+		set name to "parker"	
+	end tell
+
+-language improvement: send command
+	tell application "eventheap"
+		set name to "parker"
+		send myEvent
+	end tell
+
+-language improvement define event object
+	tell application "eventheap"
+		set myEvent to make new event type "asdad"?	
+	end tell
+
+-language improvement: set fields
+	tell application "eventheap"
+		set myEvent to .....	
+		set fields of myEvent to {("ADS","ASDD"),("asdd","ASD")}
+	end tell
+
+
+
+
+

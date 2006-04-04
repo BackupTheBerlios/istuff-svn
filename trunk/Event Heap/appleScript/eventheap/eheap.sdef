@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="My Application Terminology">
+  <suite name="eventheap" code="ehS1"
+    description="Commands and classes for my application">
+	<commands>
+	</commands>
+    <classes>
+     <class name="applicaion" code="capp" description="" inherits="NSCoreSuite.NSApplication">
+				<cocoa class="NSApplication"/>
+				<properties>
+						<property 
+							name="event heap name"  
+							code="ehNm"			
+							type="string"
+							description="The name of the event heap">
+							<cocoa method="eheapName"/>
+						</property>
+						<property
+							name="event type name"  
+							code="ehTp"			
+							type="string"
+							description="The type of the event to be sent">
+							<cocoa method="eTypeName"/>
+						</property>
+				</properties>
+			</class>
+      </classes>
+  </suite>
+</dictionary>
