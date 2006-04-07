@@ -39,15 +39,18 @@
 #include <aknglobalprogressdialog.h>
 #include <flogger.h>
 #include <barsread.h>
-#include "iStuffMobileContainer.h"
+#include <eiklbo.h>
+
+class CCodeListener;
 
 
-class CBTDiscoverer : public CBase, public MSdpAgentNotifier
+class CBTDiscoverer : public MSdpAgentNotifier, public CCoeControl, public MEikListBoxObserver, public MSdpAttributeValueVisitor
     {
 		public:
 
-			static CBTDiscoverer* NewL(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
-			static CBTDiscoverer* NewLC(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
+			static CBTDiscoverer* NewL(RFileLogger* aLog, CCodeListener* aCodeListener);
+			static CBTDiscoverer* NewLC(RFileLogger* aLog, CCodeListener* aCodeListener);
+			void ConstructL(const TRect& aRect);
 			~CBTDiscoverer();
 
 			void NextRecordRequestComplete(TInt aError, 
@@ -59,25 +62,38 @@ class CBTDiscoverer : public CBase, public MSdpAgentNotifier
 			void AttributeRequestComplete(TSdpServRecordHandle aHandle, TInt aError);
 
 			void ListServicesL(const TBTDevAddr& aAddress);
-//			TBool SelectDeviceL(TBTDeviceResponseParamsPckg& aResponse);
+
+			void StartListL(CSdpAttrValueList& aList);
+			void VisitAttributeValueL(CSdpAttrValue& aValue, TSdpElementType aType);
+			void EndListL();
 		
 		private:
 
-			CBTDiscoverer(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer);
-			void ConstructL();
+			CBTDiscoverer(RFileLogger* aLog, CCodeListener* aCodeListener);
 			void PrintSDPError(TInt aError);
 
-			CiStuffMobileContainer* iAppContainer;
+			TInt CountComponentControls() const;
+			CCoeControl* ComponentControl(TInt aIndex) const;
+			void Draw(const TRect& aRect) const;
+			void SizeChanged();
+			void SetupScrollBarsL();
+			void AddItemToList();
+
+			TKeyResponse OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType);
+			void HandleListBoxEventL(CEikListBox* /*aListBox*/, TListBoxEvent aListBoxEvent);
 
 		    CSdpAgent* iAgent;
 			CSdpSearchPattern* iSdpSearchPattern;
 			CSdpAttrIdMatchList* iMatchList;
 
+			TUint iServicePort;
+			TUint iAttrId;
+			TUint16* iServiceName;
+
 			RFileLogger* iLog;
 			CAknColumnListBox* iPortList;
 
-			//TBool iHasPrintedRecordNumber;
-			//TBool iHasPrintedHandle;
+			CCodeListener* iCodeListener;
 	};
 
 #endif

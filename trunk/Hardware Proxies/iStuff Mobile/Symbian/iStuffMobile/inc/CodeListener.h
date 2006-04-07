@@ -45,17 +45,19 @@
 #include "iStuffMobileContainer.h"
 #include "SoundPlayer.h"
 #include "KeyListener.h"
+#include "Btdiscoverer.h"
 
 class CiStuffMobileAppUi;
 
 class CCodeListener : public CActive
 {
 	public:
-		CCodeListener(CiStuffMobileAppUi* app,CiStuffMobileContainer* aAppContainer);
+		CCodeListener(CiStuffMobileAppUi* app);
 		~CCodeListener();
 
 		void ConstructL(RFileLogger* aLog);
 		void ConnectToServer();
+		void ConnectToService(TUint8 portNo);
 		void DisconnectFromServer();
 		void SendKeyToProxy(TUint16 code,TUint16 aType);
 		TBool GetConnected();
@@ -85,7 +87,6 @@ class CCodeListener : public CActive
 		TUint16* GetPath();
 
 		CiStuffMobileAppUi* iApplicationUi;
-		CiStuffMobileContainer* iAppContainer;
 
 		TBuf8<1> data;
 		RSocketServ iSocketServ;
@@ -94,6 +95,7 @@ class CCodeListener : public CActive
 		RNotifier iDeviceSelector;
 		TBTDeviceResponseParamsPckg iResponse;
 		TBool isConnected;
+		CBTDiscoverer* iServices;
 
 		CSoundPlayer* iSoundPlayer;
 		CKeyListener* iKeyListener;

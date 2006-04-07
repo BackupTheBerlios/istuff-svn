@@ -30,10 +30,9 @@
 
 #include "CodeListener.h"
 
-CCodeListener::CCodeListener(CiStuffMobileAppUi* app, CiStuffMobileContainer* aAppContainer) : CActive(0)
+CCodeListener::CCodeListener(CiStuffMobileAppUi* app) : CActive(0)
 {
 	iApplicationUi = app;
-	iAppContainer = aAppContainer;
 	isConnected = EFalse;
 }
 
@@ -386,24 +385,39 @@ void CCodeListener::ConnectToServer()
 		if (iLocalStatus.Int() != KErrNone || !iResponse().IsValidBDAddr()) 
 			User::Leave(KErrCouldNotConnect);
 
-		TBTSockAddr address;
-		address.SetBTAddr(iResponse().BDAddr());
-		address.SetPort(1);
-
-		iSocket.Connect(address, iLocalStatus);
-		User::WaitForRequest(iLocalStatus);
-
-		iDeviceSelector.CancelNotifier(KDeviceSelectionNotifierUid);
-		iDeviceSelector.Close();
-
-		isConnected = ETrue;
-		iApplicationUi->SetConnected(ETrue);
-		StartReceiving();
+		iServices = CBTDiscoverer::NewL(iLog,this);
+		//service->SetMopParent(iApplicationUi);
+		iServices->ConstructL(iApplicationUi->ClientRect());
+		iServices->ListServicesL(iResponse().BDAddr());
+		//iApplicationUi->RemoveFromStack(iApplicationContainer);
+		//iApplicationUi->AddToStackL(service);
 	}
 	else
 	{
 		iLog->Write(_L("The device is already connected"));
 	}
+}
+
+void CCodeListener::ConnectToService(TUint8 portNo)
+{
+	delete iServices;
+	iServices = NULL;
+
+	TRequestStatus iLocalStatus;
+
+	TBTSockAddr address;
+	address.SetBTAddr(iResponse().BDAddr());
+	address.SetPort(portNo);
+
+	iSocket.Connect(address, iLocalStatus);
+	User::WaitForRequest(iLocalStatus);
+
+	iDeviceSelector.CancelNotifier(KDeviceSelectionNotifierUid);
+	iDeviceSelector.Close();
+
+	isConnected = ETrue;
+	iApplicationUi->SetConnected(ETrue);
+	StartReceiving();
 }
 
 void CCodeListener::DisconnectFromServer()

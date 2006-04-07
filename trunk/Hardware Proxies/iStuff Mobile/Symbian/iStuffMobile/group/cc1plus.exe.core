@@ -1,23 +1,23 @@
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) Exception trapped!
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception C0000005 at 465ACC
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception: ax 10C5F974 bx 10C5F914 cx 0 dx 1007D6B4
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception: si 1007D6B4 di 10C5F914 bp 259F41C sp 259F400
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception is: STATUS_ACCESS_VIOLATION
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) Stack trace:
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 0: sp = 0x259EFF4, pc = 0x1000947D
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 1: sp = 0x259F02C, pc = 0x7C9037BF
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 2: sp = 0x259F050, pc = 0x7C90378B
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 3: sp = 0x259F100, pc = 0x7C90EAFA
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 4: sp = 0x259F41C, pc = 0x402114
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 5: sp = 0x259F448, pc = 0x4022DC
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 6: sp = 0x259F46C, pc = 0x4024E9
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 7: sp = 0x259F4A0, pc = 0x406965
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 8: sp = 0x259F4EC, pc = 0x401A95
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 9: sp = 0x259F518, pc = 0x48449C
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 10: sp = 0x259F534, pc = 0x45E7B7
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 11: sp = 0x259FD84, pc = 0x48F449
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 12: sp = 0x259FDAC, pc = 0x492DA5
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 13: sp = 0x259FE04, pc = 0x10004410
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 14: sp = 0x259FF90, pc = 0x10004447
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 15: sp = 0x259FFA0, pc = 0x57F55E
-(C:\dev\Symbian\7.0s\Series60_v20\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) End of stack trace (more stack frames may be present)
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) Exception trapped!
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception C0000005 at 471D69
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception: ax 0 bx 0 cx 10BBAE38 dx 12B
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception: si 1 di 1007E90C bp 259F494 sp 259F484
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) exception is: STATUS_ACCESS_VIOLATION
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) Stack trace:
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 0: sp = 0x259F078, pc = 0x1000947D
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 1: sp = 0x259F0B0, pc = 0x7C9037BF
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 2: sp = 0x259F0D4, pc = 0x7C90378B
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 3: sp = 0x259F184, pc = 0x7C90EAFA
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 4: sp = 0x259F494, pc = 0x4722FD
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 5: sp = 0x259F4C8, pc = 0x410D3D
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 6: sp = 0x259F4F0, pc = 0x411465
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 7: sp = 0x259F52C, pc = 0x45F0AF
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 8: sp = 0x259FD84, pc = 0x48F449
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 9: sp = 0x259FDAC, pc = 0x492DA5
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 10: sp = 0x259FE04, pc = 0x10004410
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 11: sp = 0x259FF90, pc = 0x10004447
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 12: sp = 0x259FFA0, pc = 0x57F55E
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 13: sp = 0x259FFB0, pc = 0x40103A
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 14: sp = 0x259FFC0, pc = 0x7C816D4F
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) frame 15: sp = 0x259FFF0, pc = 0x0
+(C:\dev\Symbian\7.0s\Series60_v21\EPOC32\gcc\lib\gcc-lib\thumb-epoc-pe\2.9-psion-98r2\cc1plus.exe 1002) End of stack trace

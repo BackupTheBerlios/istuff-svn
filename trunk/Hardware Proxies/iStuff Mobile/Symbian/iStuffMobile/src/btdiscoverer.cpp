@@ -34,42 +34,66 @@
 
 #include "Btdiscoverer.h"
 
+#define KListPosition TPoint(0,0)
 
 
-CBTDiscoverer* CBTDiscoverer::NewL(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)
+
+CBTDiscoverer* CBTDiscoverer::NewL(RFileLogger* aLog, CCodeListener* aCodeListener)
 {
-    CBTDiscoverer* self = CBTDiscoverer::NewLC(aLog,aAppContainer);
+	CBTDiscoverer* self = CBTDiscoverer::NewLC(aLog,aCodeListener);
     CleanupStack::Pop(self);
     return self;
 }
 
-CBTDiscoverer* CBTDiscoverer::NewLC(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)
+CBTDiscoverer* CBTDiscoverer::NewLC(RFileLogger* aLog, CCodeListener* aCodeListener)
 {
-    CBTDiscoverer* self = new (ELeave) CBTDiscoverer(aLog,aAppContainer);
-    self->ConstructL();
+	CBTDiscoverer* self = new (ELeave) CBTDiscoverer(aLog,aCodeListener);
     CleanupStack::PushL(self);
     return self;
 }
 
-void CBTDiscoverer::ConstructL()
+void CBTDiscoverer::ConstructL(const TRect& aRect)
 {
-    TUUID serviceClass(0x1101);
+	
+	CreateWindowL();
+ 
+
+	TUUID serviceClass(0x1101);
 	iSdpSearchPattern = CSdpSearchPattern::NewL();
     iSdpSearchPattern->AddL(serviceClass);
 
     iMatchList = CSdpAttrIdMatchList::NewL();
     iMatchList->AddL(TAttrRange(0x4,0x0100)); // get only names
-
     iAgent = NULL;
+
+	iPortList = new (ELeave) CAknSingleNumberStyleListBox();
+	iPortList->SetContainerWindowL(*this);
+	iPortList->SetListBoxObserver(this);
+//	iPortList->MakeVisible(EFalse);
+
+	TResourceReader reader;
+	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);
+	iPortList->ConstructFromResourceL(reader);
+	CleanupStack::PopAndDestroy();
+
+	SetupScrollBarsL();
+
+	/*iServiceName = new TUint16[3];
+	iServiceName[0] = 'h';
+	iServiceName[1] = 'e';
+	iServiceName[2] = '\0';
+	AddItemToList();*/
+
+	SetRect(aRect);
+	ActivateL();
 }
 
-CBTDiscoverer::CBTDiscoverer(RFileLogger* aLog,CiStuffMobileContainer* aAppContainer)  
-{
-	//iHasPrintedRecordNumber = EFalse;
-    //iHasPrintedHandle = EFalse;
+CBTDiscoverer::CBTDiscoverer(RFileLogger* aLog, CCodeListener* aCodeListener)  
+{		
 	iLog = aLog;
-	iAppContainer = aAppContainer;
-
+	iCodeListener = aCodeListener;
+	iServicePort = 0;
+	iServiceName = NULL;
 }
 
 CBTDiscoverer::~CBTDiscoverer()
@@ -82,62 +106,70 @@ CBTDiscoverer::~CBTDiscoverer()
 
     delete iSdpSearchPattern;
     iSdpSearchPattern = NULL;
+
+	delete iPortList;
+	iPortList = NULL;
 }
 
-/*TBool CBTDiscoverer::SelectDeviceL(TBTDeviceResponseParamsPckg& aResponse)
+TInt CBTDiscoverer::CountComponentControls() const
 {
-    iHasPrintedRecordNumber = EFalse;
-    TBool success = EFalse;
-    
-    RNotifier notifier;
-    User::LeaveIfError(notifier.Connect());
-  
-    TBTDeviceSelectionParamsPckg selectionFilter;
+    return 1;
+}
 
-    TRequestStatus status;
-    notifier.StartNotifierAndGetResponse(
-        status,
-        KDeviceSelectionNotifierUid,
-        selectionFilter,
-        aResponse
-    );
+void CBTDiscoverer::Draw(const TRect& aRect) const
+{    
+    CWindowGc& gc = SystemGc();
+	gc.Clear(aRect);
+	
+    /*gc.SetPenStyle(CGraphicsContext::ENullPen);
+    gc.SetBrushColor(KRgbWhite);
+    gc.SetBrushStyle(CGraphicsContext::ESolidBrush);
+    gc.DrawRect(aRect);*/
+}
 
-    User::WaitForRequest(status);
+void CBTDiscoverer::SizeChanged()
+{
+	if(iPortList)
+	{
+		iPortList->SetExtent(KListPosition, iPortList->MinimumSize());
+	}
+}
 
-    if (status.Int() == KErrNone)
-        {
-        if (aResponse().IsValidDeviceName())
-            {
-            success = ETrue;
-            }
-        else
-            {
-            iReporter.Error(KStrFailedToConnect);
-            }
-        }
-    else
-        {
-        iReporter.Error(KStrNoDeviceSelected);
-        }
+CCoeControl* CBTDiscoverer::ComponentControl(TInt aIndex) const
+{
+    switch ( aIndex )
+    {
+		case 0:
+			return iPortList;
+		default:
+			return NULL;
+    }
+}
 
-    notifier.CancelNotifier(KDeviceSelectionNotifierUid);
-    notifier.Close();
+void CBTDiscoverer::SetupScrollBarsL()
+{
+	iPortList->CreateScrollBarFrameL(ETrue);
+	iPortList->ScrollBarFrame()->SetScrollBarVisibilityL(CEikScrollBarFrame::EOff,CEikScrollBarFrame::EAuto);
+}
 
-    return success;
-}*/
+TKeyResponse CBTDiscoverer::OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType)
+{
+	if(iPortList)
+	{
+		return iPortList->OfferKeyEventL(aKeyEvent, aType);
+	}
+	else
+	{
+		return EKeyWasNotConsumed;
+	}
+}
+
+void CBTDiscoverer::HandleListBoxEventL(CEikListBox* /*aListBox*/, TListBoxEvent aListBoxEvent)
+{}
 
 void CBTDiscoverer::ListServicesL(const TBTDevAddr& aAddress)
 {
-    iPortList = new (ELeave) CAknSingleNumberStyleListBox();
-	iPortList->SetContainerWindowL(*iAppContainer);
-
-	TResourceReader reader;
-	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);
-	iPortList->ConstructFromResourceL(reader);
-
-	CleanupStack::PopAndDestroy();
-	
-	delete iAgent;
+    delete iAgent;
 
     iAgent = NULL;
     iAgent = CSdpAgent::NewL(*this, aAddress);
@@ -154,15 +186,7 @@ void CBTDiscoverer::NextRecordRequestComplete(TInt aError, TSdpServRecordHandle 
 	}
     else if (aTotalRecordsCount)
     {
-       /*if (!iHasPrintedRecordNumber)
-       {
-            TBuf<64> buffer;
-            buffer.Format(KStrRecordsFound, aTotalRecordsCount);
-            iReporter.PrintLine(buffer);
-            iHasPrintedRecordNumber = ETrue;
-       }*/
-       
-	   TRAPD(err, iAgent->AttributeRequestL(aHandle, *iMatchList));
+       TRAPD(err, iAgent->AttributeRequestL(aHandle, *iMatchList));
        if (err != KErrNone)
        {
             PrintSDPError(err);
@@ -171,40 +195,57 @@ void CBTDiscoverer::NextRecordRequestComplete(TInt aError, TSdpServRecordHandle 
 }
 
 
-void CBTDiscoverer::AttributeRequestResult(
-    TSdpServRecordHandle aHandle, 
-    TSdpAttributeID aAttrID, 
-    CSdpAttrValue* aAttrValue
-)
-    {
-    /*if (! iHasPrintedHandle)
-        {
-        TBuf<40> handle;
-        handle.Append(KStrHandle);
-        handle.AppendNumUC(static_cast<TUint>(aHandle), EHex);
-        iHasPrintedHandle = ETrue;
-        iReporter.PrintLine(handle);
-        }*/
-    //  Create a text value to identify the record & field
-    /*TBuf<40> attrIDBuffer;
-    attrIDBuffer.Append(KStrAttrId);
-    attrIDBuffer.AppendNumUC(static_cast<TUint>(aAttrID), EHex);
-    iReporter.PrintLine(attrIDBuffer);*/
-    //  Create a text value of the AttributeValue
-    //TBTAttributeValueLister lister(iReporter);
-    
-    //TRAPD(err,aAttrValue->AcceptVisitorL(lister));
+void CBTDiscoverer::AttributeRequestResult(TSdpServRecordHandle aHandle, TSdpAttributeID aAttrID, CSdpAttrValue* aAttrValue)
+{
+    iAttrId = aAttrID;
+	TRAPD(err,aAttrValue->AcceptVisitorL(*this));
 	
-	//----------------------------------------------------------print the value to the dialog
-
-    /*if (err != KErrNone)
+    if (err != KErrNone)
     {
         PrintSDPError(err);
-	}*/
-
-    // Ownership has been transferred
+	}
+	
     delete aAttrValue;
-    }
+}
+
+void CBTDiscoverer::VisitAttributeValueL(CSdpAttrValue& aValue, TSdpElementType aType)
+{
+	switch(aType)
+	{
+		case ETypeUint:
+
+			if(iAttrId == 0x4)
+			{
+				iServicePort = aValue.Uint();
+				iLog->WriteFormat(_L("service port = %d"),iServicePort);
+			}
+			break;
+
+		case ETypeString:
+			
+			if(iAttrId == 0x100)
+			{
+				TInt len = aValue.Des().Length();
+				iServiceName = new TUint16[len+1];
+				for (int i = 0; i < len; i++)
+				{
+					iServiceName[i] = aValue.Des()[i];
+				}
+				iServiceName[len] = '\0';
+				iLog->WriteFormat(_L("service name = %s"),iServiceName);
+			}
+			break;
+
+		default:
+			break;
+	}
+}
+
+void CBTDiscoverer::StartListL(CSdpAttrValueList& /*aList*/)
+{}
+
+void CBTDiscoverer::EndListL()
+{}
 
 void CBTDiscoverer::AttributeRequestComplete(TSdpServRecordHandle /*aHandle*/, TInt aError)
 {
@@ -214,13 +255,35 @@ void CBTDiscoverer::AttributeRequestComplete(TSdpServRecordHandle /*aHandle*/, T
     }
     else
     {
-//      iHasPrintedHandle = EFalse;
-        TRAPD(err, iAgent->NextRecordRequestL());
+        if(iServicePort != 0 && iServiceName != NULL)
+		{
+			AddItemToList();
+			iServicePort = 0;
+			iServiceName = NULL;
+//			iPortList->MakeVisible(ETrue);
+		}
+
+		TRAPD(err, iAgent->NextRecordRequestL());
         if (err != KErrNone)
         {
             PrintSDPError(aError);
         }
     }
+}
+
+void CBTDiscoverer::AddItemToList()
+{
+	CTextListBoxModel* model = iPortList->Model();
+	model->SetOwnershipType(ELbmOwnsItemArray);
+
+	CDesCArray* itemList = STATIC_CAST(CDesCArray*,model->ItemTextArray());
+	
+	_LIT(KItem,"%d\t%s\t\t");
+	TBuf<256> item;
+	item.Format(KItem(),iServicePort,iServiceName);
+	itemList->AppendL(item);
+	
+	DrawNow();
 }
 
 void CBTDiscoverer::PrintSDPError(TInt aError)

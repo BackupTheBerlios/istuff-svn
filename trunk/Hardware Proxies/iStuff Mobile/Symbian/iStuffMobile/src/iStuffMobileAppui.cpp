@@ -53,7 +53,7 @@ void CiStuffMobileAppUi::ConstructL()
     AddToStackL( iAppContainer );
 	
 	connected = EFalse;
-	iProxyServer = new CCodeListener(this,iAppContainer);
+	iProxyServer = new CCodeListener(this);
 	iProxyServer->ConstructL(&iLog);
 }
 
