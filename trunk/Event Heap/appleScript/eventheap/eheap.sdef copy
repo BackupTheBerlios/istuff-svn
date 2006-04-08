@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="">
+	<!--name has to be same as project name, else the name used in the script wil be inconsistent with the dictionary-->
+	<suite name="eventheap" code="ehSc" description="Commands and classes for event heap">
+
+//Command definition part, all subclasses of NSScriptCommand are named here
+//If there is no class that "responds" to it, it will execute: -(id)performDefaultImplementation
+//Rather useless if "delegate" of this subclass of NSScriptCommand is not set
+		<commands>
+			<command name="send" code="eheapsnd" description="send event ">
+				<cocoa class="EHSendCommand"/>
+			</command>
+		</commands>
+
+
+
+		<classes>
+			<class name="applicaion" code="capp" description="" inherits="NSCoreSuite.NSApplication">
+//if you use cocoa als, tell the system which class you are using
+				<cocoa class="MyApplication"/>
+//To access a list of objects, does this implement the to-many-relationship?
+				<elements>
+					<element type="event">
+						<cocoa method="events"/>
+						<accessor style="index"/>
+					</element>
+				</elements>
+				<properties>
+						<property 
+							name="server name"  
+							code="ehNm"			
+							type="string"
+							description="The name of the event heap">
+							<cocoa method="eheapName"/>
+						</property>
+						<property
+							name="type"  
+							code="ehTp"			
+							type="string"
+							description="The type of the event to be sent">
+							<cocoa method="eTypeName"/>
+						</property>
+				</properties>
+				<responds-to-commands>
+						<responds-to name="send">
+//Name the method in the class that will process the command. Beware of the colon!!
+//- (id)handleSendCommand:(NSScriptCommand *)command
+							<cocoa method="handleSendCommand:"/>
+						</responds-to>
+				</responds-to-commands>		
+			</class>
+//Further classes
+			<class name="event" code="ehfd" description="Event to be sent, init with properties">
+				<cocoa class="EHEvent"/> 
+			</class>
+		</classes>
+	</suite>
+</dictionary>

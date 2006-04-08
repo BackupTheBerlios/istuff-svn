@@ -7,19 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EventHeapAdapter.h"
+#import "EventHeap.h"
+#import "EHEvent.h"
 
 @interface EHModel : NSObject {
-	EventHeapAdapter * mEventHeap;
-	
-	NSString * mHeapname;
-	NSString * eventType;
-	
+	NSString * mHeapname;	
 	NSDictionary * fields;
+	EventHeap * mHeapAdapter;
 }
 
--(NSString *)getEventheapName;
--(void) setEventheapName: (NSString *) iHeapname;
--(NSString *)getEventType;
--(void) setEventType: (NSString *)iEventType;
+-(NSString *)serverName;
+-(void)setServerName: (NSString *)iEheapName;
 @end

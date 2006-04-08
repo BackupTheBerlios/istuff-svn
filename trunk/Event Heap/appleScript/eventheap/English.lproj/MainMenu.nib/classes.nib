@@ -6,8 +6,15 @@
             OUTLETS = {mEHModel = id; }; 
             SUPERCLASS = NSObject; 
         }, 
+        {CLASS = EHEvent; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {CLASS = EHModel; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = MyApplication; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mEHModel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }
     ); 
     IBVersion = 1; 
 }

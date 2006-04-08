@@ -1,14 +1,14 @@
 //
 //  main.m
-//  eventheap
+//  eheapscriptview
 //
-//  Created by Eugen Yu on 4/4/06.
-//  Copyright __MyCompanyName__ 2006. All rights reserved.
+//  Created by eugen on Sun Apr 02 2006.
+//  Copyright (c) 2006 RWTH Aachen, Germany; Lehrstuhl Informatik 10 -Media Computing Group. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, char *argv[])
+int main(int argc, const char *argv[])
 {
-    return NSApplicationMain(argc,  (const char **) argv);
+    return NSApplicationMain(argc, argv);
 }

@@ -4,40 +4,92 @@ This is a prototype for defining a scripting language.
 
 Example script:
 tell application "eventheap"
-	set event heap name to "127.0.0.1"
-	set event type name to "my type name"
+	connect "127.0.0.1"
+	add event "event type name" with fields {{"sad","asd"},{"asd","123","i"},{"dadas","12322.322","f"}}
+	send
 end tell
 
 ======================================================
 Notes on compilation:
-Beware that in order to change the language, 
+Beware that in order to change the language, you have to clean the build first. (deleting *.scriptterminology file in the resource folder of the appliction)
+
+Use this tool to check the grammar
+/Developer/tools/sdp -f st eheap.sdef
+
+
+To completely remove the scripting language from the the registry.
+Use 
 
 ====================================================	
 Improvement:
 
--language improvement:
+-(done)language improvement: 
 	tell application "eventheap"
 		set name to "parker"	
 	end tell
 
--language improvement: send command
+-(done)language improvement: send command
 	tell application "eventheap"
 		set name to "parker"
 		send myEvent
 	end tell
 
--language improvement define event object
+-(done)language improvement define event object
 	tell application "eventheap"
 		set myEvent to make new event type "asdad"?	
 	end tell
 
--language improvement: set fields
+-(done)language improvement: set fields
 	tell application "eventheap"
 		set myEvent to .....	
 		set fields of myEvent to {("ADS","ASDD"),("asdd","ASD")}
 	end tell
 
 
+(done)
+tell application "eventheap"
+	make event with properties {"type":"sdfsdsfsdf", "asdsa":"ASDSAD", "asdsada":"121i"}
+	-- should be automatically  inserted in a queue
+	make event with properties {"type":"sdfsdsfsdf"}
+	set name to "parker"
+	send
+	--empty the queue
+end tell
+	
 
 
+=========================
+Feedback from console:
+for the "send" command
+Direct Parameter: <CFArray 0x565820 [0xa01c00e0]>{type = mutable-small, count = 3, values = (
+	0 : <CFArray 0x557570 [0xa01c00e0]>{type = mutable-small, count = 2, values = (
+	0 : <CFString 0x567c40 [0xa01c00e0]>{contents = "asd"}
+	1 : <CFString 0x55f640 [0xa01c00e0]>{contents = "232"}
+)}
+	1 : <CFArray 0x578670 [0xa01c00e0]>{type = mutable-small, count = 2, values = (
+	0 : <CFString 0x578c10 [0xa01c00e0]>{contents = "asda"}
+	1 : <CFString 0x5796c0 [0xa01c00e0]>{contents = "232"}
+)}
+	2 : <CFArray 0x579840 [0xa01c00e0]>{type = mutable-small, count = 2, values = (
+	0 : <CFString 0x5798f0 [0xa01c00e0]>{contents = "asds"}
+	1 : <CFString 0x5799c0 [0xa01c00e0]>{contents = "232"}
+)}
+)}
 
+
+=============================
+Interresting resources on the Web:
+http://www.stone.com/The_Cocoa_Files/Adding_Applescript.html
+http://www.mactech.com/articles/mactech/Vol.16/16.07/AppleScripttoCocoa/
+http://developer.apple.com/cocoa/applescriptforapps.html
+
+Most recent appleScript tutorial update
+http://developer.apple.com/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/chapter_1_section_1.html#//apple_ref/doc/uid/TP40001982-BCICHGIE
+http://lists.apple.com/applescript-implementors
+
+Folder "/Developer/Examples/Scripting Definitions" contains example scripting defintions
+To check your scripting definition use:
+sdp -f st yourSDefFile.sdef
+
+How to write applescript:
+http://www.tandb.com.au/applescript/tutorial/
