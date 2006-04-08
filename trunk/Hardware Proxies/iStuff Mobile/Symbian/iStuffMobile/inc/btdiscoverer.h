@@ -40,9 +40,9 @@
 #include <flogger.h>
 #include <barsread.h>
 #include <eiklbo.h>
+#include <e32std.h>
 
 class CCodeListener;
-
 
 class CBTDiscoverer : public MSdpAgentNotifier, public CCoeControl, public MEikListBoxObserver, public MSdpAttributeValueVisitor
     {
@@ -90,10 +90,12 @@ class CBTDiscoverer : public MSdpAgentNotifier, public CCoeControl, public MEikL
 			TUint iAttrId;
 			TUint16* iServiceName;
 
-			RFileLogger* iLog;
 			CAknColumnListBox* iPortList;
+			CEikLabel* iLabel;
 
 			CCodeListener* iCodeListener;
+
+			RFileLogger* iLog;
 	};
 
 #endif

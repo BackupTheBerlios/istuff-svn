@@ -52,7 +52,7 @@ class CiStuffMobileAppUi;
 class CCodeListener : public CActive
 {
 	public:
-		CCodeListener(CiStuffMobileAppUi* app);
+		CCodeListener(CiStuffMobileAppUi* app, CiStuffMobileContainer* aApplicationContainer);
 		~CCodeListener();
 
 		void ConstructL(RFileLogger* aLog);
@@ -87,6 +87,7 @@ class CCodeListener : public CActive
 		TUint16* GetPath();
 
 		CiStuffMobileAppUi* iApplicationUi;
+		CiStuffMobileContainer* iApplicationContainer;
 
 		TBuf8<1> data;
 		RSocketServ iSocketServ;

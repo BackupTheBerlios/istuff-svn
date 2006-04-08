@@ -30,9 +30,10 @@
 
 #include "CodeListener.h"
 
-CCodeListener::CCodeListener(CiStuffMobileAppUi* app) : CActive(0)
+CCodeListener::CCodeListener(CiStuffMobileAppUi* app, CiStuffMobileContainer* aApplicationContainer) : CActive(0)
 {
 	iApplicationUi = app;
+	iApplicationContainer = aApplicationContainer;
 	isConnected = EFalse;
 }
 
@@ -368,29 +369,34 @@ void CCodeListener::ConnectToServer()
 {
 	if(!isConnected)
 	{
-		TRequestStatus iLocalStatus;
 		
-		User::LeaveIfError(iSocketServ.Connect());
-		User::LeaveIfError(iSocket.Open(iSocketServ, _L("RFCOMM")));
+		if(!iServices)
+		{
+		
+			TRequestStatus iLocalStatus;
+			
+			User::LeaveIfError(iSocketServ.Connect());
+			User::LeaveIfError(iSocket.Open(iSocketServ, _L("RFCOMM")));
 
-		User::LeaveIfError(iDeviceSelector.Connect());
-		TBTDeviceSelectionParamsPckg selectionFilter;
-		TUUID serviceClass(0x1101); // SerialPort, uuid16: 0x1101, 
-									// see Bluetooth_11_Assigned_Numbers.pdf,
-									// 4.4 Service Classes
-		selectionFilter().SetUUID(serviceClass);
-		iDeviceSelector.StartNotifierAndGetResponse(iLocalStatus, KDeviceSelectionNotifierUid, selectionFilter, iResponse);
-		User::WaitForRequest(iLocalStatus);
+			User::LeaveIfError(iDeviceSelector.Connect());
+			TBTDeviceSelectionParamsPckg selectionFilter;
+			TUUID serviceClass(0x1101); // SerialPort, uuid16: 0x1101, 
+										// see Bluetooth_11_Assigned_Numbers.pdf,
+										// 4.4 Service Classes
+			selectionFilter().SetUUID(serviceClass);
+			iDeviceSelector.StartNotifierAndGetResponse(iLocalStatus, KDeviceSelectionNotifierUid, selectionFilter, iResponse);
+			User::WaitForRequest(iLocalStatus);
 
-		if (iLocalStatus.Int() != KErrNone || !iResponse().IsValidBDAddr()) 
-			User::Leave(KErrCouldNotConnect);
+			if (iLocalStatus.Int() != KErrNone || !iResponse().IsValidBDAddr()) 
+				User::Leave(KErrCouldNotConnect);
 
-		iServices = CBTDiscoverer::NewL(iLog,this);
-		//service->SetMopParent(iApplicationUi);
-		iServices->ConstructL(iApplicationUi->ClientRect());
-		iServices->ListServicesL(iResponse().BDAddr());
-		//iApplicationUi->RemoveFromStack(iApplicationContainer);
-		//iApplicationUi->AddToStackL(service);
+			iServices = CBTDiscoverer::NewL(iLog,this);
+			iServices->SetMopParent(iApplicationUi);
+			iServices->ConstructL(iApplicationUi->ClientRect());
+			iServices->ListServicesL(iResponse().BDAddr());
+			iApplicationUi->RemoveFromStack(iApplicationContainer);
+			iApplicationUi->AddToStackL(iServices);
+		}
 	}
 	else
 	{
@@ -400,6 +406,9 @@ void CCodeListener::ConnectToServer()
 
 void CCodeListener::ConnectToService(TUint8 portNo)
 {
+	iApplicationUi->RemoveFromStack(iServices);
+	iApplicationUi->AddToStackL(iApplicationContainer);
+	
 	delete iServices;
 	iServices = NULL;
 

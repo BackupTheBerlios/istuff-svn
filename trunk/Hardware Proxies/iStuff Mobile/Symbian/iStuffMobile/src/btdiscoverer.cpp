@@ -33,8 +33,7 @@
 #include <iStuffMobile.rsg>
 
 #include "Btdiscoverer.h"
-
-#define KListPosition TPoint(0,0)
+#include "Codelistener.h"
 
 
 
@@ -63,13 +62,14 @@ void CBTDiscoverer::ConstructL(const TRect& aRect)
     iSdpSearchPattern->AddL(serviceClass);
 
     iMatchList = CSdpAttrIdMatchList::NewL();
-    iMatchList->AddL(TAttrRange(0x4,0x0100)); // get only names
+    iMatchList->AddL(TAttrRange(0x4));
+	iMatchList->AddL(TAttrRange(0x0100));
+
     iAgent = NULL;
 
 	iPortList = new (ELeave) CAknSingleNumberStyleListBox();
 	iPortList->SetContainerWindowL(*this);
 	iPortList->SetListBoxObserver(this);
-//	iPortList->MakeVisible(EFalse);
 
 	TResourceReader reader;
 	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);
@@ -78,11 +78,9 @@ void CBTDiscoverer::ConstructL(const TRect& aRect)
 
 	SetupScrollBarsL();
 
-	/*iServiceName = new TUint16[3];
-	iServiceName[0] = 'h';
-	iServiceName[1] = 'e';
-	iServiceName[2] = '\0';
-	AddItemToList();*/
+	iLabel = new (ELeave) CEikLabel;
+    iLabel->SetContainerWindowL( *this );
+    iLabel->SetTextL( _L("Select a service") );
 
 	SetRect(aRect);
 	ActivateL();
@@ -109,11 +107,14 @@ CBTDiscoverer::~CBTDiscoverer()
 
 	delete iPortList;
 	iPortList = NULL;
+
+	delete iLabel;
+	iLabel = NULL;
 }
 
 TInt CBTDiscoverer::CountComponentControls() const
 {
-    return 1;
+    return 2;
 }
 
 void CBTDiscoverer::Draw(const TRect& aRect) const
@@ -130,9 +131,10 @@ void CBTDiscoverer::Draw(const TRect& aRect) const
 void CBTDiscoverer::SizeChanged()
 {
 	if(iPortList)
-	{
-		iPortList->SetExtent(KListPosition, iPortList->MinimumSize());
-	}
+		iPortList->SetExtent(TPoint(0,15), iPortList->MinimumSize());
+	
+	if(iLabel)
+		iLabel->SetExtent(TPoint(30,5), iLabel->MinimumSize());
 }
 
 CCoeControl* CBTDiscoverer::ComponentControl(TInt aIndex) const
@@ -141,6 +143,10 @@ CCoeControl* CBTDiscoverer::ComponentControl(TInt aIndex) const
     {
 		case 0:
 			return iPortList;
+
+		case 1:
+			return iLabel;
+
 		default:
 			return NULL;
     }
@@ -165,7 +171,22 @@ TKeyResponse CBTDiscoverer::OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCod
 }
 
 void CBTDiscoverer::HandleListBoxEventL(CEikListBox* /*aListBox*/, TListBoxEvent aListBoxEvent)
-{}
+{
+	if ((aListBoxEvent == MEikListBoxObserver::EEventEnterKeyPressed) ||
+		(aListBoxEvent == MEikListBoxObserver::EEventItemClicked))
+	{
+		CDesCArray* itemList = STATIC_CAST(CDesCArray*, iPortList->Model()->ItemTextArray());
+		TPtrC16 currentItem((*itemList)[iPortList->CurrentItemIndex()]);
+
+		TLex aLex = TLex(currentItem);
+		TUint val;
+		if (aLex.Val(val) == KErrNone)
+		{
+			iCodeListener->ConnectToService(val);
+		}
+	}
+
+}
 
 void CBTDiscoverer::ListServicesL(const TBTDevAddr& aAddress)
 {
@@ -215,10 +236,7 @@ void CBTDiscoverer::VisitAttributeValueL(CSdpAttrValue& aValue, TSdpElementType 
 		case ETypeUint:
 
 			if(iAttrId == 0x4)
-			{
 				iServicePort = aValue.Uint();
-				iLog->WriteFormat(_L("service port = %d"),iServicePort);
-			}
 			break;
 
 		case ETypeString:
@@ -232,7 +250,6 @@ void CBTDiscoverer::VisitAttributeValueL(CSdpAttrValue& aValue, TSdpElementType 
 					iServiceName[i] = aValue.Des()[i];
 				}
 				iServiceName[len] = '\0';
-				iLog->WriteFormat(_L("service name = %s"),iServiceName);
 			}
 			break;
 
@@ -260,7 +277,6 @@ void CBTDiscoverer::AttributeRequestComplete(TSdpServRecordHandle /*aHandle*/, T
 			AddItemToList();
 			iServicePort = 0;
 			iServiceName = NULL;
-//			iPortList->MakeVisible(ETrue);
 		}
 
 		TRAPD(err, iAgent->NextRecordRequestL());
@@ -283,7 +299,7 @@ void CBTDiscoverer::AddItemToList()
 	item.Format(KItem(),iServicePort,iServiceName);
 	itemList->AppendL(item);
 	
-	DrawNow();
+	iPortList->HandleItemAdditionL();
 }
 
 void CBTDiscoverer::PrintSDPError(TInt aError)
