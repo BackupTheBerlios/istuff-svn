@@ -1,1 +1,1 @@
-java -classpath ../../../Lib/iROS.jar:./lib/libparticleJava.jar:./classes -Djava.library.path="./lib" Framework $1
+java -classpath ../../../Lib/iROS.jar:./lib/libparticleJava.jar:./classes -Djava.library.path="./lib" Framework $1 $2

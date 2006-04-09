@@ -10,7 +10,7 @@ import javax.swing.event.ListSelectionListener;
 import java.util.Vector;
 
 public class Framework extends JFrame{
-	private String _proxyID;
+	private String proxyID;
     String eventHeapIp;
     Scanner scan;
     EventLauncher eventLauncher;
@@ -37,7 +37,7 @@ public class Framework extends JFrame{
         try {
             jbInit();
             this.eventHeapIp = ip;
-            _proxyID = proxyID;
+            this.proxyID = proxyID;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -130,7 +130,8 @@ public class Framework extends JFrame{
         else if (args.length >=2)
         		pf = new Framework(args[0], args[1]);
         else
-            System.out.println("Usage: Framework <Event Heap IP Address> [ProxyID]");
+            System.out.println("Usage: Framework <Event Heap IP Address> [ProxyID]" +
+						"[ProxyID] = an optional parameter to be checked in the events received and sent in events generated e.g. proxy1\n");
     }
 
     public void btnExit_actionPerformed(ActionEvent e)
@@ -177,7 +178,7 @@ public class Framework extends JFrame{
 
     public void btnStart_actionPerformed(ActionEvent e) {
 
-       eventLauncher = new EventLauncher(configuredParticles,eventHeapIp, _proxyID);
+       eventLauncher = new EventLauncher(configuredParticles,eventHeapIp, proxyID);
        Thread t = new Thread(eventLauncher);
        listmodelEvents.addElement("Starting Framework...");
        btnScan.setEnabled(false);
