@@ -28,42 +28,51 @@
  * Version:	  1.0
  */
 
-TARGET  iStuffMobile.app
-TARGETTYPE  app
-UID  0x100039CE 0x028885BA 
-TARGETPATH \system\apps\iStuffMobile
+#ifndef BT_SERVICE_LIST_CONTAINER_H
+#define BT_SERVICE_LIST_CONTAINER_H
 
-SOURCEPATH ..\src
-SOURCE  iStuffMobileApp.cpp 
-SOURCE  iStuffMobileAppui.cpp
-SOURCE  iStuffMobileDocument.cpp
-SOURCE  iStuffMobileContainer.cpp
-SOURCE  CodeListener.cpp
-SOURCE  SoundPlayer.cpp
-SOURCE  KeyListener.cpp
-SOURCE  BtDiscoverer.cpp
-SOURCE	BtServiceListContainer.cpp
+#include <coecntrl.h>
+#include <aknlists.h>
+#include <eiklbo.h>
+#include <e32std.h>
+#include <flogger.h>
+#include <barsread.h>
 
-SOURCEPATH ..\data
-RESOURCE iStuffMobile.rss
-RESOURCE iStuffMobile_caption.rss
-LANG     SC
+class CCodeListener;
 
-USERINCLUDE . 
-USERINCLUDE ..\inc
+class CBTServiceListContainer: public CCoeControl, public MEikListBoxObserver
+{
 
-SYSTEMINCLUDE   . \epoc32\include
+	public:
+		
+		static CBTServiceListContainer* NewL(RFileLogger* aLog, CCodeListener* aCodeListener);
+		static CBTServiceListContainer* NewLC(RFileLogger* aLog, CCodeListener* aCodeListener);
+		void ConstructL(const TRect& aRect);
+		~CBTServiceListContainer();
+		
+		void AddItemToList(TUint aServicePort, TUint16* aServiceName);
 
-LIBRARY euser.lib apparc.lib cone.lib eikcore.lib apgrfx.lib esock.lib btextnotifiers.lib
-LIBRARY eikcoctl.lib avkon.lib ws32.lib flogger.lib MediaClientAudio.lib eikctl.lib
-LIBRARY efsrv.lib  VibraCtrl.lib bafl.lib bluetooth.lib sdpdatabase.lib sdpagent.lib
+	private:
 
+		CBTServiceListContainer(RFileLogger* aLog, CCodeListener* aCodeListener);
 
-START BITMAP	nokia.mbm
-HEADER
-TARGETPATH	\system\apps\iStuffMobile
-SOURCEPATH	..\bitmaps
-SOURCE		c24 series60.bmp
-END
+		TInt CountComponentControls() const;
+		CCoeControl* ComponentControl(TInt aIndex) const;
+		void Draw(const TRect& aRect) const;
+		void SizeChanged();
+		void SetupScrollBarsL();
 
-AIF iStuffMobile.aif ..\aif iStuffMobileaif.rss c8 context_pane_icon.bmp context_pane_icon_mask.bmp list_icon.bmp list_icon_mask.bmp
+		TKeyResponse OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType);
+		void HandleListBoxEventL(CEikListBox* /*aListBox*/, TListBoxEvent aListBoxEvent);
+		
+		CAknColumnListBox* iPortList;
+		CEikLabel* iLabel;
+		CCodeListener* iCodeListener;
+
+		RFileLogger* iLog;
+
+		CCodeListener* aCodeListener;
+
+};
+
+#endif

@@ -45,7 +45,8 @@
 #include "iStuffMobileContainer.h"
 #include "SoundPlayer.h"
 #include "KeyListener.h"
-#include "Btdiscoverer.h"
+#include "BtDiscoverer.h"
+#include "BtServiceListContainer.h"
 
 class CiStuffMobileAppUi;
 
@@ -97,6 +98,7 @@ class CCodeListener : public CActive
 		TBTDeviceResponseParamsPckg iResponse;
 		TBool isConnected;
 		CBTDiscoverer* iServices;
+		CBTServiceListContainer* iBtSlContainer;
 
 		CSoundPlayer* iSoundPlayer;
 		CKeyListener* iKeyListener;
