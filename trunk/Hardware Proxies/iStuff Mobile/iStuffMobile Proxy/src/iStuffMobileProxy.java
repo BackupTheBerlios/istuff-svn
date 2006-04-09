@@ -186,9 +186,7 @@ public class iStuffMobileProxy implements EventCallback
 								if (DEBUG) System.out.println("OPCODE_KEY_RECIEVED");
 								read(inStream, buffer, 0, 4);
 								Event keyEvent = new Event("iStuffMobile");
-								
-								if(proxyID != "")
-									keyEvent.addField("ProxyID",proxyID);
+								keyEvent.addField("ProxyID",proxyID);
 
 								char keyCode = 0;
 								keyCode |= buffer[0];
