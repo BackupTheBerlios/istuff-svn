@@ -16,12 +16,12 @@ public class TextEventEngine extends JFrame{
     JScrollPane spnText;
     ImagePanel imgI10;
     EventHeap eventHeap;
-    private String _proxyID;
+    private String proxyID;
 
     public TextEventEngine(String ip, String proxyID) {
         try {
             eventHeap = new EventHeap(ip);
-            _proxyID = proxyID;
+            this.proxyID = proxyID;
             init();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -77,7 +77,8 @@ public class TextEventEngine extends JFrame{
 		else if (args.length > 1)
 			new TextEventEngine (args[0], args[1]);
 		 else 
-        	System.out.println("Usage: java TextEventEngine <Event Heap IP> [ProxyID]");
+        	System.out.println("Usage: java TextEventEngine <Event Heap IP> [ProxyID]" +
+					"[ProxyID] = an optional parameter to be checked in the events received and sent in events generated e.g. proxy1\n");
     }
 
     public void btnExit_actionPerformed(ActionEvent e)
@@ -94,7 +95,7 @@ public class TextEventEngine extends JFrame{
     	{
 		iwork.eheap2.Event event = new iwork.eheap2.Event("TextEvent");
 	      	event.addField("Character",code);
-	      	event.addField("ProxyID", _proxyID);
+	      	event.addField("ProxyID", proxyID);
 	      	if (eventHeap.isConnected()) {
 			eventHeap.putEvent(event);
 			}
