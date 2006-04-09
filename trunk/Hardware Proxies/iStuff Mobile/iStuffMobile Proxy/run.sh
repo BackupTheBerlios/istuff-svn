@@ -1,1 +1,1 @@
-java -classpath ../../../Lib/iROS.jar:./classes:. iStuffMobileProxy $1 $2
+java -classpath ../../../Lib/iROS.jar:./classes:. iStuffMobileProxy $1 $2 $3
