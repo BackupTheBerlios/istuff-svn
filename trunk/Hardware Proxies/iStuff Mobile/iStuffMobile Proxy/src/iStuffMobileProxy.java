@@ -51,7 +51,7 @@ public class iStuffMobileProxy implements EventCallback
 		private final boolean DEBUG = true;
 		private EventHeap eventHeap;
 		private Event[] template;
-		private String _proxyID;
+		private String  proxyID;
 
 		private String comPort;
 		private SerialPort serPort = null;
@@ -69,7 +69,7 @@ public class iStuffMobileProxy implements EventCallback
 				template = new Event[1];
 				template[0] = new Event("iStuffMobile");
 				template[0].addField("Command", Integer.class, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
-				_proxyID = proxyID;
+				this.proxyID = proxyID;
 				this.comPort = cmprt;
 				initSerial();
 				eventHeap.registerForEvents(template,this);
@@ -86,6 +86,7 @@ public class iStuffMobileProxy implements EventCallback
 			try
 			{
 					System.out.println("Cleaning up");
+					
 					byte buffer[] = new byte[1];
 					buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
 					outStream.write(buffer);
@@ -106,14 +107,14 @@ public class iStuffMobileProxy implements EventCallback
 			try
 			{
 				
-				String proxyID;
+				String currentProxyId = null;
 				int command = ((Integer)retEvents[0].getPostValue("Command")).intValue();
 				
 				if(retEvents[0].fieldExists("ProxyID"))
-					proxyID = retEvents[0].getPostValueString("ProxyID");
+					currentProxyId = retEvents[0].getPostValueString("ProxyID");
 					
-				//if ( (proxyID.equals(_proxyID)) || (_proxyID.equals("")) ) {
-						
+				if ((currentProxyId == null && proxyID.equals("")) || (proxyID.equals(currentProxyId)))
+				{
 						System.out.println("Received command = " + command);
 
 						switch (command)
@@ -141,7 +142,7 @@ public class iStuffMobileProxy implements EventCallback
 								sendChangeProfile(retEvents[0]);
 								break;
 						}
-				//}
+				}
 			}
 			catch(Exception ex)
 			{
@@ -185,7 +186,9 @@ public class iStuffMobileProxy implements EventCallback
 								if (DEBUG) System.out.println("OPCODE_KEY_RECIEVED");
 								read(inStream, buffer, 0, 4);
 								Event keyEvent = new Event("iStuffMobile");
-								keyEvent.addField("ProxyID",_proxyID);
+								
+								if(proxyID != "")
+									keyEvent.addField("ProxyID",proxyID);
 
 								char keyCode = 0;
 								keyCode |= buffer[0];
@@ -235,7 +238,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			catch(Exception ex)
 			{
-				System.out.println("RFCOM : "+ ex.toString());
+				ex.printStackTrace();
 			}
 		}
 
@@ -262,7 +265,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			catch(Exception ex)
 			{
-				System.out.println(ex.toString());
+				ex.printStackTrace();
 			}
 		}
 
@@ -305,7 +308,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			catch(Exception ex)
 			{
-				System.out.println(ex.toString());
+				ex.printStackTrace();
 			}
 		}
 
@@ -315,21 +318,26 @@ public class iStuffMobileProxy implements EventCallback
 			{
 				byte buffer[] = new byte[2];
 				buffer[0] = ((Integer)recEvent.getPostValue("Command")).byteValue();
-				buffer[1] = ((Integer)recEvent.getPostValue("ProfileNo")).byteValue();
 				
-				outStream.write(buffer);
+				if(recEvent.fieldExists("ProfileNo"))
+				{
+					buffer[1] = ((Integer)recEvent.getPostValue("ProfileNo")).byteValue();
+					
+					outStream.write(buffer);
+				}
+				else
+					return;
 			}
 			catch(Exception ex)
 			{
-				System.out.println("RFCOM : "+ ex.toString());
+				ex.printStackTrace();
 			}
 		}
 		
 		public static void main(String argv[])
 		{
-			iStuffMobileProxy mobileProxy=null;
+			iStuffMobileProxy mobileProxy = null;
 			Shutdown killer;
-//		Stdio std;
 			
 			if (argv.length >=2) { // At least two arguments are needed in order to start the proxy
 				if(argv.length == 2)  // Only the neccessary parameters EventHeapName and COMPort were supplied. 
@@ -340,15 +348,13 @@ public class iStuffMobileProxy implements EventCallback
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
 
-				//std = new Stdio(mobileProxy);
-				//std.start();
-
 				mobileProxy.run();
 			}
 			else
 			{
-				System.out.println("Usage: java MPProxy <Event Heap IP> <Comm Port> [ProxyID] \n" +
-				"\t<Comm Port> = the serial port address for the phone examples: /dev/tty.Nokia6600, COM3\n");
+				System.out.println("\nUsage: java MPProxy <Event Heap IP> <Comm Port> [ProxyID] \n" +
+				"<Comm Port> = the serial port address for the phone e.g. /dev/tty.Nokia6600, COM3\n" +
+				"[ProxyID] = an optional parameter to be checked in the events received and sent in events generated e.g. proxy1\n");
 			}
 		}
 }
@@ -367,6 +373,9 @@ class Shutdown extends Thread {
         mobileProxy.Destroy();
     }
 }
+
+
+//for testing purpose
 
 /*class Stdio extends Thread 
 {
