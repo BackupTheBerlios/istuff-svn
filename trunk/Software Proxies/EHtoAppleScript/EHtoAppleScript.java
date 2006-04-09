@@ -37,12 +37,13 @@ public class EHtoAppleScript
 			
 			Event [] events = new Event[3];
 			events[0] = e;
+/*
 			events[1] = new Event("AppleScript");
 			events[1].addField("script", FieldType.STRING, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
 			events[1].addField("Target", "all");
 			events[2] = new Event("AppleScript");
 			events[2].addField("script", FieldType.STRING, FieldValueTypes.FORMAL, FieldValueTypes.FORMAL);
-			events[2].addField("Target", "*");
+			events[2].addField("Target", "*"); */
 			eheap.registerForEvents(events, new EHListener());
 			
 			while(true){

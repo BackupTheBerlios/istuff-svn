@@ -1,0 +1,2465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				4C42836D09E9131C007C4382,
+				4C42836E09E9131C007C4382,
+				4C42836909E912A4007C4382,
+				4C42836A09E912A4007C4382,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165CFE840E0CC02AAC07 = {
+			children = (
+				089C165DFE840E0CC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165DFE840E0CC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A0FEA54F0111CA2CBB = {
+			children = (
+				9A3E0B6F09E95BE400D94717,
+				9A3E0B7009E95BE400D94717,
+				9A3E0B7109E95BE400D94717,
+				9A3E0B7209E95BE400D94717,
+				1058C7A1FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A2FEA54F0111CA2CBB = {
+			children = (
+				29B97325FDCFA39411CA2CEA,
+				29B97324FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				8D1107320486CEB800E47090,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				4C42837109E9170E007C4382,
+				080E96DDFE201D6D7F000001,
+				29B97315FDCFA39411CA2CEA,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = CocoaAppleScriptProxy;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA = {
+			children = (
+				32CA4F630368D1EE00C91783,
+				29B97316FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97316FDCFA39411CA2CEA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = main.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				8D1107310486CEB800E47090,
+				089C165CFE840E0CC02AAC07,
+				29B97318FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA = {
+			children = (
+				29B97319FDCFA39411CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = MainMenu.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97319FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/MainMenu.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				1058C7A0FEA54F0111CA2CBB,
+				1058C7A2FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97324FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		29B97325FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//290
+//291
+//292
+//293
+//294
+//320
+//321
+//322
+//323
+//324
+		32CA4F630368D1EE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CocoaAppleScriptProxy_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//4C0
+//4C1
+//4C2
+//4C3
+//4C4
+		4C38A43309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Base.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Base.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ConnectErrorHandler.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Connection.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Connection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Consts.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Consts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ErrorContext.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_ErrorContext.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Event.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Event.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventCollection.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventCollection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventConsts.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventConsts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeap.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeap.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapFactory.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapFactory.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapProtocolException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapProtocolException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A43F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventRegistration.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventRegistration.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventToXML.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventToXML.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Field.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Field.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldOperationException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldOperationException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldType.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldType.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldValue.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldValue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_IFieldIterator.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_IFieldIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_readme.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_readme.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_SerializationException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_SerializationException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Tracer.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Tracer.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_TracerConsts.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_TracerConsts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/eh2.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A44F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteLoggingInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteLoggingInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_EOFException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_EOFException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileNotFoundException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileNotFoundException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IByteInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IByteOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_InterruptedIOException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_InterruptedIOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IOException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStreamImpl.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStreamImpl.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStreamImpl.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStreamImpl.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_LineReader.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_LineReader.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A45F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TimedoutIOException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TimedoutIOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealInStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TRealInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealOutStream.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TRealOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_io.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_InetAddress.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_InetAddress.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NetSystemException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_NetSystemException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NoConnectionException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_NoConnectionException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_ServerSocket.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_ServerSocket.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Socket.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_Socket.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_SocketAddress.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_SocketAddress.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_UnknownHostException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_UnknownHostException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_URLStreamUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_URLStreamUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A46F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ne.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_readme.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_readme.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ILockable.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_ILockable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_InterruptedException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_InterruptedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_IRunnable.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_IRunnable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Lockable.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Lockable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Locker.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Locker.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Monitor.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Monitor.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_MonitorTimedoutException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_MonitorTimedoutException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_SinglePooledThread.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_SinglePooledThread.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Thread.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Thread.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ThreadUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_ThreadUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_TMTQueue.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_TMTQueue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Unlocker.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Unlocker.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_th.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A47F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_AssertionFailedException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_AssertionFailedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BadParameterException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_BadParameterException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Base.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Base.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BridgeObject.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_BridgeObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ByteArray.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ByteArray.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_DateStruct.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_DateStruct.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Exception.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Exception.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ExceptionUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ExceptionUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ILogger.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ILogger.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_IntHashFuncs.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_IntHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ITIterator.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ITIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_LogUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_LogUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_NullableString.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_NullableString.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Object.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Object.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ObjectHashFuncs.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ObjectHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_OutOfResourceException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_OutOfResourceException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A48F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_PermissionDeniedException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_PermissionDeniedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RealObject.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_RealObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RuntimeException.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_RuntimeException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StringHashFuncs.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_StringHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StrUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_StrUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49409E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_SystemUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_SystemUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49509E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TCollection.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TCollection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49609E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TFakeHashTable.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TFakeHashTable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49709E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TProxyObject.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TProxyObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49809E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TQueue.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TQueue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49909E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Tracer.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Tracer.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49A09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TRealIterator.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TRealIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49B09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TSharedPtr.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TSharedPtr.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49C09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TUnsharedPtr.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TUnsharedPtr.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49D09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TVectorUtil.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TVectorUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49E09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A49F09E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_ut.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A4A009E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_Types.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_xm_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A4A109E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_XmlWriter.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A4A209E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk_xm.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A4A309E919FA0017F3A9 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk.h;
+			path = "../../../Event Heap/c++/Mac OS X/include/idk.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		4C38A4A409E919FB0017F3A9 = {
+			fileRef = 4C38A43309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4A509E919FB0017F3A9 = {
+			fileRef = 4C38A43409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4A609E919FB0017F3A9 = {
+			fileRef = 4C38A43509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4A709E919FB0017F3A9 = {
+			fileRef = 4C38A43609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4A809E919FB0017F3A9 = {
+			fileRef = 4C38A43709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4A909E919FB0017F3A9 = {
+			fileRef = 4C38A43809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AA09E919FB0017F3A9 = {
+			fileRef = 4C38A43909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AB09E919FB0017F3A9 = {
+			fileRef = 4C38A43A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AC09E919FB0017F3A9 = {
+			fileRef = 4C38A43B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AD09E919FB0017F3A9 = {
+			fileRef = 4C38A43C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AE09E919FB0017F3A9 = {
+			fileRef = 4C38A43D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4AF09E919FB0017F3A9 = {
+			fileRef = 4C38A43E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B009E919FB0017F3A9 = {
+			fileRef = 4C38A43F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B109E919FB0017F3A9 = {
+			fileRef = 4C38A44009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B209E919FB0017F3A9 = {
+			fileRef = 4C38A44109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B309E919FB0017F3A9 = {
+			fileRef = 4C38A44209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B409E919FB0017F3A9 = {
+			fileRef = 4C38A44309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B509E919FB0017F3A9 = {
+			fileRef = 4C38A44409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B609E919FB0017F3A9 = {
+			fileRef = 4C38A44509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B709E919FB0017F3A9 = {
+			fileRef = 4C38A44609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B809E919FB0017F3A9 = {
+			fileRef = 4C38A44709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4B909E919FB0017F3A9 = {
+			fileRef = 4C38A44809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BA09E919FB0017F3A9 = {
+			fileRef = 4C38A44909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BB09E919FB0017F3A9 = {
+			fileRef = 4C38A44A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BC09E919FB0017F3A9 = {
+			fileRef = 4C38A44B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BD09E919FB0017F3A9 = {
+			fileRef = 4C38A44C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BE09E919FB0017F3A9 = {
+			fileRef = 4C38A44D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4BF09E919FB0017F3A9 = {
+			fileRef = 4C38A44E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C009E919FB0017F3A9 = {
+			fileRef = 4C38A44F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C109E919FB0017F3A9 = {
+			fileRef = 4C38A45009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C209E919FB0017F3A9 = {
+			fileRef = 4C38A45109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C309E919FB0017F3A9 = {
+			fileRef = 4C38A45209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C409E919FB0017F3A9 = {
+			fileRef = 4C38A45309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C509E919FB0017F3A9 = {
+			fileRef = 4C38A45409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C609E919FB0017F3A9 = {
+			fileRef = 4C38A45509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C709E919FB0017F3A9 = {
+			fileRef = 4C38A45609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C809E919FB0017F3A9 = {
+			fileRef = 4C38A45709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4C909E919FB0017F3A9 = {
+			fileRef = 4C38A45809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CA09E919FB0017F3A9 = {
+			fileRef = 4C38A45909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CB09E919FB0017F3A9 = {
+			fileRef = 4C38A45A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CC09E919FB0017F3A9 = {
+			fileRef = 4C38A45B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CD09E919FB0017F3A9 = {
+			fileRef = 4C38A45C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CE09E919FB0017F3A9 = {
+			fileRef = 4C38A45D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4CF09E919FB0017F3A9 = {
+			fileRef = 4C38A45E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D009E919FB0017F3A9 = {
+			fileRef = 4C38A45F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D109E919FB0017F3A9 = {
+			fileRef = 4C38A46009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D209E919FB0017F3A9 = {
+			fileRef = 4C38A46109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D309E919FB0017F3A9 = {
+			fileRef = 4C38A46209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D409E919FB0017F3A9 = {
+			fileRef = 4C38A46309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D509E919FB0017F3A9 = {
+			fileRef = 4C38A46409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D609E919FB0017F3A9 = {
+			fileRef = 4C38A46509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D709E919FB0017F3A9 = {
+			fileRef = 4C38A46609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D809E919FB0017F3A9 = {
+			fileRef = 4C38A46709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4D909E919FB0017F3A9 = {
+			fileRef = 4C38A46809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DA09E919FB0017F3A9 = {
+			fileRef = 4C38A46909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DB09E919FB0017F3A9 = {
+			fileRef = 4C38A46A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DC09E919FB0017F3A9 = {
+			fileRef = 4C38A46B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DD09E919FB0017F3A9 = {
+			fileRef = 4C38A46C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DE09E919FB0017F3A9 = {
+			fileRef = 4C38A46D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4DF09E919FB0017F3A9 = {
+			fileRef = 4C38A46E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E009E919FB0017F3A9 = {
+			fileRef = 4C38A46F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E109E919FB0017F3A9 = {
+			fileRef = 4C38A47009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E209E919FB0017F3A9 = {
+			fileRef = 4C38A47109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E309E919FB0017F3A9 = {
+			fileRef = 4C38A47209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E409E919FB0017F3A9 = {
+			fileRef = 4C38A47309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E509E919FB0017F3A9 = {
+			fileRef = 4C38A47409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E609E919FB0017F3A9 = {
+			fileRef = 4C38A47509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E709E919FB0017F3A9 = {
+			fileRef = 4C38A47609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E809E919FB0017F3A9 = {
+			fileRef = 4C38A47709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4E909E919FB0017F3A9 = {
+			fileRef = 4C38A47809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4EA09E919FB0017F3A9 = {
+			fileRef = 4C38A47909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4EB09E919FB0017F3A9 = {
+			fileRef = 4C38A47A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4EC09E919FB0017F3A9 = {
+			fileRef = 4C38A47B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4ED09E919FB0017F3A9 = {
+			fileRef = 4C38A47C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4EE09E919FB0017F3A9 = {
+			fileRef = 4C38A47D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4EF09E919FB0017F3A9 = {
+			fileRef = 4C38A47E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F009E919FB0017F3A9 = {
+			fileRef = 4C38A47F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F109E919FB0017F3A9 = {
+			fileRef = 4C38A48009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F209E919FB0017F3A9 = {
+			fileRef = 4C38A48109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F309E919FB0017F3A9 = {
+			fileRef = 4C38A48209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F409E919FB0017F3A9 = {
+			fileRef = 4C38A48309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F509E919FB0017F3A9 = {
+			fileRef = 4C38A48409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F609E919FB0017F3A9 = {
+			fileRef = 4C38A48509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F709E919FB0017F3A9 = {
+			fileRef = 4C38A48609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F809E919FB0017F3A9 = {
+			fileRef = 4C38A48709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4F909E919FB0017F3A9 = {
+			fileRef = 4C38A48809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FA09E919FB0017F3A9 = {
+			fileRef = 4C38A48909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FB09E919FB0017F3A9 = {
+			fileRef = 4C38A48A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FC09E919FB0017F3A9 = {
+			fileRef = 4C38A48B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FD09E919FB0017F3A9 = {
+			fileRef = 4C38A48C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FE09E919FB0017F3A9 = {
+			fileRef = 4C38A48D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A4FF09E919FB0017F3A9 = {
+			fileRef = 4C38A48E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50009E919FB0017F3A9 = {
+			fileRef = 4C38A48F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50109E919FB0017F3A9 = {
+			fileRef = 4C38A49009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50209E919FB0017F3A9 = {
+			fileRef = 4C38A49109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50309E919FB0017F3A9 = {
+			fileRef = 4C38A49209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50409E919FB0017F3A9 = {
+			fileRef = 4C38A49309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50509E919FB0017F3A9 = {
+			fileRef = 4C38A49409E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50609E919FB0017F3A9 = {
+			fileRef = 4C38A49509E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50709E919FB0017F3A9 = {
+			fileRef = 4C38A49609E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50809E919FB0017F3A9 = {
+			fileRef = 4C38A49709E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50909E919FB0017F3A9 = {
+			fileRef = 4C38A49809E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50A09E919FB0017F3A9 = {
+			fileRef = 4C38A49909E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50B09E919FB0017F3A9 = {
+			fileRef = 4C38A49A09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50C09E919FB0017F3A9 = {
+			fileRef = 4C38A49B09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50D09E919FB0017F3A9 = {
+			fileRef = 4C38A49C09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50E09E919FB0017F3A9 = {
+			fileRef = 4C38A49D09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A50F09E919FB0017F3A9 = {
+			fileRef = 4C38A49E09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A51009E919FB0017F3A9 = {
+			fileRef = 4C38A49F09E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A51109E919FB0017F3A9 = {
+			fileRef = 4C38A4A009E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A51209E919FB0017F3A9 = {
+			fileRef = 4C38A4A109E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A51309E919FB0017F3A9 = {
+			fileRef = 4C38A4A209E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C38A51409E919FB0017F3A9 = {
+			fileRef = 4C38A4A309E919FA0017F3A9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C42836909E912A4007C4382 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = EHASMediator.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4C42836A09E912A4007C4382 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = EHASMediator.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4C42836B09E912A4007C4382 = {
+			fileRef = 4C42836909E912A4007C4382;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C42836C09E912A4007C4382 = {
+			fileRef = 4C42836A09E912A4007C4382;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C42836D09E9131C007C4382 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = EventHeap.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4C42836E09E9131C007C4382 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = EventHeap.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		4C42836F09E9131C007C4382 = {
+			fileRef = 4C42836D09E9131C007C4382;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C42837009E9131C007C4382 = {
+			fileRef = 4C42836E09E9131C007C4382;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		4C42837109E9170E007C4382 = {
+			children = (
+				4C38A43309E919FA0017F3A9,
+				4C38A43409E919FA0017F3A9,
+				4C38A43509E919FA0017F3A9,
+				4C38A43609E919FA0017F3A9,
+				4C38A43709E919FA0017F3A9,
+				4C38A43809E919FA0017F3A9,
+				4C38A43909E919FA0017F3A9,
+				4C38A43A09E919FA0017F3A9,
+				4C38A43B09E919FA0017F3A9,
+				4C38A43C09E919FA0017F3A9,
+				4C38A43D09E919FA0017F3A9,
+				4C38A43E09E919FA0017F3A9,
+				4C38A43F09E919FA0017F3A9,
+				4C38A44009E919FA0017F3A9,
+				4C38A44109E919FA0017F3A9,
+				4C38A44209E919FA0017F3A9,
+				4C38A44309E919FA0017F3A9,
+				4C38A44409E919FA0017F3A9,
+				4C38A44509E919FA0017F3A9,
+				4C38A44609E919FA0017F3A9,
+				4C38A44709E919FA0017F3A9,
+				4C38A44809E919FA0017F3A9,
+				4C38A44909E919FA0017F3A9,
+				4C38A44A09E919FA0017F3A9,
+				4C38A44B09E919FA0017F3A9,
+				4C38A44C09E919FA0017F3A9,
+				4C38A44D09E919FA0017F3A9,
+				4C38A44E09E919FA0017F3A9,
+				4C38A44F09E919FA0017F3A9,
+				4C38A45009E919FA0017F3A9,
+				4C38A45109E919FA0017F3A9,
+				4C38A45209E919FA0017F3A9,
+				4C38A45309E919FA0017F3A9,
+				4C38A45409E919FA0017F3A9,
+				4C38A45509E919FA0017F3A9,
+				4C38A45609E919FA0017F3A9,
+				4C38A45709E919FA0017F3A9,
+				4C38A45809E919FA0017F3A9,
+				4C38A45909E919FA0017F3A9,
+				4C38A45A09E919FA0017F3A9,
+				4C38A45B09E919FA0017F3A9,
+				4C38A45C09E919FA0017F3A9,
+				4C38A45D09E919FA0017F3A9,
+				4C38A45E09E919FA0017F3A9,
+				4C38A45F09E919FA0017F3A9,
+				4C38A46009E919FA0017F3A9,
+				4C38A46109E919FA0017F3A9,
+				4C38A46209E919FA0017F3A9,
+				4C38A46309E919FA0017F3A9,
+				4C38A46409E919FA0017F3A9,
+				4C38A46509E919FA0017F3A9,
+				4C38A46609E919FA0017F3A9,
+				4C38A46709E919FA0017F3A9,
+				4C38A46809E919FA0017F3A9,
+				4C38A46909E919FA0017F3A9,
+				4C38A46A09E919FA0017F3A9,
+				4C38A46B09E919FA0017F3A9,
+				4C38A46C09E919FA0017F3A9,
+				4C38A46D09E919FA0017F3A9,
+				4C38A46E09E919FA0017F3A9,
+				4C38A46F09E919FA0017F3A9,
+				4C38A47009E919FA0017F3A9,
+				4C38A47109E919FA0017F3A9,
+				4C38A47209E919FA0017F3A9,
+				4C38A47309E919FA0017F3A9,
+				4C38A47409E919FA0017F3A9,
+				4C38A47509E919FA0017F3A9,
+				4C38A47609E919FA0017F3A9,
+				4C38A47709E919FA0017F3A9,
+				4C38A47809E919FA0017F3A9,
+				4C38A47909E919FA0017F3A9,
+				4C38A47A09E919FA0017F3A9,
+				4C38A47B09E919FA0017F3A9,
+				4C38A47C09E919FA0017F3A9,
+				4C38A47D09E919FA0017F3A9,
+				4C38A47E09E919FA0017F3A9,
+				4C38A47F09E919FA0017F3A9,
+				4C38A48009E919FA0017F3A9,
+				4C38A48109E919FA0017F3A9,
+				4C38A48209E919FA0017F3A9,
+				4C38A48309E919FA0017F3A9,
+				4C38A48409E919FA0017F3A9,
+				4C38A48509E919FA0017F3A9,
+				4C38A48609E919FA0017F3A9,
+				4C38A48709E919FA0017F3A9,
+				4C38A48809E919FA0017F3A9,
+				4C38A48909E919FA0017F3A9,
+				4C38A48A09E919FA0017F3A9,
+				4C38A48B09E919FA0017F3A9,
+				4C38A48C09E919FA0017F3A9,
+				4C38A48D09E919FA0017F3A9,
+				4C38A48E09E919FA0017F3A9,
+				4C38A48F09E919FA0017F3A9,
+				4C38A49009E919FA0017F3A9,
+				4C38A49109E919FA0017F3A9,
+				4C38A49209E919FA0017F3A9,
+				4C38A49309E919FA0017F3A9,
+				4C38A49409E919FA0017F3A9,
+				4C38A49509E919FA0017F3A9,
+				4C38A49609E919FA0017F3A9,
+				4C38A49709E919FA0017F3A9,
+				4C38A49809E919FA0017F3A9,
+				4C38A49909E919FA0017F3A9,
+				4C38A49A09E919FA0017F3A9,
+				4C38A49B09E919FA0017F3A9,
+				4C38A49C09E919FA0017F3A9,
+				4C38A49D09E919FA0017F3A9,
+				4C38A49E09E919FA0017F3A9,
+				4C38A49F09E919FA0017F3A9,
+				4C38A4A009E919FA0017F3A9,
+				4C38A4A109E919FA0017F3A9,
+				4C38A4A209E919FA0017F3A9,
+				4C38A4A309E919FA0017F3A9,
+			);
+			isa = PBXGroup;
+			name = Includes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//4C0
+//4C1
+//4C2
+//4C3
+//4C4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1107260486CEB800E47090 = {
+			buildPhases = (
+				8D1107270486CEB800E47090,
+				8D1107290486CEB800E47090,
+				8D11072C0486CEB800E47090,
+				8D11072E0486CEB800E47090,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaAppleScriptProxy_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"/Users/Eugen/berlios/trunk/Event Heap/c++/Mac OS X/lib\" \"/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event Heap/c++/Mac OS X/lib\"";
+				OTHER_CFLAGS = "-Dunix -D_REENTRANT";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CocoaAppleScriptProxy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = CocoaAppleScriptProxy;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CocoaAppleScriptProxy;
+			productReference = 8D1107320486CEB800E47090;
+			productType = "com.apple.product-type.application";
+		};
+		8D1107270486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1107280486CEB800E47090,
+				4C42836B09E912A4007C4382,
+				4C42836F09E9131C007C4382,
+				4C38A4A409E919FB0017F3A9,
+				4C38A4A509E919FB0017F3A9,
+				4C38A4A609E919FB0017F3A9,
+				4C38A4A709E919FB0017F3A9,
+				4C38A4A809E919FB0017F3A9,
+				4C38A4A909E919FB0017F3A9,
+				4C38A4AA09E919FB0017F3A9,
+				4C38A4AB09E919FB0017F3A9,
+				4C38A4AC09E919FB0017F3A9,
+				4C38A4AD09E919FB0017F3A9,
+				4C38A4AE09E919FB0017F3A9,
+				4C38A4AF09E919FB0017F3A9,
+				4C38A4B009E919FB0017F3A9,
+				4C38A4B109E919FB0017F3A9,
+				4C38A4B209E919FB0017F3A9,
+				4C38A4B309E919FB0017F3A9,
+				4C38A4B409E919FB0017F3A9,
+				4C38A4B509E919FB0017F3A9,
+				4C38A4B609E919FB0017F3A9,
+				4C38A4B709E919FB0017F3A9,
+				4C38A4B809E919FB0017F3A9,
+				4C38A4B909E919FB0017F3A9,
+				4C38A4BA09E919FB0017F3A9,
+				4C38A4BB09E919FB0017F3A9,
+				4C38A4BC09E919FB0017F3A9,
+				4C38A4BD09E919FB0017F3A9,
+				4C38A4BE09E919FB0017F3A9,
+				4C38A4BF09E919FB0017F3A9,
+				4C38A4C009E919FB0017F3A9,
+				4C38A4C109E919FB0017F3A9,
+				4C38A4C209E919FB0017F3A9,
+				4C38A4C309E919FB0017F3A9,
+				4C38A4C409E919FB0017F3A9,
+				4C38A4C509E919FB0017F3A9,
+				4C38A4C609E919FB0017F3A9,
+				4C38A4C709E919FB0017F3A9,
+				4C38A4C809E919FB0017F3A9,
+				4C38A4C909E919FB0017F3A9,
+				4C38A4CA09E919FB0017F3A9,
+				4C38A4CB09E919FB0017F3A9,
+				4C38A4CC09E919FB0017F3A9,
+				4C38A4CD09E919FB0017F3A9,
+				4C38A4CE09E919FB0017F3A9,
+				4C38A4CF09E919FB0017F3A9,
+				4C38A4D009E919FB0017F3A9,
+				4C38A4D109E919FB0017F3A9,
+				4C38A4D209E919FB0017F3A9,
+				4C38A4D309E919FB0017F3A9,
+				4C38A4D409E919FB0017F3A9,
+				4C38A4D509E919FB0017F3A9,
+				4C38A4D609E919FB0017F3A9,
+				4C38A4D709E919FB0017F3A9,
+				4C38A4D809E919FB0017F3A9,
+				4C38A4D909E919FB0017F3A9,
+				4C38A4DA09E919FB0017F3A9,
+				4C38A4DB09E919FB0017F3A9,
+				4C38A4DC09E919FB0017F3A9,
+				4C38A4DD09E919FB0017F3A9,
+				4C38A4DE09E919FB0017F3A9,
+				4C38A4DF09E919FB0017F3A9,
+				4C38A4E009E919FB0017F3A9,
+				4C38A4E109E919FB0017F3A9,
+				4C38A4E209E919FB0017F3A9,
+				4C38A4E309E919FB0017F3A9,
+				4C38A4E409E919FB0017F3A9,
+				4C38A4E509E919FB0017F3A9,
+				4C38A4E609E919FB0017F3A9,
+				4C38A4E709E919FB0017F3A9,
+				4C38A4E809E919FB0017F3A9,
+				4C38A4E909E919FB0017F3A9,
+				4C38A4EA09E919FB0017F3A9,
+				4C38A4EB09E919FB0017F3A9,
+				4C38A4EC09E919FB0017F3A9,
+				4C38A4ED09E919FB0017F3A9,
+				4C38A4EE09E919FB0017F3A9,
+				4C38A4EF09E919FB0017F3A9,
+				4C38A4F009E919FB0017F3A9,
+				4C38A4F109E919FB0017F3A9,
+				4C38A4F209E919FB0017F3A9,
+				4C38A4F309E919FB0017F3A9,
+				4C38A4F409E919FB0017F3A9,
+				4C38A4F509E919FB0017F3A9,
+				4C38A4F609E919FB0017F3A9,
+				4C38A4F709E919FB0017F3A9,
+				4C38A4F809E919FB0017F3A9,
+				4C38A4F909E919FB0017F3A9,
+				4C38A4FA09E919FB0017F3A9,
+				4C38A4FB09E919FB0017F3A9,
+				4C38A4FC09E919FB0017F3A9,
+				4C38A4FD09E919FB0017F3A9,
+				4C38A4FE09E919FB0017F3A9,
+				4C38A4FF09E919FB0017F3A9,
+				4C38A50009E919FB0017F3A9,
+				4C38A50109E919FB0017F3A9,
+				4C38A50209E919FB0017F3A9,
+				4C38A50309E919FB0017F3A9,
+				4C38A50409E919FB0017F3A9,
+				4C38A50509E919FB0017F3A9,
+				4C38A50609E919FB0017F3A9,
+				4C38A50709E919FB0017F3A9,
+				4C38A50809E919FB0017F3A9,
+				4C38A50909E919FB0017F3A9,
+				4C38A50A09E919FB0017F3A9,
+				4C38A50B09E919FB0017F3A9,
+				4C38A50C09E919FB0017F3A9,
+				4C38A50D09E919FB0017F3A9,
+				4C38A50E09E919FB0017F3A9,
+				4C38A50F09E919FB0017F3A9,
+				4C38A51009E919FB0017F3A9,
+				4C38A51109E919FB0017F3A9,
+				4C38A51209E919FB0017F3A9,
+				4C38A51309E919FB0017F3A9,
+				4C38A51409E919FB0017F3A9,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1107280486CEB800E47090 = {
+			fileRef = 32CA4F630368D1EE00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107290486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090,
+				8D11072B0486CEB800E47090,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072A0486CEB800E47090 = {
+			fileRef = 29B97318FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072B0486CEB800E47090 = {
+			fileRef = 089C165CFE840E0CC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072C0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090,
+				4C42836C09E912A4007C4382,
+				4C42837009E9131C007C4382,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072D0486CEB800E47090 = {
+			fileRef = 29B97316FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D11072E0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090,
+				9A3E0B7309E95BE400D94717,
+				9A3E0B7409E95BE400D94717,
+				9A3E0B7509E95BE400D94717,
+				9A3E0B7609E95BE400D94717,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072F0486CEB800E47090 = {
+			fileRef = 1058C7A1FEA54F0111CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107310486CEB800E47090 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1107320486CEB800E47090 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = CocoaAppleScriptProxy.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//9A0
+//9A1
+//9A2
+//9A3
+//9A4
+		9A3E0B6F09E95BE400D94717 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libceheap2.0.dylib;
+			path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.0.dylib";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		9A3E0B7009E95BE400D94717 = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.ar;
+			name = libceheap2.a;
+			path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.a";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		9A3E0B7109E95BE400D94717 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libidk.0.dylib;
+			path = "../../../Event Heap/c++/Mac OS X/lib/libidk.0.dylib";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		9A3E0B7209E95BE400D94717 = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.ar;
+			name = libidk.a;
+			path = "../../../Event Heap/c++/Mac OS X/lib/libidk.a";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		9A3E0B7309E95BE400D94717 = {
+			fileRef = 9A3E0B6F09E95BE400D94717;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		9A3E0B7409E95BE400D94717 = {
+			fileRef = 9A3E0B7009E95BE400D94717;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		9A3E0B7509E95BE400D94717 = {
+			fileRef = 9A3E0B7109E95BE400D94717;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		9A3E0B7609E95BE400D94717 = {
+			fileRef = 9A3E0B7209E95BE400D94717;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}
