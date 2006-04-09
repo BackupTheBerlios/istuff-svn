@@ -32,9 +32,19 @@ import java.io.*;
 import javax.comm.*;
 import iwork.eheap2.*;
 
+//!  iStuff Mobile proxy program to communicate with the Event Heap
+/*!
+  This is iStuff Mobile proxy Class which communicates with the Event Heap.
+  The two main functionalities of this class are:
+  	-# Receive events of type iStuffMobile from the Event Heap and send 
+  		 appropriate commands to the iStuffMobile mobile phone application.
+  	-# Receive Key Press events from the iStuffMobile mobile phone application 
+  		 and post corresponding key events on the Event Heap.
+*/
 
 public class iStuffMobileProxy implements EventCallback
 {
+		
 		private final int OPCODE_DISCONNECT		= 1;
 		private final int OPCODE_BACKLIGHT_ON	=	2;
 		private final int OPCODE_BACKLIGHT_OFF	=	3;
@@ -47,6 +57,7 @@ public class iStuffMobileProxy implements EventCallback
 		private final int OPCODE_START_KEYCAPTURE = 10;
 		private final int OPCODE_STOP_KEYCAPTURE = 11;
 		private final int OPCODE_CHANGEPROFILE = 12;
+		
 
 		private final boolean DEBUG = true;
 		private EventHeap eventHeap;
@@ -60,7 +71,17 @@ public class iStuffMobileProxy implements EventCallback
 
 		private byte[] buffer = new byte[512];
 
-
+		//! iStuffMobile class constructor
+    /*! The constructor take Event Heap ip address, the current 
+      	proxy Id and a COM port name as an input.
+      
+      	\param ip as a String. Specifies the IP address of the Event Heap
+      	\param proxyID as a String. Specifies the proxy ID to be used 
+      				 while posting Events and to be checked while receiving
+      				 events.
+      	\param cmprt as a String. Specifies the COM Port name.
+    */
+    
 		public iStuffMobileProxy(String ip, String proxyID, String cmprt)
 		{
 			try
@@ -80,6 +101,13 @@ public class iStuffMobileProxy implements EventCallback
 				System.exit(-1);
 			}
 		}
+		
+		//! Disconnects the proxy
+    /*! This method is called when Ctrl + C is hit on the keyboard.
+        It sends a Disconnect command to the iStuffMobile
+      	mobile phone application, closes I/O streams and exits the 
+      	Proxy.
+    */
 
 		public void Destroy()
 		{
@@ -101,7 +129,20 @@ public class iStuffMobileProxy implements EventCallback
 			}
 		}
 
-		// Callback from register for events
+		//! Callback Method from the Event Heap
+    /*! This method is called with the event being returned and 
+      	matching templates, if appropriate, whenever a new event 
+      	in a notification stream arrives.
+      
+      	\param retEvents as an Event array. The first element of the 
+      			 	 array is the matching event. Subsequent events in 
+      			 	 the array are the template events used for the match.
+      			 
+      	\return The function should return true if it wants to 
+      					continue recieving callbacks, and false if it is 
+      					done and doesn't want to recieve any more callbacks. 
+    */
+    
 		public boolean returnEvent(Event[] retEvents)
 		{
 			try
@@ -152,6 +193,12 @@ public class iStuffMobileProxy implements EventCallback
 			System.out.println("Waiting for event");
 			return true;
 		}
+		
+		//! Initializes the serial ports
+    /*! This method initializes the input and output stream member
+    		variables. It throws an exception if the COM port identifier
+    		is not found.
+    */
 
 		private void initSerial()throws Exception
 		{
@@ -164,6 +211,20 @@ public class iStuffMobileProxy implements EventCallback
 		  outStream = serPort.getOutputStream();
 		  inStream = serPort.getInputStream();
 		}
+		
+		//! Reads data from input stream
+    /*! This method reads data from the given input stream(in) into 
+    		the provided buffer(buffer) starting from an offset index(off). Number of
+    		bytes to be read are specified by length(len).
+      
+      	\param[in]  in as an InputStream object. Data is read from this input stream.
+      	\param[out] buffer as a Byte array. The read data is copied to this buffer as
+      				 			bytes.
+      	\param[in]  off as an Integer. Specifies the offset index from which writing 
+      				 			into the buffer should start.
+      	\param[in]  len as an Integer. Specifies the number of bytes to be read from
+      				 			the given input stream.
+    */
 
 		public void read(InputStream in, byte[] buffer, int off, int len) throws IOException {
 			int i;
@@ -226,7 +287,7 @@ public class iStuffMobileProxy implements EventCallback
 				}
 		}
 
-		public void redirectEvent(int command)
+		private void redirectEvent(int command)
 		{
 			try
 			{
@@ -310,7 +371,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 		}
 
-		public void sendChangeProfile(Event recEvent)
+		private void sendChangeProfile(Event recEvent)
 		{
 			try
 			{
