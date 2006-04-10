@@ -16,7 +16,7 @@
     <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
     <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
   </ul></div>
-<h1>iStuffMobileProxy Class Reference</h1><!-- doxytag: class="iStuffMobileProxy" -->iStuff Mobile proxy program to communicate with the Event Heap  
+<h1>iStuffMobileProxy Class Reference</h1><!-- doxytag: class="iStuffMobileProxy" -->"iStuffMobile" proxy program to communicate with the "Event Heap".  
 <a href="#_details">More...</a>
 <p>
 <a href="classi_stuff_mobile_proxy-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
@@ -30,20 +30,74 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disconnects the proxy.  <a href="#38f0099789e6c11b39cad3fa02b57c7a"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">boolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#fc6dd524495d498fdb5d962e40d57b58">returnEvent</a> (Event[] retEvents)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback Method from the Event Heap.  <a href="#fc6dd524495d498fdb5d962e40d57b58"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback Method from the "Event Heap".  <a href="#fc6dd524495d498fdb5d962e40d57b58"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#264b91ab9aabc4fda8f5db189aa498d6">read</a> (InputStream in, byte[] buffer, int off, int len)  throws IOException </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads data from input stream.  <a href="#264b91ab9aabc4fda8f5db189aa498d6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#d6c886e83e6e6630305eaf8acad5c925">run</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Receives key codes from the "iStuff Mobile" mobile phone application.  <a href="#d6c886e83e6e6630305eaf8acad5c925"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#b617941343c4ef9bd42a8dc9760c2df9">initSerial</a> ()  throws Exception 		</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes the serial ports.  <a href="#b617941343c4ef9bd42a8dc9760c2df9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#04fcf7570dc12bff145d40ccc4bde9ad">redirectEvent</a> (int command)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends high-level commands to the "iStuff Mobile" mobile phone application.  <a href="#04fcf7570dc12bff145d40ccc4bde9ad"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#56940f9b21f851a5afd558568b3579e3">getPathAndRedirect</a> (Event recEvent)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends high-level commands to the "iStuff Mobile" mobile phone application.  <a href="#56940f9b21f851a5afd558568b3579e3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#b1fa0c45eae8b9ff7577ba1060199289">sendKey</a> (Event recEvent)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a key press simulation command to the "iStuff Mobile" mobile phone application.  <a href="#b1fa0c45eae8b9ff7577ba1060199289"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_stuff_mobile_proxy.html#1beec62f989752ca8e37e65af077395a">sendChangeProfile</a> (Event recEvent)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends a profile change command to the "iStuff Mobile" mobile phone application.  <a href="#1beec62f989752ca8e37e65af077395a"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Opcodes</div></td></tr>
+<tr><td colspan="2"><div class="groupText">High-level opcodes that could be sent (or received) to (or from) "iStuff Mobile" mobile phone application. <br><br></div></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a9afa2cf66990aeb822b94a8dcb08a48"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_DISCONNECT" ref="a9afa2cf66990aeb822b94a8dcb08a48" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_DISCONNECT</b> = 1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c77de950f76492b202808ab20ca3f6d4"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_BACKLIGHT_ON" ref="c77de950f76492b202808ab20ca3f6d4" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_BACKLIGHT_ON</b> = 2</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="16a808fa55547535d242b38211a5c281"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_BACKLIGHT_OFF" ref="16a808fa55547535d242b38211a5c281" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_BACKLIGHT_OFF</b> = 3</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="5b9e8badace6148e6a3e9a3d17138823"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_KEY_RECEIVED" ref="5b9e8badace6148e6a3e9a3d17138823" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_KEY_RECEIVED</b> = 4</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1372b746676c6a386022529b903b7958"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_PLAYSOUND" ref="1372b746676c6a386022529b903b7958" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_PLAYSOUND</b> = 5</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="983105feb1511f2e0cedefc2d7866c55"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_STOPSOUND" ref="983105feb1511f2e0cedefc2d7866c55" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_STOPSOUND</b> = 6</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ba4351fa3361a625a8270d95218dbae8"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_LAUNCHAPP" ref="ba4351fa3361a625a8270d95218dbae8" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_LAUNCHAPP</b> = 7</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="09cf9ac91c880fb4bdaac7944a5aa3ff"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_CLOSEAPP" ref="09cf9ac91c880fb4bdaac7944a5aa3ff" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_CLOSEAPP</b> = 8</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e652e9f643faf57c8f3f9d7b17a56a21"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_KEY_PRESSED" ref="e652e9f643faf57c8f3f9d7b17a56a21" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_KEY_PRESSED</b> = 9</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ee180b585874e2b08fdf8a8554316c3c"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_START_KEYCAPTURE" ref="ee180b585874e2b08fdf8a8554316c3c" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_START_KEYCAPTURE</b> = 10</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ccf63151268182c1499fd4f44e6bf50b"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_STOP_KEYCAPTURE" ref="ccf63151268182c1499fd4f44e6bf50b" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_STOP_KEYCAPTURE</b> = 11</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3bd54f1731d1034ad02673c99c1cdd3d"></a><!-- doxytag: member="iStuffMobileProxy::OPCODE_CHANGEPROFILE" ref="3bd54f1731d1034ad02673c99c1cdd3d" args="" -->
+final int&nbsp;</td><td class="memItemRight" valign="bottom"><b>OPCODE_CHANGEPROFILE</b> = 12</td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-iStuff Mobile proxy program to communicate with the Event Heap 
+"iStuffMobile" proxy program to communicate with the "Event Heap". 
 <p>
-This is iStuff Mobile proxy Class which communicates with the Event Heap. The two main functionalities of this class are:<ol type=1>
-<li>Receive events of type iStuffMobile from the Event Heap and send appropriate commands to the iStuffMobile mobile phone application.</li><li>Receive Key Press events from the iStuffMobile mobile phone application and post corresponding key events on the Event Heap. </li></ol>
+The "iStuff Mobile" proxy Class which communicates with the "Event Heap". The two main functionalities of this class are:<ol type=1>
+<li>Receive events of type iStuffMobile from the "Event Heap" and send appropriate commands to the "iStuff Mobile" mobile phone application.</li><li>Receive Key Press events from the "iStuff Mobile" mobile phone application and post corresponding key events on the "Event Heap". </li></ol>
 
 <p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
@@ -89,10 +143,10 @@ This is iStuff Mobile proxy Class which communicates with the Event Heap. The tw
 <p>
 iStuffMobile class constructor 
 <p>
-The constructor take Event Heap ip address, the current proxy Id and a COM port name as an input.<p>
+The constructor take "Event Heap" IP address, the current proxy Id and a COM port name as an inputs.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>as a String. Specifies the IP address of the Event Heap </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>as a String. Specifies the IP address of the "Event Heap". </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>proxyID</em>&nbsp;</td><td>as a String. Specifies the proxy ID to be used while posting Events and to be checked while receiving events. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>cmprt</em>&nbsp;</td><td>as a String. Specifies the COM Port name. </td></tr>
   </table>
@@ -127,7 +181,43 @@ The constructor take Event Heap ip address, the current proxy Id and a COM port 
 <p>
 Disconnects the proxy. 
 <p>
-This method is called when Ctrl + C is hit on the keyboard. It sends a Disconnect command to the iStuffMobile mobile phone application, closes I/O streams and exits the Proxy.     </td>
+This method is called when Ctrl + C is hit on the keyboard. It sends a Disconnect command to the "iStuff Mobile" mobile phone application, closes I/O streams and exits the Proxy.     </td>
+  </tr>
+</table>
+<a class="anchor" name="56940f9b21f851a5afd558568b3579e3"></a><!-- doxytag: member="iStuffMobileProxy::getPathAndRedirect" ref="56940f9b21f851a5afd558568b3579e3" args="(Event recEvent)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void iStuffMobileProxy.getPathAndRedirect           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Event&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>recEvent</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sends high-level commands to the "iStuff Mobile" mobile phone application. 
+<p>
+This method extracts the "Command" and "Path" fields from the Event passed as parameter and issue a corresponding high-level command to the "iStuff Mobile" mobile phone application along with the path. This method is called from <b>public boolean returnEvent(Event[] retEvents)</b> inside this class for high-level commands that require a path field.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>recEvent</em>&nbsp;</td><td>as an Event Object. Specifies an Event containing "Command" and "Path" fields. </td></tr>
+  </table>
+</dl>
+    </td>
   </tr>
 </table>
 <a class="anchor" name="b617941343c4ef9bd42a8dc9760c2df9"></a><!-- doxytag: member="iStuffMobileProxy::initSerial" ref="b617941343c4ef9bd42a8dc9760c2df9" args="()" --><p>
@@ -219,6 +309,42 @@ This method reads data from the given input stream(in) into the provided buffer(
     </td>
   </tr>
 </table>
+<a class="anchor" name="04fcf7570dc12bff145d40ccc4bde9ad"></a><!-- doxytag: member="iStuffMobileProxy::redirectEvent" ref="04fcf7570dc12bff145d40ccc4bde9ad" args="(int command)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void iStuffMobileProxy.redirectEvent           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>command</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sends high-level commands to the "iStuff Mobile" mobile phone application. 
+<p>
+This method sends an int command to the "iStuff Mobile" mobile phone application. This method is called from <em>public</em> <b>boolean returnEvent(Event[] retEvents)</b> inside this class.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>command</em>&nbsp;</td><td>as an Ingeter. Specifies the opcode to be sent to the mobile phone application. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
 <a class="anchor" name="fc6dd524495d498fdb5d962e40d57b58"></a><!-- doxytag: member="iStuffMobileProxy::returnEvent" ref="fc6dd524495d498fdb5d962e40d57b58" args="(Event[] retEvents)" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
   <tr>
@@ -244,9 +370,9 @@ This method reads data from the given input stream(in) into the provided buffer(
     <td>
 
 <p>
-Callback Method from the Event Heap. 
+Callback Method from the "Event Heap". 
 <p>
-This method is called with the event being returned and matching templates, if appropriate, whenever a new event in a notification stream arrives.<p>
+This method is called whenever an event matching the template is found on the event heap. This function decodes the events of type "iStuffMobile" and issues corresponding high-level commands to the "iStuff Mobile" mobile phone application.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>retEvents</em>&nbsp;</td><td>as an Event array. The first element of the array is the matching event. Subsequent events in the array are the template events used for the match.</td></tr>
@@ -256,9 +382,110 @@ This method is called with the event being returned and matching templates, if a
     </td>
   </tr>
 </table>
+<a class="anchor" name="d6c886e83e6e6630305eaf8acad5c925"></a><!-- doxytag: member="iStuffMobileProxy::run" ref="d6c886e83e6e6630305eaf8acad5c925" args="()" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void iStuffMobileProxy.run           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Receives key codes from the "iStuff Mobile" mobile phone application. 
+<p>
+This method runs all the time and listens to key codes from the "iStuff Mobile" mobile phone application and posts corresponding key events onto the "Event Heap".     </td>
+  </tr>
+</table>
+<a class="anchor" name="1beec62f989752ca8e37e65af077395a"></a><!-- doxytag: member="iStuffMobileProxy::sendChangeProfile" ref="1beec62f989752ca8e37e65af077395a" args="(Event recEvent)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void iStuffMobileProxy.sendChangeProfile           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Event&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>recEvent</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sends a profile change command to the "iStuff Mobile" mobile phone application. 
+<p>
+This method extracts the "Command" and "ProfileNo" fields from the Event passed as parameter and issue a profile change command to the "iStuff Mobile" mobile phone application along with the profile number. This method is called from <b>public boolean returnEvent(Event[] retEvents)</b> inside this class for opcode OPCODE_CHANGEPROFILE.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>recEvent</em>&nbsp;</td><td>as an Event Object. Specifies an Event containing "Command" and "ProfileNo" fields. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b1fa0c45eae8b9ff7577ba1060199289"></a><!-- doxytag: member="iStuffMobileProxy::sendKey" ref="b1fa0c45eae8b9ff7577ba1060199289" args="(Event recEvent)" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void iStuffMobileProxy.sendKey           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">Event&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>recEvent</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sends a key press simulation command to the "iStuff Mobile" mobile phone application. 
+<p>
+This method extracts the "Command", "Code", "ScanCode", and "Repead" fields from the Event passed as parameter and issue a Key Press simulation command to the "iStuff Mobile" mobile phone application. This method is called from <b>public boolean returnEvent(Event[] retEvents)</b> inside this class for opcode OPCODE_KEY_RECEIVED.<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>recEvent</em>&nbsp;</td><td>as an Event Object. Specifies an Event containing "Command" "Code", "ScanCode" and "Repeat" fields. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>D:/Master Thesis/Development/iStuff/trunk/Hardware Proxies/iStuff Mobile/iStuffMobile Proxy/src/iStuffMobileProxy.java</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Sun Apr 9 22:09:28 2006 for iStuff Mobile Proxy by&nbsp;
+<li>C:/dev/faraz/Hardware Proxies/iStuff Mobile/iStuffMobile Proxy/src/iStuffMobileProxy.java</ul>
+<hr size="1"><address style="align: right;"><small>Generated on Mon Apr 10 16:05:40 2006 for iStuff Mobile Proxy by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>
