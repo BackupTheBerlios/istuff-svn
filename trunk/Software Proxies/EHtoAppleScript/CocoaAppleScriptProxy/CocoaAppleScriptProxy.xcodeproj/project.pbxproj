@@ -129,10 +129,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		9A73903E09E9525900342B46 /* libceheap2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A73903A09E9525900342B46 /* libceheap2.0.dylib */; };
-		9A73903F09E9525900342B46 /* libceheap2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A73903B09E9525900342B46 /* libceheap2.a */; };
-		9A73904009E9525900342B46 /* libidk.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A73903C09E9525900342B46 /* libidk.0.dylib */; };
-		9A73904109E9525900342B46 /* libidk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A73903D09E9525900342B46 /* libidk.a */; };
+		9A9CEFE309EA59CA00D8C87D /* libceheap2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */; };
+		9A9CEFE409EA59CA00D8C87D /* libidk.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -288,10 +286,8 @@
 		4C42836E09E9131C007C4382 /* EventHeap.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = EventHeap.mm; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CocoaAppleScriptProxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaAppleScriptProxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A73903A09E9525900342B46 /* libceheap2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.0.dylib"; sourceTree = SOURCE_ROOT; };
-		9A73903B09E9525900342B46 /* libceheap2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libceheap2.a; path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.a"; sourceTree = SOURCE_ROOT; };
-		9A73903C09E9525900342B46 /* libidk.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libidk.0.dylib"; sourceTree = SOURCE_ROOT; };
-		9A73903D09E9525900342B46 /* libidk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidk.a; path = "../../../Event Heap/c++/Mac OS X/lib/libidk.a"; sourceTree = SOURCE_ROOT; };
+		9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.0.dylib"; sourceTree = SOURCE_ROOT; };
+		9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libidk.0.dylib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,10 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				9A73903E09E9525900342B46 /* libceheap2.0.dylib in Frameworks */,
-				9A73903F09E9525900342B46 /* libceheap2.a in Frameworks */,
-				9A73904009E9525900342B46 /* libidk.0.dylib in Frameworks */,
-				9A73904109E9525900342B46 /* libidk.a in Frameworks */,
+				9A9CEFE309EA59CA00D8C87D /* libceheap2.0.dylib in Frameworks */,
+				9A9CEFE409EA59CA00D8C87D /* libidk.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +318,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A73903A09E9525900342B46 /* libceheap2.0.dylib */,
-				9A73903B09E9525900342B46 /* libceheap2.a */,
-				9A73903C09E9525900342B46 /* libidk.0.dylib */,
-				9A73903D09E9525900342B46 /* libidk.a */,
+				9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */,
+				9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -768,13 +760,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/Eugen/berlios/trunk/Event Heap/c++/Mac OS X/lib",
-					"$(SRCROOT)/../../../Event Heap/c++/Mac OS X/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = (
 					"-Dunix",
@@ -806,13 +795,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/Eugen/berlios/trunk/Event Heap/c++/Mac OS X/lib",
-					"$(SRCROOT)/../../../Event Heap/c++/Mac OS X/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
 				OTHER_CFLAGS = (
 					"-Dunix",
 					"-D_REENTRANT",
@@ -841,13 +827,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/Eugen/berlios/trunk/Event Heap/c++/Mac OS X/lib",
-					"$(SRCROOT)/../../../Event Heap/c++/Mac OS X/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
 				OTHER_CFLAGS = (
 					"-Dunix",
 					"-D_REENTRANT",
@@ -867,18 +850,27 @@
 		9A1E160909E950DD004E18A9 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 			};
 			name = Development;
 		};
 		9A1E160A09E950DD004E18A9 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 			};
 			name = Deployment;
 		};
 		9A1E160B09E950DD004E18A9 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 			};
 			name = Default;
 		};

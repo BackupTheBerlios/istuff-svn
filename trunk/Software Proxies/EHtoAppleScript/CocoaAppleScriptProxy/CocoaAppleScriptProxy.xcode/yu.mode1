@@ -318,7 +318,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9A3E0BB609E9695800D94717</string>
+										<string>9A9650B009EA58B100CF2B1B</string>
 										<key>history</key>
 										<array>
 											<string>9A3E0B9A09E9695800D94717</string>
@@ -330,7 +330,7 @@
 											<string>9A3E0BA009E9695800D94717</string>
 											<string>9A3E0BA109E9695800D94717</string>
 											<string>9A3E0BA209E9695800D94717</string>
-											<string>9A3E0BA309E9695800D94717</string>
+											<string>9A3C8A9509EA586D0063EC12</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -338,20 +338,12 @@
 											<string>9A3E0BA509E9695800D94717</string>
 											<string>9A3E0BA609E9695800D94717</string>
 											<string>9A3E0BA709E9695800D94717</string>
-											<string>9A3E0BA809E9695800D94717</string>
-											<string>9A3E0BA909E9695800D94717</string>
-											<string>9A3E0BAA09E9695800D94717</string>
-											<string>9A3E0BAB09E9695800D94717</string>
-											<string>9A3E0BAC09E9695800D94717</string>
-											<string>9A3E0BAD09E9695800D94717</string>
 											<string>9A3E0BAE09E9695800D94717</string>
 											<string>9A3E0BAF09E9695800D94717</string>
 											<string>9A3E0BB009E9695800D94717</string>
 											<string>9A3E0BB109E9695800D94717</string>
 											<string>9A3E0BB209E9695800D94717</string>
 											<string>9A3E0BB309E9695800D94717</string>
-											<string>9A3E0BB409E9695800D94717</string>
-											<string>9A3E0BB509E9695800D94717</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -409,9 +401,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>9A3E0B6109E95B4000D94717</string>
+				<string>9A9650AE09EA589700CF2B1B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>9A3E0B6209E95B4000D94717</string>
+				<string>9A9650AF09EA589700CF2B1B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -545,12 +537,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9A3E0B7F09E9600300D94717</string>
-		<string>9A3E0BB709E9695800D94717</string>
 		<string>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Software Proxies/EHtoAppleScript/CocoaAppleScriptProxy/CocoaAppleScriptProxy.xcode</string>
-		<string>9A3E0BB809E9695800D94717</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
-		<string>9A3E0BB909E9695800D94717</string>
 	</array>
 	<key>WindowString</key>
 	<string>270 326 690 397 0 0 1280 746 </string>
