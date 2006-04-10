@@ -238,11 +238,10 @@
 			PBXWorkspaceStateSaveDate = 166367242;
 		};
 		perUserProjectItems = {
-			9A59329F09EA8D440059E3E8 = 9A59329F09EA8D440059E3E8 /* PBXTextBookmark */;
-			9A5932A009EA8D440059E3E8 = 9A5932A009EA8D440059E3E8 /* PBXBookmark */;
-			9A5932A109EA8D440059E3E8 = 9A5932A109EA8D440059E3E8 /* PBXTextBookmark */;
-			9A5932B809EA8F330059E3E8 = 9A5932B809EA8F330059E3E8 /* PBXTextBookmark */;
-			9AABF71F09EA9019006DAB1A /* PBXTextBookmark */ = 9AABF71F09EA9019006DAB1A /* PBXTextBookmark */;
+			9A59329F09EA8D440059E3E8 /* PBXTextBookmark */ = 9A59329F09EA8D440059E3E8 /* PBXTextBookmark */;
+			9A5932A109EA8D440059E3E8 /* PBXTextBookmark */ = 9A5932A109EA8D440059E3E8 /* PBXTextBookmark */;
+			9A5932B809EA8F330059E3E8 /* PBXTextBookmark */ = 9A5932B809EA8F330059E3E8 /* PBXTextBookmark */;
+			9AABF72A09EA9BE4006DAB1A /* PBXTextBookmark */ = 9AABF72A09EA9BE4006DAB1A /* PBXTextBookmark */;
 		};
 		sourceControlManager = 9A073C9009E2B4DC00D43D1D /* Source Control */;
 		userBuildSettings = {
@@ -315,7 +314,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {782, 1652}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 0}, {782, 301}}";
+			sepNavVisRect = "{{0, 788}, {782, 301}}";
 		};
 	};
 	9A073E1209E2BA8D00D43D1D /* eheap.sdef */ = {
@@ -356,10 +355,6 @@
 		vrLen = 402;
 		vrLoc = 3;
 	};
-	9A5932A009EA8D440059E3E8 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 9A073CD809E2B5AF00D43D1D /* eh2_ConnectErrorHandler.h */;
-	};
 	9A5932A109EA8D440059E3E8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 9A073CCA09E2B59D00D43D1D /* EHModel.mm */;
@@ -380,15 +375,15 @@
 		vrLen = 622;
 		vrLoc = 0;
 	};
-	9AABF71F09EA9019006DAB1A /* PBXTextBookmark */ = {
+	9AABF72A09EA9BE4006DAB1A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 9A073CD809E2B5AF00D43D1D /* eh2_ConnectErrorHandler.h */;
 		name = "eh2_ConnectErrorHandler.h: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 622;
-		vrLoc = 0;
+		vrLen = 467;
+		vrLoc = 2339;
 	};
 	9ABB94B009EA4C84008D216E /* XCBreakpointsBucket */ = {
 		isa = XCBreakpointsBucket;

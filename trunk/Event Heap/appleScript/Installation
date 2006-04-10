@@ -1,0 +1,10 @@
+Open the xcode project and compile the project.
+Has successfully been compiled under the following conditions:
+
+- video-mac: G5 panther running xcode 1.x (eugen)
+- ibook panther running xcode 1.1 (eugen)
+- bonnpb2: powerbook running xcode 2.0 (eugen)
+
+Not successful
+- Jarre: iMax running xcode 2.2.1 (eugen) 
+
