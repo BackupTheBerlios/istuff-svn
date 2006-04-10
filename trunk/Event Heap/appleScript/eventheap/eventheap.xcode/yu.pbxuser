@@ -12,13 +12,67 @@
 			9A073C8609E2B4D600D43D1D,
 		);
 		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					131,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48.1626,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
 			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
 			};
 			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					200,
+					63,
+					20,
+					48.1626,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 166352125;
+			PBXPerProjectTemplateStateSaveDate = 166368188;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -195,11 +249,7 @@
 					};
 				},
 			);
-			PBXWorkspaceStateSaveDate = 166352125;
-		};
-		perUserProjectItems = {
-			9A9C28A009EA56FE002D265D = 9A9C28A009EA56FE002D265D;
-			9A9C28A309EA57B9002D265D = 9A9C28A309EA57B9002D265D;
+			PBXWorkspaceStateSaveDate = 166368188;
 		};
 		sourceControlManager = 9A073C9009E2B4DC00D43D1D;
 		userBuildSettings = {
@@ -228,10 +278,14 @@
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
 		isa = PBXExecutable;
 		libgmallocEnabled = 0;
 		name = eventheap;
 		shlibInfoDictList = (
+		);
+		shlibInfoDictList_v2 = (
 		);
 		sourceDirectories = (
 		);
@@ -247,16 +301,6 @@
 	9A073C9109E2B4DC00D43D1D = {
 		indexTemplatePath = "";
 		isa = PBXCodeSenseManager;
-		usesDefaults = 0;
-		wantsCodeCompletion = 0;
-		wantsCodeCompletionAutoSuggestions = 0;
-		wantsCodeCompletionCaseSensitivity = 0;
-		wantsCodeCompletionListAlways = 0;
-		wantsCodeCompletionOnlyMatchingItems = 0;
-		wantsCodeCompletionParametersIncluded = 0;
-		wantsCodeCompletionPlaceholdersInserted = 0;
-		wantsCodeCompletionTabCompletes = 0;
-		wantsIndex = 0;
 	};
 	9A073CC909E2B59D00D43D1D = {
 		uiCtxt = {
@@ -306,25 +350,5 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRect = "{{0, 0}, {791, 248}}";
 		};
-	};
-	9A9C28A009EA56FE002D265D = {
-		fRef = 9A073E1209E2BA8D00D43D1D;
-		isa = PBXTextBookmark;
-		name = "eheap.sdef: 8";
-		rLen = 0;
-		rLoc = 576;
-		rType = 0;
-		vrLen = 584;
-		vrLoc = 256;
-	};
-	9A9C28A309EA57B9002D265D = {
-		fRef = 9A073E1209E2BA8D00D43D1D;
-		isa = PBXTextBookmark;
-		name = "eheap.sdef: 8";
-		rLen = 0;
-		rLoc = 576;
-		rType = 0;
-		vrLen = 584;
-		vrLoc = 256;
 	};
 }

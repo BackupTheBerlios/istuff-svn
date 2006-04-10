@@ -300,7 +300,7 @@
 				GCC_PREFIX_HEADER = eventheap_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "\"/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event Heap/c++/Mac OS X/lib\"";
+				LIBRARY_SEARCH_PATHS = "\"../../../Event Heap/c++/Mac OS X/lib\"";
 				PRODUCT_NAME = eventheap;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2405,7 +2405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo this is the original version\necho $BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources $SOURCE_ROOT/eheap.sdef\n/Developer/Tools/sdp -f st -o /Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/appleScript/eventheap/build/eventheap.app/Contents/Resources /Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/appleScript/eventheap/eheap.sdef\n";
+			shellScript = "echo this is the original version\necho sdp -f st -o $BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources $SOURCE_ROOT/eheap.sdef\necho if you are running panther, the sdp programm resides at /Developer/Tools/\nsdp -f st -o \"$BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources\" \"$SOURCE_ROOT/eheap.sdef\"";
 		};
 		9A073E1209E2BA8D00D43D1D = {
 			fileEncoding = 30;
