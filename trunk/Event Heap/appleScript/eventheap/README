@@ -93,3 +93,15 @@ sdp -f st yourSDefFile.sdef
 
 How to write applescript:
 http://www.tandb.com.au/applescript/tutorial/
+
+
+====================================
+An error of type -10827 has occurred.
+Means that you have moved an application away.
+
+====================================
+To remove the scripting language.
+Change in the file named "info.list" the entry for "NSAppleScripEnabled" from YES to NO.
+Then compile the programm again.
+Finally clean the project. And remove all contents in build.
+Now you should have removed your scripting language completely.
