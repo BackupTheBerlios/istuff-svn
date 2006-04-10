@@ -1,3 +1,32 @@
+/*
+ * Copyright (c) 2006
+ * Media informatics Department
+ * RWTH Aachen Germany
+ * http://media.informatik.rwth-aachen.de
+ *
+ * Redistribution and use of the source code and binary, with or without
+ * modification, are permitted under OPI Artistic License
+ * (http://www.opensource.org/licenses/artistic-license.php) provided that
+ * the source code retains the above copyright notice and the following
+ * disclaimer.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Authors:	  Faraz Ahmed Memon
+ *			  Tico Ballagas
+ *
+ * Version:	  1.0
+ */
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,11 +38,19 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.util.Vector;
 
+//!  Framework class is a proxy program to communicate with the "Smart-Its" and the "Event Heap".
+/*!  The four main functionalities of this class are:
+  		-# Create a GUI for the "Smart-Its" proxy.
+  		-# Use Scanner class to scan the "Smart-Its" availble in the network.
+  		-# Use ConfigureDialog class to configure a particular "Smart-Its".
+  		-# Use EventLauncher class to post the "Smart-Its" sensor values as events onto the "Event Heap".
+*/
+
 public class Framework extends JFrame{
 	private String proxyID;
-    String eventHeapIp;
-    Scanner scan;
-    EventLauncher eventLauncher;
+    String eventHeapIp;		//"Event Heap" class object to post events
+    Scanner scan;			//"Scanner" class object to scan for "Particles (Smart-Its)" in the network
+    EventLauncher eventLauncher;	//"EventLauncher" to post "Particle" sensor values as events onto the "Event Heap"
 
     JLabel lblParticles = new JLabel();
     JLabel lblEvents = new JLabel();
@@ -33,9 +70,19 @@ public class Framework extends JFrame{
     JButton btnAdd = new JButton();
     Vector configuredParticles = new Vector();
 
+    //! Framework class constructor
+	/*! The constructor take "Event Heap" IP address and the current
+		proxy Id as an input parameters. The constructor initializes
+		the Particle Framework GUI and the "Event Heap".
+
+		\param ip as a String. Specifies the IP address of the "Event Heap".
+		\param proxyID as a String. Specifies the proxy ID to be used while
+			   posting Events and to be checked while receiving events.
+	*/
+
     public Framework(String ip, String proxyID) {
         try {
-            jbInit();
+            init();
             this.eventHeapIp = ip;
             this.proxyID = proxyID;
         } catch (Exception ex) {
@@ -43,50 +90,54 @@ public class Framework extends JFrame{
         }
     }
 
-    private void jbInit() throws Exception {
+    //! Initializes the GUI
+		/*! This method is called by the Framework constructor to contruct the GUI
+	*/
+
+    private void init() throws Exception {
 
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension scrnsize = toolkit.getScreenSize();
 
-        this.setBounds((int)scrnsize.width/4,(int)scrnsize.height/5,500,500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setBounds((int)scrnsize.width/4,(int)scrnsize.height/5,500,500);	//show the GUI in the middle of the screen
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);	//Exit the application on clicking the red cross on the top right corner
         this.setIconImage(null);
         this.setResizable(false);
         this.setTitle("Particle Framework");
         this.getContentPane().setLayout(null);
 
-        lblEvents.setText("Events :");
+        lblEvents.setText("Events :");							//A label
         lblEvents.setBounds(new Rectangle(14, 292, 136, 20));
 
-        btnScan.setBounds(new Rectangle(330, 108, 138, 29));
+        btnScan.setBounds(new Rectangle(330, 108, 138, 29));	//A button with "Scan Network" label
         btnScan.setText("Scan Network");
-        btnScan.addActionListener(new Framework_btnScan_actionAdapter(this));
+        btnScan.addActionListener(new Framework_btnScan_actionAdapter(this));	//call to helper class to receive events related to "Scan Network" button
 
-        btnConfigure.setBounds(new Rectangle(330, 145, 138, 29));
+        btnConfigure.setBounds(new Rectangle(330, 145, 138, 29));	//A button with "Configure Particle" label
         btnConfigure.setText("Configure Particle");
-        btnConfigure.addActionListener(new Framework_btnConfigure_actionAdapter(this));
+        btnConfigure.addActionListener(new Framework_btnConfigure_actionAdapter(this));	//call to helper class to receive events related to "Configure Particle" button
         btnConfigure.setEnabled(false);
 
         btnStart.setBounds(new Rectangle(330, 183, 138, 29));
         btnStart.setText("Start Framework");
-        btnStart.addActionListener(new Framework_btnStart_actionAdapter(this));
+        btnStart.addActionListener(new Framework_btnStart_actionAdapter(this));	//call to helper class to receive events related to "Start Framework" button
         btnStart.setEnabled(false);
 
         btnStop.setBounds(new Rectangle(330, 219, 138, 29));
         btnStop.setText("Stop Framework");
-        btnStop.addActionListener(new Framework_btnStop_actionAdapter(this));
+        btnStop.addActionListener(new Framework_btnStop_actionAdapter(this));	//call to helper class to receive events related to "Stop Framework" button
         btnStop.setEnabled(false);
 
         btnExit.setBounds(new Rectangle(330, 256, 138, 29));
         btnExit.setText("Exit");
-        btnExit.addActionListener(new Framework_btnExit_actionAdapter(this));
+        btnExit.addActionListener(new Framework_btnExit_actionAdapter(this));	//call to helper class to receive events related to "Exit" button
 
         btnAdd.setBounds(new Rectangle(131, 278, 58, 20));
         btnAdd.setActionCommand("btnAdd");
         btnAdd.setText("Add");
-        btnAdd.addActionListener(new Framework_btnAdd_actionAdapter(this));
+        btnAdd.addActionListener(new Framework_btnAdd_actionAdapter(this));	//call to helper class to receive events related to "Add" button
 
-        lblParticles.setText("Particle List:");
+        lblParticles.setText("Particle List:");						//label for "Particle" id list
         lblParticles.setBounds(new Rectangle(12, 40, 113, 21));
 
         lblTitle.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 20));
@@ -94,15 +145,17 @@ public class Framework extends JFrame{
         lblTitle.setText("Particle Framework");
         lblTitle.setBounds(new Rectangle(126, 8, 234, 28));
 
-        imgI10 = new ImagePanel("src/img/logo_i10.gif");
+        imgI10 = new ImagePanel("src/img/logo_i10.gif");			//i10 logo image
         imgI10.setBounds(350,0,180,80);
 
         scPnParticles.setBounds(new Rectangle(13, 63, 176, 214));
 
-        lstParticles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lstParticles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);		//list of "Particle" ids
         lstParticles.addListSelectionListener(new Framework_particle_ListAdapter(this));
 
         scPnEvents.setBounds(new Rectangle(13, 317, 371, 131));
+
+        //add all the components to the GUI
 
         this.getContentPane().add(lblEvents);
         this.getContentPane().add(imgI10);
@@ -134,10 +187,25 @@ public class Framework extends JFrame{
 						"[ProxyID] = an optional parameter to be checked in the events received and sent in events generated e.g. proxy1\n");
     }
 
+    //! Exits the application
+	/*! This method is called when the Exit button on the GUI is clicked. It exits
+		the application.
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
+
     public void btnExit_actionPerformed(ActionEvent e)
     {
         System.exit(0);
     }
+
+    //! Starts the Scanner for network scanning of Particles
+	/*! This method is called when the "Scan Network" button on the GUI is hit. It
+		constructs an Object of Scanner class and starts scanning the network
+		for "Particles" in a separate thread
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
 
     public void btnScan_actionPerformed(ActionEvent e)
     {
