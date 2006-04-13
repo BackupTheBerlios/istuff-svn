@@ -30,8 +30,7 @@
 	return [super initWithIdentifier:fp8];
 }
 	
-- (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
-{
+- (void) executeCustomPatch {
 	// In this early version, the according parameters are alos realized as editable input ports
 	// later on they should be specified in the corresponding GUI element of the patch
 	
@@ -43,7 +42,7 @@
 		NSLog(@"inputDisconnect");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);		
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);		
 		(*eventPtr)->setPostValueInt("Command", 1);
 		// the "event package" is ready -> post it to the Event Heap
 		(*eventPtr)->setPostValueInt("TimeToLive", 50);
@@ -56,7 +55,7 @@
 		NSLog(@"Command: Backlight On");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 2);
 					// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 1000);
@@ -69,7 +68,7 @@
 		NSLog(@"BackLightOff");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		//(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 3);
 					// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 50);
@@ -82,7 +81,7 @@
 		NSLog(@"Stop Sound");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 6);
 					// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 50);
@@ -96,7 +95,7 @@
 		NSLog(@"PlaySound");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		//(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 5);
 		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
 		// the "event package" is ready -> post it to the Event Heap
@@ -110,7 +109,7 @@
 		NSLog(@"Launch Application");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 7);
 		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
 		// the "event package" is ready -> post it to the Event Heap
@@ -125,7 +124,7 @@
 		NSLog(@"Close Application");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 8);
 		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
 		// the "event package" is ready -> post it to the Event Heap
@@ -139,7 +138,7 @@
 	{
 		eh2_EventPtr *eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");	
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command",4);
 		(*eventPtr)->setPostValueInt("Code", (int) [inputKeyCode doubleValue]);
 		(*eventPtr)->setPostValueInt("Repeat", (int) [inputRepeatPort doubleValue]);
@@ -157,7 +156,7 @@
 	{
 		eh2_EventPtr *eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");	
-		(*eventPtr)->setPostValueString("ProxyID", [[inputProxyID stringValue] cString]);	
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command",12);
 		(*eventPtr)->setPostValueInt("ProfileNo", (int)[inputProfileNumber doubleValue]);
 		(*eventPtr)->setPostValueInt("TimeToLive",1000);
@@ -170,6 +169,7 @@
 		NSLog(@"Start Key Capture");
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 10);
 		// the "event package" is ready -> post it to the Event Heap
 		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
@@ -181,6 +181,7 @@
 
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
+		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 		(*eventPtr)->setPostValueInt("Command", 11);
 		// the "event package" is ready -> post it to the Event Heap
 		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
@@ -198,7 +199,6 @@
 	lastInputProfileNumber = (int) [inputProfileNumber doubleValue];
 	lastInputCaptureKeys = [inputCaptureKeys booleanValue];
 
-	return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
 @end

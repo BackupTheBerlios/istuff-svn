@@ -19,8 +19,7 @@
 	return [super initWithIdentifier:fp8];
 }
 	
-- (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
-{
+- (void) executeCustomPatch {
 	//	NSLog(@"VALUE: %@",[_inputPorts objectAtIndex:1]);
 	/*	//[_inputPorts removeObjectAtIndex:3];
 		NSLog (@"Maybe keys: %@", [_inputPorts objectForKey:@"inputProxyID"]);
@@ -36,7 +35,7 @@
 	//QCPort *test;
 	//[test initWithNode:[self patch] arguments:nil];
 	//NSLog (@"The key is: %@",[inputProxyID key]);
-	if ([self connected]) {
+//	if ([self connected]) {
 		// Only if one of the input ports changed, a new event has to be posted
 		// and the other operations have to be performed
 				int motor1Position = (int) [inputPosMot1 doubleValue];
@@ -79,7 +78,7 @@
 			
 			// the "event package" is ready -> post it to the Event Heap
 				(*eventPtr)->setPostValueInt("TimeToLive", 50);
-				(*eventPtr)->setPostValueString("ProxyID",[[inputProxyID stringValue]cString]);
+				(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 				(*eh)->putEvent (*eventPtr);
 				delete eventPtr;
 
@@ -89,8 +88,6 @@
 			oldMotor3Position = [inputPosMot3 doubleValue];
 			oldMotor4Position = [inputPosMot4 doubleValue];
 			}
-		}
-			return [super execute:fp8 time:fp12 arguments:fp20];
-}
+	}
 
 @end

@@ -19,12 +19,12 @@
 	return [super initWithIdentifier:fp8];
 }
 	
-- (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
-{			
-	if ([self connected]) {
+- (void) executeCustomPatch {
+			
 		if( [inputPWMOut0 doubleValue] != lastInputPWMOut0 ){
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("TELEO_PWMOUT");
+			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 			(*eventPtr)->setPostValueInt ("ID", 0);
 			(*eventPtr)->setPostValueInt ("VALUE", (int) [inputPWMOut0 doubleValue]);
 			(*eventPtr)->setPostValueInt ("TimeToLive", 500);
@@ -36,6 +36,7 @@
 		if( [inputPWMOut1 doubleValue] != lastInputPWMOut1 ){
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("TELEO_PWMOUT");
+			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 			(*eventPtr)->setPostValueInt ("ID", 1);
 			(*eventPtr)->setPostValueInt ("VALUE", (int) [inputPWMOut1 doubleValue]);
 			(*eventPtr)->setPostValueInt ("TimeToLive", 500);
@@ -43,8 +44,6 @@
 			delete eventPtr;
 			lastInputPWMOut1 = (int) [inputPWMOut1 doubleValue];
 		}
-	}
-        return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
 @end

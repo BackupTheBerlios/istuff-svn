@@ -17,9 +17,8 @@
 	return [super initWithIdentifier:fp8];
 }
 	
-- (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
-{		
-	if ([self connected]) {
+- (void) executeCustomPatch {		
+
 		// Look for a transition from FALSE to TRUE
 		// only send event on the "positive edge"
 		
@@ -49,11 +48,13 @@
 			delete eventPtr;
 		}
 		*/
-		const char* name = [[inputProxyID stringValue] cString];
+		//iStuffPatch *currentPatch = [self patch];
+		const char* name = [eventID cString];
 		
 		if ((int)[inputGotoSlideNumber doubleValue] != lastInputGotoSlide) {
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
+			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 			(*eventPtr)->setPostValueString ("command", "gotoSlide");
 			(*eventPtr)->setPostValueInt("slideNum", (int) [inputGotoSlideNumber doubleValue]);
 			(*eventPtr)->setPostValueString ("ProxyID", name);
@@ -67,6 +68,7 @@
 			//create a new event object
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
+			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 			(*eventPtr)->setPostValueString ("command", "next");
 			(*eventPtr)->setPostValueString ("ProxyID", name);
 			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
@@ -79,6 +81,7 @@
 			//create a new event object
 			eh2_EventPtr *eventPtr = new eh2_EventPtr;
 			(*eventPtr) = eh2_Event::cs_create ("SlideController");
+			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
 			(*eventPtr)->setPostValueString ("command", "prev");
 			(*eventPtr)->setPostValueString ("ProxyID", name);
 			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
@@ -91,8 +94,6 @@
 		lastInputGotoSlide = (int) [inputGotoSlideNumber doubleValue];
 		//lastInputStartPresentation1 = [inputStartPresentation1 booleanValue];
 		//lastInputStartPresentation2 = [inputStartPresentation2 booleanValue];
-	}
-        return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
 @end

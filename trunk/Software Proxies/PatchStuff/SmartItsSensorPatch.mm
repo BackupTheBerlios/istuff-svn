@@ -14,7 +14,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {	
-	proxyName = [NSMutableString stringWithString:@"SmartItsSensorBoard_"];
+	proxyName = [NSMutableString stringWithString:@"Particle_Packet"];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -22,7 +22,7 @@
 {
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
-
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -80,6 +80,39 @@
 	NSLog (@"thread waitForEvents deactivated");
 
 	[localPool release];
+}
+*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+		// set the flag so that in the 'execute'-method the output port is set to the new value
+		// after setting it, the flag is set to false again.
+		// This allows posting one value per execution cycle
+	
+		// Read the values from the different fields of the events
+		// The checks are necessary because not every field is created inside an event,
+		// depending on the attached sensors.
+		// This patch only posts the values if they exist.
+		
+		[outputSourceID setStringValue:[NSString stringWithCString:eventPtr->getPostValueString("ParticleSrcId")]];
+	
+		if ( eventPtr->fieldExists("sgx") )
+			{ [outputSGX setDoubleValue:(double) eventPtr->getPostValueInt("sgx")]; }
+		if ( eventPtr->fieldExists("sgy") )
+			{ [outputSGY setDoubleValue:(double) eventPtr->getPostValueInt("sgy")]; }
+		if ( eventPtr->fieldExists("sgz") )
+			{ [outputSGZ setDoubleValue:(double) eventPtr->getPostValueInt("sgz")]; }
+		if ( eventPtr->fieldExists("sli") )
+			{ [outputSLI setDoubleValue:(double) eventPtr->getPostValueInt("sli")]; }
+		if ( eventPtr->fieldExists("ste") )
+			{ [outputSTE setDoubleValue:(double) eventPtr->getPostValueInt("ste")]; }
+		if ( eventPtr->fieldExists("sfc") )
+			{ [outputSFC setDoubleValue:(double) eventPtr->getPostValueInt("sfc")]; }
+		if ( eventPtr->fieldExists("sau") )
+			{ [outputSAU setDoubleValue:(double) eventPtr->getPostValueInt("sau")]; }
+		if ( eventPtr->fieldExists("ssw") )
+			{ [outputSSW setDoubleValue:(double) eventPtr->getPostValueInt("ssw")]; }
+		if ( eventPtr->fieldExists("svc") )
+			{ [outputSVC setDoubleValue:(double) eventPtr->getPostValueInt("svc")]; }
 }
 
 @end

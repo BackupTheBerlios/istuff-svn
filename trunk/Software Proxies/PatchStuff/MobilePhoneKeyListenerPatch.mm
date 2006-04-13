@@ -14,7 +14,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {	
-	proxyName = [NSMutableString stringWithString:@"MobilePhoneController_"];
+	[self setEventType:[NSMutableString stringWithString:@"iStuffMobile"]];
 	setOutputPort = false;
 	[outputKeyStroke setDoubleValue:-1];
 	
@@ -34,33 +34,13 @@
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
-- (void) waitForEvents
-{
-	 NSAutoreleasePool *localPool;
-	localPool = [[NSAutoreleasePool alloc] init];	
-	const char* eventType = "iStuffMobile";
-	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
-	templatePtr->allocateField("Activity", eh2_FieldType::cs_string());
-	//FVT_FORMAL means wildcard value, as long as the Activity field exists, the template is matched
-	templatePtr->setTemplateValueType("Activity", eh2_Consts::FVT_FORMAL);
-	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+- (void) processEvent:(eh2_EventPtr) eventPtr{
 
-	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
-
-	eventsToWaitFor->add(templatePtr);
-	eventsToWaitFor->add(dummyPtr);
-
-	while (waitForEvents) {
-		eh2_EventPtr resultEventPtr;
-		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
-		
-		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
-		{
-			// set the flag so that in the 'execute'-method the output port is set to the new value
+// set the flag so that in the 'execute'-method the output port is set to the new value
 			// after setting it, the flag is set to false again.
 			// This allows posting one value per execution cycle
 			// This line causes others to crash
-			const char* activity = resultEventPtr->getPostValueString("Activity");
+			const char* activity = eventPtr->getPostValueString("Activity");
 			if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
 				[outputKeyPressed setBooleanValue:true];
 			}
@@ -69,7 +49,7 @@
 				//read the character ASCII value from the event field
 				NSLog(@"In keyPress");
 				setOutputPort = true;
-				keyCode = resultEventPtr->getPostValueInt("KeyCode");
+				keyCode = eventPtr->getPostValueInt("KeyCode");
 				[outputKeyStroke setDoubleValue:(double) keyCode];
 			}
 		
@@ -77,11 +57,6 @@
 				NSLog(@"In keyUp");
 				[outputKeyPressed setBooleanValue:false];
 			}
-	
-		}
-	}
-	
-	[localPool release];
 }
 	
 @end

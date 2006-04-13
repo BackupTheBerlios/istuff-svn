@@ -13,7 +13,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {
-	proxyName = [NSMutableString stringWithString:@"PowerbookTiltSensor"];
+	[self setEventType:[NSMutableString stringWithString:@"Powerbook_Tilt"]];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -21,7 +21,7 @@
 {
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
-
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -57,6 +57,17 @@
 	}
 	
 	[localPool release];
+}*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+	int x = eventPtr->getPostValueInt("X");
+	int y = eventPtr->getPostValueInt("Y");
+	int z = eventPtr->getPostValueInt("Z");
+	
+	[outputX setDoubleValue:x];
+	[outputY setDoubleValue:y];
+	[outputZ setDoubleValue:z];
 }
+
 	
 @end

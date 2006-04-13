@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34094F9409509169009C40AB /* SweepPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34094F9109509169009C40AB /* SweepPatch.mm */; };
 		34094FAF09509192009C40AB /* SweepPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = 34094FAB09509192009C40AB /* SweepPatch.xml */; };
 		340B411B091F8B810074DBFA /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340B411A091F8B810074DBFA /* Quartz.framework */; };
 		340B4150091F8C620074DBFA /* PatchLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 340B414F091F8C620074DBFA /* PatchLoader.m */; };
@@ -15,31 +14,17 @@
 		3427193A0933208000A87EEF /* libceheap2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 342719380933208000A87EEF /* libceheap2.a */; };
 		3427193B0933208000A87EEF /* libidk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 342719390933208000A87EEF /* libidk.a */; };
 		343F2DF109DAA27100FE6DED /* MobilePhoneControllerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = 343F2DEF09DAA27100FE6DED /* MobilePhoneControllerPatch.xml */; };
-		345C283E092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345C283D092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */; };
 		A71DA56D0950963800323FF4 /* AccelerometerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A71DA56B0950963800323FF4 /* AccelerometerPatch.xml */; };
-		A7237084093DC83300886F01 /* Threshold.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7237081093DC83300886F01 /* Threshold.mm */; };
 		A723708C093DC84A00886F01 /* Threshold.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7237088093DC84A00886F01 /* Threshold.xml */; };
+		A7331FBE09E573F3005185AC /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7331FBD09E573F3005185AC /* CustomTableView.m */; };
 		A759B0E40985292900F31E38 /* iStuffPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E20985292900F31E38 /* iStuffPatchUI.mm */; };
-		A786A8D209C19A6F00EBCEA9 /* MobilePhoneControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A786A8D109C19A6F00EBCEA9 /* MobilePhoneControllerPatch.mm */; };
-		A789DE5E093BA99F004E467F /* AccelerometerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */; };
-		A789DE65093BA9B4004E467F /* InterfaceKitPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE62093BA9B4004E467F /* InterfaceKitPatch.mm */; };
-		A789DE6C093BAA1F004E467F /* RFIDReaderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE69093BAA1F004E467F /* RFIDReaderPatch.mm */; };
+		A75F012009ED777A00888987 /* iStuffConsumerPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A75F011E09ED777A00888987 /* iStuffConsumerPatchUI.nib */; };
+		A75F012309ED783E00888987 /* iStuffConsumerPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A75F012209ED783E00888987 /* iStuffConsumerPatchUI.mm */; };
 		A789DE88093BAAFB004E467F /* RFIDReaderPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A789DE84093BAAFB004E467F /* RFIDReaderPatch.xml */; };
 		A79BDF1009BF049700A6E805 /* iStuffPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A79BDF0F09BF049700A6E805 /* iStuffPatch.mm */; };
-		A7A7A9FE09B708E4007A9245 /* ProviderPatchTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7A9FD09B708E4007A9245 /* ProviderPatchTemplate.mm */; };
-		A7A7AADF09B70CE0007A9245 /* ConsumerPatchTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AADE09B70CE0007A9245 /* ConsumerPatchTemplate.mm */; };
-		A7A7AB4709B712C4007A9245 /* MobilePhoneKeyListenerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AB4609B712C4007A9245 /* MobilePhoneKeyListenerPatch.mm */; };
 		A7A7AB4A09B71338007A9245 /* MobilePhoneKeyListenerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7AB4809B71338007A9245 /* MobilePhoneKeyListenerPatch.xml */; };
-		A7A7ABDC09B721B0007A9245 /* SmartItsSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ABDB09B721B0007A9245 /* SmartItsSensorPatch.mm */; };
-		A7A7ABE509B721F1007A9245 /* CharacterGeneratorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ABE409B721F1007A9245 /* CharacterGeneratorPatch.mm */; };
-		A7A7AC2909B7270D007A9245 /* ServoControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC2809B7270D007A9245 /* ServoControllerPatch.mm */; };
-		A7A7AC6709B72E4A007A9245 /* PresentationControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC6609B72E4A007A9245 /* PresentationControllerPatch.mm */; };
-		A7A7AC8509B73119007A9245 /* TeleoDInPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC8209B73119007A9245 /* TeleoDInPatch.mm */; };
-		A7A7AC8609B73119007A9245 /* TeleoPWMOutPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC8409B73119007A9245 /* TeleoPWMOutPatch.mm */; };
-		A7A7ACC409B7359B007A9245 /* CustomPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ACC309B7359B007A9245 /* CustomPatch.m */; };
-		A7A7ACCF09B737DB007A9245 /* CustomPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ACCE09B737DB007A9245 /* CustomPatchUI.m */; };
 		A7A7ACDF09B73938007A9245 /* CustomPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACD909B73938007A9245 /* CustomPatchUI.nib */; };
 		A7A7ACEF09B73B4F007A9245 /* CharacterGeneratorPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACED09B73B4F007A9245 /* CharacterGeneratorPatch.xml */; };
 		A7A7ACF209B73B63007A9245 /* InterfaceKitPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF009B73B63007A9245 /* InterfaceKitPatch.xml */; };
@@ -48,9 +33,25 @@
 		A7A7ACFE09B73BF2007A9245 /* SmartItsSensorPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACFC09B73BF2007A9245 /* SmartItsSensorPatch.xml */; };
 		A7A7AD0109B73C00007A9245 /* TeleoDInPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACFF09B73C00007A9245 /* TeleoDInPatch.xml */; };
 		A7A7AD0409B73C0B007A9245 /* TeleoPWMOutPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7AD0209B73C0B007A9245 /* TeleoPWMOutPatch.xml */; };
+		A7B2D26B09ED20310028494A /* MobilePhoneKeyListenerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AB4609B712C4007A9245 /* MobilePhoneKeyListenerPatch.mm */; };
+		A7B2D27A09ED20B10028494A /* CharacterGeneratorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ABE409B721F1007A9245 /* CharacterGeneratorPatch.mm */; };
+		A7B2D2A209ED21C50028494A /* StringComparer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F6093F29E600171F24 /* StringComparer.mm */; };
+		A7B2D2A309ED21C80028494A /* Threshold.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7237081093DC83300886F01 /* Threshold.mm */; };
+		A7B2D2A409ED21CC0028494A /* iStuffConsumerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */; };
+		A7B2D2A509ED21CD0028494A /* InterfaceKitPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE62093BA9B4004E467F /* InterfaceKitPatch.mm */; };
+		A7B2D2B609ED230C0028494A /* CustomPatchUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ACCE09B737DB007A9245 /* CustomPatchUI.m */; };
+		A7B2D2B809ED23130028494A /* CustomPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ACC309B7359B007A9245 /* CustomPatch.m */; };
+		A7B2D48F09ED5EEF0028494A /* AccelerometerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */; };
+		A7B2D49009ED5EF10028494A /* PowerbookTiltSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 345C283D092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm */; };
+		A7B2D49109ED5EF20028494A /* PresentationControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC6609B72E4A007A9245 /* PresentationControllerPatch.mm */; };
+		A7B2D49209ED5EF30028494A /* RFIDReaderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A789DE69093BAA1F004E467F /* RFIDReaderPatch.mm */; };
+		A7B2D49309ED5EF30028494A /* ServoControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC2809B7270D007A9245 /* ServoControllerPatch.mm */; };
+		A7B2D49409ED5EF50028494A /* SmartItsSensorPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7ABDB09B721B0007A9245 /* SmartItsSensorPatch.mm */; };
+		A7B2D49509ED5EF60028494A /* SweepPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34094F9109509169009C40AB /* SweepPatch.mm */; };
+		A7B2D49609ED5EF70028494A /* TeleoDInPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC8209B73119007A9245 /* TeleoDInPatch.mm */; };
+		A7B2D49709ED5EF90028494A /* TeleoPWMOutPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7A7AC8409B73119007A9245 /* TeleoPWMOutPatch.mm */; };
+		A7B2D4BF09ED5F660028494A /* MobilePhoneControllerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A786A8D109C19A6F00EBCEA9 /* MobilePhoneControllerPatch.mm */; };
 		A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2393B09AB5310001D78AA /* iStuffProviderPatch.mm */; };
-		A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E2394009AB5322001D78AA /* iStuffConsumerPatch.mm */; };
-		A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7F942F6093F29E600171F24 /* StringComparer.mm */; };
 		A7F94303093F2A1F00171F24 /* StringComparer.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7F942FF093F2A1F00171F24 /* StringComparer.xml */; };
 /* End PBXBuildFile section */
 
@@ -222,8 +223,13 @@
 		A7237080093DC83300886F01 /* Threshold.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Threshold.h; sourceTree = "<group>"; };
 		A7237081093DC83300886F01 /* Threshold.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = Threshold.mm; sourceTree = "<group>"; };
 		A7237089093DC84A00886F01 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/Threshold.xml; sourceTree = "<group>"; };
+		A7331FBC09E573F3005185AC /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = SOURCE_ROOT; };
+		A7331FBD09E573F3005185AC /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = SOURCE_ROOT; };
 		A759B0E10985292900F31E38 /* iStuffPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStuffPatchUI.h; sourceTree = "<group>"; };
 		A759B0E20985292900F31E38 /* iStuffPatchUI.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffPatchUI.mm; sourceTree = "<group>"; };
+		A75F011F09ED777A00888987 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/iStuffConsumerPatchUI.nib; sourceTree = "<group>"; };
+		A75F012109ED783E00888987 /* iStuffConsumerPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStuffConsumerPatchUI.h; sourceTree = SOURCE_ROOT; };
+		A75F012209ED783E00888987 /* iStuffConsumerPatchUI.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffConsumerPatchUI.mm; sourceTree = SOURCE_ROOT; };
 		A786A8D109C19A6F00EBCEA9 /* MobilePhoneControllerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MobilePhoneControllerPatch.mm; sourceTree = SOURCE_ROOT; };
 		A789DE5A093BA99F004E467F /* AccelerometerPatch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AccelerometerPatch.h; sourceTree = "<group>"; };
 		A789DE5B093BA99F004E467F /* AccelerometerPatch.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = AccelerometerPatch.mm; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 				340067D90938B04A0030991B /* Presentation */,
 				340067CF0938B0260030991B /* PowerbookTiltSensorPatch */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
+				A75F011E09ED777A00888987 /* iStuffConsumerPatchUI.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -385,6 +392,8 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A7331FBC09E573F3005185AC /* CustomTableView.h */,
+				A7331FBD09E573F3005185AC /* CustomTableView.m */,
 				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
 				A7A7ACE809B73A07007A9245 /* CustomPatchClasses */,
 				A706B028099935E9004BBDF8 /* MobilePhoneKeyListenerPatch */,
@@ -791,6 +800,8 @@
 		A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				A75F012109ED783E00888987 /* iStuffConsumerPatchUI.h */,
+				A75F012209ED783E00888987 /* iStuffConsumerPatchUI.mm */,
 				A79BDF0F09BF049700A6E805 /* iStuffPatch.mm */,
 				A7E2393109AB4EC1001D78AA /* iStuffPatch.h */,
 				A759B0E10985292900F31E38 /* iStuffPatchUI.h */,
@@ -914,6 +925,7 @@
 				A7A7AD0109B73C00007A9245 /* TeleoDInPatch.xml in Resources */,
 				A7A7AD0409B73C0B007A9245 /* TeleoPWMOutPatch.xml in Resources */,
 				343F2DF109DAA27100FE6DED /* MobilePhoneControllerPatch.xml in Resources */,
+				A75F012009ED777A00888987 /* iStuffConsumerPatchUI.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,29 +937,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				340B4150091F8C620074DBFA /* PatchLoader.m in Sources */,
-				345C283E092E0B78001C3A3E /* PowerbookTiltSensorPatch.mm in Sources */,
-				A789DE5E093BA99F004E467F /* AccelerometerPatch.mm in Sources */,
-				A789DE65093BA9B4004E467F /* InterfaceKitPatch.mm in Sources */,
-				A789DE6C093BAA1F004E467F /* RFIDReaderPatch.mm in Sources */,
-				A7237084093DC83300886F01 /* Threshold.mm in Sources */,
-				A7F942F9093F29E600171F24 /* StringComparer.mm in Sources */,
-				34094F9409509169009C40AB /* SweepPatch.mm in Sources */,
 				A759B0E40985292900F31E38 /* iStuffPatchUI.mm in Sources */,
 				A7C51D7109AB872D00C94234 /* iStuffProviderPatch.mm in Sources */,
-				A7C51D7A09AB875A00C94234 /* iStuffConsumerPatch.mm in Sources */,
-				A7A7A9FE09B708E4007A9245 /* ProviderPatchTemplate.mm in Sources */,
-				A7A7AADF09B70CE0007A9245 /* ConsumerPatchTemplate.mm in Sources */,
-				A7A7AB4709B712C4007A9245 /* MobilePhoneKeyListenerPatch.mm in Sources */,
-				A7A7ABDC09B721B0007A9245 /* SmartItsSensorPatch.mm in Sources */,
-				A7A7ABE509B721F1007A9245 /* CharacterGeneratorPatch.mm in Sources */,
-				A7A7AC2909B7270D007A9245 /* ServoControllerPatch.mm in Sources */,
-				A7A7AC6709B72E4A007A9245 /* PresentationControllerPatch.mm in Sources */,
-				A7A7AC8509B73119007A9245 /* TeleoDInPatch.mm in Sources */,
-				A7A7AC8609B73119007A9245 /* TeleoPWMOutPatch.mm in Sources */,
-				A7A7ACC409B7359B007A9245 /* CustomPatch.m in Sources */,
-				A7A7ACCF09B737DB007A9245 /* CustomPatchUI.m in Sources */,
 				A79BDF1009BF049700A6E805 /* iStuffPatch.mm in Sources */,
-				A786A8D209C19A6F00EBCEA9 /* MobilePhoneControllerPatch.mm in Sources */,
+				A7331FBE09E573F3005185AC /* CustomTableView.m in Sources */,
+				A7B2D26B09ED20310028494A /* MobilePhoneKeyListenerPatch.mm in Sources */,
+				A7B2D27A09ED20B10028494A /* CharacterGeneratorPatch.mm in Sources */,
+				A7B2D2A209ED21C50028494A /* StringComparer.mm in Sources */,
+				A7B2D2A309ED21C80028494A /* Threshold.mm in Sources */,
+				A7B2D2A409ED21CC0028494A /* iStuffConsumerPatch.mm in Sources */,
+				A7B2D2A509ED21CD0028494A /* InterfaceKitPatch.mm in Sources */,
+				A7B2D2B609ED230C0028494A /* CustomPatchUI.m in Sources */,
+				A7B2D2B809ED23130028494A /* CustomPatch.m in Sources */,
+				A7B2D48F09ED5EEF0028494A /* AccelerometerPatch.mm in Sources */,
+				A7B2D49009ED5EF10028494A /* PowerbookTiltSensorPatch.mm in Sources */,
+				A7B2D49109ED5EF20028494A /* PresentationControllerPatch.mm in Sources */,
+				A7B2D49209ED5EF30028494A /* RFIDReaderPatch.mm in Sources */,
+				A7B2D49309ED5EF30028494A /* ServoControllerPatch.mm in Sources */,
+				A7B2D49409ED5EF50028494A /* SmartItsSensorPatch.mm in Sources */,
+				A7B2D49509ED5EF60028494A /* SweepPatch.mm in Sources */,
+				A7B2D49609ED5EF70028494A /* TeleoDInPatch.mm in Sources */,
+				A7B2D49709ED5EF90028494A /* TeleoPWMOutPatch.mm in Sources */,
+				A7B2D4BF09ED5F660028494A /* MobilePhoneControllerPatch.mm in Sources */,
+				A75F012309ED783E00888987 /* iStuffConsumerPatchUI.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,6 +1012,14 @@
 				A7237089093DC84A00886F01 /* English */,
 			);
 			name = Threshold.xml;
+			sourceTree = "<group>";
+		};
+		A75F011E09ED777A00888987 /* iStuffConsumerPatchUI.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A75F011F09ED777A00888987 /* English */,
+			);
+			name = iStuffConsumerPatchUI.nib;
 			sourceTree = "<group>";
 		};
 		A789DE84093BAAFB004E467F /* RFIDReaderPatch.xml */ = {
@@ -1114,7 +1134,7 @@
 					"-Dunix",
 					"-D_REENTRANT",
 				);
-				PREBINDING = NO;
+				PREBINDING = YES;
 				PRODUCT_NAME = qcistuff;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = YES;
@@ -1171,6 +1191,8 @@
 		340B4109091F8AA70074DBFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 			};
 			name = Debug;
 		};

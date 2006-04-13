@@ -14,7 +14,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
-	proxyName = [NSMutableString stringWithString:@"SweepController_"];
+	[self setEventType:[NSMutableString stringWithString:@"iPhone"]];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -23,7 +23,7 @@
 
         return [super execute:fp8 time:fp12 arguments:fp20];
 }
-
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -81,10 +81,44 @@
 				targetX = resultEventPtr->getPostValueInt("targetX");
 				targetY = resultEventPtr->getPostValueInt("targetY");
 			}*/
-		}
+/*		}
 	}
 
 	[localPool release];
+}
+*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+	int dX, dY;
+	double drZ;
+	
+	NSLog(@"Received Event");
+	char* type = (char*) eventPtr->getPostValueString("type");
+	if(type != NULL){
+		NSLog(@"type has data: %s", type);
+		if( strcmp(type, "translation") == 0) {
+			dX = eventPtr->getPostValueInt("dX");
+			dY = eventPtr->getPostValueInt("dY");
+			[outputdX setDoubleValue:dX];
+			[outputdY setDoubleValue:dY];
+		} 
+		else if (strcmp(type, "rotation") == 0) {
+			drZ = eventPtr->getPostValueDouble("angle");
+			[outputdrZ setDoubleValue:drZ];
+		} 
+		else if (strcmp(type, "click") == 0) {
+			char* state = (char*) eventPtr->getPostValueString("state");
+			if( strcmp(state, "pressed") == 0)
+				[outputClick setBooleanValue:TRUE];
+			else
+				[outputClick setBooleanValue:FALSE];				
+		}
+	}
+			/*else if (strcmp(type, "code")){
+				[code initWithCString:eventPtr->getPostValueString("code") encoding:NSASCIIStringEncoding];
+				targetX = eventPtr->getPostValueInt("targetX");
+				targetY = eventPtr->getPostValueInt("targetY");
+			}*/
 }
 
 @end

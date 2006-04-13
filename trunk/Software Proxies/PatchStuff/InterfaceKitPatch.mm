@@ -12,7 +12,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
-	proxyName = [NSMutableString stringWithString:@"InterfaceKit_"];
+	[self setEventType:[NSMutableString stringWithString:@"PhidgetInterfaceKit"]];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -20,7 +20,7 @@
 {
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
-
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -85,5 +85,43 @@
 	[localPool release];
 	
 }
+*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+	int analogPort = eventPtr->getPostValueInt("Index");
+	int portValue = eventPtr->getPostValueInt("Value");
+	// Here depending on Index, the corresponding AnalogPortValue must be set.
+	switch (analogPort) {
+		case 0:
+			[outputAnalogReading0 setDoubleValue:portValue];
+			break;
+		case 1:
+			[outputAnalogReading1 setDoubleValue:portValue];
+			break;
+		case 2:
+			[outputAnalogReading2 setDoubleValue:portValue];
+			break;
+		case 3:
+			[outputAnalogReading3 setDoubleValue:portValue];
+			break;
+		case 4:
+			[outputAnalogReading4 setDoubleValue:portValue];
+			break;
+		case 5:
+			[outputAnalogReading5 setDoubleValue:portValue];
+			break;
+		case 6:
+			[outputAnalogReading6 setDoubleValue:portValue];
+			break;
+		case 7:
+			[outputAnalogReading6 setDoubleValue:portValue];
+			break;
+		default:
+			NSLog(@"Index Value not valid: probably out of bounds");
+			break;
+	}
+
+}
+
 
 @end

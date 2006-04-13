@@ -8,6 +8,18 @@
 
 #import "iStuffConsumerPatch.h"
 
+@interface iStuffConsumerPatch (QCInspector)
++ (Class)inspectorClassWithIdentifier:(id)fp8;
+@end
+
+@implementation iStuffConsumerPatch(QCInspector)
+
++ (Class)inspectorClassWithIdentifier:(id)fp8
+{	
+	return [iStuffConsumerPatchUI class];
+}
+@end
+
 @implementation iStuffConsumerPatch
 
 + (int)executionMode
@@ -24,7 +36,14 @@
 	// The code is executed in each cycle.
 	
         // Read/Write any ports in here too.
-		
+		if ([self connected]) 
+			[self executeCustomPatch];
+
         return TRUE;
 }
+
+- (void) executeCustomPatch {
+  // to be implemented
+}
+
 @end

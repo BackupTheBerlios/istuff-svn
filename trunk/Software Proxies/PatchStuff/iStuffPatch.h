@@ -27,7 +27,8 @@
 {
 // The standard port for the ProxyID
 	NSMutableString *proxyName;
-	QCStringPort *inputProxyID;
+	NSMutableString *eventID;
+	//QCStringPort *inputProxyID;
 
 // Event Heap Connection Management - Components of each iStuff patch
 	NSString *eventHeapName;
@@ -35,21 +36,26 @@
 	NSString *hostName;
 	NSString *domainName;
 	NSString *hostAddress;
-	BOOL connectToEventHeaps;
+	//BOOL connectToEventHeaps;
 	BOOL tryToConnect;
 	BOOL connectedToEventHeap;
 	BOOL advancedOptionsHidden;
 	BOOL listenToEverything;
+	BOOL automaticEHConnection;
 	BOOL standby;
 	int radioButtonIndex;
 	//list of Event Heaps
 	NSMutableArray *netServices;
+	NSMutableArray *specifiedEventHeaps;
 	NSNetServiceBrowser *netServiceBrowser;
 	NSMutableArray *services;
 	// pointer to the Event Heap client
 	eh2_EventHeapPtr *eh;
 	//	Specification of the input and output ports of the patch
-
+	NSData *userSpecifiedEHData;
+	NSString *prefsFile;
+	NSString *lastEHNameFile;
+	NSString *automaticConnectionFile;
 }
 
 // Methods to be extended for a specific patch
@@ -62,19 +68,26 @@
 // Methods that provide internal information
 - (void)nodeDidAddToGraph:(id)fpz8;
 - (NSMutableArray *) foundEventHeaps;
+- (NSMutableArray *) specifiedEventHeaps;
 - (NSString *) ehName;
+- (NSMutableString* ) eventID;
 - (BOOL) connected;
 - (BOOL) standby;
 - (BOOL) advancedOptionsHidden;
 - (BOOL) suspended;
+- (BOOL) automaticConnection;
 - (int) radioButtonIndex;
 - (int) listenToEverything;
+- (NSString *)prefsFile;
+- (NSString *)lastEHNameFile;
 
 
 // Methods for the Event Heap connection management
 - (void) netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) sendEHSListUpdate;
+- (void) manageEHConnection:(NSNotification *) notification;
+- (void) automaticEHConnection;
 - (void) connectToEventHeap;
 - (void) disconnectFromCurrentEventHeap;
 - (void) startReceivingEvents;
@@ -84,14 +97,14 @@
 - (void) createEventHeap:(NSString *)sourceName atServer:(NSString *)serverName atPort:(int)port;
 
 - (BOOL) connected;
-- (void) dealloc;
 
 // Methods to change internal settings
 - (void) setEventHeapName:(NSString *)newEventHeapName;
 - (void) setAdvancedOptionsHidden:(BOOL) flag;
 - (void) setRadioButtonIndex:(int)index;
 - (void) setListenToEverything:(int)state;
-- (void) setProxyName:(NSString *)name;
+- (void) setAutomaticEHConnection:(BOOL) flag;
+- (void) setEventID:(NSString *)name;
 - (NSString* ) proxyName;
 
 

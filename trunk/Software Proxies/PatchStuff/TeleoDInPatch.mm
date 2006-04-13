@@ -13,6 +13,7 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
+	[self setEventType:[NSMutableString stringWithString:@"TeleoDIn"]];
 	return [super initWithIdentifier:fp8];
 }
 
@@ -28,7 +29,7 @@
 	// set the flag to deactivate the thread
 	waitForEvents = FALSE;
 }
-
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -76,6 +77,17 @@
 	}
 
 	[localPool release];
+}*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+	int x = eventPtr->getPostValueInt("X");
+	int y = eventPtr->getPostValueInt("Y");
+	int z = eventPtr->getPostValueInt("Z");
+			
+	[outputX setDoubleValue:x];
+	[outputY setDoubleValue:y];
+	[outputZ setDoubleValue:z];
 }
+
 
 @end

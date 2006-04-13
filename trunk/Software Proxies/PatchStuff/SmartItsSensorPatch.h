@@ -26,6 +26,5 @@
 
 - (id) initWithIdentifier:(id)fp8;
 - (BOOL) execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
-- (void) waitForEvents; // thread that runs independently from the exection cycle to react to received events.
 
 @end

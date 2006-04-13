@@ -14,6 +14,7 @@
 	
 - (id) initWithIdentifier:(id)fp8
 {
+	[self setEventType:[NSMutableString stringWithString:@"TextEvent"]];
 	proxyName = [NSMutableString stringWithString:@"TextEventGenerator_"];
 	setOutputPort = false;
 	[outputKeyStroke setDoubleValue:-1];
@@ -35,7 +36,7 @@
 		return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
-- (void) waitForEvents
+/*- (void) waitForEvents
 {
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
@@ -74,6 +75,21 @@
 		}
 			
 	[localPool release];
+}*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr{
+				//NSLog (@"In PROCESS OUTPUT from patch: %@",[self identifier] );
+				// set the flag so that in the 'execute'-method the output port is set to the new value
+				// after setting it, the flag is set to false again.
+				// This allows posting one value per execution cycle
+				NSLog(@"In process Event : %@", [self description]);
+				setOutputPort = true;
+		
+				//read the character ASCII value from the event field
+				int keyCode;
+				keyCode = eventPtr->getPostValueInt("Character");
+				[outputKeyStroke setDoubleValue:(double) keyCode];
+				[outputPermanentASCIICode setDoubleValue:keyCode];		
 }
 
 @end

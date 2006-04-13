@@ -16,7 +16,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {
-	proxyName = [NSMutableString stringWithString:@"RFID_Tag_Reader_"];
+	[self setEventType:[NSMutableString stringWithString:@"PhidgetsRFID"]];
 	[outputTag setStringValue:nil];
 	return [super initWithIdentifier:fp8];
 }
@@ -26,6 +26,7 @@
 	return [super execute:fp8 time:fp12 arguments:fp20];
 }
 
+/*
 - (void) waitForEvents
 {
 	// create an autorelease pool for the thread
@@ -55,5 +56,12 @@
 	[localPool release];
 	NSLog(@"The thread actually ended");
 }
+*/
+
+- (void) processEvent:(eh2_EventPtr) eventPtr {
+	char* taggie = (char*) eventPtr->getPostValueString("TagNumber");
+	[outputTag setStringValue:[NSString stringWithCString:taggie]];
+}
+
 
 @end
