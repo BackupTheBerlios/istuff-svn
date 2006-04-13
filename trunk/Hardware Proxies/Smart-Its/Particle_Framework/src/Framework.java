@@ -215,26 +215,43 @@ public class Framework extends JFrame{
         t.start();
     }
 
+	//! Starts the configuration dialog for configuring "Particle" sensor module
+	/*! This method is called when the "Configure Particle" button on the GUI is hit.
+		It constructs an Object of ConfigureDialog class and starts a dialog box using
+		which one can configure "Particle" sensor module.
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
+
     public void btnConfigure_actionPerformed(ActionEvent e)
     {
         ConfigureDialog cd = new ConfigureDialog(this);
         if (cd.cancelled == false)
         {
-              this.listmodelEvents.addElement("Starting Configuration...");
+              this.listmodelEvents.addElement("Starting Configuration...");				//list where you can see the output from the particle framework
               SensorConfig cf = new SensorConfig(this,lstParticles.getSelectedValue(),cd);
               cf.startConfiguration();
 
-              if (cf.isSuccessful())
+              if (cf.isSuccessful())	//check for success after the configuration is complete
               {
                    this.listmodelEvents.addElement("Configuration was successfull");
-                   this.configuredParticles.add(lstParticles.getSelectedValue());
-                   this.btnStart.setEnabled(true);
+                   this.configuredParticles.add(lstParticles.getSelectedValue());	//maintain a list of all the configured "Particles"
+                   this.btnStart.setEnabled(true);	//enable the start button on the GUI after even a single "Particle" is configured
               }
               else
                    this.listmodelEvents.addElement("Configuration failed");
         }
 
     }
+
+
+	//! Allows to add a "Particle" manually to availble Particles list on the GUI
+	/*! This method is called when the "Add" button just below the "Particle List"on
+		the GUI is hit. It constructs a dialog box which can be used to manually add
+		a particle to the "Particle List".
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
 
     public void btnAdd_actionPerformed(ActionEvent e)
     {
@@ -244,18 +261,37 @@ public class Framework extends JFrame{
             this.listmodelParticles.addElement(s);
     }
 
+
+	//! Constructs a object of EventLauncher class which starts to post the "Particle" sensor data.
+	/*! This method is called when the "Start Framework" button on the GUI is hit. This
+		causes the EventLauncher class to start posting sensor values as events from
+		"Particles" onto the "Event Heap".
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
+
     public void btnStart_actionPerformed(ActionEvent e) {
 
        eventLauncher = new EventLauncher(configuredParticles,eventHeapIp, proxyID);
-       Thread t = new Thread(eventLauncher);
+       Thread t = new Thread(eventLauncher);	//start the event launcher in a separate thread
        listmodelEvents.addElement("Starting Framework...");
-       btnScan.setEnabled(false);
-       btnConfigure.setEnabled(false);
-       btnStart.setEnabled(false);
-       btnStop.setEnabled(true);
+       btnScan.setEnabled(false);	//disable the "Scan Network" button
+       btnConfigure.setEnabled(false);	//disable the "Configure Particle" button
+       btnStart.setEnabled(false);	//disable the "Start Framework" button
+       btnStop.setEnabled(true);	//enable the "Stop Framework" button
        t.start();
 
     }
+
+
+
+	//! Stops the posting of "Particle" sensor data onto the "Event Heap"
+	/*! This method is called when the "Stop Framework" button on the GUI is hit.
+		It causes the EventLaucher object to stop posting the "Particle" sensor
+		data onto the "Event Heap".
+
+		\param e as an ActionEvent object. This parameter is never used.
+	*/
 
     public void btnStop_actionPerformed(ActionEvent e) {
 
@@ -268,14 +304,28 @@ public class Framework extends JFrame{
 
     }
 
+
+	//! Called whenever the particle list is updated
+	/*! This method is called whenever the list of particles is updated.
+
+		\param e as an ListSelectionEvent object. This parameter is never used.
+	*/
+
     public void particleListUpdated(ListSelectionEvent e)
     {
-        if(this.lstParticles.getSelectedIndex() == -1)
+        if(this.lstParticles.getSelectedIndex() == -1) //disable the "Configure Particle" button when some particle is selected
             btnConfigure.setEnabled(false);
         else
-            btnConfigure.setEnabled(true);
+            btnConfigure.setEnabled(true); //and enable the "Configure Particle" button when some particle is selected
     }
 }
+
+
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the ListSelectionListener for the "Particle List" inside the
+	 Framework class.
+ */
 
 
 class Framework_particle_ListAdapter implements  ListSelectionListener{
@@ -289,6 +339,11 @@ class Framework_particle_ListAdapter implements  ListSelectionListener{
     }
 }
 
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the "Stop Framework" button on the GUI.
+ */
+
 class Framework_btnStop_actionAdapter implements ActionListener {
     private Framework adaptee;
     Framework_btnStop_actionAdapter(Framework adaptee) {
@@ -299,6 +354,12 @@ class Framework_btnStop_actionAdapter implements ActionListener {
         adaptee.btnStop_actionPerformed(e);
     }
 }
+
+
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the "Start Framework" button on the GUI.
+ */
 
 
 class Framework_btnStart_actionAdapter implements ActionListener {
@@ -313,6 +374,11 @@ class Framework_btnStart_actionAdapter implements ActionListener {
 }
 
 
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the "Configure Particle" button on the GUI.
+ */
+
 class Framework_btnConfigure_actionAdapter implements ActionListener {
     private Framework adaptee;
     Framework_btnConfigure_actionAdapter(Framework adaptee) {
@@ -323,6 +389,12 @@ class Framework_btnConfigure_actionAdapter implements ActionListener {
         adaptee.btnConfigure_actionPerformed(e);
     }
 }
+
+
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the "Scan Network" button on the GUI.
+ */
 
 
 class Framework_btnScan_actionAdapter implements ActionListener {
@@ -337,6 +409,11 @@ class Framework_btnScan_actionAdapter implements ActionListener {
 }
 
 
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the Exit button on the GUI.
+ */
+
 class Framework_btnExit_actionAdapter implements ActionListener {
     private Framework adaptee;
     Framework_btnExit_actionAdapter(Framework adaptee) {
@@ -347,6 +424,12 @@ class Framework_btnExit_actionAdapter implements ActionListener {
         adaptee.btnExit_actionPerformed(e);
     }
 }
+
+
+//!  Helper class for the Framework class.
+/*!  This class a helper class for the Framework which implements
+	 the action adapter for the Add button on the GUI.
+ */
 
 class Framework_btnAdd_actionAdapter implements ActionListener {
     private Framework adaptee;
