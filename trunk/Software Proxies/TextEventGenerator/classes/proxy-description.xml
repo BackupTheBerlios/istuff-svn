@@ -6,6 +6,7 @@
   <name>TextEventGenerator</name> 
   <ClassName>TextEventEngine</ClassName>
   <comment>blablabla</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:. TextEventEngine</launchCommand>
   <CustomLibs>
     <relativePath></relativePath>
   </CustomLibs>
