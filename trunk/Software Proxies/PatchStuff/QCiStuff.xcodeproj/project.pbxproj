@@ -25,7 +25,6 @@
 		A789DE88093BAAFB004E467F /* RFIDReaderPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A789DE84093BAAFB004E467F /* RFIDReaderPatch.xml */; };
 		A79BDF1009BF049700A6E805 /* iStuffPatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = A79BDF0F09BF049700A6E805 /* iStuffPatch.mm */; };
 		A7A7AB4A09B71338007A9245 /* MobilePhoneKeyListenerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7AB4809B71338007A9245 /* MobilePhoneKeyListenerPatch.xml */; };
-		A7A7ACDF09B73938007A9245 /* CustomPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACD909B73938007A9245 /* CustomPatchUI.nib */; };
 		A7A7ACEF09B73B4F007A9245 /* CharacterGeneratorPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACED09B73B4F007A9245 /* CharacterGeneratorPatch.xml */; };
 		A7A7ACF209B73B63007A9245 /* InterfaceKitPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF009B73B63007A9245 /* InterfaceKitPatch.xml */; };
 		A7A7ACF509B73B6B007A9245 /* ServoControllerPatch.xml in Resources */ = {isa = PBXBuildFile; fileRef = A7A7ACF309B73B6B007A9245 /* ServoControllerPatch.xml */; };
@@ -262,7 +261,6 @@
 		A7A7ACC309B7359B007A9245 /* CustomPatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPatch.m; sourceTree = "<group>"; };
 		A7A7ACCD09B737DB007A9245 /* CustomPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPatchUI.h; sourceTree = "<group>"; };
 		A7A7ACCE09B737DB007A9245 /* CustomPatchUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPatchUI.m; sourceTree = "<group>"; };
-		A7A7ACDA09B73938007A9245 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/CustomPatchUI.nib; sourceTree = "<group>"; };
 		A7A7ACEE09B73B4F007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/CharacterGeneratorPatch.xml; sourceTree = "<group>"; };
 		A7A7ACF109B73B63007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/InterfaceKitPatch.xml; sourceTree = "<group>"; };
 		A7A7ACF409B73B6B007A9245 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/ServoControllerPatch.xml; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A7A7ACD909B73938007A9245 /* CustomPatchUI.nib */,
 				A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */,
 				A706B03009993623004BBDF8 /* MobilePhoneKeyListener */,
 				A7A2B91A0973ECD300A25B89 /* SmartItsSensor */,
@@ -916,7 +913,6 @@
 				A71DA56D0950963800323FF4 /* AccelerometerPatch.xml in Resources */,
 				A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */,
 				A7A7AB4A09B71338007A9245 /* MobilePhoneKeyListenerPatch.xml in Resources */,
-				A7A7ACDF09B73938007A9245 /* CustomPatchUI.nib in Resources */,
 				A7A7ACEF09B73B4F007A9245 /* CharacterGeneratorPatch.xml in Resources */,
 				A7A7ACF209B73B63007A9245 /* InterfaceKitPatch.xml in Resources */,
 				A7A7ACF509B73B6B007A9245 /* ServoControllerPatch.xml in Resources */,
@@ -1038,14 +1034,6 @@
 			name = MobilePhoneKeyListenerPatch.xml;
 			sourceTree = SOURCE_ROOT;
 		};
-		A7A7ACD909B73938007A9245 /* CustomPatchUI.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7A7ACDA09B73938007A9245 /* English */,
-			);
-			name = CustomPatchUI.nib;
-			sourceTree = "<group>";
-		};
 		A7A7ACED09B73B4F007A9245 /* CharacterGeneratorPatch.xml */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1126,7 +1114,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QCiStuff_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
