@@ -28,6 +28,13 @@
  * Version:	  1.0
  */
 
+/** @name Opcodes
+*   High-level opcodes that could be sent (or received) to (or from)
+ 		"iStuff Mobile" proxy application.
+*/
+
+//@{
+		
 #define OPCODE_DISCONNECT			1
 #define OPCODE_BACKLIGHT_ON			2
 #define OPCODE_BACKLIGHT_OFF		3
@@ -40,3 +47,5 @@
 #define OPCODE_START_KEYCAPTURE		10
 #define OPCODE_STOP_KEYCAPTURE		11
 #define OPCODE_CHANGEPROFILE		12
+
+//@}
