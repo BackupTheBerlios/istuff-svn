@@ -29,7 +29,7 @@
  */
 
 #include "iStuffMobileContainer.h"
-#include <eiklabel.h>  // for example label control
+#include <eiklabel.h>
 
 
 void CiStuffMobileContainer::ConstructL(const TRect& aRect)
@@ -37,7 +37,7 @@ void CiStuffMobileContainer::ConstructL(const TRect& aRect)
 
 	CreateWindowL();
 	_LIT(iPathName,"\\System\\Apps\\iStuffMobile\\nokia.mbm");
-	iBackground = iEikonEnv->CreateBitmapL(iPathName, 0 );
+	iBackground = iEikonEnv->CreateBitmapL(iPathName, 0 ); //read the mbm file which contain the bitmap
 
     iLabel = new (ELeave) CEikLabel;
     iLabel->SetContainerWindowL( *this );

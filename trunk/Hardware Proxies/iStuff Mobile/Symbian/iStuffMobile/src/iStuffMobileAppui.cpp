@@ -79,7 +79,7 @@ void CiStuffMobileAppUi::DynInitMenuPaneL(TInt /*aResourceId*/,CEikMenuPane* /*a
 
 TKeyResponse CiStuffMobileAppUi::HandleKeyEventL(const TKeyEvent& aKeyEvent,TEventCode aType)
 {
-    if(iProxyServer->GetConnected())
+    if(iProxyServer->GetConnected())	//if the application is connected to the proxy then relay the key events to the proxy
 	{
 		iProxyServer->SendKeyToProxy(aKeyEvent.iCode,aType);
 		return EKeyWasConsumed;

@@ -51,7 +51,7 @@ void CCodeListener::ConstructL(RFileLogger* aLog)
 void CCodeListener::StartReceiving()
 {
 	iSocket.Read(data,iStatus);
-	SetActive();
+	SetActive();					//calls RunL() on completion
 }
 
 void CCodeListener::RunL()
@@ -125,7 +125,7 @@ void CCodeListener::DecodeOpcode()
 
 void CCodeListener::StartKeyCapture()
 {
-	if(iKeyListener == NULL)
+	if(iKeyListener == NULL)	//if key capture is already running then dont start again
 	{
 		iKeyListener = CKeyListener::NewL();
 		iKeyListener->ConstructL(this,iLog);
@@ -157,10 +157,10 @@ void CCodeListener::LaunchApp(TUint16* path)
 	TInt error = 0;
 	TPtrC Ptr(path);
 
-	CApaCommandLine * cmd=CApaCommandLine::NewL();
-    cmd->SetLibraryNameL(Ptr);
+	CApaCommandLine * cmd = CApaCommandLine::NewL();
+    cmd->SetLibraryNameL(Ptr);	//set library name to the path
     cmd->SetCommandL(EApaCommandRun);
-    TRAP(error, EikDll::StartAppL(*cmd));
+    TRAP(error, EikDll::StartAppL(*cmd));	//execute the command
 
 	if(error != KErrNone) 
 	{
@@ -212,9 +212,10 @@ void CCodeListener::DecodeReceivedKey()
 	TRequestStatus iLocalStatus;
 	TBuf8<6> localData;
 	
-	iSocket.Read(localData,iLocalStatus);
+	iSocket.Read(localData,iLocalStatus); //read 6 bytes
 	User::WaitForRequest(iLocalStatus);
 
+	//conversion of repeat, code and scancode from 2 bytes to a single int value
 	TUint16 repeat = 0;
 	repeat |= localData[0];
 	repeat <<= 8;
@@ -240,18 +241,19 @@ void CCodeListener::SendKeyToPhone(TUint16 repeat, TUint16 scancode, TUint16 cod
 	event.iScanCode = scancode;
 	event.iCode = code;
 
-	TApaTask task(CCoeEnv::Static()->WsSession());
-	task.SetWgId(CCoeEnv::Static()->WsSession().GetFocusWindowGroup());
+	TApaTask task(CCoeEnv::Static()->WsSession());	//get current window session
+	task.SetWgId(CCoeEnv::Static()->WsSession().GetFocusWindowGroup());	//get current foreground application
 	
-	User::ResetInactivityTime();
-	task.SendKey(event);
+	User::ResetInactivityTime();	//turn on the backlight
+	task.SendKey(event);	//send the key to the foreground application
 }
 
 void CCodeListener::SendKeyToProxy(TUint16 code,TUint16 aType)
 {
 	TRequestStatus iLocalStatus;
 	TBuf8<5> localData;
-	localData.Append(OPCODE_KEY_PRESSED);
+	localData.Append(OPCODE_KEY_PRESSED); //send the opcode to the proxy
+	//send code and type of key as 4 bytes instead of 2 ints
 	localData.Append(code >> 8);
 	localData.Append(code);
 	localData.Append(aType >> 8);
@@ -294,20 +296,20 @@ void CCodeListener::ChangeProfile()
 	TRequestStatus iLocalStatus;
 	TBuf8<1> localData;
 
-	iSocket.Read(localData,iLocalStatus);
+	iSocket.Read(localData,iLocalStatus);	//read the profile number sent by the proxy
 	User::WaitForRequest(iLocalStatus);
 
 	iProfileNo = localData[0];
 
-	TBufC16<41> temp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");
+	TBufC16<41> temp = _L("Z:\\System\\Apps\\ProfileApp\\ProfileApp.app");	//path of the profile application on nokia series 60 phones
 
 	TUint16 * launchApp = (TUint16 *)temp.Ptr();
 	launchApp[40] = 0;
 
-	LaunchApp(launchApp);
+	LaunchApp(launchApp);	//launch profile application
 
 	iPeriodic = CPeriodic::NewL(CActive::EPriorityLow);
-    iPeriodic->Start(1000000,1000000,TCallBack(ContinueChangeProfile,this));
+    iPeriodic->Start(1000000,1000000,TCallBack(ContinueChangeProfile,this)); //wait for 1 second and call ContinueChangeProfile() method
 }
 
 
@@ -317,12 +319,12 @@ TInt CCodeListener::ContinueChangeProfile(TAny* aObject)
 	CCodeListener* self = (CCodeListener*) aObject;
 	TUint8 profileNo = self->iProfileNo;
 
-	for(TInt i=0; i<profileNo-1; i++)
+	for(TInt i=0; i<profileNo-1; i++)	//send profileNo-1 times downArrow key events to the profile application which should be in focus
 	{
 		self->SendKeyToPhone(0,0,EKeyDownArrow);
 	}
 	
-	for(TInt i=0; i<2; i++)
+	for(TInt i=0; i<2; i++) //send 2 Enter key events to the profile application to select a profile
 	{
 		self->SendKeyToPhone(0,0,63557);
 		User::After(1000000);
@@ -334,7 +336,7 @@ TInt CCodeListener::ContinueChangeProfile(TAny* aObject)
 	closeApp[8] = 0;
 
 	User::After(1000000);
-	self->CloseApp(closeApp);
+	self->CloseApp(closeApp);	//close the profile application
 	
 	self->iPeriodic->Cancel();
 	delete self->iPeriodic;
@@ -349,7 +351,7 @@ TUint16* CCodeListener::GetPath()
 	TRequestStatus iLocalStatus;
 	TBuf8<1> localData;
 
-	iSocket.Read(localData,iLocalStatus);
+	iSocket.Read(localData,iLocalStatus);	//read one byte sent by the proxy. This byte contains the length of the path
 	User::WaitForRequest(iLocalStatus);
 
 	TUint8 pathSize = localData[0];
@@ -391,12 +393,12 @@ void CCodeListener::ConnectToServer()
 		iBtSlContainer->ConstructL(iApplicationUi->ClientRect());
 		iBtSlContainer->SetMopParent(iApplicationUi);
 
-		iApplicationUi->RemoveFromStack(iApplicationContainer);
-		iApplicationUi->AddToStackL(iBtSlContainer);
+		iApplicationUi->RemoveFromStack(iApplicationContainer); //remove the main container from the top
+		iApplicationUi->AddToStackL(iBtSlContainer); //add the BT service list container to the top
 
 		iServices = CBTDiscoverer::NewL(iLog,iBtSlContainer);
 		iServices->ConstructL();
-		iServices->ListServicesL(iResponse().BDAddr());
+		iServices->ListServicesL(iResponse().BDAddr()); //start discovery of services
 
 	}
 	else
@@ -420,7 +422,7 @@ void CCodeListener::ConnectToService(TUint8 portNo)
 
 	TBTSockAddr address;
 	address.SetBTAddr(iResponse().BDAddr());
-	address.SetPort(portNo);
+	address.SetPort(portNo);	//connect to the port number selected by the user
 
 	iSocket.Connect(address, iLocalStatus);
 	User::WaitForRequest(iLocalStatus);
@@ -430,7 +432,7 @@ void CCodeListener::ConnectToService(TUint8 portNo)
 
 	isConnected = ETrue;
 	iApplicationUi->SetConnected(ETrue);
-	StartReceiving();
+	StartReceiving();	//start to listen the opcodes
 }
 
 void CCodeListener::DisconnectFromServer()
@@ -441,7 +443,7 @@ void CCodeListener::DisconnectFromServer()
 		
 		TRequestStatus iLocalStatus;
 		
-		iSocket.Shutdown(RSocket::ENormal, iLocalStatus);
+		iSocket.Shutdown(RSocket::ENormal, iLocalStatus);	//shutdown the socket
 		User::WaitForRequest(iLocalStatus);
 		iSocket.Close();
 		iSocketServ.Close();

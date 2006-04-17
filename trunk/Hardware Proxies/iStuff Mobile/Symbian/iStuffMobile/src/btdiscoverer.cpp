@@ -48,13 +48,13 @@ CBTDiscoverer* CBTDiscoverer::NewLC(RFileLogger* aLog, CBTServiceListContainer* 
 void CBTDiscoverer::ConstructL()
 {
 	
-	TUUID serviceClass(0x1101);
+	TUUID serviceClass(0x1101);			//0x1101 represents BT serial port service class
 	iSdpSearchPattern = CSdpSearchPattern::NewL();
-    iSdpSearchPattern->AddL(serviceClass);
+    iSdpSearchPattern->AddL(serviceClass);	//discover only serial port services
 
     iMatchList = CSdpAttrIdMatchList::NewL();
-    iMatchList->AddL(TAttrRange(0x4));
-	iMatchList->AddL(TAttrRange(0x0100));
+    iMatchList->AddL(TAttrRange(0x4));		//attribute 0x4 represents the serial port number
+	iMatchList->AddL(TAttrRange(0x0100));	//attribute 0x0100 represents the serial port name
 
     iAgent = NULL;
 }
@@ -86,7 +86,7 @@ void CBTDiscoverer::ListServicesL(const TBTDevAddr& aAddress)
     iAgent = NULL;
     iAgent = CSdpAgent::NewL(*this, aAddress);
 
-    iAgent->SetRecordFilterL(*iSdpSearchPattern);
+    iAgent->SetRecordFilterL(*iSdpSearchPattern);	//start scaning the device for services with the search pattern
     iAgent->NextRecordRequestL();
 }
 
@@ -94,11 +94,11 @@ void CBTDiscoverer::NextRecordRequestComplete(TInt aError, TSdpServRecordHandle 
 {
     if (aError != KErrNone)
     {
-        PrintSDPError(aError);
+        PrintSDPError(aError);	//print the error to the log
 	}
-    else if (aTotalRecordsCount)
+    else if (aTotalRecordsCount)	//if a service record is found
     {
-       TRAPD(err, iAgent->AttributeRequestL(aHandle, *iMatchList));
+       TRAPD(err, iAgent->AttributeRequestL(aHandle, *iMatchList));	//request the attributes of the service match the attribute searching criteria
        if (err != KErrNone)
        {
             PrintSDPError(err);
@@ -109,8 +109,8 @@ void CBTDiscoverer::NextRecordRequestComplete(TInt aError, TSdpServRecordHandle 
 
 void CBTDiscoverer::AttributeRequestResult(TSdpServRecordHandle aHandle, TSdpAttributeID aAttrID, CSdpAttrValue* aAttrValue)
 {
-    iAttrId = aAttrID;
-	TRAPD(err,aAttrValue->AcceptVisitorL(*this));
+    iAttrId = aAttrID;	//save the attribute id
+	TRAPD(err,aAttrValue->AcceptVisitorL(*this));	//request to read the value of the attribute
 	
     if (err != KErrNone)
     {
@@ -124,23 +124,23 @@ void CBTDiscoverer::VisitAttributeValueL(CSdpAttrValue& aValue, TSdpElementType 
 {
 	switch(aType)
 	{
-		case ETypeUint:
+		case ETypeUint:	//if the type of the attribute value is integer then it is port number
 
 			if(iAttrId == 0x4)
-				iServicePort = aValue.Uint();
+				iServicePort = aValue.Uint(); //save the port number
 			break;
 
-		case ETypeString:
+		case ETypeString: //if the type of the attribute value is string then it is port name
 			
 			if(iAttrId == 0x100)
 			{
-				TInt len = aValue.Des().Length();
-				iServiceName = new TUint16[len+1];
+				TInt len = aValue.Des().Length();	//legth of the value
+				iServiceName = new TUint16[len+1];	
 				for (int i = 0; i < len; i++)
 				{
-					iServiceName[i] = aValue.Des()[i];
+					iServiceName[i] = aValue.Des()[i];	//save name characters one by one
 				}
-				iServiceName[len] = '\0';
+				iServiceName[len] = '\0';	//string terminating character
 			}
 			break;
 
@@ -163,14 +163,14 @@ void CBTDiscoverer::AttributeRequestComplete(TSdpServRecordHandle /*aHandle*/, T
     }
     else
     {
-        if(iServicePort != 0 && iServiceName != NULL)
+        if(iServicePort != 0 && iServiceName != NULL)	//if port number and port name were found for this service
 		{
-			iBtSlContainer->AddItemToList(iServicePort,iServiceName);
+			iBtSlContainer->AddItemToList(iServicePort,iServiceName);	//add them to the list of the container
 			iServicePort = 0;
 			iServiceName = NULL;
 		}
 
-		TRAPD(err, iAgent->NextRecordRequestL());
+		TRAPD(err, iAgent->NextRecordRequestL());	//request to continue the service search
         if (err != KErrNone)
         {
             PrintSDPError(aError);
@@ -180,6 +180,6 @@ void CBTDiscoverer::AttributeRequestComplete(TSdpServRecordHandle /*aHandle*/, T
 
 void CBTDiscoverer::PrintSDPError(TInt aError)
 {
-	if(aError != -25)
+	if(aError != -25)	// -25 means there is no more service to discover so its not an error
 		iLog->WriteFormat(_L("Service Discovery Protocol Error = %d"),aError);
 }

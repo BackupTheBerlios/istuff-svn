@@ -57,7 +57,7 @@ void CKeyListener::ConstructL(CCodeListener* aCodeListener,RFileLogger* aLog)
 {
 	iCodeListener = aCodeListener;
 	iLog = aLog;
-	CActiveScheduler::Add(this);
+	CActiveScheduler::Add(this); //add this object to the active scheduler
 }
 
 void CKeyListener::DoCancel()
@@ -66,8 +66,8 @@ void CKeyListener::DoCancel()
 
 	for(TInt8 i=0;i<21;i++)
 	{
-		wg->CancelCaptureKey(keyHandles[i]);
-		wg->CancelCaptureKeyUpAndDowns(keyUADHandles[i]);
+		wg->CancelCaptureKey(keyHandles[i]);	//deregister from capturing all the key events
+		wg->CancelCaptureKeyUpAndDowns(keyUADHandles[i]); //deregister from capturing all the ups and downs of the key events
 	}
 
 	ws.EventReadyCancel();
@@ -102,15 +102,15 @@ void CKeyListener::RunL()
 			TWsEvent e;
 			ws.GetEvent(e);
 
-			if(e.Type() == 1)
+			if(e.Type() == 1)	//key pressed
 			{
 				TUint16 c;
-				TKeyEvent* aKeyEvent=e.Key();
-				c = aKeyEvent->iCode;
+				TKeyEvent* aKeyEvent = e.Key(); //get the key event
+				c = aKeyEvent->iCode;	//get the code of the key event
 
 				iCodeListener->SendKeyToProxy((TUint16)aKeyEvent->iCode,(TUint16) e.Type());
 			}
-			else
+			else	//key down and key up
 			{
 				iCodeListener->SendKeyToProxy((TUint16)0,(TUint16) e.Type());
 			}
@@ -131,7 +131,7 @@ void CKeyListener::StopL()
 void CKeyListener::InterceptKeys()
 {
 	TInt8 index = 0;
-	// capture a key
+	
 
 	for(TInt i=48;i<=57;i++,index++)					//looping over keypad keys from 0-9
 	{

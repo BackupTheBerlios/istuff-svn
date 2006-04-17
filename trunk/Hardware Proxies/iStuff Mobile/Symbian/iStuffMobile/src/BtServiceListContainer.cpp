@@ -53,23 +53,23 @@ void CBTServiceListContainer::ConstructL(const TRect& aRect)
 	
 	CreateWindowL();
  
-	iPortList = new (ELeave) CAknSingleNumberStyleListBox();
-	iPortList->SetContainerWindowL(*this);
-	iPortList->SetListBoxObserver(this);
+	iPortList = new (ELeave) CAknSingleNumberStyleListBox(); //create a numbered list
+	iPortList->SetContainerWindowL(*this);	//set this object as the container of the list
+	iPortList->SetListBoxObserver(this);	//set this object as the observer for list events
 
 	TResourceReader reader;
-	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);
+	CCoeEnv::Static()->CreateResourceReaderLC(reader,R_ISTUFFMOBILE_SERVICE_LIST);	//read a resource
 	iPortList->ConstructFromResourceL(reader);
 	CleanupStack::PopAndDestroy();
 
-	SetupScrollBarsL();
+	SetupScrollBarsL();	//setup scroll bars for the list
 
 	iLabel = new (ELeave) CEikLabel;
     iLabel->SetContainerWindowL( *this );
     iLabel->SetTextL( _L("Select a service") );
 
 	SetRect(aRect);
-	ActivateL();
+	ActivateL();	//ready to draw
 }
 
 CBTServiceListContainer::CBTServiceListContainer(RFileLogger* aLog, CCodeListener* aCodeListener)  
@@ -130,7 +130,7 @@ void CBTServiceListContainer::SetupScrollBarsL()
 
 TKeyResponse CBTServiceListContainer::OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType)
 {
-	if(iPortList)
+	if(iPortList)	//if the list exists then forward the key events to the list
 	{
 		return iPortList->OfferKeyEventL(aKeyEvent, aType);
 	}
@@ -143,16 +143,16 @@ TKeyResponse CBTServiceListContainer::OfferKeyEventL(const TKeyEvent& aKeyEvent,
 void CBTServiceListContainer::HandleListBoxEventL(CEikListBox* /*aListBox*/, TListBoxEvent aListBoxEvent)
 {
 	if ((aListBoxEvent == MEikListBoxObserver::EEventEnterKeyPressed) ||
-		(aListBoxEvent == MEikListBoxObserver::EEventItemClicked))
+		(aListBoxEvent == MEikListBoxObserver::EEventItemClicked))	//if enter key of the joystick is pressed
 	{
-		CDesCArray* itemList = STATIC_CAST(CDesCArray*, iPortList->Model()->ItemTextArray());
-		TPtrC16 currentItem((*itemList)[iPortList->CurrentItemIndex()]);
+		CDesCArray* itemList = STATIC_CAST(CDesCArray*, iPortList->Model()->ItemTextArray()); //get the item list of the list
+		TPtrC16 currentItem((*itemList)[iPortList->CurrentItemIndex()]); //get the selected item from the item list
 
-		TLex aLex = TLex(currentItem);
+		TLex aLex = TLex(currentItem);	//parse the current item
 		TUint val;
-		if (aLex.Val(val) == KErrNone)
+		if (aLex.Val(val) == KErrNone)	//aLex.Val(val) will return the 1st integer found in the item because val is of type integer
 		{
-			iCodeListener->ConnectToService(val);
+			iCodeListener->ConnectToService(val);	//connect to the selected port number
 		}
 	}
 
@@ -160,15 +160,15 @@ void CBTServiceListContainer::HandleListBoxEventL(CEikListBox* /*aListBox*/, TLi
 
 void CBTServiceListContainer::AddItemToList(TUint aServicePort, TUint16* aServiceName)
 {
-	CTextListBoxModel* model = iPortList->Model();
+	CTextListBoxModel* model = iPortList->Model(); //get the most of the listbox
 	model->SetOwnershipType(ELbmOwnsItemArray);
 
-	CDesCArray* itemList = STATIC_CAST(CDesCArray*,model->ItemTextArray());
+	CDesCArray* itemList = STATIC_CAST(CDesCArray*,model->ItemTextArray());	//get the list of item from the listbox
 	
 	_LIT(KItem,"%d\t%s\t\t");
 	TBuf<256> item;
 	item.Format(KItem(),aServicePort,aServiceName);
-	itemList->AppendL(item);
+	itemList->AppendL(item);	//add the item to the list
 	
-	iPortList->HandleItemAdditionL();
+	iPortList->HandleItemAdditionL();	//refresh action after adding the item
 }
