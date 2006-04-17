@@ -30,23 +30,72 @@
 
 #include <MdaAudioSamplePlayer.h>
 
+//!  CSoundPlayer class handles playback and stopping of a sound file.
+/*!  CSoundPlayer class object is constructed when the opcode 
+		 OPCODE_PLAYSOUND is received from the proxy. This class is
+		 responsible for playback and stopping of a sound file.
+*/
 class CSoundPlayer: public CBase, public MMdaAudioPlayerCallback
 {
 	public:
+		
+		/** @name CSoundPlayer class first level constructors
+		*   These methods create an object of CSoundPlayer class.
+		
+				\param aFile as TDesC type object. Represing the path
+							 of the file to be played.
+
+				\return CSoundPlayer object pointer.
+		*/
+		//@{
 		static CSoundPlayer* NewL(const TDesC& aFile);
 		static CSoundPlayer* NewLC(const TDesC& aFile);
+		//@}
+		
 		~CSoundPlayer();
 
+		//!  Starts playing the file
+		/*!  This method sets the current state to EPlaying and 
+				 starts the playback of the sound file.
+		*/
 		void Play();
+		
+		//!  Stops playing the file
+		/*!  This method stops playing the sound file and sets 
+				 the current state to EReady.
+		*/
 		void Stop();
 
-    
+    //!  Callback from the MMdaAudioPlayerCallback
+		/*!  This method is invoked when the initialization of 
+				 the sound player is completed.
+				 
+				 \param aError as TInt. Represents the status of
+				 				completion.
+				 \param aDuration as TTimeIntervalMicroSeconds object. Never used.
+		*/
 		void MapcInitComplete(TInt aError, const TTimeIntervalMicroSeconds& aDuration);
+		
+		//!  Callback from the MMdaAudioPlayerCallback
+		/*!  This method is invoked when the playback of 
+				 the sound file is completed.
+				 
+				 \param aError as TInt. Represents the status of
+				 				completion. Can represent an Error if the
+				 				playback was not successful.
+		*/
 		void MapcPlayComplete(TInt aError);
 
 
 	private:
 		CSoundPlayer();
+		
+		//!  CSoundPlayer class second level constructor
+		/*!  This methods initializes iMdaPlayer class member.
+		
+				 \param aFile as TDesC type object. Represing the path
+							 of the file to be played.
+		*/
 		void ConstructL(const TDesC& aFile);
 
 		enum TState

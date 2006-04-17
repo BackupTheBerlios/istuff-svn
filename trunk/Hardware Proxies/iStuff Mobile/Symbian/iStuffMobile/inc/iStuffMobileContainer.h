@@ -37,29 +37,79 @@
 #include <flogger.h>
 #include "Global.h"
    
-
 class CEikLabel;
 
+//!  CiStuffMobileContainer class is the default UI container for "iStuff Mobile" mobile phone application
+/*!  This class is the default UI which is displayed when the application
+		 is launched.
+*/
 class CiStuffMobileContainer : public CCoeControl, MCoeControlObserver
     {
     public:
         
-		void ConstructL(const TRect& aRect);
+				//!  Second level constructor for CiStuffMobileContainer class
+				/*!  This method initiates the GUI by loading the image that
+						 has to be displayed into the background of the container.
+						 It also contructs a label and puts it into the contanier.
+						 
+						 \param aRect as TRect object. Represents the area to which
+						 				container should be drawn.
+				*/
+				void ConstructL(const TRect& aRect);
+        
         ~CiStuffMobileContainer();
+				
+				//!  Sends the GUI to the background
+				/*!  Whenver this method is called it send the application
+						 UI to the background in the mobile phone. The application
+						 is active even when in background.
+				*/
+				void SendToBackground();
 		
-		void SendToBackground();
-		CEikLabel* iLabel;
+				CEikLabel* iLabel;
 
     private:
 
+        //!  Resizes the components inside the container
+				/*!  This method is called when the size of the container
+						 changes. It adjusts the size of the components inside 
+						 the container.
+				*/
         void SizeChanged();
+        
+        //!  Returns the number of component in the container
+				/*!  This method returns the number of component in the
+						 container.
+						 
+						 \return an integer indicating number of components.
+				*/
         TInt CountComponentControls() const;
+        
+        //!  Returns the pointer to a component inside the container
+				/*!  This method returns a to pointer to the component inside
+						 the container.
+						 
+						 \param aIndex as an TInt. Represents the index of the
+						 				components. Indexs start from 0 with component
+						 				constructed first to have a lower index than the
+						 				one constructed later.
+
+						 \return pointer to the component.
+				*/
         CCoeControl* ComponentControl(TInt aIndex) const;
+        
+        //!  Draws the GUI
+				/*!  This methos Draws the container on the screen with the
+						 background image.
+						 
+						 \param aRect as TRect class type. Represents the area 
+						 				to be used for drawing the container.
+				*/
         void Draw(const TRect& aRect) const;
+        
         void HandleControlEventL(CCoeControl* aControl,TCoeEvent aEventType);
         
-		CFbsBitmap* iBackground;
-		RFileLogger iConLog;
+				CFbsBitmap* iBackground;
     };
 
 #endif

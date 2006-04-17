@@ -87,6 +87,7 @@ class CiStuffMobileAppUi : public CAknAppUi
 						 
 						 \param aKeyEvent as TKeyEvent class type.
 						 \param aType as TEventCode class type.
+						 \return an indication whether key was consumed or not.
 						 
 						 See nokia series 60 documentation for more details on parameters.
 				*/
@@ -108,6 +109,7 @@ class CiStuffMobileAppUi : public CAknAppUi
 						 a directory on the mobile phone under that path.
 						 
 						 \param aPath as TDesC class type. This a typical string.
+						 \return as success indication (0 if the creation was successful).
 				*/
 				TInt MakeDir(const TDesC& aPath);
 

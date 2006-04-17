@@ -35,26 +35,78 @@
 #include <flogger.h>
 #include <w32std.h>
 #include <apgwgnam.h>
-//#include "CodeListener.h"
 
 class CCodeListener;
 
+//!  CKeyListener class enables and disables the key capturing feature.
+/*!  CKeyListener class object is constructed when the opcode 
+		 OPCODE_START_KEYCAPTURE is received from the proxy. This 
+		 class is responsible for enabling and disabling of the key
+		 capturing fuctionality on the mobile phone. This class is
+		 also an active object.
+*/
 class CKeyListener : public CActive
 {
 	public:
+		
+		/** @name CKeyListener class first level constructors
+		*   These methods create an object of CKeyListener class.
+		
+				\return CKeyListener object pointer.
+		*/
+		//@{
 		static CKeyListener* NewLC();
 		static CKeyListener* NewL();
-		CKeyListener();
+		//@}
+		
 		~CKeyListener();
-
+		
+		//!  CKeyListener class second level constructor
+		/*!  This methods initializes couple of class members with 
+				 the parameters passed and adds CKeyListener object to
+				 the Active Scheduler.
+		
+				 \param aCodeListener as CCodeListener object pointer.
+				 \param aLog as RFileLogger object pointer.
+				 
+		*/
 		void ConstructL(CCodeListener* aCodeListener,RFileLogger* aLog);
+		
+		//!  Starts capturing key presses
+		/*!  This method starts capturing key presses from the 
+				 mobile phone.
+		*/
 		void StartL();
+		
+		//!  Stops capturing key presses
+		/*!  This method stops capturing key presses from the 
+				 mobile phone.
+		*/
 		void StopL();
 
 	private:
 
+		CKeyListener();
+		
+		//!  Registers for capturing keys
+		/*!  This method registers to capture keys from the mobile
+				 phone. It is invoked once.
+		*/
 		void InterceptKeys();
+		
+		//!  Callback method from the CActiveScheduler
+		/*!  This method is a callback method which is invoked by 
+				 the Active Scheduler on completion of an unsynchronized
+				 request. In this context this request is waiting for a
+				 key events. This method upon receiving the key event initiates
+				 the process of relaying it to the "iStuff Mobile" proxy.
+		*/
 		void RunL();
+		
+		//!  Cancels all the pending wait requests
+		/*!  This method cancels all the pending wait requests for
+				 the key events.
+		*/
 		void DoCancel();
 
 		CCodeListener*	iCodeListener;

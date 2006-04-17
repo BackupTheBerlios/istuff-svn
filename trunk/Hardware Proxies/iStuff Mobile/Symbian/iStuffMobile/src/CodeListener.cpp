@@ -30,9 +30,9 @@
 
 #include "CodeListener.h"
 
-CCodeListener::CCodeListener(CiStuffMobileAppUi* app, CiStuffMobileContainer* aApplicationContainer) : CActive(0)
+CCodeListener::CCodeListener(CiStuffMobileAppUi* aApplicationUi, CiStuffMobileContainer* aApplicationContainer) : CActive(0)
 {
-	iApplicationUi = app;
+	iApplicationUi = aApplicationUi;
 	iApplicationContainer = aApplicationContainer;
 	isConnected = EFalse;
 }
@@ -168,9 +168,9 @@ void CCodeListener::LaunchApp(TUint16* path)
 	}
 }
 
-void CCodeListener::CloseApp(TUint16* path)
+void CCodeListener::CloseApp(TUint16* name)
 {
-	TPtrC Ptr(path);
+	TPtrC Ptr(name);
 	TBool killed = EFalse;
 	
 	RApaLsSession RSession;
@@ -204,7 +204,7 @@ void CCodeListener::CloseApp(TUint16* path)
     }
 
 	if(!killed)
-		iLog->WriteFormat(_L("Application \"%s\" was not found"),path);
+		iLog->WriteFormat(_L("Application \"%s\" was not found"),name);
 }
 
 void CCodeListener::DecodeReceivedKey()
