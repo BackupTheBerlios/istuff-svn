@@ -39,7 +39,7 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allows to add a "Particle" manually to availble Particles list on the GUI.  <a href="#f146beefcc5e9393633d3ac97b0f0567"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_framework.html#e048c2b2215c9d204c6194164336db20">btnStart_actionPerformed</a> (ActionEvent e)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a object of EventLauncher class which starts to post the "Particle" sensor data.  <a href="#e048c2b2215c9d204c6194164336db20"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructs a object of <a class="el" href="class_event_launcher.html">EventLauncher</a> class which starts to post the "Particle" sensor data.  <a href="#e048c2b2215c9d204c6194164336db20"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_framework.html#94d0e93dbf3b1f5b96320cbdcb0087a5">btnStop_actionPerformed</a> (ActionEvent e)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stops the posting of "Particle" sensor data onto the "Event Heap".  <a href="#94d0e93dbf3b1f5b96320cbdcb0087a5"></a><br></td></tr>
@@ -55,7 +55,7 @@
 <a class="el" href="class_framework.html">Framework</a> class is a proxy program to communicate with the "Smart-Its" and the "Event Heap". 
 <p>
 The four main functionalities of this class are:<ol type=1>
-<li>Create a GUI for the "Smart-Its" proxy.</li><li>Use <a class="el" href="class_scanner.html">Scanner</a> class to scan the "Smart-Its" availble in the network.</li><li>Use ConfigureDialog class to configure a particular "Smart-Its".</li><li>Use EventLauncher class to post the "Smart-Its" sensor values as events onto the "Event Heap". </li></ol>
+<li>Create a GUI for the "Smart-Its" proxy.</li><li>Use <a class="el" href="class_scanner.html">Scanner</a> class to scan the "Smart-Its" availble in the network.</li><li>Use <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> class to configure a particular "Smart-Its".</li><li>Use <a class="el" href="class_event_launcher.html">EventLauncher</a> class to post the "Smart-Its" sensor values as events onto the "Event Heap". </li></ol>
 
 <p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
@@ -169,7 +169,7 @@ This method is called when the "Add" button just below the "Particle List"on the
 <p>
 Starts the configuration dialog for configuring "Particle" sensor module. 
 <p>
-This method is called when the "Configure Particle" button on the GUI is hit. It constructs an Object of ConfigureDialog class and starts a dialog box using which one can configure "Particle" sensor module.<p>
+This method is called when the "Configure Particle" button on the GUI is hit. It constructs an Object of <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> class and starts a dialog box using which one can configure "Particle" sensor module.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>as an ActionEvent object. This parameter is never used. </td></tr>
@@ -275,9 +275,9 @@ This method is called when the "Scan Network" button on the GUI is hit. It const
     <td>
 
 <p>
-Constructs a object of EventLauncher class which starts to post the "Particle" sensor data. 
+Constructs a object of <a class="el" href="class_event_launcher.html">EventLauncher</a> class which starts to post the "Particle" sensor data. 
 <p>
-This method is called when the "Start Framework" button on the GUI is hit. This causes the EventLauncher class to start posting sensor values as events from "Particles" onto the "Event Heap".<p>
+This method is called when the "Start Framework" button on the GUI is hit. This causes the <a class="el" href="class_event_launcher.html">EventLauncher</a> class to start posting sensor values as events from "Particles" onto the "Event Heap".<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>as an ActionEvent object. This parameter is never used. </td></tr>
@@ -388,8 +388,8 @@ This method is called whenever the list of particles is updated.<p>
   </tr>
 </table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>C:/dev/faraz/Hardware Proxies/Smart-Its/Particle_Framework/src/Framework.java</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Apr 13 16:07:35 2006 for Particle Framework by&nbsp;
+<li>D:/Master Thesis/Development/iStuff/trunk/Hardware Proxies/Smart-Its/Particle_Framework/src/Framework.java</ul>
+<hr size="1"><address style="align: right;"><small>Generated on Mon Apr 17 03:19:53 2006 for Particle Framework by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

@@ -90,8 +90,8 @@ public class Framework extends JFrame{
         }
     }
 
-    //! Initializes the GUI
-		/*! This method is called by the Framework constructor to contruct the GUI
+  //! Initializes the GUI
+	/*! This method is called by the Framework constructor to contruct the GUI
 	*/
 
     private void init() throws Exception {
@@ -187,7 +187,7 @@ public class Framework extends JFrame{
 						"[ProxyID] = an optional parameter to be checked in the events received and sent in events generated e.g. proxy1\n");
     }
 
-    //! Exits the application
+  //! Exits the application
 	/*! This method is called when the Exit button on the GUI is clicked. It exits
 		the application.
 

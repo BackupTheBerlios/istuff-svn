@@ -21,15 +21,19 @@
 <p>
 <a href="class_sensor_config-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_config.html#0456cf668ac8cdcbeeb5a9342725be5d">startConfiguration</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Starts the configuration of a "Particle" sensor board.  <a href="#0456cf668ac8cdcbeeb5a9342725be5d"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Package Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_config.html#4bda92a81edf6271206dd0448dcd345f">SensorConfig</a> (<a class="el" href="class_framework.html">Framework</a> f, Object particle, ConfigureDialog cd)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sensor_config.html#4bda92a81edf6271206dd0448dcd345f">SensorConfig</a> (<a class="el" href="class_framework.html">Framework</a> f, Object particle, <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> cd)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="class_sensor_config.html">SensorConfig</a> class constructor.  <a href="#4bda92a81edf6271206dd0448dcd345f"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 <a class="el" href="class_sensor_config.html">SensorConfig</a> class configures the sensor module attached with the "Particle". 
 <p>
-The main functionality of this class is to configure the sensor board which is attached to a "Particle". Configuration of the sensor board means which sensor information to receive and at what rate. This class is functional when the OK button on the ConfigureDialog GUI is clicked. 
+The main functionality of this class is to configure the sensor board which is attached to a "Particle". Configuration of the sensor board means which sensor information to receive and at what rate. This class is functional when the OK button on the <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> GUI is clicked. 
 <p>
 <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="4bda92a81edf6271206dd0448dcd345f"></a><!-- doxytag: member="SensorConfig::SensorConfig" ref="4bda92a81edf6271206dd0448dcd345f" args="(Framework f, Object particle, ConfigureDialog cd)" --><p>
@@ -52,7 +56,7 @@ The main functionality of this class is to configure the sensor board which is a
         <tr>
           <td class="md" nowrap align="right"></td>
           <td class="md"></td>
-          <td class="md" nowrap>ConfigureDialog&nbsp;</td>
+          <td class="md" nowrap><a class="el" href="class_configure_dialog.html">ConfigureDialog</a>&nbsp;</td>
           <td class="mdname" nowrap> <em>cd</em></td>
         </tr>
         <tr>
@@ -74,20 +78,50 @@ The main functionality of this class is to configure the sensor board which is a
 <p>
 <a class="el" href="class_sensor_config.html">SensorConfig</a> class constructor. 
 <p>
-The constructor takes in objects of <a class="el" href="class_framework.html">Framework</a>, Object and ConfigureDialog types and save them locally.<p>
+The constructor takes in objects of <a class="el" href="class_framework.html">Framework</a>, Object and <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> types and save them locally.<p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>f</em>&nbsp;</td><td>as a <a class="el" href="class_framework.html">Framework</a> type object </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>particle</em>&nbsp;</td><td>as an Object type object </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>cd</em>&nbsp;</td><td>as a ConfigureDialog object </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cd</em>&nbsp;</td><td>as a <a class="el" href="class_configure_dialog.html">ConfigureDialog</a> type object </td></tr>
   </table>
 </dl>
     </td>
   </tr>
 </table>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="0456cf668ac8cdcbeeb5a9342725be5d"></a><!-- doxytag: member="SensorConfig::startConfiguration" ref="0456cf668ac8cdcbeeb5a9342725be5d" args="()" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">void SensorConfig.startConfiguration           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Starts the configuration of a "Particle" sensor board. 
+<p>
+This method starts the configuration of a single "Particle" sensor module. It first checks what sensors where selected by the user and then sends a configuration packet to the "Particle".     </td>
+  </tr>
+</table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>C:/dev/faraz/Hardware Proxies/Smart-Its/Particle_Framework/src/SensorConfig.java</ul>
-<hr size="1"><address style="align: right;"><small>Generated on Thu Apr 13 16:07:35 2006 for Particle Framework by&nbsp;
+<li>D:/Master Thesis/Development/iStuff/trunk/Hardware Proxies/Smart-Its/Particle_Framework/src/SensorConfig.java</ul>
+<hr size="1"><address style="align: right;"><small>Generated on Mon Apr 17 03:19:53 2006 for Particle Framework by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

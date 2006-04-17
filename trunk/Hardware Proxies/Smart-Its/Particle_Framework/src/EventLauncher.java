@@ -1,6 +1,3 @@
-
-import java.util.Vector;
-import java.util.Hashtable;
 /*
  * Copyright (c) 2006
  * Media informatics Department
@@ -30,9 +27,17 @@ import java.util.Hashtable;
  *
  * Version:	  1.0
  */
- 
+
+import java.util.Vector;
+import java.util.Hashtable;
 import edu.teco.particles.libParticle.*;
 import iwork.eheap2.*;
+
+//!  EventLauncher class receives sensor data from "Particles" and posts it onto the "Event Heap".
+/*!  The two main functionalities of this class are:
+  		-# Receive packets with sensor data from "Particles".
+  		-# Post the sensor data packet onto the "Event Heap" only if its different from the last packet.
+*/
 
 public class EventLauncher implements Runnable{
 
@@ -45,6 +50,16 @@ public class EventLauncher implements Runnable{
     protected String eventHeapIp;
     protected String proxyID;
 
+ 	//! EventLauncher class constructor
+	/*! The constructor initializes the local variables with the parameters
+			provided.
+
+			\param configuredParticles as a Vector. This vector contains ID of all the
+						 "Particles" that have been configured to receive sensor data.
+			\param eventHeapIp as a String. Specifies the IP address of the "Event Heap".
+			\param proxyID as a String. Specifies the proxy ID to be used while
+			   		 posting Events and to be checked while receiving events.
+	*/
     public EventLauncher(Vector configuredParticles, String eventHeapIp, String proxyID)
     {
         particles = configuredParticles;
@@ -52,6 +67,13 @@ public class EventLauncher implements Runnable{
         this.eventHeapIp = eventHeapIp;
         this.proxyID = proxyID;
     }
+    
+  //! Receives sensor data from the "Particles" and posts them as events onto the "Event Heap"
+	/*! This method receives the sensor data packets from the "Particles" that are 
+			contained	in the "particles" vector. On reception of each packet, it is 
+			checked for changes from the last packet received by the same "Particle".
+			If the packet is different, it is posted as Event onto the "Event Heap".
+	*/
 
     public void run()
     {
@@ -60,21 +82,20 @@ public class EventLauncher implements Runnable{
        int filterMode = P_FILTER.FILTER_CONCAT_AND | P_FILTER.FILTER_TYPE_ID;
        filter = new ParticleFilter("Id Filter");
        ParticleSrcId recFrom = new ParticleSrcId((String) particles.get(0));
-       System.out.println(recFrom.toString());
-       filter.add(filterMode,recFrom.toFilter());
+       filter.add(filterMode,recFrom.toFilter());	//receive packets from this particle
 
-       if(particles.size() > 1)
+       if(particles.size() > 1)	//if the particle list contains more than one particle
        {
            filterMode = P_FILTER.FILTER_CONCAT_OR | P_FILTER.FILTER_TYPE_ID;
 
            for (int i = 1; i < particles.size(); i++) {
                recFrom = new ParticleSrcId((String) particles.get(i));
                System.out.println(recFrom.toString());
-               filter.add(filterMode, recFrom.toFilter());
+               filter.add(filterMode, recFrom.toFilter()); 	//add all the particles to the reception list
            }
        }
 
-       recSocket = new ParticleSocket(5555);
+       recSocket = new ParticleSocket(5555);	//open a socket for reception of packets from particles
        lastPacketList = new Hashtable();
        eventHeap = new EventHeap(eventHeapIp);
        ParticlePacket currPacket;
@@ -83,25 +104,25 @@ public class EventLauncher implements Runnable{
        do
        {
            same = true;
-           currPacket = recSocket.receiveFiltered(recSocket,filter);
+           currPacket = recSocket.receiveFiltered(recSocket,filter);	//get a new packet
            if(currPacket != null)
            {
-               currId = currPacket.getSrcId();
-               ParticlePacket lastPacket = (ParticlePacket) lastPacketList.get(currId.toString());
+               currId = currPacket.getSrcId();	//get the Source Id of the packet received
+               ParticlePacket lastPacket = (ParticlePacket) lastPacketList.get(currId.toString());	//get the previous packet transmitted by this Source from the hashtable
 
-               if(lastPacket != null)
+               if(lastPacket != null) //if the previous packet transfered from this particle exists
                {
-                   ParticleTuple currPacketTuple = currPacket.firstAcl();
-                   ParticleTuple lastPacketTuple = lastPacket.findFirstAcl(currPacketTuple.getAclType());
+                   ParticleTuple currPacketTuple = currPacket.firstAcl();	//get the 1st tuple from the current packet
+                   ParticleTuple lastPacketTuple = lastPacket.findFirstAcl(currPacketTuple.getAclType());	//get the 1st tuple from the previous packet
 
                    while (currPacketTuple != null)
                    {
-                       short[] currPacketTupleData = currPacketTuple.toArray();
-                       short[] lastPacketTupleData = lastPacketTuple.toArray();
+                       short[] currPacketTupleData = currPacketTuple.toArray();	//get data of the current packet tuple
+                       short[] lastPacketTupleData = lastPacketTuple.toArray();	//get data of the previous packet tuple
 
                        for(int i=0;i<currPacketTupleData.length;i++)
                        {
-                           if(currPacketTupleData[i] != lastPacketTupleData[i])
+                           if(currPacketTupleData[i] != lastPacketTupleData[i])	//if the data is not equal
                            {
                                same = false;
                                break;
@@ -110,39 +131,39 @@ public class EventLauncher implements Runnable{
                        if(!same)
                            break;
 
-                       currPacketTuple = currPacket.nextAcl(currPacketTuple);
-                       lastPacketTuple = lastPacket.nextAcl(lastPacketTuple);
+                       currPacketTuple = currPacket.nextAcl(currPacketTuple); //get the next tuple from the current packet
+                       lastPacketTuple = lastPacket.nextAcl(lastPacketTuple); //get the next tuple from the previous packet
                    }
                }
                else
                    same = false;
 
-               if(!same)
+               if(!same)	//if packets are not same
                {
                    try
                    {
-                       Event event = new Event("Particle_Packet");
+                       Event event = new Event("Particle_Packet");	//create an event which represents a particle packet
                        event.addField("ProxyID", proxyID);
-                       event.addField("ParticleSrcId",currPacket.getSrcId().toString());
+                       event.addField("ParticleSrcId",currPacket.getSrcId().toString());	//add the source Id to the event
                        event.setTimeToLive(1000);
 
                        ParticleTuple currTuple = currPacket.firstAcl();
-                       currTuple = currPacket.nextAcl(currTuple);
+                       currTuple = currPacket.nextAcl(currTuple);	//get the 2nd tuple which is sensor data
                        int sensor;
                        while(currTuple != null)
                        {
                            sensor = 0;
-                           for(int i=0;i<currTuple.length();i++){
+                           for(int i=0;i<currTuple.length();i++){	//the sensor data has three bytes which are filled into a single integer
                                sensor = sensor << 8;
                                sensor |= currTuple.getAclByte(i);
                            }
-                           event.addField(currTuple.getAclType(),new Integer(sensor));
-                           currTuple = currPacket.nextAcl(currTuple);
+                           event.addField(currTuple.getAclType(),new Integer(sensor));	// add a field to the event with the tuple name e.g. sgx and the sensor data integer
+                           currTuple = currPacket.nextAcl(currTuple);	//get the next sensor data which is the next tuple
                        }
 
-                       eventHeap.putEvent(event);
-                       lastPacketList.remove(currPacket.getSrcId().toString());
-                       lastPacketList.put(currPacket.getSrcId().toString(),currPacket);
+                       eventHeap.putEvent(event);	//get the event onto the event heap
+                       lastPacketList.remove(currPacket.getSrcId().toString());	//remove the previous packet transmitted by the current source from the hashtable
+                       lastPacketList.put(currPacket.getSrcId().toString(),currPacket);	//add the current packet transmitted by the source to the hashtable
                    }
                    catch(Exception e)
                    {
