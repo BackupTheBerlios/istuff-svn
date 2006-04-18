@@ -35,7 +35,7 @@
 		<key>description</key>
 		<string>This patch only passes through values if they are greater than a specified threshold and the new value compared to the preceiding one is larger than the absolute difference of the new and the old value. This has a filter effect to smoothen small differences in input values.</string>
 		<key>name</key>
-		<string>Threshold</string>
+		<string>Filter</string>
 	</dict>
 	<key>outputAttributes</key>
 	<dict>
