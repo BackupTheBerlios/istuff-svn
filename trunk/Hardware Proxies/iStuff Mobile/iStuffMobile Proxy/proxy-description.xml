@@ -2,10 +2,11 @@
 
 <proxy>
   <kind>Hardware Proxies</kind>
-  <proxyClass>PhoneControllers</proxyClass>
-  <name>Nokia6600_Proxy</name> 
+  <proxyClass>Mobile_Phone_Interaction</proxyClass>
+  <name>MobilePhone_Proxy</name> 
   <ClassName>iStuffMobileProxy</ClassName>
   <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:./classes:. iStuffMobileProxy</launchCommand>
   <CustomLibs>
     <relativePath></relativePath>
   </CustomLibs>
