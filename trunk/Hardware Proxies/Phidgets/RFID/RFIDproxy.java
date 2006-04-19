@@ -25,14 +25,14 @@ public class RFIDproxy extends _IPhidgetRFIDEventsAdapter
 	 EventHeap eheap;
 	 private String _proxyID;
 	 boolean freshTag;
-	public Timer timer;
+		public Timer timer;
 		// PhidgetInterfaceKit has new data
-        public void OnTag(_IPhidgetRFIDEvents_OnTagEvent ke) {
+		 public void OnTag(_IPhidgetRFIDEvents_OnTagEvent ke) {
         	try {
 		// this is a generic callback to publish all data from the RFID sensor
 		System.out.println("Tag Found: " + ke.get_TagNumber());
 		Event e = new Event("PhidgetRFID");
-		e.addField("ProxyID", "HUHU");
+		e.addField("ProxyID", _proxyID);
 		e.setTimeToLive(50);
 		e.addField("TagNumber", ke.get_TagNumber());
 		if (eheap.isConnected()){
