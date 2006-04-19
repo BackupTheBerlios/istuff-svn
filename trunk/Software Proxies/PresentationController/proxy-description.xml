@@ -6,6 +6,7 @@
   <name>PresentationController</name> 
   <ClassName>SlideController</ClassName>
   <comment>blablabla</comment>
+  <launchCommand>java -classpath ../../Lib/iROS.jar:. SlideController</launchCommand>
   <CustomLibs>
     <relativePath>..</relativePath>
     <relativePath>../..</relativePath>
