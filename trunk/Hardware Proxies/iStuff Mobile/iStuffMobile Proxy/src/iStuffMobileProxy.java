@@ -91,7 +91,7 @@ public class iStuffMobileProxy implements EventCallback
 
 		public iStuffMobileProxy(String ip, String proxyID, String cmprt)
 		{
-
+			try
 			{
 				eventHeap = new EventHeap(ip);
 				template = new Event[1];
