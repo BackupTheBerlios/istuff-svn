@@ -1,1 +1,1 @@
-java -classpath ../../../Lib/iROS.jar:.. iPhone localhost /dev/tty.Nokia6600
+java -classpath ../../../Lib/iROS.jar:.. iPhone $1 $2

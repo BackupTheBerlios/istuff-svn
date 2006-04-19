@@ -15,7 +15,7 @@ public class iPhone implements SymbianInputListener, Runnable{
 	private SymbianInputDevice sid;
 	private EventHeap eh;
 
-	public iPhone(String EventHeapServer, String comPort, String proxyID, boolean isRotationEnabled) {
+	public iPhone(String EventHeapServer, String proxyID, String comPort, boolean isRotationEnabled) {
 		_proxyID = proxyID;
 		
 		sid = new SymbianInputDevice(comPort, this);
