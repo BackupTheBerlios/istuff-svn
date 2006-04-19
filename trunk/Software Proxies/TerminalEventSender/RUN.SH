@@ -1,5 +1,5 @@
-EHEAPSERVER=localhost
-EVENTTYPE=myEventType
+#EHEAPSERVER=localhost
+#EVENTTYPE=myEventType
 if [ $# -ge 1 ]
 then
     EHEAPSERVER=$1;
@@ -10,4 +10,4 @@ then
     EVENTTYPE=$2;
 fi
 echo $EHEAPSERVER $EVENTTYPE;
-java -classpath ../../Lib/iROS.jar:. TerminalEventSender $EHEAPSERVER $EVENTTYPE $3 $4 $5 $6 $7 $8 $9;
+java -classpath ../../Lib/iROSbak.jar:. TerminalEventSender $EHEAPSERVER $EVENTTYPE $3 $4 $5 $6 $7 $8 $9;
