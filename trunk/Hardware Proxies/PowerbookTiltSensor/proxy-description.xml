@@ -6,6 +6,7 @@
   <name>PowerbookTiltSensor</name> 
   <ClassName>motionProxy</ClassName>
   <comment>user comment</comment>
+  <launchCommand>./motion/motion powerbook | java -cp "../../Lib/iROS.jar":. motionProxy</launchCommand>
   <CustomLibs>
     <relativePath>./motion/motion powerbook</relativePath>
   </CustomLibs>
