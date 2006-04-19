@@ -5,9 +5,9 @@
 //  Created by Rafael Ballagas on 11/7/05.
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
-#import "Threshold.h"
+#import "Filter.h"
 
-@implementation Threshold
+@implementation Filter
 
 + (int) executionMode
 {

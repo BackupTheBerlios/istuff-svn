@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffConsumerPatch.h"
 
-@interface MobilePhoneControllerPatch : iStuffConsumerPatch {
+@interface MobilePhoneController : iStuffConsumerPatch {
 	
 	// if a boolean port is TRUE, the corresponding event with the command  number
 	//  is put on the Event Heap

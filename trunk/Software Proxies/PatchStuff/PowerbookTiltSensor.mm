@@ -7,9 +7,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "PowerbookTiltSensorPatch.h"
+#import "PowerbookTiltSensor.h"
 
-@implementation PowerbookTiltSensorPatch
+@implementation PowerbookTiltSensor
 	
 - (id)initWithIdentifier:(id)fp8
 {

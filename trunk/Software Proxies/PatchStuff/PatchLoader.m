@@ -12,19 +12,19 @@
 @implementation PatchLoader
 + (void)registerNodesWithManager:(GFNodeManager*)manager
 {
-	[manager registerNodeWithClass: [PowerbookTiltSensorPatch class]];
-	[manager registerNodeWithClass: [PresentationControllerPatch class]];
-	[manager registerNodeWithClass: [RFIDReaderPatch class]];
-	[manager registerNodeWithClass: [InterfaceKitPatch class]];
-	[manager registerNodeWithClass: [AccelerometerPatch class]];
-	[manager registerNodeWithClass: [ServoControllerPatch class]];
-	[manager registerNodeWithClass: [Threshold class]];
+	[manager registerNodeWithClass: [PowerbookTiltSensor class]];
+	[manager registerNodeWithClass: [PresentationController class]];
+	[manager registerNodeWithClass: [RFIDReader class]];
+	[manager registerNodeWithClass: [InterfaceKit class]];
+	[manager registerNodeWithClass: [Accelerometer class]];
+	[manager registerNodeWithClass: [ServoController class]];
+	[manager registerNodeWithClass: [Filter class]];
 	[manager registerNodeWithClass: [StringComparer class]];
-	[manager registerNodeWithClass: [SweepPatch class]];
-	[manager registerNodeWithClass: [TeleoPWMOutPatch class]];
-	[manager registerNodeWithClass: [SmartItsSensorPatch class]];
-	[manager registerNodeWithClass: [MobilePhoneControllerPatch class]];
-	[manager registerNodeWithClass: [CharacterGeneratorPatch class]];
-	[manager registerNodeWithClass: [MobilePhoneKeyListenerPatch class]];
+	[manager registerNodeWithClass: [SweepController class]];
+	[manager registerNodeWithClass: [TeleoPWMOut class]];
+	[manager registerNodeWithClass: [SmartItsSensor class]];
+	[manager registerNodeWithClass: [MobilePhoneController class]];
+	[manager registerNodeWithClass: [CharacterGenerator class]];
+	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
 }
 @end

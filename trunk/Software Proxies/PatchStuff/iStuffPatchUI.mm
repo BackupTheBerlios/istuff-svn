@@ -2,7 +2,7 @@
 //  iStuffPatchUI.m
 //  QCiStuff
 //
-//  Created by René Reiners in Feb/March 2006.
+//  Created by René Reiners in Feb - April 2006.
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
@@ -41,13 +41,13 @@
 	[listOfEventHeaps reloadData];
 	[removeEventHeapButton setEnabled:false];
 	if ([currentPatch automaticConnection]){
-		NSLog(@"SHOULB BE TRUE");
+		NSLog(@"SHOULD BE TRUE");
 	
 		[toggleAutomaticConnectionManagement setState:NSOnState];
 		}
 	else {
 		[toggleAutomaticConnectionManagement setState:NSOffState];
-				NSLog(@"SHOULB NOT BE TRUE");
+				NSLog(@"SHOULD NOT BE TRUE");
 			}
 		
 
@@ -171,8 +171,9 @@ NSLog(@"In reloadList");
 // Only needed if selection from a list is desired
 //	if (selectedList != -1) {
 
-		iStuffPatch *currentPatch = [self patch];
-
+	iStuffPatch *currentPatch = [self patch];
+	if (![[displayEventHeapName stringValue] isEqualToString:@""]) {
+	/*
 		// Check which table was selected:
 		NSMutableArray *eHeapsModel;
 		NSTableView *selectedTableView;
@@ -180,13 +181,14 @@ NSLog(@"In reloadList");
 			selectedTableView = listOfEventHeaps;
 			eHeapsModel = [currentPatch foundEventHeaps];
 		}
-		else {
+		else if (selectedList == 1){
 			selectedTableView = customListOfEventHeaps;
 			eHeapsModel = [currentPatch specifiedEventHeaps];
 		}
- 	
-
-		NSString *selectedEventHeap = [eHeapsModel objectAtIndex:[selectedTableView selectedRow]];
+ 	*/
+	
+		NSString *selectedEventHeap = [displayEventHeapName stringValue];
+		//NSString *selectedEventHeap = [eHeapsModel objectAtIndex:[selectedTableView selectedRow]];
 		NSHost *hostWithName = [NSHost hostWithName:selectedEventHeap];
 		NSHost *hostWithAddress = [NSHost hostWithAddress:selectedEventHeap];
 		// The user can specify both, a name and a network address.
@@ -232,6 +234,8 @@ NSLog(@"In reloadList");
 		}
 	[listOfEventHeaps deselectAll:self];
 	[customListOfEventHeaps deselectAll:self];
+ }
+ 
 }	
 
 - (IBAction)disconnectFromEventHeap:(id)sender{

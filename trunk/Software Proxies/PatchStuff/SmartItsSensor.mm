@@ -8,13 +8,13 @@
 // This patch waits for "Text Event" from the event heap and directs them
 // to the output ports as integers with the ACII code number. As only events are processed, no input ports are needed.
 
-#import "SmartItsSensorPatch.h"
+#import "SmartItsSensor.h"
 	
-@implementation SmartItsSensorPatch
+@implementation SmartItsSensor
 
 - (id)initWithIdentifier:(id)fp8
 {	
-	proxyName = [NSMutableString stringWithString:@"Particle_Packet"];
+	[self setEventType:[NSMutableString stringWithString:@"Particle_Packet"]];
 	return [super initWithIdentifier:fp8];
 }
 	
@@ -84,6 +84,7 @@
 */
 
 - (void) processEvent:(eh2_EventPtr) eventPtr {
+
 		// set the flag so that in the 'execute'-method the output port is set to the new value
 		// after setting it, the flag is set to false again.
 		// This allows posting one value per execution cycle

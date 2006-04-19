@@ -9,9 +9,9 @@
 #import "GFPlugInRegistrationProtocol.h"
 	
 // List your patch class and any QC patches you use here.
-@class GFNodeManager, PowerbookTiltSensorPatch, RFIDReaderPatch,InterfaceKitPatch,AccelerometerPatch,PresentationControllerPatch,
-	   ServoControllerPatch, Threshold, StringComparer, SweepPatch, TeleoPWMOutPatch, MobilePhoneControllerPatch,CharacterGeneratorPatch, SmartItsSensorPatch,
-	   MobilePhoneKeyListenerPatch;
+@class GFNodeManager, PowerbookTiltSensor, RFIDReader,InterfaceKit,Accelerometer,PresentationController,
+	   ServoController, Filter, StringComparer, SweepController, TeleoPWMOut, MobilePhoneController,CharacterGenerator, SmartItsSensor,
+	   MobilePhoneKeyListener;
 
 @interface PatchLoader : NSObject <GFPlugInRegistration>
 	

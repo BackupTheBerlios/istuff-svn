@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 
-@interface InterfaceKitPatch : iStuffProviderPatch {
+@interface InterfaceKit : iStuffProviderPatch {
 
 	//These are the 7 seven analog ports to which other phidgets(sensors, etc.)
 	//can be connected

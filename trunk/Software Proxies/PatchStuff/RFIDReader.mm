@@ -6,17 +6,17 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "RFIDReaderPatch.h"
+#import "RFIDReader.h"
 
-@interface RFIDReaderPatch (QCInspector)
+@interface RFIDReader (QCInspector)
 + (Class)inspectorClassWithIdentifier:(id)fp8;
 @end
 
-@implementation RFIDReaderPatch
+@implementation RFIDReader
 	
 - (id)initWithIdentifier:(id)fp8
 {
-	[self setEventType:[NSMutableString stringWithString:@"PhidgetsRFID"]];
+	[self setEventType:[NSMutableString stringWithString:@"PhidgetRFID"]];
 	[outputTag setStringValue:nil];
 	return [super initWithIdentifier:fp8];
 }
@@ -59,6 +59,7 @@
 */
 
 - (void) processEvent:(eh2_EventPtr) eventPtr {
+NSLog(@"In process Event Tag Reader");
 	char* taggie = (char*) eventPtr->getPostValueString("TagNumber");
 	[outputTag setStringValue:[NSString stringWithCString:taggie]];
 }

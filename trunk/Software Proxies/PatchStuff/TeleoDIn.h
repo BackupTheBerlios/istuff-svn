@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h";
 
-@interface TeleoDInPatch : iStuffProviderPatch {
+@interface TeleoDIn : iStuffProviderPatch {
 
 	QCNumberPort *outputX;
     QCNumberPort *outputY;

@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 
-@interface CharacterGeneratorPatch : iStuffProviderPatch {
+@interface CharacterGenerator : iStuffProviderPatch {
 
 	QCNumberPort *outputKeyStroke;
 	QCNumberPort *outputPermanentASCIICode;

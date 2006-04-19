@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h";
 
-@interface PowerbookTiltSensorPatch : iStuffProviderPatch{
+@interface PowerbookTiltSensor : iStuffProviderPatch{
 	QCNumberPort *outputX;
     QCNumberPort *outputY;
     QCNumberPort *outputZ;

@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 
-@interface AccelerometerPatch : iStuffProviderPatch {
+@interface Accelerometer : iStuffProviderPatch {
 
 	QCStringPort *outputAcceleration;
 }

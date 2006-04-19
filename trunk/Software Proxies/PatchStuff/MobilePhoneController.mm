@@ -6,9 +6,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "MobilePhoneControllerPatch.h"
+#import "MobilePhoneController.h"
 
-@implementation MobilePhoneControllerPatch
+@implementation MobilePhoneController
 	
 - (id)initWithIdentifier:(id)fp8
 {	

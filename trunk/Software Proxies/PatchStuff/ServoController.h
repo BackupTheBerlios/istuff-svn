@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffConsumerPatch.h"
 	
-@interface ServoControllerPatch : iStuffConsumerPatch {
+@interface ServoController : iStuffConsumerPatch {
 	
 	QCNumberPort *inputPosMot1;
 	QCNumberPort *inputPosMot2;

@@ -8,18 +8,18 @@
 
 #import "CustomPatch.h"
 
-@interface CustomPatch (QCInspector)
+/*@interface CustomPatch (QCInspector)
 + (Class)inspectorClassWithIdentifier:(id)fp8;
 @end
 
 @implementation CustomPatch(QCInspector)
-
-+ (Class)inspectorClassWithIdentifier:(id)fp8
+*/
+/*+ (Class)inspectorClassWithIdentifier:(id)fp8
 {	
 	return [CustomPatchUI class];
 }
 @end
-
+*/
 
 @implementation CustomPatch
 

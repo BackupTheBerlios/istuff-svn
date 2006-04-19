@@ -1,5 +1,5 @@
 //
-//  PowerbookTiltSensorPatch.h
+//  Filter.h
 //  QCiStuff
 //
 //  Created by Rafael Ballagas on 11/7/05.
@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "CustomPatch.h"
 
-@interface Threshold : CustomPatch {
+@interface Filter : CustomPatch {
 	
 	QCNumberPort *inputInputValue;
 	QCNumberPort *inputThreshold;

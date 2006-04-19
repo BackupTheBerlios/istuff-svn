@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 
-@interface RFIDReaderPatch : iStuffProviderPatch {
+@interface RFIDReader : iStuffProviderPatch {
 
 	QCStringPort *outputTag;
 }

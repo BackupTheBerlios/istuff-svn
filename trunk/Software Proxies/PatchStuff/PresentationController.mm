@@ -7,9 +7,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "PresentationControllerPatch.h"
+#import "PresentationController.h"
 
-@implementation PresentationControllerPatch
+@implementation PresentationController
 
 - (id)initWithIdentifier:(id)fp8
 {

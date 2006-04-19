@@ -62,7 +62,7 @@
 		eventID = [NSMutableString stringWithString:[nodeAttributes valueForKey:@"name"]];
 		[nodeAttributes setValue:eventID forKey:@"eventID"];
 	}
-	else {
+	else {file://localhost/Users/rene/Desktop/Installer%20Packages/iStuffLibrariesInstaller.pkg/
 		eventID = [nodeAttributes valueForKey:@"eventID"];
 	}
 	[eventID retain];
@@ -86,7 +86,8 @@
 		if (loadedEHName != nil)
 			[self setEventHeapName:loadedEHName];
 		else
-			[self setEventHeapName:[NSString stringWithString:hostName]];
+			//[self setEventHeapName:[NSString stringWithString:hostName]];
+			[self setEventHeapName:[NSString stringWithString:@""]];
 	}
 	else {
 		[self setEventHeapName:[nodeAttributes valueForKey:@"LastEHName"]];
@@ -95,7 +96,7 @@
 	// Try to read the last name used from the file
 	// If that fails, use the hostName
 	NSNumber *flag = [NSKeyedUnarchiver unarchiveObjectWithFile:automaticConnectionFile];
-	NSLog(@"AutoConMan %i", [flag boolValue]);
+	//NSLog(@"AutoConMan %i", [flag boolValue]);
 
 //	[[currentPatch specifiedEventHeaps] removeAllObjects];
 	//	if (flag != nil)
@@ -106,8 +107,15 @@
 	//NSLog(@"No values found");
 	//automaticEHConnection = true;
 	}
-//	else {
-//		[self setEventHeapName:[nodeAttributes valueForKey:@"LastEHName"]];
+	else if ([[nodeAttributes valueForKey:@"automaticConnectionManagement"] isEqualToString:@"true"]) {
+		NSLog(@"It was true");
+		[self setAutomaticEHConnection:true];
+	}
+	else{
+	NSLog(@"It was false");
+		[self setAutomaticEHConnection:false];		
+	}
+	
 	
 //	NSLog(@"XML Attributes:%@", [[[self xmlAttributes] valueForKey:@"nodeAttributes"] valueForKey:@"description"]);
 	//	NSLog(@"IN ADD TO GRAPH W I: %@",[ [self key] description]);
@@ -494,6 +502,12 @@ NSLog (@"In Manage Connection - NOTIFICATIION: %@", notification);
 
 - (void) setAutomaticEHConnection:(BOOL) flag {
 	automaticEHConnection = flag;
-	[NSKeyedArchiver archiveRootObject:[NSNumber numberWithBool:flag] toFile:automaticConnectionFile];
+//	[NSKeyedArchiver archiveRootObject:[NSNumber numberWithBool:flag] toFile:automaticConnectionFile];
+	// And store the information inside the User Info of the node (For restoring purposes)
+	if (flag)
+		[[self userInfo] setValue:@"true" forKey:@"automaticConnectionManagement"];
+	else
+		[[self userInfo] setValue:@"false" forKey:@"automaticConnectionManagement"];
 }
+
 @end

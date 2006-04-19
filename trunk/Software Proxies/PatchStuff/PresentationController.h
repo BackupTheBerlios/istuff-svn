@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffConsumerPatch.h"
 
-@interface PresentationControllerPatch : iStuffConsumerPatch {
+@interface PresentationController : iStuffConsumerPatch {
 	
 	QCBooleanPort *inputNextSlide;
     QCBooleanPort *inputPrevSlide;

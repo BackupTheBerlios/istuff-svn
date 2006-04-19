@@ -1,16 +1,16 @@
 //
-//  MobilePhoneKeyListenerPatch.m
+//  MobilePhoneKeyListener.mm
 //  QCiStuff
 //
 //  Created by René Reiners in winter 2005/2006.
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "MobilePhoneKeyListenerPatch.h"
+#import "MobilePhoneKeyListener.h"
 #include <eh2.h> // include eh2 package
 #include <idk_io.h> // include idk_io package
 
-@implementation MobilePhoneKeyListenerPatch
+@implementation MobilePhoneKeyListener
 
 - (id)initWithIdentifier:(id)fp8
 {	

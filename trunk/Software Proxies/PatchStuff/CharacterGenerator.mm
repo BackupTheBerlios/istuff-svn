@@ -8,9 +8,9 @@
 // This patch waits for "Text Event" from the event heap and directs them
 // to the output ports as integers with the ACII code number. As only events are processed, no input ports are needed.
 
-#import "CharacterGeneratorPatch.h"
+#import "CharacterGenerator.h"
 
-@implementation CharacterGeneratorPatch
+@implementation CharacterGenerator
 	
 - (id) initWithIdentifier:(id)fp8
 {

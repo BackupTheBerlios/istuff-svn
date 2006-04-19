@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "IStuffProviderPatch.h"
 
-@interface SweepPatch : iStuffProviderPatch {
+@interface SweepController : iStuffProviderPatch {
 	
 	QCNumberPort *outputdX;
     QCNumberPort *outputdY;

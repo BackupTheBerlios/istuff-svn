@@ -7,9 +7,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "TeleoDInPatch.h"
+#import "TeleoDIn.h"
 
-@implementation TeleoDInPatch
+@implementation TeleoDIn
 
 - (id)initWithIdentifier:(id)fp8
 {

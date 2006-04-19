@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffProviderPatch.h"
 
-@interface SmartItsSensorPatch : iStuffProviderPatch {
+@interface SmartItsSensor : iStuffProviderPatch {
 
 	QCStringPort *outputSourceID;
 	QCNumberPort *outputSGX;

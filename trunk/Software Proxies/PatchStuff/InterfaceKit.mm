@@ -6,9 +6,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "InterfaceKitPatch.h"
+#import "InterfaceKit.h"
 
-@implementation InterfaceKitPatch
+@implementation InterfaceKit
 
 - (id)initWithIdentifier:(id)fp8
 {

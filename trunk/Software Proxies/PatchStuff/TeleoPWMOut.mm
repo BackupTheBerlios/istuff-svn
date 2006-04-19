@@ -7,9 +7,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "TeleoPWMOutPatch.h"
+#import "TeleoPWMOut.h"
 
-@implementation TeleoPWMOutPatch
+@implementation TeleoPWMOut
 	
 - (id)initWithIdentifier:(id)fp8
 {

@@ -10,7 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "iStuffConsumerPatch.h";
 
-@interface TeleoPWMOutPatch : iStuffConsumerPatch {
+@interface TeleoPWMOut : iStuffConsumerPatch {
 
 	QCNumberPort *inputPWMOut0;
 	QCNumberPort *inputPWMOut1;

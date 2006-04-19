@@ -6,11 +6,11 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "ServoControllerPatch.h"
+#import "ServoController.h"
 //#import "GFList.h"
 //#import "GFNode.h"
 
-@implementation ServoControllerPatch
+@implementation ServoController
 
 - (id)initWithIdentifier:(id)fp8
 {

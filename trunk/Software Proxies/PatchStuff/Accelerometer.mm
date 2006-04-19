@@ -6,9 +6,9 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "AccelerometerPatch.h"
+#import "Accelerometer.h"
 
-@implementation AccelerometerPatch
+@implementation Accelerometer
 
 - (id)initWithIdentifier:(id)fp8
 {	

@@ -7,10 +7,10 @@
 //  Copyright 2005 Media Computing Group, RWTH Aachen University, Germany. All rights reserved.
 //
 
-#import "SweepPatch.h"
+#import "SweepController.h"
 #import "string.h"
 
-@implementation SweepPatch
+@implementation SweepController
 
 - (id)initWithIdentifier:(id)fp8
 {
