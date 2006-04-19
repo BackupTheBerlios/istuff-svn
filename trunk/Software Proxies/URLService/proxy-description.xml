@@ -6,6 +6,7 @@
   <name>URL Server</name> 
   <ClassName>URLServer</ClassName>
   <comment></comment>
+  <launchCommand>java -classpath ../../Lib/iROS.jar:. URLServer</launchCommand>
   <CustomLibs>
     <relativePath></relativePath>
   </CustomLibs>
