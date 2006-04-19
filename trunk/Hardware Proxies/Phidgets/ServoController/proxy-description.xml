@@ -6,6 +6,7 @@
   <name>Servo Controller</name> 
   <ClassName>ServoController</ClassName>
   <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:..:. ServoController</launchCommand>
   <CustomLibs>
     <relativePath>..</relativePath>
   </CustomLibs>

@@ -6,8 +6,11 @@
   <name>Accelerometer</name> 
   <ClassName>AccelerometerProxy</ClassName>
   <comment>user comment</comment>
+  <launchCommand>
+    java -classpath ../../../Lib/iROS.jar:..:. AccelerometerProxy
+  </launchCommand>
   <CustomLibs>
-    <relativePath>..</relativePath>
+    <relativePath></relativePath>
   </CustomLibs>
   <AdditionalParameters>
 	<Parameter></Parameter>

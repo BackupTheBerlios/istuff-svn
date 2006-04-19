@@ -6,6 +6,9 @@
   <name>Interface Kit</name> 
   <ClassName>InterfaceKitproxy</ClassName>
   <comment>user comment</comment>
+  <launchCommand>
+    java -classpath ../../../Lib/iROS.jar:..:. InterfaceKitproxy
+  </launchCommand>
   <CustomLibs>
     <relativePath>..</relativePath>
   </CustomLibs>

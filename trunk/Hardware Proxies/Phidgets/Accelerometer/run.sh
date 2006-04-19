@@ -1,8 +1,2 @@
-EHEAPSERVER=localhost
-if [ $# -ge 1 ]
-then 
-    EHEAPSERVER=$1
-fi
-echo $EHEAPSERVER
-java -classpath ../../../Lib/iROS.jar:..:. AccelerometerProxy $EHEAPSERVER
+java -classpath ../../../Lib/iROS.jar:..:. AccelerometerProxy $1 $2
 
