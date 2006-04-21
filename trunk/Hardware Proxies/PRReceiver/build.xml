@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<project default="jar" basedir=".">
+	<property name="builddir" value="class"/>
+	<property name="distdir" value="dist"/>
+	<property name="projname" value="PRReceiver"/>
+	<property name="username" value="Eugen Yu"/>
+
+	<target name="build">
+		<mkdir dir="${builddir}"/>
+		<exec dir="eventsim" executable="sh">
+			<arg line="build"/>
+		</exec>
+		<javac 
+			srcdir       ="." 
+			destdir      ="${builddir}">
+			<include name="**/*.java"/>
+			<classpath>
+			      <fileset dir="../../Lib">
+				        <include name="**/*.jar"/>
+			      </fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="build">
+		<mkdir dir="${distdir}"/>
+		<copy file="eventsim/class/EventSim.class" tofile="${builddir}/EventSim.class"/>
+		<jar destfile="${distdir}/${projname}.jar"
+			manifest="manifest"
+			basedir="${builddir}">
+		</jar>
+	</target>
+
+	<target name="run">
+	</target>
+
+
+	<target name="clean">
+		<delete dir="${builddir}" />
+		<delete dir="${distdir}"/>
+	</target>
+</project>
