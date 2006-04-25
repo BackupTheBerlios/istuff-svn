@@ -81,9 +81,9 @@ public class SensorConfig {
             sensorData.add(new Short("0"));						//add the sensor no. to the vector. Sensor no. 0 is X/Y axis acceleration sensor
             sensorData.add(new Short((short)conDialog.cmbRates[0].getSelectedIndex()));	// add the index of selected transfer rate to the vector
         }
-        
+
         /*
-        	Sensor No.s: 
+        	Sensor No.s:
         				0 corresponds to the X/Y axis acceleration sensor in the "Particle" sensor board
         				1 corresponds to the Z axis acceleration sensor
         				2 corresponds to the audio sensor
@@ -92,7 +92,7 @@ public class SensorConfig {
         				5 corresponds to the force sensor
         				6 corresponds to the temparature sensor
         				7 corresponds to the voltage sensor
-        				
+
         	Transfer Rate: Transfer rate is the rate at which the "Particle" will transmit the data to the network
         				0 corresponds to the transfer rate of 13 ms
         				1 corresponds to the transfer rate of 26 ms
@@ -104,14 +104,14 @@ public class SensorConfig {
         				7 corresponds to the transfer rate of 1664 ms
         				8 corresponds to the transfer rate of 3328 ms
         				9 corresponds to the transfer rate of 6656 ms
-        			 10 corresponds to the transfer rate of 13312 ms
-        			 11 corresponds to the transfer rate of 26624 ms
-        			 12 corresponds to the transfer rate of 53248 ms
-        			 13 corresponds to the transfer rate of 106496 ms
-        			 14 corresponds to the transfer rate of 212992 ms
-        			 15 corresponds to the transfer rate of 425984 ms
+        			 	10 corresponds to the transfer rate of 13312 ms
+        			 	11 corresponds to the transfer rate of 26624 ms
+        			 	12 corresponds to the transfer rate of 53248 ms
+        			 	13 corresponds to the transfer rate of 106496 ms
+        			 	14 corresponds to the transfer rate of 212992 ms
+        			 	15 corresponds to the transfer rate of 425984 ms
         */
-        
+
         if(conDialog.chkAccZ.isSelected() == true)
         {
             sensorData.add(new Short("1"));
@@ -170,13 +170,13 @@ public class SensorConfig {
                 sndSocket.close();
                 recSocket.close();
                 break;
-            } 
+            }
             catch (Exception e)
             {
                 e.printStackTrace();
                 successful = false;
-            } 
-            catch (Error err) 
+            }
+            catch (Error err)
             {
                 if (!(err.getMessage().equals("c errno: 11") ||
                       err.getMessage().equals("c errno: 35"))) {
