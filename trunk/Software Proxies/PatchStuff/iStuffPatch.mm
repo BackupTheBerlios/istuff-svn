@@ -66,10 +66,10 @@
 		eventID = [nodeAttributes valueForKey:@"eventID"];
 	}
 	[eventID retain];
-	if ([[nodeAttributes valueForKey:@"listenToEverything"] isEqualToNumber:[NSNumber numberWithInt:NSOnState]])
-		[self setListenToEverything:NSOnState];
-	else
+	if ([[nodeAttributes valueForKey:@"listenToEverything"] isEqualToNumber:[NSNumber numberWithInt:NSOffState]])
 		[self setListenToEverything:NSOffState];
+	else
+		[self setListenToEverything:NSOnState];
 	if ([[nodeAttributes valueForKey:@"connectionStatus"] isEqualToString:@"connected"]) {
 		standby = true;
 	}
@@ -92,6 +92,8 @@
 	else {
 		[self setEventHeapName:[nodeAttributes valueForKey:@"LastEHName"]];
 	}			
+/* Patches should automatically connect
+
 	if ([nodeAttributes valueForKey:@"automaticConnectionManagement"] == nil) {
 	// Try to read the last name used from the file
 	// If that fails, use the hostName
@@ -115,7 +117,9 @@
 	NSLog(@"It was false");
 		[self setAutomaticEHConnection:false];		
 	}
+	*/
 	
+	[self setAutomaticEHConnection:true];
 	
 //	NSLog(@"XML Attributes:%@", [[[self xmlAttributes] valueForKey:@"nodeAttributes"] valueForKey:@"description"]);
 	//	NSLog(@"IN ADD TO GRAPH W I: %@",[ [self key] description]);

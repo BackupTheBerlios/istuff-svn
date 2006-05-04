@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Sensors</proxyClass>
+  <name>SmartItsSensorBoard</name> 
+  <ClassName>Framework</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:./lib/libparticleJava.jar:./classes</launchCommand>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>
