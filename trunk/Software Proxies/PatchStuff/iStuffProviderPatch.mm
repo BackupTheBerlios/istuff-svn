@@ -77,9 +77,18 @@
 		// Check if the event is for the current patch
 		NSString *receivedEventType = [NSString stringWithCString:resultEventPtr->getEventType()];
 		if ([receivedEventType isEqualToString:eventType]) {
-			NSString *receivedEventID = [NSString stringWithCString:resultEventPtr->getPostValueString("ProxyID")];				
-			if ( ([receivedEventID isEqualToString:eventID]) || ([self listenToEverything] == NSOnState) ) 
+			if([self listenToEverything] == NSOnState){
 				[self processEvent:resultEventPtr];
+			}else{
+				const eh2_Field* field = resultEventPtr->getField("ProxyID");
+				if (field != NULL) {
+					NSString *receivedEventID = [NSString stringWithCString:resultEventPtr->getPostValueString("ProxyID")];	
+					if ([receivedEventID isEqualToString:eventID])
+						[self processEvent:resultEventPtr];
+				}else{
+					NSLog(@"ERROR: NO ProxyID FIELD FOUND IN EVENT" );  // also print receivedEventType
+				}
+			}
 		}
 	}
 
