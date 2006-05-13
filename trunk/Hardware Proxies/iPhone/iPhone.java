@@ -105,13 +105,13 @@ public class iPhone implements SymbianInputListener, Runnable{
 	}
 
 	public static void main(String argv[]){
-		// Arguments: <EventHeapServer> [ProxyID] <COMPort> [rotation parameter]
+		// Arguments: <EventHeapServer> <COMPort> [ProxyID] [rotation parameter]
 		iPhone phone;
 		if(argv.length == 2){  // Minimum number of arguments: Only EventHeap and COMPort provided
-			phone = new iPhone(argv[0],"",argv[1], true);
+			phone = new iPhone(argv[0],argv[1], "", true);
 			phone.run();
 		}else if(argv.length == 3 && argv[2].compareTo("-r") == 0){ // Then the parameter was supplied
-			phone = new iPhone(argv[0],"", argv[1], false);
+			phone = new iPhone(argv[0],argv[1], "", false);
 			phone.run();
 		}
 		else if	(argv.length == 3 && argv[2].compareTo("-r") != 0){ // otherwise only a ProxyID was given and no -r parameter

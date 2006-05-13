@@ -185,12 +185,13 @@ public class SymbianInputDevice{
 					break;
 
 				default:
-					throw new IOException("unknown opcode");
+					read(in, buffer, 0, 5);
+					throw new IOException("unknown opcode " + buffer[0]);
 			}
 
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
-			try { Thread.sleep(1000); } catch (InterruptedException ex2) {}
+			//try { Thread.sleep(1000); } catch (InterruptedException ex2) {}
 		}
 	}
 	
