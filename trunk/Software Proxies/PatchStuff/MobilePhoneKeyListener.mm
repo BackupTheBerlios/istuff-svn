@@ -39,24 +39,32 @@
 // set the flag so that in the 'execute'-method the output port is set to the new value
 			// after setting it, the flag is set to false again.
 			// This allows posting one value per execution cycle
-			// This line causes others to crash
-			const char* activity = eventPtr->getPostValueString("Activity");
-			if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-				[outputKeyPressed setBooleanValue:true];
-			}
+			
+			// first check to see that the Activity field exists
+			const eh2_Field* field = eventPtr->getField("Activity");
+			if (field != NULL) {
+				const char* activity = eventPtr->getPostValueString("Activity");
+				if ([@"KeyDown" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+					[outputKeyPressed setBooleanValue:true];
+				}
 		
-			if ([@"KeyPress" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-				//read the character ASCII value from the event field
-				NSLog(@"In keyPress");
-				setOutputPort = true;
-				keyCode = eventPtr->getPostValueInt("KeyCode");
-				[outputKeyStroke setDoubleValue:(double) keyCode];
-			}
-		
-			if ([@"KeyUp" isEqualToString:[NSString stringWithUTF8String:activity]]) {
-				NSLog(@"In keyUp");
-				[outputKeyPressed setBooleanValue:false];
-			}
+				if ([@"KeyPress" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+					//read the character ASCII value from the event field
+					NSLog(@"In keyPress");
+					setOutputPort = true;
+					//make sure that the KeyCode field exists
+					const eh2_Field* field = eventPtr->getField("KeyCode");
+					if (field != NULL) {
+						keyCode = eventPtr->getPostValueInt("KeyCode");
+						[outputKeyStroke setDoubleValue:(double) keyCode];
+					}
+				}
+			
+				if ([@"KeyUp" isEqualToString:[NSString stringWithUTF8String:activity]]) {
+					NSLog(@"In keyUp");
+					[outputKeyPressed setBooleanValue:false];
+				}
+			} // else ignore the event, not intended for us (possibly an output of the MobilePhone.mm)
 }
 	
 @end
