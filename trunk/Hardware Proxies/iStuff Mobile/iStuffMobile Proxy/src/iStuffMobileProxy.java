@@ -162,7 +162,7 @@ public class iStuffMobileProxy implements EventCallback
 				if(retEvents[0].fieldExists("ProxyID"))
 					currentProxyId = retEvents[0].getPostValueString("ProxyID");	//extract the ProxyID field value if it exists in the received event
 
-				if ((currentProxyId == null && proxyID.equals("")) || (proxyID.equals(currentProxyId)))
+				if (proxyID.equals("") || proxyID.equals(currentProxyId))
 				{
 
 					/*send high-level commands to the mobile phone if:
@@ -200,6 +200,8 @@ public class iStuffMobileProxy implements EventCallback
 								sendChangeProfile(retEvents[0]);
 								break;
 						}
+				} else{
+					System.out.println("Received command but ProxyID: " + currentProxyId + " did not match ProxyID: " + proxyID);
 				}
 			}
 			catch(Exception ex)
@@ -524,6 +526,7 @@ class Shutdown extends Thread {
 		public void run() {
         System.out.println("Shutdown hook called");
         mobileProxy.Destroy();
+		System.exit(0);
     }
 }
 
