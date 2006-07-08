@@ -22,7 +22,7 @@
 
 - (id) initWithIdentifier:(id)fp8; // Initialization when patch instance is created.
 - (BOOL) execute:(id)fp8 time:(double)fp12 arguments:(id)fp20; // code executed with every patch execution cycle
-- (void) processEvent:(eh2_EventPtr) eventPtr;
+- (void) processEvent:(iStuffEvent *) event;
 
 
 @end

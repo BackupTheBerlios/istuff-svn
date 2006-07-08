@@ -11,12 +11,6 @@
 
 @implementation PresentationController
 
-- (id)initWithIdentifier:(id)fp8
-{
-	proxyName = [NSMutableString stringWithString:@"PresentationController_"];
-	return [super initWithIdentifier:fp8];
-}
-	
 - (void) executeCustomPatch {		
 
 		// Look for a transition from FALSE to TRUE
@@ -48,45 +42,28 @@
 			delete eventPtr;
 		}
 		*/
-		//iStuffPatch *currentPatch = [self patch];
-		const char* name = [eventID cString];
 		
 		if ((int)[inputGotoSlideNumber doubleValue] != lastInputGotoSlide) {
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-			(*eventPtr)->setPostValueString ("command", "gotoSlide");
-			(*eventPtr)->setPostValueInt("slideNum", (int) [inputGotoSlideNumber doubleValue]);
-			(*eventPtr)->setPostValueString ("ProxyID", name);
-		    (*eventPtr)->setPostValueInt("TimeToLive", 1000);
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
-
+			iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"SlideController" eventID:[self eventID]];
+			[event setTimeToLive:1000];	
+			[event addNewStringField:@"command" stringValue:@"gotoSlide"];
+			[event addNewIntegerField:@"slideNum" intValue: (int) [inputGotoSlideNumber doubleValue]];
+			[event postEvent:eh];
 		}
 				
 		if( [inputNextSlide booleanValue] == TRUE && [inputNextSlide booleanValue] != lastInputNextSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-			(*eventPtr)->setPostValueString ("command", "next");
-			(*eventPtr)->setPostValueString ("ProxyID", name);
-			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
+			iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"SlideController" eventID:[self eventID]];
+			[event setTimeToLive:1000];	
+			[event addNewStringField:@"command" stringValue:@"next"];
+			[event postEvent:eh];
 		}
 
 
 		if( [inputPrevSlide booleanValue] == TRUE && [inputPrevSlide booleanValue] != lastInputPrevSlide){
-			//create a new event object
-			eh2_EventPtr *eventPtr = new eh2_EventPtr;
-			(*eventPtr) = eh2_Event::cs_create ("SlideController");
-			(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-			(*eventPtr)->setPostValueString ("command", "prev");
-			(*eventPtr)->setPostValueString ("ProxyID", name);
-			(*eventPtr)->setPostValueInt("TimeToLive", 1000);
-			(*eh)->putEvent (*eventPtr);
-			delete eventPtr;
+			iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"SlideController" eventID:[self eventID]];
+			[event setTimeToLive:1000];	
+			[event addNewStringField:@"command" stringValue:@"prev"];
+			[event postEvent:eh];
 		}
 		
 		lastInputNextSlide = [inputNextSlide booleanValue];

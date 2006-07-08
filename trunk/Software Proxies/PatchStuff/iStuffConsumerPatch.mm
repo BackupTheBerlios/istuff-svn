@@ -30,6 +30,11 @@
         return 1;
 }
 
+- (id)initWithIdentifier:(id)fp8 {
+	[self setListenToEverything:false]; // This is needed to display the eventID textfield
+	return 	[super initWithIdentifier:fp8];
+}
+
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
 {
 	// Specify the functionality of the patch.
@@ -45,5 +50,13 @@
 - (void) executeCustomPatch {
   // to be implemented
 }
+
+//- (void) createNewEventType:(NSString *)eventType {
+//	event = [[iStuffEvent alloc] init];
+//	[event setEventType:eventType];
+//	[event retain];
+	//eventPtr = new eh2_EventPtr;
+	//(*eventPtr) = eh2_Event::cs_create ([eventType cString]);
+//}
 
 @end

@@ -22,17 +22,6 @@
 	double oldMotor3Position;
 	double oldMotor4Position;
 	
-	/*the following could be used for a motor control
-	QCNumberPort *inputSpeedMot1;
-	QCNumberPort *inputSpeedMot2;
-	QCNumberPort *inputSpeedMot3;
-	QCNumberPort *inputSpeedMot4;	
-    QCNumberPort *inputAccMot1;
-    QCNumberPort *inputAccMot2;
-    QCNumberPort *inputAccMot3;
-    QCNumberPort *inputAccMot4;
-	*/
 }
-- (id)initWithIdentifier:(id)fp8;
 
 @end

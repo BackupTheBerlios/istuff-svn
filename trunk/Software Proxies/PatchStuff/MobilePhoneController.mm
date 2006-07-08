@@ -12,7 +12,7 @@
 	
 - (id)initWithIdentifier:(id)fp8
 {	
-	proxyName = [NSMutableString stringWithString:@"MobilePhoneController_"];
+//	proxyName = [NSMutableString stringWithString:@"MobilePhoneController_"];
 	//processEvent = true;
 	lastPathVal = "";
 	[inputRepeatPort setDoubleValue:0];
@@ -36,157 +36,120 @@
 	
 	// These Events do not have special parameters
 	// Only the corresponding command numbers have to be posted		
-	eh2_EventPtr *eventPtr;
+	
 	if ( [inputDisconnect booleanValue] == TRUE && [inputDisconnect booleanValue] != lastInputDisconnect) 
 	{
 		NSLog(@"inputDisconnect");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);		
-		(*eventPtr)->setPostValueInt("Command", 1);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 50);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:1];
+		[event postEvent:eh];
 	}
 	
 	if ([inputBacklightOn booleanValue] == TRUE && [inputBacklightOn booleanValue] != lastInputBacklightOn) 
 	{
 		NSLog(@"Command: Backlight On");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 2);
-					// the "event package" is ready -> post it to the Event Heap
-				(*eventPtr)->setPostValueInt("TimeToLive", 1000);
-				(*eh)->putEvent (*eventPtr);
-				delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:2];
+		[event postEvent:eh];
 	}
 	
 	if ([inputBacklightOff booleanValue]  == TRUE && [inputBacklightOff booleanValue] != lastInputBacklightOff) 
 	{
 		NSLog(@"BackLightOff");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 3);
-					// the "event package" is ready -> post it to the Event Heap
-				(*eventPtr)->setPostValueInt("TimeToLive", 50);
-				(*eh)->putEvent (*eventPtr);
-				delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:3];
+		[event postEvent:eh];
+
 	}
 	
 	if ([inputStopSound booleanValue]  == TRUE && [inputStopSound booleanValue] != lastInputStopSound) 
 	{
 		NSLog(@"Stop Sound");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 6);
-					// the "event package" is ready -> post it to the Event Heap
-				(*eventPtr)->setPostValueInt("TimeToLive", 50);
-				(*eh)->putEvent (*eventPtr);
-				delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:6];
+		[event postEvent:eh];
+
 	}
 
 	// These commands all need a "Path" parameter
 	if ([inputPlaySound booleanValue]  == TRUE && [inputPlaySound booleanValue] != lastInputPlaySound) 
 	 {
 		NSLog(@"PlaySound");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 5);
-		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 50);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:5];
+		[event addNewStringField:@"Path" stringValue:[inputPath stringValue]];
+		[event postEvent:eh];
+
 	}
 
 	if ([inputLaunchApp booleanValue] == TRUE && [inputLaunchApp booleanValue] != lastInputLaunchApp) 
 	{
 		NSLog(@"Launch Application");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 7);
-		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 50);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		//delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:7];
+		[event addNewStringField:@"Path" stringValue:[inputPath stringValue]];
+		[event postEvent:eh];
+
 	}
 	
 	
 	if ([inputCloseApp booleanValue]  == TRUE && [inputCloseApp booleanValue] != lastInputCloseApp) 
 	{
 		NSLog(@"Close Application");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 8);
-		(*eventPtr)->setPostValueString("Path", (const char*) [inputPath stringValue]);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 50);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:8];
+		[event addNewStringField:@"Path" stringValue:[inputPath stringValue]];
+		[event postEvent:eh];
 	}
 	
 	// The keypress command needs to create an Event with three parameters
 	if ([inputKeyCode doubleValue] > 0)
 	{
-		eh2_EventPtr *eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");	
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command",4);
-		(*eventPtr)->setPostValueInt("Code", (int) [inputKeyCode doubleValue]);
-		(*eventPtr)->setPostValueInt("Repeat", (int) [inputRepeatPort doubleValue]);
-		(*eventPtr)->setPostValueInt("ScanCode", (int) [inputScanCodePort doubleValue]);
-		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
 		NSLog(@"Putting a text event: %i",(int) [inputScanCodePort doubleValue]);
-		(*eh)->putEvent (*eventPtr);
-		//sendEvent = false;
-		delete eventPtr;
+
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:4];
+		[event addNewIntegerField:@"Code" intValue:(int) [inputKeyCode doubleValue]];
+		[event addNewIntegerField:@"Repeat" intValue:(int) [inputRepeatPort doubleValue]];
+		[event addNewIntegerField:@"ScanCode" intValue:(int) [inputScanCodePort doubleValue]];
+		[event postEvent:eh];
+		
+		
 		[inputKeyCode setDoubleValue:0];
 	}
 
 	// The change profile command should only be changed if the profile number is really different
 	if (([inputProfileNumber doubleValue] != lastInputProfileNumber) && ((int) [inputProfileNumber doubleValue] != 0))
 	{
-		eh2_EventPtr *eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");	
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command",12);
-		(*eventPtr)->setPostValueInt("ProfileNo", (int)[inputProfileNumber doubleValue]);
-		(*eventPtr)->setPostValueInt("TimeToLive",1000);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:12];
+		[event addNewIntegerField:@"ProfileNo" intValue:(int) [inputProfileNumber doubleValue]];
+		[event postEvent:eh];
 	}
 	
 	if ([inputCaptureKeys booleanValue]  == TRUE && [inputCaptureKeys booleanValue] != lastInputCaptureKeys) 
 	{
-		NSLog(@"Start Key Capture");
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 10);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:10];
+		[event postEvent:eh];
 
 	}else if ([inputCaptureKeys booleanValue]  == FALSE && [inputCaptureKeys booleanValue] != lastInputCaptureKeys) 
 	{
-
-		eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("iStuffMobile");
-		(*eventPtr)->setPostValueString("ProxyID", [eventID cString]);	
-		(*eventPtr)->setPostValueInt("Command", 11);
-		// the "event package" is ready -> post it to the Event Heap
-		(*eventPtr)->setPostValueInt("TimeToLive", 1000);
-		(*eh)->putEvent (*eventPtr);
-		delete eventPtr;
+		iStuffEvent *event = [[iStuffEvent alloc] initWithTypeAndID:@"iStuffMobile" eventID:[self eventID]];
+		[event setTimeToLive:50];
+		[event addNewIntegerField:@"Command" intValue:11];
+		[event postEvent:eh];
 	}
 	
 	lastInputDisconnect = [inputDisconnect booleanValue];
@@ -198,7 +161,6 @@
 	lastInputStopSound = [inputStopSound booleanValue];
 	lastInputProfileNumber = (int) [inputProfileNumber doubleValue];
 	lastInputCaptureKeys = [inputCaptureKeys booleanValue];
-
 }
 
 @end

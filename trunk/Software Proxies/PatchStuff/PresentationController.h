@@ -29,6 +29,4 @@
 	int lastInputGotoSlide;
 }
 
-- (id)initWithIdentifier:(id)fp8;
-
 @end

@@ -14,6 +14,7 @@
 #import <idk_io.h>
 #import "QCPatch.h"
 #import "iStuffPatchUI.h"	
+#import "iStuffEvent.h"
 #include <unistd.h>
 
 
@@ -26,15 +27,14 @@
 @interface iStuffPatch : QCPatch
 {
 // The standard port for the ProxyID
-	NSMutableString *proxyName;
-	NSMutableString *eventID;
+//	NSMutableString *proxyName;
+	//NSMutableString *eventType;
 	//QCStringPort *inputProxyID;
 
 // Event Heap Connection Management - Components of each iStuff patch
 	NSString *eventHeapName;
 	NSString *eventHeapAddress;
 	NSString *hostName;
-	NSString *domainName;
 	NSString *hostAddress;
 	//BOOL connectToEventHeaps;
 	BOOL tryToConnect;
@@ -43,6 +43,7 @@
 	BOOL listenToEverything;
 	BOOL automaticEHConnection;
 	BOOL standby;
+	BOOL readyToReconnect;
 	int radioButtonIndex;
 	//list of Event Heaps
 	NSMutableArray *netServices;
@@ -85,7 +86,7 @@
 // Methods for the Event Heap connection management
 - (void) netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing;
-- (void) sendEHSListUpdate;
+- (void) sendEHSListUpdate:(NSDictionary *) connectionStatus;
 - (void) manageEHConnection:(NSNotification *) notification;
 - (void) automaticEHConnection;
 - (void) connectToEventHeap;
@@ -105,7 +106,7 @@
 - (void) setListenToEverything:(int)state;
 - (void) setAutomaticEHConnection:(BOOL) flag;
 - (void) setEventID:(NSString *)name;
-- (NSString* ) proxyName;
+- (NSString* ) eventID;
 
 
 @end

@@ -39,7 +39,7 @@
 	[customListOfEventHeaps setDelegate:self];
 	[customListOfEventHeaps deselectAll:self];
 	[listOfEventHeaps reloadData];
-	[removeEventHeapButton setEnabled:false];
+	//[removeEventHeapButton setEnabled:false];
 	if ([currentPatch automaticConnection]){
 		NSLog(@"SHOULD BE TRUE");
 	
@@ -49,9 +49,6 @@
 		[toggleAutomaticConnectionManagement setState:NSOffState];
 				NSLog(@"SHOULD NOT BE TRUE");
 			}
-		
-
-	//[displayEventHeapName setStringValue:[currentPatch ehName]];
 
 	// Load the user specified list with each refresh
 	NSMutableArray *loadedEHList = [NSKeyedUnarchiver unarchiveObjectWithFile:[currentPatch prefsFile]];
@@ -68,15 +65,6 @@
 		[proxyIDTextField setEnabled:true];
 	}
 	arrayOfEventHeaps = [currentPatch foundEventHeaps];
-	if ([currentPatch connected]){
-	  [self connectedState];
-	}
-	else if ([currentPatch standby]) {
-	  [self standbyState];
-	}
-	else {
-	  [self disconnectedState];
-	}
 	
 	// Restore the Radio Buttons' status
 	[allOrOneRadioGroup setState:1 atRow:[currentPatch radioButtonIndex] column:0];
@@ -89,63 +77,67 @@
 		[advancedConnectionOptions setHidden:false];
 		[advancedOptionsButton setState:1];
 	}
+
+	// Set the state depending on the state of the iStuff patch
+	if ([currentPatch connected]){
+	  [self connectedState];
+	}
+	else if ([currentPatch standby]) {
+	  [self standbyState];
+	}
+	else {
+	  [self disconnectedState];
+	}
 }
 
 -(void) refreshView:(NSNotification *) notification
 {
-    //NSLog (@"RECEIVED a notification: INFO: %@", [notification userInfo]);
-
 	iStuffPatch *currentPatch  = [self patch];
+	
 	if (![currentPatch advancedOptionsHidden])	{
 	  [listOfEventHeaps reloadData];
 	  [customListOfEventHeaps reloadData];
 	}
 	
+	// Refresh the view depending on the state of the iStuff patch
 	NSDictionary *ehStatusInfo = [notification userInfo];
-//	if ((ehStatusInfo != nil) && (currentPatch !=nil) && ([[ehStatusInfo valueForKey:@"Identity"] isEqualTo: currentPatch]) ) {
-	if (ehStatusInfo != nil){// && ([[ehStatusInfo valueForKey:@"Identity"] isEqualTo: currentPatch]) ) {
-
+	if (ehStatusInfo != nil){
 		NSString *status = [ehStatusInfo valueForKey:@"connectionStatus"];
-		    //NSLog (@"Received a notification -  STATUS: %@", status);
 		if ([status isEqualToString:@"connected"]){
-		  //NSLog (@"Received a notification - CONNECTED");
-		  [self connectedState];
+			[self connectedState];
 		}
 		else if ([status isEqualToString:@"standby"]){
 			[self standbyState];
 		}
 		else if ([status isEqualToString:@"disconnected"]){
-		  //NSLog (@"Received a notification - DISCONNECTED");
 		  [self disconnectedState];
 		}
 	}
 }
 
 - (id)init{
-// Detach a thread that automatically refreshes the view with every notification.
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"EHListChange" object:[self patch]];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"NetServicesUpdate" object:[self patch]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshListOfEventHeaps:) name:@"NewItem" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadList) name:@"NetServicesUpdate" object:nil];
+	
 	[listenToEverything setState:NSOffState];
 	[customListOfEventHeaps setDelegate:self];
 	[listenToEverything setHidden:false];
 	selectedList = 0;
-	//[listOfEventHeaps setDoubleAction:@selector(connectToEvenHeap:)];
-	//[listOfEventHeaps setDelegate:listOfEventHeaps];
-	
 	allowRowEdit = false;
 	return [super init];
 }
 
 - (void) reloadList {
-NSLog(@"In reloadList");
-[listOfEventHeaps reloadData];
+	// When a new service is found, the list containing the discovered Event Heaps should be reloaded
+	[listOfEventHeaps reloadData];
 }
 
-// The resetView method is called when the current patch is deselected
 - (void)resetView{
- // Here the currently specified data in the view has to be stored inside the model if that did not already happen inside IBActions.
- // --> Saving of what is not saved yet.
+	// The resetView method is called when the current patch is deselected
+
+	// Here the currently specified data in the view has to be stored inside the model if that did not already happen inside IBActions.
+	// --> Saving of what is not saved yet.
  
  iStuffPatch *currentPatch = [self patch];
  if ([listenToEverything state] == NSOffState){
@@ -156,7 +148,6 @@ NSLog(@"In reloadList");
   [currentPatch setAdvancedOptionsHidden:[advancedConnectionOptions isHidden]];
   [currentPatch setListenToEverything:[listenToEverything state]];
   [currentPatch setRadioButtonIndex:[allOrOneRadioGroup selectedRow]];
-//  NSLog(@"Reset the view: %@", [currentPatch userInfo]);
   
   [super resetView];
 
@@ -165,15 +156,16 @@ NSLog(@"In reloadList");
 
 // **************UI Specific methods*********************
 
-
 - (IBAction)connectToEventHeap:(id)sender{
-
-// Only needed if selection from a list is desired
-//	if (selectedList != -1) {
-
 	iStuffPatch *currentPatch = [self patch];
-	if (![[displayEventHeapName stringValue] isEqualToString:@""]) {
-	/*
+	NSString *selectedEventHeap = nil;
+
+	if ( (![currentPatch connected]) && (![[displayEventHeapName stringValue] isEqualToString:@""]) ) 
+		// Connect to the Event Heap displayed if the patch is not connected
+		selectedEventHeap = [displayEventHeapName stringValue];
+	else{
+		// otherwise take the selected entry from one of the lists
+		
 		// Check which table was selected:
 		NSMutableArray *eHeapsModel;
 		NSTableView *selectedTableView;
@@ -185,120 +177,99 @@ NSLog(@"In reloadList");
 			selectedTableView = customListOfEventHeaps;
 			eHeapsModel = [currentPatch specifiedEventHeaps];
 		}
- 	*/
-	
-		NSString *selectedEventHeap = [displayEventHeapName stringValue];
-		//NSString *selectedEventHeap = [eHeapsModel objectAtIndex:[selectedTableView selectedRow]];
+		if ([selectedTableView selectedRow] != -1)
+			selectedEventHeap = [eHeapsModel objectAtIndex:[selectedTableView selectedRow]]; 
+	}
+
+	// Only try to connected if a new Event Heap was selected
+	if (selectedEventHeap != nil) {
+		[self disconnectFromEventHeap:self];
+		// The user can specify both, a name and a network address.
 		NSHost *hostWithName = [NSHost hostWithName:selectedEventHeap];
 		NSHost *hostWithAddress = [NSHost hostWithAddress:selectedEventHeap];
-		// The user can specify both, a name and a network address.
-		// This cannot be checked, but therefore both initializations were made.
 		// If both of the following checks reveal null pointers, that means
 		// that the specified hosts are not reachable
 		if ( ([hostWithName addresses] != nil) || ([hostWithAddress names] != nil) ) {
-			//[self setEventHeapName:newEHServerName];
-			//[self connectToEventHeap];
-			NSLog(@"The name could be resolved...? %@", selectedEventHeap);
-			[self disconnectFromEventHeap:nil];
-			sleep(1); //forced because of stability 
-			
+			// Resolution was successful - now check wether an Event Heap is really running.
+			// Set up a new socket connection that chekcs wether a service
+			// namely the Event Heap is running
+			struct sockaddr_in server;
+			const char *ipAddress = [[[hostWithName addresses] objectAtIndex:0]cString];
+			server.sin_family = AF_INET;
+			server.sin_port = htons(4535);
+			inet_aton(ipAddress,&server.sin_addr);
+		int sock = socket( AF_INET, SOCK_STREAM, 0 );
+		if (connect(sock,(struct sockaddr*)&server, sizeof(server)) < 0){
+			// Connection could not be established --> Patch is disconnected
+		}
+		else{			
 			// depending on the status of the radio buttons, all or only one patch has to reconnect
-			//global change for all patches
 			if ([allOrOneRadioGroup selectedRow] == 0){
+			// Global change for all patches:
 			// Create a one key dictionary that contains the new Event Heap name
-			// get the selected entry from the EH list;
-//			int rowIndex = [selectedTableView selectedRow];
-//			if (rowIndex != -1) {
-				//NSString *selectedEventHeap = [eHeapsModel objectAtIndex:rowIndex];
+			// Get the selected entry from the EH list;
 				NSMutableDictionary *ehInfo = [NSMutableDictionary dictionaryWithObject:selectedEventHeap forKey:@"newEHName"];
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"ConnectAll" object:nil userInfo:ehInfo];
-				//sleep(1); //Needed for connection stability - otherwise QC may crash
-	//		}
 			}
 			else {
 				// local change for one patch
-				//NSString *newEventHeap;
-				//newEventHeap = [eHeapsModel objectAtIndex:[selectedTableView selectedRow]];
-				//newEventHeap = [displayEventHeapName stringValue];
 				[currentPatch disconnectFromCurrentEventHeap];
 				[currentPatch setEventHeapName:selectedEventHeap];
 				[currentPatch connectToEventHeap];
 			}
 		[self connectedState]; // Only change the view if the connection was succesful
 		}
-		//if ([currentPatch connected])
-		//	[self connectedState]; // Only change the view if the connection was succesful
-		else if (![currentPatch connected]){
-			[displayEventHeapName setStringValue:@""];
-			[self disconnectedState];
-		}
-	[listOfEventHeaps deselectAll:self];
+	}
+ 	[listOfEventHeaps deselectAll:self];
 	[customListOfEventHeaps deselectAll:self];
- }
- 
+	}
 }	
 
 - (IBAction)disconnectFromEventHeap:(id)sender{
-	//if (selectedList != -1) {
 		iStuffPatch *currentPatch = [self patch];
-		//global change for all patches
+		// Global change for all patches
 		if ([allOrOneRadioGroup selectedRow] == 0){
 		// Post a notification that activates the disconnect method for all patches
 			[[NSNotificationCenter defaultCenter] postNotificationName: @"DisconnectAll" object:nil userInfo:nil];
-			//sleep(1);  //Needed for connection stability - otherwise QC may crash
 		}
 		else {
 			// call the disconnect method for one patch directly
-		  [currentPatch disconnectFromCurrentEventHeap];
-		  //NSLog(@"ONLY the selected PATCH should DISCONNECT");
+			[currentPatch disconnectFromCurrentEventHeap];
 		}
+	// Independenty, the current patch will be disconnected
+	// Change the state	
     [self disconnectedState];
 }
 
 - (IBAction)showAdvancedOptions:(id)sender{
 	[listOfEventHeaps reloadData];
-//	if ([advancedConnectionOptions isHidden]){
 	[advancedConnectionOptions setHidden:![advancedConnectionOptions isHidden]];
-//	}
-	
-//	else {
-//		[advancedConnectionOptions setHidden:true];
-//	}
 }
 
 - (IBAction)addEventHeap:(id)sender{
 	[addEventHeapButton setEnabled:false]; // Avoid several clicks on that button
 	iStuffPatch *currentPatch = [self patch];
-	// Let the button only be functional when there is no empty event heap inside
 	[[currentPatch specifiedEventHeaps] addObject:@""];
 	[customListOfEventHeaps reloadData];
 	if ([customListOfEventHeaps numberOfColumns] == 0)
-	//	[customListOfEventHeaps selectRow:[customListOfEventHeaps numberOfRows]-1 byExtendingSelection:false];
-	sleep(1);
+		[customListOfEventHeaps selectRow:[customListOfEventHeaps numberOfRows]-1 byExtendingSelection:false];
+	//sleep(1);
 	[customListOfEventHeaps selectRow:[customListOfEventHeaps numberOfRows]-1 byExtendingSelection:false];
-	[customListOfEventHeaps editColumn:0 row:[customListOfEventHeaps numberOfRows] -1 withEvent:nil select:false];
+	[customListOfEventHeaps editColumn:0 row:[customListOfEventHeaps numberOfRows] -1 withEvent:nil select:true];
 	[customListOfEventHeaps performClick:nil];
 }
 
 - (IBAction)removeEventHeap:(id)sender{
 	iStuffPatch *currentPatch = [self patch];
-	// only if it is a custom event heap, it may be removed manually
-	//if ([[[listOfEventHeaps selectedCell] stringValue] hasSuffix:@"(custom)"]) {
-		if ([customListOfEventHeaps selectedRow] != -1) {
-			[[currentPatch specifiedEventHeaps] removeObjectAtIndex:[customListOfEventHeaps selectedRow]];
-			[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
-		}
-	//	NSLog(@"Value of selected row: %i", [listOfEventHeaps selectedRow]);
-	
-	
-		[customListOfEventHeaps reloadData];
-		[removeEventHeapButton setEnabled:false];
-	//}
-
+	// Only if it is a custom event heap, it may be removed manually
+	if ([customListOfEventHeaps selectedRow] != -1) {
+		[[currentPatch specifiedEventHeaps] removeObjectAtIndex:[customListOfEventHeaps selectedRow]];
+		[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
+	}
+	[customListOfEventHeaps reloadData];
 }
 
 - (IBAction)changeProxyName:(id)sender{
-	//NSLog(@"In change ProxyName");
 	iStuffPatch *currentPatch = [self patch];
 	NSTextField *textField = sender;
 	if (! [[sender stringValue] isEqualToString:@"<Listen To Everything>"]){
@@ -309,7 +280,6 @@ NSLog(@"In reloadList");
 	else {
 		[proxyIDTextField setStringValue:[currentPatch eventID]];
 	}
-	//NSLog(@"Name should have been changed: %@", [currentPatch userInfo]);
 }
 
 
@@ -345,8 +315,6 @@ NSLog(@"In reloadList");
 -(id)tableView:(NSTableView *) Table
 	objectValueForTableColumn:(NSTableColumn *) Column
 	row: (int) Row{
-			
-			
 	iStuffPatch *currentPatch = [self patch];
 	// Ask what table view has been passed and decide what to return
 	if ([[[Table class] description] isEqualToString: @"NSTableView"]) 
@@ -358,27 +326,29 @@ NSLog(@"In reloadList");
 
 - (void) refreshListOfEventHeaps:(NSNotification *) info {
 	iStuffPatch *currentPatch = [self patch];
-	//NSLog(@"NOTIFICATION RECEIVED:");
 	NSString *itemName = [NSString stringWithString:[[info userInfo] valueForKey:@"item"]];
 	[[currentPatch specifiedEventHeaps] removeObject:@""];
 	//Only if the textfield is not empty the new entry should be added
-	if (! [itemName isEqualToString:@""])
+	if (! [itemName isEqualToString:@""]) {
 		[[currentPatch specifiedEventHeaps] addObject:itemName];
+	}
 	[customListOfEventHeaps reloadData];
-			[listOfEventHeaps selectRow:-1 byExtendingSelection:false];
-		//	[listOfEventHeaps deselectAll:self];
+	[listOfEventHeaps selectRow:-1 byExtendingSelection:false];
+	
 	// Now the "addEventHeaps button can be reactivated
 	[addEventHeapButton setEnabled:true];
+	// Make the new host appear in the appropriate text field if the patch is not connected
+	if (![currentPatch connected])
+		[displayEventHeapName setStringValue:itemName];
 	// Store the list in the prefs file
 	[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
 }
 
 - (void) tableViewSelectionDidChange:(NSNotification *) aNotification {
 	iStuffPatch *currentPatch = [self patch];
-	[removeEventHeapButton setEnabled:false];
-	// There are always two notiications triggered.
+	//[removeEventHeapButton setEnabled:false];
+	// There are always two notifications triggered.
 	// The first one has the priority.
-	//NSLog (@"Inside the delegate method. TableObject: %@",[ aNotification valueForKey:@"object"]);
 	NSTableView *selectedTableView;
 	selectedTableView = [aNotification valueForKey:@"object"];
 	NSString *tableClassDescription;
@@ -388,18 +358,16 @@ NSLog(@"In reloadList");
 		if ([tableClassDescription isEqualToString:@"NSTableView"]) {
 			discoveredEventHeapsFirst = true;
 			specifiedEventHeapsFirst = false;
-	//		selectedList = -1;
 		}
 		else {
 			discoveredEventHeapsFirst = false;
 			specifiedEventHeapsFirst = true;
-		//	selectedList = -1;
 		}
 	}
 
 	if ( ([tableClassDescription isEqualToString:@"NSTableView"]) && (discoveredEventHeapsFirst) ) {
 	// deselect the user-specified list
-		//NSLog(@"In if branch - reset the customlist");
+		NSLog(@"In if branch - reset the customlist");
 		[customListOfEventHeaps deselectAll:self];
 		discoveredEventHeapsFirst = false;
 		selectedList = 0; // The discovered EH list is selected
@@ -408,17 +376,15 @@ NSLog(@"In reloadList");
 			[displayEventHeapName setStringValue:[[currentPatch foundEventHeaps] objectAtIndex:[selectedTableView selectedRow]]];
 	}
 	else if ( ([tableClassDescription isEqualToString:@"CustomTableView"]) && (specifiedEventHeapsFirst) ) {
-	//NSLog(@"In else if branch");
 		[listOfEventHeaps deselectAll:self];
 		specifiedEventHeapsFirst = false;
-		selectedList = 1; // The user-specified list was selected.
-		[removeEventHeapButton setEnabled:true];
+		selectedList = 1; 
+		// The user-specified list was selected.
 		// Reset the EH Name label to the current value. 
 		if ( ([selectedTableView selectedRow] != -1) && (![currentPatch connected]) )
 			[displayEventHeapName setStringValue:[[currentPatch specifiedEventHeaps] objectAtIndex:[selectedTableView selectedRow]]];
 	}
 	else { // It was the second call --> Reset everything
-		//NSLog(@"In else branch - there was the second run");
 		discoveredEventHeapsFirst = false;
 		specifiedEventHeapsFirst = false;
 		selectedList = -1;
@@ -426,54 +392,46 @@ NSLog(@"In reloadList");
 }
 
 -(void) disconnectedState {
-			//iStuffPatch *currentPatch = [self patch];
-			[displayConnectionStatus setStringValue:@"Not connected"];
-			[displayEventHeapName setStringValue:@""];
-			//[displayEventHeapName setStringValue:[currentPatch ehName]];
-			[displayEventHeapName setEditable:false];
-//			[displayEventHeap setTextColor:[NSColor redColor]];
-			[displayConnectionStatus setBackgroundColor:[NSColor redColor]];
-			[animationConnected stopAnimation:self];
-			[animationConnected setHidden:true];
+	iStuffPatch *currentPatch = [self patch];
+	[displayConnectionStatus setStringValue:@"Not connected"];
+	[displayEventHeapName setStringValue:@""];
+	[displayEventHeapName setEditable:false];
+	[displayConnectionStatus setBackgroundColor:[NSColor redColor]];
+	[animationConnected stopAnimation:self];
+	[animationConnected setHidden:true];
+	[currentPatch disconnectFromCurrentEventHeap];
 }
 
 -(void) standbyState {
-			iStuffPatch *currentPatch = [self patch];
-		//NSLog (@"Received a notification -  STANDBY");
-			[listOfEventHeaps deselectAll:self];
-			[displayEventHeapName setStringValue:[currentPatch ehName]];
-			[displayEventHeapName setEditable:false];
-			[animationConnected startAnimation:self];
-			[animationConnected setHidden:false];
-			[displayConnectionStatus setStringValue:@"Standby"];
-			//[displayEventHeap setTextColor:[NSColor orangeColor]];
-			[displayConnectionStatus setBackgroundColor:[NSColor yellowColor]];
+	iStuffPatch *currentPatch = [self patch];
+	[listOfEventHeaps deselectAll:self];
+	[displayEventHeapName setStringValue:[currentPatch ehName]];
+	[displayEventHeapName setEditable:false];
+	[animationConnected startAnimation:self];
+	[animationConnected setHidden:false];
+	[displayConnectionStatus setStringValue:@"Standby"];
+	[displayConnectionStatus setBackgroundColor:[NSColor yellowColor]];
 
 }
 
 -(void) connectedState {
-			iStuffPatch *currentPatch = [self patch];
-			//int index = [[currentPatch foundEventHeaps] indexOfObject:[currentPatch ehName]];
-			//[listOfEventHeaps selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
-			[animationConnected stopAnimation:self];
-			[animationConnected setHidden:true];
-			[displayEventHeapName setStringValue:[currentPatch ehName]];
-			[displayEventHeapName setEditable:true];
-			//NSLog(@"Name should have been set: Name: %@", [currentPatch ehName]);
-			[displayConnectionStatus setStringValue:@"Connected"];
-			[displayConnectionStatus setBackgroundColor:[NSColor greenColor]];
+	iStuffPatch *currentPatch = [self patch];
+	[animationConnected stopAnimation:self];
+	[animationConnected setHidden:true];
+	[displayEventHeapName setStringValue:[currentPatch ehName]];
+	[displayEventHeapName setEditable:true];
+	[displayConnectionStatus setStringValue:@"Connected"];
+	[displayConnectionStatus setBackgroundColor:[NSColor greenColor]];
 			
-			// Save the new Event Heap in the patches' dictionary
-			 [[currentPatch userInfo] setValue:[displayEventHeapName stringValue] forKey:@"LastEHName"];
-			 //NSLog(@"Reset the dictionary: %@", [currentPatch userInfo]);
-			//[displayEventHeap setTextColor:[NSColor greenColor]];
+	// Save the new Event Heap in the patches' dictionary
+	[[currentPatch userInfo] setValue:[displayEventHeapName stringValue] forKey:@"LastEHName"];
 }	
 
 // Delegate method for the NSTableViews
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
+NSLog(@"In the methos that chekcs forediting");
 	return false; // Do not allow editing
 }
-
 
 @end

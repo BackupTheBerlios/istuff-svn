@@ -17,9 +17,9 @@
 	IBOutlet NSProgressIndicator *animationConnected;
 	IBOutlet NSButton *advancedOptionsButton;
 	IBOutlet NSBox *advancedConnectionOptions;
-//	IBOutlet NSTableView *listOfEventHeaps;
 	IBOutlet NSTableView *listOfEventHeaps;
 	IBOutlet CustomTableView *customListOfEventHeaps;
+
 	IBOutlet NSMatrix *allOrOneRadioGroup;
 	IBOutlet NSButton *performConnection;
 	IBOutlet NSButton *listenToEverything;

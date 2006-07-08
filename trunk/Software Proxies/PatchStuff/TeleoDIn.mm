@@ -11,10 +11,14 @@
 
 @implementation TeleoDIn
 
-- (id)initWithIdentifier:(id)fp8
+- (id)initWithIdentifier:(id)fp8 
 {
-	[self setEventType:[NSMutableString stringWithString:@"TeleoDIn"]];
-	return [super initWithIdentifier:fp8];
+	[super initWithIdentifier:fp8];
+
+	// define the templates that the patch should register for. 
+	iStuffEvent *templateEvent = [[iStuffEvent alloc] initWithType:@"TeleoDIn"];
+	[self addTemplateEvent:templateEvent];
+	return self;
 }
 
 - (BOOL)execute:(id)fp8 time:(double)fp12 arguments:(id)fp20
@@ -29,64 +33,12 @@
 	// set the flag to deactivate the thread
 	waitForEvents = FALSE;
 }
-/*
-- (void) waitForEvents
+
+- (void) processEvent:(iStuffEvent *) event 
 {
-	// create an autorelease pool for the thread
-	NSAutoreleasePool *localPool;
-	localPool = [[NSAutoreleasePool alloc] init];
-
-	// define the type of events you want to receive
-
-	const char* eventType = "TeleoDIn";
-	eh2_EventPtr templatePtr = eh2_Event::cs_create (eventType);
-	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
-
-	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
-
-	eventsToWaitFor->add(templatePtr);
-	eventsToWaitFor->add(dummyPtr);
-
-	int x, y, z;
-
-	while (waitForEvents) 
-	{
-		eh2_EventPtr resultEventPtr;
-		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
-
-		if ([[NSString stringWithUTF8String:resultEventPtr->getEventType()] isEqual:[NSString stringWithUTF8String:eventType]])
-		{
-		
-			x = resultEventPtr->getPostValueInt("X");
-			y = resultEventPtr->getPostValueInt("Y");
-			z = resultEventPtr->getPostValueInt("Z");
-			
-			[outputX setDoubleValue:x];
-			[outputY setDoubleValue:y];
-			[outputZ setDoubleValue:z];
-
-		// print debug info
-		//const char* field1, *field2;
-		//field1 = resultEventPtr->getPostValueString ("SequenceNum");
-		//field2 = resultEventPtr->getPostValueString ("SessionID");
-		//NSLog (@"event received, seqNum %s, sessID %s", field1, field2);
-
-		// report the received event to MyController
-		//[myController processEvent:resultEventPtr];
-		}
-	}
-
-	[localPool release];
-}*/
-
-- (void) processEvent:(eh2_EventPtr) eventPtr {
-	int x = eventPtr->getPostValueInt("X");
-	int y = eventPtr->getPostValueInt("Y");
-	int z = eventPtr->getPostValueInt("Z");
-			
-	[outputX setDoubleValue:x];
-	[outputY setDoubleValue:y];
-	[outputZ setDoubleValue:z];
+	[outputX setDoubleValue:[event intValueForField:@"X"]];
+	[outputY setDoubleValue:[event intValueForField:@"Y"]];
+	[outputZ setDoubleValue:[event intValueForField:@"Z"]];
 }
 
 

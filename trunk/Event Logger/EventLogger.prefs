@@ -1,5 +1,5 @@
 #Event Logger Properties
-#Sat Apr 15 00:48:32 CEST 2006
-HostName=localhost
+#Mon Jul 03 20:55:04 CEST 2006
+HostName=montgomery
 BufferSize=500
 HostPort=4535

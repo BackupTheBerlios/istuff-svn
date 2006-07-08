@@ -20,8 +20,12 @@
 
 - (id)initWithIdentifier:(id)fp8
 {
+	[super initWithIdentifier:fp8];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startReceivingEvents) name:@"EventHeapListChanged" object:nil];
-	return [super initWithIdentifier:fp8];
+	templateEvents = [[NSMutableArray alloc] initWithCapacity:2];
+	iStuffEvent *dummyEvent = [[iStuffEvent alloc] initWithTypeAndID:@"DUMMY" eventID:@""];// THIS LINE CAUSES AN ERROR! LATER Initialization?
+	[self addTemplateEvent:dummyEvent];
+	return self;
 }
 
 // This method is needed for Provider patches
@@ -29,27 +33,27 @@
 {
 	// set the flag to activate the thread
 	waitForEvents = TRUE;
+	readyToReconnect = FALSE;
 	// create the thread that waits for events
 	[NSThread detachNewThreadSelector:@selector(waitForEvents) toTarget:self withObject:nil];
-	// We need threads that can manuall be killed. That might be the soultion to the waitForEvent problem.
 }
-
-
 
 - (void) stopReceivingEvents
 {
 	// set the flag to deactivate the thread
 	waitForEvents = FALSE;	 
 	if ((eh != nil)  && ([self connected]) ){
-	NSLog(@"TRYING TO PUT SOMETHING");
 		//create a new event object
-		eh2_EventPtr *eventPtr = new eh2_EventPtr;
-		(*eventPtr) = eh2_Event::cs_create ("DUMMY");
-		(*eventPtr)->setPostValueInt("TimeToLive", 10000);
-		(*eh)->putEvent(*eventPtr);
+		iStuffEvent *dummyToStop = [[iStuffEvent alloc]  initWithTypeAndID:@"DUMMY" eventID:@""];
+		[dummyToStop setTimeToLive:1000];
+		[dummyToStop postEvent:eh];
 		//sleep(1);  // IF CRASHES OCCUR WHILE CHANGING THE EVENT HEAPS, MAKE USE OF SLEEP AGAIN.
-			NSLog(@"ACTUALLY PUT SOMETHING");
 	}
+}
+
+- (void) addTemplateEvent:(iStuffEvent *) event{
+	[templateEvents addObject:event];
+	[templateEvents retain];
 }
 
 // thread waiting for EH events, so we won't block the recognition system
@@ -61,58 +65,63 @@
 	// create an autorelease pool for the thread
 	NSAutoreleasePool *localPool;
 	localPool = [[NSAutoreleasePool alloc] init];
-	// define the type of events you want to receive
-	eh2_EventPtr templatePtr = eh2_Event::cs_create ([eventType cString]);
-
-	eh2_EventPtr dummyPtr = eh2_Event::cs_create("DUMMY");
+	
 	eh2_EventCollectionPtr eventsToWaitFor = eh2_EventCollection::cs_create();
+	// loop to find all templates to wait for
+    NSEnumerator *enumerator = [templateEvents objectEnumerator];
+	iStuffEvent *currentEvent;
 
-	eventsToWaitFor->add(templatePtr);
-	eventsToWaitFor->add(dummyPtr);
+	while (currentEvent = [enumerator nextObject]) {
+		eh2_EventPtr pointer = [currentEvent eventPointer];
+		eventsToWaitFor->add(pointer);
+	}
 
 	while (waitForEvents) {
 		eh2_EventPtr resultEventPtr;
 		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
 		
-		// Check if the event is for the current patch
+		//check wether one of the received event types is in the template list		
 		NSString *receivedEventType = [NSString stringWithCString:resultEventPtr->getEventType()];
-		if ([receivedEventType isEqualToString:eventType]) {
-			if([self listenToEverything] == NSOnState){
-				[self processEvent:resultEventPtr];
-			}else{
-				const eh2_Field* field = resultEventPtr->getField("ProxyID");
-				if (field != NULL) {
-					NSString *receivedEventID = [NSString stringWithCString:resultEventPtr->getPostValueString("ProxyID")];	
-					if ([receivedEventID isEqualToString:eventID])
-						[self processEvent:resultEventPtr];
+		NSEnumerator *enumerator = [templateEvents objectEnumerator];
+		iStuffEvent *currentEvent;
+		while (currentEvent = [enumerator nextObject]) {
+			if ( (![receivedEventType isEqualToString:@"DUMMY"]) && ([[currentEvent eventType] isEqualToString:receivedEventType])) {
+			// Check if the event is for the current patch
+			iStuffEvent *receivedEvent = [[iStuffEvent alloc] initWithPointer:resultEventPtr];
+				if([self listenToEverything] == NSOnState){
+					[self processEvent:receivedEvent];
+					NSLog(@"The event will be processed - ID is ignored");
 				}else{
-					NSLog(@"ERROR: NO ProxyID FIELD FOUND IN EVENT" );  // also print receivedEventType
+				if ([[receivedEvent eventID] isEqualToString:[self eventID]]) {
+					[self processEvent:receivedEvent];
+					NSLog(@"The ID matches - The event will be processed");
+					}
 				}
 			}
 		}
 	}
-
-//	NSLog(@"WAITFOREVENTS REALLY QUIT IN %@", self);
+	NSLog(@"WAITFOREVENTS REALLY QUIT IN %@", self);
+	readyToReconnect = TRUE;
 	[localPool release];
+	
 }
 
-- (void) processEvent:(eh2_EventPtr) eventPtr{
-
+- (void) processEvent:(iStuffEvent *) event{
+  // To be implemented in subclasses
 }
 
-- (void) setEventType:(NSMutableString *)eventTypeName{
-		eventType = [NSMutableString stringWithString:eventTypeName];
-		[eventType retain];
+- (void) setTemplateType:(NSMutableString *)typeName{
+		*templatePtr = eh2_Event::cs_create ([typeName cString]);
+		//eventType = [NSMutableString stringWithString:eventTypeName];
+		[templateType retain]; 
 }
 
 - (void) nodeWillRemoveFromGraph{
 	NSLog(@"IN SUBCLASS Will remove from graph");
 	[self stopReceivingEvents];
-	//if ([self connected]) 
-		//sleep(1); // This is needed for a clean quit of QC. Otherwise there will be a crash...
-	//NSLog(@"Patch was not connected");
-//	[eventType release];
 
+	[templateType release];
+	[templateEvents release];
 	[super nodeWillRemoveFromGraph];
 }
 

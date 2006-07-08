@@ -49,6 +49,7 @@
 
 - (id) initWithIdentifier:(id)fp8;
 - (BOOL) execute:(id)fp8 time:(double)fp12 arguments:(id)fp20;
+- (void) processEvent:(iStuffEvent *) event;
 
 @end
 

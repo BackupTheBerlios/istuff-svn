@@ -13,6 +13,7 @@
 		3427193B0933208000A87EEF /* libidk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 342719390933208000A87EEF /* libidk.a */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */; };
+		A71CDE100A3EF3F40042759C /* iStuffEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */; };
 		A7331FBE09E573F3005185AC /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7331FBD09E573F3005185AC /* CustomTableView.m */; };
 		A759B0E40985292900F31E38 /* iStuffPatchUI.mm in Sources */ = {isa = PBXBuildFile; fileRef = A759B0E20985292900F31E38 /* iStuffPatchUI.mm */; };
 		A75F012009ED777A00888987 /* iStuffConsumerPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A75F011E09ED777A00888987 /* iStuffConsumerPatchUI.nib */; };
@@ -211,6 +212,8 @@
 		8D5B49B6048680CD000E48DA /* qcistuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qcistuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		A716A5DC09B61C97006BCADB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/iStuffPatchUI.nib; sourceTree = "<group>"; };
+		A71CDE0E0A3EF3F40042759C /* iStuffEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffEvent.h; sourceTree = "<group>"; };
+		A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iStuffEvent.mm; sourceTree = "<group>"; };
 		A7331FBC09E573F3005185AC /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = SOURCE_ROOT; };
 		A7331FBD09E573F3005185AC /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = SOURCE_ROOT; };
 		A759B0E10985292900F31E38 /* iStuffPatchUI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iStuffPatchUI.h; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A71CDE0E0A3EF3F40042759C /* iStuffEvent.h */,
+				A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */,
 				A7331FBC09E573F3005185AC /* CustomTableView.h */,
 				A7331FBD09E573F3005185AC /* CustomTableView.m */,
 				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
@@ -830,6 +835,7 @@
 				A7E7773909F42A8B0027B526 /* TeleoDIn.mm in Sources */,
 				A7E7773C09F42A960027B526 /* TeleoPWMOut.mm in Sources */,
 				A7E7780109F435110027B526 /* Filter.mm in Sources */,
+				A71CDE100A3EF3F40042759C /* iStuffEvent.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,6 +69,9 @@ public class InterfaceKitproxy extends _IPhidgetInterfaceKitEventsAdapter
 			System.out.println("Could not find a PhidgetInterfaceKit");
 			return;
 		}
+		phid.OpenRemoteIP("localhost",5001,-1,"pass");
+
+
 		System.out.println(phid.GetDeviceType());
 		System.out.println("Serial Number " + phid.GetSerialNumber());
 		System.out.println("Device Version " + phid.GetDeviceVersion());
