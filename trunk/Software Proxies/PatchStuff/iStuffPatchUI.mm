@@ -41,14 +41,22 @@
 	[listOfEventHeaps reloadData];
 	//[removeEventHeapButton setEnabled:false];
 	if ([currentPatch automaticConnection]){
-		NSLog(@"SHOULD BE TRUE");
-	
 		[toggleAutomaticConnectionManagement setState:NSOnState];
 		}
 	else {
 		[toggleAutomaticConnectionManagement setState:NSOffState];
-				NSLog(@"SHOULD NOT BE TRUE");
 			}
+	
+	// Change to the connection status of the current patch
+	if ([currentPatch connected]){
+		[self connectedState];
+	}
+	else if ( (![currentPatch connected]) && ([currentPatch standby])){
+		[self standbyState];
+	}
+	else {
+		[self disconnectedState];
+	}
 
 	// Load the user specified list with each refresh
 	NSMutableArray *loadedEHList = [NSKeyedUnarchiver unarchiveObjectWithFile:[currentPatch prefsFile]];
@@ -93,12 +101,10 @@
 -(void) refreshView:(NSNotification *) notification
 {
 	iStuffPatch *currentPatch  = [self patch];
-	
 	if (![currentPatch advancedOptionsHidden])	{
 	  [listOfEventHeaps reloadData];
 	  [customListOfEventHeaps reloadData];
 	}
-	
 	// Refresh the view depending on the state of the iStuff patch
 	NSDictionary *ehStatusInfo = [notification userInfo];
 	if (ehStatusInfo != nil){
@@ -116,7 +122,7 @@
 }
 
 - (id)init{
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"NetServicesUpdate" object:[self patch]];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"RefreshView" object:[self patch]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshListOfEventHeaps:) name:@"NewItem" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadList) name:@"NetServicesUpdate" object:nil];
 	
@@ -367,7 +373,6 @@
 
 	if ( ([tableClassDescription isEqualToString:@"NSTableView"]) && (discoveredEventHeapsFirst) ) {
 	// deselect the user-specified list
-		NSLog(@"In if branch - reset the customlist");
 		[customListOfEventHeaps deselectAll:self];
 		discoveredEventHeapsFirst = false;
 		selectedList = 0; // The discovered EH list is selected
@@ -411,7 +416,6 @@
 	[animationConnected setHidden:false];
 	[displayConnectionStatus setStringValue:@"Standby"];
 	[displayConnectionStatus setBackgroundColor:[NSColor yellowColor]];
-
 }
 
 -(void) connectedState {
@@ -430,7 +434,6 @@
 // Delegate method for the NSTableViews
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
-NSLog(@"In the methos that chekcs forediting");
 	return false; // Do not allow editing
 }
 

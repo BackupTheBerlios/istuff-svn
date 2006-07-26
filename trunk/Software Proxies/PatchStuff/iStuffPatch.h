@@ -106,7 +106,5 @@
 - (void) setListenToEverything:(int)state;
 - (void) setAutomaticEHConnection:(BOOL) flag;
 - (void) setEventID:(NSString *)name;
-- (NSString* ) eventID;
-
 
 @end

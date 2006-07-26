@@ -31,6 +31,8 @@
 - (void) addNewIntegerField:(NSString *)fieldName intValue:(int)value;
 - (void) addNewStringField:(NSString *)fieldName stringValue:(NSString *)value;
 - (void) addNewStringTemplateField:(NSString *)fieldName;
+- (void) addNewTemplateValueString:(NSString *)fieldName stringValue:(NSString *)value;
+- (void) addNewTemplateValueInt:(NSString *)fieldName intValue:(int)value;
 - (void) postEvent:(eh2_EventHeapPtr *) eventHeapPointer;
 - (void) setTimeToLive:(int)time;
 

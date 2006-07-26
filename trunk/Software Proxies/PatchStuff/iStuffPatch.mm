@@ -58,12 +58,13 @@
 		[self setListenToEverything:NSOffState];
 	else
 		[self setListenToEverything:NSOnState];
-	if ([[nodeAttributes valueForKey:@"connectionStatus"] isEqualToString:@"connected"]) {
-		standby = true;
-	}
-	else {
-		standby = false;
-	}
+	//if ([[nodeAttributes valueForKey:@"connectionStatus"] isEqualToString:@"connected"]) {
+	//	standby = true;
+	//}
+	//else {
+	//	standby = false;
+	//}
+	standby = true;
 	
 	hostName = [NSString stringWithString:[[NSHost currentHost] name]];
 	[hostName retain];
@@ -101,7 +102,7 @@
 	// Specify notifications to react to
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disconnectFromCurrentEventHeap) name:@"DisconnectAll" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(manageEHConnection:) name:@"ConnectAll" object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(automaticEHConnection) name:@"NetServicesUpdate" object:nil];
+	//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(automaticEHConnection) name:@"NetServicesUpdate" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectToEventHeap) name:@"ReadyToConnect" object:nil];		
 	
 	// Initialize the netServiceBrowser object
@@ -146,7 +147,7 @@
 
 - (void) automaticEHConnection {
 	// If the connections should be automatically managed, perform this method
-	if ( (!connectedToEventHeap) && (automaticEHConnection) ) {
+	if (standby) {
 		if ([netServices containsObject:eventHeapName])
 			[self connectToEventHeap];
 		else { 
@@ -154,6 +155,10 @@
 			[self setEventHeapName:[netServices objectAtIndex:0]];
 			[self connectToEventHeap];
 		}
+		// Send a notification to update the current view
+		NSMutableDictionary *connectionStatus = [[NSMutableDictionary alloc]init];
+		[connectionStatus setValue:@"connected" forKey:@"connectionStatus"];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshView" object:nil userInfo:connectionStatus];
 	}
 }
 		
@@ -180,10 +185,6 @@
 }
 
 - (void) connectToEventHeap {
-	while (!readyToReconnect) {
-	NSLog(@"FLAg is FALSE");
-	}
-	
 	[self createEventHeap:NULL atServer:eventHeapName atPort:4535];
 	connectedToEventHeap = true;
 	[self startReceivingEvents];
@@ -206,7 +207,6 @@
 
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
-	NSLog(@"In did find service");
 	// Construction of the fully qualified name
 	NSString *serviceName = [NSString stringWithString:[aNetService name]];
 
@@ -227,7 +227,10 @@
 	if (!moreComing) { 
 		[self sendEHSListUpdate:nil]; 
 		// This notification initiates the reloading the list containing the detected Event Heaps
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:nil]; 
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:nil];
+		// Automatically connect the new patch to an Event Heap as soon as available (standard)
+		// If the user manually disconnected the patch, no automatic connection will be established
+		[self automaticEHConnection]; 
 	}
 }
 
@@ -253,7 +256,7 @@
 		connectedToEventHeap = false;
 		// post a notification that signifies that the view has to be updated
 		connectionStatus = [NSMutableDictionary dictionaryWithObject:@"standby" forKey:@"connectionStatus"];
-		[connectionStatus setValue:self forKey:@"Identity"];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshView" object:nil userInfo:connectionStatus];
 		[self stopReceivingEvents];
 	}
 	
@@ -264,7 +267,7 @@
 }
 
 - (void)sendEHSListUpdate:(NSDictionary *) connectionStatus {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NetServicesUpdate" object:nil userInfo:connectionStatus];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NetServicesUpdate" object:nil userInfo:nil];
 }
 
 - (void) nodeWillRemoveFromGraph{

@@ -397,8 +397,6 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A71CDE0E0A3EF3F40042759C /* iStuffEvent.h */,
-				A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */,
 				A7331FBC09E573F3005185AC /* CustomTableView.h */,
 				A7331FBD09E573F3005185AC /* CustomTableView.m */,
 				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
@@ -691,6 +689,8 @@
 		A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */ = {
 			isa = PBXGroup;
 			children = (
+				A71CDE0E0A3EF3F40042759C /* iStuffEvent.h */,
+				A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */,
 				A75F012109ED783E00888987 /* iStuffConsumerPatchUI.h */,
 				A75F012209ED783E00888987 /* iStuffConsumerPatchUI.mm */,
 				A79BDF0F09BF049700A6E805 /* iStuffPatch.mm */,

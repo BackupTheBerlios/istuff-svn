@@ -14,7 +14,7 @@
 	if ([super init] != nil) {
 		eventType = type;
 		[eventType retain];
-		eventID = idName;
+		[eventID setString: idName];
 		[eventID retain];
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ([eventType cString]);
@@ -24,14 +24,14 @@
 }
 
 - (id) initWithType:(NSString *)type {
+	if ([super init] != nil) {
 		eventType = type;
 		[eventType retain];
 		eventPtr = new eh2_EventPtr;
 		(*eventPtr) = eh2_Event::cs_create ([eventType cString]);
-		NSLog(@"New event initialized");
 		// For stability reasons, only events with a "ProxyID" field are generated
 		[self addNewStringTemplateField:@"ProxyID"];
-
+	}
 	return self;
 }
 
@@ -62,31 +62,32 @@
 - (void) setEventType:(NSString *)type {
 	eventType = type;
 	[eventType retain];
-
 	eventPtr = new eh2_EventPtr;
 	(*eventPtr) = eh2_Event::cs_create ([eventType cString]);
-	NSLog(@"event type set");
 }
 
 - (void) addNewIntegerField:(NSString *)fieldName intValue:(int)value {
 	if (eventPtr != nil)
 		(*eventPtr)->setPostValueInt ([fieldName cString], value);
-		NSLog(@"new integer field added");
 }
 
 - (void) addNewStringField:(NSString *)fieldName stringValue:(NSString *)value {
 	if (eventPtr != nil);
 		(*eventPtr)->setPostValueString([fieldName cString], [value cString]);	
-		NSLog(@"new string field added");
+}
+
+- (void) addNewTemplateValueString:(NSString *)fieldName stringValue:(NSString *)value {
+	(*eventPtr)->setTemplateValueString([fieldName cString], [value cString]); 
+}
+
+- (void) addNewTemplateValueInt:(NSString *)fieldName intValue:(int)value {
+	(*eventPtr)->setTemplateValueInt([fieldName cString], value); 
 }
 
 - (void) addNewStringTemplateField:(NSString *)fieldName{
 		eh2_Field* field;
 		field = (*eventPtr)->allocateField([fieldName cString], eh2_FieldType::cs_string());
 		field->setTemplateValueType(eh2_EventConsts::FVT_FORMAL);
-
-
-//	(*eventPtr)->setTemplateValueType([fieldName cString], eh2_EventConsts::FVT_FORMAL);
 }
 
 - (void) setEventHeap:(NSString *)eventHeapName {
@@ -123,7 +124,7 @@
 
 - (void) setEventID:(NSString*) idName {
 	[eventID release];
-	eventID = idName;
+	[eventID setString:idName];
 	[eventID retain];
 }
 

@@ -45,7 +45,6 @@
 			// This allows posting one value per execution cycle
 			
 			// first check to see that the Activity field exists
-//			const eh2_Field* field = eventPtr->getField("Activity");
 			NSString *activity = [event stringValueForField:@"Activity"];
 			if (activity != nil) {
 				//const char* activity = eventPtr->getPostValueString("Activity");
@@ -58,8 +57,6 @@
 					NSLog(@"In keyPress");
 					setOutputPort = true;
 					//make sure that the KeyCode field exists
-//					const eh2_Field* field = eventPtr->getField("KeyCode");
-//					if (field != NULL) {
 					
 						keyCode = [event intValueForField:@"KeyCode"];
 						[outputKeyStroke setDoubleValue:(double) keyCode];

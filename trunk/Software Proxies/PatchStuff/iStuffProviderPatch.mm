@@ -23,7 +23,8 @@
 	[super initWithIdentifier:fp8];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startReceivingEvents) name:@"EventHeapListChanged" object:nil];
 	templateEvents = [[NSMutableArray alloc] initWithCapacity:2];
-	iStuffEvent *dummyEvent = [[iStuffEvent alloc] initWithTypeAndID:@"DUMMY" eventID:@""];// THIS LINE CAUSES AN ERROR! LATER Initialization?
+	iStuffEvent *dummyEvent = [[iStuffEvent alloc] initWithType:@"DUMMY"];
+	[dummyEvent addNewTemplateValueInt:@"ObjectID" intValue:[self hash]];
 	[self addTemplateEvent:dummyEvent];
 	return self;
 }
@@ -38,6 +39,10 @@
 	[NSThread detachNewThreadSelector:@selector(waitForEvents) toTarget:self withObject:nil];
 }
 
+//this method sends a specific dummy that is only picked up by the appropriate patch
+// Otherwise crashes occur due to synchronisation errors caused by all patches reacting on the same event
+
+
 - (void) stopReceivingEvents
 {
 	// set the flag to deactivate the thread
@@ -45,7 +50,9 @@
 	if ((eh != nil)  && ([self connected]) ){
 		//create a new event object
 		iStuffEvent *dummyToStop = [[iStuffEvent alloc]  initWithTypeAndID:@"DUMMY" eventID:@""];
-		[dummyToStop setTimeToLive:1000];
+		//[dummyToStop setTimeToLive:1000];
+		[dummyToStop addNewIntegerField:@"ObjectID" intValue:[self hash]];
+		[dummyToStop setTimeToLive:200];
 		[dummyToStop postEvent:eh];
 		//sleep(1);  // IF CRASHES OCCUR WHILE CHANGING THE EVENT HEAPS, MAKE USE OF SLEEP AGAIN.
 	}
@@ -75,11 +82,15 @@
 		eh2_EventPtr pointer = [currentEvent eventPointer];
 		eventsToWaitFor->add(pointer);
 	}
+	//eh2_EventPtr dummyPtr = eh2_Event::cs_create();
+	//dummyPtr->setEventType("DUMMY"); // yet another way to set event type
+	//dummyPtr->setTemplateValueString("ObjectID", [[self description] cString]); 
+	//eventsToWaitFor->add(dummyPtr);
 
 	while (waitForEvents) {
 		eh2_EventPtr resultEventPtr;
 		resultEventPtr = (*eh)->waitForEvent (eventsToWaitFor, NULL);
-		
+				
 		//check wether one of the received event types is in the template list		
 		NSString *receivedEventType = [NSString stringWithCString:resultEventPtr->getEventType()];
 		NSEnumerator *enumerator = [templateEvents objectEnumerator];
@@ -90,16 +101,15 @@
 			iStuffEvent *receivedEvent = [[iStuffEvent alloc] initWithPointer:resultEventPtr];
 				if([self listenToEverything] == NSOnState){
 					[self processEvent:receivedEvent];
-					NSLog(@"The event will be processed - ID is ignored");
 				}else{
 				if ([[receivedEvent eventID] isEqualToString:[self eventID]]) {
 					[self processEvent:receivedEvent];
-					NSLog(@"The ID matches - The event will be processed");
 					}
 				}
 			}
-		}
+		} 
 	}
+	// This log message is still included to make check whether the threads that wait for events quit properly
 	NSLog(@"WAITFOREVENTS REALLY QUIT IN %@", self);
 	readyToReconnect = TRUE;
 	[localPool release];
@@ -117,18 +127,10 @@
 }
 
 - (void) nodeWillRemoveFromGraph{
-	NSLog(@"IN SUBCLASS Will remove from graph");
 	[self stopReceivingEvents];
-
 	[templateType release];
 	[templateEvents release];
 	[super nodeWillRemoveFromGraph];
-}
-
-- (void) dealloc {
-	//[eventType release];
-	NSLog(@"In dealloc");
-	[super dealloc];
 }
 
 @end
