@@ -42,10 +42,10 @@
 	//[removeEventHeapButton setEnabled:false];
 	if ([currentPatch automaticConnection]){
 		[toggleAutomaticConnectionManagement setState:NSOnState];
-		}
+	}
 	else {
 		[toggleAutomaticConnectionManagement setState:NSOffState];
-			}
+	}
 	
 	// Change to the connection status of the current patch
 	if ([currentPatch connected]){
@@ -59,10 +59,10 @@
 	}
 
 	// Load the user specified list with each refresh
-	NSMutableArray *loadedEHList = [NSKeyedUnarchiver unarchiveObjectWithFile:[currentPatch prefsFile]];
+	NSMutableArray *loadedEHList = [[currentPatch configuration] valueForKey:@"userSpecifiedEventHeaps"];
 	[[currentPatch specifiedEventHeaps] removeAllObjects];
 	[[currentPatch specifiedEventHeaps] addObjectsFromArray:loadedEHList];
-
+	
 	[listenToEverything setState:[currentPatch listenToEverything]];
 	if ([currentPatch listenToEverything]) {
 		[proxyIDTextField setStringValue:@"<Listen To Everything>"];
@@ -146,15 +146,23 @@
 	// --> Saving of what is not saved yet.
  
  iStuffPatch *currentPatch = [self patch];
+
+  //[configuration setValue:[currentPatch specifiedEventHeaps] forKey:@"userSpecifiedEventHeaps"];
+  // save the configuration to the config file
+  //[configuration setValue:@"testvalue" forKey:@"testkey"];
+  //NSMutableString *path = [NSString stringWithString:@"~/test.eph"];
+
+
+
  if ([listenToEverything state] == NSOffState){
 	NSMutableDictionary *nodeAttributes = [currentPatch userInfo];
 	[nodeAttributes setValue:[currentPatch eventID] forKey:@"eventID"];
   }
-
+  
   [currentPatch setAdvancedOptionsHidden:[advancedConnectionOptions isHidden]];
   [currentPatch setListenToEverything:[listenToEverything state]];
   [currentPatch setRadioButtonIndex:[allOrOneRadioGroup selectedRow]];
-  
+  [currentPatch saveConfiguration];
   [super resetView];
 
 }
@@ -270,7 +278,8 @@
 	// Only if it is a custom event heap, it may be removed manually
 	if ([customListOfEventHeaps selectedRow] != -1) {
 		[[currentPatch specifiedEventHeaps] removeObjectAtIndex:[customListOfEventHeaps selectedRow]];
-		[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
+		//[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
+
 	}
 	[customListOfEventHeaps reloadData];
 }
@@ -347,7 +356,7 @@
 	if (![currentPatch connected])
 		[displayEventHeapName setStringValue:itemName];
 	// Store the list in the prefs file
-	[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
+	//[NSKeyedArchiver archiveRootObject:[currentPatch specifiedEventHeaps] toFile:[currentPatch prefsFile]];
 }
 
 - (void) tableViewSelectionDidChange:(NSNotification *) aNotification {

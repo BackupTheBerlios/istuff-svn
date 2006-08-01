@@ -57,6 +57,7 @@
 	NSString *prefsFile;
 	NSString *lastEHNameFile;
 	NSString *automaticConnectionFile;
+	NSMutableDictionary *configDictionary;
 }
 
 // Methods to be extended for a specific patch
@@ -80,7 +81,8 @@
 - (int) radioButtonIndex;
 - (int) listenToEverything;
 - (NSString *)prefsFile;
-- (NSString *)lastEHNameFile;
+- (NSMutableDictionary *) configuration;
+- (NSMutableArray *) storedEventHeaps;
 
 
 // Methods for the Event Heap connection management
@@ -106,5 +108,6 @@
 - (void) setListenToEverything:(int)state;
 - (void) setAutomaticEHConnection:(BOOL) flag;
 - (void) setEventID:(NSString *)name;
+- (void) saveConfiguration;
 
 @end

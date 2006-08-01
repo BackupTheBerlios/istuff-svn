@@ -42,6 +42,9 @@
 
 - (void)nodeDidAddToGraph:(id)fp8{
 	[super nodeDidAddToGraph:fp8];
+  
+	configDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[prefsFile stringByExpandingTildeInPath]];
+	[configDictionary retain];
 
 	// Set the title and notes accordingly:
 	// But only if the user has not entered something yet.
@@ -65,35 +68,30 @@
 	//	standby = false;
 	//}
 	standby = true;
-	
 	hostName = [NSString stringWithString:[[NSHost currentHost] name]];
 	[hostName retain];
-	if ([nodeAttributes valueForKey:@"LastEHName"] == nil) {
+	
 	// Try to read the last name used from the file
 	// If that fails, use the hostName
-	NSMutableString *loadedEHName = [NSKeyedUnarchiver unarchiveObjectWithFile:[self lastEHNameFile]];
-	if (loadedEHName != nil)
-		[self setEventHeapName:loadedEHName];
-	else
+
+// Here seems to be an error - the part with the last Event Heap name should be reworked
+//	NSMutableString *loadedEHName = [configDictionary valueForKey:@"LastEHName"];
+//	if (loadedEHName != nil){
+//		NSLog(@"EH Name found: %@", loadedEHName);
+//		[self setEventHeapName:loadedEHName];
+//		}
+//	else
 		//[self setEventHeapName:[NSString stringWithString:hostName]];
 		[self setEventHeapName:[NSString stringWithString:@""]];
-	}
-	else {
-		[self setEventHeapName:[nodeAttributes valueForKey:@"LastEHName"]];
-	}			
+
 	[self setAutomaticEHConnection:true];
-	
+		
 }
 	
 - (id)initWithIdentifier:(id)fp8 {	
 	// Specify the preferences files for initial values
-	prefsFile = [NSString stringWithString:@"/Users/rene/Library/Preferences/QCiStuffPluginEHList.ehl"];
-	lastEHNameFile = [NSString stringWithString:@"/Users/rene/Library/Preferences/QCiStuffPluginLastEHName.ehn"]; 
-	automaticConnectionFile = [NSString stringWithString:@"/Users/rene/Library/Preferences/QCiStuffPluginAutomaticConnectionSettig.ehn"]; 
-
+	prefsFile = [NSString stringWithString:@"~/Library/Preferences/QCiStuffPluginEHList.plist"];
 	[prefsFile retain];
-	[lastEHNameFile retain];
-	[automaticConnectionFile retain];
 	
 	advancedOptionsHidden = true; // By default. the advanced options are hidden for a new patch
 	connectedToEventHeap = false;
@@ -195,8 +193,8 @@
 	[ehInfo setValue:self forKey:@"Identity"];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"EHListChange" object:self userInfo:ehInfo];	
 	
-	// Store the last name in a file such that new instances make use of the same EH name
-	[NSKeyedArchiver archiveRootObject:[self ehName] toFile:[self lastEHNameFile]];
+	// Store the last name in the configuratin dictionary such that new instances make use of the same EH name
+	[configDictionary setValue:[self ehName] forKey:@"LastEHName"];
 }
 
 - (void) disconnectFromCurrentEventHeap {
@@ -280,8 +278,7 @@
 	[hostName release];
 	[eventHeapName release];
 	[prefsFile release];
-	[lastEHNameFile release];
-	[automaticConnectionFile release];
+	[configDictionary release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
 	[super nodeWillRemoveFromGraph];
@@ -351,6 +348,25 @@
 	return specifiedEventHeaps;
 }
 
+- (NSMutableDictionary *) configuration {
+NSLog(@"configuration");
+//	NSMutableDictionary *dict=  ([NSMutableDictionary dictionaryWithContentsOfFile:[prefsFile stringByExpandingTildeInPath]]);
+//	NSLog(@"What was loaded?: %@",dict);
+	return ([NSMutableDictionary dictionaryWithContentsOfFile:[prefsFile stringByExpandingTildeInPath]]);
+}
+
+- (void) saveConfiguration {
+  [configDictionary setValue:specifiedEventHeaps forKey:@"userSpecifiedEventHeaps"];
+  if ([configDictionary writeToFile:[prefsFile stringByExpandingTildeInPath] atomically:YES])
+	NSLog(@"File was successfully written: %@", configDictionary);
+  else
+	NSLog(@"Error writing file!!! %@ PRINT CONFIG:%@", [prefsFile stringByExpandingTildeInPath] ,configDictionary);
+}
+
+- (NSMutableArray *) storedEventHeaps {
+	return [configDictionary valueForKey:@"userSpecifiedEHList"];
+}
+
 // This method is needed for Provider patches
 - (void) startReceivingEvents
 {
@@ -374,10 +390,6 @@
 
 -(NSString *) prefsFile {
 	return prefsFile;
-}
-
--(NSString *) lastEHNameFile {
-	return lastEHNameFile;
 }
 
 - (BOOL) automaticConnection {
