@@ -480,7 +480,7 @@ public class iStuffMobileProxy implements EventCallback
 				if(argv.length == 2)  // Only the neccessary parameters EventHeapName and COMPort were supplied.
 					mobileProxy = new iStuffMobileProxy(argv[0],"",argv[1]);
 				else if (argv.length >= 3) // All parameters were supplied
-					mobileProxy = new iStuffMobileProxy(argv[0], argv[1], argv[2]);
+					mobileProxy = new iStuffMobileProxy(argv[0], argv[2], argv[1]);
 
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
