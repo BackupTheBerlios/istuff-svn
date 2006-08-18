@@ -153,10 +153,27 @@ public class EventLauncher implements Runnable{
                        while(currTuple != null)
                        {
                            sensor = 0;
-                           for(int i=0;i<currTuple.length();i++){	//the sensor data has three bytes which are filled into a single integer
+                           if( currTuple.getAclType().equals("sfc") || currTuple.getAclType().equals("ste") ){
+								// for these acl types only use the first byte of a 2 byte sequence
+								sensor = currTuple.getAclByte(0);
+								//System.out.println(currTuple.getAclType() + " " + sensor);
+						   }else if( currTuple.getAclType().equals("sau") || currTuple.getAclType().equals("sgx") ||
+									 currTuple.getAclType().equals("sgy") || currTuple.getAclType().equals("sgz") ||
+									 currTuple.getAclType().equals("sli")){
+								// for these acl types only use the first 2 bytes of a 3 byte sequence
+								if((0x08 & currTuple.getAclByte(0)) > 0){
+									sensor = - (currTuple.getAclByte(0) ^ 0xFF) * (int)Math.pow(2,8) + currTuple.getAclByte(1);
+								}else{
+									sensor = currTuple.getAclByte(0) * (int)Math.pow(2,8) + currTuple.getAclByte(1);
+								}
+								//System.out.println(currTuple.getAclType() + " " + sensor);
+						   }
+						   /*
+						   for(int i=0;i<currTuple.length();i++){	//the sensor data has three bytes which are filled into a single integer
                                sensor = sensor << 8;
                                sensor |= currTuple.getAclByte(i);
                            }
+						   */
                            event.addField(currTuple.getAclType(),new Integer(sensor));	// add a field to the event with the tuple name e.g. sgx and the sensor data integer
                            currTuple = currPacket.nextAcl(currTuple);	//get the next sensor data which is the next tuple
                        }
