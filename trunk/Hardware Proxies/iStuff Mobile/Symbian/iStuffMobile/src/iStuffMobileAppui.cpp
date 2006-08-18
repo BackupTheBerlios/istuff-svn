@@ -86,6 +86,13 @@ TKeyResponse CiStuffMobileAppUi::HandleKeyEventL(const TKeyEvent& aKeyEvent,TEve
 	}
 	else
 	{
+		if(aKeyEvent.iCode == 63587)
+		{
+			TBufC16<41> temp = _L("C:\\System\\Apps\\iStuffMobile\\iStuffMobile.app");	//path of the profile application on nokia series 60 phones
+			TUint16 * app = (TUint16 *)temp.Ptr();
+			iProxyServer->LaunchApp(app);
+			return EKeyWasConsumed;
+		}
 		return EKeyWasNotConsumed;
 	}
 }

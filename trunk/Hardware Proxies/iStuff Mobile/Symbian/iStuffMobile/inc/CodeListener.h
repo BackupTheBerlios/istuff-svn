@@ -131,6 +131,17 @@ class CCodeListener : public CActive
 		*/
 		TBool GetConnected();
 
+		//!  Lauches an external application
+		/*!  This method is called when the Opcode received is 
+				 OPCODE_LAUNCHAPP. This method launches an application
+				 found at the path passed as parameters.
+				 
+				 \param path as TUint16 pointer. contains the path
+				 				of the application to be launched including
+				 				the application name.
+		*/
+		void LaunchApp(TUint16* path);
+
 	private:
 		
 		//!  Receives a single Opcode.
@@ -200,17 +211,6 @@ class CCodeListener : public CActive
 				 method.
 		*/
 		void StopSoundFile();
-		
-		//!  Lauches an external application
-		/*!  This method is called when the Opcode received is 
-				 OPCODE_LAUNCHAPP. This method launches an application
-				 found at the path passed as parameters.
-				 
-				 \param path as TUint16 pointer. contains the path
-				 				of the application to be launched including
-				 				the application name.
-		*/
-		void LaunchApp(TUint16* path);
 		
 		//!  Closes an external application
 		/*!  This method is called when the Opcode received is 
