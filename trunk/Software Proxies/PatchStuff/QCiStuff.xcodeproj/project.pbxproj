@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		340B411B091F8B810074DBFA /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340B411A091F8B810074DBFA /* Quartz.framework */; };
 		340B4150091F8C620074DBFA /* PatchLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 340B414F091F8C620074DBFA /* PatchLoader.m */; };
-		3427193A0933208000A87EEF /* libceheap2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 342719380933208000A87EEF /* libceheap2.a */; };
-		3427193B0933208000A87EEF /* libidk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 342719390933208000A87EEF /* libidk.a */; };
+		34BBD1700AEE73FD007F1A58 /* libceheap2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */; };
+		34BBD1710AEE73FD007F1A58 /* libidk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBD16F0AEE73FD007F1A58 /* libidk.dylib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		A716A5E309B61C97006BCADB /* iStuffPatchUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */; };
 		A71CDE100A3EF3F40042759C /* iStuffEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = A71CDE0F0A3EF3F40042759C /* iStuffEvent.mm */; };
@@ -56,30 +56,6 @@
 		A7E7780109F435110027B526 /* Filter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7E7780009F435110027B526 /* Filter.mm */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		014CEA420018CDE011CA2923 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		014CEA430018CDE011CA2923 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -94,8 +70,6 @@
 		340B4170091F90180074DBFA /* PatchLoader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PatchLoader.h; sourceTree = "<group>"; };
 		340B41B8091FA9D20074DBFA /* GFNodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFNodeManager.h; sourceTree = "<group>"; };
 		34249F800930D091009E00CD /* QCInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCInspector.h; sourceTree = "<group>"; };
-		342719380933208000A87EEF /* libceheap2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libceheap2.a; path = "../../Event Heap/c++/Mac OS X/lib/libceheap2.a"; sourceTree = SOURCE_ROOT; };
-		342719390933208000A87EEF /* libidk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libidk.a; path = "../../Event Heap/c++/Mac OS X/lib/libidk.a"; sourceTree = SOURCE_ROOT; };
 		3427193C0933209400A87EEF /* eh2_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Base.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Base.h"; sourceTree = SOURCE_ROOT; };
 		3427193D0933209400A87EEF /* eh2_ConnectErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ConnectErrorHandler.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h"; sourceTree = SOURCE_ROOT; };
 		3427193E0933209400A87EEF /* eh2_Connection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Connection.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Connection.h"; sourceTree = SOURCE_ROOT; };
@@ -209,7 +183,9 @@
 		342719AA0933209400A87EEF /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = "../../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h"; sourceTree = SOURCE_ROOT; };
 		342719AB0933209400A87EEF /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = "../../Event Heap/c++/Mac OS X/include/idk_xm.h"; sourceTree = SOURCE_ROOT; };
 		342719AC0933209400A87EEF /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
-		8D5B49B6048680CD000E48DA /* qcistuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qcistuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.dylib; path = "../../Event Heap/c++/Mac OS X/lib/libceheap2.dylib"; sourceTree = SOURCE_ROOT; };
+		34BBD16F0AEE73FD007F1A58 /* libidk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.dylib; path = "../../Event Heap/c++/Mac OS X/lib/libidk.dylib"; sourceTree = SOURCE_ROOT; };
+		8D5B49B6048680CD000E48DA /* QCiStuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCiStuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		A716A5DC09B61C97006BCADB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/iStuffPatchUI.nib; sourceTree = "<group>"; };
 		A71CDE0E0A3EF3F40042759C /* iStuffEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iStuffEvent.h; sourceTree = "<group>"; };
@@ -291,8 +267,8 @@
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				340B411B091F8B810074DBFA /* Quartz.framework in Frameworks */,
-				3427193A0933208000A87EEF /* libceheap2.a in Frameworks */,
-				3427193B0933208000A87EEF /* libidk.a in Frameworks */,
+				34BBD1700AEE73FD007F1A58 /* libceheap2.dylib in Frameworks */,
+				34BBD1710AEE73FD007F1A58 /* libidk.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +334,8 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */,
+				34BBD16F0AEE73FD007F1A58 /* libidk.dylib */,
 				340B411A091F8B810074DBFA /* Quartz.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
@@ -367,8 +345,6 @@
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				342719380933208000A87EEF /* libceheap2.a */,
-				342719390933208000A87EEF /* libidk.a */,
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
 				089C1672FE841209C02AAC07 /* Foundation.framework */,
@@ -379,7 +355,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* qcistuff.plugin */,
+				8D5B49B6048680CD000E48DA /* QCiStuff.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -736,25 +712,12 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = QCiStuff_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				PREBINDING = NO;
-				PRODUCT_NAME = QCiStuff;
-				WRAPPER_EXTENSION = bundle;
-			};
 			dependencies = (
 			);
 			name = QCiStuffplugin;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = QCiStuff;
-			productReference = 8D5B49B6048680CD000E48DA /* qcistuff.plugin */;
+			productReference = 8D5B49B6048680CD000E48DA /* QCiStuff.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -763,12 +726,6 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 340B4108091F8AA70074DBFA /* Build configuration list for PBXProject "QCiStuff" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				014CEA420018CDE011CA2923 /* Debug */,
-				014CEA430018CDE011CA2923 /* Release */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* QCiStuff */;
 			projectDirPath = "";
@@ -984,6 +941,7 @@
 		340B4105091F8AA70074DBFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "${NATIVE_ARCH}";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -997,7 +955,12 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
 				OTHER_CFLAGS = (
 					"-Dunix",
 					"-D_REENTRANT",
@@ -1012,6 +975,10 @@
 		340B4106091F8AA70074DBFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(NATIVE_ARCH)",
+					i386,
+				);
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1024,11 +991,24 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/../iStuff Framework v1.4beta/Event Heap/c++/Mac OS X/lib",
-					"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_4)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "$(SRCROOT)/../iStuff\\ Framework\\ v1.4beta/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "$(SRCROOT)/../../Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"../../Event Heap/c++/Mac OS X/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = QCiStuff;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1047,9 +1027,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/../iStuff Framework v1.4beta/Event Heap/c++/Mac OS X/lib",
-					"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_3)",
 				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "$(SRCROOT)/../iStuff\\ Framework\\ v1.4beta/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "$(SRCROOT)/../../Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = QCiStuff;
 				WRAPPER_EXTENSION = bundle;
