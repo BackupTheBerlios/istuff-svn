@@ -17,6 +17,8 @@
     QCNumberPort *outputdrZ;
 	QCBooleanPort *outputClick;
 
+	BOOL setOutputPort;
+
 }
 
 - (id) initWithIdentifier:(id)fp8;
