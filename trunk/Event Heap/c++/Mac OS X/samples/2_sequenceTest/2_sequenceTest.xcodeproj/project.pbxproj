@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		341829230823F10C00833C1F /* CommandLineOptions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3418291E0823F10C00833C1F /* CommandLineOptions.h */; };
+		341829240823F10C00833C1F /* Consts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3418291F0823F10C00833C1F /* Consts.h */; };
+		341829250823F10C00833C1F /* Receiver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 341829200823F10C00833C1F /* Receiver.h */; };
+		341829260823F10C00833C1F /* Sender.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 341829210823F10C00833C1F /* Sender.h */; };
+		341829270823F10C00833C1F /* SequenceTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 341829220823F10C00833C1F /* SequenceTest.h */; };
+		3447D0650AEF5FAB00CDC0DC /* libceheap2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3447D0630AEF5FAB00CDC0DC /* libceheap2.dylib */; };
+		3447D0660AEF5FAB00CDC0DC /* libidk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3447D0640AEF5FAB00CDC0DC /* libidk.dylib */; };
+		34C25CFB084CB35C005CB8F2 /* eh2_Base.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8A084CB35C005CB8F2 /* eh2_Base.h */; };
+		34C25CFC084CB35C005CB8F2 /* eh2_ConnectErrorHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8B084CB35C005CB8F2 /* eh2_ConnectErrorHandler.h */; };
+		34C25CFD084CB35C005CB8F2 /* eh2_Connection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8C084CB35C005CB8F2 /* eh2_Connection.h */; };
+		34C25CFE084CB35C005CB8F2 /* eh2_Consts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8D084CB35C005CB8F2 /* eh2_Consts.h */; };
+		34C25CFF084CB35C005CB8F2 /* eh2_ErrorContext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8E084CB35C005CB8F2 /* eh2_ErrorContext.h */; };
+		34C25D00084CB35C005CB8F2 /* eh2_Event.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C8F084CB35C005CB8F2 /* eh2_Event.h */; };
+		34C25D01084CB35C005CB8F2 /* eh2_EventCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C90084CB35C005CB8F2 /* eh2_EventCollection.h */; };
+		34C25D02084CB35C005CB8F2 /* eh2_EventConsts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C91084CB35C005CB8F2 /* eh2_EventConsts.h */; };
+		34C25D03084CB35C005CB8F2 /* eh2_EventHeap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C92084CB35C005CB8F2 /* eh2_EventHeap.h */; };
+		34C25D04084CB35C005CB8F2 /* eh2_EventHeapException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C93084CB35C005CB8F2 /* eh2_EventHeapException.h */; };
+		34C25D05084CB35C005CB8F2 /* eh2_EventHeapFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C94084CB35C005CB8F2 /* eh2_EventHeapFactory.h */; };
+		34C25D06084CB35C005CB8F2 /* eh2_EventHeapProtocolException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C95084CB35C005CB8F2 /* eh2_EventHeapProtocolException.h */; };
+		34C25D07084CB35C005CB8F2 /* eh2_EventRegistration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C96084CB35C005CB8F2 /* eh2_EventRegistration.h */; };
+		34C25D08084CB35C005CB8F2 /* eh2_EventToXML.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C97084CB35C005CB8F2 /* eh2_EventToXML.h */; };
+		34C25D09084CB35C005CB8F2 /* eh2_Field.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C98084CB35C005CB8F2 /* eh2_Field.h */; };
+		34C25D0A084CB35C005CB8F2 /* eh2_FieldOperationException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C99084CB35C005CB8F2 /* eh2_FieldOperationException.h */; };
+		34C25D0B084CB35C005CB8F2 /* eh2_FieldType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9A084CB35C005CB8F2 /* eh2_FieldType.h */; };
+		34C25D0C084CB35C005CB8F2 /* eh2_FieldValue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9B084CB35C005CB8F2 /* eh2_FieldValue.h */; };
+		34C25D0D084CB35C005CB8F2 /* eh2_IFieldIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9C084CB35C005CB8F2 /* eh2_IFieldIterator.h */; };
+		34C25D0E084CB35C005CB8F2 /* eh2_readme.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9D084CB35C005CB8F2 /* eh2_readme.h */; };
+		34C25D0F084CB35C005CB8F2 /* eh2_SerializationException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9E084CB35C005CB8F2 /* eh2_SerializationException.h */; };
+		34C25D10084CB35C005CB8F2 /* eh2_Tracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25C9F084CB35C005CB8F2 /* eh2_Tracer.h */; };
+		34C25D11084CB35C005CB8F2 /* eh2_TracerConsts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA0084CB35C005CB8F2 /* eh2_TracerConsts.h */; };
+		34C25D12084CB35C005CB8F2 /* eh2_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA1084CB35C005CB8F2 /* eh2_Types.h */; };
+		34C25D13084CB35C005CB8F2 /* eh2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA2084CB35C005CB8F2 /* eh2.h */; };
+		34C25D14084CB35C005CB8F2 /* idk_io_ByteArrayInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA3084CB35C005CB8F2 /* idk_io_ByteArrayInStream.h */; };
+		34C25D15084CB35C005CB8F2 /* idk_io_ByteArrayOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA4084CB35C005CB8F2 /* idk_io_ByteArrayOutStream.h */; };
+		34C25D16084CB35C005CB8F2 /* idk_io_ByteBufferInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA5084CB35C005CB8F2 /* idk_io_ByteBufferInStream.h */; };
+		34C25D17084CB35C005CB8F2 /* idk_io_ByteBufferOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA6084CB35C005CB8F2 /* idk_io_ByteBufferOutStream.h */; };
+		34C25D18084CB35C005CB8F2 /* idk_io_ByteLoggingInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA7084CB35C005CB8F2 /* idk_io_ByteLoggingInStream.h */; };
+		34C25D19084CB35C005CB8F2 /* idk_io_EOFException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA8084CB35C005CB8F2 /* idk_io_EOFException.h */; };
+		34C25D1A084CB35C005CB8F2 /* idk_io_FileInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CA9084CB35C005CB8F2 /* idk_io_FileInStream.h */; };
+		34C25D1B084CB35C005CB8F2 /* idk_io_FileNotFoundException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAA084CB35C005CB8F2 /* idk_io_FileNotFoundException.h */; };
+		34C25D1C084CB35C005CB8F2 /* idk_io_FileOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAB084CB35C005CB8F2 /* idk_io_FileOutStream.h */; };
+		34C25D1D084CB35C005CB8F2 /* idk_io_FileUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAC084CB35C005CB8F2 /* idk_io_FileUtil.h */; };
+		34C25D1E084CB35C005CB8F2 /* idk_io_IByteInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAD084CB35C005CB8F2 /* idk_io_IByteInStream.h */; };
+		34C25D1F084CB35C005CB8F2 /* idk_io_IByteOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAE084CB35C005CB8F2 /* idk_io_IByteOutStream.h */; };
+		34C25D20084CB35C005CB8F2 /* idk_io_InterruptedIOException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CAF084CB35C005CB8F2 /* idk_io_InterruptedIOException.h */; };
+		34C25D21084CB35C005CB8F2 /* idk_io_IOException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB0084CB35C005CB8F2 /* idk_io_IOException.h */; };
+		34C25D22084CB35C005CB8F2 /* idk_io_ITInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB1084CB35C005CB8F2 /* idk_io_ITInStream.h */; };
+		34C25D23084CB35C005CB8F2 /* idk_io_ITInStreamImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB2084CB35C005CB8F2 /* idk_io_ITInStreamImpl.h */; };
+		34C25D24084CB35C005CB8F2 /* idk_io_ITOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB3084CB35C005CB8F2 /* idk_io_ITOutStream.h */; };
+		34C25D25084CB35C005CB8F2 /* idk_io_ITOutStreamImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB4084CB35C005CB8F2 /* idk_io_ITOutStreamImpl.h */; };
+		34C25D26084CB35C005CB8F2 /* idk_io_LineReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB5084CB35C005CB8F2 /* idk_io_LineReader.h */; };
+		34C25D27084CB35C005CB8F2 /* idk_io_RealByteInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB6084CB35C005CB8F2 /* idk_io_RealByteInStream.h */; };
+		34C25D28084CB35C005CB8F2 /* idk_io_RealByteOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB7084CB35C005CB8F2 /* idk_io_RealByteOutStream.h */; };
+		34C25D29084CB35C005CB8F2 /* idk_io_TimedoutIOException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB8084CB35C005CB8F2 /* idk_io_TimedoutIOException.h */; };
+		34C25D2A084CB35C005CB8F2 /* idk_io_TRealInStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CB9084CB35C005CB8F2 /* idk_io_TRealInStream.h */; };
+		34C25D2B084CB35C005CB8F2 /* idk_io_TRealOutStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBA084CB35C005CB8F2 /* idk_io_TRealOutStream.h */; };
+		34C25D2C084CB35C005CB8F2 /* idk_io_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBB084CB35C005CB8F2 /* idk_io_Types.h */; };
+		34C25D2D084CB35C005CB8F2 /* idk_io.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBC084CB35C005CB8F2 /* idk_io.h */; };
+		34C25D2E084CB35C005CB8F2 /* idk_ne_InetAddress.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBD084CB35C005CB8F2 /* idk_ne_InetAddress.h */; };
+		34C25D2F084CB35C005CB8F2 /* idk_ne_NetSystemException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBE084CB35C005CB8F2 /* idk_ne_NetSystemException.h */; };
+		34C25D30084CB35C005CB8F2 /* idk_ne_NoConnectionException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CBF084CB35C005CB8F2 /* idk_ne_NoConnectionException.h */; };
+		34C25D31084CB35C005CB8F2 /* idk_ne_ServerSocket.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC0084CB35C005CB8F2 /* idk_ne_ServerSocket.h */; };
+		34C25D32084CB35C005CB8F2 /* idk_ne_Socket.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC1084CB35C005CB8F2 /* idk_ne_Socket.h */; };
+		34C25D33084CB35C005CB8F2 /* idk_ne_SocketAddress.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC2084CB35C005CB8F2 /* idk_ne_SocketAddress.h */; };
+		34C25D34084CB35C005CB8F2 /* idk_ne_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC3084CB35C005CB8F2 /* idk_ne_Types.h */; };
+		34C25D35084CB35C005CB8F2 /* idk_ne_UnknownHostException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC4084CB35C005CB8F2 /* idk_ne_UnknownHostException.h */; };
+		34C25D36084CB35C005CB8F2 /* idk_ne_URLStreamUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC5084CB35C005CB8F2 /* idk_ne_URLStreamUtil.h */; };
+		34C25D37084CB35C005CB8F2 /* idk_ne.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC6084CB35C005CB8F2 /* idk_ne.h */; };
+		34C25D38084CB35C005CB8F2 /* idk_readme.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC7084CB35C005CB8F2 /* idk_readme.h */; };
+		34C25D39084CB35C005CB8F2 /* idk_th_ILockable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC8084CB35C005CB8F2 /* idk_th_ILockable.h */; };
+		34C25D3A084CB35C005CB8F2 /* idk_th_InterruptedException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CC9084CB35C005CB8F2 /* idk_th_InterruptedException.h */; };
+		34C25D3B084CB35C005CB8F2 /* idk_th_IRunnable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCA084CB35C005CB8F2 /* idk_th_IRunnable.h */; };
+		34C25D3C084CB35C005CB8F2 /* idk_th_Lockable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCB084CB35C005CB8F2 /* idk_th_Lockable.h */; };
+		34C25D3D084CB35C005CB8F2 /* idk_th_Locker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCC084CB35C005CB8F2 /* idk_th_Locker.h */; };
+		34C25D3E084CB35C005CB8F2 /* idk_th_Monitor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCD084CB35C005CB8F2 /* idk_th_Monitor.h */; };
+		34C25D3F084CB35C005CB8F2 /* idk_th_MonitorTimedoutException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCE084CB35C005CB8F2 /* idk_th_MonitorTimedoutException.h */; };
+		34C25D40084CB35C005CB8F2 /* idk_th_SinglePooledThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CCF084CB35C005CB8F2 /* idk_th_SinglePooledThread.h */; };
+		34C25D41084CB35C005CB8F2 /* idk_th_Thread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD0084CB35C005CB8F2 /* idk_th_Thread.h */; };
+		34C25D42084CB35C005CB8F2 /* idk_th_ThreadUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD1084CB35C005CB8F2 /* idk_th_ThreadUtil.h */; };
+		34C25D43084CB35C005CB8F2 /* idk_th_TMTQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD2084CB35C005CB8F2 /* idk_th_TMTQueue.h */; };
+		34C25D44084CB35C005CB8F2 /* idk_th_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD3084CB35C005CB8F2 /* idk_th_Types.h */; };
+		34C25D45084CB35C005CB8F2 /* idk_th_Unlocker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD4084CB35C005CB8F2 /* idk_th_Unlocker.h */; };
+		34C25D46084CB35C005CB8F2 /* idk_th.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD5084CB35C005CB8F2 /* idk_th.h */; };
+		34C25D47084CB35C005CB8F2 /* idk_ut_AssertionFailedException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD6084CB35C005CB8F2 /* idk_ut_AssertionFailedException.h */; };
+		34C25D48084CB35C005CB8F2 /* idk_ut_BadParameterException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD7084CB35C005CB8F2 /* idk_ut_BadParameterException.h */; };
+		34C25D49084CB35C005CB8F2 /* idk_ut_Base.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD8084CB35C005CB8F2 /* idk_ut_Base.h */; };
+		34C25D4A084CB35C005CB8F2 /* idk_ut_BridgeObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CD9084CB35C005CB8F2 /* idk_ut_BridgeObject.h */; };
+		34C25D4B084CB35C005CB8F2 /* idk_ut_ByteArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDA084CB35C005CB8F2 /* idk_ut_ByteArray.h */; };
+		34C25D4C084CB35C005CB8F2 /* idk_ut_DateStruct.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDB084CB35C005CB8F2 /* idk_ut_DateStruct.h */; };
+		34C25D4D084CB35C005CB8F2 /* idk_ut_Exception.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDC084CB35C005CB8F2 /* idk_ut_Exception.h */; };
+		34C25D4E084CB35C005CB8F2 /* idk_ut_ExceptionUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDD084CB35C005CB8F2 /* idk_ut_ExceptionUtil.h */; };
+		34C25D4F084CB35C005CB8F2 /* idk_ut_ILogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDE084CB35C005CB8F2 /* idk_ut_ILogger.h */; };
+		34C25D50084CB35C005CB8F2 /* idk_ut_IntHashFuncs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CDF084CB35C005CB8F2 /* idk_ut_IntHashFuncs.h */; };
+		34C25D51084CB35C005CB8F2 /* idk_ut_ITIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE0084CB35C005CB8F2 /* idk_ut_ITIterator.h */; };
+		34C25D52084CB35C005CB8F2 /* idk_ut_LogUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE1084CB35C005CB8F2 /* idk_ut_LogUtil.h */; };
+		34C25D53084CB35C005CB8F2 /* idk_ut_NullableString.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE2084CB35C005CB8F2 /* idk_ut_NullableString.h */; };
+		34C25D54084CB35C005CB8F2 /* idk_ut_Object.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE3084CB35C005CB8F2 /* idk_ut_Object.h */; };
+		34C25D55084CB35C005CB8F2 /* idk_ut_ObjectHashFuncs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE4084CB35C005CB8F2 /* idk_ut_ObjectHashFuncs.h */; };
+		34C25D56084CB35C005CB8F2 /* idk_ut_OutOfResourceException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE5084CB35C005CB8F2 /* idk_ut_OutOfResourceException.h */; };
+		34C25D57084CB35C005CB8F2 /* idk_ut_PermissionDeniedException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE6084CB35C005CB8F2 /* idk_ut_PermissionDeniedException.h */; };
+		34C25D58084CB35C005CB8F2 /* idk_ut_RealObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE7084CB35C005CB8F2 /* idk_ut_RealObject.h */; };
+		34C25D59084CB35C005CB8F2 /* idk_ut_RuntimeException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE8084CB35C005CB8F2 /* idk_ut_RuntimeException.h */; };
+		34C25D5A084CB35C005CB8F2 /* idk_ut_StringHashFuncs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CE9084CB35C005CB8F2 /* idk_ut_StringHashFuncs.h */; };
+		34C25D5B084CB35C005CB8F2 /* idk_ut_StrUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CEA084CB35C005CB8F2 /* idk_ut_StrUtil.h */; };
+		34C25D5C084CB35C005CB8F2 /* idk_ut_SystemUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CEB084CB35C005CB8F2 /* idk_ut_SystemUtil.h */; };
+		34C25D5D084CB35C005CB8F2 /* idk_ut_TCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CEC084CB35C005CB8F2 /* idk_ut_TCollection.h */; };
+		34C25D5E084CB35C005CB8F2 /* idk_ut_TFakeHashTable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CED084CB35C005CB8F2 /* idk_ut_TFakeHashTable.h */; };
+		34C25D5F084CB35C005CB8F2 /* idk_ut_TProxyObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CEE084CB35C005CB8F2 /* idk_ut_TProxyObject.h */; };
+		34C25D60084CB35C005CB8F2 /* idk_ut_TQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CEF084CB35C005CB8F2 /* idk_ut_TQueue.h */; };
+		34C25D61084CB35C005CB8F2 /* idk_ut_Tracer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF0084CB35C005CB8F2 /* idk_ut_Tracer.h */; };
+		34C25D62084CB35C005CB8F2 /* idk_ut_TRealIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF1084CB35C005CB8F2 /* idk_ut_TRealIterator.h */; };
+		34C25D63084CB35C005CB8F2 /* idk_ut_TSharedPtr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF2084CB35C005CB8F2 /* idk_ut_TSharedPtr.h */; };
+		34C25D64084CB35C005CB8F2 /* idk_ut_TUnsharedPtr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF3084CB35C005CB8F2 /* idk_ut_TUnsharedPtr.h */; };
+		34C25D65084CB35C005CB8F2 /* idk_ut_TVectorUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF4084CB35C005CB8F2 /* idk_ut_TVectorUtil.h */; };
+		34C25D66084CB35C005CB8F2 /* idk_ut_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF5084CB35C005CB8F2 /* idk_ut_Types.h */; };
+		34C25D67084CB35C005CB8F2 /* idk_ut.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF6084CB35C005CB8F2 /* idk_ut.h */; };
+		34C25D68084CB35C005CB8F2 /* idk_xm_Types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF7084CB35C005CB8F2 /* idk_xm_Types.h */; };
+		34C25D69084CB35C005CB8F2 /* idk_xm_XmlWriter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF8084CB35C005CB8F2 /* idk_xm_XmlWriter.h */; };
+		34C25D6A084CB35C005CB8F2 /* idk_xm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CF9084CB35C005CB8F2 /* idk_xm.h */; };
+		34C25D6B084CB35C005CB8F2 /* idk.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34C25CFA084CB35C005CB8F2 /* idk.h */; };
+		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		8DD76F6A0486A84900D96B5E /* 2_sequenceTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* 2_sequenceTest.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* 2_sequenceTest.1 in CopyFiles */,
+				341829230823F10C00833C1F /* CommandLineOptions.h in CopyFiles */,
+				341829240823F10C00833C1F /* Consts.h in CopyFiles */,
+				341829250823F10C00833C1F /* Receiver.h in CopyFiles */,
+				341829260823F10C00833C1F /* Sender.h in CopyFiles */,
+				341829270823F10C00833C1F /* SequenceTest.h in CopyFiles */,
+				34C25CFB084CB35C005CB8F2 /* eh2_Base.h in CopyFiles */,
+				34C25CFC084CB35C005CB8F2 /* eh2_ConnectErrorHandler.h in CopyFiles */,
+				34C25CFD084CB35C005CB8F2 /* eh2_Connection.h in CopyFiles */,
+				34C25CFE084CB35C005CB8F2 /* eh2_Consts.h in CopyFiles */,
+				34C25CFF084CB35C005CB8F2 /* eh2_ErrorContext.h in CopyFiles */,
+				34C25D00084CB35C005CB8F2 /* eh2_Event.h in CopyFiles */,
+				34C25D01084CB35C005CB8F2 /* eh2_EventCollection.h in CopyFiles */,
+				34C25D02084CB35C005CB8F2 /* eh2_EventConsts.h in CopyFiles */,
+				34C25D03084CB35C005CB8F2 /* eh2_EventHeap.h in CopyFiles */,
+				34C25D04084CB35C005CB8F2 /* eh2_EventHeapException.h in CopyFiles */,
+				34C25D05084CB35C005CB8F2 /* eh2_EventHeapFactory.h in CopyFiles */,
+				34C25D06084CB35C005CB8F2 /* eh2_EventHeapProtocolException.h in CopyFiles */,
+				34C25D07084CB35C005CB8F2 /* eh2_EventRegistration.h in CopyFiles */,
+				34C25D08084CB35C005CB8F2 /* eh2_EventToXML.h in CopyFiles */,
+				34C25D09084CB35C005CB8F2 /* eh2_Field.h in CopyFiles */,
+				34C25D0A084CB35C005CB8F2 /* eh2_FieldOperationException.h in CopyFiles */,
+				34C25D0B084CB35C005CB8F2 /* eh2_FieldType.h in CopyFiles */,
+				34C25D0C084CB35C005CB8F2 /* eh2_FieldValue.h in CopyFiles */,
+				34C25D0D084CB35C005CB8F2 /* eh2_IFieldIterator.h in CopyFiles */,
+				34C25D0E084CB35C005CB8F2 /* eh2_readme.h in CopyFiles */,
+				34C25D0F084CB35C005CB8F2 /* eh2_SerializationException.h in CopyFiles */,
+				34C25D10084CB35C005CB8F2 /* eh2_Tracer.h in CopyFiles */,
+				34C25D11084CB35C005CB8F2 /* eh2_TracerConsts.h in CopyFiles */,
+				34C25D12084CB35C005CB8F2 /* eh2_Types.h in CopyFiles */,
+				34C25D13084CB35C005CB8F2 /* eh2.h in CopyFiles */,
+				34C25D14084CB35C005CB8F2 /* idk_io_ByteArrayInStream.h in CopyFiles */,
+				34C25D15084CB35C005CB8F2 /* idk_io_ByteArrayOutStream.h in CopyFiles */,
+				34C25D16084CB35C005CB8F2 /* idk_io_ByteBufferInStream.h in CopyFiles */,
+				34C25D17084CB35C005CB8F2 /* idk_io_ByteBufferOutStream.h in CopyFiles */,
+				34C25D18084CB35C005CB8F2 /* idk_io_ByteLoggingInStream.h in CopyFiles */,
+				34C25D19084CB35C005CB8F2 /* idk_io_EOFException.h in CopyFiles */,
+				34C25D1A084CB35C005CB8F2 /* idk_io_FileInStream.h in CopyFiles */,
+				34C25D1B084CB35C005CB8F2 /* idk_io_FileNotFoundException.h in CopyFiles */,
+				34C25D1C084CB35C005CB8F2 /* idk_io_FileOutStream.h in CopyFiles */,
+				34C25D1D084CB35C005CB8F2 /* idk_io_FileUtil.h in CopyFiles */,
+				34C25D1E084CB35C005CB8F2 /* idk_io_IByteInStream.h in CopyFiles */,
+				34C25D1F084CB35C005CB8F2 /* idk_io_IByteOutStream.h in CopyFiles */,
+				34C25D20084CB35C005CB8F2 /* idk_io_InterruptedIOException.h in CopyFiles */,
+				34C25D21084CB35C005CB8F2 /* idk_io_IOException.h in CopyFiles */,
+				34C25D22084CB35C005CB8F2 /* idk_io_ITInStream.h in CopyFiles */,
+				34C25D23084CB35C005CB8F2 /* idk_io_ITInStreamImpl.h in CopyFiles */,
+				34C25D24084CB35C005CB8F2 /* idk_io_ITOutStream.h in CopyFiles */,
+				34C25D25084CB35C005CB8F2 /* idk_io_ITOutStreamImpl.h in CopyFiles */,
+				34C25D26084CB35C005CB8F2 /* idk_io_LineReader.h in CopyFiles */,
+				34C25D27084CB35C005CB8F2 /* idk_io_RealByteInStream.h in CopyFiles */,
+				34C25D28084CB35C005CB8F2 /* idk_io_RealByteOutStream.h in CopyFiles */,
+				34C25D29084CB35C005CB8F2 /* idk_io_TimedoutIOException.h in CopyFiles */,
+				34C25D2A084CB35C005CB8F2 /* idk_io_TRealInStream.h in CopyFiles */,
+				34C25D2B084CB35C005CB8F2 /* idk_io_TRealOutStream.h in CopyFiles */,
+				34C25D2C084CB35C005CB8F2 /* idk_io_Types.h in CopyFiles */,
+				34C25D2D084CB35C005CB8F2 /* idk_io.h in CopyFiles */,
+				34C25D2E084CB35C005CB8F2 /* idk_ne_InetAddress.h in CopyFiles */,
+				34C25D2F084CB35C005CB8F2 /* idk_ne_NetSystemException.h in CopyFiles */,
+				34C25D30084CB35C005CB8F2 /* idk_ne_NoConnectionException.h in CopyFiles */,
+				34C25D31084CB35C005CB8F2 /* idk_ne_ServerSocket.h in CopyFiles */,
+				34C25D32084CB35C005CB8F2 /* idk_ne_Socket.h in CopyFiles */,
+				34C25D33084CB35C005CB8F2 /* idk_ne_SocketAddress.h in CopyFiles */,
+				34C25D34084CB35C005CB8F2 /* idk_ne_Types.h in CopyFiles */,
+				34C25D35084CB35C005CB8F2 /* idk_ne_UnknownHostException.h in CopyFiles */,
+				34C25D36084CB35C005CB8F2 /* idk_ne_URLStreamUtil.h in CopyFiles */,
+				34C25D37084CB35C005CB8F2 /* idk_ne.h in CopyFiles */,
+				34C25D38084CB35C005CB8F2 /* idk_readme.h in CopyFiles */,
+				34C25D39084CB35C005CB8F2 /* idk_th_ILockable.h in CopyFiles */,
+				34C25D3A084CB35C005CB8F2 /* idk_th_InterruptedException.h in CopyFiles */,
+				34C25D3B084CB35C005CB8F2 /* idk_th_IRunnable.h in CopyFiles */,
+				34C25D3C084CB35C005CB8F2 /* idk_th_Lockable.h in CopyFiles */,
+				34C25D3D084CB35C005CB8F2 /* idk_th_Locker.h in CopyFiles */,
+				34C25D3E084CB35C005CB8F2 /* idk_th_Monitor.h in CopyFiles */,
+				34C25D3F084CB35C005CB8F2 /* idk_th_MonitorTimedoutException.h in CopyFiles */,
+				34C25D40084CB35C005CB8F2 /* idk_th_SinglePooledThread.h in CopyFiles */,
+				34C25D41084CB35C005CB8F2 /* idk_th_Thread.h in CopyFiles */,
+				34C25D42084CB35C005CB8F2 /* idk_th_ThreadUtil.h in CopyFiles */,
+				34C25D43084CB35C005CB8F2 /* idk_th_TMTQueue.h in CopyFiles */,
+				34C25D44084CB35C005CB8F2 /* idk_th_Types.h in CopyFiles */,
+				34C25D45084CB35C005CB8F2 /* idk_th_Unlocker.h in CopyFiles */,
+				34C25D46084CB35C005CB8F2 /* idk_th.h in CopyFiles */,
+				34C25D47084CB35C005CB8F2 /* idk_ut_AssertionFailedException.h in CopyFiles */,
+				34C25D48084CB35C005CB8F2 /* idk_ut_BadParameterException.h in CopyFiles */,
+				34C25D49084CB35C005CB8F2 /* idk_ut_Base.h in CopyFiles */,
+				34C25D4A084CB35C005CB8F2 /* idk_ut_BridgeObject.h in CopyFiles */,
+				34C25D4B084CB35C005CB8F2 /* idk_ut_ByteArray.h in CopyFiles */,
+				34C25D4C084CB35C005CB8F2 /* idk_ut_DateStruct.h in CopyFiles */,
+				34C25D4D084CB35C005CB8F2 /* idk_ut_Exception.h in CopyFiles */,
+				34C25D4E084CB35C005CB8F2 /* idk_ut_ExceptionUtil.h in CopyFiles */,
+				34C25D4F084CB35C005CB8F2 /* idk_ut_ILogger.h in CopyFiles */,
+				34C25D50084CB35C005CB8F2 /* idk_ut_IntHashFuncs.h in CopyFiles */,
+				34C25D51084CB35C005CB8F2 /* idk_ut_ITIterator.h in CopyFiles */,
+				34C25D52084CB35C005CB8F2 /* idk_ut_LogUtil.h in CopyFiles */,
+				34C25D53084CB35C005CB8F2 /* idk_ut_NullableString.h in CopyFiles */,
+				34C25D54084CB35C005CB8F2 /* idk_ut_Object.h in CopyFiles */,
+				34C25D55084CB35C005CB8F2 /* idk_ut_ObjectHashFuncs.h in CopyFiles */,
+				34C25D56084CB35C005CB8F2 /* idk_ut_OutOfResourceException.h in CopyFiles */,
+				34C25D57084CB35C005CB8F2 /* idk_ut_PermissionDeniedException.h in CopyFiles */,
+				34C25D58084CB35C005CB8F2 /* idk_ut_RealObject.h in CopyFiles */,
+				34C25D59084CB35C005CB8F2 /* idk_ut_RuntimeException.h in CopyFiles */,
+				34C25D5A084CB35C005CB8F2 /* idk_ut_StringHashFuncs.h in CopyFiles */,
+				34C25D5B084CB35C005CB8F2 /* idk_ut_StrUtil.h in CopyFiles */,
+				34C25D5C084CB35C005CB8F2 /* idk_ut_SystemUtil.h in CopyFiles */,
+				34C25D5D084CB35C005CB8F2 /* idk_ut_TCollection.h in CopyFiles */,
+				34C25D5E084CB35C005CB8F2 /* idk_ut_TFakeHashTable.h in CopyFiles */,
+				34C25D5F084CB35C005CB8F2 /* idk_ut_TProxyObject.h in CopyFiles */,
+				34C25D60084CB35C005CB8F2 /* idk_ut_TQueue.h in CopyFiles */,
+				34C25D61084CB35C005CB8F2 /* idk_ut_Tracer.h in CopyFiles */,
+				34C25D62084CB35C005CB8F2 /* idk_ut_TRealIterator.h in CopyFiles */,
+				34C25D63084CB35C005CB8F2 /* idk_ut_TSharedPtr.h in CopyFiles */,
+				34C25D64084CB35C005CB8F2 /* idk_ut_TUnsharedPtr.h in CopyFiles */,
+				34C25D65084CB35C005CB8F2 /* idk_ut_TVectorUtil.h in CopyFiles */,
+				34C25D66084CB35C005CB8F2 /* idk_ut_Types.h in CopyFiles */,
+				34C25D67084CB35C005CB8F2 /* idk_ut.h in CopyFiles */,
+				34C25D68084CB35C005CB8F2 /* idk_xm_Types.h in CopyFiles */,
+				34C25D69084CB35C005CB8F2 /* idk_xm_XmlWriter.h in CopyFiles */,
+				34C25D6A084CB35C005CB8F2 /* idk_xm.h in CopyFiles */,
+				34C25D6B084CB35C005CB8F2 /* idk.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3418291E0823F10C00833C1F /* CommandLineOptions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CommandLineOptions.h; sourceTree = "<group>"; };
+		3418291F0823F10C00833C1F /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		341829200823F10C00833C1F /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
+		341829210823F10C00833C1F /* Sender.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Sender.h; sourceTree = "<group>"; };
+		341829220823F10C00833C1F /* SequenceTest.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SequenceTest.h; sourceTree = "<group>"; };
+		3447D0630AEF5FAB00CDC0DC /* libceheap2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.dylib; path = ../../lib/libceheap2.dylib; sourceTree = SOURCE_ROOT; };
+		3447D0640AEF5FAB00CDC0DC /* libidk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.dylib; path = ../../lib/libidk.dylib; sourceTree = SOURCE_ROOT; };
+		34C25C8A084CB35C005CB8F2 /* eh2_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Base.h; path = ../../include/eh2_Base.h; sourceTree = SOURCE_ROOT; };
+		34C25C8B084CB35C005CB8F2 /* eh2_ConnectErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ConnectErrorHandler.h; path = ../../include/eh2_ConnectErrorHandler.h; sourceTree = SOURCE_ROOT; };
+		34C25C8C084CB35C005CB8F2 /* eh2_Connection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Connection.h; path = ../../include/eh2_Connection.h; sourceTree = SOURCE_ROOT; };
+		34C25C8D084CB35C005CB8F2 /* eh2_Consts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Consts.h; path = ../../include/eh2_Consts.h; sourceTree = SOURCE_ROOT; };
+		34C25C8E084CB35C005CB8F2 /* eh2_ErrorContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ErrorContext.h; path = ../../include/eh2_ErrorContext.h; sourceTree = SOURCE_ROOT; };
+		34C25C8F084CB35C005CB8F2 /* eh2_Event.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Event.h; path = ../../include/eh2_Event.h; sourceTree = SOURCE_ROOT; };
+		34C25C90084CB35C005CB8F2 /* eh2_EventCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventCollection.h; path = ../../include/eh2_EventCollection.h; sourceTree = SOURCE_ROOT; };
+		34C25C91084CB35C005CB8F2 /* eh2_EventConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventConsts.h; path = ../../include/eh2_EventConsts.h; sourceTree = SOURCE_ROOT; };
+		34C25C92084CB35C005CB8F2 /* eh2_EventHeap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeap.h; path = ../../include/eh2_EventHeap.h; sourceTree = SOURCE_ROOT; };
+		34C25C93084CB35C005CB8F2 /* eh2_EventHeapException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapException.h; path = ../../include/eh2_EventHeapException.h; sourceTree = SOURCE_ROOT; };
+		34C25C94084CB35C005CB8F2 /* eh2_EventHeapFactory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapFactory.h; path = ../../include/eh2_EventHeapFactory.h; sourceTree = SOURCE_ROOT; };
+		34C25C95084CB35C005CB8F2 /* eh2_EventHeapProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapProtocolException.h; path = ../../include/eh2_EventHeapProtocolException.h; sourceTree = SOURCE_ROOT; };
+		34C25C96084CB35C005CB8F2 /* eh2_EventRegistration.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventRegistration.h; path = ../../include/eh2_EventRegistration.h; sourceTree = SOURCE_ROOT; };
+		34C25C97084CB35C005CB8F2 /* eh2_EventToXML.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventToXML.h; path = ../../include/eh2_EventToXML.h; sourceTree = SOURCE_ROOT; };
+		34C25C98084CB35C005CB8F2 /* eh2_Field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Field.h; path = ../../include/eh2_Field.h; sourceTree = SOURCE_ROOT; };
+		34C25C99084CB35C005CB8F2 /* eh2_FieldOperationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldOperationException.h; path = ../../include/eh2_FieldOperationException.h; sourceTree = SOURCE_ROOT; };
+		34C25C9A084CB35C005CB8F2 /* eh2_FieldType.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldType.h; path = ../../include/eh2_FieldType.h; sourceTree = SOURCE_ROOT; };
+		34C25C9B084CB35C005CB8F2 /* eh2_FieldValue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldValue.h; path = ../../include/eh2_FieldValue.h; sourceTree = SOURCE_ROOT; };
+		34C25C9C084CB35C005CB8F2 /* eh2_IFieldIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_IFieldIterator.h; path = ../../include/eh2_IFieldIterator.h; sourceTree = SOURCE_ROOT; };
+		34C25C9D084CB35C005CB8F2 /* eh2_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_readme.h; path = ../../include/eh2_readme.h; sourceTree = SOURCE_ROOT; };
+		34C25C9E084CB35C005CB8F2 /* eh2_SerializationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_SerializationException.h; path = ../../include/eh2_SerializationException.h; sourceTree = SOURCE_ROOT; };
+		34C25C9F084CB35C005CB8F2 /* eh2_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Tracer.h; path = ../../include/eh2_Tracer.h; sourceTree = SOURCE_ROOT; };
+		34C25CA0084CB35C005CB8F2 /* eh2_TracerConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_TracerConsts.h; path = ../../include/eh2_TracerConsts.h; sourceTree = SOURCE_ROOT; };
+		34C25CA1084CB35C005CB8F2 /* eh2_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Types.h; path = ../../include/eh2_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CA2084CB35C005CB8F2 /* eh2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2.h; path = ../../include/eh2.h; sourceTree = SOURCE_ROOT; };
+		34C25CA3084CB35C005CB8F2 /* idk_io_ByteArrayInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayInStream.h; path = ../../include/idk_io_ByteArrayInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CA4084CB35C005CB8F2 /* idk_io_ByteArrayOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayOutStream.h; path = ../../include/idk_io_ByteArrayOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CA5084CB35C005CB8F2 /* idk_io_ByteBufferInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferInStream.h; path = ../../include/idk_io_ByteBufferInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CA6084CB35C005CB8F2 /* idk_io_ByteBufferOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferOutStream.h; path = ../../include/idk_io_ByteBufferOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CA7084CB35C005CB8F2 /* idk_io_ByteLoggingInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteLoggingInStream.h; path = ../../include/idk_io_ByteLoggingInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CA8084CB35C005CB8F2 /* idk_io_EOFException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_EOFException.h; path = ../../include/idk_io_EOFException.h; sourceTree = SOURCE_ROOT; };
+		34C25CA9084CB35C005CB8F2 /* idk_io_FileInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileInStream.h; path = ../../include/idk_io_FileInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CAA084CB35C005CB8F2 /* idk_io_FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileNotFoundException.h; path = ../../include/idk_io_FileNotFoundException.h; sourceTree = SOURCE_ROOT; };
+		34C25CAB084CB35C005CB8F2 /* idk_io_FileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileOutStream.h; path = ../../include/idk_io_FileOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CAC084CB35C005CB8F2 /* idk_io_FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileUtil.h; path = ../../include/idk_io_FileUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CAD084CB35C005CB8F2 /* idk_io_IByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteInStream.h; path = ../../include/idk_io_IByteInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CAE084CB35C005CB8F2 /* idk_io_IByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteOutStream.h; path = ../../include/idk_io_IByteOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CAF084CB35C005CB8F2 /* idk_io_InterruptedIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_InterruptedIOException.h; path = ../../include/idk_io_InterruptedIOException.h; sourceTree = SOURCE_ROOT; };
+		34C25CB0084CB35C005CB8F2 /* idk_io_IOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IOException.h; path = ../../include/idk_io_IOException.h; sourceTree = SOURCE_ROOT; };
+		34C25CB1084CB35C005CB8F2 /* idk_io_ITInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStream.h; path = ../../include/idk_io_ITInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CB2084CB35C005CB8F2 /* idk_io_ITInStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStreamImpl.h; path = ../../include/idk_io_ITInStreamImpl.h; sourceTree = SOURCE_ROOT; };
+		34C25CB3084CB35C005CB8F2 /* idk_io_ITOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStream.h; path = ../../include/idk_io_ITOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CB4084CB35C005CB8F2 /* idk_io_ITOutStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStreamImpl.h; path = ../../include/idk_io_ITOutStreamImpl.h; sourceTree = SOURCE_ROOT; };
+		34C25CB5084CB35C005CB8F2 /* idk_io_LineReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_LineReader.h; path = ../../include/idk_io_LineReader.h; sourceTree = SOURCE_ROOT; };
+		34C25CB6084CB35C005CB8F2 /* idk_io_RealByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteInStream.h; path = ../../include/idk_io_RealByteInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CB7084CB35C005CB8F2 /* idk_io_RealByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteOutStream.h; path = ../../include/idk_io_RealByteOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CB8084CB35C005CB8F2 /* idk_io_TimedoutIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TimedoutIOException.h; path = ../../include/idk_io_TimedoutIOException.h; sourceTree = SOURCE_ROOT; };
+		34C25CB9084CB35C005CB8F2 /* idk_io_TRealInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealInStream.h; path = ../../include/idk_io_TRealInStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CBA084CB35C005CB8F2 /* idk_io_TRealOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealOutStream.h; path = ../../include/idk_io_TRealOutStream.h; sourceTree = SOURCE_ROOT; };
+		34C25CBB084CB35C005CB8F2 /* idk_io_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_Types.h; path = ../../include/idk_io_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CBC084CB35C005CB8F2 /* idk_io.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io.h; path = ../../include/idk_io.h; sourceTree = SOURCE_ROOT; };
+		34C25CBD084CB35C005CB8F2 /* idk_ne_InetAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_InetAddress.h; path = ../../include/idk_ne_InetAddress.h; sourceTree = SOURCE_ROOT; };
+		34C25CBE084CB35C005CB8F2 /* idk_ne_NetSystemException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NetSystemException.h; path = ../../include/idk_ne_NetSystemException.h; sourceTree = SOURCE_ROOT; };
+		34C25CBF084CB35C005CB8F2 /* idk_ne_NoConnectionException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NoConnectionException.h; path = ../../include/idk_ne_NoConnectionException.h; sourceTree = SOURCE_ROOT; };
+		34C25CC0084CB35C005CB8F2 /* idk_ne_ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_ServerSocket.h; path = ../../include/idk_ne_ServerSocket.h; sourceTree = SOURCE_ROOT; };
+		34C25CC1084CB35C005CB8F2 /* idk_ne_Socket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Socket.h; path = ../../include/idk_ne_Socket.h; sourceTree = SOURCE_ROOT; };
+		34C25CC2084CB35C005CB8F2 /* idk_ne_SocketAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_SocketAddress.h; path = ../../include/idk_ne_SocketAddress.h; sourceTree = SOURCE_ROOT; };
+		34C25CC3084CB35C005CB8F2 /* idk_ne_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Types.h; path = ../../include/idk_ne_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CC4084CB35C005CB8F2 /* idk_ne_UnknownHostException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_UnknownHostException.h; path = ../../include/idk_ne_UnknownHostException.h; sourceTree = SOURCE_ROOT; };
+		34C25CC5084CB35C005CB8F2 /* idk_ne_URLStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_URLStreamUtil.h; path = ../../include/idk_ne_URLStreamUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CC6084CB35C005CB8F2 /* idk_ne.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne.h; path = ../../include/idk_ne.h; sourceTree = SOURCE_ROOT; };
+		34C25CC7084CB35C005CB8F2 /* idk_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_readme.h; path = ../../include/idk_readme.h; sourceTree = SOURCE_ROOT; };
+		34C25CC8084CB35C005CB8F2 /* idk_th_ILockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ILockable.h; path = ../../include/idk_th_ILockable.h; sourceTree = SOURCE_ROOT; };
+		34C25CC9084CB35C005CB8F2 /* idk_th_InterruptedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_InterruptedException.h; path = ../../include/idk_th_InterruptedException.h; sourceTree = SOURCE_ROOT; };
+		34C25CCA084CB35C005CB8F2 /* idk_th_IRunnable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_IRunnable.h; path = ../../include/idk_th_IRunnable.h; sourceTree = SOURCE_ROOT; };
+		34C25CCB084CB35C005CB8F2 /* idk_th_Lockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Lockable.h; path = ../../include/idk_th_Lockable.h; sourceTree = SOURCE_ROOT; };
+		34C25CCC084CB35C005CB8F2 /* idk_th_Locker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Locker.h; path = ../../include/idk_th_Locker.h; sourceTree = SOURCE_ROOT; };
+		34C25CCD084CB35C005CB8F2 /* idk_th_Monitor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Monitor.h; path = ../../include/idk_th_Monitor.h; sourceTree = SOURCE_ROOT; };
+		34C25CCE084CB35C005CB8F2 /* idk_th_MonitorTimedoutException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_MonitorTimedoutException.h; path = ../../include/idk_th_MonitorTimedoutException.h; sourceTree = SOURCE_ROOT; };
+		34C25CCF084CB35C005CB8F2 /* idk_th_SinglePooledThread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_SinglePooledThread.h; path = ../../include/idk_th_SinglePooledThread.h; sourceTree = SOURCE_ROOT; };
+		34C25CD0084CB35C005CB8F2 /* idk_th_Thread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Thread.h; path = ../../include/idk_th_Thread.h; sourceTree = SOURCE_ROOT; };
+		34C25CD1084CB35C005CB8F2 /* idk_th_ThreadUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ThreadUtil.h; path = ../../include/idk_th_ThreadUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CD2084CB35C005CB8F2 /* idk_th_TMTQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_TMTQueue.h; path = ../../include/idk_th_TMTQueue.h; sourceTree = SOURCE_ROOT; };
+		34C25CD3084CB35C005CB8F2 /* idk_th_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Types.h; path = ../../include/idk_th_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CD4084CB35C005CB8F2 /* idk_th_Unlocker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Unlocker.h; path = ../../include/idk_th_Unlocker.h; sourceTree = SOURCE_ROOT; };
+		34C25CD5084CB35C005CB8F2 /* idk_th.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th.h; path = ../../include/idk_th.h; sourceTree = SOURCE_ROOT; };
+		34C25CD6084CB35C005CB8F2 /* idk_ut_AssertionFailedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_AssertionFailedException.h; path = ../../include/idk_ut_AssertionFailedException.h; sourceTree = SOURCE_ROOT; };
+		34C25CD7084CB35C005CB8F2 /* idk_ut_BadParameterException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BadParameterException.h; path = ../../include/idk_ut_BadParameterException.h; sourceTree = SOURCE_ROOT; };
+		34C25CD8084CB35C005CB8F2 /* idk_ut_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Base.h; path = ../../include/idk_ut_Base.h; sourceTree = SOURCE_ROOT; };
+		34C25CD9084CB35C005CB8F2 /* idk_ut_BridgeObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BridgeObject.h; path = ../../include/idk_ut_BridgeObject.h; sourceTree = SOURCE_ROOT; };
+		34C25CDA084CB35C005CB8F2 /* idk_ut_ByteArray.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ByteArray.h; path = ../../include/idk_ut_ByteArray.h; sourceTree = SOURCE_ROOT; };
+		34C25CDB084CB35C005CB8F2 /* idk_ut_DateStruct.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_DateStruct.h; path = ../../include/idk_ut_DateStruct.h; sourceTree = SOURCE_ROOT; };
+		34C25CDC084CB35C005CB8F2 /* idk_ut_Exception.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Exception.h; path = ../../include/idk_ut_Exception.h; sourceTree = SOURCE_ROOT; };
+		34C25CDD084CB35C005CB8F2 /* idk_ut_ExceptionUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ExceptionUtil.h; path = ../../include/idk_ut_ExceptionUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CDE084CB35C005CB8F2 /* idk_ut_ILogger.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ILogger.h; path = ../../include/idk_ut_ILogger.h; sourceTree = SOURCE_ROOT; };
+		34C25CDF084CB35C005CB8F2 /* idk_ut_IntHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_IntHashFuncs.h; path = ../../include/idk_ut_IntHashFuncs.h; sourceTree = SOURCE_ROOT; };
+		34C25CE0084CB35C005CB8F2 /* idk_ut_ITIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ITIterator.h; path = ../../include/idk_ut_ITIterator.h; sourceTree = SOURCE_ROOT; };
+		34C25CE1084CB35C005CB8F2 /* idk_ut_LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_LogUtil.h; path = ../../include/idk_ut_LogUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CE2084CB35C005CB8F2 /* idk_ut_NullableString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_NullableString.h; path = ../../include/idk_ut_NullableString.h; sourceTree = SOURCE_ROOT; };
+		34C25CE3084CB35C005CB8F2 /* idk_ut_Object.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Object.h; path = ../../include/idk_ut_Object.h; sourceTree = SOURCE_ROOT; };
+		34C25CE4084CB35C005CB8F2 /* idk_ut_ObjectHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ObjectHashFuncs.h; path = ../../include/idk_ut_ObjectHashFuncs.h; sourceTree = SOURCE_ROOT; };
+		34C25CE5084CB35C005CB8F2 /* idk_ut_OutOfResourceException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_OutOfResourceException.h; path = ../../include/idk_ut_OutOfResourceException.h; sourceTree = SOURCE_ROOT; };
+		34C25CE6084CB35C005CB8F2 /* idk_ut_PermissionDeniedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_PermissionDeniedException.h; path = ../../include/idk_ut_PermissionDeniedException.h; sourceTree = SOURCE_ROOT; };
+		34C25CE7084CB35C005CB8F2 /* idk_ut_RealObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RealObject.h; path = ../../include/idk_ut_RealObject.h; sourceTree = SOURCE_ROOT; };
+		34C25CE8084CB35C005CB8F2 /* idk_ut_RuntimeException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RuntimeException.h; path = ../../include/idk_ut_RuntimeException.h; sourceTree = SOURCE_ROOT; };
+		34C25CE9084CB35C005CB8F2 /* idk_ut_StringHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StringHashFuncs.h; path = ../../include/idk_ut_StringHashFuncs.h; sourceTree = SOURCE_ROOT; };
+		34C25CEA084CB35C005CB8F2 /* idk_ut_StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StrUtil.h; path = ../../include/idk_ut_StrUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CEB084CB35C005CB8F2 /* idk_ut_SystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_SystemUtil.h; path = ../../include/idk_ut_SystemUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CEC084CB35C005CB8F2 /* idk_ut_TCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TCollection.h; path = ../../include/idk_ut_TCollection.h; sourceTree = SOURCE_ROOT; };
+		34C25CED084CB35C005CB8F2 /* idk_ut_TFakeHashTable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TFakeHashTable.h; path = ../../include/idk_ut_TFakeHashTable.h; sourceTree = SOURCE_ROOT; };
+		34C25CEE084CB35C005CB8F2 /* idk_ut_TProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TProxyObject.h; path = ../../include/idk_ut_TProxyObject.h; sourceTree = SOURCE_ROOT; };
+		34C25CEF084CB35C005CB8F2 /* idk_ut_TQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TQueue.h; path = ../../include/idk_ut_TQueue.h; sourceTree = SOURCE_ROOT; };
+		34C25CF0084CB35C005CB8F2 /* idk_ut_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Tracer.h; path = ../../include/idk_ut_Tracer.h; sourceTree = SOURCE_ROOT; };
+		34C25CF1084CB35C005CB8F2 /* idk_ut_TRealIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TRealIterator.h; path = ../../include/idk_ut_TRealIterator.h; sourceTree = SOURCE_ROOT; };
+		34C25CF2084CB35C005CB8F2 /* idk_ut_TSharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TSharedPtr.h; path = ../../include/idk_ut_TSharedPtr.h; sourceTree = SOURCE_ROOT; };
+		34C25CF3084CB35C005CB8F2 /* idk_ut_TUnsharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TUnsharedPtr.h; path = ../../include/idk_ut_TUnsharedPtr.h; sourceTree = SOURCE_ROOT; };
+		34C25CF4084CB35C005CB8F2 /* idk_ut_TVectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TVectorUtil.h; path = ../../include/idk_ut_TVectorUtil.h; sourceTree = SOURCE_ROOT; };
+		34C25CF5084CB35C005CB8F2 /* idk_ut_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Types.h; path = ../../include/idk_ut_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CF6084CB35C005CB8F2 /* idk_ut.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut.h; path = ../../include/idk_ut.h; sourceTree = SOURCE_ROOT; };
+		34C25CF7084CB35C005CB8F2 /* idk_xm_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_Types.h; path = ../../include/idk_xm_Types.h; sourceTree = SOURCE_ROOT; };
+		34C25CF8084CB35C005CB8F2 /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = ../../include/idk_xm_XmlWriter.h; sourceTree = SOURCE_ROOT; };
+		34C25CF9084CB35C005CB8F2 /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = ../../include/idk_xm.h; sourceTree = SOURCE_ROOT; };
+		34C25CFA084CB35C005CB8F2 /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = ../../include/idk.h; sourceTree = SOURCE_ROOT; };
+		8DD76F6C0486A84900D96B5E /* 2_sequenceTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2_sequenceTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* 2_sequenceTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = 2_sequenceTest.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3447D0650AEF5FAB00CDC0DC /* libceheap2.dylib in Frameworks */,
+				3447D0660AEF5FAB00CDC0DC /* libidk.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0249A662FF388D9811CA2CEA /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3447D0630AEF5FAB00CDC0DC /* libceheap2.dylib */,
+				3447D0640AEF5FAB00CDC0DC /* libidk.dylib */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB7794FE84155DC02AAC07 /* 2_sequenceTest */ = {
+			isa = PBXGroup;
+			children = (
+				3418291D0823F0EC00833C1F /* Headers */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				0249A662FF388D9811CA2CEA /* External Frameworks and Libraries */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = 2_sequenceTest;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7796FE84155DC02AAC07 /* main.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* 2_sequenceTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3418291D0823F0EC00833C1F /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3418291E0823F10C00833C1F /* CommandLineOptions.h */,
+				3418291F0823F10C00833C1F /* Consts.h */,
+				341829200823F10C00833C1F /* Receiver.h */,
+				341829210823F10C00833C1F /* Sender.h */,
+				341829220823F10C00833C1F /* SequenceTest.h */,
+				34C25C8A084CB35C005CB8F2 /* eh2_Base.h */,
+				34C25C8B084CB35C005CB8F2 /* eh2_ConnectErrorHandler.h */,
+				34C25C8C084CB35C005CB8F2 /* eh2_Connection.h */,
+				34C25C8D084CB35C005CB8F2 /* eh2_Consts.h */,
+				34C25C8E084CB35C005CB8F2 /* eh2_ErrorContext.h */,
+				34C25C8F084CB35C005CB8F2 /* eh2_Event.h */,
+				34C25C90084CB35C005CB8F2 /* eh2_EventCollection.h */,
+				34C25C91084CB35C005CB8F2 /* eh2_EventConsts.h */,
+				34C25C92084CB35C005CB8F2 /* eh2_EventHeap.h */,
+				34C25C93084CB35C005CB8F2 /* eh2_EventHeapException.h */,
+				34C25C94084CB35C005CB8F2 /* eh2_EventHeapFactory.h */,
+				34C25C95084CB35C005CB8F2 /* eh2_EventHeapProtocolException.h */,
+				34C25C96084CB35C005CB8F2 /* eh2_EventRegistration.h */,
+				34C25C97084CB35C005CB8F2 /* eh2_EventToXML.h */,
+				34C25C98084CB35C005CB8F2 /* eh2_Field.h */,
+				34C25C99084CB35C005CB8F2 /* eh2_FieldOperationException.h */,
+				34C25C9A084CB35C005CB8F2 /* eh2_FieldType.h */,
+				34C25C9B084CB35C005CB8F2 /* eh2_FieldValue.h */,
+				34C25C9C084CB35C005CB8F2 /* eh2_IFieldIterator.h */,
+				34C25C9D084CB35C005CB8F2 /* eh2_readme.h */,
+				34C25C9E084CB35C005CB8F2 /* eh2_SerializationException.h */,
+				34C25C9F084CB35C005CB8F2 /* eh2_Tracer.h */,
+				34C25CA0084CB35C005CB8F2 /* eh2_TracerConsts.h */,
+				34C25CA1084CB35C005CB8F2 /* eh2_Types.h */,
+				34C25CA2084CB35C005CB8F2 /* eh2.h */,
+				34C25CA3084CB35C005CB8F2 /* idk_io_ByteArrayInStream.h */,
+				34C25CA4084CB35C005CB8F2 /* idk_io_ByteArrayOutStream.h */,
+				34C25CA5084CB35C005CB8F2 /* idk_io_ByteBufferInStream.h */,
+				34C25CA6084CB35C005CB8F2 /* idk_io_ByteBufferOutStream.h */,
+				34C25CA7084CB35C005CB8F2 /* idk_io_ByteLoggingInStream.h */,
+				34C25CA8084CB35C005CB8F2 /* idk_io_EOFException.h */,
+				34C25CA9084CB35C005CB8F2 /* idk_io_FileInStream.h */,
+				34C25CAA084CB35C005CB8F2 /* idk_io_FileNotFoundException.h */,
+				34C25CAB084CB35C005CB8F2 /* idk_io_FileOutStream.h */,
+				34C25CAC084CB35C005CB8F2 /* idk_io_FileUtil.h */,
+				34C25CAD084CB35C005CB8F2 /* idk_io_IByteInStream.h */,
+				34C25CAE084CB35C005CB8F2 /* idk_io_IByteOutStream.h */,
+				34C25CAF084CB35C005CB8F2 /* idk_io_InterruptedIOException.h */,
+				34C25CB0084CB35C005CB8F2 /* idk_io_IOException.h */,
+				34C25CB1084CB35C005CB8F2 /* idk_io_ITInStream.h */,
+				34C25CB2084CB35C005CB8F2 /* idk_io_ITInStreamImpl.h */,
+				34C25CB3084CB35C005CB8F2 /* idk_io_ITOutStream.h */,
+				34C25CB4084CB35C005CB8F2 /* idk_io_ITOutStreamImpl.h */,
+				34C25CB5084CB35C005CB8F2 /* idk_io_LineReader.h */,
+				34C25CB6084CB35C005CB8F2 /* idk_io_RealByteInStream.h */,
+				34C25CB7084CB35C005CB8F2 /* idk_io_RealByteOutStream.h */,
+				34C25CB8084CB35C005CB8F2 /* idk_io_TimedoutIOException.h */,
+				34C25CB9084CB35C005CB8F2 /* idk_io_TRealInStream.h */,
+				34C25CBA084CB35C005CB8F2 /* idk_io_TRealOutStream.h */,
+				34C25CBB084CB35C005CB8F2 /* idk_io_Types.h */,
+				34C25CBC084CB35C005CB8F2 /* idk_io.h */,
+				34C25CBD084CB35C005CB8F2 /* idk_ne_InetAddress.h */,
+				34C25CBE084CB35C005CB8F2 /* idk_ne_NetSystemException.h */,
+				34C25CBF084CB35C005CB8F2 /* idk_ne_NoConnectionException.h */,
+				34C25CC0084CB35C005CB8F2 /* idk_ne_ServerSocket.h */,
+				34C25CC1084CB35C005CB8F2 /* idk_ne_Socket.h */,
+				34C25CC2084CB35C005CB8F2 /* idk_ne_SocketAddress.h */,
+				34C25CC3084CB35C005CB8F2 /* idk_ne_Types.h */,
+				34C25CC4084CB35C005CB8F2 /* idk_ne_UnknownHostException.h */,
+				34C25CC5084CB35C005CB8F2 /* idk_ne_URLStreamUtil.h */,
+				34C25CC6084CB35C005CB8F2 /* idk_ne.h */,
+				34C25CC7084CB35C005CB8F2 /* idk_readme.h */,
+				34C25CC8084CB35C005CB8F2 /* idk_th_ILockable.h */,
+				34C25CC9084CB35C005CB8F2 /* idk_th_InterruptedException.h */,
+				34C25CCA084CB35C005CB8F2 /* idk_th_IRunnable.h */,
+				34C25CCB084CB35C005CB8F2 /* idk_th_Lockable.h */,
+				34C25CCC084CB35C005CB8F2 /* idk_th_Locker.h */,
+				34C25CCD084CB35C005CB8F2 /* idk_th_Monitor.h */,
+				34C25CCE084CB35C005CB8F2 /* idk_th_MonitorTimedoutException.h */,
+				34C25CCF084CB35C005CB8F2 /* idk_th_SinglePooledThread.h */,
+				34C25CD0084CB35C005CB8F2 /* idk_th_Thread.h */,
+				34C25CD1084CB35C005CB8F2 /* idk_th_ThreadUtil.h */,
+				34C25CD2084CB35C005CB8F2 /* idk_th_TMTQueue.h */,
+				34C25CD3084CB35C005CB8F2 /* idk_th_Types.h */,
+				34C25CD4084CB35C005CB8F2 /* idk_th_Unlocker.h */,
+				34C25CD5084CB35C005CB8F2 /* idk_th.h */,
+				34C25CD6084CB35C005CB8F2 /* idk_ut_AssertionFailedException.h */,
+				34C25CD7084CB35C005CB8F2 /* idk_ut_BadParameterException.h */,
+				34C25CD8084CB35C005CB8F2 /* idk_ut_Base.h */,
+				34C25CD9084CB35C005CB8F2 /* idk_ut_BridgeObject.h */,
+				34C25CDA084CB35C005CB8F2 /* idk_ut_ByteArray.h */,
+				34C25CDB084CB35C005CB8F2 /* idk_ut_DateStruct.h */,
+				34C25CDC084CB35C005CB8F2 /* idk_ut_Exception.h */,
+				34C25CDD084CB35C005CB8F2 /* idk_ut_ExceptionUtil.h */,
+				34C25CDE084CB35C005CB8F2 /* idk_ut_ILogger.h */,
+				34C25CDF084CB35C005CB8F2 /* idk_ut_IntHashFuncs.h */,
+				34C25CE0084CB35C005CB8F2 /* idk_ut_ITIterator.h */,
+				34C25CE1084CB35C005CB8F2 /* idk_ut_LogUtil.h */,
+				34C25CE2084CB35C005CB8F2 /* idk_ut_NullableString.h */,
+				34C25CE3084CB35C005CB8F2 /* idk_ut_Object.h */,
+				34C25CE4084CB35C005CB8F2 /* idk_ut_ObjectHashFuncs.h */,
+				34C25CE5084CB35C005CB8F2 /* idk_ut_OutOfResourceException.h */,
+				34C25CE6084CB35C005CB8F2 /* idk_ut_PermissionDeniedException.h */,
+				34C25CE7084CB35C005CB8F2 /* idk_ut_RealObject.h */,
+				34C25CE8084CB35C005CB8F2 /* idk_ut_RuntimeException.h */,
+				34C25CE9084CB35C005CB8F2 /* idk_ut_StringHashFuncs.h */,
+				34C25CEA084CB35C005CB8F2 /* idk_ut_StrUtil.h */,
+				34C25CEB084CB35C005CB8F2 /* idk_ut_SystemUtil.h */,
+				34C25CEC084CB35C005CB8F2 /* idk_ut_TCollection.h */,
+				34C25CED084CB35C005CB8F2 /* idk_ut_TFakeHashTable.h */,
+				34C25CEE084CB35C005CB8F2 /* idk_ut_TProxyObject.h */,
+				34C25CEF084CB35C005CB8F2 /* idk_ut_TQueue.h */,
+				34C25CF0084CB35C005CB8F2 /* idk_ut_Tracer.h */,
+				34C25CF1084CB35C005CB8F2 /* idk_ut_TRealIterator.h */,
+				34C25CF2084CB35C005CB8F2 /* idk_ut_TSharedPtr.h */,
+				34C25CF3084CB35C005CB8F2 /* idk_ut_TUnsharedPtr.h */,
+				34C25CF4084CB35C005CB8F2 /* idk_ut_TVectorUtil.h */,
+				34C25CF5084CB35C005CB8F2 /* idk_ut_Types.h */,
+				34C25CF6084CB35C005CB8F2 /* idk_ut.h */,
+				34C25CF7084CB35C005CB8F2 /* idk_xm_Types.h */,
+				34C25CF8084CB35C005CB8F2 /* idk_xm_XmlWriter.h */,
+				34C25CF9084CB35C005CB8F2 /* idk_xm.h */,
+				34C25CFA084CB35C005CB8F2 /* idk.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* 2_sequenceTest.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* 2_sequenceTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34AC88390A0B7AC600E01E33 /* Build configuration list for PBXNativeTarget "2_sequenceTest" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 2_sequenceTest;
+			productInstallPath = "$(HOME)/bin";
+			productName = 2_sequenceTest;
+			productReference = 8DD76F6C0486A84900D96B5E /* 2_sequenceTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 34AC883D0A0B7AC600E01E33 /* Build configuration list for PBXProject "2_sequenceTest" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* 2_sequenceTest */;
+			projectDirPath = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* 2_sequenceTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		34AC883A0A0B7AC600E01E33 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = ../../lib;
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				PRODUCT_NAME = 2_sequenceTest;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		34AC883B0A0B7AC600E01E33 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					../../lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "/Users/ballagas/Documents/sandbox/iStuff/iStuff\\ Framework\\ v1.3beta/Event\\ Heap/ceheap2/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../lib\"";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				PRODUCT_NAME = 2_sequenceTest;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		34AC883C0A0B7AC600E01E33 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				INSTALL_PATH = "$(HOME)/bin";
+				LIBRARY_SEARCH_PATHS = (
+					../../lib,
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "/Users/ballagas/Documents/sandbox/iStuff/iStuff\\ Framework\\ v1.3beta/Event\\ Heap/ceheap2/Mac\\ OS\\ X/lib";
+				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../lib\"";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				PRODUCT_NAME = 2_sequenceTest;
+			};
+			name = Default;
+		};
+		34AC883E0A0B7AC600E01E33 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Development;
+		};
+		34AC883F0A0B7AC600E01E33 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		34AC88400A0B7AC600E01E33 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34AC88390A0B7AC600E01E33 /* Build configuration list for PBXNativeTarget "2_sequenceTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34AC883A0A0B7AC600E01E33 /* Development */,
+				34AC883B0A0B7AC600E01E33 /* Deployment */,
+				34AC883C0A0B7AC600E01E33 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		34AC883D0A0B7AC600E01E33 /* Build configuration list for PBXProject "2_sequenceTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34AC883E0A0B7AC600E01E33 /* Development */,
+				34AC883F0A0B7AC600E01E33 /* Deployment */,
+				34AC88400A0B7AC600E01E33 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
