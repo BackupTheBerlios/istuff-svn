@@ -19,12 +19,22 @@ public class AccelerometerProxy extends _IPhidgetAccelerometerEventsAdapter
 {
 	public EventHeap eheap;
 	private String _proxyID;
+	private double X = 0;
+	private double Y = 0;
 	 
 		// PhidgetAccelerometer has new data
         public void OnAccelerationChange(_IPhidgetAccelerometerEvents_OnAccelerationChangeEvent ke) {
 		try { System.out.println("Acceleration changed: " + Double.toString(ke.get_Acceleration()));
+		if(ke.get_Index() == 1){
+			Y = ke.get_Acceleration();
+		}
+		else if(ke.get_Index() == 0){
+			X = ke.get_Acceleration();
+		}
+		
 		Event e = new Event("PhidgetAccelerometer");
-		e.addField("Acceleration", Double.toString(ke.get_Acceleration()));
+		e.addField("X", Double.toString(X));
+		e.addField("Y", Double.toString(Y));
 		e.addField("ProxyID", _proxyID);
 	// change by R. Reiners
 	// the Event Heap should not be flooded with events --> short time to live
