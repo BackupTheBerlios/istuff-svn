@@ -21,7 +21,8 @@
 }
 	
 - (void) processEvent:(iStuffEvent *) event {
-	[outputAcceleration setStringValue:[event stringValueForField:@"Acceleration"]];
+	[outputX setStringValue:[event stringValueForField:@"X"]];
+	[outputY setStringValue:[event stringValueForField:@"Y"]];
 }
 
 @end

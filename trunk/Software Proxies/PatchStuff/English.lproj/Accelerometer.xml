@@ -15,12 +15,19 @@
 	</dict>
 	<key>outputAttributes</key>
 	<dict>
-		<key>outputAcceleration</key>
+		<key>outputX</key>
 		<dict>
 			<key>description</key>
-			<string>The acceleration currently read</string>
+			<string>The current acceleration in the X dimension</string>
 			<key>name</key>
-			<string>Acceleration</string>
+			<string>X</string>
+		</dict>
+		<key>outputY</key>
+		<dict>
+			<key>description</key>
+			<string>The current acceleration in the Y dimension</string>
+			<key>name</key>
+			<string>Y</string>
 		</dict>
 	</dict>
 </dict>

@@ -11,7 +11,8 @@
 
 @interface Accelerometer : iStuffProviderPatch {
 
-	QCStringPort *outputAcceleration;
+	QCStringPort *outputX;
+	QCStringPort *outputY;
 }
 
 - (id) initWithIdentifier:(id)fp8;
