@@ -8,3 +8,14 @@ Has successfully been compiled under the following conditions:
 Not successful
 - Jarre: iMax running xcode 2.2.1 (eugen) 
 
+
+
+======
+You might need to change a path in the xcode application:
+-open project file in xcode
+-open Targets folder
+-click on Run Script
+-show info
+
+There is two long paths the are absolute, replace it with another abolute path or make it relative.
+Beware that the space is represented by "\ " in the path. (see .../Event\ Heap/...)

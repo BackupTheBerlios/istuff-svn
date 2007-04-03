@@ -127,7 +127,6 @@
 		9A073DB809E2B5AF00D43D1D /* idk.h in Resources */ = {isa = PBXBuildFile; fileRef = 9A073D4709E2B5AF00D43D1D /* idk.h */; };
 		9A073DBF09E2B5C300D43D1D /* libceheap2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A073DBD09E2B5C300D43D1D /* libceheap2.0.dylib */; };
 		9A073DC009E2B5C300D43D1D /* libidk.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A073DBE09E2B5C300D43D1D /* libidk.0.dylib */; };
-		9A073E1309E2BA8D00D43D1D /* eheap.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 9A073E1209E2BA8D00D43D1D /* eheap.sdef */; };
 		9A2710B109E85568001DD492 /* EHEvent.h in Resources */ = {isa = PBXBuildFile; fileRef = 9A2710A709E85568001DD492 /* EHEvent.h */; };
 		9A2710B209E85568001DD492 /* EHEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2710A809E85568001DD492 /* EHEvent.m */; };
 		9A2710B309E85568001DD492 /* EHMakeEventCommand.h in Resources */ = {isa = PBXBuildFile; fileRef = 9A2710A909E85568001DD492 /* EHMakeEventCommand.h */; };
@@ -143,6 +142,7 @@
 		9A2710CE09E85593001DD492 /* MyApplication.h in Resources */ = {isa = PBXBuildFile; fileRef = 9A2710CA09E85593001DD492 /* MyApplication.h */; };
 		9A2710CF09E85593001DD492 /* MyApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A2710CB09E85593001DD492 /* MyApplication.mm */; };
 		9ABB94AC09EA4C4C008D216E /* EHModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A073CCA09E2B59D00D43D1D /* EHModel.mm */; };
+		9ADF1A500BAC584B0063E884 /* eheap.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF1A4F0BAC584B0063E884 /* eheap.sdef */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
@@ -306,7 +306,6 @@
 		9A073D4709E2B5AF00D43D1D /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../../c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
 		9A073DBD09E2B5C300D43D1D /* libceheap2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.0.dylib; path = "../../c++/Mac OS X/lib/libceheap2.0.dylib"; sourceTree = SOURCE_ROOT; };
 		9A073DBE09E2B5C300D43D1D /* libidk.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.0.dylib; path = "../../c++/Mac OS X/lib/libidk.0.dylib"; sourceTree = SOURCE_ROOT; };
-		9A073E1209E2BA8D00D43D1D /* eheap.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = eheap.sdef; sourceTree = SOURCE_ROOT; };
 		9A2710A709E85568001DD492 /* EHEvent.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EHEvent.h; sourceTree = "<group>"; };
 		9A2710A809E85568001DD492 /* EHEvent.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = EHEvent.m; sourceTree = "<group>"; };
 		9A2710A909E85568001DD492 /* EHMakeEventCommand.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EHMakeEventCommand.h; sourceTree = "<group>"; };
@@ -321,6 +320,7 @@
 		9A2710C909E85593001DD492 /* EventHeap.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = EventHeap.mm; sourceTree = "<group>"; };
 		9A2710CA09E85593001DD492 /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
 		9A2710CB09E85593001DD492 /* MyApplication.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = MyApplication.mm; sourceTree = "<group>"; };
+		9ADF1A4F0BAC584B0063E884 /* eheap.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.sdef; path = eheap.sdef; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,7 +394,6 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				9A073E1209E2BA8D00D43D1D /* eheap.sdef */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = eventheap;
@@ -412,6 +411,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9ADF1A4F0BAC584B0063E884 /* eheap.sdef */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
@@ -724,7 +724,6 @@
 				9A073DB609E2B5AF00D43D1D /* idk_xm_XmlWriter.h in Resources */,
 				9A073DB709E2B5AF00D43D1D /* idk_xm.h in Resources */,
 				9A073DB809E2B5AF00D43D1D /* idk.h in Resources */,
-				9A073E1309E2BA8D00D43D1D /* eheap.sdef in Resources */,
 				9A2710B109E85568001DD492 /* EHEvent.h in Resources */,
 				9A2710B309E85568001DD492 /* EHMakeEventCommand.h in Resources */,
 				9A2710B509E85568001DD492 /* EHModel.h in Resources */,
@@ -732,6 +731,7 @@
 				9A2710B909E85568001DD492 /* EHSetCommand.h in Resources */,
 				9A2710CC09E85593001DD492 /* EventHeap.h in Resources */,
 				9A2710CE09E85593001DD492 /* MyApplication.h in Resources */,
+				9ADF1A500BAC584B0063E884 /* eheap.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +749,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo this is the original version\necho $BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources $SOURCE_ROOT/eheap.sdef\nsdp -f st -o /Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/appleScript/eventheap/build/eventheap.app/Contents/Resources /Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/appleScript/eventheap/eheap.sdef\n";
+			shellScript = "echo this is the original version\necho $BUILD_DIR/$FULL_PRODUCT_NAME/Contents/Resources $SOURCE_ROOT/eheap.sdef\nsdp -f st -o $BUILD_DIR/Development/$FULL_PRODUCT_NAME/Contents/Resources /Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/yu/berlios/trunk/Event\\ Heap/appleScript/eventheap/eheap.sdef\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
