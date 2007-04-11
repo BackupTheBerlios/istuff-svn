@@ -1,3 +1,0 @@
-#Fri Oct 28 17:27:20 CEST 2005
-eclipse.preferences.version=1
-org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<launchPerspectives>\r\n<launchPerspective configurationType\="net.sourceforge.texlipse.viewer.launchConfigurationType" mode\="run" perspective\="Latex"/>\r\n</launchPerspectives>\r\n

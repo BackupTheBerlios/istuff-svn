@@ -1,5 +1,0 @@
-import javax.swing.JDialog;
-
-public class changeTabDialogue extends JDialog{
-
-}
