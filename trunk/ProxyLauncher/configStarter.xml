@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Libraries>
+    <iROS>/Users/rene/DiplomaThesis/Programming/trunk/Lib/iROS.jar</iROS>
+    <JmDNS>/Users/rene/DiplomaThesis/Programming/trunk/Lib/jmdns.jar</JmDNS>
+  </Libraries>
+  <SearchDirectories>
+    <directory>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/trunk/Hardware Proxies</directory>
+    <directory>/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/trunk/Software Proxies</directory>
+  </SearchDirectories>
+</Configuration>
+

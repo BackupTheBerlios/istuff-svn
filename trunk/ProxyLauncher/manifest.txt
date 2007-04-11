@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: hemig
+Main-Class: ProxyLauncher
+Class-Path: jdom.jar jmdns.jar
