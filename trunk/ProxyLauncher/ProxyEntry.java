@@ -28,6 +28,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.event.EventListenerList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.net.URL;
 
 //import com.apple.component.Component;
 
@@ -66,17 +67,25 @@ public class ProxyEntry extends JPanel implements ListSelectionListener, Hierarc
     protected EventListenerList _isSavedListenerList =
 		new EventListenerList();
 	
+	private ImageIcon getImageIcon(String relPath){
+		URL url = this.getClass().getResource(relPath);
+		if (url != null) {
+			return new ImageIcon(url);
+		}
+		return null;
+	}
+	
 	
 	ProxyEntry (ProxyNode proxy, Boolean activate){
 		Dimension preferredSize = new Dimension(150,25);
 		addHierarchyListener(this);
 		_proxy = proxy;
 		_ownReference = this;
-		_stopped = new ImageIcon("icons/manStop.gif");
-		_standby = new ImageIcon("icons/manSuspend.gif");
-		_running = new ImageIcon("icons/manRunning.gif");
-		_showLogIcon = new ImageIcon("icons/notepad.gif");
-		_hideLogIcon = new ImageIcon("icons/hideNotepad.gif");
+		_stopped = getImageIcon("icons/manStop.gif");
+		_standby = getImageIcon("icons/manSuspend.gif");
+		_running = getImageIcon("icons/manRunning.gif");
+		_showLogIcon = getImageIcon("icons/notepad.gif");
+		_hideLogIcon = getImageIcon("icons/hideNotepad.gif");
 		_statusLabel = new JLabel(_stopped);
 		_statusLabel.setToolTipText("The " + proxy.getName() +
 				" is currently not running");
@@ -170,7 +179,7 @@ public class ProxyEntry extends JPanel implements ListSelectionListener, Hierarc
 		});
 		
 		// Create a button to remove the proxy from the workspace again.
-		_removeProxyButton = new JButton ((new ImageIcon("icons/trashcan.jpg")));
+		_removeProxyButton = new JButton (getImageIcon("icons/trashcan.jpg"));
 		_removeProxyButton.setToolTipText("Remove this proxy from the list and stop it");
 		_removeProxyButton.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e){

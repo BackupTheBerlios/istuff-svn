@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.TreeSet;
 import java.util.Vector;
+import java.net.URL;
 
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceEvent;
@@ -95,6 +96,14 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 		createMenuBar();
 		buildUpWindow();
 	}
+	
+	private ImageIcon getImageIcon(String relPath){
+		URL url = this.getClass().getResource(relPath);
+		if (url != null) {
+			return new ImageIcon(url);
+		}
+		return null;
+	}	
 	
 	public void quitAllProxies() {
 		for (int i = 0; i < _proxyTabs.getTabCount(); i++){
@@ -394,8 +403,8 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 		_displayEHBufferFrame = new JFrame ("Local Event Heap Output");
 		JScrollPane bufferScrollPane = new JScrollPane(textArea);
 		_displayEHBufferFrame.add(bufferScrollPane);
-		final ImageIcon _showLogIcon = new ImageIcon ("icons/notepad.gif");
-		final ImageIcon _hideLogIcon = new ImageIcon ("icons/hideNotepad.gif");
+		final ImageIcon _showLogIcon = getImageIcon("icons/notepad.gif");
+		final ImageIcon _hideLogIcon = getImageIcon("icons/hideNotepad.gif");
 		_ehLogButton = new JToggleButton (_showLogIcon);
 		_ehLogButton.setToolTipText("Show the output of the local Event Heap");
 		_ehLogButton.addActionListener(new ActionListener (){
