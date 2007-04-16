@@ -1,8 +1,13 @@
+/* Class: ProxyLauncher
+ *Function: It starts the application up. It uses System.getProperty to check whether the machine is a Mac or
+ *a Windows Machine
+ *Modified: Not modified
+ */
 
 public class ProxyLauncher {
 
 	/**
-	 * @param args
+	 * It uses the Apple ScreenMenuBar if the os name is Mac.
 	 */
 	public static void main(String[] args) {
 		// Distinguish between Mac- and Windows-style menu positions
@@ -14,9 +19,9 @@ public class ProxyLauncher {
 		}
 		//TODO: It is not clear whether customLibs are really needed.
 		// When removed, think of inserting ".." into launch statements.
-		new PLMainFrame();
+		new PLMainFrame(); //See PLMainFrame.
 		System.out.println("Main application window instantiated. " +
-				"You can now connect to different Even Heap Proxies " +
+				"You can now connect to different Event Heap Proxies " +
 				"graphically. Have a good time");
 	}
 

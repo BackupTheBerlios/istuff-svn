@@ -73,6 +73,12 @@ import com.apple.eawt.ApplicationEvent;
 import com.apple.eawt.ApplicationListener;
 
 @SuppressWarnings("serial")
+
+/*Class: PLMainFrame
+ *Function: Called from ProxyLauncher.java - main(...) method.
+ *Modified: 27/02/2006 by Siddhu
+ */
+
 public class PLMainFrame extends JFrame implements WindowListener, ServiceListener, ActionListener {
 
 	private JList _eventHeapsList;
@@ -115,7 +121,17 @@ public class PLMainFrame extends JFrame implements WindowListener, ServiceListen
 		}
 	}
 
-	public void loadSettings () {
+	/*Method: loadSetings()
+         *Function: Adds a listener to the local TCP host
+         *More importantly, it also checks if the config file exists, and if it doesn't, it used to call the PreferencesDialog constructor.
+         *This creates a configstarter.xml file filled in with values from the Preferences Dialog, as it was assumed that configstarter.xml
+         *would be bundled with the installer. 
+         *But now, instead, the installer includes all the JAR files in the lib subdirectory in Siddhu's modification to the application.
+         *So a new class called CreateConfigFile will be added, the constructor of which will add the
+         *default values in. However, PreferencesDialog is retained, and can be invoked using the Menu system.
+         */
+        
+        public void loadSettings () {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(this);
 	
@@ -129,11 +145,14 @@ public class PLMainFrame extends JFrame implements WindowListener, ServiceListen
 			if (ConfigDataHolder.existsConfigFile())
 				buildTreeFactory ();
 			else 
-				new PreferencesDialog();
+                        {
+				new CreateConfigFile();
+                                buildTreeFactory();
+                        }
 	}
 
 	private void buildTreeFactory () {
-		Vector <File> searchDirectories = ConfigDataHolder.getSearchDirectories();
+                Vector <File> searchDirectories = ConfigDataHolder.getSearchDirectories();
 		_proxyTree = new ProxyTree ();
 		for (int i=0; i < searchDirectories.size(); i++) 
 			_proxyTree.addProxyDirectory(searchDirectories.get(i));

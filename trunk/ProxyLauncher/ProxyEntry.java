@@ -29,7 +29,7 @@ import javax.swing.event.EventListenerList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-//import com.apple.component.Component; //unused, and not in com.apple?
+//import com.apple.component.Component;
 
 public class ProxyEntry extends JPanel implements ListSelectionListener, HierarchyListener, ActionListener {
 	
