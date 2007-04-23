@@ -349,9 +349,9 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 			public void actionPerformed(ActionEvent e) {
 				if (startEHLoggerButton.getText().equals("Start EH Logger"))	{
 					// Construct the launch command
-					String launchCommand = "java -cp " 
-						+ ConfigDataHolder.getIrosLocation() 
-						+ ConfigDataHolder.getCommandSeparator() 
+					String launchCommand = "java -cp istuff.jar" 
+						//+ ConfigDataHolder.getIrosLocation() 
+						//+ ConfigDataHolder.getCommandSeparator() 
 						+ " "
 						+ "iwork.eheap2.logger.EventLogger";
 					_ehLoggerThread= new ProxyThread(launchCommand,null);
@@ -377,9 +377,10 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 			public void actionPerformed(ActionEvent e) {
 				if (_startLocalEHButton.getText().equals("Start local EH"))	{
 					// construct the launch command
-					String launchCommand = "java -cp " + ConfigDataHolder.getIrosLocation()
-						+ ConfigDataHolder.getCommandSeparator() 
-						+ ConfigDataHolder.getJmdnsLocation() 
+					String launchCommand = "java -cp istuff.jar"
+						// + ConfigDataHolder.getIrosLocation()
+						//+ ConfigDataHolder.getCommandSeparator() 
+						//+ ConfigDataHolder.getJmdnsLocation() 
 						+ " "
 						+ "iwork.eheap2.server.EventHeapServer";
 					_localEHThread = new ProxyThread(launchCommand, null);

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.TreeSet;
-
+import java.io.*;
 import javax.swing.event.EventListenerList;
 
 import org.jdom.Element;
@@ -221,13 +221,20 @@ public class ProxyNode implements Cloneable, ActionListener {
 		else
 			for	(int i = 0; i < getAdditionalParameters().size(); i++)
 				additionalParameters = additionalParameters + getAdditionalParameters().get(i) + " ";
-			
-			
-		String launchCommand = "java -classpath " 
-			+ ConfigDataHolder.getIrosLocation() 
+		
+		String myPath = "";
+		try{
+			myPath = new File(".").toURL().toString();
+			myPath = myPath.substring(5);
+		}
+		catch(Exception e){
+		
+		}
+		String launchCommand2= "java -classpath "
+			+ myPath + "istuff.jar"
 			+ separator
 			+ libs
-			+ ". " 
+			+ ". "
 			+ getClassName()
 			+ " " 
 			+ eventHeap  // first parameter Event Heap to connect to
@@ -236,7 +243,20 @@ public class ProxyNode implements Cloneable, ActionListener {
 			//+ " "
 			+ getProxyID();  // second optional parameter ProxyID
 			
-		_correspondingThread = new ProxyThread(launchCommand, getPathToFile());
+		String launchCommand = "java -classpath "
+			+ ConfigDataHolder.getIrosLocation()
+			+ separator
+			+ libs
+			+ ". "
+			+ getClassName()
+			+ " " 
+			+ eventHeap  // first parameter Event Heap to connect to
+			+ " "
+			+ additionalParameters
+			//+ " "
+			+ getProxyID();  // second optional parameter ProxyID
+			
+		_correspondingThread = new ProxyThread(launchCommand2, getPathToFile());
 		_correspondingThread.start();
 	}
 
