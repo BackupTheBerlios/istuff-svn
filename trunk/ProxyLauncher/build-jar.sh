@@ -10,4 +10,5 @@ cp -r manifest.txt *.prefs *.xml JUnit com org icons javax build/
 cd build
 jar cvfm ../../../release/$REL_DIR/istuff.jar manifest.txt  *
 cd ..
-cp startWin.bat startLinux startMac.sh ../../release/$REL_DIR/
+rm -rf build
+cp start* ../../release/$REL_DIR/
