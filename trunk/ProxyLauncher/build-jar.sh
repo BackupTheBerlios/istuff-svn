@@ -1,8 +1,8 @@
 REL_DIR=$(date +%Y.%m.%d)
 mkdir ../../release/$REL_DIR
 rm -rf ../../release/$REL_DIR/*
-javac -cp ./:AppleJavaExtensions.jar *.java
-mkdir ./build
+javac -classpath ./:AppleJavaExtensions.jar *.java
+mkdir build
 rm -rf build/*
 cp -r addons/* build/
 mv *.class build/
