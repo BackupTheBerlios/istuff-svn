@@ -50,23 +50,23 @@ public class ProxyThread extends Thread implements Runnable {
 		// send a message as an Event that the process has stopped
 	    // This private class is used to fire MyEvents
 		System.out.println("ready");
-		FireActionEvent.fireEvent (new ActionEvent(this, ActionEvent.ACTION_PERFORMED, 
-				"Process quit"), _MyListenerList);
+//		FireActionEvent.fireEvent (new ActionEvent(this, ActionEvent.ACTION_PERFORMED, 
+//				"Process quit"), _MyListenerList);
 	}
 
 	public void kill() {
 		_process.destroy();
 	}
 
-	public void setTextArea(JTextArea textArea) {
-		_bufferText = textArea;
-		_bufferText.setText("");
-	}
+//	public void setTextArea(JTextArea textArea) {
+//		_bufferText = textArea;
+//		_bufferText.setText("");
+//	}
 	
 	 
     // This methods allows classes to register for MyEvents
-    public void addProcessQuitEventListener(ActionListener listener) {
-        _MyListenerList.add(ActionListener.class, listener);
-    }
+//    public void addProcessQuitEventListener(ActionListener listener) {
+//        _MyListenerList.add(ActionListener.class, listener);
+//    }
 
 } // end of class

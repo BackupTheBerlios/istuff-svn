@@ -1,0 +1,2 @@
+#!/bin/bash
+java -cp ./:./iStuff.jar -jar iStuff.jar
