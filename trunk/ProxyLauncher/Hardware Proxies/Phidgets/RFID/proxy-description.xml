@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Phidgets</proxyClass>
+  <name>RFID_Tag_Reader</name> 
+  <ClassName>RFIDproxy</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:..:. RFIDproxy</launchCommand>
+  <CustomLibs>
+    <relativePath>..</relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

@@ -1,0 +1,11 @@
+README
+GameController
+
+GameController is an iStuff proxy application that allows you to use DirectInput joysticks to send iStuffEvents.
+
+Requires Windows and DirectX 8 or later. Also, the JXInput.dll file should be installed in your system's DLLs folder.
+
+WEBSITE:
+See http://www.stanford.edu/~andyszy/iwork/gamecontroller.html for latest info.
+
+Andy Szybalski

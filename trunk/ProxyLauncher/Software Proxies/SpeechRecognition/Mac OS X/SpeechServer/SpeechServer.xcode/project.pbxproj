@@ -1,0 +1,2515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		080E96DDFE201D6D7F000001 = {
+			children = (
+				C651FA9306DF330700B57D43,
+				C651FA9406DF330700B57D43,
+				C651FA9506DF330700B57D43,
+				C651FA9606DF330700B57D43,
+				C651FA9706DF330700B57D43,
+				C651FA9806DF330700B57D43,
+				C651FA9906DF330700B57D43,
+				C651FA9A06DF330700B57D43,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165CFE840E0CC02AAC07 = {
+			children = (
+				089C165DFE840E0CC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C165DFE840E0CC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A0FEA54F0111CA2CBB = {
+			children = (
+				1058C7A1FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7A1FEA54F0111CA2CBB = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7A2FEA54F0111CA2CBB = {
+			children = (
+				C6AFBB0706DF7151005939A4,
+				29B97325FDCFA39411CA2CEA,
+				29B97324FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//190
+//191
+//192
+//193
+//194
+		19C28FACFE9D520D11CA2CBB = {
+			children = (
+				8D1107320486CEB800E47090,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//290
+//291
+//292
+//293
+//294
+		29B97313FDCFA39411CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA,
+				4A9504CDFFE6A4B311CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090,
+			);
+		};
+		29B97314FDCFA39411CA2CEA = {
+			children = (
+				080E96DDFE201D6D7F000001,
+				C62EDA6B0712BD3600484108,
+				29B97315FDCFA39411CA2CEA,
+				29B97317FDCFA39411CA2CEA,
+				29B97323FDCFA39411CA2CEA,
+				19C28FACFE9D520D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = SpeechServer;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA = {
+			children = (
+				32CA4F630368D1EE00C91783,
+				29B97316FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97316FDCFA39411CA2CEA = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = main.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA = {
+			children = (
+				C651FA9B06DF330700B57D43,
+				8D1107310486CEB800E47090,
+				089C165CFE840E0CC02AAC07,
+				29B97318FDCFA39411CA2CEA,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA = {
+			children = (
+				29B97319FDCFA39411CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = MainMenu.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97319FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/MainMenu.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA = {
+			children = (
+				C642E7840715633D00966FDB,
+				1058C7A0FEA54F0111CA2CBB,
+				1058C7A2FEA54F0111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		29B97324FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		29B97325FDCFA39411CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//290
+//291
+//292
+//293
+//294
+//320
+//321
+//322
+//323
+//324
+		32CA4F630368D1EE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SpeechServer_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504CCFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "-Dunix -D_REENTRANT";
+				OTHER_LDFLAGS = "";
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = "-D_REENTRANT";
+				OTHER_LDFLAGS = "";
+				PREBINDING = YES;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1107260486CEB800E47090 = {
+			buildPhases = (
+				8D1107290486CEB800E47090,
+				8D11072C0486CEB800E47090,
+				8D11072E0486CEB800E47090,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SpeechServer_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "-Dunix -D_REENTRANT";
+				OTHER_CPLUSPLUSFLAGS = "-Dunix -D_REENTRANT";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = SpeechServer;
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = SpeechServer;
+			productInstallPath = "$(HOME)/Applications";
+			productName = SpeechServer;
+			productReference = 8D1107320486CEB800E47090;
+			productType = "com.apple.product-type.application";
+		};
+		8D1107290486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090,
+				8D11072B0486CEB800E47090,
+				C651FA9C06DF330700B57D43,
+				C651FA9E06DF330700B57D43,
+				C651FAA006DF330700B57D43,
+				C651FAA206DF330700B57D43,
+				C651FAA406DF330700B57D43,
+				C65E7919071A862800A6A6A6,
+				C65E791A071A862800A6A6A6,
+				C65E791B071A862800A6A6A6,
+				C65E791C071A862800A6A6A6,
+				C65E791D071A862800A6A6A6,
+				C65E791E071A862800A6A6A6,
+				C65E791F071A862800A6A6A6,
+				C65E7920071A862800A6A6A6,
+				C65E7921071A862800A6A6A6,
+				C65E7922071A862800A6A6A6,
+				C65E7923071A862800A6A6A6,
+				C65E7924071A862800A6A6A6,
+				C65E7925071A862800A6A6A6,
+				C65E7926071A862800A6A6A6,
+				C65E7927071A862800A6A6A6,
+				C65E7928071A862800A6A6A6,
+				C65E7929071A862800A6A6A6,
+				C65E792A071A862800A6A6A6,
+				C65E792B071A862800A6A6A6,
+				C65E792C071A862800A6A6A6,
+				C65E792D071A862800A6A6A6,
+				C65E792E071A862800A6A6A6,
+				C65E792F071A862800A6A6A6,
+				C65E7930071A862800A6A6A6,
+				C65E7931071A862800A6A6A6,
+				C65E7932071A862800A6A6A6,
+				C65E7933071A862800A6A6A6,
+				C65E7934071A862800A6A6A6,
+				C65E7935071A862800A6A6A6,
+				C65E7936071A862800A6A6A6,
+				C65E7937071A862800A6A6A6,
+				C65E7938071A862800A6A6A6,
+				C65E7939071A862800A6A6A6,
+				C65E793A071A862800A6A6A6,
+				C65E793B071A862800A6A6A6,
+				C65E793C071A862800A6A6A6,
+				C65E793D071A862800A6A6A6,
+				C65E793E071A862800A6A6A6,
+				C65E793F071A862800A6A6A6,
+				C65E7940071A862800A6A6A6,
+				C65E7941071A862800A6A6A6,
+				C65E7942071A862800A6A6A6,
+				C65E7943071A862800A6A6A6,
+				C65E7944071A862800A6A6A6,
+				C65E7945071A862800A6A6A6,
+				C65E7946071A862800A6A6A6,
+				C65E7947071A862800A6A6A6,
+				C65E7948071A862800A6A6A6,
+				C65E7949071A862800A6A6A6,
+				C65E794A071A862800A6A6A6,
+				C65E794B071A862800A6A6A6,
+				C65E794C071A862800A6A6A6,
+				C65E794D071A862800A6A6A6,
+				C65E794E071A862800A6A6A6,
+				C65E794F071A862800A6A6A6,
+				C65E7950071A862800A6A6A6,
+				C65E7951071A862800A6A6A6,
+				C65E7952071A862800A6A6A6,
+				C65E7953071A862800A6A6A6,
+				C65E7954071A862800A6A6A6,
+				C65E7955071A862800A6A6A6,
+				C65E7956071A862800A6A6A6,
+				C65E7957071A862800A6A6A6,
+				C65E7958071A862800A6A6A6,
+				C65E7959071A862800A6A6A6,
+				C65E795A071A862800A6A6A6,
+				C65E795B071A862800A6A6A6,
+				C65E795C071A862800A6A6A6,
+				C65E795D071A862800A6A6A6,
+				C65E795E071A862800A6A6A6,
+				C65E795F071A862800A6A6A6,
+				C65E7960071A862800A6A6A6,
+				C65E7961071A862800A6A6A6,
+				C65E7962071A862800A6A6A6,
+				C65E7963071A862800A6A6A6,
+				C65E7964071A862800A6A6A6,
+				C65E7965071A862800A6A6A6,
+				C65E7966071A862800A6A6A6,
+				C65E7967071A862800A6A6A6,
+				C65E7968071A862800A6A6A6,
+				C65E7969071A862800A6A6A6,
+				C65E796A071A862800A6A6A6,
+				C65E796B071A862800A6A6A6,
+				C65E796C071A862800A6A6A6,
+				C65E796D071A862800A6A6A6,
+				C65E796E071A862800A6A6A6,
+				C65E796F071A862800A6A6A6,
+				C65E7970071A862800A6A6A6,
+				C65E798C071A864600A6A6A6,
+				C65E798D071A864600A6A6A6,
+				C65E798E071A864600A6A6A6,
+				C65E798F071A864600A6A6A6,
+				C65E7990071A864600A6A6A6,
+				C65E7991071A864600A6A6A6,
+				C65E7992071A864600A6A6A6,
+				C65E7993071A864600A6A6A6,
+				C65E7994071A864600A6A6A6,
+				C65E7995071A864600A6A6A6,
+				C65E7996071A864600A6A6A6,
+				C65E7997071A864600A6A6A6,
+				C65E7998071A864600A6A6A6,
+				C65E7999071A864600A6A6A6,
+				C65E799A071A864600A6A6A6,
+				C65E799B071A864600A6A6A6,
+				C65E799C071A864600A6A6A6,
+				C65E799D071A864600A6A6A6,
+				C65E799E071A864600A6A6A6,
+				C65E799F071A864600A6A6A6,
+				C65E79A0071A864600A6A6A6,
+				C65E79A1071A864600A6A6A6,
+				C65E79A2071A864600A6A6A6,
+				C65E79A3071A864600A6A6A6,
+				C65E79A4071A864600A6A6A6,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072A0486CEB800E47090 = {
+			fileRef = 29B97318FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072B0486CEB800E47090 = {
+			fileRef = 089C165CFE840E0CC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D11072C0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090,
+				C651FA9D06DF330700B57D43,
+				C651FA9F06DF330700B57D43,
+				C651FAA106DF330700B57D43,
+				C651FAA306DF330700B57D43,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072D0486CEB800E47090 = {
+			fileRef = 29B97316FDCFA39411CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D11072E0486CEB800E47090 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090,
+				C6AFBB0806DF7151005939A4,
+				C6F26BA8071572FE0057F6FC,
+				C6F26BAC071573050057F6FC,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072F0486CEB800E47090 = {
+			fileRef = 1058C7A1FEA54F0111CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1107310486CEB800E47090 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1107320486CEB800E47090 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SpeechServer.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//C60
+//C61
+//C62
+//C63
+//C64
+		C62EDA6B0712BD3600484108 = {
+			children = (
+				C65E7973071A864600A6A6A6,
+				C65E7974071A864600A6A6A6,
+				C65E7975071A864600A6A6A6,
+				C65E7976071A864600A6A6A6,
+				C65E7977071A864600A6A6A6,
+				C65E7978071A864600A6A6A6,
+				C65E7979071A864600A6A6A6,
+				C65E797A071A864600A6A6A6,
+				C65E797B071A864600A6A6A6,
+				C65E797C071A864600A6A6A6,
+				C65E797D071A864600A6A6A6,
+				C65E797E071A864600A6A6A6,
+				C65E797F071A864600A6A6A6,
+				C65E7980071A864600A6A6A6,
+				C65E7981071A864600A6A6A6,
+				C65E7982071A864600A6A6A6,
+				C65E7983071A864600A6A6A6,
+				C65E7984071A864600A6A6A6,
+				C65E7985071A864600A6A6A6,
+				C65E7986071A864600A6A6A6,
+				C65E7987071A864600A6A6A6,
+				C65E7988071A864600A6A6A6,
+				C65E7989071A864600A6A6A6,
+				C65E798A071A864600A6A6A6,
+				C65E798B071A864600A6A6A6,
+				C65E78C1071A862800A6A6A6,
+				C65E78C2071A862800A6A6A6,
+				C65E78C3071A862800A6A6A6,
+				C65E78C4071A862800A6A6A6,
+				C65E78C5071A862800A6A6A6,
+				C65E78C6071A862800A6A6A6,
+				C65E78C7071A862800A6A6A6,
+				C65E78C8071A862800A6A6A6,
+				C65E78C9071A862800A6A6A6,
+				C65E78CA071A862800A6A6A6,
+				C65E78CB071A862800A6A6A6,
+				C65E78CC071A862800A6A6A6,
+				C65E78CD071A862800A6A6A6,
+				C65E78CE071A862800A6A6A6,
+				C65E78CF071A862800A6A6A6,
+				C65E78D0071A862800A6A6A6,
+				C65E78D1071A862800A6A6A6,
+				C65E78D2071A862800A6A6A6,
+				C65E78D3071A862800A6A6A6,
+				C65E78D4071A862800A6A6A6,
+				C65E78D5071A862800A6A6A6,
+				C65E78D6071A862800A6A6A6,
+				C65E78D7071A862800A6A6A6,
+				C65E78D8071A862800A6A6A6,
+				C65E78D9071A862800A6A6A6,
+				C65E78DA071A862800A6A6A6,
+				C65E78DB071A862800A6A6A6,
+				C65E78DC071A862800A6A6A6,
+				C65E78DD071A862800A6A6A6,
+				C65E78DE071A862800A6A6A6,
+				C65E78DF071A862800A6A6A6,
+				C65E78E0071A862800A6A6A6,
+				C65E78E1071A862800A6A6A6,
+				C65E78E2071A862800A6A6A6,
+				C65E78E3071A862800A6A6A6,
+				C65E78E4071A862800A6A6A6,
+				C65E78E5071A862800A6A6A6,
+				C65E78E6071A862800A6A6A6,
+				C65E78E7071A862800A6A6A6,
+				C65E78E8071A862800A6A6A6,
+				C65E78E9071A862800A6A6A6,
+				C65E78EA071A862800A6A6A6,
+				C65E78EB071A862800A6A6A6,
+				C65E78EC071A862800A6A6A6,
+				C65E78ED071A862800A6A6A6,
+				C65E78EE071A862800A6A6A6,
+				C65E78EF071A862800A6A6A6,
+				C65E78F0071A862800A6A6A6,
+				C65E78F1071A862800A6A6A6,
+				C65E78F2071A862800A6A6A6,
+				C65E78F3071A862800A6A6A6,
+				C65E78F4071A862800A6A6A6,
+				C65E78F5071A862800A6A6A6,
+				C65E78F6071A862800A6A6A6,
+				C65E78F7071A862800A6A6A6,
+				C65E78F8071A862800A6A6A6,
+				C65E78F9071A862800A6A6A6,
+				C65E78FA071A862800A6A6A6,
+				C65E78FB071A862800A6A6A6,
+				C65E78FC071A862800A6A6A6,
+				C65E78FD071A862800A6A6A6,
+				C65E78FE071A862800A6A6A6,
+				C65E78FF071A862800A6A6A6,
+				C65E7900071A862800A6A6A6,
+				C65E7901071A862800A6A6A6,
+				C65E7902071A862800A6A6A6,
+				C65E7903071A862800A6A6A6,
+				C65E7904071A862800A6A6A6,
+				C65E7905071A862800A6A6A6,
+				C65E7906071A862800A6A6A6,
+				C65E7907071A862800A6A6A6,
+				C65E7908071A862800A6A6A6,
+				C65E7909071A862800A6A6A6,
+				C65E790A071A862800A6A6A6,
+				C65E790B071A862800A6A6A6,
+				C65E790C071A862800A6A6A6,
+				C65E790D071A862800A6A6A6,
+				C65E790E071A862800A6A6A6,
+				C65E790F071A862800A6A6A6,
+				C65E7910071A862800A6A6A6,
+				C65E7911071A862800A6A6A6,
+				C65E7912071A862800A6A6A6,
+				C65E7913071A862800A6A6A6,
+				C65E7914071A862800A6A6A6,
+				C65E7915071A862800A6A6A6,
+				C65E7916071A862800A6A6A6,
+				C65E7917071A862800A6A6A6,
+				C65E7918071A862800A6A6A6,
+			);
+			isa = PBXGroup;
+			name = Headers;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C642E7840715633D00966FDB = {
+			children = (
+				C6F26BAB071573050057F6FC,
+				C6F26BA7071572FE0057F6FC,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9306DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = EventHeap.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9406DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = EventHeap.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9506DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = LanguageObject.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9606DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = LanguageObject.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9706DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = MyController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9806DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = MyController.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9906DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SpeechRecognizer.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9A06DF330700B57D43 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = SpeechRecognizer.mm;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9B06DF330700B57D43 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.icns;
+			path = SpeechServer.icns;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		C651FA9C06DF330700B57D43 = {
+			fileRef = C651FA9306DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FA9D06DF330700B57D43 = {
+			fileRef = C651FA9406DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FA9E06DF330700B57D43 = {
+			fileRef = C651FA9506DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FA9F06DF330700B57D43 = {
+			fileRef = C651FA9606DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FAA006DF330700B57D43 = {
+			fileRef = C651FA9706DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FAA106DF330700B57D43 = {
+			fileRef = C651FA9806DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FAA206DF330700B57D43 = {
+			fileRef = C651FA9906DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FAA306DF330700B57D43 = {
+			fileRef = C651FA9A06DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C651FAA406DF330700B57D43 = {
+			fileRef = C651FA9B06DF330700B57D43;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E78C1071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C2071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteArrayOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C3071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C4071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteBufferOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C5071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ByteLoggingInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ByteLoggingInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C6071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_EOFException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_EOFException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C7071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_FileInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C8071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileNotFoundException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_FileNotFoundException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78C9071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_FileOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CA071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_FileUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_FileUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CB071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_IByteInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CC071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IByteOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_IByteOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CD071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_InterruptedIOException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_InterruptedIOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CE071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_IOException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_IOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78CF071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D0071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITInStreamImpl.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStreamImpl.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D1071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D2071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_ITOutStreamImpl.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStreamImpl.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D3071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_LineReader.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_LineReader.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D4071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D5071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_RealByteOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D6071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TimedoutIOException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_TimedoutIOException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D7071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealInStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_TRealInStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D8071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_TRealOutStream.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_TRealOutStream.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78D9071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DA071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_io.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_io.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DB071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_InetAddress.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_InetAddress.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DC071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NetSystemException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_NetSystemException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DD071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_NoConnectionException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_NoConnectionException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DE071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_ServerSocket.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_ServerSocket.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78DF071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Socket.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_Socket.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E0071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_SocketAddress.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_SocketAddress.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E1071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E2071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_UnknownHostException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_UnknownHostException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E3071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne_URLStreamUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne_URLStreamUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E4071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ne.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ne.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E5071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_readme.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_readme.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E6071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ILockable.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_ILockable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E7071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_InterruptedException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_InterruptedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E8071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_IRunnable.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_IRunnable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78E9071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Lockable.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Lockable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78EA071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Locker.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Locker.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78EB071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Monitor.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Monitor.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78EC071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_MonitorTimedoutException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_MonitorTimedoutException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78ED071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_SinglePooledThread.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_SinglePooledThread.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78EE071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Thread.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Thread.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78EF071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_ThreadUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_ThreadUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F0071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_TMTQueue.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_TMTQueue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F1071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F2071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th_Unlocker.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th_Unlocker.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F3071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_th.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_th.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F4071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_AssertionFailedException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_AssertionFailedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F5071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BadParameterException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_BadParameterException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F6071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Base.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_Base.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F7071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_BridgeObject.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_BridgeObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F8071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ByteArray.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_ByteArray.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78F9071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_DateStruct.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_DateStruct.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FA071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Exception.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_Exception.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FB071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ExceptionUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_ExceptionUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FC071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ILogger.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_ILogger.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FD071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_IntHashFuncs.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_IntHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FE071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ITIterator.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_ITIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E78FF071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_LogUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_LogUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7900071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_NullableString.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_NullableString.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7901071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Object.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_Object.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7902071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_ObjectHashFuncs.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_ObjectHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7903071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_OutOfResourceException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_OutOfResourceException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7904071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_PermissionDeniedException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_PermissionDeniedException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7905071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RealObject.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_RealObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7906071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_RuntimeException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_RuntimeException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7907071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StringHashFuncs.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_StringHashFuncs.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7908071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_StrUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_StrUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7909071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_SystemUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_SystemUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790A071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TCollection.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TCollection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790B071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TFakeHashTable.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TFakeHashTable.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790C071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TProxyObject.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TProxyObject.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790D071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TQueue.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TQueue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790E071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Tracer.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_Tracer.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E790F071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TRealIterator.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TRealIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7910071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TSharedPtr.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TSharedPtr.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7911071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TUnsharedPtr.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TUnsharedPtr.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7912071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_TVectorUtil.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_TVectorUtil.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7913071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7914071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_ut.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_ut.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7915071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_xm_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7916071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm_XmlWriter.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7917071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk_xm.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk_xm.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7918071A862800A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = idk.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/idk.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7919071A862800A6A6A6 = {
+			fileRef = C65E78C1071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791A071A862800A6A6A6 = {
+			fileRef = C65E78C2071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791B071A862800A6A6A6 = {
+			fileRef = C65E78C3071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791C071A862800A6A6A6 = {
+			fileRef = C65E78C4071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791D071A862800A6A6A6 = {
+			fileRef = C65E78C5071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791E071A862800A6A6A6 = {
+			fileRef = C65E78C6071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E791F071A862800A6A6A6 = {
+			fileRef = C65E78C7071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7920071A862800A6A6A6 = {
+			fileRef = C65E78C8071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7921071A862800A6A6A6 = {
+			fileRef = C65E78C9071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7922071A862800A6A6A6 = {
+			fileRef = C65E78CA071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7923071A862800A6A6A6 = {
+			fileRef = C65E78CB071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7924071A862800A6A6A6 = {
+			fileRef = C65E78CC071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7925071A862800A6A6A6 = {
+			fileRef = C65E78CD071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7926071A862800A6A6A6 = {
+			fileRef = C65E78CE071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7927071A862800A6A6A6 = {
+			fileRef = C65E78CF071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7928071A862800A6A6A6 = {
+			fileRef = C65E78D0071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7929071A862800A6A6A6 = {
+			fileRef = C65E78D1071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792A071A862800A6A6A6 = {
+			fileRef = C65E78D2071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792B071A862800A6A6A6 = {
+			fileRef = C65E78D3071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792C071A862800A6A6A6 = {
+			fileRef = C65E78D4071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792D071A862800A6A6A6 = {
+			fileRef = C65E78D5071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792E071A862800A6A6A6 = {
+			fileRef = C65E78D6071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E792F071A862800A6A6A6 = {
+			fileRef = C65E78D7071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7930071A862800A6A6A6 = {
+			fileRef = C65E78D8071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7931071A862800A6A6A6 = {
+			fileRef = C65E78D9071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7932071A862800A6A6A6 = {
+			fileRef = C65E78DA071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7933071A862800A6A6A6 = {
+			fileRef = C65E78DB071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7934071A862800A6A6A6 = {
+			fileRef = C65E78DC071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7935071A862800A6A6A6 = {
+			fileRef = C65E78DD071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7936071A862800A6A6A6 = {
+			fileRef = C65E78DE071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7937071A862800A6A6A6 = {
+			fileRef = C65E78DF071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7938071A862800A6A6A6 = {
+			fileRef = C65E78E0071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7939071A862800A6A6A6 = {
+			fileRef = C65E78E1071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793A071A862800A6A6A6 = {
+			fileRef = C65E78E2071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793B071A862800A6A6A6 = {
+			fileRef = C65E78E3071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793C071A862800A6A6A6 = {
+			fileRef = C65E78E4071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793D071A862800A6A6A6 = {
+			fileRef = C65E78E5071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793E071A862800A6A6A6 = {
+			fileRef = C65E78E6071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E793F071A862800A6A6A6 = {
+			fileRef = C65E78E7071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7940071A862800A6A6A6 = {
+			fileRef = C65E78E8071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7941071A862800A6A6A6 = {
+			fileRef = C65E78E9071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7942071A862800A6A6A6 = {
+			fileRef = C65E78EA071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7943071A862800A6A6A6 = {
+			fileRef = C65E78EB071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7944071A862800A6A6A6 = {
+			fileRef = C65E78EC071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7945071A862800A6A6A6 = {
+			fileRef = C65E78ED071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7946071A862800A6A6A6 = {
+			fileRef = C65E78EE071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7947071A862800A6A6A6 = {
+			fileRef = C65E78EF071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7948071A862800A6A6A6 = {
+			fileRef = C65E78F0071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7949071A862800A6A6A6 = {
+			fileRef = C65E78F1071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794A071A862800A6A6A6 = {
+			fileRef = C65E78F2071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794B071A862800A6A6A6 = {
+			fileRef = C65E78F3071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794C071A862800A6A6A6 = {
+			fileRef = C65E78F4071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794D071A862800A6A6A6 = {
+			fileRef = C65E78F5071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794E071A862800A6A6A6 = {
+			fileRef = C65E78F6071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E794F071A862800A6A6A6 = {
+			fileRef = C65E78F7071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7950071A862800A6A6A6 = {
+			fileRef = C65E78F8071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7951071A862800A6A6A6 = {
+			fileRef = C65E78F9071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7952071A862800A6A6A6 = {
+			fileRef = C65E78FA071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7953071A862800A6A6A6 = {
+			fileRef = C65E78FB071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7954071A862800A6A6A6 = {
+			fileRef = C65E78FC071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7955071A862800A6A6A6 = {
+			fileRef = C65E78FD071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7956071A862800A6A6A6 = {
+			fileRef = C65E78FE071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7957071A862800A6A6A6 = {
+			fileRef = C65E78FF071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7958071A862800A6A6A6 = {
+			fileRef = C65E7900071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7959071A862800A6A6A6 = {
+			fileRef = C65E7901071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795A071A862800A6A6A6 = {
+			fileRef = C65E7902071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795B071A862800A6A6A6 = {
+			fileRef = C65E7903071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795C071A862800A6A6A6 = {
+			fileRef = C65E7904071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795D071A862800A6A6A6 = {
+			fileRef = C65E7905071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795E071A862800A6A6A6 = {
+			fileRef = C65E7906071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E795F071A862800A6A6A6 = {
+			fileRef = C65E7907071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7960071A862800A6A6A6 = {
+			fileRef = C65E7908071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7961071A862800A6A6A6 = {
+			fileRef = C65E7909071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7962071A862800A6A6A6 = {
+			fileRef = C65E790A071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7963071A862800A6A6A6 = {
+			fileRef = C65E790B071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7964071A862800A6A6A6 = {
+			fileRef = C65E790C071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7965071A862800A6A6A6 = {
+			fileRef = C65E790D071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7966071A862800A6A6A6 = {
+			fileRef = C65E790E071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7967071A862800A6A6A6 = {
+			fileRef = C65E790F071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7968071A862800A6A6A6 = {
+			fileRef = C65E7910071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7969071A862800A6A6A6 = {
+			fileRef = C65E7911071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796A071A862800A6A6A6 = {
+			fileRef = C65E7912071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796B071A862800A6A6A6 = {
+			fileRef = C65E7913071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796C071A862800A6A6A6 = {
+			fileRef = C65E7914071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796D071A862800A6A6A6 = {
+			fileRef = C65E7915071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796E071A862800A6A6A6 = {
+			fileRef = C65E7916071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E796F071A862800A6A6A6 = {
+			fileRef = C65E7917071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7970071A862800A6A6A6 = {
+			fileRef = C65E7918071A862800A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7973071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Base.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Base.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7974071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ConnectErrorHandler.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7975071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Connection.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Connection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7976071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Consts.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Consts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7977071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_ErrorContext.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_ErrorContext.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7978071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Event.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Event.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7979071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventCollection.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventCollection.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797A071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventConsts.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventConsts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797B071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeap.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventHeap.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797C071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797D071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapFactory.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapFactory.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797E071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventHeapProtocolException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapProtocolException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E797F071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventRegistration.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventRegistration.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7980071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_EventToXML.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_EventToXML.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7981071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Field.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Field.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7982071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldOperationException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_FieldOperationException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7983071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldType.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_FieldType.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7984071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_FieldValue.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_FieldValue.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7985071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_IFieldIterator.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_IFieldIterator.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7986071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_readme.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_readme.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7987071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_SerializationException.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_SerializationException.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7988071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Tracer.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Tracer.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E7989071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_TracerConsts.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_TracerConsts.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E798A071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2_Types.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2_Types.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E798B071A864600A6A6A6 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = eh2.h;
+			path = "../../../../Event Heap/c++/Mac OS X/include/eh2.h";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		C65E798C071A864600A6A6A6 = {
+			fileRef = C65E7973071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E798D071A864600A6A6A6 = {
+			fileRef = C65E7974071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E798E071A864600A6A6A6 = {
+			fileRef = C65E7975071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E798F071A864600A6A6A6 = {
+			fileRef = C65E7976071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7990071A864600A6A6A6 = {
+			fileRef = C65E7977071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7991071A864600A6A6A6 = {
+			fileRef = C65E7978071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7992071A864600A6A6A6 = {
+			fileRef = C65E7979071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7993071A864600A6A6A6 = {
+			fileRef = C65E797A071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7994071A864600A6A6A6 = {
+			fileRef = C65E797B071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7995071A864600A6A6A6 = {
+			fileRef = C65E797C071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7996071A864600A6A6A6 = {
+			fileRef = C65E797D071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7997071A864600A6A6A6 = {
+			fileRef = C65E797E071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7998071A864600A6A6A6 = {
+			fileRef = C65E797F071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E7999071A864600A6A6A6 = {
+			fileRef = C65E7980071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799A071A864600A6A6A6 = {
+			fileRef = C65E7981071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799B071A864600A6A6A6 = {
+			fileRef = C65E7982071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799C071A864600A6A6A6 = {
+			fileRef = C65E7983071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799D071A864600A6A6A6 = {
+			fileRef = C65E7984071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799E071A864600A6A6A6 = {
+			fileRef = C65E7985071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E799F071A864600A6A6A6 = {
+			fileRef = C65E7986071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E79A0071A864600A6A6A6 = {
+			fileRef = C65E7987071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E79A1071A864600A6A6A6 = {
+			fileRef = C65E7988071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E79A2071A864600A6A6A6 = {
+			fileRef = C65E7989071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E79A3071A864600A6A6A6 = {
+			fileRef = C65E798A071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C65E79A4071A864600A6A6A6 = {
+			fileRef = C65E798B071A864600A6A6A6;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C6AFBB0706DF7151005939A4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C6AFBB0806DF7151005939A4 = {
+			fileRef = C6AFBB0706DF7151005939A4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C6F26BA7071572FE0057F6FC = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libceheap2.dylib;
+			path = /usr/local/lib/libceheap2.dylib;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C6F26BA8071572FE0057F6FC = {
+			fileRef = C6F26BA7071572FE0057F6FC;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		C6F26BAB071573050057F6FC = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libidk.dylib;
+			path = /usr/local/lib/libidk.dylib;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		C6F26BAC071573050057F6FC = {
+			fileRef = C6F26BAB071573050057F6FC;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA;
+}

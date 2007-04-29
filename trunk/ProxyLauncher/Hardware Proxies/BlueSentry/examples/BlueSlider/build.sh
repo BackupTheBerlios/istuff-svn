@@ -1,0 +1,1 @@
+javac -classpath ../../../java/dist/iRos.jar:../BlueSentry BlueSlider.java

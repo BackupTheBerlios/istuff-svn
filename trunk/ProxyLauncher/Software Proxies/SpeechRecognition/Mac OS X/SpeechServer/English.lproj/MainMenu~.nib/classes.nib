@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            CLASS = EventHeap; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {myController = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {recognizeSpeech = id; resetSpeechRecognizer = id; }; 
+            CLASS = MyController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {eventHeap = id; recognizeSpeechSwitch = id; recognizer = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = SpeechRecognizer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {myController = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

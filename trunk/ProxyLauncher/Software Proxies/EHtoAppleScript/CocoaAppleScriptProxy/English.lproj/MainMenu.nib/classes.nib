@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {
+            CLASS = EHASMediator; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mEventHeap = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = EventHeap; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {eventProcessor = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = Test; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

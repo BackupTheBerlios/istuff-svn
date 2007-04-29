@@ -1,0 +1,1 @@
+javac -classpath "%CLASSPATH%";..\..\..\Lib\iROS.jar;..\ ..\*.java

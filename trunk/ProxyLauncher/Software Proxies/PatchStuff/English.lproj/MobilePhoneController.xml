@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputBacklightOff</key>
+		<dict>
+			<key>description</key>
+			<string>Boolean that turns off the backlight of the mobile phone. It has to be turned false before it will resend the command.</string>
+			<key>name</key>
+			<string>Turn Backlight Off</string>
+		</dict>
+		<key>inputBacklightOn</key>
+		<dict>
+			<key>description</key>
+			<string>Boolean that turns on the backlight of the mobile phone. It has to be turned false before it will resend the command.</string>
+			<key>name</key>
+			<string>Turn Backlight On</string>
+		</dict>
+		<key>inputCloseApp</key>
+		<dict>
+			<key>description</key>
+			<string>With this boolean, an application is closed on the mobile phone. The Path-port has to be set.</string>
+			<key>name</key>
+			<string>Close Application</string>
+		</dict>
+		<key>inputDisconnect</key>
+		<dict>
+			<key>description</key>
+			<string>Di</string>
+			<key>name</key>
+			<string>Threshold</string>
+		</dict>
+		<key>inputKeyCode</key>
+		<dict>
+			<key>description</key>
+			<string>Pass an ASCII code to that port.</string>
+			<key>name</key>
+			<string>Key Code</string>
+		</dict>
+		<key>inputLaunchApp</key>
+		<dict>
+			<key>description</key>
+			<string>If true, an application specified by the path value will be started.</string>
+			<key>name</key>
+			<string>Launch Application</string>
+		</dict>
+		<key>inputPath</key>
+		<dict>
+			<key>description</key>
+			<string>Specify a path to a mobile phone application.</string>
+			<key>name</key>
+			<string>Path</string>
+		</dict>
+		<key>inputPlaySound</key>
+		<dict>
+			<key>description</key>
+			<string>Starts playing a sound file on the mobile phone defined by the path value</string>
+			<key>name</key>
+			<string>Play Sound</string>
+		</dict>
+		<key>inputProfileNumber</key>
+		<dict>
+			<key>description</key>
+			<string>Pass the number of a mobile phone's profile to this input.</string>
+			<key>name</key>
+			<string>Profile #</string>
+		</dict>
+		<key>inputRepeatPort</key>
+		<dict>
+			<key>description</key>
+			<string>Port specifically needen for the mobile phone</string>
+			<key>name</key>
+			<string>Repeat Port</string>
+		</dict>
+		<key>inputScanCodePort</key>
+		<dict>
+			<key>description</key>
+			<string>Port needed for the mobile phone</string>
+			<key>name</key>
+			<string>Scancode Port</string>
+		</dict>
+		<key>inputStopSound</key>
+		<dict>
+			<key>description</key>
+			<string>If true an event with the command to stop to play a sound</string>
+			<key>name</key>
+			<string>Stop Playing Sound</string>
+		</dict>
+		<key>inputCaptureKeys</key>
+		<dict>
+			<key>description</key>
+			<string>If true, all key presses from the user will be captured by iStuff mobile.  You need to route the key presses from the MobilePhoneKeyListener back to the Mobile Phone if you want the foreground mobile phone application to receive them</string>
+			<key>name</key>
+			<string>Capture Key Presses</string>
+		</dict>
+	</dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>New item</key>
+		<string></string>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>Inputs are passed to a connected mobile phone</string>
+		<key>name</key>
+		<string>Mobile Phone</string>
+	</dict>
+</dict>
+</plist>

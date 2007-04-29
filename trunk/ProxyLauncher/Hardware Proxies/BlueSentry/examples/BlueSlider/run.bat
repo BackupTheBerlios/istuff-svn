@@ -1,0 +1,1 @@
+java -cp c:\iwork\lib\iRos.jar;..\commapi\comm.jar;..\BlueSentry\;. BlueSlider localhost /dev/tty.iSlider

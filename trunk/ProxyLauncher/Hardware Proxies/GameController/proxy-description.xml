@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>WindowsControllers</proxyClass>
+  <name>GameController</name> 
+  <ClassName>GameController</ClassName>
+  <comment>user comment</comment>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter>200</Parameter>
+  </AdditionalParameters>
+</proxy>

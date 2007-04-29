@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Devices</proxyClass>
+  <name>BlueSentry</name> 
+  <ClassName>../BlueSentry</ClassName>
+  <comment>user comment</comment>
+  <CustomLibs>
+    <relativePath>..</relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter>/dev/tty.BlueSentry</Parameter>
+  </AdditionalParameters>
+</proxy>

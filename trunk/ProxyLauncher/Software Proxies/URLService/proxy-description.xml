@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Software Proxies</kind>
+  <proxyClass>Services</proxyClass>
+  <name>URL Server</name> 
+  <ClassName>URLServer</ClassName>
+  <comment></comment>
+  <launchCommand>java -classpath ../../Lib/iROS.jar:. URLServer</launchCommand>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

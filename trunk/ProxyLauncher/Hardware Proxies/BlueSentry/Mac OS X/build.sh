@@ -1,0 +1,1 @@
+javac ../BlueSentry.java -d ../

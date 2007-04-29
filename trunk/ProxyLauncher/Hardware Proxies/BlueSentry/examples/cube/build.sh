@@ -1,0 +1,1 @@
+javac -classpath ../BlueSentry:../../../java/dist/iROS.jar cube.java

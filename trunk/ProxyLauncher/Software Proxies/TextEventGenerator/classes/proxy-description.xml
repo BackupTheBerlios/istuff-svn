@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Software Proxies</kind>
+  <proxyClass>Controller</proxyClass>
+  <name>TextEventGenerator</name> 
+  <ClassName>TextEventEngine</ClassName>
+  <comment>blablabla</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:. TextEventEngine</launchCommand>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

@@ -1,0 +1,903 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C38A4A409E919FB0017F3A9 /* eh2_Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43309E919FA0017F3A9 /* eh2_Base.h */; };
+		4C38A4A509E919FB0017F3A9 /* eh2_ConnectErrorHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43409E919FA0017F3A9 /* eh2_ConnectErrorHandler.h */; };
+		4C38A4A609E919FB0017F3A9 /* eh2_Connection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43509E919FA0017F3A9 /* eh2_Connection.h */; };
+		4C38A4A709E919FB0017F3A9 /* eh2_Consts.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43609E919FA0017F3A9 /* eh2_Consts.h */; };
+		4C38A4A809E919FB0017F3A9 /* eh2_ErrorContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43709E919FA0017F3A9 /* eh2_ErrorContext.h */; };
+		4C38A4A909E919FB0017F3A9 /* eh2_Event.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43809E919FA0017F3A9 /* eh2_Event.h */; };
+		4C38A4AA09E919FB0017F3A9 /* eh2_EventCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43909E919FA0017F3A9 /* eh2_EventCollection.h */; };
+		4C38A4AB09E919FB0017F3A9 /* eh2_EventConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43A09E919FA0017F3A9 /* eh2_EventConsts.h */; };
+		4C38A4AC09E919FB0017F3A9 /* eh2_EventHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43B09E919FA0017F3A9 /* eh2_EventHeap.h */; };
+		4C38A4AD09E919FB0017F3A9 /* eh2_EventHeapException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43C09E919FA0017F3A9 /* eh2_EventHeapException.h */; };
+		4C38A4AE09E919FB0017F3A9 /* eh2_EventHeapFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43D09E919FA0017F3A9 /* eh2_EventHeapFactory.h */; };
+		4C38A4AF09E919FB0017F3A9 /* eh2_EventHeapProtocolException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43E09E919FA0017F3A9 /* eh2_EventHeapProtocolException.h */; };
+		4C38A4B009E919FB0017F3A9 /* eh2_EventRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A43F09E919FA0017F3A9 /* eh2_EventRegistration.h */; };
+		4C38A4B109E919FB0017F3A9 /* eh2_EventToXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44009E919FA0017F3A9 /* eh2_EventToXML.h */; };
+		4C38A4B209E919FB0017F3A9 /* eh2_Field.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44109E919FA0017F3A9 /* eh2_Field.h */; };
+		4C38A4B309E919FB0017F3A9 /* eh2_FieldOperationException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44209E919FA0017F3A9 /* eh2_FieldOperationException.h */; };
+		4C38A4B409E919FB0017F3A9 /* eh2_FieldType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44309E919FA0017F3A9 /* eh2_FieldType.h */; };
+		4C38A4B509E919FB0017F3A9 /* eh2_FieldValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44409E919FA0017F3A9 /* eh2_FieldValue.h */; };
+		4C38A4B609E919FB0017F3A9 /* eh2_IFieldIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44509E919FA0017F3A9 /* eh2_IFieldIterator.h */; };
+		4C38A4B709E919FB0017F3A9 /* eh2_readme.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44609E919FA0017F3A9 /* eh2_readme.h */; };
+		4C38A4B809E919FB0017F3A9 /* eh2_SerializationException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44709E919FA0017F3A9 /* eh2_SerializationException.h */; };
+		4C38A4B909E919FB0017F3A9 /* eh2_Tracer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44809E919FA0017F3A9 /* eh2_Tracer.h */; };
+		4C38A4BA09E919FB0017F3A9 /* eh2_TracerConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44909E919FA0017F3A9 /* eh2_TracerConsts.h */; };
+		4C38A4BB09E919FB0017F3A9 /* eh2_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44A09E919FA0017F3A9 /* eh2_Types.h */; };
+		4C38A4BC09E919FB0017F3A9 /* eh2.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44B09E919FA0017F3A9 /* eh2.h */; };
+		4C38A4BD09E919FB0017F3A9 /* idk_io_ByteArrayInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44C09E919FA0017F3A9 /* idk_io_ByteArrayInStream.h */; };
+		4C38A4BE09E919FB0017F3A9 /* idk_io_ByteArrayOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44D09E919FA0017F3A9 /* idk_io_ByteArrayOutStream.h */; };
+		4C38A4BF09E919FB0017F3A9 /* idk_io_ByteBufferInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44E09E919FA0017F3A9 /* idk_io_ByteBufferInStream.h */; };
+		4C38A4C009E919FB0017F3A9 /* idk_io_ByteBufferOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A44F09E919FA0017F3A9 /* idk_io_ByteBufferOutStream.h */; };
+		4C38A4C109E919FB0017F3A9 /* idk_io_ByteLoggingInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45009E919FA0017F3A9 /* idk_io_ByteLoggingInStream.h */; };
+		4C38A4C209E919FB0017F3A9 /* idk_io_EOFException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45109E919FA0017F3A9 /* idk_io_EOFException.h */; };
+		4C38A4C309E919FB0017F3A9 /* idk_io_FileInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45209E919FA0017F3A9 /* idk_io_FileInStream.h */; };
+		4C38A4C409E919FB0017F3A9 /* idk_io_FileNotFoundException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45309E919FA0017F3A9 /* idk_io_FileNotFoundException.h */; };
+		4C38A4C509E919FB0017F3A9 /* idk_io_FileOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45409E919FA0017F3A9 /* idk_io_FileOutStream.h */; };
+		4C38A4C609E919FB0017F3A9 /* idk_io_FileUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45509E919FA0017F3A9 /* idk_io_FileUtil.h */; };
+		4C38A4C709E919FB0017F3A9 /* idk_io_IByteInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45609E919FA0017F3A9 /* idk_io_IByteInStream.h */; };
+		4C38A4C809E919FB0017F3A9 /* idk_io_IByteOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45709E919FA0017F3A9 /* idk_io_IByteOutStream.h */; };
+		4C38A4C909E919FB0017F3A9 /* idk_io_InterruptedIOException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45809E919FA0017F3A9 /* idk_io_InterruptedIOException.h */; };
+		4C38A4CA09E919FB0017F3A9 /* idk_io_IOException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45909E919FA0017F3A9 /* idk_io_IOException.h */; };
+		4C38A4CB09E919FB0017F3A9 /* idk_io_ITInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45A09E919FA0017F3A9 /* idk_io_ITInStream.h */; };
+		4C38A4CC09E919FB0017F3A9 /* idk_io_ITInStreamImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45B09E919FA0017F3A9 /* idk_io_ITInStreamImpl.h */; };
+		4C38A4CD09E919FB0017F3A9 /* idk_io_ITOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45C09E919FA0017F3A9 /* idk_io_ITOutStream.h */; };
+		4C38A4CE09E919FB0017F3A9 /* idk_io_ITOutStreamImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45D09E919FA0017F3A9 /* idk_io_ITOutStreamImpl.h */; };
+		4C38A4CF09E919FB0017F3A9 /* idk_io_LineReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45E09E919FA0017F3A9 /* idk_io_LineReader.h */; };
+		4C38A4D009E919FB0017F3A9 /* idk_io_RealByteInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A45F09E919FA0017F3A9 /* idk_io_RealByteInStream.h */; };
+		4C38A4D109E919FB0017F3A9 /* idk_io_RealByteOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46009E919FA0017F3A9 /* idk_io_RealByteOutStream.h */; };
+		4C38A4D209E919FB0017F3A9 /* idk_io_TimedoutIOException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46109E919FA0017F3A9 /* idk_io_TimedoutIOException.h */; };
+		4C38A4D309E919FB0017F3A9 /* idk_io_TRealInStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46209E919FA0017F3A9 /* idk_io_TRealInStream.h */; };
+		4C38A4D409E919FB0017F3A9 /* idk_io_TRealOutStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46309E919FA0017F3A9 /* idk_io_TRealOutStream.h */; };
+		4C38A4D509E919FB0017F3A9 /* idk_io_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46409E919FA0017F3A9 /* idk_io_Types.h */; };
+		4C38A4D609E919FB0017F3A9 /* idk_io.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46509E919FA0017F3A9 /* idk_io.h */; };
+		4C38A4D709E919FB0017F3A9 /* idk_ne_InetAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46609E919FA0017F3A9 /* idk_ne_InetAddress.h */; };
+		4C38A4D809E919FB0017F3A9 /* idk_ne_NetSystemException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46709E919FA0017F3A9 /* idk_ne_NetSystemException.h */; };
+		4C38A4D909E919FB0017F3A9 /* idk_ne_NoConnectionException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46809E919FA0017F3A9 /* idk_ne_NoConnectionException.h */; };
+		4C38A4DA09E919FB0017F3A9 /* idk_ne_ServerSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46909E919FA0017F3A9 /* idk_ne_ServerSocket.h */; };
+		4C38A4DB09E919FB0017F3A9 /* idk_ne_Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46A09E919FA0017F3A9 /* idk_ne_Socket.h */; };
+		4C38A4DC09E919FB0017F3A9 /* idk_ne_SocketAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46B09E919FA0017F3A9 /* idk_ne_SocketAddress.h */; };
+		4C38A4DD09E919FB0017F3A9 /* idk_ne_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46C09E919FA0017F3A9 /* idk_ne_Types.h */; };
+		4C38A4DE09E919FB0017F3A9 /* idk_ne_UnknownHostException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46D09E919FA0017F3A9 /* idk_ne_UnknownHostException.h */; };
+		4C38A4DF09E919FB0017F3A9 /* idk_ne_URLStreamUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46E09E919FA0017F3A9 /* idk_ne_URLStreamUtil.h */; };
+		4C38A4E009E919FB0017F3A9 /* idk_ne.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A46F09E919FA0017F3A9 /* idk_ne.h */; };
+		4C38A4E109E919FB0017F3A9 /* idk_readme.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47009E919FA0017F3A9 /* idk_readme.h */; };
+		4C38A4E209E919FB0017F3A9 /* idk_th_ILockable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47109E919FA0017F3A9 /* idk_th_ILockable.h */; };
+		4C38A4E309E919FB0017F3A9 /* idk_th_InterruptedException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47209E919FA0017F3A9 /* idk_th_InterruptedException.h */; };
+		4C38A4E409E919FB0017F3A9 /* idk_th_IRunnable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47309E919FA0017F3A9 /* idk_th_IRunnable.h */; };
+		4C38A4E509E919FB0017F3A9 /* idk_th_Lockable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47409E919FA0017F3A9 /* idk_th_Lockable.h */; };
+		4C38A4E609E919FB0017F3A9 /* idk_th_Locker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47509E919FA0017F3A9 /* idk_th_Locker.h */; };
+		4C38A4E709E919FB0017F3A9 /* idk_th_Monitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47609E919FA0017F3A9 /* idk_th_Monitor.h */; };
+		4C38A4E809E919FB0017F3A9 /* idk_th_MonitorTimedoutException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47709E919FA0017F3A9 /* idk_th_MonitorTimedoutException.h */; };
+		4C38A4E909E919FB0017F3A9 /* idk_th_SinglePooledThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47809E919FA0017F3A9 /* idk_th_SinglePooledThread.h */; };
+		4C38A4EA09E919FB0017F3A9 /* idk_th_Thread.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47909E919FA0017F3A9 /* idk_th_Thread.h */; };
+		4C38A4EB09E919FB0017F3A9 /* idk_th_ThreadUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47A09E919FA0017F3A9 /* idk_th_ThreadUtil.h */; };
+		4C38A4EC09E919FB0017F3A9 /* idk_th_TMTQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47B09E919FA0017F3A9 /* idk_th_TMTQueue.h */; };
+		4C38A4ED09E919FB0017F3A9 /* idk_th_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47C09E919FA0017F3A9 /* idk_th_Types.h */; };
+		4C38A4EE09E919FB0017F3A9 /* idk_th_Unlocker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47D09E919FA0017F3A9 /* idk_th_Unlocker.h */; };
+		4C38A4EF09E919FB0017F3A9 /* idk_th.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47E09E919FA0017F3A9 /* idk_th.h */; };
+		4C38A4F009E919FB0017F3A9 /* idk_ut_AssertionFailedException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A47F09E919FA0017F3A9 /* idk_ut_AssertionFailedException.h */; };
+		4C38A4F109E919FB0017F3A9 /* idk_ut_BadParameterException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48009E919FA0017F3A9 /* idk_ut_BadParameterException.h */; };
+		4C38A4F209E919FB0017F3A9 /* idk_ut_Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48109E919FA0017F3A9 /* idk_ut_Base.h */; };
+		4C38A4F309E919FB0017F3A9 /* idk_ut_BridgeObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48209E919FA0017F3A9 /* idk_ut_BridgeObject.h */; };
+		4C38A4F409E919FB0017F3A9 /* idk_ut_ByteArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48309E919FA0017F3A9 /* idk_ut_ByteArray.h */; };
+		4C38A4F509E919FB0017F3A9 /* idk_ut_DateStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48409E919FA0017F3A9 /* idk_ut_DateStruct.h */; };
+		4C38A4F609E919FB0017F3A9 /* idk_ut_Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48509E919FA0017F3A9 /* idk_ut_Exception.h */; };
+		4C38A4F709E919FB0017F3A9 /* idk_ut_ExceptionUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48609E919FA0017F3A9 /* idk_ut_ExceptionUtil.h */; };
+		4C38A4F809E919FB0017F3A9 /* idk_ut_ILogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48709E919FA0017F3A9 /* idk_ut_ILogger.h */; };
+		4C38A4F909E919FB0017F3A9 /* idk_ut_IntHashFuncs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48809E919FA0017F3A9 /* idk_ut_IntHashFuncs.h */; };
+		4C38A4FA09E919FB0017F3A9 /* idk_ut_ITIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48909E919FA0017F3A9 /* idk_ut_ITIterator.h */; };
+		4C38A4FB09E919FB0017F3A9 /* idk_ut_LogUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48A09E919FA0017F3A9 /* idk_ut_LogUtil.h */; };
+		4C38A4FC09E919FB0017F3A9 /* idk_ut_NullableString.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48B09E919FA0017F3A9 /* idk_ut_NullableString.h */; };
+		4C38A4FD09E919FB0017F3A9 /* idk_ut_Object.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48C09E919FA0017F3A9 /* idk_ut_Object.h */; };
+		4C38A4FE09E919FB0017F3A9 /* idk_ut_ObjectHashFuncs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48D09E919FA0017F3A9 /* idk_ut_ObjectHashFuncs.h */; };
+		4C38A4FF09E919FB0017F3A9 /* idk_ut_OutOfResourceException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48E09E919FA0017F3A9 /* idk_ut_OutOfResourceException.h */; };
+		4C38A50009E919FB0017F3A9 /* idk_ut_PermissionDeniedException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A48F09E919FA0017F3A9 /* idk_ut_PermissionDeniedException.h */; };
+		4C38A50109E919FB0017F3A9 /* idk_ut_RealObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49009E919FA0017F3A9 /* idk_ut_RealObject.h */; };
+		4C38A50209E919FB0017F3A9 /* idk_ut_RuntimeException.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49109E919FA0017F3A9 /* idk_ut_RuntimeException.h */; };
+		4C38A50309E919FB0017F3A9 /* idk_ut_StringHashFuncs.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49209E919FA0017F3A9 /* idk_ut_StringHashFuncs.h */; };
+		4C38A50409E919FB0017F3A9 /* idk_ut_StrUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49309E919FA0017F3A9 /* idk_ut_StrUtil.h */; };
+		4C38A50509E919FB0017F3A9 /* idk_ut_SystemUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49409E919FA0017F3A9 /* idk_ut_SystemUtil.h */; };
+		4C38A50609E919FB0017F3A9 /* idk_ut_TCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49509E919FA0017F3A9 /* idk_ut_TCollection.h */; };
+		4C38A50709E919FB0017F3A9 /* idk_ut_TFakeHashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49609E919FA0017F3A9 /* idk_ut_TFakeHashTable.h */; };
+		4C38A50809E919FB0017F3A9 /* idk_ut_TProxyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49709E919FA0017F3A9 /* idk_ut_TProxyObject.h */; };
+		4C38A50909E919FB0017F3A9 /* idk_ut_TQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49809E919FA0017F3A9 /* idk_ut_TQueue.h */; };
+		4C38A50A09E919FB0017F3A9 /* idk_ut_Tracer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49909E919FA0017F3A9 /* idk_ut_Tracer.h */; };
+		4C38A50B09E919FB0017F3A9 /* idk_ut_TRealIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49A09E919FA0017F3A9 /* idk_ut_TRealIterator.h */; };
+		4C38A50C09E919FB0017F3A9 /* idk_ut_TSharedPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49B09E919FA0017F3A9 /* idk_ut_TSharedPtr.h */; };
+		4C38A50D09E919FB0017F3A9 /* idk_ut_TUnsharedPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49C09E919FA0017F3A9 /* idk_ut_TUnsharedPtr.h */; };
+		4C38A50E09E919FB0017F3A9 /* idk_ut_TVectorUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49D09E919FA0017F3A9 /* idk_ut_TVectorUtil.h */; };
+		4C38A50F09E919FB0017F3A9 /* idk_ut_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49E09E919FA0017F3A9 /* idk_ut_Types.h */; };
+		4C38A51009E919FB0017F3A9 /* idk_ut.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A49F09E919FA0017F3A9 /* idk_ut.h */; };
+		4C38A51109E919FB0017F3A9 /* idk_xm_Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A4A009E919FA0017F3A9 /* idk_xm_Types.h */; };
+		4C38A51209E919FB0017F3A9 /* idk_xm_XmlWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A4A109E919FA0017F3A9 /* idk_xm_XmlWriter.h */; };
+		4C38A51309E919FB0017F3A9 /* idk_xm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A4A209E919FA0017F3A9 /* idk_xm.h */; };
+		4C38A51409E919FB0017F3A9 /* idk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C38A4A309E919FA0017F3A9 /* idk.h */; };
+		4C42836B09E912A4007C4382 /* EHASMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C42836909E912A4007C4382 /* EHASMediator.h */; };
+		4C42836C09E912A4007C4382 /* EHASMediator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C42836A09E912A4007C4382 /* EHASMediator.mm */; };
+		4C42836F09E9131C007C4382 /* EventHeap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C42836D09E9131C007C4382 /* EventHeap.h */; };
+		4C42837009E9131C007C4382 /* EventHeap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C42836E09E9131C007C4382 /* EventHeap.mm */; };
+		8D1107280486CEB800E47090 /* CocoaAppleScriptProxy_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* CocoaAppleScriptProxy_Prefix.pch */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9A9CEFE309EA59CA00D8C87D /* libceheap2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */; };
+		9A9CEFE409EA59CA00D8C87D /* libidk.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = NO;
+			};
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* CocoaAppleScriptProxy_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAppleScriptProxy_Prefix.pch; sourceTree = "<group>"; };
+		4C38A43309E919FA0017F3A9 /* eh2_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Base.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Base.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43409E919FA0017F3A9 /* eh2_ConnectErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ConnectErrorHandler.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43509E919FA0017F3A9 /* eh2_Connection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Connection.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Connection.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43609E919FA0017F3A9 /* eh2_Consts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Consts.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Consts.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43709E919FA0017F3A9 /* eh2_ErrorContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ErrorContext.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_ErrorContext.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43809E919FA0017F3A9 /* eh2_Event.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Event.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Event.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43909E919FA0017F3A9 /* eh2_EventCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventCollection.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventCollection.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43A09E919FA0017F3A9 /* eh2_EventConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventConsts.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventConsts.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43B09E919FA0017F3A9 /* eh2_EventHeap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeap.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeap.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43C09E919FA0017F3A9 /* eh2_EventHeapException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapException.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43D09E919FA0017F3A9 /* eh2_EventHeapFactory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapFactory.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapFactory.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43E09E919FA0017F3A9 /* eh2_EventHeapProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapProtocolException.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventHeapProtocolException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A43F09E919FA0017F3A9 /* eh2_EventRegistration.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventRegistration.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventRegistration.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44009E919FA0017F3A9 /* eh2_EventToXML.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventToXML.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_EventToXML.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44109E919FA0017F3A9 /* eh2_Field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Field.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Field.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44209E919FA0017F3A9 /* eh2_FieldOperationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldOperationException.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldOperationException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44309E919FA0017F3A9 /* eh2_FieldType.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldType.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldType.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44409E919FA0017F3A9 /* eh2_FieldValue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldValue.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_FieldValue.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44509E919FA0017F3A9 /* eh2_IFieldIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_IFieldIterator.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_IFieldIterator.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44609E919FA0017F3A9 /* eh2_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_readme.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_readme.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44709E919FA0017F3A9 /* eh2_SerializationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_SerializationException.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_SerializationException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44809E919FA0017F3A9 /* eh2_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Tracer.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Tracer.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44909E919FA0017F3A9 /* eh2_TracerConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_TracerConsts.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_TracerConsts.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44A09E919FA0017F3A9 /* eh2_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44B09E919FA0017F3A9 /* eh2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2.h; path = "../../../Event Heap/c++/Mac OS X/include/eh2.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44C09E919FA0017F3A9 /* idk_io_ByteArrayInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44D09E919FA0017F3A9 /* idk_io_ByteArrayOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44E09E919FA0017F3A9 /* idk_io_ByteBufferInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A44F09E919FA0017F3A9 /* idk_io_ByteBufferOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45009E919FA0017F3A9 /* idk_io_ByteLoggingInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteLoggingInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ByteLoggingInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45109E919FA0017F3A9 /* idk_io_EOFException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_EOFException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_EOFException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45209E919FA0017F3A9 /* idk_io_FileInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45309E919FA0017F3A9 /* idk_io_FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileNotFoundException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileNotFoundException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45409E919FA0017F3A9 /* idk_io_FileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45509E919FA0017F3A9 /* idk_io_FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_FileUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45609E919FA0017F3A9 /* idk_io_IByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IByteInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45709E919FA0017F3A9 /* idk_io_IByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IByteOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45809E919FA0017F3A9 /* idk_io_InterruptedIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_InterruptedIOException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_InterruptedIOException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45909E919FA0017F3A9 /* idk_io_IOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IOException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_IOException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45A09E919FA0017F3A9 /* idk_io_ITInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45B09E919FA0017F3A9 /* idk_io_ITInStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStreamImpl.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITInStreamImpl.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45C09E919FA0017F3A9 /* idk_io_ITOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45D09E919FA0017F3A9 /* idk_io_ITOutStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStreamImpl.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStreamImpl.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45E09E919FA0017F3A9 /* idk_io_LineReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_LineReader.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_LineReader.h"; sourceTree = SOURCE_ROOT; };
+		4C38A45F09E919FA0017F3A9 /* idk_io_RealByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46009E919FA0017F3A9 /* idk_io_RealByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_RealByteOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46109E919FA0017F3A9 /* idk_io_TimedoutIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TimedoutIOException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TimedoutIOException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46209E919FA0017F3A9 /* idk_io_TRealInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealInStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TRealInStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46309E919FA0017F3A9 /* idk_io_TRealOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealOutStream.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_TRealOutStream.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46409E919FA0017F3A9 /* idk_io_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46509E919FA0017F3A9 /* idk_io.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_io.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46609E919FA0017F3A9 /* idk_ne_InetAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_InetAddress.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_InetAddress.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46709E919FA0017F3A9 /* idk_ne_NetSystemException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NetSystemException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_NetSystemException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46809E919FA0017F3A9 /* idk_ne_NoConnectionException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NoConnectionException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_NoConnectionException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46909E919FA0017F3A9 /* idk_ne_ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_ServerSocket.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_ServerSocket.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46A09E919FA0017F3A9 /* idk_ne_Socket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Socket.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_Socket.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46B09E919FA0017F3A9 /* idk_ne_SocketAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_SocketAddress.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_SocketAddress.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46C09E919FA0017F3A9 /* idk_ne_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46D09E919FA0017F3A9 /* idk_ne_UnknownHostException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_UnknownHostException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_UnknownHostException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46E09E919FA0017F3A9 /* idk_ne_URLStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_URLStreamUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne_URLStreamUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A46F09E919FA0017F3A9 /* idk_ne.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ne.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47009E919FA0017F3A9 /* idk_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_readme.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_readme.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47109E919FA0017F3A9 /* idk_th_ILockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ILockable.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_ILockable.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47209E919FA0017F3A9 /* idk_th_InterruptedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_InterruptedException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_InterruptedException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47309E919FA0017F3A9 /* idk_th_IRunnable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_IRunnable.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_IRunnable.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47409E919FA0017F3A9 /* idk_th_Lockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Lockable.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Lockable.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47509E919FA0017F3A9 /* idk_th_Locker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Locker.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Locker.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47609E919FA0017F3A9 /* idk_th_Monitor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Monitor.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Monitor.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47709E919FA0017F3A9 /* idk_th_MonitorTimedoutException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_MonitorTimedoutException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_MonitorTimedoutException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47809E919FA0017F3A9 /* idk_th_SinglePooledThread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_SinglePooledThread.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_SinglePooledThread.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47909E919FA0017F3A9 /* idk_th_Thread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Thread.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Thread.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47A09E919FA0017F3A9 /* idk_th_ThreadUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ThreadUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_ThreadUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47B09E919FA0017F3A9 /* idk_th_TMTQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_TMTQueue.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_TMTQueue.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47C09E919FA0017F3A9 /* idk_th_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47D09E919FA0017F3A9 /* idk_th_Unlocker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Unlocker.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th_Unlocker.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47E09E919FA0017F3A9 /* idk_th.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_th.h"; sourceTree = SOURCE_ROOT; };
+		4C38A47F09E919FA0017F3A9 /* idk_ut_AssertionFailedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_AssertionFailedException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_AssertionFailedException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48009E919FA0017F3A9 /* idk_ut_BadParameterException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BadParameterException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_BadParameterException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48109E919FA0017F3A9 /* idk_ut_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Base.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Base.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48209E919FA0017F3A9 /* idk_ut_BridgeObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BridgeObject.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_BridgeObject.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48309E919FA0017F3A9 /* idk_ut_ByteArray.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ByteArray.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ByteArray.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48409E919FA0017F3A9 /* idk_ut_DateStruct.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_DateStruct.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_DateStruct.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48509E919FA0017F3A9 /* idk_ut_Exception.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Exception.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Exception.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48609E919FA0017F3A9 /* idk_ut_ExceptionUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ExceptionUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ExceptionUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48709E919FA0017F3A9 /* idk_ut_ILogger.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ILogger.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ILogger.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48809E919FA0017F3A9 /* idk_ut_IntHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_IntHashFuncs.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_IntHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48909E919FA0017F3A9 /* idk_ut_ITIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ITIterator.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ITIterator.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48A09E919FA0017F3A9 /* idk_ut_LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_LogUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_LogUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48B09E919FA0017F3A9 /* idk_ut_NullableString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_NullableString.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_NullableString.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48C09E919FA0017F3A9 /* idk_ut_Object.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Object.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Object.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48D09E919FA0017F3A9 /* idk_ut_ObjectHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ObjectHashFuncs.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_ObjectHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48E09E919FA0017F3A9 /* idk_ut_OutOfResourceException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_OutOfResourceException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_OutOfResourceException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A48F09E919FA0017F3A9 /* idk_ut_PermissionDeniedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_PermissionDeniedException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_PermissionDeniedException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49009E919FA0017F3A9 /* idk_ut_RealObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RealObject.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_RealObject.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49109E919FA0017F3A9 /* idk_ut_RuntimeException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RuntimeException.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_RuntimeException.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49209E919FA0017F3A9 /* idk_ut_StringHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StringHashFuncs.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_StringHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49309E919FA0017F3A9 /* idk_ut_StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StrUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_StrUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49409E919FA0017F3A9 /* idk_ut_SystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_SystemUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_SystemUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49509E919FA0017F3A9 /* idk_ut_TCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TCollection.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TCollection.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49609E919FA0017F3A9 /* idk_ut_TFakeHashTable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TFakeHashTable.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TFakeHashTable.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49709E919FA0017F3A9 /* idk_ut_TProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TProxyObject.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TProxyObject.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49809E919FA0017F3A9 /* idk_ut_TQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TQueue.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TQueue.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49909E919FA0017F3A9 /* idk_ut_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Tracer.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Tracer.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49A09E919FA0017F3A9 /* idk_ut_TRealIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TRealIterator.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TRealIterator.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49B09E919FA0017F3A9 /* idk_ut_TSharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TSharedPtr.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TSharedPtr.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49C09E919FA0017F3A9 /* idk_ut_TUnsharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TUnsharedPtr.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TUnsharedPtr.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49D09E919FA0017F3A9 /* idk_ut_TVectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TVectorUtil.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_TVectorUtil.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49E09E919FA0017F3A9 /* idk_ut_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A49F09E919FA0017F3A9 /* idk_ut.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_ut.h"; sourceTree = SOURCE_ROOT; };
+		4C38A4A009E919FA0017F3A9 /* idk_xm_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_Types.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_xm_Types.h"; sourceTree = SOURCE_ROOT; };
+		4C38A4A109E919FA0017F3A9 /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h"; sourceTree = SOURCE_ROOT; };
+		4C38A4A209E919FA0017F3A9 /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = "../../../Event Heap/c++/Mac OS X/include/idk_xm.h"; sourceTree = SOURCE_ROOT; };
+		4C38A4A309E919FA0017F3A9 /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../../../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
+		4C42836909E912A4007C4382 /* EHASMediator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EHASMediator.h; sourceTree = "<group>"; };
+		4C42836A09E912A4007C4382 /* EHASMediator.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = EHASMediator.mm; sourceTree = "<group>"; };
+		4C42836D09E9131C007C4382 /* EventHeap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EventHeap.h; sourceTree = "<group>"; };
+		4C42836E09E9131C007C4382 /* EventHeap.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = EventHeap.mm; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* CocoaAppleScriptProxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaAppleScriptProxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libceheap2.0.dylib"; sourceTree = SOURCE_ROOT; };
+		9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.0.dylib; path = "../../../Event Heap/c++/Mac OS X/lib/libidk.0.dylib"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				9A9CEFE309EA59CA00D8C87D /* libceheap2.0.dylib in Frameworks */,
+				9A9CEFE409EA59CA00D8C87D /* libidk.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C42836D09E9131C007C4382 /* EventHeap.h */,
+				4C42836E09E9131C007C4382 /* EventHeap.mm */,
+				4C42836909E912A4007C4382 /* EHASMediator.h */,
+				4C42836A09E912A4007C4382 /* EHASMediator.mm */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A9CEFE109EA59CA00D8C87D /* libceheap2.0.dylib */,
+				9A9CEFE209EA59CA00D8C87D /* libidk.0.dylib */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* CocoaAppleScriptProxy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CocoaAppleScriptProxy */ = {
+			isa = PBXGroup;
+			children = (
+				4C42837109E9170E007C4382 /* Includes */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CocoaAppleScriptProxy;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* CocoaAppleScriptProxy_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C42837109E9170E007C4382 /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				4C38A43309E919FA0017F3A9 /* eh2_Base.h */,
+				4C38A43409E919FA0017F3A9 /* eh2_ConnectErrorHandler.h */,
+				4C38A43509E919FA0017F3A9 /* eh2_Connection.h */,
+				4C38A43609E919FA0017F3A9 /* eh2_Consts.h */,
+				4C38A43709E919FA0017F3A9 /* eh2_ErrorContext.h */,
+				4C38A43809E919FA0017F3A9 /* eh2_Event.h */,
+				4C38A43909E919FA0017F3A9 /* eh2_EventCollection.h */,
+				4C38A43A09E919FA0017F3A9 /* eh2_EventConsts.h */,
+				4C38A43B09E919FA0017F3A9 /* eh2_EventHeap.h */,
+				4C38A43C09E919FA0017F3A9 /* eh2_EventHeapException.h */,
+				4C38A43D09E919FA0017F3A9 /* eh2_EventHeapFactory.h */,
+				4C38A43E09E919FA0017F3A9 /* eh2_EventHeapProtocolException.h */,
+				4C38A43F09E919FA0017F3A9 /* eh2_EventRegistration.h */,
+				4C38A44009E919FA0017F3A9 /* eh2_EventToXML.h */,
+				4C38A44109E919FA0017F3A9 /* eh2_Field.h */,
+				4C38A44209E919FA0017F3A9 /* eh2_FieldOperationException.h */,
+				4C38A44309E919FA0017F3A9 /* eh2_FieldType.h */,
+				4C38A44409E919FA0017F3A9 /* eh2_FieldValue.h */,
+				4C38A44509E919FA0017F3A9 /* eh2_IFieldIterator.h */,
+				4C38A44609E919FA0017F3A9 /* eh2_readme.h */,
+				4C38A44709E919FA0017F3A9 /* eh2_SerializationException.h */,
+				4C38A44809E919FA0017F3A9 /* eh2_Tracer.h */,
+				4C38A44909E919FA0017F3A9 /* eh2_TracerConsts.h */,
+				4C38A44A09E919FA0017F3A9 /* eh2_Types.h */,
+				4C38A44B09E919FA0017F3A9 /* eh2.h */,
+				4C38A44C09E919FA0017F3A9 /* idk_io_ByteArrayInStream.h */,
+				4C38A44D09E919FA0017F3A9 /* idk_io_ByteArrayOutStream.h */,
+				4C38A44E09E919FA0017F3A9 /* idk_io_ByteBufferInStream.h */,
+				4C38A44F09E919FA0017F3A9 /* idk_io_ByteBufferOutStream.h */,
+				4C38A45009E919FA0017F3A9 /* idk_io_ByteLoggingInStream.h */,
+				4C38A45109E919FA0017F3A9 /* idk_io_EOFException.h */,
+				4C38A45209E919FA0017F3A9 /* idk_io_FileInStream.h */,
+				4C38A45309E919FA0017F3A9 /* idk_io_FileNotFoundException.h */,
+				4C38A45409E919FA0017F3A9 /* idk_io_FileOutStream.h */,
+				4C38A45509E919FA0017F3A9 /* idk_io_FileUtil.h */,
+				4C38A45609E919FA0017F3A9 /* idk_io_IByteInStream.h */,
+				4C38A45709E919FA0017F3A9 /* idk_io_IByteOutStream.h */,
+				4C38A45809E919FA0017F3A9 /* idk_io_InterruptedIOException.h */,
+				4C38A45909E919FA0017F3A9 /* idk_io_IOException.h */,
+				4C38A45A09E919FA0017F3A9 /* idk_io_ITInStream.h */,
+				4C38A45B09E919FA0017F3A9 /* idk_io_ITInStreamImpl.h */,
+				4C38A45C09E919FA0017F3A9 /* idk_io_ITOutStream.h */,
+				4C38A45D09E919FA0017F3A9 /* idk_io_ITOutStreamImpl.h */,
+				4C38A45E09E919FA0017F3A9 /* idk_io_LineReader.h */,
+				4C38A45F09E919FA0017F3A9 /* idk_io_RealByteInStream.h */,
+				4C38A46009E919FA0017F3A9 /* idk_io_RealByteOutStream.h */,
+				4C38A46109E919FA0017F3A9 /* idk_io_TimedoutIOException.h */,
+				4C38A46209E919FA0017F3A9 /* idk_io_TRealInStream.h */,
+				4C38A46309E919FA0017F3A9 /* idk_io_TRealOutStream.h */,
+				4C38A46409E919FA0017F3A9 /* idk_io_Types.h */,
+				4C38A46509E919FA0017F3A9 /* idk_io.h */,
+				4C38A46609E919FA0017F3A9 /* idk_ne_InetAddress.h */,
+				4C38A46709E919FA0017F3A9 /* idk_ne_NetSystemException.h */,
+				4C38A46809E919FA0017F3A9 /* idk_ne_NoConnectionException.h */,
+				4C38A46909E919FA0017F3A9 /* idk_ne_ServerSocket.h */,
+				4C38A46A09E919FA0017F3A9 /* idk_ne_Socket.h */,
+				4C38A46B09E919FA0017F3A9 /* idk_ne_SocketAddress.h */,
+				4C38A46C09E919FA0017F3A9 /* idk_ne_Types.h */,
+				4C38A46D09E919FA0017F3A9 /* idk_ne_UnknownHostException.h */,
+				4C38A46E09E919FA0017F3A9 /* idk_ne_URLStreamUtil.h */,
+				4C38A46F09E919FA0017F3A9 /* idk_ne.h */,
+				4C38A47009E919FA0017F3A9 /* idk_readme.h */,
+				4C38A47109E919FA0017F3A9 /* idk_th_ILockable.h */,
+				4C38A47209E919FA0017F3A9 /* idk_th_InterruptedException.h */,
+				4C38A47309E919FA0017F3A9 /* idk_th_IRunnable.h */,
+				4C38A47409E919FA0017F3A9 /* idk_th_Lockable.h */,
+				4C38A47509E919FA0017F3A9 /* idk_th_Locker.h */,
+				4C38A47609E919FA0017F3A9 /* idk_th_Monitor.h */,
+				4C38A47709E919FA0017F3A9 /* idk_th_MonitorTimedoutException.h */,
+				4C38A47809E919FA0017F3A9 /* idk_th_SinglePooledThread.h */,
+				4C38A47909E919FA0017F3A9 /* idk_th_Thread.h */,
+				4C38A47A09E919FA0017F3A9 /* idk_th_ThreadUtil.h */,
+				4C38A47B09E919FA0017F3A9 /* idk_th_TMTQueue.h */,
+				4C38A47C09E919FA0017F3A9 /* idk_th_Types.h */,
+				4C38A47D09E919FA0017F3A9 /* idk_th_Unlocker.h */,
+				4C38A47E09E919FA0017F3A9 /* idk_th.h */,
+				4C38A47F09E919FA0017F3A9 /* idk_ut_AssertionFailedException.h */,
+				4C38A48009E919FA0017F3A9 /* idk_ut_BadParameterException.h */,
+				4C38A48109E919FA0017F3A9 /* idk_ut_Base.h */,
+				4C38A48209E919FA0017F3A9 /* idk_ut_BridgeObject.h */,
+				4C38A48309E919FA0017F3A9 /* idk_ut_ByteArray.h */,
+				4C38A48409E919FA0017F3A9 /* idk_ut_DateStruct.h */,
+				4C38A48509E919FA0017F3A9 /* idk_ut_Exception.h */,
+				4C38A48609E919FA0017F3A9 /* idk_ut_ExceptionUtil.h */,
+				4C38A48709E919FA0017F3A9 /* idk_ut_ILogger.h */,
+				4C38A48809E919FA0017F3A9 /* idk_ut_IntHashFuncs.h */,
+				4C38A48909E919FA0017F3A9 /* idk_ut_ITIterator.h */,
+				4C38A48A09E919FA0017F3A9 /* idk_ut_LogUtil.h */,
+				4C38A48B09E919FA0017F3A9 /* idk_ut_NullableString.h */,
+				4C38A48C09E919FA0017F3A9 /* idk_ut_Object.h */,
+				4C38A48D09E919FA0017F3A9 /* idk_ut_ObjectHashFuncs.h */,
+				4C38A48E09E919FA0017F3A9 /* idk_ut_OutOfResourceException.h */,
+				4C38A48F09E919FA0017F3A9 /* idk_ut_PermissionDeniedException.h */,
+				4C38A49009E919FA0017F3A9 /* idk_ut_RealObject.h */,
+				4C38A49109E919FA0017F3A9 /* idk_ut_RuntimeException.h */,
+				4C38A49209E919FA0017F3A9 /* idk_ut_StringHashFuncs.h */,
+				4C38A49309E919FA0017F3A9 /* idk_ut_StrUtil.h */,
+				4C38A49409E919FA0017F3A9 /* idk_ut_SystemUtil.h */,
+				4C38A49509E919FA0017F3A9 /* idk_ut_TCollection.h */,
+				4C38A49609E919FA0017F3A9 /* idk_ut_TFakeHashTable.h */,
+				4C38A49709E919FA0017F3A9 /* idk_ut_TProxyObject.h */,
+				4C38A49809E919FA0017F3A9 /* idk_ut_TQueue.h */,
+				4C38A49909E919FA0017F3A9 /* idk_ut_Tracer.h */,
+				4C38A49A09E919FA0017F3A9 /* idk_ut_TRealIterator.h */,
+				4C38A49B09E919FA0017F3A9 /* idk_ut_TSharedPtr.h */,
+				4C38A49C09E919FA0017F3A9 /* idk_ut_TUnsharedPtr.h */,
+				4C38A49D09E919FA0017F3A9 /* idk_ut_TVectorUtil.h */,
+				4C38A49E09E919FA0017F3A9 /* idk_ut_Types.h */,
+				4C38A49F09E919FA0017F3A9 /* idk_ut.h */,
+				4C38A4A009E919FA0017F3A9 /* idk_xm_Types.h */,
+				4C38A4A109E919FA0017F3A9 /* idk_xm_XmlWriter.h */,
+				4C38A4A209E919FA0017F3A9 /* idk_xm.h */,
+				4C38A4A309E919FA0017F3A9 /* idk.h */,
+			);
+			name = Includes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D1107270486CEB800E47090 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D1107280486CEB800E47090 /* CocoaAppleScriptProxy_Prefix.pch in Headers */,
+				4C42836B09E912A4007C4382 /* EHASMediator.h in Headers */,
+				4C42836F09E9131C007C4382 /* EventHeap.h in Headers */,
+				4C38A4A409E919FB0017F3A9 /* eh2_Base.h in Headers */,
+				4C38A4A509E919FB0017F3A9 /* eh2_ConnectErrorHandler.h in Headers */,
+				4C38A4A609E919FB0017F3A9 /* eh2_Connection.h in Headers */,
+				4C38A4A709E919FB0017F3A9 /* eh2_Consts.h in Headers */,
+				4C38A4A809E919FB0017F3A9 /* eh2_ErrorContext.h in Headers */,
+				4C38A4A909E919FB0017F3A9 /* eh2_Event.h in Headers */,
+				4C38A4AA09E919FB0017F3A9 /* eh2_EventCollection.h in Headers */,
+				4C38A4AB09E919FB0017F3A9 /* eh2_EventConsts.h in Headers */,
+				4C38A4AC09E919FB0017F3A9 /* eh2_EventHeap.h in Headers */,
+				4C38A4AD09E919FB0017F3A9 /* eh2_EventHeapException.h in Headers */,
+				4C38A4AE09E919FB0017F3A9 /* eh2_EventHeapFactory.h in Headers */,
+				4C38A4AF09E919FB0017F3A9 /* eh2_EventHeapProtocolException.h in Headers */,
+				4C38A4B009E919FB0017F3A9 /* eh2_EventRegistration.h in Headers */,
+				4C38A4B109E919FB0017F3A9 /* eh2_EventToXML.h in Headers */,
+				4C38A4B209E919FB0017F3A9 /* eh2_Field.h in Headers */,
+				4C38A4B309E919FB0017F3A9 /* eh2_FieldOperationException.h in Headers */,
+				4C38A4B409E919FB0017F3A9 /* eh2_FieldType.h in Headers */,
+				4C38A4B509E919FB0017F3A9 /* eh2_FieldValue.h in Headers */,
+				4C38A4B609E919FB0017F3A9 /* eh2_IFieldIterator.h in Headers */,
+				4C38A4B709E919FB0017F3A9 /* eh2_readme.h in Headers */,
+				4C38A4B809E919FB0017F3A9 /* eh2_SerializationException.h in Headers */,
+				4C38A4B909E919FB0017F3A9 /* eh2_Tracer.h in Headers */,
+				4C38A4BA09E919FB0017F3A9 /* eh2_TracerConsts.h in Headers */,
+				4C38A4BB09E919FB0017F3A9 /* eh2_Types.h in Headers */,
+				4C38A4BC09E919FB0017F3A9 /* eh2.h in Headers */,
+				4C38A4BD09E919FB0017F3A9 /* idk_io_ByteArrayInStream.h in Headers */,
+				4C38A4BE09E919FB0017F3A9 /* idk_io_ByteArrayOutStream.h in Headers */,
+				4C38A4BF09E919FB0017F3A9 /* idk_io_ByteBufferInStream.h in Headers */,
+				4C38A4C009E919FB0017F3A9 /* idk_io_ByteBufferOutStream.h in Headers */,
+				4C38A4C109E919FB0017F3A9 /* idk_io_ByteLoggingInStream.h in Headers */,
+				4C38A4C209E919FB0017F3A9 /* idk_io_EOFException.h in Headers */,
+				4C38A4C309E919FB0017F3A9 /* idk_io_FileInStream.h in Headers */,
+				4C38A4C409E919FB0017F3A9 /* idk_io_FileNotFoundException.h in Headers */,
+				4C38A4C509E919FB0017F3A9 /* idk_io_FileOutStream.h in Headers */,
+				4C38A4C609E919FB0017F3A9 /* idk_io_FileUtil.h in Headers */,
+				4C38A4C709E919FB0017F3A9 /* idk_io_IByteInStream.h in Headers */,
+				4C38A4C809E919FB0017F3A9 /* idk_io_IByteOutStream.h in Headers */,
+				4C38A4C909E919FB0017F3A9 /* idk_io_InterruptedIOException.h in Headers */,
+				4C38A4CA09E919FB0017F3A9 /* idk_io_IOException.h in Headers */,
+				4C38A4CB09E919FB0017F3A9 /* idk_io_ITInStream.h in Headers */,
+				4C38A4CC09E919FB0017F3A9 /* idk_io_ITInStreamImpl.h in Headers */,
+				4C38A4CD09E919FB0017F3A9 /* idk_io_ITOutStream.h in Headers */,
+				4C38A4CE09E919FB0017F3A9 /* idk_io_ITOutStreamImpl.h in Headers */,
+				4C38A4CF09E919FB0017F3A9 /* idk_io_LineReader.h in Headers */,
+				4C38A4D009E919FB0017F3A9 /* idk_io_RealByteInStream.h in Headers */,
+				4C38A4D109E919FB0017F3A9 /* idk_io_RealByteOutStream.h in Headers */,
+				4C38A4D209E919FB0017F3A9 /* idk_io_TimedoutIOException.h in Headers */,
+				4C38A4D309E919FB0017F3A9 /* idk_io_TRealInStream.h in Headers */,
+				4C38A4D409E919FB0017F3A9 /* idk_io_TRealOutStream.h in Headers */,
+				4C38A4D509E919FB0017F3A9 /* idk_io_Types.h in Headers */,
+				4C38A4D609E919FB0017F3A9 /* idk_io.h in Headers */,
+				4C38A4D709E919FB0017F3A9 /* idk_ne_InetAddress.h in Headers */,
+				4C38A4D809E919FB0017F3A9 /* idk_ne_NetSystemException.h in Headers */,
+				4C38A4D909E919FB0017F3A9 /* idk_ne_NoConnectionException.h in Headers */,
+				4C38A4DA09E919FB0017F3A9 /* idk_ne_ServerSocket.h in Headers */,
+				4C38A4DB09E919FB0017F3A9 /* idk_ne_Socket.h in Headers */,
+				4C38A4DC09E919FB0017F3A9 /* idk_ne_SocketAddress.h in Headers */,
+				4C38A4DD09E919FB0017F3A9 /* idk_ne_Types.h in Headers */,
+				4C38A4DE09E919FB0017F3A9 /* idk_ne_UnknownHostException.h in Headers */,
+				4C38A4DF09E919FB0017F3A9 /* idk_ne_URLStreamUtil.h in Headers */,
+				4C38A4E009E919FB0017F3A9 /* idk_ne.h in Headers */,
+				4C38A4E109E919FB0017F3A9 /* idk_readme.h in Headers */,
+				4C38A4E209E919FB0017F3A9 /* idk_th_ILockable.h in Headers */,
+				4C38A4E309E919FB0017F3A9 /* idk_th_InterruptedException.h in Headers */,
+				4C38A4E409E919FB0017F3A9 /* idk_th_IRunnable.h in Headers */,
+				4C38A4E509E919FB0017F3A9 /* idk_th_Lockable.h in Headers */,
+				4C38A4E609E919FB0017F3A9 /* idk_th_Locker.h in Headers */,
+				4C38A4E709E919FB0017F3A9 /* idk_th_Monitor.h in Headers */,
+				4C38A4E809E919FB0017F3A9 /* idk_th_MonitorTimedoutException.h in Headers */,
+				4C38A4E909E919FB0017F3A9 /* idk_th_SinglePooledThread.h in Headers */,
+				4C38A4EA09E919FB0017F3A9 /* idk_th_Thread.h in Headers */,
+				4C38A4EB09E919FB0017F3A9 /* idk_th_ThreadUtil.h in Headers */,
+				4C38A4EC09E919FB0017F3A9 /* idk_th_TMTQueue.h in Headers */,
+				4C38A4ED09E919FB0017F3A9 /* idk_th_Types.h in Headers */,
+				4C38A4EE09E919FB0017F3A9 /* idk_th_Unlocker.h in Headers */,
+				4C38A4EF09E919FB0017F3A9 /* idk_th.h in Headers */,
+				4C38A4F009E919FB0017F3A9 /* idk_ut_AssertionFailedException.h in Headers */,
+				4C38A4F109E919FB0017F3A9 /* idk_ut_BadParameterException.h in Headers */,
+				4C38A4F209E919FB0017F3A9 /* idk_ut_Base.h in Headers */,
+				4C38A4F309E919FB0017F3A9 /* idk_ut_BridgeObject.h in Headers */,
+				4C38A4F409E919FB0017F3A9 /* idk_ut_ByteArray.h in Headers */,
+				4C38A4F509E919FB0017F3A9 /* idk_ut_DateStruct.h in Headers */,
+				4C38A4F609E919FB0017F3A9 /* idk_ut_Exception.h in Headers */,
+				4C38A4F709E919FB0017F3A9 /* idk_ut_ExceptionUtil.h in Headers */,
+				4C38A4F809E919FB0017F3A9 /* idk_ut_ILogger.h in Headers */,
+				4C38A4F909E919FB0017F3A9 /* idk_ut_IntHashFuncs.h in Headers */,
+				4C38A4FA09E919FB0017F3A9 /* idk_ut_ITIterator.h in Headers */,
+				4C38A4FB09E919FB0017F3A9 /* idk_ut_LogUtil.h in Headers */,
+				4C38A4FC09E919FB0017F3A9 /* idk_ut_NullableString.h in Headers */,
+				4C38A4FD09E919FB0017F3A9 /* idk_ut_Object.h in Headers */,
+				4C38A4FE09E919FB0017F3A9 /* idk_ut_ObjectHashFuncs.h in Headers */,
+				4C38A4FF09E919FB0017F3A9 /* idk_ut_OutOfResourceException.h in Headers */,
+				4C38A50009E919FB0017F3A9 /* idk_ut_PermissionDeniedException.h in Headers */,
+				4C38A50109E919FB0017F3A9 /* idk_ut_RealObject.h in Headers */,
+				4C38A50209E919FB0017F3A9 /* idk_ut_RuntimeException.h in Headers */,
+				4C38A50309E919FB0017F3A9 /* idk_ut_StringHashFuncs.h in Headers */,
+				4C38A50409E919FB0017F3A9 /* idk_ut_StrUtil.h in Headers */,
+				4C38A50509E919FB0017F3A9 /* idk_ut_SystemUtil.h in Headers */,
+				4C38A50609E919FB0017F3A9 /* idk_ut_TCollection.h in Headers */,
+				4C38A50709E919FB0017F3A9 /* idk_ut_TFakeHashTable.h in Headers */,
+				4C38A50809E919FB0017F3A9 /* idk_ut_TProxyObject.h in Headers */,
+				4C38A50909E919FB0017F3A9 /* idk_ut_TQueue.h in Headers */,
+				4C38A50A09E919FB0017F3A9 /* idk_ut_Tracer.h in Headers */,
+				4C38A50B09E919FB0017F3A9 /* idk_ut_TRealIterator.h in Headers */,
+				4C38A50C09E919FB0017F3A9 /* idk_ut_TSharedPtr.h in Headers */,
+				4C38A50D09E919FB0017F3A9 /* idk_ut_TUnsharedPtr.h in Headers */,
+				4C38A50E09E919FB0017F3A9 /* idk_ut_TVectorUtil.h in Headers */,
+				4C38A50F09E919FB0017F3A9 /* idk_ut_Types.h in Headers */,
+				4C38A51009E919FB0017F3A9 /* idk_ut.h in Headers */,
+				4C38A51109E919FB0017F3A9 /* idk_xm_Types.h in Headers */,
+				4C38A51209E919FB0017F3A9 /* idk_xm_XmlWriter.h in Headers */,
+				4C38A51309E919FB0017F3A9 /* idk_xm.h in Headers */,
+				4C38A51409E919FB0017F3A9 /* idk.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* CocoaAppleScriptProxy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A1E160409E950DD004E18A9 /* Build configuration list for PBXNativeTarget "CocoaAppleScriptProxy" */;
+			buildPhases = (
+				8D1107270486CEB800E47090 /* Headers */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaAppleScriptProxy_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"/Users/Eugen/berlios/trunk/Event Heap/c++/Mac OS X/lib\"";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CocoaAppleScriptProxy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			name = CocoaAppleScriptProxy;
+			productInstallPath = "$(HOME)/Applications";
+			productName = CocoaAppleScriptProxy;
+			productReference = 8D1107320486CEB800E47090 /* CocoaAppleScriptProxy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9A1E160809E950DD004E18A9 /* Build configuration list for PBXProject "CocoaAppleScriptProxy" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA /* Development */,
+				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CocoaAppleScriptProxy */;
+			projectDirPath = "";
+			targets = (
+				8D1107260486CEB800E47090 /* CocoaAppleScriptProxy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				4C42836C09E912A4007C4382 /* EHASMediator.mm in Sources */,
+				4C42837009E9131C007C4382 /* EventHeap.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A1E160509E950DD004E18A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaAppleScriptProxy_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CocoaAppleScriptProxy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Development;
+		};
+		9A1E160609E950DD004E18A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaAppleScriptProxy_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CocoaAppleScriptProxy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		9A1E160709E950DD004E18A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CocoaAppleScriptProxy_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/include";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "/private/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/E/Stu/yu/berlios/trunk/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
+				OTHER_CFLAGS = (
+					"-Dunix",
+					"-D_REENTRANT",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = CocoaAppleScriptProxy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		9A1E160909E950DD004E18A9 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+			};
+			name = Development;
+		};
+		9A1E160A09E950DD004E18A9 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+			};
+			name = Deployment;
+		};
+		9A1E160B09E950DD004E18A9 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 3.3;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A1E160409E950DD004E18A9 /* Build configuration list for PBXNativeTarget "CocoaAppleScriptProxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1E160509E950DD004E18A9 /* Development */,
+				9A1E160609E950DD004E18A9 /* Deployment */,
+				9A1E160709E950DD004E18A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		9A1E160809E950DD004E18A9 /* Build configuration list for PBXProject "CocoaAppleScriptProxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1E160909E950DD004E18A9 /* Development */,
+				9A1E160A09E950DD004E18A9 /* Deployment */,
+				9A1E160B09E950DD004E18A9 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

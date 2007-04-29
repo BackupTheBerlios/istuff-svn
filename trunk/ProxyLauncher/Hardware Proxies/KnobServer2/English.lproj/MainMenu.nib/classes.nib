@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = KnobApplication; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mWindow = KnobWindow; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            CLASS = KnobWinController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mWindow = KnobWindow; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = KnobWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }
+    ); 
+    IBVersion = 1; 
+}

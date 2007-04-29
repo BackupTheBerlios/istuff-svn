@@ -1,0 +1,11 @@
+tell application "System Events"
+	--	set iTerm to x to the number of items in processes
+	set i to 0
+	repeat while i < the number of items in processes
+		--set x to the name of the item i of processes
+		set p to process i
+		if frontmost of p is true then set retval to name of p
+		set i to i + 1
+	end repeat
+	retval
+end tell

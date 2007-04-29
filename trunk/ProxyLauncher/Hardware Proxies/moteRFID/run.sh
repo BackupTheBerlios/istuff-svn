@@ -1,0 +1,1 @@
+java -classpath ../../Lib/iROS.jar:. RFIDproxy localhost /dev/tty.usbserial0

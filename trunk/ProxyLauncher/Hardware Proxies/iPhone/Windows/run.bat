@@ -1,0 +1,1 @@
+java -classpath "%CLASSPATH%";..\..\..\Lib\iROS.jar;.. iPhone 10.0.2.1 COM4 

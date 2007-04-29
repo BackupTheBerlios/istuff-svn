@@ -1,0 +1,1 @@
+java -classpath ..\..\Lib\iROS.jar;. ClipboardSyn coltrane.informatik.rwth-aachen.de

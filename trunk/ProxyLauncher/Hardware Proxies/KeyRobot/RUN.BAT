@@ -1,0 +1,1 @@
+java -classpath ..\..\Lib\iROS.jar;. KeyRobot coltrane.informatik.rwth-aachen.de

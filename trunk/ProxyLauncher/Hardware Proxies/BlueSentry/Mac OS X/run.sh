@@ -1,0 +1,1 @@
+java -classpath ../ BlueSentry /dev/tty.BlueSentry localhost

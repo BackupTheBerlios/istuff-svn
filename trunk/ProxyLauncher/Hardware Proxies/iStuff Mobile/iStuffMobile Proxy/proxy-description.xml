@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Mobile_Phone_Interaction</proxyClass>
+  <name>MobilePhone_Proxy</name> 
+  <ClassName>iStuffMobileProxy</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:./classes:. iStuffMobileProxy</launchCommand>
+  <CustomLibs>
+    <relativePath></relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter>/dev/tty.Nokia6600</Parameter>
+  </AdditionalParameters>
+</proxy>

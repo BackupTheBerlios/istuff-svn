@@ -1,0 +1,198 @@
+group MyGroup;
+
+//This script shows how to work with PRSender and PRReiver, Focus changed by hotkey
+
+
+//Const
+string redName = "monk";
+string greenName = "gillespie";
+//string greenName = "ellington";
+string blueName = "fitzerald";
+int userID = 1;
+
+
+//Vars
+//ID should be consistent with IDFacilitator class
+int deviceSelectedID = -1; 
+//see focus.elements.Application 
+int appTypeSelected = 0; 
+
+//appID should be consistent with IDFacilitator class
+int appID =-1; 
+
+int appTypeCount = 0;
+int appCount = 0;
+
+//for the keyboard server
+string languageNameToBeActivated = ""; 
+
+//for the input key event
+string keyFromKeyboard = ""; 	
+
+string currentHostName = "parker";
+string currentScript = "";
+
+string errormessage = "";
+
+string pScreen = "default";
+int pRightButton = 0;
+int pLeftButton = 0;
+int pMiddleButton = 0;
+int pX = 0;
+int pY = 0;
+
+
+////////////////////////////////////////////////////////////////////////////////////Events from input device
+event KeyEvent type KEYBOARD{
+}
+
+event PointerIn type PointRightEvent{
+	string Screen = "default", VIRTUAL;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////App events
+event URLModelEvent type URL_ENTRY{
+	int appID = global.appID, FORMAL;
+	string key = global.keyFromKeyboard, FRORMAL;
+}
+
+
+event PointerLeave type PointRightEvent{
+	string Screen = global.pScreen , FRORMAL;
+	string PointRightEventType = "LeaveEvent" , FRORMAL;
+	int TimeToLive = 500;
+}
+
+event PointerOut type PointRightEvent{
+	string Screen = global.pScreen, FORMAL;
+	string PointRightEventType = "MouseEvent", FORMAL;
+	int RightButton = global.pRightButton, FORMAL;
+	//int RightButton = in.RightButton, FORMAL;
+	int LeftButton = global.pLeftButton, FORMAL;
+	//int LeftButton = in.LeftButton, FORMAL;
+	int MiddleButton = global.pMiddleButton, FORMAL;
+	//int MiddleButton = in.MiddleButton, FORMAL;
+	int X = global.pX, FORMAL;
+	int Y = global.pY, FORMAL;
+	//int TimeToLive = 500;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////Feedback events
+// Auditive feed back 
+event VoiceEvent type AppleScript {
+	string script = global.currentScript, FORMAL;
+	string Target = global.currentHostName , FORMAL;
+}
+
+
+//
+event ExposeEvent type AppleScript {
+	string script = "tell application \"System Events\" to key code  101";
+	string Target = global.currentHostName , FORMAL;
+}
+
+event ASEvent type AppleScript {
+	string script = global.currentScript, FORMAL;
+	string Target = global.currentHostName , FORMAL;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////Focus events
+
+event DeviceSeletionEvent type CHANGE_OUTPUT{
+	int userID = global.userID, FORMAL;
+	int outputID = global.deviceSelectedID, FORMAL;
+}
+
+event OutputInformEvent type OUTPUT_INFO{
+}
+
+
+//////////////////////////////////////////////////////////////////////////////Debug events
+event ErrorMessage type DEBUG {
+	string errormessage = global.errormessage , FORMAL;
+}
+////////Usage:
+//errormessage = "in device selected";
+//send ErrorMessage;
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//waiting for 1st device selection
+initial state NoneFocusedYet{
+	on enter {
+		//pRightButton = 0;
+		//send PointerOut;
+	}
+	
+	//(FOCUS PHASE I)Output device selection is done by keyboard
+	on KeyEvent {
+		//use the function key yo select the target
+		//The first three cases to cover selection 
+		//Also prepare feedback
+		switch int (in.code){
+			case 122 {
+				currentHostName = redName;
+				currentScript ="tell application \"System Events\" to say \"Red screen selected\"";
+				deviceSelectedID = 0;
+			}
+			case 120{
+				currentHostName = greenName;
+				currentScript ="tell application \"System Events\" to say \"Green screen selected\"";
+				deviceSelectedID = 1;				
+			}
+			case 99{
+				currentHostName = blueName;
+				currentScript ="tell application \"System Events\" to say \"Blue screen selected\"";
+				deviceSelectedID = 2;				
+			}
+			case 69{
+				currentScript = "tell application \"System Events\" to key code 24 using [option down, command down]";
+				send ASEvent;
+			}
+			case 78{
+				currentScript = "tell application \"System Events\" to key code 27 using [option down, command down]";
+				send ASEvent;
+			}
+			
+		}
+		pScreen = currentHostName;
+	}
+	
+	
+	on  	PointerIn{
+		switch string (in.PointRightEventType){
+			case "MouseEvent"{
+				pRightButton = in.RightButton;
+				pLeftButton = in.LeftButton;
+				pMiddleButton = in.MiddleButton;
+				pX = in.X;
+				pY = in.Y;
+				send PointerOut;
+			}
+			case "LeaveEvent"{
+			
+				send PointerLeave;
+			}
+			
+			case "ScrollEvent"{
+				
+				if (in.Value > 0 ){
+					currentScript = "tell application \"System Events\" to key code 27 using [option down, command down]";
+				}
+				else{
+					currentScript = "tell application \"System Events\" to key code 24 using [option down, command down]";
+				}
+				send ASEvent;
+			}
+		}
+		
+		///		if (in.PointRightEventType == "MouseEvent"){
+		//	send PointerOut;
+	//	}
+	}
+}

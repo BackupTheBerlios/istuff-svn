@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Phidgets</proxyClass>
+  <name>Servo Controller</name> 
+  <ClassName>ServoController</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>java -classpath ../../../Lib/iROS.jar:..:. ServoController</launchCommand>
+  <CustomLibs>
+    <relativePath>..</relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

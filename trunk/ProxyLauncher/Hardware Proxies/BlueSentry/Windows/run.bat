@@ -1,0 +1,1 @@
+java -classpath ..\ BlueSentry /dev/tty/tty.BlueSentry-cube iw-room2.stanford.edu

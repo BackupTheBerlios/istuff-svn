@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Sensors</proxyClass>
+  <name>PowerbookTiltSensor</name> 
+  <ClassName>motionProxy</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>./motion/motion powerbook | java -cp "../../Lib/iROS.jar":. motionProxy</launchCommand>
+  <CustomLibs>
+    <relativePath>./motion/motion powerbook</relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>

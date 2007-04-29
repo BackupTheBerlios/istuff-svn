@@ -1,0 +1,140 @@
+02/30 13:39:52.177[a000a1ec] start system call: gethostbyname
+02/30 13:39:52.178[a000a1ec] end system call: 6293216
+02/30 13:39:52.178[a000a1ec] start system call: gethostbyname
+02/30 13:39:52.178[a000a1ec] end system call: 6293216
+02/30 13:39:52.179[a000a1ec] start system call: connect
+02/30 13:39:52.179[a000a1ec] end system call: -1
+02/30 13:39:52.186[a000a1ec] start system call: close (socket)
+02/30 13:39:52.186[a000a1ec] end system call: 0
+02/30 13:39:52.186[a000a1ec] recoverable error occured in CM: idk_ne_NoConnectionException : connect : Connection refused by localhost:4535.
+02/30 13:39:53.600[a000a1ec] start system call: connect
+02/30 13:39:53.601[a000a1ec] end system call: 0
+02/30 13:39:53.601[a000a1ec] start system call: setsockopt
+02/30 13:39:53.601[a000a1ec] end system call: 0
+02/30 13:39:53.601[a000a1ec] start system call: send
+02/30 13:39:53.601[a000a1ec] end system call: 8
+02/30 13:39:53.601[a000a1ec] start system call: recv
+02/30 13:39:53.862[a000a1ec] end system call: 8
+02/30 13:39:53.863[a000a1ec] API func putEvent start
+02/30 13:39:53.863[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:53.863[a000a1ec]   destinationTag='putEvent', returnTag='BSR0'
+02/30 13:39:53.863[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='1'
+02/30 13:39:53.863[a000a1ec] checkpoint in CM: Data 'BSR0' was put into the send queue
+02/30 13:39:53.867[0280a600] thread Receiver started
+02/30 13:39:53.867[0280a600] start system call: recv
+02/30 13:39:53.867[0280aa00] thread Sender started
+02/30 13:39:53.867[0280aa00] checkpoint in CM: Data 'BSR0' was retrieved from the send queue
+02/30 13:39:53.867[0280aa00] start system call: send
+02/30 13:39:53.867[0280aa00] end system call: 614
+02/30 13:39:53.903[0280a600] end system call: 11
+02/30 13:39:53.903[0280a600] checkpoint in CM: Data 'BSR0' was removed from the table
+02/30 13:39:53.903[0280a600] checkpoint in CM: The result for 'BSR0' was notified to the client
+02/30 13:39:53.903[0280a600] start system call: recv
+02/30 13:39:53.903[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:53.903[a000a1ec]   destinationTag='BSR0', returnTag='(null)'
+02/30 13:39:53.903[a000a1ec] API func putEvent end
+02/30 13:39:53.904[a000a1ec] API func putEvent start
+02/30 13:39:53.904[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:53.904[a000a1ec]   destinationTag='putEvent', returnTag='BSR1'
+02/30 13:39:53.904[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='2'
+02/30 13:39:53.904[a000a1ec] checkpoint in CM: Data 'BSR1' was put into the send queue
+02/30 13:39:53.904[0280aa00] checkpoint in CM: Data 'BSR1' was retrieved from the send queue
+02/30 13:39:53.904[0280aa00] start system call: send
+02/30 13:39:53.904[0280aa00] end system call: 611
+02/30 13:39:53.905[0280a600] end system call: 11
+02/30 13:39:53.905[0280a600] checkpoint in CM: Data 'BSR1' was removed from the table
+02/30 13:39:53.905[0280a600] checkpoint in CM: The result for 'BSR1' was notified to the client
+02/30 13:39:53.905[0280a600] start system call: recv
+02/30 13:39:53.905[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:53.905[a000a1ec]   destinationTag='BSR1', returnTag='(null)'
+02/30 13:39:53.905[a000a1ec] API func putEvent end
+02/30 13:39:53.905[a000a1ec] API func putEvent start
+02/30 13:39:53.905[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:53.905[a000a1ec]   destinationTag='putEvent', returnTag='BSR2'
+02/30 13:39:53.905[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='3'
+02/30 13:39:53.906[a000a1ec] checkpoint in CM: Data 'BSR2' was put into the send queue
+02/30 13:39:53.906[0280aa00] checkpoint in CM: Data 'BSR2' was retrieved from the send queue
+02/30 13:39:53.906[0280aa00] start system call: send
+02/30 13:39:53.906[0280aa00] end system call: 615
+02/30 13:39:53.906[0280a600] end system call: 11
+02/30 13:39:53.907[0280a600] checkpoint in CM: Data 'BSR2' was removed from the table
+02/30 13:39:53.907[0280a600] checkpoint in CM: The result for 'BSR2' was notified to the client
+02/30 13:39:53.907[0280a600] start system call: recv
+02/30 13:39:53.907[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:53.907[a000a1ec]   destinationTag='BSR2', returnTag='(null)'
+02/30 13:39:53.907[a000a1ec] API func putEvent end
+02/30 13:39:53.907[a000a1ec] API func waitForEvent(1) start
+02/30 13:39:53.907[a000a1ec] API func waitForEvent(*) start
+02/30 13:39:53.907[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:53.907[a000a1ec]   destinationTag='waitForEvent', returnTag='BSR3'
+02/30 13:39:53.907[a000a1ec] checkpoint in CM: Data 'BSR3' was put into the send queue
+02/30 13:39:53.908[0280aa00] checkpoint in CM: Data 'BSR3' was retrieved from the send queue
+02/30 13:39:53.908[0280aa00] start system call: send
+02/30 13:39:53.908[0280aa00] end system call: 605
+02/30 13:39:53.985[0280a600] end system call: 608
+02/30 13:39:53.986[0280a600] checkpoint in CM: Data 'BSR3' was removed from the table
+02/30 13:39:53.986[0280a600] checkpoint in CM: The result for 'BSR3' was notified to the client
+02/30 13:39:53.986[0280a600] start system call: recv
+02/30 13:39:53.986[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:53.986[a000a1ec]   destinationTag='BSR3', returnTag='(null)'
+02/30 13:39:53.986[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='1'
+02/30 13:39:53.986[a000a1ec] API func waitForEvent(*) end
+02/30 13:39:53.986[a000a1ec] API func waitForEvent(1) end
+02/30 13:39:53.988[a000a1ec] API func getAll start
+02/30 13:39:53.988[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:53.988[a000a1ec]   destinationTag='getAll', returnTag='BSR4'
+02/30 13:39:53.988[a000a1ec] checkpoint in CM: Data 'BSR4' was put into the send queue
+02/30 13:39:53.988[0280aa00] checkpoint in CM: Data 'BSR4' was retrieved from the send queue
+02/30 13:39:53.988[0280aa00] start system call: send
+02/30 13:39:53.988[0280aa00] end system call: 15
+02/30 13:39:53.993[0280a600] end system call: 1792
+02/30 13:39:53.993[0280a600] checkpoint in CM: Data 'BSR4' was removed from the table
+02/30 13:39:53.993[0280a600] checkpoint in CM: The result for 'BSR4' was notified to the client
+02/30 13:39:53.993[0280a600] start system call: recv
+02/30 13:39:53.995[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:53.995[a000a1ec]   destinationTag='BSR4', returnTag='(null)'
+02/30 13:39:53.995[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='2'
+02/30 13:39:53.995[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='1'
+02/30 13:39:53.995[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='3'
+02/30 13:39:53.996[a000a1ec] API func getAll end
+02/30 13:39:54.011[a000a1ec] API func getEvent(*) start
+02/30 13:39:54.011[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:54.011[a000a1ec]   destinationTag='getEvent', returnTag='BSR5'
+02/30 13:39:54.011[a000a1ec]   seq info: type='MyEventType'
+02/30 13:39:54.011[a000a1ec]     source info: source='iteleo_274705778', sessionID='2147483647', seq='1'
+02/30 13:39:54.012[a000a1ec] checkpoint in CM: Data 'BSR5' was put into the send queue
+02/30 13:39:54.012[0280aa00] checkpoint in CM: Data 'BSR5' was retrieved from the send queue
+02/30 13:39:54.012[0280aa00] start system call: send
+02/30 13:39:54.012[0280aa00] end system call: 1180
+02/30 13:39:54.027[0280a600] end system call: 605
+02/30 13:39:54.028[0280a600] checkpoint in CM: Data 'BSR5' was removed from the table
+02/30 13:39:54.028[0280a600] checkpoint in CM: The result for 'BSR5' was notified to the client
+02/30 13:39:54.028[0280a600] start system call: recv
+02/30 13:39:54.028[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:54.028[a000a1ec]   destinationTag='BSR5', returnTag='(null)'
+02/30 13:39:54.028[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='2'
+02/30 13:39:54.028[a000a1ec] API func getEvent(*) end
+02/30 13:39:54.029[a000a1ec] API func getEvent(*) start
+02/30 13:39:54.030[a000a1ec] checkpoint in CL: started server call
+02/30 13:39:54.030[a000a1ec]   destinationTag='getEvent', returnTag='BSR6'
+02/30 13:39:54.030[a000a1ec]   seq info: type='MyEventType'
+02/30 13:39:54.030[a000a1ec]     source info: source='iteleo_274705778', sessionID='2147483647', seq='2'
+02/30 13:39:54.030[a000a1ec] checkpoint in CM: Data 'BSR6' was put into the send queue
+02/30 13:39:54.030[0280aa00] checkpoint in CM: Data 'BSR6' was retrieved from the send queue
+02/30 13:39:54.030[0280aa00] start system call: send
+02/30 13:39:54.030[0280aa00] end system call: 1180
+02/30 13:39:54.061[0280a600] end system call: 609
+02/30 13:39:54.061[0280a600] checkpoint in CM: Data 'BSR6' was removed from the table
+02/30 13:39:54.061[0280a600] checkpoint in CM: The result for 'BSR6' was notified to the client
+02/30 13:39:54.061[0280a600] start system call: recv
+02/30 13:39:54.062[a000a1ec] checkpoint in CL: finished server call
+02/30 13:39:54.062[a000a1ec]   destinationTag='BSR6', returnTag='(null)'
+02/30 13:39:54.062[a000a1ec]   event: type='MyEventType', source='iteleo_274705778', seq='3'
+02/30 13:39:54.062[a000a1ec] API func getEvent(*) end
+02/30 13:39:54.064[a000a1ec] start system call: open (to write)
+02/30 13:39:54.064[a000a1ec] end system call: 6
+02/30 13:39:54.065[a000a1ec] start system call: write
+02/30 13:39:54.065[a000a1ec] end system call: 3873
+02/30 13:39:54.065[a000a1ec] start system call: close
+02/30 13:39:54.065[a000a1ec] end system call: 0
+02/30 13:39:54.066[a000a1ec] tracer closing

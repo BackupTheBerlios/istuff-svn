@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<proxy>
+  <kind>Hardware Proxies</kind>
+  <proxyClass>Phidgets</proxyClass>
+  <name>Interface Kit</name> 
+  <ClassName>InterfaceKitproxy</ClassName>
+  <comment>user comment</comment>
+  <launchCommand>
+    java -classpath ../../../Lib/iROS.jar:..:. InterfaceKitproxy
+  </launchCommand>
+  <CustomLibs>
+    <relativePath>..</relativePath>
+  </CustomLibs>
+  <AdditionalParameters>
+	<Parameter></Parameter>
+  </AdditionalParameters>
+</proxy>
