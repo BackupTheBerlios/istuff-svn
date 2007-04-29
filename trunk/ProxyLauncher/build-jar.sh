@@ -35,5 +35,13 @@ cp start* ../../release/$REL_DIR/iStuff/
 svn export Hardware\ Proxies ../../release/$REL_DIR/iStuff/Hardware\ Proxies
 svn export Software\ Proxies ../../release/$REL_DIR/iStuff/Software\ Proxies
 
+# goto target, and zip everything into one iStuff.zip
+cd ../../release/$REL_DIR/
+zip -r iStuff.zip ./
+# rm -rf iStuff # only iStuff.zip remains with everything in it
+
+# return
+cd ../../trunk/ProxyLauncher/
+
 # done
 echo "Done\n"
