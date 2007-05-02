@@ -32,6 +32,7 @@ rm -rf build
 
 # copy some surroundings into the target dir
 cp start* ../../release/$REL_DIR/iStuff/
+cp README.txt ../../release/$REL_DIR/iStuff/
 svn export Hardware\ Proxies ../../release/$REL_DIR/iStuff/Hardware\ Proxies
 svn export Software\ Proxies ../../release/$REL_DIR/iStuff/Software\ Proxies
 
