@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXApplicationTarget section */
+		1601BCDBFEEE210811DB9C8B /* iStuff */ = {
+			isa = PBXApplicationTarget;
+			buildConfigurationList = 0ABEECEF08BBAC1300D7A79D /* Build configuration list for PBXApplicationTarget "iStuff" */;
+			buildPhases = (
+				1601BCDCFEEE210811DB9C8B /* Sources */,
+				1601BCDEFEEE210811DB9C8B /* JavaArchive */,
+				1601BCDFFEEE210811DB9C8B /* Resources */,
+				1601BCE2FEEE210811DB9C8B /* Frameworks */,
+				6A869E8001E69FA10CC91562 /* ShellScript */,
+			);
+			buildSettings = {
+				JAVA_ARCHIVE_COMPRESSION = NO;
+				JAVA_COMPILER = /usr/bin/javac;
+				JAVA_ONLY = YES;
+				JAVA_SOURCE_SUBDIR = .;
+				PRODUCT_NAME = iStuff;
+			};
+			dependencies = (
+			);
+			name = iStuff;
+			productName = iStuff;
+			productReference = 06D05853FF24F2DB11DB9C8B /* iStuff.app */;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>iStuff</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string>iStuff.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>iStuff</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.1</string>
+	<key>Java</key>
+	<dict>
+		<key>ClassPath</key>
+		<string>$JAVAROOT/iStuff.jar</string>
+		<key>JVMVersion</key>
+		<string>1.4+</string>
+		<key>MainClass</key>
+		<string>iStuff</string>
+		<key>Properties</key>
+		<dict>
+			<key>apple.laf.useScreenMenuBar</key>
+			<string>true</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
+";
+		};
+/* End PBXApplicationTarget section */
+
+/* Begin PBXBuildFile section */
+		010FB80D00814DD77F000001 /* iStuff.icns in Resources */ = {isa = PBXBuildFile; fileRef = 10F9BF62FEEDA25E11DB9C8B /* iStuff.icns */; };
+		048236B30081970D7F000001 /* iStuff.java in Sources */ = {isa = PBXBuildFile; fileRef = 048236B20081970D7F000001 /* iStuff.java */; };
+		6AAAF057023EA5D30CC91562 /* iStuffstrings.properties in JavaArchive */ = {isa = PBXBuildFile; fileRef = 6AAAF056023EA5D30CC91562 /* iStuffstrings.properties */; settings = {JAVA_ARCHIVE_SUBDIR = ""; }; };
+		D387A4620BE8E01500F2A8A1 /* WrapperThread.java in Sources */ = {isa = PBXBuildFile; fileRef = D387A4610BE8E01500F2A8A1 /* WrapperThread.java */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		0E20B662001FAFA711DB9C8B /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		0E20B663001FAFA711DB9C8B /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		048236B20081970D7F000001 /* iStuff.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = iStuff.java; sourceTree = "<group>"; };
+		06D05853FF24F2DB11DB9C8B /* iStuff.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = iStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F9BF62FEEDA25E11DB9C8B /* iStuff.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iStuff.icns; sourceTree = "<group>"; };
+		6AAAF056023EA5D30CC91562 /* iStuffstrings.properties */ = {isa = PBXFileReference; lastKnownFileType = text; path = iStuffstrings.properties; sourceTree = "<group>"; };
+		D387A4610BE8E01500F2A8A1 /* WrapperThread.java */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.java; path = WrapperThread.java; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1601BCE2FEEE210811DB9C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F12F4DFEC8CE2211DB9C8B = {
+			isa = PBXGroup;
+			children = (
+				D387A4610BE8E01500F2A8A1 /* WrapperThread.java */,
+				048236B20081970D7F000001 /* iStuff.java */,
+				10F9BF62FEEDA25E11DB9C8B /* iStuff.icns */,
+				6AAAF050023EA31A0CC91562 /* Resources */,
+				01F12F4FFEC8CEF111DB9C8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01F12F4FFEC8CEF111DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06D05853FF24F2DB11DB9C8B /* iStuff.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AAAF050023EA31A0CC91562 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6AAAF056023EA5D30CC91562 /* iStuffstrings.properties */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXJavaArchiveBuildPhase section */
+		1601BCDEFEEE210811DB9C8B /* JavaArchive */ = {
+			isa = PBXJavaArchiveBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAAF057023EA5D30CC91562 /* iStuffstrings.properties in JavaArchive */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXJavaArchiveBuildPhase section */
+
+/* Begin PBXProject section */
+		01F12F4CFEC8CE2211DB9C8B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 0ABEECF308BBAC1300D7A79D /* Build configuration list for PBXProject "iStuff" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				0E20B662001FAFA711DB9C8B /* Debug */,
+				0E20B663001FAFA711DB9C8B /* Release */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 01F12F4DFEC8CE2211DB9C8B;
+			productRefGroup = 01F12F4FFEC8CEF111DB9C8B /* Products */;
+			projectDirPath = "";
+			targets = (
+				1601BCDBFEEE210811DB9C8B /* iStuff */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1601BCDFFEEE210811DB9C8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010FB80D00814DD77F000001 /* iStuff.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A869E8001E69FA10CC91562 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n# This script copies alert strings into the application\n# so that if the application cannot be launched on an \n# older version of the operating system, the user gets a \n# localized error message.  \n#\n# The particular localizations copied into the application\n# are dependent upon the set of localizations installed on\n# the machine the application is built on.\n#\n\nif [ \"${TARGET_BUILD_DIR}\" = \"\" ]; \nthen\n    TARGET_BUILD_DIR=${BUILD_DIR}\nfi\n\nALERTSTRINGS=\"OldJavaAlert.strings\"\nAPPLAUNCHRESDIR=\"/System/Library/PrivateFrameworks/JavaApplicationLauncher.framework/Resources\";\nLSH=`/bin/ls \"$APPLAUNCHRESDIR\" | /usr/bin/grep lproj`;\nRESOURCEDIR=\"${TARGET_BUILD_DIR}/$TARGET_NAME.app/Contents/Resources\"\n\nfor COPYDIR in $LSH\ndo\n        /bin/mkdir -p \"$RESOURCEDIR/$COPYDIR\"\n        /bin/cp \"$APPLAUNCHRESDIR/$COPYDIR/$ALERTSTRINGS\" \"$RESOURCEDIR/$COPYDIR\"\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1601BCDCFEEE210811DB9C8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				048236B30081970D7F000001 /* iStuff.java in Sources */,
+				D387A4620BE8E01500F2A8A1 /* WrapperThread.java in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0ABEECF008BBAC1300D7A79D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				JAVA_ARCHIVE_COMPRESSION = NO;
+				JAVA_COMPILER = /usr/bin/javac;
+				JAVA_ONLY = YES;
+				JAVA_SOURCE_SUBDIR = .;
+				PRODUCT_NAME = iStuff;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		0ABEECF108BBAC1300D7A79D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				JAVA_ARCHIVE_COMPRESSION = NO;
+				JAVA_COMPILER = /usr/bin/javac;
+				JAVA_ONLY = YES;
+				JAVA_SOURCE_SUBDIR = .;
+				PRODUCT_NAME = iStuff;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		0ABEECF408BBAC1300D7A79D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		0ABEECF508BBAC1300D7A79D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ABEECEF08BBAC1300D7A79D /* Build configuration list for PBXApplicationTarget "iStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ABEECF008BBAC1300D7A79D /* Debug */,
+				0ABEECF108BBAC1300D7A79D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ABEECF308BBAC1300D7A79D /* Build configuration list for PBXProject "iStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ABEECF408BBAC1300D7A79D /* Debug */,
+				0ABEECF508BBAC1300D7A79D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01F12F4CFEC8CE2211DB9C8B /* Project object */;
+}
