@@ -38,7 +38,15 @@ public class CreateConfigFile {
      */
     public boolean saveConfigFile()
     {
-        File configFile = new File("configStarter.xml");
+        //File configFile = new File("configStarter.xml");
+        // save the xml inside the userdir
+        String path = System.getProperty("user.dir");
+        if      (System.getProperty("os.name").contains("Mac"))
+        		path = path+"/Library/iStuff/";
+        else if (System.getProperty("os.name").contains("Linux"))
+        		path = path+"/.iStuff/";
+        else		path = path+"\\iStuff\\";
+        File configFile = new File(path+"configStarter.xml");
         try
         {
             /* create an XML file with the following format
@@ -69,13 +77,13 @@ public class CreateConfigFile {
             //if OS the app is running on is MacOS or Linux, then use the forward slash, if not using backward slash.
             if ((System.getProperty("os.name").contains("Mac")) || (System.getProperty("os.name").contains("Linux")))
             {
-                libraries.addContent((new Element ("iROS")).addContent(""+ System.getProperty("user.dir") + "/lib"));
-                libraries.addContent((new Element ("JmDNS")).addContent(""+ System.getProperty("user.dir") + "/lib"));
+                libraries.addContent((new Element ("iROS")).addContent(""+ System.getProperty("user.dir") + "/"));
+                libraries.addContent((new Element ("JmDNS")).addContent(""+ System.getProperty("user.dir") + "/"));
             }
             else
             {
-                libraries.addContent((new Element ("iROS")).addContent(""+ System.getProperty("user.dir") + "\\lib"));
-                libraries.addContent((new Element ("JmDNS")).addContent(""+ System.getProperty("user.dir") + "\\lib"));
+                libraries.addContent((new Element ("iROS")).addContent(""+ System.getProperty("user.dir") + "\\"));
+                libraries.addContent((new Element ("JmDNS")).addContent(""+ System.getProperty("user.dir") + "\\"));
 
             }
             
@@ -85,13 +93,17 @@ public class CreateConfigFile {
             //if OS the app is running on is MacOS or Linux, then use the forward slash, if not using backward slash.
             if ((System.getProperty("os.name").contains("Mac")) || (System.getProperty("os.name").contains("Linux")))
             {
-                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "/Hardware Proxies"));
-                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "/Software Proxies"));
+//                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "/Hardware Proxies"));
+//                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "/Software Proxies"));
+                searchDirs.addContent((new Element ("directory")).addContent("./Hardware Proxies"));
+                searchDirs.addContent((new Element ("directory")).addContent("./Software Proxies"));
             }
             else
             {
-                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "\\Hardware Proxies"));
-                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "\\Software Proxies"));
+//                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "\\Hardware Proxies"));
+//                searchDirs.addContent((new Element ("directory")).addContent(""+ System.getProperty("user.dir") + "\\Software Proxies"));
+                searchDirs.addContent((new Element ("directory")).addContent(".\\Hardware Proxies"));
+                searchDirs.addContent((new Element ("directory")).addContent(".\\Software Proxies"));
             }
             
             //Commit the new configstarter.xml file.

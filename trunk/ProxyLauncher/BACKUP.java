@@ -349,7 +349,7 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 			public void actionPerformed(ActionEvent e) {
 				if (startEHLoggerButton.getText().equals("Start EH Logger"))	{
 					// Construct the launch command
-					String launchCommand = "java -cp istuff.jar" 
+					String launchCommand = "java -cp iStuff.jar" 
 						//+ ConfigDataHolder.getIrosLocation() 
 						//+ ConfigDataHolder.getCommandSeparator() 
 						+ " "
@@ -377,7 +377,7 @@ public class BACKUP extends JFrame implements WindowListener, ServiceListener {
 			public void actionPerformed(ActionEvent e) {
 				if (_startLocalEHButton.getText().equals("Start local EH"))	{
 					// construct the launch command
-					String launchCommand = "java -cp istuff.jar"
+					String launchCommand = "java -cp iStuff.jar"
 						// + ConfigDataHolder.getIrosLocation()
 						//+ ConfigDataHolder.getCommandSeparator() 
 						//+ ConfigDataHolder.getJmdnsLocation() 

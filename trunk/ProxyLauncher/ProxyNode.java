@@ -231,7 +231,7 @@ public class ProxyNode implements Cloneable, ActionListener {
 		
 		}
 		String launchCommand2= "java -classpath "
-			+ myPath + "istuff.jar"
+			+ myPath + "iStuff.jar"
 			+ separator
 			+ libs
 			+ ". "
