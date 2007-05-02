@@ -13,13 +13,21 @@ public class ConfigDataHolder {
 	private static Element _xmlRoot;
 	
 	public static boolean existsConfigFile () {
-		File configFile = new File ("configStarter.xml");
+		// create path and File
+		String path = System.getProperty("user.home");
+        	if      (System.getProperty("os.name").contains("Mac"))
+        			path = path+"/Library/iStuff/";
+        	else if (System.getProperty("os.name").contains("Linux"))
+        			path = path+"/.iStuff/";
+        	else		path = path+"\\iStuff\\";
+        	File configFile = new File(path+"configStarter.xml");
+		//File configFile = new File ("configStarter.xml");
 			return configFile.exists();
 	}
 	
 	private static void loadXMLFile () {
 		// create path and File
-		String path = System.getProperty("user.dir");
+		String path = System.getProperty("user.home");
         	if      (System.getProperty("os.name").contains("Mac"))
         			path = path+"/Library/iStuff/";
         	else if (System.getProperty("os.name").contains("Linux"))

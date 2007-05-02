@@ -30,7 +30,7 @@ of your java in your PATH variable.
 __Installing the Quarz Composer plugins__
 
 	* Mac User only:
-		Execute the file 'QC iStuff Installer.mpkg' by
+		Execute the file 'QC iStuff Installer.pmproj' by
 		double clicking it. Follow the instructions to
 		install the plugins.
 

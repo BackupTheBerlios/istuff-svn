@@ -194,9 +194,18 @@ public class PreferencesDialog extends JDialog {
 	}
 	
 	private void savePreferencesValues () {
-		File configFile = new File("configStarter.xml");
+		//File configFile = new File("configStarter.xml");
 		try {
+			String path = System.getProperty("user.home");
+        		if      (System.getProperty("os.name").contains("Mac"))
+        				path = path+"/Library/iStuff/";
+        		else if (System.getProperty("os.name").contains("Linux"))
+        				path = path+"/.iStuff/";
+        		else		path = path+"\\iStuff\\";
+        		File configFile = new File(path+"configStarter.xml");
+			
 			Element root = new Element ("Configuration");
+			
 			Document configDoc = new Document(root);
 			// Now add all the settings:
 			root.addContent(new Element ("Libraries"));
