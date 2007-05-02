@@ -18,9 +18,16 @@ public class ConfigDataHolder {
 	}
 	
 	private static void loadXMLFile () {
+		// create path and File
+		String path = System.getProperty("user.dir");
+        	if      (System.getProperty("os.name").contains("Mac"))
+        			path = path+"/Library/iStuff/";
+        	else if (System.getProperty("os.name").contains("Linux"))
+        			path = path+"/.iStuff/";
+        	else		path = path+"\\iStuff\\";
+        	File configFile = new File(path+"configStarter.xml");
 			// Load the configuration file
 			try {
-				File configFile = new File("configStarter.xml");
 				Document docWithConfig;// = new Document();
 				SAXBuilder builder = new SAXBuilder();
 				docWithConfig = builder.build(configFile);

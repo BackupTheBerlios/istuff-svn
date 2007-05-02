@@ -40,7 +40,8 @@ svn export MacStart/build/Debug/iStuff.app ../../release/$REL_DIR/iStuff/iStuff.
 # goto target, and zip everything into one iStuff.zip
 cd ../../release/$REL_DIR/
 zip -r iStuff.zip ./
-# rm -rf iStuff # only iStuff.zip remains with everything in it
+rm -rf iStuff
+# only iStuff.zip remains with everything in it
 
 # return
 cd ../../trunk/ProxyLauncher/

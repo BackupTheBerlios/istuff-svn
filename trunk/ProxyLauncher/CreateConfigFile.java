@@ -40,15 +40,26 @@ public class CreateConfigFile {
     {
         //File configFile = new File("configStarter.xml");
         // save the xml inside the userdir
-        String path = System.getProperty("user.dir");
-        if      (System.getProperty("os.name").contains("Mac"))
-        		path = path+"/Library/iStuff/";
-        else if (System.getProperty("os.name").contains("Linux"))
-        		path = path+"/.iStuff/";
-        else		path = path+"\\iStuff\\";
-        File configFile = new File(path+"configStarter.xml");
         try
         {
+        	String path = System.getProperty("user.dir");
+        	if      (System.getProperty("os.name").contains("Mac"))
+        			path = path+"/Library/iStuff/";
+        	else if (System.getProperty("os.name").contains("Linux"))
+        			path = path+"/.iStuff/";
+        	else		path = path+"\\iStuff\\";
+        	File configFile = new File(path+"configStarter.xml");
+        	File configPath = new File(path);
+        	
+        	System.out.println("File to save: "+configFile.toURL()+"\nin path: "+path);
+        	
+        	if (!configPath.mkdirs()){
+        	JOptionPane.showMessageDialog(null,
+        		"Could not create the default configuration folder inside the user-space.");
+        	}
+        	else System.out.println("Created the directory-tree: "+configPath.toURL());
+        
+        
             /* create an XML file with the following format
              * <Configuration>
              *      <Libraries>
