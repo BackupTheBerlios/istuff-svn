@@ -2,7 +2,7 @@
 REL_DIR=$(date +%Y.%m.%d)
 
 # clear target and create correct folder
-rm -rf ../../release/$REL_DIR
+#rm -rf ../../release/$REL_DIR
 mkdir ../../release/$REL_DIR
 mkdir ../../release/$REL_DIR/iStuff/
 
@@ -35,7 +35,7 @@ cp start* ../../release/$REL_DIR/iStuff/
 cp README.txt ../../release/$REL_DIR/iStuff/
 svn export Hardware\ Proxies ../../release/$REL_DIR/iStuff/Hardware\ Proxies
 svn export Software\ Proxies ../../release/$REL_DIR/iStuff/Software\ Proxies
-svn export MacStart/build/Debug/iStuff.app ../../$REL_DIR/iStuff/iStuff.app
+svn export MacStart/build/Debug/iStuff.app ../../release/$REL_DIR/iStuff/iStuff.app
 
 # goto target, and zip everything into one iStuff.zip
 cd ../../release/$REL_DIR/

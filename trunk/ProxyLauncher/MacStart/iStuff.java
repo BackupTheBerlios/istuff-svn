@@ -40,7 +40,7 @@ public class iStuff{
 */	
 	public static void main(String args[]) {
 		WrapperThread wrapper = new WrapperThread("java -classpath ./:./iStuff.jar -jar iStuff.jar",".");
-		wrapper.start();
+		wrapper.run();
 	 }
 
 }
