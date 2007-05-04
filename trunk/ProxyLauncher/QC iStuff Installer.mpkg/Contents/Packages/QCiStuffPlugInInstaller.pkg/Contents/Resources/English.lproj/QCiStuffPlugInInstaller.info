@@ -1,0 +1,17 @@
+Title Quartz Composer iStuff Plugin
+Version 
+Description This installer takes the latest plugin file from the Debug folder included in the iStuff package and places it in the appropriate Quartz Composer Resources folder.
+DefaultLocation /Library/Graphics/Patches
+DeleteWarning 
+
+### Package Flags
+
+NeedsAuthorization YES
+Required NO
+Relocatable NO
+RequiresReboot NO
+UseUserMask NO
+OverwritePermissions NO
+InstallFat NO
+RootVolumeOnly YES
+OnlyUpdateInstalledLanguages NO
