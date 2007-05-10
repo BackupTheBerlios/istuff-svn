@@ -21,11 +21,16 @@ scripts:
 	* Windows User:
 		Execute the startWin.bat from this
 		directory.
-		If Java is installed, just doubleclick
+
+	* All Users:
+		In most cases you are able to just doubleclick
 		the iStuff.jar file.
 
-Make sure, that your JVM is Java5.0 compliant and have the bin dirctory
-of your java in your PATH variable.
+Hint for Mac users: Just put the whole iStuff folder into your Application
+folder and start by using the iStuff.app
+
+Make sure, that your JVM is Java5.0 (aka java 1.5.0) compliant and have the
+bin dirctory of your java in your PATH variable.
 
 __Installing the Quarz Composer plugins__
 

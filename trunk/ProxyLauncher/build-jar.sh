@@ -5,6 +5,7 @@ REL_DIR=$(date +%Y.%m.%d)
 #rm -rf ../../release/$REL_DIR
 mkdir ../../release/$REL_DIR
 mkdir ../../release/$REL_DIR/iStuff/
+TARGET=../../release/$REL_DIR/iStuff
 
 # build the java project
 javac -classpath ./:AppleJavaExtensions.jar *.java
@@ -24,33 +25,34 @@ svn export javax build/javax
 
 # goto the build dir and create the jar - put it into tha target dir
 cd build
-jar cvfm ../../../release/$REL_DIR/iStuff/iStuff.jar manifest.txt  *
+jar cvfm ../$TARGET/iStuff.jar manifest.txt  *
 cd ..
 
 # clean up
 rm -rf build
 
 # copy some surroundings into the target dir
-cp start* ../../release/$REL_DIR/iStuff/
-cp README.txt ../../release/$REL_DIR/iStuff/
-svn export Hardware\ Proxies ../../release/$REL_DIR/iStuff/Hardware\ Proxies
-svn export Software\ Proxies ../../release/$REL_DIR/iStuff/Software\ Proxies
-svn export MacStart/build/Debug/iStuff.app ../../release/$REL_DIR/iStuff/iStuff.app
-svn export ../installer/Resources/QC\ iStuff\ Installer.pmproj \
-    ../../release/$REL_DIR/iStuff/QC\ iStuff\ Installer.pmproj
+cp start* $TARGET/
+cp README.txt $TARGET/
+svn export Hardware\ Proxies $TARGET/Hardware\ Proxies
+svn export Software\ Proxies $TARGET/Software\ Proxies
+svn export ../installer/Resources/QC\ iStuff\ Installer.mpkg \
+    $TARGET/QC\ iStuff\ Installer.mpkg
 
 # constructing the Mac app
-svn export iStuff.app ../../release/$REL_DIR/iStuff.app
-  # exchange the iStuffmain.jar
+# note: the already constructed iStuff.jar is used by this app,
+# so have both in the same directory
+svn export iStuff.app $TARGET/iStuff.app
 
 # goto target, and zip everything into one iStuff.zip
-cd ../../release/$REL_DIR/
+ORIGIN=`pwd`
+cd $TARGET/..
 zip -r iStuff.zip ./
 rm -rf iStuff
 # only iStuff.zip remains with everything in it
 
 # return
-cd ../../trunk/ProxyLauncher/
+cd $ORIGIN
 
 # done
 echo "Done\n"
