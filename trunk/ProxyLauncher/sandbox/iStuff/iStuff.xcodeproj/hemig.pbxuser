@@ -1,0 +1,218 @@
+// !$*UTF8*$!
+{
+	01F12F4CFEC8CE2211DB9C8B /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeBuildStyle = 0E20B662001FAFA711DB9C8B /* Debug */;
+		activeExecutable = 06D05854FF24F2DB11DB9C8B /* iStuff */;
+		activeTarget = 1601BCDBFEEE210811DB9C8B /* iStuff */;
+		addToTargets = (
+			1601BCDBFEEE210811DB9C8B /* iStuff */,
+		);
+		codeSenseManager = D309D7E50BF3294A00664018 /* Code sense */;
+		executables = (
+			06D05854FF24F2DB11DB9C8B /* iStuff */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					442,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					200,
+					128,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 200485190;
+			PBXWorkspaceStateSaveDate = 200485190;
+		};
+		perUserProjectItems = {
+			D309D8030BF3449A00664018 /* PBXTextBookmark */ = D309D8030BF3449A00664018 /* PBXTextBookmark */;
+			D309D8050BF3449A00664018 /* PBXTextBookmark */ = D309D8050BF3449A00664018 /* PBXTextBookmark */;
+			D309D8060BF3449A00664018 /* PBXTextBookmark */ = D309D8060BF3449A00664018 /* PBXTextBookmark */;
+			D309D8070BF3449A00664018 /* PBXTextBookmark */ = D309D8070BF3449A00664018 /* PBXTextBookmark */;
+			D309D8090BF3449A00664018 /* PBXTextBookmark */ = D309D8090BF3449A00664018 /* PBXTextBookmark */;
+			D309D80A0BF3449A00664018 /* PBXTextBookmark */ = D309D80A0BF3449A00664018 /* PBXTextBookmark */;
+			D309D80C0BF3449A00664018 /* PBXTextBookmark */ = D309D80C0BF3449A00664018 /* PBXTextBookmark */;
+		};
+		sourceControlManager = D309D7E40BF3294A00664018 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {640, 976}}";
+			sepNavSelRange = "{801, 0}";
+			sepNavVisRect = "{{0, 0}, {640, 976}}";
+		};
+	};
+	06D05854FF24F2DB11DB9C8B /* iStuff */ = {
+		isa = PBXExecutable;
+		activeArgIndex = 2147483647;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = JavaDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 0;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iStuff;
+		sourceDirectories = (
+		);
+	};
+	10F9BF62FEEDA25E11DB9C8B /* iStuff.icns */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 84}, {902, 1068}}";
+		};
+	};
+	1601BCDBFEEE210811DB9C8B /* iStuff */ = {
+		activeExec = 0;
+		executables = (
+			06D05854FF24F2DB11DB9C8B /* iStuff */,
+		);
+	};
+	D309D7E40BF3294A00664018 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	D309D7E50BF3294A00664018 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	D309D8030BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D309D8040BF3449A00664018 /* ProxyLauncher.java */;
+		name = "(null): 15";
+		rLen = 596;
+		rLoc = 470;
+		rType = 0;
+		vrLen = 1077;
+		vrLoc = 0;
+	};
+	D309D8040BF3449A00664018 /* ProxyLauncher.java */ = {
+		isa = PBXFileReference;
+		name = ProxyLauncher.java;
+		path = "/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/istuff/trunk/ProxyLauncher/ProxyLauncher.java";
+		sourceTree = "<absolute>";
+	};
+	D309D8050BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */;
+		name = "iStuff.java: main";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 0;
+	};
+	D309D8060BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */;
+		name = "new iStuff();";
+		rLen = 389;
+		rLoc = 406;
+		rType = 0;
+		vrLen = 433;
+		vrLoc = 0;
+	};
+	D309D8070BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D309D8080BF3449A00664018 /* ProxyLauncher.java */;
+		name = "(null): 15";
+		rLen = 596;
+		rLoc = 470;
+		rType = 0;
+		vrLen = 1077;
+		vrLoc = 0;
+	};
+	D309D8080BF3449A00664018 /* ProxyLauncher.java */ = {
+		isa = PBXFileReference;
+		name = ProxyLauncher.java;
+		path = "/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/istuff/trunk/ProxyLauncher/ProxyLauncher.java";
+		sourceTree = "<absolute>";
+	};
+	D309D8090BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */;
+		name = "iStuff.java: main";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 0;
+	};
+	D309D80A0BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D309D80B0BF3449A00664018 /* ProxyLauncher.java */;
+		name = "(null): 15";
+		rLen = 596;
+		rLoc = 470;
+		rType = 0;
+		vrLen = 1077;
+		vrLoc = 0;
+	};
+	D309D80B0BF3449A00664018 /* ProxyLauncher.java */ = {
+		isa = PBXFileReference;
+		name = ProxyLauncher.java;
+		path = "/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/istuff/trunk/ProxyLauncher/ProxyLauncher.java";
+		sourceTree = "<absolute>";
+	};
+	D309D80C0BF3449A00664018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */;
+		name = "iStuff.java: main";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 809;
+		vrLoc = 0;
+	};
+}

@@ -1,0 +1,6 @@
+rule DefineHeaderDependencies
+{
+}
+
+DefineHeaderDependencies "<iStuff>iStuff.app" ;
+

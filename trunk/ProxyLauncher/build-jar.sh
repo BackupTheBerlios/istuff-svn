@@ -39,6 +39,10 @@ svn export MacStart/build/Debug/iStuff.app ../../release/$REL_DIR/iStuff/iStuff.
 svn export ../installer/Resources/QC\ iStuff\ Installer.pmproj \
     ../../release/$REL_DIR/iStuff/QC\ iStuff\ Installer.pmproj
 
+# constructing the Mac app
+svn export iStuff.app ../../release/$REL_DIR/iStuff.app
+  # exchange the iStuffmain.jar
+
 # goto target, and zip everything into one iStuff.zip
 cd ../../release/$REL_DIR/
 zip -r iStuff.zip ./
