@@ -67,7 +67,7 @@
 			D309D8070BF3449A00664018 /* PBXTextBookmark */ = D309D8070BF3449A00664018 /* PBXTextBookmark */;
 			D309D8090BF3449A00664018 /* PBXTextBookmark */ = D309D8090BF3449A00664018 /* PBXTextBookmark */;
 			D309D80A0BF3449A00664018 /* PBXTextBookmark */ = D309D80A0BF3449A00664018 /* PBXTextBookmark */;
-			D309D80C0BF3449A00664018 /* PBXTextBookmark */ = D309D80C0BF3449A00664018 /* PBXTextBookmark */;
+			D309D80D0BF354CB00664018 /* PBXTextBookmark */ = D309D80D0BF354CB00664018 /* PBXTextBookmark */;
 		};
 		sourceControlManager = D309D7E40BF3294A00664018 /* Source Control */;
 		userBuildSettings = {
@@ -139,6 +139,7 @@
 	};
 	D309D8040BF3449A00664018 /* ProxyLauncher.java */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.java;
 		name = ProxyLauncher.java;
 		path = "/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/istuff/trunk/ProxyLauncher/ProxyLauncher.java";
 		sourceTree = "<absolute>";
@@ -205,7 +206,7 @@
 		path = "/Network/Servers/oliver.informatik.rwth-aachen.de/Volumes/RAID2/Students/hemig/work/istuff/trunk/ProxyLauncher/ProxyLauncher.java";
 		sourceTree = "<absolute>";
 	};
-	D309D80C0BF3449A00664018 /* PBXTextBookmark */ = {
+	D309D80D0BF354CB00664018 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 01F12F4EFEC8CE6A11DB9C8B /* iStuff.java */;
 		name = "iStuff.java: main";
