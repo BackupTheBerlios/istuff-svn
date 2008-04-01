@@ -41,7 +41,7 @@ import iwork.eheap2.*;
   		   and post corresponding key events on the "Event Heap".
 */
 
-public class iStuffMobileProxy implements EventCallback
+public class iStuffMobileProxy implements EventCallback, Runnable
 {
 
 		/** @name Opcodes
@@ -78,7 +78,11 @@ public class iStuffMobileProxy implements EventCallback
 		private InputStream inStream = null;
 
 		private byte[] buffer = new byte[512];
-
+		
+		private boolean running = true;
+		
+		private Thread thread;
+		
 		//! iStuffMobile class constructor
     	/*! The constructor take "Event Heap" IP address, the current
       		proxy Id and a COM port name as an inputs.
@@ -121,18 +125,16 @@ public class iStuffMobileProxy implements EventCallback
 			try
 			{
 					System.out.println("Cleaning up");
-
-					byte buffer[] = new byte[1];
-					buffer[0] = new Integer(OPCODE_DISCONNECT).byteValue();
-					outStream.write(buffer);	//send disconnect command to "iStuff Mobile" mobile phone application
-					outStream.close();
-					inStream.close();
-					serPort.close();
-					System.exit(0);	//exit normally
+					//running = false;
+					if(thread != null){
+						thread.join();
+						System.out.println("Thread is finished " + thread);
+					}
 			}
 			catch(Exception ex)
 			{
-					System.exit(-1); //abmornal termination in case of an exception
+					ex.printStackTrace();
+					//System.exit(-1); //abmornal termination in case of an exception
 			}
 		}
 
@@ -161,7 +163,7 @@ public class iStuffMobileProxy implements EventCallback
 
 				if(retEvents[0].fieldExists("ProxyID"))
 					currentProxyId = retEvents[0].getPostValueString("ProxyID");	//extract the ProxyID field value if it exists in the received event
-
+				System.out.println("Received event " + currentProxyId);
 				if (proxyID.equals("") || proxyID.equals(currentProxyId))
 				{
 
@@ -253,7 +255,7 @@ public class iStuffMobileProxy implements EventCallback
 			}
 			if (len > 0) throw new IOException("read error");
 		}
-
+		
 		//! Receives key codes from the "iStuff Mobile" mobile phone application
 		/*! This method runs all the time and listens to key codes from the
 			"iStuff Mobile" mobile phone application and posts corresponding key
@@ -262,9 +264,10 @@ public class iStuffMobileProxy implements EventCallback
 
 		public void run()
 		{
-				while(true)
+				while(running == true)
 				{
 					try{
+						System.out.println("Bluetooth thread, waiting for data");
 						read(inStream, buffer, 0, 1);			//read the opcode received by the "iStuff Mobile" mobile phone application
 
 						switch (buffer[0]) {
@@ -280,11 +283,13 @@ public class iStuffMobileProxy implements EventCallback
 								keyCode |= buffer[0];		//fill the keycode from two bytes into a char
 								keyCode <<= 8;
 								keyCode |= buffer[1];
-
+								if (DEBUG) System.out.println("keyCode " + new Integer(keyCode));
+								
 								char type = 0;
 								type |= buffer[2];			//fill the keytype from two bytes into a char
 								type <<= 8;
 								type |= buffer[3];
+								if (DEBUG) System.out.println("type " + new Integer(type));
 
 								switch(type)
 								{
@@ -300,7 +305,7 @@ public class iStuffMobileProxy implements EventCallback
 									break;
 
 									default:
-										System.out.println("Unrecognized Key Type");
+										System.out.println("Unrecognized Key Type " + new Integer(type) );
 								}
 								if (eventHeap.isConnected())
 									eventHeap.putEvent(keyEvent);		//post the received key press from the "iStuff Mobile" mobile
@@ -312,6 +317,7 @@ public class iStuffMobileProxy implements EventCallback
 						ex.printStackTrace();
 					}
 				}
+				System.out.println("out of run");
 		}
 
 
@@ -471,6 +477,18 @@ public class iStuffMobileProxy implements EventCallback
 			}
 		}
 
+		protected void finalize() throws Throwable {
+			try {
+				System.out.println("out of run");
+				try{
+
+				}catch(Exception ex){
+					ex.printStackTrace();
+				}
+			} finally {
+				super.finalize();
+			}
+		}
 		public static void main(String argv[])
 		{
 			iStuffMobileProxy mobileProxy = null;
@@ -482,9 +500,14 @@ public class iStuffMobileProxy implements EventCallback
 				else if (argv.length >= 3) // All parameters were supplied
 					mobileProxy = new iStuffMobileProxy(argv[0], argv[2], argv[1]);
 
+				/*
+				The purpose of the shutdown hook was to try to inform the mobile phone when the connection was being closed
+				so that the phone would not be left in a difficult state (e.g. with key capture enabled).  Unfortunately,
+				we are unable to write to the serial port inside the shutdown hook because the hook runs in a seperate VM
+				and the serial port file descriptors were invalid.
 				killer = new Shutdown(mobileProxy);
 				Runtime.getRuntime().addShutdownHook(killer);
-
+				*/
 				mobileProxy.run();
 			}
 			else
@@ -499,9 +522,8 @@ public class iStuffMobileProxy implements EventCallback
 //!  A shutdown hook for "iStuff Mobile" proxy program.
 /*!  The Shutdown class is a shutdown hook for "iStuff Mobile" proxy
 	 program.
+	 
 */
-
-
 class Shutdown extends Thread {
 
 		private iStuffMobileProxy mobileProxy;
@@ -524,10 +546,9 @@ class Shutdown extends Thread {
 		*/
 
 		public void run() {
-        System.out.println("Shutdown hook called");
-        mobileProxy.Destroy();
-		System.exit(0);
-    }
+			System.out.println("Shutdown hook called");
+			mobileProxy.Destroy();
+		}
 }
 
 
