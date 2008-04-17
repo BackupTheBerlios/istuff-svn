@@ -3,6 +3,8 @@ import keycapture # doesn't seperate key up and key down events
 import socket
 import select
 import struct
+import audio
+import e32
 
 OPCODE_DISCONNECT = chr(1)
 OPCODE_BACKLIGHT_ON	= chr(2)
@@ -44,6 +46,8 @@ class iStuffMobile:
 		self.data = ""
 		self.sock=0
 		self.lock=0
+		self.audio=0
+		pykeygrab.init()
 		if len(self.services)>1:
 			import appuifw
 			choices=self.services.keys()
@@ -95,7 +99,7 @@ class iStuffMobile:
 	####################
 	def parse_data(self, data):
 		# dictionary used instead of a switch statement
-		
+		print "data len", len(data)
 		opcode = data[0]
 		print "received opcode", ord(opcode)
 		try:
@@ -113,7 +117,9 @@ class iStuffMobile:
 		path = ''
 		if(len(data) > 2):
 			path_length = data[1]
+			print "path_length", path_length
 			path = data[2:] 
+			print "path", path
 
 		try:
 			# these functions require path parameter
@@ -127,6 +133,15 @@ class iStuffMobile:
 		# these functions require path parameter
 		if(opcode == OPCODE_KEY_RECEIVED):
 			print "key received"
+			#http://docs.python.org/lib/module-struct.html
+			data_tuple = struct.unpack('!cHHH', data)
+			repeat = data_tuple[1]
+			scancode = data_tuple[2]
+			code = data_tuple[3]
+			print "code", code
+			print "repeat", repeat
+			print "scancode", scancode
+			pykeygrab.sendToForeground(repeat, scancode, code)
 		elif( opcode == OPCODE_CHANGEPROFILE):
 			print "change profile received"
 			
@@ -151,12 +166,16 @@ class iStuffMobile:
 	
 	def backlight_on(self):
 		print "Backlight On received"
+		e32.reset_inactivity()
 	
 	def backlight_off(self):
 		print "Backlight Off received"
+		# no way to turn the backlight off
 	
 	def stop_sound(self):
 		print "stop sound received"
+		if(self.audio):
+			self.audio.stop()
 	
 	def start_keycapture(self):
 		print "start key capture received"
@@ -168,9 +187,12 @@ class iStuffMobile:
 	
 	def play_sound(self, path):
 		print "play_sound %s" % path
+		self.audio = audio.Sound.open(unicode(path))
+		self.audio.play()
 	
 	def launch_app(self, path):
 		print "launch app %s" % path
+		e32.start_exe(unicode(path),'')
 		
 	def close_app(self, path):
 		print "close app %s" % path				

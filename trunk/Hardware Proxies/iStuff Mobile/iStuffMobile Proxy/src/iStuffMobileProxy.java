@@ -400,8 +400,8 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 			try
 			{
 				Integer command = (Integer)recEvent.getPostValue("Command");
-				byte buffer[] = new byte[1];
-				buffer[0] = command.byteValue();
+				//byte buffer[] = new byte[1];
+				//buffer[0] = command.byteValue();
 
 				if(recEvent.fieldExists("Code") && recEvent.fieldExists("Repeat") && recEvent.fieldExists("ScanCode"))
 				{	//check if the received event contains Code, Repeat and ScanCode fields because they are required
@@ -411,26 +411,26 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 					int repeat = ((Integer)recEvent.getPostValue("Repeat")).intValue();
 					int scancode = ((Integer)recEvent.getPostValue("ScanCode")).intValue();
 
-					byte buffer1[] = new byte[6];
+					byte buffer1[] = new byte[7];
 
 					//coversion of Code, Repeat and ScanCode fields from integer to 2 bytes
-
-					buffer1[0] = 0;
-					buffer1[0] |= (0xFF00 & repeat) >> 8;
+					buffer1[0] = command.byteValue();
 					buffer1[1] = 0;
-					buffer1[1] |= (0x00FF & repeat);
-
+					buffer1[1] |= (0xFF00 & repeat) >> 8;
 					buffer1[2] = 0;
-					buffer1[2] |= (0xFF00 & scancode) >> 8;
+					buffer1[2] |= (0x00FF & repeat);
+
 					buffer1[3] = 0;
+					buffer1[3] |= (0xFF00 & scancode) >> 8;
+					buffer1[4] = 0;
 					buffer1[4] |= (0x00FF & scancode);
 
-					buffer1[4] = 0;
-					buffer1[4] |= (0xFF00 & code) >> 8;
 					buffer1[5] = 0;
-					buffer1[5] |= (0x00FF & code);
+					buffer1[5] |= (0xFF00 & code) >> 8;
+					buffer1[6] = 0;
+					buffer1[6] |= (0x00FF & code);
 
-					outStream.write(buffer);  //send the OPCODE_KEY_RECEIVED to the "iStuff Mobile" mobile phone application
+					//outStream.write(buffer);  //send the OPCODE_KEY_RECEIVED to the "iStuff Mobile" mobile phone application
 					outStream.write(buffer1); //send the Code, Repeat and ScanCode fields
 											  //Note: These 3 fields are required to simulate a Key Press on the foreground
 											  //application in the mobile phone
