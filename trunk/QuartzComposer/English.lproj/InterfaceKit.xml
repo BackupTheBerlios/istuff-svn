@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>A patch that reads Interface Kit values from the Even Heap</string>
+		<key>name</key>
+		<string>Phidgets Interface Kit</string>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>DigitalIn0</key>
+		<dict>
+			<key>description</key>
+			<string>digital input</string>
+			<key>name</key>
+			<string>Digital Input 0</string>
+		</dict>
+		<key>DigitalIn1</key>
+		<dict>
+			<key>description1</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 1</string>
+		</dict>
+		<key>DigitalIn2</key>
+		<dict>
+			<key>description2</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 2</string>
+		</dict>
+		<key>DigitalIn3</key>
+		<dict>
+			<key>description3</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 3</string>
+		</dict>
+		<key>DigitalIn4</key>
+		<dict>
+			<key>description4</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 4</string>
+		</dict>
+		<key>DigitalIn5</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 5</string>
+		</dict>
+		<key>DigitalIn6</key>
+		<dict>
+			<key>description6</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 6</string>
+		</dict>
+		<key>DigitalIn7</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Input 7</string>
+		</dict>
+		<key>DigitalReading0</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 0</string>
+		</dict>
+		<key>DigitalReading1</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 1</string>
+		</dict>
+		<key>DigitalReading2</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 2</string>
+		</dict>
+		<key>DigitalReading3</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 3</string>
+		</dict>
+		<key>DigitalReading4</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 4</string>
+		</dict>
+		<key>DigitalReading5</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 5</string>
+		</dict>
+		<key>DigitalReading6</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading 6</string>
+		</dict>
+		<key>DigitalReading7</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Digital Reading  7</string>
+		</dict>
+		<key>outputAnalogReading0</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 0</string>
+		</dict>
+		<key>outputAnalogReading1</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 1</string>
+		</dict>
+		<key>outputAnalogReading2</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 2</string>
+		</dict>
+		<key>outputAnalogReading3</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 3</string>
+		</dict>
+		<key>outputAnalogReading4</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 4</string>
+		</dict>
+		<key>outputAnalogReading5</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 5</string>
+		</dict>
+		<key>outputAnalogReading6</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 6</string>
+		</dict>
+		<key>outputAnalogReading7</key>
+		<dict>
+			<key>description</key>
+			<string></string>
+			<key>name</key>
+			<string>Analog Output 7</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

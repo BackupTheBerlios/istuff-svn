@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>RWTH Aachen Univerisity</string>
+		<key>description</key>
+		<string>This patch waits for events that provide information of keypresses of a mobile phone</string>
+		<key>name</key>
+		<string>MobilePhoneKeyListener</string>
+	</dict>
+	<key>inputAttributes</key>
+	<dict>
+		<key>inputProxyID</key>
+		<dict>
+			<key>description</key>
+			<string>With the proxyID, the different entities can be distinguished. Change the settings via the Inspector</string>
+			<key>name</key>
+			<string>ProxyID</string>
+		</dict>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputKeyPressed</key>
+		<dict>
+			<key>description</key>
+			<string>A boolean that signals wether a key is pressed on the mobile phone or not</string>
+			<key>name</key>
+			<string>KeyPressed</string>
+		</dict>
+		<key>outputKeyStroke</key>
+		<dict>
+			<key>description</key>
+			<string>The ASCII Code for the key pressed on the mobile phone</string>
+			<key>name</key>
+			<string>Key Code</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
