@@ -70,121 +70,121 @@
 		340B4170091F90180074DBFA /* PatchLoader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PatchLoader.h; sourceTree = "<group>"; };
 		340B41B8091FA9D20074DBFA /* GFNodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFNodeManager.h; sourceTree = "<group>"; };
 		34249F800930D091009E00CD /* QCInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCInspector.h; sourceTree = "<group>"; };
-		3427193C0933209400A87EEF /* eh2_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Base.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Base.h"; sourceTree = SOURCE_ROOT; };
-		3427193D0933209400A87EEF /* eh2_ConnectErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ConnectErrorHandler.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h"; sourceTree = SOURCE_ROOT; };
-		3427193E0933209400A87EEF /* eh2_Connection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Connection.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Connection.h"; sourceTree = SOURCE_ROOT; };
-		3427193F0933209400A87EEF /* eh2_Consts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Consts.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Consts.h"; sourceTree = SOURCE_ROOT; };
-		342719400933209400A87EEF /* eh2_ErrorContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ErrorContext.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_ErrorContext.h"; sourceTree = SOURCE_ROOT; };
-		342719410933209400A87EEF /* eh2_Event.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Event.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Event.h"; sourceTree = SOURCE_ROOT; };
-		342719420933209400A87EEF /* eh2_EventCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventCollection.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventCollection.h"; sourceTree = SOURCE_ROOT; };
-		342719430933209400A87EEF /* eh2_EventConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventConsts.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventConsts.h"; sourceTree = SOURCE_ROOT; };
-		342719440933209400A87EEF /* eh2_EventHeap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeap.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventHeap.h"; sourceTree = SOURCE_ROOT; };
-		342719450933209400A87EEF /* eh2_EventHeapException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapException.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventHeapException.h"; sourceTree = SOURCE_ROOT; };
-		342719460933209400A87EEF /* eh2_EventHeapFactory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapFactory.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventHeapFactory.h"; sourceTree = SOURCE_ROOT; };
-		342719470933209400A87EEF /* eh2_EventHeapProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapProtocolException.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventHeapProtocolException.h"; sourceTree = SOURCE_ROOT; };
-		342719480933209400A87EEF /* eh2_EventRegistration.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventRegistration.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventRegistration.h"; sourceTree = SOURCE_ROOT; };
-		342719490933209400A87EEF /* eh2_EventToXML.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventToXML.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_EventToXML.h"; sourceTree = SOURCE_ROOT; };
-		3427194A0933209400A87EEF /* eh2_Field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Field.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Field.h"; sourceTree = SOURCE_ROOT; };
-		3427194B0933209400A87EEF /* eh2_FieldOperationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldOperationException.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_FieldOperationException.h"; sourceTree = SOURCE_ROOT; };
-		3427194C0933209400A87EEF /* eh2_FieldType.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldType.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_FieldType.h"; sourceTree = SOURCE_ROOT; };
-		3427194D0933209400A87EEF /* eh2_FieldValue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldValue.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_FieldValue.h"; sourceTree = SOURCE_ROOT; };
-		3427194E0933209400A87EEF /* eh2_IFieldIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_IFieldIterator.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_IFieldIterator.h"; sourceTree = SOURCE_ROOT; };
-		3427194F0933209400A87EEF /* eh2_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_readme.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_readme.h"; sourceTree = SOURCE_ROOT; };
-		342719500933209400A87EEF /* eh2_SerializationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_SerializationException.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_SerializationException.h"; sourceTree = SOURCE_ROOT; };
-		342719510933209400A87EEF /* eh2_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Tracer.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Tracer.h"; sourceTree = SOURCE_ROOT; };
-		342719520933209400A87EEF /* eh2_TracerConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_TracerConsts.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_TracerConsts.h"; sourceTree = SOURCE_ROOT; };
-		342719530933209400A87EEF /* eh2_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Types.h; path = "../../Event Heap/c++/Mac OS X/include/eh2_Types.h"; sourceTree = SOURCE_ROOT; };
-		342719540933209400A87EEF /* eh2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2.h; path = "../../Event Heap/c++/Mac OS X/include/eh2.h"; sourceTree = SOURCE_ROOT; };
-		342719550933209400A87EEF /* idk_io_ByteArrayInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayInStream.h"; sourceTree = SOURCE_ROOT; };
-		342719560933209400A87EEF /* idk_io_ByteArrayOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayOutStream.h"; sourceTree = SOURCE_ROOT; };
-		342719570933209400A87EEF /* idk_io_ByteBufferInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferInStream.h"; sourceTree = SOURCE_ROOT; };
-		342719580933209400A87EEF /* idk_io_ByteBufferOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferOutStream.h"; sourceTree = SOURCE_ROOT; };
-		342719590933209400A87EEF /* idk_io_ByteLoggingInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteLoggingInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ByteLoggingInStream.h"; sourceTree = SOURCE_ROOT; };
-		3427195A0933209400A87EEF /* idk_io_EOFException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_EOFException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_EOFException.h"; sourceTree = SOURCE_ROOT; };
-		3427195B0933209400A87EEF /* idk_io_FileInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_FileInStream.h"; sourceTree = SOURCE_ROOT; };
-		3427195C0933209400A87EEF /* idk_io_FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileNotFoundException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_FileNotFoundException.h"; sourceTree = SOURCE_ROOT; };
-		3427195D0933209400A87EEF /* idk_io_FileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_FileOutStream.h"; sourceTree = SOURCE_ROOT; };
-		3427195E0933209400A87EEF /* idk_io_FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_FileUtil.h"; sourceTree = SOURCE_ROOT; };
-		3427195F0933209400A87EEF /* idk_io_IByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_IByteInStream.h"; sourceTree = SOURCE_ROOT; };
-		342719600933209400A87EEF /* idk_io_IByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_IByteOutStream.h"; sourceTree = SOURCE_ROOT; };
-		342719610933209400A87EEF /* idk_io_InterruptedIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_InterruptedIOException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_InterruptedIOException.h"; sourceTree = SOURCE_ROOT; };
-		342719620933209400A87EEF /* idk_io_IOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IOException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_IOException.h"; sourceTree = SOURCE_ROOT; };
-		342719630933209400A87EEF /* idk_io_ITInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ITInStream.h"; sourceTree = SOURCE_ROOT; };
-		342719640933209400A87EEF /* idk_io_ITInStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStreamImpl.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ITInStreamImpl.h"; sourceTree = SOURCE_ROOT; };
-		342719650933209400A87EEF /* idk_io_ITOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStream.h"; sourceTree = SOURCE_ROOT; };
-		342719660933209400A87EEF /* idk_io_ITOutStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStreamImpl.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_ITOutStreamImpl.h"; sourceTree = SOURCE_ROOT; };
-		342719670933209400A87EEF /* idk_io_LineReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_LineReader.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_LineReader.h"; sourceTree = SOURCE_ROOT; };
-		342719680933209400A87EEF /* idk_io_RealByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_RealByteInStream.h"; sourceTree = SOURCE_ROOT; };
-		342719690933209400A87EEF /* idk_io_RealByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_RealByteOutStream.h"; sourceTree = SOURCE_ROOT; };
-		3427196A0933209400A87EEF /* idk_io_TimedoutIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TimedoutIOException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_TimedoutIOException.h"; sourceTree = SOURCE_ROOT; };
-		3427196B0933209400A87EEF /* idk_io_TRealInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealInStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_TRealInStream.h"; sourceTree = SOURCE_ROOT; };
-		3427196C0933209400A87EEF /* idk_io_TRealOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealOutStream.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_TRealOutStream.h"; sourceTree = SOURCE_ROOT; };
-		3427196D0933209400A87EEF /* idk_io_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_Types.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io_Types.h"; sourceTree = SOURCE_ROOT; };
-		3427196E0933209400A87EEF /* idk_io.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io.h; path = "../../Event Heap/c++/Mac OS X/include/idk_io.h"; sourceTree = SOURCE_ROOT; };
-		3427196F0933209400A87EEF /* idk_ne_InetAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_InetAddress.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_InetAddress.h"; sourceTree = SOURCE_ROOT; };
-		342719700933209400A87EEF /* idk_ne_NetSystemException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NetSystemException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_NetSystemException.h"; sourceTree = SOURCE_ROOT; };
-		342719710933209400A87EEF /* idk_ne_NoConnectionException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NoConnectionException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_NoConnectionException.h"; sourceTree = SOURCE_ROOT; };
-		342719720933209400A87EEF /* idk_ne_ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_ServerSocket.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_ServerSocket.h"; sourceTree = SOURCE_ROOT; };
-		342719730933209400A87EEF /* idk_ne_Socket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Socket.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_Socket.h"; sourceTree = SOURCE_ROOT; };
-		342719740933209400A87EEF /* idk_ne_SocketAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_SocketAddress.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_SocketAddress.h"; sourceTree = SOURCE_ROOT; };
-		342719750933209400A87EEF /* idk_ne_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Types.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_Types.h"; sourceTree = SOURCE_ROOT; };
-		342719760933209400A87EEF /* idk_ne_UnknownHostException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_UnknownHostException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_UnknownHostException.h"; sourceTree = SOURCE_ROOT; };
-		342719770933209400A87EEF /* idk_ne_URLStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_URLStreamUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne_URLStreamUtil.h"; sourceTree = SOURCE_ROOT; };
-		342719780933209400A87EEF /* idk_ne.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ne.h"; sourceTree = SOURCE_ROOT; };
-		342719790933209400A87EEF /* idk_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_readme.h; path = "../../Event Heap/c++/Mac OS X/include/idk_readme.h"; sourceTree = SOURCE_ROOT; };
-		3427197A0933209400A87EEF /* idk_th_ILockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ILockable.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_ILockable.h"; sourceTree = SOURCE_ROOT; };
-		3427197B0933209400A87EEF /* idk_th_InterruptedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_InterruptedException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_InterruptedException.h"; sourceTree = SOURCE_ROOT; };
-		3427197C0933209400A87EEF /* idk_th_IRunnable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_IRunnable.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_IRunnable.h"; sourceTree = SOURCE_ROOT; };
-		3427197D0933209400A87EEF /* idk_th_Lockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Lockable.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Lockable.h"; sourceTree = SOURCE_ROOT; };
-		3427197E0933209400A87EEF /* idk_th_Locker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Locker.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Locker.h"; sourceTree = SOURCE_ROOT; };
-		3427197F0933209400A87EEF /* idk_th_Monitor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Monitor.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Monitor.h"; sourceTree = SOURCE_ROOT; };
-		342719800933209400A87EEF /* idk_th_MonitorTimedoutException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_MonitorTimedoutException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_MonitorTimedoutException.h"; sourceTree = SOURCE_ROOT; };
-		342719810933209400A87EEF /* idk_th_SinglePooledThread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_SinglePooledThread.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_SinglePooledThread.h"; sourceTree = SOURCE_ROOT; };
-		342719820933209400A87EEF /* idk_th_Thread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Thread.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Thread.h"; sourceTree = SOURCE_ROOT; };
-		342719830933209400A87EEF /* idk_th_ThreadUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ThreadUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_ThreadUtil.h"; sourceTree = SOURCE_ROOT; };
-		342719840933209400A87EEF /* idk_th_TMTQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_TMTQueue.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_TMTQueue.h"; sourceTree = SOURCE_ROOT; };
-		342719850933209400A87EEF /* idk_th_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Types.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Types.h"; sourceTree = SOURCE_ROOT; };
-		342719860933209400A87EEF /* idk_th_Unlocker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Unlocker.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th_Unlocker.h"; sourceTree = SOURCE_ROOT; };
-		342719870933209400A87EEF /* idk_th.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th.h; path = "../../Event Heap/c++/Mac OS X/include/idk_th.h"; sourceTree = SOURCE_ROOT; };
-		342719880933209400A87EEF /* idk_ut_AssertionFailedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_AssertionFailedException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_AssertionFailedException.h"; sourceTree = SOURCE_ROOT; };
-		342719890933209400A87EEF /* idk_ut_BadParameterException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BadParameterException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_BadParameterException.h"; sourceTree = SOURCE_ROOT; };
-		3427198A0933209400A87EEF /* idk_ut_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Base.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_Base.h"; sourceTree = SOURCE_ROOT; };
-		3427198B0933209400A87EEF /* idk_ut_BridgeObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BridgeObject.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_BridgeObject.h"; sourceTree = SOURCE_ROOT; };
-		3427198C0933209400A87EEF /* idk_ut_ByteArray.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ByteArray.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_ByteArray.h"; sourceTree = SOURCE_ROOT; };
-		3427198D0933209400A87EEF /* idk_ut_DateStruct.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_DateStruct.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_DateStruct.h"; sourceTree = SOURCE_ROOT; };
-		3427198E0933209400A87EEF /* idk_ut_Exception.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Exception.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_Exception.h"; sourceTree = SOURCE_ROOT; };
-		3427198F0933209400A87EEF /* idk_ut_ExceptionUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ExceptionUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_ExceptionUtil.h"; sourceTree = SOURCE_ROOT; };
-		342719900933209400A87EEF /* idk_ut_ILogger.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ILogger.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_ILogger.h"; sourceTree = SOURCE_ROOT; };
-		342719910933209400A87EEF /* idk_ut_IntHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_IntHashFuncs.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_IntHashFuncs.h"; sourceTree = SOURCE_ROOT; };
-		342719920933209400A87EEF /* idk_ut_ITIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ITIterator.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_ITIterator.h"; sourceTree = SOURCE_ROOT; };
-		342719930933209400A87EEF /* idk_ut_LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_LogUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_LogUtil.h"; sourceTree = SOURCE_ROOT; };
-		342719940933209400A87EEF /* idk_ut_NullableString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_NullableString.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_NullableString.h"; sourceTree = SOURCE_ROOT; };
-		342719950933209400A87EEF /* idk_ut_Object.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Object.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_Object.h"; sourceTree = SOURCE_ROOT; };
-		342719960933209400A87EEF /* idk_ut_ObjectHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ObjectHashFuncs.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_ObjectHashFuncs.h"; sourceTree = SOURCE_ROOT; };
-		342719970933209400A87EEF /* idk_ut_OutOfResourceException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_OutOfResourceException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_OutOfResourceException.h"; sourceTree = SOURCE_ROOT; };
-		342719980933209400A87EEF /* idk_ut_PermissionDeniedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_PermissionDeniedException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_PermissionDeniedException.h"; sourceTree = SOURCE_ROOT; };
-		342719990933209400A87EEF /* idk_ut_RealObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RealObject.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_RealObject.h"; sourceTree = SOURCE_ROOT; };
-		3427199A0933209400A87EEF /* idk_ut_RuntimeException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RuntimeException.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_RuntimeException.h"; sourceTree = SOURCE_ROOT; };
-		3427199B0933209400A87EEF /* idk_ut_StringHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StringHashFuncs.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_StringHashFuncs.h"; sourceTree = SOURCE_ROOT; };
-		3427199C0933209400A87EEF /* idk_ut_StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StrUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_StrUtil.h"; sourceTree = SOURCE_ROOT; };
-		3427199D0933209400A87EEF /* idk_ut_SystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_SystemUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_SystemUtil.h"; sourceTree = SOURCE_ROOT; };
-		3427199E0933209400A87EEF /* idk_ut_TCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TCollection.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TCollection.h"; sourceTree = SOURCE_ROOT; };
-		3427199F0933209400A87EEF /* idk_ut_TFakeHashTable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TFakeHashTable.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TFakeHashTable.h"; sourceTree = SOURCE_ROOT; };
-		342719A00933209400A87EEF /* idk_ut_TProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TProxyObject.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TProxyObject.h"; sourceTree = SOURCE_ROOT; };
-		342719A10933209400A87EEF /* idk_ut_TQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TQueue.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TQueue.h"; sourceTree = SOURCE_ROOT; };
-		342719A20933209400A87EEF /* idk_ut_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Tracer.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_Tracer.h"; sourceTree = SOURCE_ROOT; };
-		342719A30933209400A87EEF /* idk_ut_TRealIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TRealIterator.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TRealIterator.h"; sourceTree = SOURCE_ROOT; };
-		342719A40933209400A87EEF /* idk_ut_TSharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TSharedPtr.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TSharedPtr.h"; sourceTree = SOURCE_ROOT; };
-		342719A50933209400A87EEF /* idk_ut_TUnsharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TUnsharedPtr.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TUnsharedPtr.h"; sourceTree = SOURCE_ROOT; };
-		342719A60933209400A87EEF /* idk_ut_TVectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TVectorUtil.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_TVectorUtil.h"; sourceTree = SOURCE_ROOT; };
-		342719A70933209400A87EEF /* idk_ut_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Types.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut_Types.h"; sourceTree = SOURCE_ROOT; };
-		342719A80933209400A87EEF /* idk_ut.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut.h; path = "../../Event Heap/c++/Mac OS X/include/idk_ut.h"; sourceTree = SOURCE_ROOT; };
-		342719A90933209400A87EEF /* idk_xm_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_Types.h; path = "../../Event Heap/c++/Mac OS X/include/idk_xm_Types.h"; sourceTree = SOURCE_ROOT; };
-		342719AA0933209400A87EEF /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = "../../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h"; sourceTree = SOURCE_ROOT; };
-		342719AB0933209400A87EEF /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = "../../Event Heap/c++/Mac OS X/include/idk_xm.h"; sourceTree = SOURCE_ROOT; };
-		342719AC0933209400A87EEF /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
-		34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.dylib; path = "../../Event Heap/c++/Mac OS X/lib/libceheap2.dylib"; sourceTree = SOURCE_ROOT; };
-		34BBD16F0AEE73FD007F1A58 /* libidk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.dylib; path = "../../Event Heap/c++/Mac OS X/lib/libidk.dylib"; sourceTree = SOURCE_ROOT; };
+		3442979C0DC65A4300F458BD /* eh2_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Base.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Base.h"; sourceTree = SOURCE_ROOT; };
+		3442979D0DC65A4300F458BD /* eh2_ConnectErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ConnectErrorHandler.h; path = "../Event Heap/c++/Mac OS X/include/eh2_ConnectErrorHandler.h"; sourceTree = SOURCE_ROOT; };
+		3442979E0DC65A4300F458BD /* eh2_Connection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Connection.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Connection.h"; sourceTree = SOURCE_ROOT; };
+		3442979F0DC65A4300F458BD /* eh2_Consts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Consts.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Consts.h"; sourceTree = SOURCE_ROOT; };
+		344297A00DC65A4300F458BD /* eh2_ErrorContext.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_ErrorContext.h; path = "../Event Heap/c++/Mac OS X/include/eh2_ErrorContext.h"; sourceTree = SOURCE_ROOT; };
+		344297A10DC65A4300F458BD /* eh2_Event.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Event.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Event.h"; sourceTree = SOURCE_ROOT; };
+		344297A20DC65A4300F458BD /* eh2_EventCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventCollection.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventCollection.h"; sourceTree = SOURCE_ROOT; };
+		344297A30DC65A4300F458BD /* eh2_EventConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventConsts.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventConsts.h"; sourceTree = SOURCE_ROOT; };
+		344297A40DC65A4300F458BD /* eh2_EventHeap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeap.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventHeap.h"; sourceTree = SOURCE_ROOT; };
+		344297A50DC65A4300F458BD /* eh2_EventHeapException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapException.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventHeapException.h"; sourceTree = SOURCE_ROOT; };
+		344297A60DC65A4300F458BD /* eh2_EventHeapFactory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapFactory.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventHeapFactory.h"; sourceTree = SOURCE_ROOT; };
+		344297A70DC65A4300F458BD /* eh2_EventHeapProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventHeapProtocolException.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventHeapProtocolException.h"; sourceTree = SOURCE_ROOT; };
+		344297A80DC65A4300F458BD /* eh2_EventRegistration.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventRegistration.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventRegistration.h"; sourceTree = SOURCE_ROOT; };
+		344297A90DC65A4300F458BD /* eh2_EventToXML.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_EventToXML.h; path = "../Event Heap/c++/Mac OS X/include/eh2_EventToXML.h"; sourceTree = SOURCE_ROOT; };
+		344297AA0DC65A4300F458BD /* eh2_Field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Field.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Field.h"; sourceTree = SOURCE_ROOT; };
+		344297AB0DC65A4300F458BD /* eh2_FieldOperationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldOperationException.h; path = "../Event Heap/c++/Mac OS X/include/eh2_FieldOperationException.h"; sourceTree = SOURCE_ROOT; };
+		344297AC0DC65A4300F458BD /* eh2_FieldType.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldType.h; path = "../Event Heap/c++/Mac OS X/include/eh2_FieldType.h"; sourceTree = SOURCE_ROOT; };
+		344297AD0DC65A4300F458BD /* eh2_FieldValue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_FieldValue.h; path = "../Event Heap/c++/Mac OS X/include/eh2_FieldValue.h"; sourceTree = SOURCE_ROOT; };
+		344297AE0DC65A4300F458BD /* eh2_IFieldIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_IFieldIterator.h; path = "../Event Heap/c++/Mac OS X/include/eh2_IFieldIterator.h"; sourceTree = SOURCE_ROOT; };
+		344297AF0DC65A4300F458BD /* eh2_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_readme.h; path = "../Event Heap/c++/Mac OS X/include/eh2_readme.h"; sourceTree = SOURCE_ROOT; };
+		344297B00DC65A4300F458BD /* eh2_SerializationException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_SerializationException.h; path = "../Event Heap/c++/Mac OS X/include/eh2_SerializationException.h"; sourceTree = SOURCE_ROOT; };
+		344297B10DC65A4300F458BD /* eh2_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Tracer.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Tracer.h"; sourceTree = SOURCE_ROOT; };
+		344297B20DC65A4300F458BD /* eh2_TracerConsts.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_TracerConsts.h; path = "../Event Heap/c++/Mac OS X/include/eh2_TracerConsts.h"; sourceTree = SOURCE_ROOT; };
+		344297B30DC65A4300F458BD /* eh2_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2_Types.h; path = "../Event Heap/c++/Mac OS X/include/eh2_Types.h"; sourceTree = SOURCE_ROOT; };
+		344297B40DC65A4300F458BD /* eh2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = eh2.h; path = "../Event Heap/c++/Mac OS X/include/eh2.h"; sourceTree = SOURCE_ROOT; };
+		344297B50DC65A4300F458BD /* idk_io_ByteArrayInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297B60DC65A4300F458BD /* idk_io_ByteArrayOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteArrayOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ByteArrayOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297B70DC65A4300F458BD /* idk_io_ByteBufferInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297B80DC65A4300F458BD /* idk_io_ByteBufferOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteBufferOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ByteBufferOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297B90DC65A4300F458BD /* idk_io_ByteLoggingInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ByteLoggingInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ByteLoggingInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297BA0DC65A4300F458BD /* idk_io_EOFException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_EOFException.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_EOFException.h"; sourceTree = SOURCE_ROOT; };
+		344297BB0DC65A4300F458BD /* idk_io_FileInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_FileInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297BC0DC65A4300F458BD /* idk_io_FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileNotFoundException.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_FileNotFoundException.h"; sourceTree = SOURCE_ROOT; };
+		344297BD0DC65A4300F458BD /* idk_io_FileOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_FileOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297BE0DC65A4300F458BD /* idk_io_FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_FileUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_FileUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297BF0DC65A4300F458BD /* idk_io_IByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_IByteInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297C00DC65A4300F458BD /* idk_io_IByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IByteOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_IByteOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297C10DC65A4300F458BD /* idk_io_InterruptedIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_InterruptedIOException.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_InterruptedIOException.h"; sourceTree = SOURCE_ROOT; };
+		344297C20DC65A4300F458BD /* idk_io_IOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_IOException.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_IOException.h"; sourceTree = SOURCE_ROOT; };
+		344297C30DC65A4300F458BD /* idk_io_ITInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ITInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297C40DC65A4300F458BD /* idk_io_ITInStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITInStreamImpl.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ITInStreamImpl.h"; sourceTree = SOURCE_ROOT; };
+		344297C50DC65A4300F458BD /* idk_io_ITOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ITOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297C60DC65A4300F458BD /* idk_io_ITOutStreamImpl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_ITOutStreamImpl.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_ITOutStreamImpl.h"; sourceTree = SOURCE_ROOT; };
+		344297C70DC65A4300F458BD /* idk_io_LineReader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_LineReader.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_LineReader.h"; sourceTree = SOURCE_ROOT; };
+		344297C80DC65A4300F458BD /* idk_io_RealByteInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_RealByteInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297C90DC65A4300F458BD /* idk_io_RealByteOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_RealByteOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_RealByteOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297CA0DC65A4300F458BD /* idk_io_TimedoutIOException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TimedoutIOException.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_TimedoutIOException.h"; sourceTree = SOURCE_ROOT; };
+		344297CB0DC65A4300F458BD /* idk_io_TRealInStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealInStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_TRealInStream.h"; sourceTree = SOURCE_ROOT; };
+		344297CC0DC65A4300F458BD /* idk_io_TRealOutStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_TRealOutStream.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_TRealOutStream.h"; sourceTree = SOURCE_ROOT; };
+		344297CD0DC65A4300F458BD /* idk_io_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io_Types.h; path = "../Event Heap/c++/Mac OS X/include/idk_io_Types.h"; sourceTree = SOURCE_ROOT; };
+		344297CE0DC65A4300F458BD /* idk_io.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_io.h; path = "../Event Heap/c++/Mac OS X/include/idk_io.h"; sourceTree = SOURCE_ROOT; };
+		344297CF0DC65A4300F458BD /* idk_ne_InetAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_InetAddress.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_InetAddress.h"; sourceTree = SOURCE_ROOT; };
+		344297D00DC65A4300F458BD /* idk_ne_NetSystemException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NetSystemException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_NetSystemException.h"; sourceTree = SOURCE_ROOT; };
+		344297D10DC65A4300F458BD /* idk_ne_NoConnectionException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_NoConnectionException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_NoConnectionException.h"; sourceTree = SOURCE_ROOT; };
+		344297D20DC65A4300F458BD /* idk_ne_ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_ServerSocket.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_ServerSocket.h"; sourceTree = SOURCE_ROOT; };
+		344297D30DC65A4300F458BD /* idk_ne_Socket.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Socket.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_Socket.h"; sourceTree = SOURCE_ROOT; };
+		344297D40DC65A4300F458BD /* idk_ne_SocketAddress.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_SocketAddress.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_SocketAddress.h"; sourceTree = SOURCE_ROOT; };
+		344297D50DC65A4300F458BD /* idk_ne_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_Types.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_Types.h"; sourceTree = SOURCE_ROOT; };
+		344297D60DC65A4300F458BD /* idk_ne_UnknownHostException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_UnknownHostException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_UnknownHostException.h"; sourceTree = SOURCE_ROOT; };
+		344297D70DC65A4300F458BD /* idk_ne_URLStreamUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne_URLStreamUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne_URLStreamUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297D80DC65A4300F458BD /* idk_ne.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ne.h; path = "../Event Heap/c++/Mac OS X/include/idk_ne.h"; sourceTree = SOURCE_ROOT; };
+		344297D90DC65A4300F458BD /* idk_readme.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_readme.h; path = "../Event Heap/c++/Mac OS X/include/idk_readme.h"; sourceTree = SOURCE_ROOT; };
+		344297DA0DC65A4300F458BD /* idk_th_ILockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ILockable.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_ILockable.h"; sourceTree = SOURCE_ROOT; };
+		344297DB0DC65A4300F458BD /* idk_th_InterruptedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_InterruptedException.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_InterruptedException.h"; sourceTree = SOURCE_ROOT; };
+		344297DC0DC65A4300F458BD /* idk_th_IRunnable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_IRunnable.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_IRunnable.h"; sourceTree = SOURCE_ROOT; };
+		344297DD0DC65A4300F458BD /* idk_th_Lockable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Lockable.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Lockable.h"; sourceTree = SOURCE_ROOT; };
+		344297DE0DC65A4300F458BD /* idk_th_Locker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Locker.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Locker.h"; sourceTree = SOURCE_ROOT; };
+		344297DF0DC65A4300F458BD /* idk_th_Monitor.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Monitor.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Monitor.h"; sourceTree = SOURCE_ROOT; };
+		344297E00DC65A4300F458BD /* idk_th_MonitorTimedoutException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_MonitorTimedoutException.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_MonitorTimedoutException.h"; sourceTree = SOURCE_ROOT; };
+		344297E10DC65A4300F458BD /* idk_th_SinglePooledThread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_SinglePooledThread.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_SinglePooledThread.h"; sourceTree = SOURCE_ROOT; };
+		344297E20DC65A4300F458BD /* idk_th_Thread.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Thread.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Thread.h"; sourceTree = SOURCE_ROOT; };
+		344297E30DC65A4300F458BD /* idk_th_ThreadUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_ThreadUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_ThreadUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297E40DC65A4300F458BD /* idk_th_TMTQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_TMTQueue.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_TMTQueue.h"; sourceTree = SOURCE_ROOT; };
+		344297E50DC65A4300F458BD /* idk_th_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Types.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Types.h"; sourceTree = SOURCE_ROOT; };
+		344297E60DC65A4300F458BD /* idk_th_Unlocker.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th_Unlocker.h; path = "../Event Heap/c++/Mac OS X/include/idk_th_Unlocker.h"; sourceTree = SOURCE_ROOT; };
+		344297E70DC65A4300F458BD /* idk_th.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_th.h; path = "../Event Heap/c++/Mac OS X/include/idk_th.h"; sourceTree = SOURCE_ROOT; };
+		344297E80DC65A4300F458BD /* idk_ut_AssertionFailedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_AssertionFailedException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_AssertionFailedException.h"; sourceTree = SOURCE_ROOT; };
+		344297E90DC65A4300F458BD /* idk_ut_BadParameterException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BadParameterException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_BadParameterException.h"; sourceTree = SOURCE_ROOT; };
+		344297EA0DC65A4300F458BD /* idk_ut_Base.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Base.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_Base.h"; sourceTree = SOURCE_ROOT; };
+		344297EB0DC65A4300F458BD /* idk_ut_BridgeObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_BridgeObject.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_BridgeObject.h"; sourceTree = SOURCE_ROOT; };
+		344297EC0DC65A4300F458BD /* idk_ut_ByteArray.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ByteArray.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_ByteArray.h"; sourceTree = SOURCE_ROOT; };
+		344297ED0DC65A4300F458BD /* idk_ut_DateStruct.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_DateStruct.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_DateStruct.h"; sourceTree = SOURCE_ROOT; };
+		344297EE0DC65A4300F458BD /* idk_ut_Exception.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Exception.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_Exception.h"; sourceTree = SOURCE_ROOT; };
+		344297EF0DC65A4300F458BD /* idk_ut_ExceptionUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ExceptionUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_ExceptionUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297F00DC65A4300F458BD /* idk_ut_ILogger.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ILogger.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_ILogger.h"; sourceTree = SOURCE_ROOT; };
+		344297F10DC65A4300F458BD /* idk_ut_IntHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_IntHashFuncs.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_IntHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		344297F20DC65A4300F458BD /* idk_ut_ITIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ITIterator.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_ITIterator.h"; sourceTree = SOURCE_ROOT; };
+		344297F30DC65A4300F458BD /* idk_ut_LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_LogUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_LogUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297F40DC65A4300F458BD /* idk_ut_NullableString.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_NullableString.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_NullableString.h"; sourceTree = SOURCE_ROOT; };
+		344297F50DC65A4300F458BD /* idk_ut_Object.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Object.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_Object.h"; sourceTree = SOURCE_ROOT; };
+		344297F60DC65A4300F458BD /* idk_ut_ObjectHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_ObjectHashFuncs.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_ObjectHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		344297F70DC65A4300F458BD /* idk_ut_OutOfResourceException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_OutOfResourceException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_OutOfResourceException.h"; sourceTree = SOURCE_ROOT; };
+		344297F80DC65A4300F458BD /* idk_ut_PermissionDeniedException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_PermissionDeniedException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_PermissionDeniedException.h"; sourceTree = SOURCE_ROOT; };
+		344297F90DC65A4300F458BD /* idk_ut_RealObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RealObject.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_RealObject.h"; sourceTree = SOURCE_ROOT; };
+		344297FA0DC65A4300F458BD /* idk_ut_RuntimeException.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_RuntimeException.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_RuntimeException.h"; sourceTree = SOURCE_ROOT; };
+		344297FB0DC65A4300F458BD /* idk_ut_StringHashFuncs.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StringHashFuncs.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_StringHashFuncs.h"; sourceTree = SOURCE_ROOT; };
+		344297FC0DC65A4300F458BD /* idk_ut_StrUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_StrUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_StrUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297FD0DC65A4300F458BD /* idk_ut_SystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_SystemUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_SystemUtil.h"; sourceTree = SOURCE_ROOT; };
+		344297FE0DC65A4300F458BD /* idk_ut_TCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TCollection.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TCollection.h"; sourceTree = SOURCE_ROOT; };
+		344297FF0DC65A4300F458BD /* idk_ut_TFakeHashTable.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TFakeHashTable.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TFakeHashTable.h"; sourceTree = SOURCE_ROOT; };
+		344298000DC65A4300F458BD /* idk_ut_TProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TProxyObject.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TProxyObject.h"; sourceTree = SOURCE_ROOT; };
+		344298010DC65A4300F458BD /* idk_ut_TQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TQueue.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TQueue.h"; sourceTree = SOURCE_ROOT; };
+		344298020DC65A4300F458BD /* idk_ut_Tracer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Tracer.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_Tracer.h"; sourceTree = SOURCE_ROOT; };
+		344298030DC65A4300F458BD /* idk_ut_TRealIterator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TRealIterator.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TRealIterator.h"; sourceTree = SOURCE_ROOT; };
+		344298040DC65A4300F458BD /* idk_ut_TSharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TSharedPtr.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TSharedPtr.h"; sourceTree = SOURCE_ROOT; };
+		344298050DC65A4300F458BD /* idk_ut_TUnsharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TUnsharedPtr.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TUnsharedPtr.h"; sourceTree = SOURCE_ROOT; };
+		344298060DC65A4300F458BD /* idk_ut_TVectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_TVectorUtil.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_TVectorUtil.h"; sourceTree = SOURCE_ROOT; };
+		344298070DC65A4300F458BD /* idk_ut_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut_Types.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut_Types.h"; sourceTree = SOURCE_ROOT; };
+		344298080DC65A4300F458BD /* idk_ut.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_ut.h; path = "../Event Heap/c++/Mac OS X/include/idk_ut.h"; sourceTree = SOURCE_ROOT; };
+		344298090DC65A4300F458BD /* idk_xm_Types.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_Types.h; path = "../Event Heap/c++/Mac OS X/include/idk_xm_Types.h"; sourceTree = SOURCE_ROOT; };
+		3442980A0DC65A4300F458BD /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = "../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h"; sourceTree = SOURCE_ROOT; };
+		3442980B0DC65A4300F458BD /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = "../Event Heap/c++/Mac OS X/include/idk_xm.h"; sourceTree = SOURCE_ROOT; };
+		3442980C0DC65A4300F458BD /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
+		34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.dylib; path = "../Event Heap/c++/Mac OS X/lib/libceheap2.dylib"; sourceTree = SOURCE_ROOT; };
+		34BBD16F0AEE73FD007F1A58 /* libidk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.dylib; path = "../Event Heap/c++/Mac OS X/lib/libidk.dylib"; sourceTree = SOURCE_ROOT; };
 		8D5B49B6048680CD000E48DA /* QCiStuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCiStuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		A716A5DC09B61C97006BCADB /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/iStuffPatchUI.nib; sourceTree = "<group>"; };
@@ -426,119 +426,119 @@
 		3427193409331F6600A87EEF /* EventHeap */ = {
 			isa = PBXGroup;
 			children = (
-				3427193C0933209400A87EEF /* eh2_Base.h */,
-				3427193D0933209400A87EEF /* eh2_ConnectErrorHandler.h */,
-				3427193E0933209400A87EEF /* eh2_Connection.h */,
-				3427193F0933209400A87EEF /* eh2_Consts.h */,
-				342719400933209400A87EEF /* eh2_ErrorContext.h */,
-				342719410933209400A87EEF /* eh2_Event.h */,
-				342719420933209400A87EEF /* eh2_EventCollection.h */,
-				342719430933209400A87EEF /* eh2_EventConsts.h */,
-				342719440933209400A87EEF /* eh2_EventHeap.h */,
-				342719450933209400A87EEF /* eh2_EventHeapException.h */,
-				342719460933209400A87EEF /* eh2_EventHeapFactory.h */,
-				342719470933209400A87EEF /* eh2_EventHeapProtocolException.h */,
-				342719480933209400A87EEF /* eh2_EventRegistration.h */,
-				342719490933209400A87EEF /* eh2_EventToXML.h */,
-				3427194A0933209400A87EEF /* eh2_Field.h */,
-				3427194B0933209400A87EEF /* eh2_FieldOperationException.h */,
-				3427194C0933209400A87EEF /* eh2_FieldType.h */,
-				3427194D0933209400A87EEF /* eh2_FieldValue.h */,
-				3427194E0933209400A87EEF /* eh2_IFieldIterator.h */,
-				3427194F0933209400A87EEF /* eh2_readme.h */,
-				342719500933209400A87EEF /* eh2_SerializationException.h */,
-				342719510933209400A87EEF /* eh2_Tracer.h */,
-				342719520933209400A87EEF /* eh2_TracerConsts.h */,
-				342719530933209400A87EEF /* eh2_Types.h */,
-				342719540933209400A87EEF /* eh2.h */,
-				342719550933209400A87EEF /* idk_io_ByteArrayInStream.h */,
-				342719560933209400A87EEF /* idk_io_ByteArrayOutStream.h */,
-				342719570933209400A87EEF /* idk_io_ByteBufferInStream.h */,
-				342719580933209400A87EEF /* idk_io_ByteBufferOutStream.h */,
-				342719590933209400A87EEF /* idk_io_ByteLoggingInStream.h */,
-				3427195A0933209400A87EEF /* idk_io_EOFException.h */,
-				3427195B0933209400A87EEF /* idk_io_FileInStream.h */,
-				3427195C0933209400A87EEF /* idk_io_FileNotFoundException.h */,
-				3427195D0933209400A87EEF /* idk_io_FileOutStream.h */,
-				3427195E0933209400A87EEF /* idk_io_FileUtil.h */,
-				3427195F0933209400A87EEF /* idk_io_IByteInStream.h */,
-				342719600933209400A87EEF /* idk_io_IByteOutStream.h */,
-				342719610933209400A87EEF /* idk_io_InterruptedIOException.h */,
-				342719620933209400A87EEF /* idk_io_IOException.h */,
-				342719630933209400A87EEF /* idk_io_ITInStream.h */,
-				342719640933209400A87EEF /* idk_io_ITInStreamImpl.h */,
-				342719650933209400A87EEF /* idk_io_ITOutStream.h */,
-				342719660933209400A87EEF /* idk_io_ITOutStreamImpl.h */,
-				342719670933209400A87EEF /* idk_io_LineReader.h */,
-				342719680933209400A87EEF /* idk_io_RealByteInStream.h */,
-				342719690933209400A87EEF /* idk_io_RealByteOutStream.h */,
-				3427196A0933209400A87EEF /* idk_io_TimedoutIOException.h */,
-				3427196B0933209400A87EEF /* idk_io_TRealInStream.h */,
-				3427196C0933209400A87EEF /* idk_io_TRealOutStream.h */,
-				3427196D0933209400A87EEF /* idk_io_Types.h */,
-				3427196E0933209400A87EEF /* idk_io.h */,
-				3427196F0933209400A87EEF /* idk_ne_InetAddress.h */,
-				342719700933209400A87EEF /* idk_ne_NetSystemException.h */,
-				342719710933209400A87EEF /* idk_ne_NoConnectionException.h */,
-				342719720933209400A87EEF /* idk_ne_ServerSocket.h */,
-				342719730933209400A87EEF /* idk_ne_Socket.h */,
-				342719740933209400A87EEF /* idk_ne_SocketAddress.h */,
-				342719750933209400A87EEF /* idk_ne_Types.h */,
-				342719760933209400A87EEF /* idk_ne_UnknownHostException.h */,
-				342719770933209400A87EEF /* idk_ne_URLStreamUtil.h */,
-				342719780933209400A87EEF /* idk_ne.h */,
-				342719790933209400A87EEF /* idk_readme.h */,
-				3427197A0933209400A87EEF /* idk_th_ILockable.h */,
-				3427197B0933209400A87EEF /* idk_th_InterruptedException.h */,
-				3427197C0933209400A87EEF /* idk_th_IRunnable.h */,
-				3427197D0933209400A87EEF /* idk_th_Lockable.h */,
-				3427197E0933209400A87EEF /* idk_th_Locker.h */,
-				3427197F0933209400A87EEF /* idk_th_Monitor.h */,
-				342719800933209400A87EEF /* idk_th_MonitorTimedoutException.h */,
-				342719810933209400A87EEF /* idk_th_SinglePooledThread.h */,
-				342719820933209400A87EEF /* idk_th_Thread.h */,
-				342719830933209400A87EEF /* idk_th_ThreadUtil.h */,
-				342719840933209400A87EEF /* idk_th_TMTQueue.h */,
-				342719850933209400A87EEF /* idk_th_Types.h */,
-				342719860933209400A87EEF /* idk_th_Unlocker.h */,
-				342719870933209400A87EEF /* idk_th.h */,
-				342719880933209400A87EEF /* idk_ut_AssertionFailedException.h */,
-				342719890933209400A87EEF /* idk_ut_BadParameterException.h */,
-				3427198A0933209400A87EEF /* idk_ut_Base.h */,
-				3427198B0933209400A87EEF /* idk_ut_BridgeObject.h */,
-				3427198C0933209400A87EEF /* idk_ut_ByteArray.h */,
-				3427198D0933209400A87EEF /* idk_ut_DateStruct.h */,
-				3427198E0933209400A87EEF /* idk_ut_Exception.h */,
-				3427198F0933209400A87EEF /* idk_ut_ExceptionUtil.h */,
-				342719900933209400A87EEF /* idk_ut_ILogger.h */,
-				342719910933209400A87EEF /* idk_ut_IntHashFuncs.h */,
-				342719920933209400A87EEF /* idk_ut_ITIterator.h */,
-				342719930933209400A87EEF /* idk_ut_LogUtil.h */,
-				342719940933209400A87EEF /* idk_ut_NullableString.h */,
-				342719950933209400A87EEF /* idk_ut_Object.h */,
-				342719960933209400A87EEF /* idk_ut_ObjectHashFuncs.h */,
-				342719970933209400A87EEF /* idk_ut_OutOfResourceException.h */,
-				342719980933209400A87EEF /* idk_ut_PermissionDeniedException.h */,
-				342719990933209400A87EEF /* idk_ut_RealObject.h */,
-				3427199A0933209400A87EEF /* idk_ut_RuntimeException.h */,
-				3427199B0933209400A87EEF /* idk_ut_StringHashFuncs.h */,
-				3427199C0933209400A87EEF /* idk_ut_StrUtil.h */,
-				3427199D0933209400A87EEF /* idk_ut_SystemUtil.h */,
-				3427199E0933209400A87EEF /* idk_ut_TCollection.h */,
-				3427199F0933209400A87EEF /* idk_ut_TFakeHashTable.h */,
-				342719A00933209400A87EEF /* idk_ut_TProxyObject.h */,
-				342719A10933209400A87EEF /* idk_ut_TQueue.h */,
-				342719A20933209400A87EEF /* idk_ut_Tracer.h */,
-				342719A30933209400A87EEF /* idk_ut_TRealIterator.h */,
-				342719A40933209400A87EEF /* idk_ut_TSharedPtr.h */,
-				342719A50933209400A87EEF /* idk_ut_TUnsharedPtr.h */,
-				342719A60933209400A87EEF /* idk_ut_TVectorUtil.h */,
-				342719A70933209400A87EEF /* idk_ut_Types.h */,
-				342719A80933209400A87EEF /* idk_ut.h */,
-				342719A90933209400A87EEF /* idk_xm_Types.h */,
-				342719AA0933209400A87EEF /* idk_xm_XmlWriter.h */,
-				342719AB0933209400A87EEF /* idk_xm.h */,
-				342719AC0933209400A87EEF /* idk.h */,
+				3442979C0DC65A4300F458BD /* eh2_Base.h */,
+				3442979D0DC65A4300F458BD /* eh2_ConnectErrorHandler.h */,
+				3442979E0DC65A4300F458BD /* eh2_Connection.h */,
+				3442979F0DC65A4300F458BD /* eh2_Consts.h */,
+				344297A00DC65A4300F458BD /* eh2_ErrorContext.h */,
+				344297A10DC65A4300F458BD /* eh2_Event.h */,
+				344297A20DC65A4300F458BD /* eh2_EventCollection.h */,
+				344297A30DC65A4300F458BD /* eh2_EventConsts.h */,
+				344297A40DC65A4300F458BD /* eh2_EventHeap.h */,
+				344297A50DC65A4300F458BD /* eh2_EventHeapException.h */,
+				344297A60DC65A4300F458BD /* eh2_EventHeapFactory.h */,
+				344297A70DC65A4300F458BD /* eh2_EventHeapProtocolException.h */,
+				344297A80DC65A4300F458BD /* eh2_EventRegistration.h */,
+				344297A90DC65A4300F458BD /* eh2_EventToXML.h */,
+				344297AA0DC65A4300F458BD /* eh2_Field.h */,
+				344297AB0DC65A4300F458BD /* eh2_FieldOperationException.h */,
+				344297AC0DC65A4300F458BD /* eh2_FieldType.h */,
+				344297AD0DC65A4300F458BD /* eh2_FieldValue.h */,
+				344297AE0DC65A4300F458BD /* eh2_IFieldIterator.h */,
+				344297AF0DC65A4300F458BD /* eh2_readme.h */,
+				344297B00DC65A4300F458BD /* eh2_SerializationException.h */,
+				344297B10DC65A4300F458BD /* eh2_Tracer.h */,
+				344297B20DC65A4300F458BD /* eh2_TracerConsts.h */,
+				344297B30DC65A4300F458BD /* eh2_Types.h */,
+				344297B40DC65A4300F458BD /* eh2.h */,
+				344297B50DC65A4300F458BD /* idk_io_ByteArrayInStream.h */,
+				344297B60DC65A4300F458BD /* idk_io_ByteArrayOutStream.h */,
+				344297B70DC65A4300F458BD /* idk_io_ByteBufferInStream.h */,
+				344297B80DC65A4300F458BD /* idk_io_ByteBufferOutStream.h */,
+				344297B90DC65A4300F458BD /* idk_io_ByteLoggingInStream.h */,
+				344297BA0DC65A4300F458BD /* idk_io_EOFException.h */,
+				344297BB0DC65A4300F458BD /* idk_io_FileInStream.h */,
+				344297BC0DC65A4300F458BD /* idk_io_FileNotFoundException.h */,
+				344297BD0DC65A4300F458BD /* idk_io_FileOutStream.h */,
+				344297BE0DC65A4300F458BD /* idk_io_FileUtil.h */,
+				344297BF0DC65A4300F458BD /* idk_io_IByteInStream.h */,
+				344297C00DC65A4300F458BD /* idk_io_IByteOutStream.h */,
+				344297C10DC65A4300F458BD /* idk_io_InterruptedIOException.h */,
+				344297C20DC65A4300F458BD /* idk_io_IOException.h */,
+				344297C30DC65A4300F458BD /* idk_io_ITInStream.h */,
+				344297C40DC65A4300F458BD /* idk_io_ITInStreamImpl.h */,
+				344297C50DC65A4300F458BD /* idk_io_ITOutStream.h */,
+				344297C60DC65A4300F458BD /* idk_io_ITOutStreamImpl.h */,
+				344297C70DC65A4300F458BD /* idk_io_LineReader.h */,
+				344297C80DC65A4300F458BD /* idk_io_RealByteInStream.h */,
+				344297C90DC65A4300F458BD /* idk_io_RealByteOutStream.h */,
+				344297CA0DC65A4300F458BD /* idk_io_TimedoutIOException.h */,
+				344297CB0DC65A4300F458BD /* idk_io_TRealInStream.h */,
+				344297CC0DC65A4300F458BD /* idk_io_TRealOutStream.h */,
+				344297CD0DC65A4300F458BD /* idk_io_Types.h */,
+				344297CE0DC65A4300F458BD /* idk_io.h */,
+				344297CF0DC65A4300F458BD /* idk_ne_InetAddress.h */,
+				344297D00DC65A4300F458BD /* idk_ne_NetSystemException.h */,
+				344297D10DC65A4300F458BD /* idk_ne_NoConnectionException.h */,
+				344297D20DC65A4300F458BD /* idk_ne_ServerSocket.h */,
+				344297D30DC65A4300F458BD /* idk_ne_Socket.h */,
+				344297D40DC65A4300F458BD /* idk_ne_SocketAddress.h */,
+				344297D50DC65A4300F458BD /* idk_ne_Types.h */,
+				344297D60DC65A4300F458BD /* idk_ne_UnknownHostException.h */,
+				344297D70DC65A4300F458BD /* idk_ne_URLStreamUtil.h */,
+				344297D80DC65A4300F458BD /* idk_ne.h */,
+				344297D90DC65A4300F458BD /* idk_readme.h */,
+				344297DA0DC65A4300F458BD /* idk_th_ILockable.h */,
+				344297DB0DC65A4300F458BD /* idk_th_InterruptedException.h */,
+				344297DC0DC65A4300F458BD /* idk_th_IRunnable.h */,
+				344297DD0DC65A4300F458BD /* idk_th_Lockable.h */,
+				344297DE0DC65A4300F458BD /* idk_th_Locker.h */,
+				344297DF0DC65A4300F458BD /* idk_th_Monitor.h */,
+				344297E00DC65A4300F458BD /* idk_th_MonitorTimedoutException.h */,
+				344297E10DC65A4300F458BD /* idk_th_SinglePooledThread.h */,
+				344297E20DC65A4300F458BD /* idk_th_Thread.h */,
+				344297E30DC65A4300F458BD /* idk_th_ThreadUtil.h */,
+				344297E40DC65A4300F458BD /* idk_th_TMTQueue.h */,
+				344297E50DC65A4300F458BD /* idk_th_Types.h */,
+				344297E60DC65A4300F458BD /* idk_th_Unlocker.h */,
+				344297E70DC65A4300F458BD /* idk_th.h */,
+				344297E80DC65A4300F458BD /* idk_ut_AssertionFailedException.h */,
+				344297E90DC65A4300F458BD /* idk_ut_BadParameterException.h */,
+				344297EA0DC65A4300F458BD /* idk_ut_Base.h */,
+				344297EB0DC65A4300F458BD /* idk_ut_BridgeObject.h */,
+				344297EC0DC65A4300F458BD /* idk_ut_ByteArray.h */,
+				344297ED0DC65A4300F458BD /* idk_ut_DateStruct.h */,
+				344297EE0DC65A4300F458BD /* idk_ut_Exception.h */,
+				344297EF0DC65A4300F458BD /* idk_ut_ExceptionUtil.h */,
+				344297F00DC65A4300F458BD /* idk_ut_ILogger.h */,
+				344297F10DC65A4300F458BD /* idk_ut_IntHashFuncs.h */,
+				344297F20DC65A4300F458BD /* idk_ut_ITIterator.h */,
+				344297F30DC65A4300F458BD /* idk_ut_LogUtil.h */,
+				344297F40DC65A4300F458BD /* idk_ut_NullableString.h */,
+				344297F50DC65A4300F458BD /* idk_ut_Object.h */,
+				344297F60DC65A4300F458BD /* idk_ut_ObjectHashFuncs.h */,
+				344297F70DC65A4300F458BD /* idk_ut_OutOfResourceException.h */,
+				344297F80DC65A4300F458BD /* idk_ut_PermissionDeniedException.h */,
+				344297F90DC65A4300F458BD /* idk_ut_RealObject.h */,
+				344297FA0DC65A4300F458BD /* idk_ut_RuntimeException.h */,
+				344297FB0DC65A4300F458BD /* idk_ut_StringHashFuncs.h */,
+				344297FC0DC65A4300F458BD /* idk_ut_StrUtil.h */,
+				344297FD0DC65A4300F458BD /* idk_ut_SystemUtil.h */,
+				344297FE0DC65A4300F458BD /* idk_ut_TCollection.h */,
+				344297FF0DC65A4300F458BD /* idk_ut_TFakeHashTable.h */,
+				344298000DC65A4300F458BD /* idk_ut_TProxyObject.h */,
+				344298010DC65A4300F458BD /* idk_ut_TQueue.h */,
+				344298020DC65A4300F458BD /* idk_ut_Tracer.h */,
+				344298030DC65A4300F458BD /* idk_ut_TRealIterator.h */,
+				344298040DC65A4300F458BD /* idk_ut_TSharedPtr.h */,
+				344298050DC65A4300F458BD /* idk_ut_TUnsharedPtr.h */,
+				344298060DC65A4300F458BD /* idk_ut_TVectorUtil.h */,
+				344298070DC65A4300F458BD /* idk_ut_Types.h */,
+				344298080DC65A4300F458BD /* idk_ut.h */,
+				344298090DC65A4300F458BD /* idk_xm_Types.h */,
+				3442980A0DC65A4300F458BD /* idk_xm_XmlWriter.h */,
+				3442980B0DC65A4300F458BD /* idk_xm.h */,
+				3442980C0DC65A4300F458BD /* idk.h */,
 			);
 			name = EventHeap;
 			sourceTree = "<group>";
@@ -991,13 +991,12 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_4)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "$(SRCROOT)/../iStuff\\ Framework\\ v1.4beta/Event\\ Heap/c++/Mac\\ OS\\ X/lib";
-				LIBRARY_SEARCH_PATHS_QUOTED_2 = "$(SRCROOT)/../../Event\\ Heap/c++/Mac\\ OS\\ X/lib";
-				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"../../Event Heap/c++/Mac OS X/lib\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../../Event Heap/c++/Mac OS X/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"../Event Heap/c++/Mac OS X/lib/\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"../Event\\ Heap/c++/Mac\\ OS\\ X/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../Event Heap/c++/Mac OS X/lib\"";
 				OTHER_CFLAGS = (
 					"-Dunix",
 					"-D_REENTRANT",
