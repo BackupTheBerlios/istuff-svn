@@ -43,7 +43,7 @@
 - (void)nodeDidAddToGraph:(id)fp8{
 	[super nodeDidAddToGraph:fp8];
   
-	configDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:[prefsFile stringByExpandingTildeInPath]];
+	configDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:[prefsFile stringByExpandingTildeInPath]];
 	[configDictionary retain];
 
 	// Set the title and notes accordingly:
@@ -68,7 +68,7 @@
 	//	standby = false;
 	//}
 	standby = true;
-	hostName = [NSString stringWithString:[[NSHost currentHost] name]];
+	hostName = [[NSString alloc] initWithString:[[NSHost currentHost] name]];
 	[hostName retain];
 	
 	// Try to read the last name used from the file
@@ -90,7 +90,7 @@
 	
 - (id)initWithIdentifier:(id)fp8 {	
 	// Specify the preferences files for initial values
-	prefsFile = [NSString stringWithString:@"~/Library/Preferences/QCiStuffPluginEHList.plist"];
+	prefsFile = [[NSString alloc] initWithString:@"~/Library/Preferences/QCiStuffPluginEHList.plist"];
 	[prefsFile retain];
 	
 	advancedOptionsHidden = true; // By default. the advanced options are hidden for a new patch
@@ -207,11 +207,11 @@
 - (void) netServiceBrowser:(NSNetServiceBrowser*)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
 	NSLog(@"netServiceBrowser is called with %@, %@, %@", [aNetService domain], [aNetService hostName], [aNetService name]);
-	NSString *formattedServiceName = [NSString stringWithString:[aNetService name]];
+	NSString *formattedServiceName = [[NSString alloc] initWithString:[aNetService name]];
 	NSMutableString *mServiceName = [[NSMutableString alloc] initWithCapacity:[formattedServiceName length]];
 	[mServiceName setString:formattedServiceName];
 	//[mServiceName replaceOccurrencesOfString:@"_" withString:@"." options:0 range:NSMakeRange(0, [formattedServiceName length])];
-	NSString *serviceName = [NSString stringWithString:mServiceName];
+	NSString *serviceName = [[NSString alloc] initWithString:mServiceName];
 	NSLog(@"netServiceBrowser is called with %@", serviceName);
 	
 	if ([hostName isEqualToString:serviceName])
@@ -241,8 +241,8 @@
 - (void) netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
 	// Construction of the fully qualified name
-	NSString *serviceName = [NSString stringWithString:[aNetService name]];
-	NSString *serviceDomain = [NSString stringWithString:[aNetService domain]];
+	NSString *serviceName = [[NSString alloc] initWithString:[aNetService name]];
+	NSString *serviceDomain = [[NSString alloc] initWithString:[aNetService domain]];
     NSEnumerator *enumerator = [netServices objectEnumerator];
 	NSString *currentNetServiceName;
 	
@@ -298,7 +298,7 @@
 // *********** Methods for changing instance variables ******************
 -(void) setEventHeapName:(NSString *)newEventHeapName{
 	[eventHeapName release];
-	eventHeapName = [NSString stringWithString:newEventHeapName];
+	eventHeapName = [[NSString alloc] initWithString:newEventHeapName];
 	[eventHeapName retain];
 }
 
@@ -362,7 +362,9 @@ NSLog(@"configuration");
 }
 
 - (void) saveConfiguration {
+  NSLog(@"Prefs file %@", [self prefsFile]);
   [configDictionary setValue:specifiedEventHeaps forKey:@"userSpecifiedEventHeaps"];
+  NSLog(@"Attempting to write to file %@", [prefsFile stringByExpandingTildeInPath]);
   if ([configDictionary writeToFile:[prefsFile stringByExpandingTildeInPath] atomically:YES])
 	NSLog(@"File was successfully written: %@", configDictionary);
   else

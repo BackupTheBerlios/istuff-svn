@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodeAttributes</key>
+	<dict>
+		<key>category</key>
+		<string>iStuff</string>
+		<key>copyright</key>
+		<string>Nokia Research Center Palo Alto</string>
+		<key>description</key>
+		<string>This patch reads the values provided by a proxy for Shake SK6 Sensor values. Note that not all values are always read. They remain 0</string>
+		<key>name</key>
+		<string>Shake</string>
+	</dict>
+        <key>inputAttributes</key>
+	<dict>
+	  	<key>inputProxyID</key>
+		<dict>
+			<key>description</key>
+			<string>With the proxyID, the different entities can be distinguished. Change the settings via the Inspector</string>
+			<key>name</key>
+			<string>ProxyID</string>
+		</dict>
+	</dict>
+	<key>outputAttributes</key>
+	<dict>
+		<key>outputAccX</key>
+		<dict>
+			<key>description</key>
+			<string>X dimension of the Shake Accelerometer</string>
+			<key>name</key>
+			<string>Acc X</string>
+		</dict>
+		<key>outputAccY</key>
+		<dict>
+			<key>description</key>
+			<string>Y dimension of the Shake Accelerometer</string>
+			<key>name</key>
+			<string>Acc Y</string>
+		</dict>
+		<key>outputAccZ</key>
+		<dict>
+			<key>description</key>
+			<string>Z dimension of the Shake Accelerometer</string>
+			<key>name</key>
+			<string>Acc Z</string>
+		</dict>
+		<key>outputGyroPitch</key>
+		<dict>
+			<key>description</key>
+			<string>Pitch dimension of the Shake Angular Rate Sensor</string>
+			<key>name</key>
+			<string>Angular Pitch</string>
+		</dict>
+		<key>outputGyroRoll</key>
+		<dict>
+			<key>description</key>
+			<string>Roll dimension of the Shake Angular Rate Sensor</string>
+			<key>name</key>
+			<string>Angular Roll</string>
+		</dict>
+		<key>outputGyroYaw</key>
+		<dict>
+			<key>description</key>
+			<string>Yaw dimension of the Shake Angular Rate Sensor</string>
+			<key>name</key>
+			<string>Angular Yaw</string>
+		</dict>
+		<key>outputMagX</key>
+		<dict>
+			<key>description</key>
+			<string>X dimension of the Magnetometer</string>
+			<key>name</key>
+			<string>Magnotometer X</string>
+		</dict>		
+		<key>outputMagY</key>
+		<dict>
+			<key>description</key>
+			<string>Y dimension of the Magnetometer</string>
+			<key>name</key>
+			<string>Magnetometer Y</string>
+		</dict>		
+		<key>outputMagZ</key>
+		<dict>
+			<key>description</key>
+			<string>Z dimension of the Magnetometer</string>
+			<key>name</key>
+			<string>Magnetometer Z</string>
+		</dict>		
+		<key>outputCompass</key>
+		<dict>
+			<key>description</key>
+			<string>Compass heading of the Shake Sensor</string>
+			<key>name</key>
+			<string>Compass</string>
+		</dict>
+		<key>outputCap0</key>
+		<dict>
+			<key>description</key>
+			<string>Capacitive Sensor 0</string>
+			<key>name</key>
+			<string>Cap 0</string>
+		</dict>		
+		<key>outputCap1</key>
+		<dict>
+			<key>description</key>
+			<string>Capacitive Sensor 1</string>
+			<key>name</key>
+			<string>Cap 1</string>
+		</dict>		
+		<key>outputAnalogIn0</key>
+		<dict>
+			<key>description</key>
+			<string>Analog Input 0</string>
+			<key>name</key>
+			<string>Analog In 0</string>
+		</dict>		
+		<key>outputAnalogIn1</key>
+		<dict>
+			<key>description</key>
+			<string>Analog Input 1</string>
+			<key>name</key>
+			<string>Analog In 1</string>
+		</dict>		
+		<key>outputJogDial</key>
+		<dict>
+			<key>description</key>
+			<string>Jog Dial (up / neutral / down)</string>
+			<key>name</key>
+			<string>Jog Dial</string>
+		</dict>		
+		<key>outputSelect</key>
+		<dict>
+			<key>description</key>
+			<string>Jog Dial Pressed In</string>
+			<key>name</key>
+			<string>Jog Dial Select</string>
+		</dict>	
+		<key>outputTemp</key>
+		<dict>
+			<key>description</key>
+			<string>Temperature in degrees Celcius</string>
+			<key>name</key>
+			<string>Temperature</string>
+		</dict>		
+		<key>outputBattery</key>
+		<dict>
+			<key>description</key>
+			<string>Battery Level (%)</string>
+			<key>name</key>
+			<string>Battery</string>
+		</dict>		
+		<key>outputSourceID</key>
+		<dict>
+			<key>description</key>
+			<string>The SmartIts Sensor name</string>
+			<key>name</key>
+			<string>SourceID</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

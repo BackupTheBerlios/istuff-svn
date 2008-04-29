@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		340B411B091F8B810074DBFA /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340B411A091F8B810074DBFA /* Quartz.framework */; };
 		340B4150091F8C620074DBFA /* PatchLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 340B414F091F8C620074DBFA /* PatchLoader.m */; };
+		344298220DC66EC600F458BD /* Shake.mm in Sources */ = {isa = PBXBuildFile; fileRef = 344298210DC66EC600F458BD /* Shake.mm */; };
+		3442983C0DC67CCF00F458BD /* Shake.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3442983A0DC67CCF00F458BD /* Shake.xml */; };
 		34BBD1700AEE73FD007F1A58 /* libceheap2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */; };
 		34BBD1710AEE73FD007F1A58 /* libidk.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBD16F0AEE73FD007F1A58 /* libidk.dylib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -183,6 +185,9 @@
 		3442980A0DC65A4300F458BD /* idk_xm_XmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm_XmlWriter.h; path = "../Event Heap/c++/Mac OS X/include/idk_xm_XmlWriter.h"; sourceTree = SOURCE_ROOT; };
 		3442980B0DC65A4300F458BD /* idk_xm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk_xm.h; path = "../Event Heap/c++/Mac OS X/include/idk_xm.h"; sourceTree = SOURCE_ROOT; };
 		3442980C0DC65A4300F458BD /* idk.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = idk.h; path = "../Event Heap/c++/Mac OS X/include/idk.h"; sourceTree = SOURCE_ROOT; };
+		344298200DC66EC600F458BD /* Shake.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Shake.h; sourceTree = SOURCE_ROOT; };
+		344298210DC66EC600F458BD /* Shake.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = Shake.mm; sourceTree = SOURCE_ROOT; };
+		3442983B0DC67CCF00F458BD /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = English; path = English.lproj/Shake.xml; sourceTree = "<group>"; };
 		34BBD16E0AEE73FD007F1A58 /* libceheap2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libceheap2.dylib; path = "../Event Heap/c++/Mac OS X/lib/libceheap2.dylib"; sourceTree = SOURCE_ROOT; };
 		34BBD16F0AEE73FD007F1A58 /* libidk.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libidk.dylib; path = "../Event Heap/c++/Mac OS X/lib/libidk.dylib"; sourceTree = SOURCE_ROOT; };
 		8D5B49B6048680CD000E48DA /* QCiStuff.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QCiStuff.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +305,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3442983A0DC67CCF00F458BD /* Shake.xml */,
 				A7E777FC09F435090027B526 /* Filter.xml */,
 				A7E777C709F434160027B526 /* Accelerometer.xml */,
 				A7E777C909F434160027B526 /* CharacterGenerator.xml */,
@@ -373,6 +379,7 @@
 		340067C40938AFC90030991B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				344298110DC66E3300F458BD /* Shake */,
 				A7331FBC09E573F3005185AC /* CustomTableView.h */,
 				A7331FBD09E573F3005185AC /* CustomTableView.m */,
 				A7BA978D09B6084E00CF9B33 /* iStuffPatchHierarchy */,
@@ -555,6 +562,15 @@
 				340B4111091F8AC00074DBFA /* QCPatch.h */,
 			);
 			name = QC;
+			sourceTree = "<group>";
+		};
+		344298110DC66E3300F458BD /* Shake */ = {
+			isa = PBXGroup;
+			children = (
+				344298200DC66EC600F458BD /* Shake.h */,
+				344298210DC66EC600F458BD /* Shake.mm */,
+			);
+			name = Shake;
 			sourceTree = "<group>";
 		};
 		A706B028099935E9004BBDF8 /* MobilePhoneKeyListenerPatch */ = {
@@ -758,6 +774,7 @@
 				A7E777F109F434160027B526 /* TeleoDIn.xml in Resources */,
 				A7E777F209F434160027B526 /* TeleoPWMOut.xml in Resources */,
 				A7E777FE09F435090027B526 /* Filter.xml in Resources */,
+				3442983C0DC67CCF00F458BD /* Shake.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,12 +810,21 @@
 				A7E7773C09F42A960027B526 /* TeleoPWMOut.mm in Sources */,
 				A7E7780109F435110027B526 /* Filter.mm in Sources */,
 				A71CDE100A3EF3F40042759C /* iStuffEvent.mm in Sources */,
+				344298220DC66EC600F458BD /* Shake.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3442983A0DC67CCF00F458BD /* Shake.xml */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3442983B0DC67CCF00F458BD /* English */,
+			);
+			name = Shake.xml;
+			sourceTree = SOURCE_ROOT;
+		};
 		A716A5DB09B61C97006BCADB /* iStuffPatchUI.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -987,7 +1013,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = QCiStuff_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
@@ -995,7 +1021,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_4)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"../Event Heap/c++/Mac OS X/lib/\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"../Event\\ Heap/c++/Mac\\ OS\\ X/lib\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_3 = "\"$(SRCROOT)/../Event\\ Heap/c++/Mac\\ OS\\ X/lib\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../Event Heap/c++/Mac OS X/lib\"";
 				OTHER_CFLAGS = (
 					"-Dunix",

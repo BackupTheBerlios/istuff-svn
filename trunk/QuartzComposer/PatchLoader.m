@@ -26,5 +26,6 @@
 	[manager registerNodeWithClass: [MobilePhoneController class]];
 	[manager registerNodeWithClass: [CharacterGenerator class]];
 	[manager registerNodeWithClass: [MobilePhoneKeyListener class]];
+	[manager registerNodeWithClass: [Shake class]];
 }
 @end
