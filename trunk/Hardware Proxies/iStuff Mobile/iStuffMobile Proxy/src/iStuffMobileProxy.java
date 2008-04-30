@@ -360,8 +360,6 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 			try
 			{
 				Integer command = (Integer)recEvent.getPostValue("Command");	//extract the Command field from the received Event
-				byte buffer[] = new byte[1];
-				buffer[0] = command.byteValue();	//convert the command to byte
 
 				if(recEvent.fieldExists("Path"))	//check if Path field exists in the event because it is required to follow
 													//the command when sending opcodes to the "iStuff Mobile" mobile phone application
@@ -370,9 +368,11 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 					path += "\0";	//a \0 is added expilicitly because the getBytes() method of String doesnot return 0
 									//as a last byte which denotes the end of string
 
-					byte buffer1[] = path.getBytes();
-					outStream.write(buffer);		//send the opcode to the "iStuff Mobile" mobile phone application
-					outStream.write((byte)buffer1.length);	//send the length of the path
+					byte buffer[] = path.getBytes();
+					byte [] buffer1 = new byte[buffer.length - 1 + 2]; // add a byte for the command and a byte for the length 					System.out.println("buffer1.length " + buffer1.length);
+					buffer1[0] = command.byteValue();	//convert the command to byte
+					buffer1[1] = (byte)(buffer.length - 1);   // write the length of the path
+					System.arraycopy(buffer, 0, buffer1, 2, buffer.length - 1);  // copy the path to send buffer
 					outStream.write(buffer1);		//sned the path itself
 				}
 				else
