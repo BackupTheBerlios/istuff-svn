@@ -5,6 +5,9 @@ import select
 import struct
 import audio
 import e32
+import time
+import appuifw
+import string
 
 OPCODE_DISCONNECT = chr(1)
 OPCODE_BACKLIGHT_ON	= chr(2)
@@ -18,6 +21,7 @@ OPCODE_KEY_PRESSED = chr(9)
 OPCODE_START_KEYCAPTURE = chr(10)
 OPCODE_STOP_KEYCAPTURE = chr(11)
 OPCODE_CHANGEPROFILE = chr(12)
+OPCODE_LAUNCHMEDIA = chr(13)
 
 # key activity types
 KEY_PRESS = 1
@@ -37,7 +41,6 @@ class iStuffMobile:
 			print self.services
 		except:
 			import traceback
-			import appuifw
 			traceback.print_exc()
 			appuifw.query(unicode("Error in bluetooth connection, is the service running"), 'query')
 			appuifw.app.body.text((40, 90), unicode("Please restart!"))
@@ -45,11 +48,11 @@ class iStuffMobile:
 			lock.wait()
 		self.data = ""
 		self.sock=0
-		self.lock=0
+		self.lock = e32.Ao_lock()
 		self.audio=0
+		self.content_handler = appuifw.Content_handler()
 		pykeygrab.init()
 		if len(self.services)>1:
-			import appuifw
 			choices=self.services.keys()
 			choices.sort()
 			choice=appuifw.popup_menu([unicode(self.services[x])+": "+x for x in choices],u'Choose port:')
@@ -87,7 +90,7 @@ class iStuffMobile:
 			else:
 				for sock in rlist:
 					data = sock.recv( 100 )
-					self.parse_data(data)
+					self.parse_data(data, sock)
 
 		#self.sock.shutdown(2)
 		self.sock.close()
@@ -97,39 +100,11 @@ class iStuffMobile:
 	# parse_data
 	#	keep processing incoming data from the BT socket
 	####################
-	def parse_data(self, data):
+	def parse_data(self, data, sock):
 		# dictionary used instead of a switch statement
 		print "data len", len(data)
 		opcode = data[0]
 		print "received opcode", ord(opcode)
-		try:
-			# these functions require no parameters
-			{OPCODE_DISCONNECT: self.disconnect,
-			 OPCODE_BACKLIGHT_ON: self.backlight_on,
-			 OPCODE_BACKLIGHT_OFF: self.backlight_off,
-			 OPCODE_STOPSOUND: self.stop_sound,
-			 OPCODE_START_KEYCAPTURE: self.start_keycapture,
-			 OPCODE_STOP_KEYCAPTURE: self.stop_keycapture,
-			}[opcode]()
-		except:
-			print 'No match for first batch of opcodes'
-			
-		path = ''
-		if(len(data) > 2):
-			path_length = data[1]
-			print "path_length", path_length
-			path = data[2:] 
-			print "path", path
-
-		try:
-			# these functions require path parameter
-			{OPCODE_PLAYSOUND: self.play_sound,
-			 OPCODE_LAUNCHAPP: self.launch_app,
-			 OPCODE_CLOSEAPP: self.close_app,
-			}[opcode](path)
-		except:
-			print 'No match for second batch of opcodes'
-		
 		# these functions require path parameter
 		if(opcode == OPCODE_KEY_RECEIVED):
 			print "key received"
@@ -144,7 +119,37 @@ class iStuffMobile:
 			pykeygrab.sendToForeground(repeat, scancode, code)
 		elif( opcode == OPCODE_CHANGEPROFILE):
 			print "change profile received"
-			
+		else:
+			try:
+				# these functions require no parameters
+				{OPCODE_DISCONNECT: self.disconnect,
+				 OPCODE_BACKLIGHT_ON: self.backlight_on,
+				 OPCODE_BACKLIGHT_OFF: self.backlight_off,
+				 OPCODE_STOPSOUND: self.stop_sound,
+				 OPCODE_START_KEYCAPTURE: self.start_keycapture,
+				 OPCODE_STOP_KEYCAPTURE: self.stop_keycapture,
+				}[opcode]()
+			except:
+				print 'No match for first batch of opcodes'			
+				path = ''
+				if(len(data) > 2):
+					path_length = ord(data[1])
+					print "path_length", path_length
+					path = data[2:] 
+					print "path", path
+					while(len(path) != path_length):
+						path = path + sock.recv(path_length - len(path))
+						print "path", path
+				try:
+					# these functions require path parameter
+					{OPCODE_PLAYSOUND: self.play_sound,
+					 OPCODE_LAUNCHAPP: self.launch_app,
+					 OPCODE_CLOSEAPP: self.close_app,
+					 OPCODE_LAUNCHMEDIA: self.launch_media,
+					}[opcode](path)
+				except:
+					print 'No match for second batch of opcodes'
+
 	def key_callback(self, keycode):
 		print "key pressed", keycode
 		# '!cHH' = char, unsigned short, unsigned short (see http://docs.python.org/lib/module-struct.html)
@@ -186,17 +191,38 @@ class iStuffMobile:
 		self.key_capturer.stop()
 	
 	def play_sound(self, path):
-		print "play_sound %s" % path
-		self.audio = audio.Sound.open(unicode(path))
-		self.audio.play()
-	
+		try:
+			print "play_sound '%s'" % path
+			self.audio = audio.Sound.open(unicode(path))
+			self.audio.play()
+		except:
+			import traceback
+			traceback.print_exc()
+			traceback.print_stack()
+
+	def launch_media(self,path):
+		try:
+			self.content_handler.open(path)
+		except:
+			import traceback
+			traceback.print_exc()
+			traceback.print_stack()
+			
 	def launch_app(self, path):
-		print "launch app %s" % path
-		e32.start_exe(unicode(path),'')
-		
+		print "launch app '%s'" % path
+		try:
+			e32.start_exe(path,'')
+		except:
+			import traceback
+			traceback.print_exc()
+			traceback.print_stack()
+			
 	def close_app(self, path):
 		print "close app %s" % path				
 		
 def __main__():
 	istuff = iStuffMobile()
 	istuff.run()
+	
+	
+__main__()
