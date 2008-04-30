@@ -13,16 +13,12 @@
 	
 	// if a boolean port is TRUE, the corresponding event with the command  number
 	//  is put on the Event Heap
-		QCBooleanPort *inputDisconnect;
 		QCBooleanPort *inputBacklightOn;
-		QCBooleanPort *inputBacklightOff;
 		QCBooleanPort *inputPlaySound;
-		QCBooleanPort *inputStopSound;
 		QCBooleanPort *inputLaunchApp;
 		QCStringPort *inputPath;		
 		QCBooleanPort *inputCloseApp;
 		QCNumberPort *inputKeyCode;
-		QCNumberPort *inputRepeatPort;
 		QCNumberPort *inputScanCodePort;
 		QCNumberPort *inputProfileNumber;
 		QCBooleanPort *inputCaptureKeys;
@@ -34,9 +30,7 @@
 	// These variables prevent that an event is sent all the time
 	// but only when there was a change in between
 		bool lastInputDisconnect;
-		bool lastInputBacklightOff;
 		bool lastInputBacklightOn;
-		bool lastInputStopSound;
 		bool lastInputPlaySound;
 		bool lastInputLaunchApp;
 		bool lastInputCloseApp;

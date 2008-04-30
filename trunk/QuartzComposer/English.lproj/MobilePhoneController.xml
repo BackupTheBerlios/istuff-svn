@@ -25,13 +25,6 @@
 			<key>name</key>
 			<string>Close Application</string>
 		</dict>
-		<key>inputDisconnect</key>
-		<dict>
-			<key>description</key>
-			<string>Di</string>
-			<key>name</key>
-			<string>Threshold</string>
-		</dict>
 		<key>inputKeyCode</key>
 		<dict>
 			<key>description</key>
@@ -80,13 +73,6 @@
 			<string>Port needed for the mobile phone</string>
 			<key>name</key>
 			<string>Scancode Port</string>
-		</dict>
-		<key>inputStopSound</key>
-		<dict>
-			<key>description</key>
-			<string>If true an event with the command to stop to play a sound</string>
-			<key>name</key>
-			<string>Stop Playing Sound</string>
 		</dict>
 		<key>inputCaptureKeys</key>
 		<dict>
