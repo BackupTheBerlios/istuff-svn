@@ -1,5 +1,6 @@
-import pykeygrab
 import keycapture # doesn't seperate key up and key down events
+import pykeygrab # alternative to keycapture - grabs keys that keycapture cannot including menu key, long key presses etc, can also do key generation
+import keypress 
 import socket
 import select
 import struct
@@ -8,6 +9,7 @@ import e32
 import time
 import appuifw
 import string
+from key_codes import *
 
 OPCODE_DISCONNECT = chr(1)
 OPCODE_BACKLIGHT_ON	= chr(2)
@@ -60,7 +62,16 @@ class iStuffMobile:
 		else:
 			self.target=(self.address,self.services.values()[0])
 		self.key_capturer = keycapture.KeyCapturer(self.key_callback)
-		self.key_capturer.keys = keycapture.all_keys
+		keys = keycapture.all_keys
+		try:
+			keys.remove(keycapture.EKeySelect) # I haven't figured out how to simulate the select key in the contacts app
+			keys.remove(keycapture.EKeySelect) # for some reason, EKeySelect is in the list twice
+			# It turns out that this is a bug in the Symbian key_simulation API. I connected a bluetooth keyboard and it exhibited the same problems
+		except:
+			import traceback
+			traceback.print_exc()
+			traceback.print_stack()
+		self.key_capturer.keys = keys
 			
 		
 	####################	
@@ -109,14 +120,19 @@ class iStuffMobile:
 		if(opcode == OPCODE_KEY_RECEIVED):
 			print "key received"
 			#http://docs.python.org/lib/module-struct.html
-			data_tuple = struct.unpack('!cHHH', data)
-			repeat = data_tuple[1]
-			scancode = data_tuple[2]
-			code = data_tuple[3]
-			print "code", code
-			print "repeat", repeat
-			print "scancode", scancode
-			pykeygrab.sendToForeground(repeat, scancode, code)
+			try:
+				data_tuple = struct.unpack('!cHHH', data)
+				repeat = data_tuple[1]
+				scancode = data_tuple[2]
+				code = data_tuple[3]
+				print "code", code
+				print "repeat", repeat
+				print "scancode", scancode
+				#pykeygrab.sendToForeground(repeat, scancode, code)
+				keypress.simulate_key(code, scancode)
+			except:
+				import traceback
+				tracback.print_exc()
 		elif( opcode == OPCODE_CHANGEPROFILE):
 			print "change profile received"
 		else:
@@ -224,5 +240,6 @@ def __main__():
 	istuff = iStuffMobile()
 	istuff.run()
 	
-	
 __main__()
+	
+	
