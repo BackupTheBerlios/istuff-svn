@@ -168,7 +168,7 @@ public class Shake implements EventCallback, Runnable
 							tokens = data.split(",");
 							e = new Event("Shake");
 							e.addField("ProxyID", proxyID);
-							e.setPostValue("TimeToLive", new Integer(10000)); // set time to live to 10 sec
+							e.setPostValue("TimeToLive", new Integer(50)); // set time to live to 50 msec
 							e.setPostValue("Sensor",tokens[0]);
 							for(int i = 1; i < tokens.length; i++){
 								if(tokens[i].startsWith("+")){ // eliminate Number format exception
