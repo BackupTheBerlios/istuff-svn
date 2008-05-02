@@ -63,6 +63,7 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 		private final int OPCODE_START_KEYCAPTURE = 10;
 		private final int OPCODE_STOP_KEYCAPTURE = 11;
 		private final int OPCODE_CHANGEPROFILE = 12;
+		private final int OPCODE_LAUNCHMEDIA = 13;
 
 		//@}
 
@@ -191,6 +192,7 @@ public class iStuffMobileProxy implements EventCallback, Runnable
 							case OPCODE_PLAYSOUND:
 							case OPCODE_LAUNCHAPP:
 							case OPCODE_CLOSEAPP:
+							case OPCODE_LAUNCHMEDIA:
 								getPathAndRedirect(retEvents[0]); //all these opcodes require a PATH to be sent following the opcode
 								break;
 
